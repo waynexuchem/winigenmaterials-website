@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.winigenmaterials.com/sitemap.xml
+
+# AI-readable site guide
+Allow: /llms.txt

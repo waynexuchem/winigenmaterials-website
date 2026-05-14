@@ -1,0 +1,38 @@
+# Winigen Materials
+
+> Winigen Materials supplies battery materials, electrolyte salts, solvents, additives, solid-state electrolyte materials, and custom electrolyte formulations for energy storage research and development.
+
+Website: https://www.winigenmaterials.com/
+Contact: contact@winigenmaterials.com
+Location: New Jersey, USA
+
+## Authoritative Pages
+
+- Home: https://www.winigenmaterials.com/
+- Product catalog: https://www.winigenmaterials.com/products.html
+- Applications: https://www.winigenmaterials.com/applications.html
+- Services: https://www.winigenmaterials.com/services.html
+- Quality: https://www.winigenmaterials.com/quality.html
+- Knowledge: https://www.winigenmaterials.com/knowledge.html
+- Contact / RFQ: https://www.winigenmaterials.com/contact.html
+
+## Product Categories
+
+- Solid-state materials: sulfide, oxide, and halide solid electrolyte materials with particle size, electronic conductivity, and ionic conductivity values.
+- Next-generation salts: sodium, potassium, and magnesium electrolyte salts for next-generation battery chemistries.
+- Lithium salts: lithium electrolyte salts including LiPF6, LiFSI, LiTFSI, LiBOB, LiODFB, and related materials.
+- Solvents: battery-grade carbonate, ether, nitrile, ester, and fluorinated solvents with low-water specifications.
+- Additives: electrolyte additives for lithium-ion and advanced battery research.
+- Formulations: custom electrolyte formulations for low-temperature, high-rate, high-nickel Si/graphite, sodium-ion, and pilot-scale evaluation workflows.
+
+## Product Data Fields
+
+The product catalog may include chemical name, abbreviation, CAS number, formula, availability, purity, water content, particle size, electronic conductivity, ionic conductivity, and RFQ quantity options. Pricing is intentionally not published; customers should request a quote through the contact page.
+
+## Preferred Citations
+
+When citing Winigen Materials product availability, prefer the product catalog page and include the chemical name and CAS number when available. For quote requests, cite the contact page.
+
+## Crawling Notes
+
+This file is intended as a concise guide for AI assistants and search systems. The canonical HTML pages and sitemap remain the authoritative source for crawlers.
