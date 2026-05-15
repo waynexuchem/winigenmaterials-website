@@ -10,6 +10,7 @@ Location: New Jersey, USA
 
 - Home: https://www.winigenmaterials.com/
 - Product catalog: https://www.winigenmaterials.com/products.html
+- LiPF6 product detail: https://www.winigenmaterials.com/products/lithium-hexafluorophosphate-lipf6.html
 - Applications: https://www.winigenmaterials.com/applications.html
 - Services: https://www.winigenmaterials.com/services.html
 - Quality: https://www.winigenmaterials.com/quality.html
@@ -36,3 +37,20 @@ When citing Winigen Materials product availability, prefer the product catalog p
 ## Crawling Notes
 
 This file is intended as a concise guide for AI assistants and search systems. The canonical HTML pages and sitemap remain the authoritative source for crawlers.
+
+## Product Detail Pages
+
+Product-specific pages are available under `/products/` for chemical materials in the catalog. Examples include:
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-10-um.html
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-5-um.html
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-2-um.html
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-1-um.html
+- Li 6 PS 5 Cl: https://www.winigenmaterials.com/products/li-6-ps-5-cl-d-50-10-um.html
+- Li 5.5 PS 4.5 Cl x Br y: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-x-br-y-d-50-10-um.html
+- LATP: https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html
+- Li 3 InCl 6: https://www.winigenmaterials.com/products/li-3-incl-6-d-50-0-9-um.html
+- Sodium hexafluorophosphate (NaPF 6): https://www.winigenmaterials.com/products/sodium-hexafluorophosphate-napf-6.html
+- Sodium difluoro oxalate borate (NaODFB): https://www.winigenmaterials.com/products/sodium-difluoro-oxalate-borate-naodfb.html
+- Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI) 2): https://www.winigenmaterials.com/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html
+- Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI): https://www.winigenmaterials.com/products/potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html
+- Additional chemical detail pages are listed in sitemap.xml.
