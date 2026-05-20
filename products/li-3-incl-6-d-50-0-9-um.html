@@ -32,6 +32,12 @@
 .breadcrumb a { color: #fff; text-decoration: none; }
 .related-note { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(18,32,51,.1); }
 @media(max-width:900px) { .product-detail-layout { grid-template-columns: 1fr; } .structure-panel { min-height: 320px; } .detail-facts { grid-template-columns: 1fr; } }
+.formula-text sub { font-size: .64em; line-height: 0; }
+.solid-material-visual { width: min(560px, 100%); border-radius: 18px; overflow: hidden; display: grid; grid-template-rows: auto minmax(210px, 1fr); box-shadow: 0 16px 36px rgba(15,31,77,.12); background: linear-gradient(135deg,#f8fbff,#e6f0f7); }
+.solid-material-visual img { width: 100%; height: 100%; min-height: 210px; object-fit: contain; mix-blend-mode: normal; display: block; }
+.solid-material-visual::after { content: none; }
+.solid-material-label { padding: 28px 24px 18px; color: var(--navy); background: rgba(255,255,255,.72); font-family: Manrope, Inter, sans-serif; font-size: clamp(26px, 4.8vw, 42px); font-weight: 900; line-height: 1.05; text-align: center; }
+@media(max-width:900px) { .solid-material-visual { grid-template-rows: auto minmax(190px, 1fr); } .solid-material-visual img { min-height: 190px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -123,23 +129,24 @@
 <main>
   <section class="section dark product-detail-hero">
     <div class="container section-title">
-      <div class="breadcrumb"><a href="../products.html">Products</a> / Solid-State Materials / Li3InCl6</div>
+      <div class="breadcrumb"><a href="../products.html">Products</a> / Solid-State Materials / <span class="formula-text">Li<sub>3</sub>InCl<sub>6</sub></span></div>
       <p class="eyebrow">Solid-State Halide</p>
-      <h1>Li3InCl6</h1>
+      <h1><span class="formula-text">Li<sub>3</sub>InCl<sub>6</sub></span></h1>
       <p>Solid-State Halide available by request for quote from Winigen Materials.</p>
     </div>
   </section>
   <section class="section">
     <div class="container product-detail-layout">
       <aside class="structure-panel" aria-label="Li3InCl6 structure or formula">
-        <div class="structure-fallback structure-fallback--solid"><span>
-          <span><span class="formula-text">Li<sub>3</sub>InCl<sub>6</sub></span></span>
-        </span></div>
+        <div class="solid-material-visual">
+          <div class="solid-material-label"><span><span class="formula-text">Li<sub>3</sub>InCl<sub>6</sub></span></span></div>
+          <img src="../assets/images/solid-state-discs.jpg" alt="Solid-state material powder, film, and pressed discs" loading="lazy">
+        </div>
       </aside>
       <article class="detail-panel">
         <p class="detail-kicker">Product Details</p>
-        <h2>Li3InCl6</h2>
-        <p>Li3InCl6 is listed in the Winigen Materials product catalog for battery materials research, electrolyte development, and related evaluation workflows.</p>
+        <h2><span class="formula-text">Li<sub>3</sub>InCl<sub>6</sub></span></h2>
+        <p><span class="formula-text">Li<sub>3</sub>InCl<sub>6</sub></span> is listed in the Winigen Materials product catalog for battery materials research, electrolyte development, and related evaluation workflows.</p>
         <dl class="detail-facts">
           <div class="detail-fact"><dt>Category</dt><dd>Solid-State Halide</dd></div>
           <div class="detail-fact"><dt>Availability</dt><dd>RFQ</dd></div>
@@ -149,7 +156,7 @@
           <li><strong>Particle size:</strong> D 50 ~0.9 um</li>
           <li><strong>Electronic:</strong> &lt;=10 -6 mS/cm</li>
           <li><strong>Ionic:</strong> &gt;1 mS/cm - cold press</li>
-          <li><strong>Formula:</strong> Li3InCl6</li>
+          <li><strong>Formula:</strong> <span class="formula-text">Li<sub>3</sub>InCl<sub>6</sub></span></li>
         </ul>
         <div class="detail-actions">
           <a class="btn" href="../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=Li3InCl6&amp;quantity_scale=100%20g&amp;message=I%20would%20like%20to%20request%20a%20quote%20for%20Li3InCl6.%20Product%20category%3A%20Solid-State%20Halide.%20Target%20specifications%3A%20Particle%20size%3A%20D50%20~0.9%20um%3B%20%3C%3D10%5E-6%20mS%2Fcm%3B%20%3E1%20mS%2Fcm%20-%20cold%20press.">Request Quote</a>
