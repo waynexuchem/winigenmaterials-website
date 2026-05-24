@@ -33,6 +33,20 @@
 .related-note { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(18,32,51,.1); }
 @media(max-width:900px) { .product-detail-layout { grid-template-columns: 1fr; } .structure-panel { min-height: 320px; } .detail-facts { grid-template-columns: 1fr; } }
 .formula-text sub { font-size: .64em; line-height: 0; }
+
+.product-technical-section { padding-top: 0; }
+.product-technical-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 28px; align-items: stretch; }
+.technical-profile-card h2 { font-size: clamp(24px, 2.3vw, 34px); }
+.technical-list { margin-top: 18px; }
+.related-link-list { display: grid; gap: 10px; margin-top: 18px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.product-faq-section { padding-top: 0; }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .product-technical-grid { grid-template-columns: 1fr; } }
 </style>
 <script type="application/ld+json">
 {
@@ -92,8 +106,80 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "url": "https://www.winigenmaterials.com/contact.html",
-    "description": "Pricing available by request for quote."
+    "description": "Pricing available by request for quote.",
+    "seller": {
+      "@id": "https://www.winigenmaterials.com/#organization"
+    },
+    "businessFunction": "https://purl.org/goodrelations/v1#Sell",
+    "itemCondition": "https://schema.org/NewCondition"
+  },
+  "manufacturer": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "seller": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Battery research and development teams"
+  },
+  "applicationCategory": "Battery Solvent Applications",
+  "keywords": [
+    "Dimethyl carbonate",
+    "DMC",
+    "Solvent",
+    "Battery Solvents",
+    "battery materials",
+    "electrolyte development",
+    "RFQ"
+  ],
+  "subjectOf": {
+    "@id": "https://www.winigenmaterials.com/products/dimethyl-carbonate-dmc.html#webpage"
+  },
+  "isRelatedTo": {
+    "@id": "https://www.winigenmaterials.com/products/battery-solvents.html#family"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/products/dimethyl-carbonate-dmc.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Dimethyl carbonate (DMC) used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dimethyl carbonate (DMC) is listed for battery electrolyte solvent blending and custom electrolyte formulation. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the CAS number for Dimethyl carbonate (DMC)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listed CAS number for Dimethyl carbonate (DMC) is 616-38-6."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What specifications are listed for Dimethyl carbonate (DMC)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The current listed specifications include Property: < 100ppm water; Property: Battery material grade; Physical: Colorless transparent liquid.. Final specifications, documentation, and available quantity can be confirmed during RFQ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request a quote for Dimethyl carbonate (DMC)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for Dimethyl carbonate (DMC)."
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -117,6 +203,12 @@
     {
       "@type": "ListItem",
       "position": 3,
+      "name": "Battery Solvents",
+      "item": "https://www.winigenmaterials.com/products/battery-solvents.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
       "name": "Dimethyl carbonate (DMC)",
       "item": "https://www.winigenmaterials.com/products/dimethyl-carbonate-dmc.html"
     }
@@ -136,7 +228,7 @@
 <main>
   <section class="section dark product-detail-hero">
     <div class="container section-title">
-      <div class="breadcrumb"><a href="../products.html">Products</a> / Battery Solvents / DMC</div>
+      <div class="breadcrumb"><a href="../products.html">Products</a> / <a href="battery-solvents.html">Battery Solvents</a> / DMC</div>
       <p class="eyebrow">Solvent</p>
       <h1>Dimethyl carbonate (DMC)</h1>
       <p>Solvent available by request for quote from Winigen Materials.</p>
@@ -166,10 +258,52 @@
         </ul>
         <div class="detail-actions">
           <a class="btn" href="../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=Dimethyl%20carbonate%20(DMC)&amp;quantity_scale=100%20g&amp;message=I%20would%20like%20to%20request%20a%20quote%20for%20Dimethyl%20carbonate%20(DMC).%20Product%20category%3A%20Solvent.%20Target%20specifications%3A%20%3C%20100ppm%20water%3B%20Battery%20material%20grade%3B%20Colorless%20transparent%20liquid.">Request Quote</a>
-          <a class="btn secondary" href="../products.html#solvents">Back to Battery Solvents</a>
+          <a class="btn secondary" href="battery-solvents.html">Back to Battery Solvents</a>
         </div>
-        <p class="related-note">For related materials, review the product catalog or contact us for formulation and quantity support.</p>
       </article>
+    </div>
+  </section>
+  <section class="section product-technical-section" id="technical-profile">
+    <div class="container product-technical-grid">
+      <article class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Technical Profile</p>
+        <h2>Battery Solvent Applications</h2>
+        <p>Dimethyl carbonate (<span class="formula-text">C<sub>3</sub>H<sub>6</sub>O<sub>3</sub></span>) is a battery solvent for electrolyte blending, low-moisture formulation work, and compatibility screening. It can be evaluated in lithium-ion, sodium-ion, and specialty electrolyte systems where solvent ratio, viscosity, wetting, and electrochemical stability affect performance.</p>
+        <ul class="spec-list technical-list">
+          <li>Low-moisture electrolyte solvent blending</li>
+          <li>Carbonate, ether, nitrile, or fluorinated solvent-system development</li>
+          <li>Lithium-ion and sodium-ion electrolyte formulation studies</li>
+          <li>Custom electrolyte baselines and application-specific screening</li>
+        </ul>
+      </article>
+      <aside class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Related Materials</p>
+        <h2>Explore Similar Products</h2>
+        <p>Use these related pages to compare materials by category, chemistry, and application fit.</p>
+        <div class="related-link-list">
+          <a href="battery-solvents.html">Battery Solvents overview</a>
+          <a href="1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html">1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether (TTE)</a>
+          <a href="1-2-dimethoxyethane-dme.html">1,2-Dimethoxyethane (DME)</a>
+          <a href="2-2-difluoroethyl-acetate-dfea.html">2,2-Difluoroethyl acetate (DFEA)</a>
+          <a href="acetonitrile-an.html">Acetonitrile (AN)</a>
+          <a href="../products.html">Full product catalog</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section product-faq-section" id="product-faq">
+    <div class="container">
+      <div class="section-title">
+        <p class="eyebrow">Product FAQ</p>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is Dimethyl carbonate (DMC) used for?</summary><p>Dimethyl carbonate (DMC) is listed for battery electrolyte solvent blending and custom electrolyte formulation. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions.</p></details>
+        <details><summary>What is the CAS number for Dimethyl carbonate (DMC)?</summary><p>The listed CAS number for Dimethyl carbonate (DMC) is 616-38-6.</p></details>
+        <details><summary>What specifications are listed for Dimethyl carbonate (DMC)?</summary><p>The current listed specifications include Property: &lt; 100ppm water; Property: Battery material grade; Physical: Colorless transparent liquid.. Final specifications, documentation, and available quantity can be confirmed during RFQ.</p></details>
+        <details><summary>Can I request a quote for Dimethyl carbonate (DMC)?</summary><p>Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for Dimethyl carbonate (DMC).</p></details>
+      </div>
     </div>
   </section>
 </main>

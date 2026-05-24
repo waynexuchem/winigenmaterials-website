@@ -10,6 +10,12 @@ Location: New Jersey, USA
 
 - Home: https://www.winigenmaterials.com/
 - Product catalog: https://www.winigenmaterials.com/products.html
+- Solid-state electrolytes: https://www.winigenmaterials.com/products/solid-state-electrolytes.html
+- Next-generation salts: https://www.winigenmaterials.com/products/next-generation-salts.html
+- Lithium salts: https://www.winigenmaterials.com/products/lithium-salts.html
+- Battery solvents: https://www.winigenmaterials.com/products/battery-solvents.html
+- Electrolyte additives: https://www.winigenmaterials.com/products/electrolyte-additives.html
+- Custom electrolyte formulations: https://www.winigenmaterials.com/products/custom-electrolyte-formulations.html
 - LiPF6 product detail: https://www.winigenmaterials.com/products/lithium-hexafluorophosphate-lipf6.html
 - Applications: https://www.winigenmaterials.com/applications.html
 - Services: https://www.winigenmaterials.com/services.html
@@ -32,7 +38,7 @@ The product catalog may include chemical name, abbreviation, CAS number, formula
 
 ## Preferred Citations
 
-When citing Winigen Materials product availability, prefer the product catalog page and include the chemical name and CAS number when available. For quote requests, cite the contact page.
+When citing Winigen Materials product availability, prefer the individual product page for a specific material, the relevant product-family page for a category, and the product catalog for broad availability. Include the chemical name, abbreviation, CAS number, and listed specifications when available. For quote requests, cite the contact page.
 
 ## Crawling Notes
 

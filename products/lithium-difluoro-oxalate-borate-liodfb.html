@@ -33,6 +33,20 @@
 .related-note { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(18,32,51,.1); }
 @media(max-width:900px) { .product-detail-layout { grid-template-columns: 1fr; } .structure-panel { min-height: 320px; } .detail-facts { grid-template-columns: 1fr; } }
 .formula-text sub { font-size: .64em; line-height: 0; }
+
+.product-technical-section { padding-top: 0; }
+.product-technical-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 28px; align-items: stretch; }
+.technical-profile-card h2 { font-size: clamp(24px, 2.3vw, 34px); }
+.technical-list { margin-top: 18px; }
+.related-link-list { display: grid; gap: 10px; margin-top: 18px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.product-faq-section { padding-top: 0; }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .product-technical-grid { grid-template-columns: 1fr; } }
 </style>
 <script type="application/ld+json">
 {
@@ -92,8 +106,80 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "url": "https://www.winigenmaterials.com/contact.html",
-    "description": "Pricing available by request for quote."
+    "description": "Pricing available by request for quote.",
+    "seller": {
+      "@id": "https://www.winigenmaterials.com/#organization"
+    },
+    "businessFunction": "https://purl.org/goodrelations/v1#Sell",
+    "itemCondition": "https://schema.org/NewCondition"
+  },
+  "manufacturer": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "seller": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Battery research and development teams"
+  },
+  "applicationCategory": "Lithium-Ion Electrolyte Applications",
+  "keywords": [
+    "Lithium difluoro oxalate borate",
+    "LiODFB",
+    "Lithium Salt",
+    "Lithium Salts",
+    "battery materials",
+    "electrolyte development",
+    "RFQ"
+  ],
+  "subjectOf": {
+    "@id": "https://www.winigenmaterials.com/products/lithium-difluoro-oxalate-borate-liodfb.html#webpage"
+  },
+  "isRelatedTo": {
+    "@id": "https://www.winigenmaterials.com/products/lithium-salts.html#family"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/products/lithium-difluoro-oxalate-borate-liodfb.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Lithium difluoro oxalate borate (LiODFB) used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lithium difluoro oxalate borate (LiODFB) is listed for lithium-ion electrolyte formulation, salt screening, and battery research workflows. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the CAS number for Lithium difluoro oxalate borate (LiODFB)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listed CAS number for Lithium difluoro oxalate borate (LiODFB) is 409071-16-5."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What specifications are listed for Lithium difluoro oxalate borate (LiODFB)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The current listed specifications include Property: Battery grade; Property: > 99.9% purity; Property: <= 50ppm water. Final specifications, documentation, and available quantity can be confirmed during RFQ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request a quote for Lithium difluoro oxalate borate (LiODFB)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for Lithium difluoro oxalate borate (LiODFB)."
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -117,6 +203,12 @@
     {
       "@type": "ListItem",
       "position": 3,
+      "name": "Lithium Salts",
+      "item": "https://www.winigenmaterials.com/products/lithium-salts.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
       "name": "Lithium difluoro oxalate borate (LiODFB)",
       "item": "https://www.winigenmaterials.com/products/lithium-difluoro-oxalate-borate-liodfb.html"
     }
@@ -136,7 +228,7 @@
 <main>
   <section class="section dark product-detail-hero">
     <div class="container section-title">
-      <div class="breadcrumb"><a href="../products.html">Products</a> / Lithium Salts / LiODFB</div>
+      <div class="breadcrumb"><a href="../products.html">Products</a> / <a href="lithium-salts.html">Lithium Salts</a> / LiODFB</div>
       <p class="eyebrow">Lithium Salt</p>
       <h1>Lithium difluoro oxalate borate (LiODFB)</h1>
       <p>Lithium Salt available by request for quote from Winigen Materials.</p>
@@ -166,10 +258,52 @@
         </ul>
         <div class="detail-actions">
           <a class="btn" href="../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=Lithium%20difluoro%20oxalate%20borate%20(LiODFB)&amp;quantity_scale=100%20g&amp;message=I%20would%20like%20to%20request%20a%20quote%20for%20Lithium%20difluoro%20oxalate%20borate%20(LiODFB).%20Product%20category%3A%20Lithium%20Salt.%20Target%20specifications%3A%20Battery%20grade%3B%20%3E%2099.9%25%20purity%3B%20%3C%3D%2050ppm%20water.">Request Quote</a>
-          <a class="btn secondary" href="../products.html#salts">Back to Lithium Salts</a>
+          <a class="btn secondary" href="lithium-salts.html">Back to Lithium Salts</a>
         </div>
-        <p class="related-note">For related materials, review the product catalog or contact us for formulation and quantity support.</p>
       </article>
+    </div>
+  </section>
+  <section class="section product-technical-section" id="technical-profile">
+    <div class="container product-technical-grid">
+      <article class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Technical Profile</p>
+        <h2>Lithium-Ion Electrolyte Applications</h2>
+        <p>Lithium difluoro oxalate borate (C2BF2LiO4) is a lithium electrolyte salt for lithium-ion electrolyte formulation, additive screening, and battery materials research. Winigen Materials lists this material for RFQ-based supply where low moisture, purity, and compatibility with carbonate or specialty solvent systems are key selection criteria.</p>
+        <ul class="spec-list technical-list">
+          <li>Lithium-ion electrolyte formulation and salt screening</li>
+          <li>Carbonate, ether, or fluorinated solvent blend evaluation</li>
+          <li>Cell-development studies where low water content is important</li>
+          <li>Comparison with LiFSI, LiTFSI, LiBF4, and other lithium salts</li>
+        </ul>
+      </article>
+      <aside class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Related Materials</p>
+        <h2>Explore Similar Products</h2>
+        <p>Use these related pages to compare materials by category, chemistry, and application fit.</p>
+        <div class="related-link-list">
+          <a href="lithium-salts.html">Lithium Salts overview</a>
+          <a href="lithium-bis-fluorosulfonyl-imide-lifsi.html">Lithium bis(fluorosulfonyl)imide (LiFSI)</a>
+          <a href="lithium-bis-oxalato-borate-libob.html">Lithium bis(oxalato)borate (LiBOB)</a>
+          <a href="lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.html">Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI)</a>
+          <a href="lithium-difluorophosphate-lipo-2-f-2.html">Lithium difluorophosphate (LiPO2F2)</a>
+          <a href="../products.html">Full product catalog</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section product-faq-section" id="product-faq">
+    <div class="container">
+      <div class="section-title">
+        <p class="eyebrow">Product FAQ</p>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is Lithium difluoro oxalate borate (LiODFB) used for?</summary><p>Lithium difluoro oxalate borate (LiODFB) is listed for lithium-ion electrolyte formulation, salt screening, and battery research workflows. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions.</p></details>
+        <details><summary>What is the CAS number for Lithium difluoro oxalate borate (LiODFB)?</summary><p>The listed CAS number for Lithium difluoro oxalate borate (LiODFB) is 409071-16-5.</p></details>
+        <details><summary>What specifications are listed for Lithium difluoro oxalate borate (LiODFB)?</summary><p>The current listed specifications include Property: Battery grade; Property: &gt; 99.9% purity; Property: &lt;= 50ppm water. Final specifications, documentation, and available quantity can be confirmed during RFQ.</p></details>
+        <details><summary>Can I request a quote for Lithium difluoro oxalate borate (LiODFB)?</summary><p>Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for Lithium difluoro oxalate borate (LiODFB).</p></details>
+      </div>
     </div>
   </section>
 </main>

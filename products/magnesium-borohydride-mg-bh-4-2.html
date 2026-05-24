@@ -33,6 +33,20 @@
 .related-note { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(18,32,51,.1); }
 @media(max-width:900px) { .product-detail-layout { grid-template-columns: 1fr; } .structure-panel { min-height: 320px; } .detail-facts { grid-template-columns: 1fr; } }
 .formula-text sub { font-size: .64em; line-height: 0; }
+
+.product-technical-section { padding-top: 0; }
+.product-technical-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 28px; align-items: stretch; }
+.technical-profile-card h2 { font-size: clamp(24px, 2.3vw, 34px); }
+.technical-list { margin-top: 18px; }
+.related-link-list { display: grid; gap: 10px; margin-top: 18px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.product-faq-section { padding-top: 0; }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .product-technical-grid { grid-template-columns: 1fr; } }
 </style>
 <script type="application/ld+json">
 {
@@ -92,8 +106,80 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "url": "https://www.winigenmaterials.com/contact.html",
-    "description": "Pricing available by request for quote."
+    "description": "Pricing available by request for quote.",
+    "seller": {
+      "@id": "https://www.winigenmaterials.com/#organization"
+    },
+    "businessFunction": "https://purl.org/goodrelations/v1#Sell",
+    "itemCondition": "https://schema.org/NewCondition"
+  },
+  "manufacturer": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "seller": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Battery research and development teams"
+  },
+  "applicationCategory": "Next-Generation Electrolyte Applications",
+  "keywords": [
+    "Magnesium borohydride",
+    "Mg(BH 4 ) 2",
+    "Next-Gen Salt",
+    "Next-Generation Salts",
+    "battery materials",
+    "electrolyte development",
+    "RFQ"
+  ],
+  "subjectOf": {
+    "@id": "https://www.winigenmaterials.com/products/magnesium-borohydride-mg-bh-4-2.html#webpage"
+  },
+  "isRelatedTo": {
+    "@id": "https://www.winigenmaterials.com/products/next-generation-salts.html#family"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/products/magnesium-borohydride-mg-bh-4-2.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Magnesium borohydride (Mg(BH 4 ) 2) used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Magnesium borohydride (Mg(BH 4 ) 2) is listed for next-generation electrolyte formulation, alternative-cation battery research, and advanced salt screening. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the CAS number for Magnesium borohydride (Mg(BH 4 ) 2)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listed CAS number for Magnesium borohydride (Mg(BH 4 ) 2) is 16903-37-0."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What specifications are listed for Magnesium borohydride (Mg(BH 4 ) 2)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The current listed specifications include Property: Battery grade; Property: > 99.9% purity; Property: <= 50ppm water. Final specifications, documentation, and available quantity can be confirmed during RFQ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request a quote for Magnesium borohydride (Mg(BH 4 ) 2)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for Magnesium borohydride (Mg(BH 4 ) 2)."
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -117,6 +203,12 @@
     {
       "@type": "ListItem",
       "position": 3,
+      "name": "Next-Generation Salts",
+      "item": "https://www.winigenmaterials.com/products/next-generation-salts.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
       "name": "Magnesium borohydride (Mg(BH 4 ) 2)",
       "item": "https://www.winigenmaterials.com/products/magnesium-borohydride-mg-bh-4-2.html"
     }
@@ -136,7 +228,7 @@
 <main>
   <section class="section dark product-detail-hero">
     <div class="container section-title">
-      <div class="breadcrumb"><a href="../products.html">Products</a> / Next-Generation Salts / <span class="formula-text">Mg(BH<sub>4</sub>)<sub>2</sub></span></div>
+      <div class="breadcrumb"><a href="../products.html">Products</a> / <a href="next-generation-salts.html">Next-Generation Salts</a> / <span class="formula-text">Mg(BH<sub>4</sub>)<sub>2</sub></span></div>
       <p class="eyebrow">Next-Gen Salt</p>
       <h1>Magnesium borohydride (<span class="formula-text">Mg(BH<sub>4</sub>)<sub>2</sub></span>)</h1>
       <p>Next-Gen Salt available by request for quote from Winigen Materials.</p>
@@ -166,10 +258,52 @@
         </ul>
         <div class="detail-actions">
           <a class="btn" href="../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=Magnesium%20borohydride%20(Mg(BH4)2)&amp;quantity_scale=100%20g&amp;message=I%20would%20like%20to%20request%20a%20quote%20for%20Magnesium%20borohydride%20(Mg(BH4)2).%20Product%20category%3A%20Next-Gen%20Salt.%20Target%20specifications%3A%20Battery%20grade%3B%20%3E%2099.9%25%20purity%3B%20%3C%3D%2050ppm%20water.">Request Quote</a>
-          <a class="btn secondary" href="../products.html#next-gen">Back to Next-Generation Salts</a>
+          <a class="btn secondary" href="next-generation-salts.html">Back to Next-Generation Salts</a>
         </div>
-        <p class="related-note">For related materials, review the product catalog or contact us for formulation and quantity support.</p>
       </article>
+    </div>
+  </section>
+  <section class="section product-technical-section" id="technical-profile">
+    <div class="container product-technical-grid">
+      <article class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Technical Profile</p>
+        <h2>Next-Generation Electrolyte Applications</h2>
+        <p>Magnesium borohydride (<span class="formula-text">Mg(BH<sub>4</sub>)<sub>2</sub></span>) is listed for next-generation electrolyte research, including sodium-ion, magnesium, potassium, and alternative-cation systems. It is suited to early-stage formulation screening where salt identity, water specification, and electrochemical compatibility guide down-selection.</p>
+        <ul class="spec-list technical-list">
+          <li>Alternative-cation electrolyte formulation and screening</li>
+          <li>Sodium-ion, magnesium, or potassium battery research programs</li>
+          <li>Advanced salt comparison against conventional lithium electrolyte systems</li>
+          <li>RFQ sourcing for research, scale-up evaluation, and custom formulation work</li>
+        </ul>
+      </article>
+      <aside class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Related Materials</p>
+        <h2>Explore Similar Products</h2>
+        <p>Use these related pages to compare materials by category, chemistry, and application fit.</p>
+        <div class="related-link-list">
+          <a href="next-generation-salts.html">Next-Generation Salts overview</a>
+          <a href="magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html">Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI)2)</a>
+          <a href="potassium-bis-fluorosulfonyl-imide-kfsi.html">Potassium bis(fluorosulfonyl)imide (KFSI)</a>
+          <a href="potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html">Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI)</a>
+          <a href="potassium-hexafluorophosphate-kpf-6.html">Potassium hexafluorophosphate (KPF6)</a>
+          <a href="../products.html">Full product catalog</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section product-faq-section" id="product-faq">
+    <div class="container">
+      <div class="section-title">
+        <p class="eyebrow">Product FAQ</p>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is Magnesium borohydride (Mg(BH 4 ) 2) used for?</summary><p>Magnesium borohydride (Mg(BH 4 ) 2) is listed for next-generation electrolyte formulation, alternative-cation battery research, and advanced salt screening. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions.</p></details>
+        <details><summary>What is the CAS number for Magnesium borohydride (Mg(BH 4 ) 2)?</summary><p>The listed CAS number for Magnesium borohydride (Mg(BH 4 ) 2) is 16903-37-0.</p></details>
+        <details><summary>What specifications are listed for Magnesium borohydride (Mg(BH 4 ) 2)?</summary><p>The current listed specifications include Property: Battery grade; Property: &gt; 99.9% purity; Property: &lt;= 50ppm water. Final specifications, documentation, and available quantity can be confirmed during RFQ.</p></details>
+        <details><summary>Can I request a quote for Magnesium borohydride (Mg(BH 4 ) 2)?</summary><p>Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for Magnesium borohydride (Mg(BH 4 ) 2).</p></details>
+      </div>
     </div>
   </section>
 </main>

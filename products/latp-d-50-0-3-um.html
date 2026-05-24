@@ -38,6 +38,20 @@
 .solid-material-visual::after { content: none; }
 .solid-material-label { padding: 28px 24px 18px; color: var(--navy); background: rgba(255,255,255,.72); font-family: Manrope, Inter, sans-serif; font-size: clamp(26px, 4.8vw, 42px); font-weight: 900; line-height: 1.05; text-align: center; }
 @media(max-width:900px) { .solid-material-visual { grid-template-rows: auto minmax(190px, 1fr); } .solid-material-visual img { min-height: 190px; } }
+
+.product-technical-section { padding-top: 0; }
+.product-technical-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 28px; align-items: stretch; }
+.technical-profile-card h2 { font-size: clamp(24px, 2.3vw, 34px); }
+.technical-list { margin-top: 18px; }
+.related-link-list { display: grid; gap: 10px; margin-top: 18px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.product-faq-section { padding-top: 0; }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .product-technical-grid { grid-template-columns: 1fr; } }
 </style>
 <script type="application/ld+json">
 {
@@ -85,8 +99,80 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "url": "https://www.winigenmaterials.com/contact.html",
-    "description": "Pricing available by request for quote."
+    "description": "Pricing available by request for quote.",
+    "seller": {
+      "@id": "https://www.winigenmaterials.com/#organization"
+    },
+    "businessFunction": "https://purl.org/goodrelations/v1#Sell",
+    "itemCondition": "https://schema.org/NewCondition"
+  },
+  "manufacturer": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "seller": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Battery research and development teams"
+  },
+  "applicationCategory": "Solid-State Battery Research Applications",
+  "keywords": [
+    "LATP",
+    null,
+    "Solid-State Oxide",
+    "Solid-State Materials",
+    "battery materials",
+    "electrolyte development",
+    "RFQ"
+  ],
+  "subjectOf": {
+    "@id": "https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html#webpage"
+  },
+  "isRelatedTo": {
+    "@id": "https://www.winigenmaterials.com/products/solid-state-electrolytes.html#family"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is LATP used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LATP is listed for solid-state battery research, conductivity screening, pressed pellets or discs, and composite electrode development. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What formula is listed for LATP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listed formula for LATP is LATP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What specifications are listed for LATP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The current listed specifications include Particle size: D 50 ~0.3 um; Electronic: <=10 -5 mS/cm; Ionic: >0.5 mS/cm - cold press. Final specifications, documentation, and available quantity can be confirmed during RFQ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request a quote for LATP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for LATP."
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -110,6 +196,12 @@
     {
       "@type": "ListItem",
       "position": 3,
+      "name": "Solid-State Electrolytes",
+      "item": "https://www.winigenmaterials.com/products/solid-state-electrolytes.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
       "name": "LATP",
       "item": "https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html"
     }
@@ -129,7 +221,7 @@
 <main>
   <section class="section dark product-detail-hero">
     <div class="container section-title">
-      <div class="breadcrumb"><a href="../products.html">Products</a> / Solid-State Materials / LATP</div>
+      <div class="breadcrumb"><a href="../products.html">Products</a> / <a href="solid-state-electrolytes.html">Solid-State Electrolytes</a> / LATP</div>
       <p class="eyebrow">Solid-State Oxide</p>
       <h1>LATP</h1>
       <p>Solid-State Oxide available by request for quote from Winigen Materials.</p>
@@ -160,10 +252,48 @@
         </ul>
         <div class="detail-actions">
           <a class="btn" href="../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=LATP&amp;quantity_scale=100%20g&amp;message=I%20would%20like%20to%20request%20a%20quote%20for%20LATP.%20Product%20category%3A%20Solid-State%20Oxide.%20Target%20specifications%3A%20Particle%20size%3A%20D50%20~0.3%20um%3B%20%3C%3D10%5E-5%20mS%2Fcm%3B%20%3E0.5%20mS%2Fcm%20-%20cold%20press.">Request Quote</a>
-          <a class="btn secondary" href="../products.html#solid-state">Back to Solid-State Materials</a>
+          <a class="btn secondary" href="solid-state-electrolytes.html">Back to Solid-State Electrolytes</a>
         </div>
-        <p class="related-note">For related materials, review the product catalog or contact us for formulation and quantity support.</p>
       </article>
+    </div>
+  </section>
+  <section class="section product-technical-section" id="technical-profile">
+    <div class="container product-technical-grid">
+      <article class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Technical Profile</p>
+        <h2>Solid-State Battery Research Applications</h2>
+        <p>LATP is positioned for solid-state electrolyte research where ionic conductivity, particle size, and cold-press behavior are important screening variables. It can support powder evaluation, pellet or disc preparation, composite electrode development, and comparative studies across sulfide, oxide, and halide systems.</p>
+        <ul class="spec-list technical-list">
+          <li>Solid electrolyte powder screening and pressed-disc evaluation</li>
+          <li>Composite cathode and separator-layer development</li>
+          <li>Ionic conductivity benchmarking under cold-press conditions</li>
+          <li>Research workflows for sulfide, oxide, or halide solid-state battery systems</li>
+        </ul>
+      </article>
+      <aside class="detail-panel technical-profile-card">
+        <p class="detail-kicker">Related Materials</p>
+        <h2>Explore Similar Products</h2>
+        <p>Use these related pages to compare materials by category, chemistry, and application fit.</p>
+        <div class="related-link-list">
+          <a href="solid-state-electrolytes.html">Solid-State Electrolytes overview</a>
+          <a href="../products.html">Full product catalog</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section product-faq-section" id="product-faq">
+    <div class="container">
+      <div class="section-title">
+        <p class="eyebrow">Product FAQ</p>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is LATP used for?</summary><p>LATP is listed for solid-state battery research, conductivity screening, pressed pellets or discs, and composite electrode development. Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions.</p></details>
+        <details><summary>What formula is listed for LATP?</summary><p>The listed formula for LATP is LATP.</p></details>
+        <details><summary>What specifications are listed for LATP?</summary><p>The current listed specifications include Particle size: D 50 ~0.3 um; Electronic: &lt;=10 -5 mS/cm; Ionic: &gt;0.5 mS/cm - cold press. Final specifications, documentation, and available quantity can be confirmed during RFQ.</p></details>
+        <details><summary>Can I request a quote for LATP?</summary><p>Yes. Use the request quote button on this page to pre-fill the product interest, category, and target specifications for LATP.</p></details>
+      </div>
     </div>
   </section>
 </main>

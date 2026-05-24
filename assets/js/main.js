@@ -1,6 +1,12 @@
-const toggle=document.querySelector('.mobile-toggle');
-const menu=document.querySelector('.mobile-menu');
-if(toggle&&menu){toggle.addEventListener('click',()=>menu.classList.toggle('open'));}
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.querySelector('.mobile-menu');
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+});
 
 // ===============================
 // RFQ Prefill from Product Cards
