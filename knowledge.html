@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knowledge Center | Winigen Materials</title>
-<meta name="description" content="Technical insights on lithium-ion electrolytes, lithium salts, solid-state batteries, electrolyte additives, and next-generation energy storage materials.">
+<meta name="description" content="Knowledge hub for lithium salts, LiFSI and LiPF6 electrolytes, solid-state electrolyte materials, electrolyte additives, and low-temperature battery formulation.">
 <link rel="canonical" href="https://www.winigenmaterials.com/knowledge.html">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
   "name": "Winigen Materials",
   "url": "https://www.winigenmaterials.com/",
   "logo": "https://www.winigenmaterials.com/assets/images/winigen-logo.png",
+  "sameAs": ["https://www.linkedin.com/company/118914606/"],
   "description": "Winigen Materials supplies battery-grade electrolytes, lithium salts, solvents, additives, and solid-state battery materials for lithium-ion and next-generation energy storage systems.",
   "foundingLocation": {
     "@type": "Place",
@@ -128,6 +129,11 @@
 .knowledge-card p:first-of-type {
   margin-top: 0;
 }
+.knowledge-card h2 a { color: inherit; text-decoration: none; }
+.knowledge-card h2 a:hover { color: var(--blue); }
+.related-link-list { display: grid; gap: 10px; margin-top: 18px; }
+.related-link-list a { display: inline-flex; width: fit-content; padding: 11px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
 
 @media (max-width: 900px) {
   .knowledge-grid {
@@ -157,15 +163,15 @@
   <div class="container section-title knowledge-intro">
     <h1>Battery Materials Knowledge Center</h1>
     <p>
-      Technical insights on electrolyte chemistry, lithium salts, additive systems, solid-state materials, and next-generation battery development.
+      Technical articles on lithium salt selection, LiFSI and LiPF6 electrolyte systems, solid-state electrolyte materials, SEI/CEI additives, and low-temperature battery formulation.
     </p>
 
     <div class="knowledge-pill-row">
-      <a class="knowledge-pill" href="#lifsi-lithium-metal">Electrolytes</a>
-      <a class="knowledge-pill" href="#salt-comparison">Lithium Salts</a>
-      <a class="knowledge-pill" href="#solid-state-challenges">Solid-State Batteries</a>
-      <a class="knowledge-pill" href="#silicon-additives">Silicon Anodes</a>
-      <a class="knowledge-pill" href="#low-temperature-electrolytes">Low-Temperature Batteries</a>
+      <a class="knowledge-pill" href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI Electrolytes</a>
+      <a class="knowledge-pill" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Lithium Salts</a>
+      <a class="knowledge-pill" href="knowledge/solid-state-electrolyte-materials.html">Solid-State Batteries</a>
+      <a class="knowledge-pill" href="knowledge/electrolyte-additives-sei-cei.html">SEI/CEI Additives</a>
+      <a class="knowledge-pill" href="knowledge/low-temperature-electrolytes.html">Low-Temperature Batteries</a>
     </div>
   </div>
 </section>
@@ -173,70 +179,34 @@
 <section class="section">
   <div class="container knowledge-grid">
 
-    <article class="knowledge-card" id="lifsi-lithium-metal">
-      <h2>What is LiFSI and Why Is It Used in Lithium-Metal Batteries?</h2>
-      <p>
-        Lithium bis(fluorosulfonyl)imide (LiFSI) has become one of the most important lithium salts in advanced electrolyte development, particularly for lithium-metal and high-energy-density battery systems. Compared with conventional LiPF6 electrolytes, LiFSI often provides higher ionic conductivity, improved low-temperature performance, and more stable interphase formation on lithium-metal anodes.
-      </p>
-
-      <p>
-        LiFSI-based systems are widely studied for lithium-metal batteries because they can help generate robust SEI layers rich in inorganic species such as LiF. These interphases may reduce parasitic reactions and improve cycling stability under demanding conditions including high current density and lean electrolyte operation.
-      </p>
+    <article class="knowledge-card">
+      <h2><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 vs LiFSI vs LiTFSI: Choosing Lithium Salts for Electrolyte Development</a></h2>
+      <p>Compare LiPF6, LiFSI, and LiTFSI for lithium-ion, lithium-metal, fast-charge, and advanced electrolyte formulation work.</p>
+      <div class="related-link-list"><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Read article</a></div>
     </article>
 
-    <article class="knowledge-card" id="salt-comparison">
-      <h2>LiPF6 vs LiFSI vs LiTFSI: Key Electrolyte Differences</h2>
-      <p>
-        LiPF6 remains the dominant commercial lithium-ion electrolyte salt because of its balanced conductivity, passivation behavior, and compatibility with graphite-based lithium-ion systems. However, next-generation battery chemistries increasingly explore alternatives such as LiFSI and LiTFSI to improve thermal stability, conductivity, and electrochemical performance.
-      </p>
-
-      <p>
-        LiFSI is often favored for lithium-metal batteries and fast-charge systems due to strong ionic dissociation and beneficial interphase chemistry, while LiTFSI is known for excellent thermal stability and high electrochemical stability. Each salt also introduces different challenges related to corrosion, aluminum current collector compatibility, cost, moisture sensitivity, and long-term stability.
-      </p>
+    <article class="knowledge-card">
+      <h2><a href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI Electrolytes for Lithium-Metal and Fast-Charge Batteries</a></h2>
+      <p>Technical overview of LiFSI electrolyte use in lithium-metal, fast-charge, low-temperature, and high-energy battery development.</p>
+      <div class="related-link-list"><a href="knowledge/lifsi-lithium-metal-batteries.html">Read article</a></div>
     </article>
 
-    <article class="knowledge-card" id="solid-state-challenges">
-      <h2>Challenges in Solid-State Electrolyte Development</h2>
-      <p>
-        Solid-state batteries offer potential advantages in safety, energy density, and lithium-metal compatibility, but substantial materials and manufacturing challenges remain. Oxide electrolytes often suffer from brittleness and interfacial resistance, sulfide electrolytes may require strict moisture control and dry-room processing, while polymer systems historically struggle with room-temperature ionic conductivity.
-      </p>
-
-      <p>
-        Successful solid-state battery development requires balancing ionic conductivity, mechanical strength, interfacial stability, manufacturability, and electrochemical durability. Interfacial engineering, polymer design, electrolyte additives, and scalable process integration continue to be active areas of research and commercialization.
-      </p>
+    <article class="knowledge-card">
+      <h2><a href="knowledge/solid-state-electrolyte-materials.html">Solid-State Electrolyte Materials: Sulfide, Oxide, and Halide Screening</a></h2>
+      <p>Overview of sulfide, oxide, and halide solid-state electrolyte materials, particle size, conductivity screening, and battery research applications.</p>
+      <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-materials.html">Read article</a></div>
     </article>
 
-    <article class="knowledge-card" id="silicon-additives">
-      <h2>How Electrolyte Additives Improve Silicon-Anode Batteries</h2>
-      <p>
-        Silicon-containing anodes can significantly increase lithium-ion battery energy density, but large volume expansion during cycling creates major challenges for long-term stability. Electrolyte additives are commonly used to stabilize the SEI layer, reduce electrolyte decomposition, and improve cycle life under repeated silicon expansion and contraction.
-      </p>
-
-      <p>
-        Additives such as FEC, VC, PES, and various sulfur- or phosphorus-containing compounds are widely explored for silicon-rich systems. Proper additive selection may improve interphase flexibility, reduce impedance growth, and support high-capacity silicon-anode operation under demanding cycling conditions.
-      </p>
+    <article class="knowledge-card">
+      <h2><a href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems</a></h2>
+      <p>Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.</p>
+      <div class="related-link-list"><a href="knowledge/electrolyte-additives-sei-cei.html">Read article</a></div>
     </article>
 
-    <article class="knowledge-card" id="low-temperature-electrolytes">
-      <h2>Low-Temperature Electrolyte Design for Aerospace Batteries</h2>
-      <p>
-        Aerospace and extreme-environment battery systems require electrolyte formulations capable of operating under low-temperature conditions where ionic transport and interfacial kinetics become severely limited. Conventional carbonate electrolytes often suffer from increased viscosity, reduced conductivity, and lithium plating risks at sub-zero temperatures.
-      </p>
-
-      <p>
-        Advanced low-temperature electrolyte systems may incorporate specialized solvents, co-solvents, salts, and additives to improve conductivity and maintain stable electrode interfaces. Designing these systems requires balancing low-temperature performance with safety, high-voltage stability, and long-term durability.
-      </p>
-    </article>
-
-    <article class="knowledge-card" id="future-articles">
-      <h2>Future Technical Articles</h2>
-      <p>
-        The Winigen Materials Knowledge Center will continue expanding with technical discussions covering electrolyte formulation strategies, lithium-metal battery development, next-generation sodium-ion and magnesium-ion systems, solid-state battery processing, and practical materials considerations for research and pilot-scale implementation.
-      </p>
-
-      <p>
-        Additional future topics may include electrolyte wetting behavior, high-voltage cathode stability, fast-charging limitations, EIS interpretation, electrolyte additive screening, and interfacial engineering strategies for advanced energy storage systems.
-      </p>
+    <article class="knowledge-card">
+      <h2><a href="knowledge/low-temperature-electrolytes.html">Low-Temperature Electrolyte Design for Battery Research and Extreme Environments</a></h2>
+      <p>Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, and aerospace or cold-climate batteries.</p>
+      <div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
     </article>
 
   </div>
@@ -259,7 +229,7 @@
 
     <div>
       <h4>Contact</h4>
-      <p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p>
+      <p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p>
     </div>
   </div>
 </footer>
