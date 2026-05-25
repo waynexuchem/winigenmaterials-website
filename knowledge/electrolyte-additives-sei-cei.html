@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems | Winigen Materials</title>
+<meta name="description" content="Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.">
+<link rel="canonical" href="https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.article-hero { padding: 78px 0; }
+.article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 34px; align-items: start; }
+.article-main, .article-side { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
+.article-main p { line-height: 1.78; }
+.article-block { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(18,32,51,.1); }
+.article-list { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+.article-list li { position: relative; padding-left: 24px; color: #2b3950; line-height: 1.55; }
+.article-list li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.related-link-list { display: grid; gap: 10px; margin-top: 16px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.winigenmaterials.com/#organization",
+  "name": "Winigen Materials",
+  "url": "https://www.winigenmaterials.com/",
+  "logo": "https://www.winigenmaterials.com/assets/images/winigen-logo.png",
+  "sameAs": ["https://www.linkedin.com/company/118914606/"],
+  "description": "Winigen Materials supplies battery-grade lithium salts, low-moisture solvents, electrolyte additives, solid-state electrolytes, and formulation support for advanced battery R&D."
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#article",
+  "headline": "Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems",
+  "description": "Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.",
+  "url": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html",
+  "datePublished": "2026-05-25",
+  "dateModified": "2026-05-25",
+  "author": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "about": "Electrolyte Additives",
+  "mainEntityOfPage": {
+    "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#webpage"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are electrolyte additives used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are used to tune SEI and CEI formation, reduce parasitic reactions, improve cycle life, and support demanding voltage, rate, or temperature conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are additives only for lithium-ion batteries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Additive concepts also appear in sodium-ion, lithium-metal, silicon-anode, and other advanced electrolyte systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much additive is normally needed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Additive loading depends on the chemistry and target behavior, so screening should be done experimentally with the intended electrodes and cycling conditions."
+      }
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.winigenmaterials.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Knowledge",
+      "item": "https://www.winigenmaterials.com/knowledge.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems",
+      "item": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
+    <nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav>
+    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
+</header>
+<main>
+  <section class="section dark article-hero">
+    <div class="container section-title">
+      <div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / Electrolyte Additives</div>
+      <p class="eyebrow">Electrolyte Additives</p>
+      <h1>Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems</h1>
+      <p>Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <article class="article-main">
+        <p>Electrolyte additives are used in small amounts, but they can strongly affect SEI formation, CEI stability, gas generation, impedance growth, and cycle life. Additive screening is especially important for silicon-rich anodes, high-voltage cathodes, and aggressive fast-charge conditions.</p>
+        <section class="article-block"><h2>SEI and Silicon-Anode Additives</h2><p>Silicon anodes expand and contract during cycling, so the electrolyte must support a durable and flexible SEI. Additives such as FEC, VC, sulfur-containing additives, nitrile additives, and phosphorus-containing additives are often screened to reduce decomposition and impedance growth.</p></section>
+        <section class="article-block"><h2>CEI and High-Voltage Stability</h2><p>High-voltage cathodes place oxidative stress on electrolyte solvents and salts. Additives can help form cathode-electrolyte interphases, reduce transition-metal dissolution effects, and stabilize cycling under higher upper-cutoff voltages.</p></section>
+        <section class="article-block"><h2>How to Screen Additives</h2><p>A practical additive screen should compare baseline electrolyte, single-additive systems, and multi-additive blends using retention, EIS, gas behavior, low-temperature performance, and post-cycling diagnostics where available.</p></section>
+        <section class="article-block"><h2>Practical Screening Notes</h2><ul class="article-list">
+              <li>SEI additives support graphite, silicon, and lithium-metal interface stability.</li>
+              <li>CEI additives support high-voltage cathode and transition-metal-rich systems.</li>
+              <li>Additive packages should be tested against a baseline electrolyte, not only against each other.</li>
+        </ul></section>
+      </article>
+      <aside class="article-side">
+        <p class="eyebrow">Related Pages</p>
+        <h2>Continue Reading</h2>
+        <p>Use these product and family pages to connect the technical topic with available Winigen Materials products.</p>
+        <div class="related-link-list">
+            <a href="../products/electrolyte-additives.html">Electrolyte additives family</a>
+            <a href="../products/4-fluoro-1-3-dioxolan-2-one-fec.html">FEC product page</a>
+            <a href="../products/vinylene-carbonate-vc.html">VC product page</a>
+            <a href="../applications.html">Applications page</a>
+            <a href="../knowledge.html">Knowledge Center</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title"><p class="eyebrow">FAQ</p><h2>Common Questions</h2></div>
+      <div class="faq-list">
+          <details><summary>What are electrolyte additives used for?</summary><p>They are used to tune SEI and CEI formation, reduce parasitic reactions, improve cycle life, and support demanding voltage, rate, or temperature conditions.</p></details>
+          <details><summary>Are additives only for lithium-ion batteries?</summary><p>No. Additive concepts also appear in sodium-ion, lithium-metal, silicon-anode, and other advanced electrolyte systems.</p></details>
+          <details><summary>How much additive is normally needed?</summary><p>Additive loading depends on the chemistry and target behavior, so screening should be done experimentally with the intended electrodes and cycling conditions.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
