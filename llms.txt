@@ -1,10 +1,11 @@
 # Winigen Materials
 
-> Winigen Materials supplies battery materials, electrolyte salts, solvents, additives, solid-state electrolyte materials, and custom electrolyte formulations for energy storage research and development.
+> Winigen Materials supplies battery-grade lithium salts, next-generation salts, low-moisture solvents, electrolyte additives, solid-state electrolyte materials, and custom electrolyte formulations for lithium-ion, lithium-metal, silicon-anode, sodium-ion, magnesium-ion, potassium-ion, low-temperature, fast-charge, and solid-state battery research.
 
 Website: https://www.winigenmaterials.com/
 Contact: contact@winigenmaterials.com
 Location: New Jersey, USA
+LinkedIn: https://www.linkedin.com/company/118914606/
 
 ## Authoritative Pages
 
@@ -20,8 +21,16 @@ Location: New Jersey, USA
 - Applications: https://www.winigenmaterials.com/applications.html
 - Services: https://www.winigenmaterials.com/services.html
 - Quality: https://www.winigenmaterials.com/quality.html
-- Knowledge: https://www.winigenmaterials.com/knowledge.html
+- Knowledge hub: https://www.winigenmaterials.com/knowledge.html
 - Contact / RFQ: https://www.winigenmaterials.com/contact.html
+
+## Knowledge Articles
+
+- LiPF6 vs LiFSI vs LiTFSI: https://www.winigenmaterials.com/knowledge/lipf6-vs-lifsi-vs-litfsi.html
+- LiFSI electrolytes for lithium-metal batteries: https://www.winigenmaterials.com/knowledge/lifsi-lithium-metal-batteries.html
+- Solid-state electrolyte materials: https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-materials.html
+- Electrolyte additives for SEI and CEI: https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html
+- Low-temperature electrolyte design: https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html
 
 ## Product Categories
 
