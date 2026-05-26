@@ -171,3 +171,79 @@
 /* Keep the mobile dropdown out of desktop headers. */
 body .mobile-menu { display: none; }
 @media(max-width:900px) { body .mobile-menu.open { display: block; } }
+
+/* Keep breadcrumb schema in the HTML, but remove the visible "Parent / Child" line. */
+.breadcrumb { display: none !important; }
+
+/* Desktop product/knowledge dropdowns injected by assets/js/main.js. */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.nav-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown > a::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  right: -14px;
+  top: 100%;
+  height: 18px;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  z-index: 80;
+  display: grid;
+  min-width: 280px;
+  max-width: 340px;
+  padding: 10px;
+  background: rgba(255,255,255,.98);
+  border: 1px solid rgba(184,150,74,.28);
+  border-radius: 16px;
+  box-shadow: 0 20px 46px rgba(11,19,36,.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.nav-links .nav-dropdown-menu a {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: var(--navy) !important;
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.25;
+  text-shadow: none;
+  white-space: normal;
+}
+
+.nav-links .nav-dropdown-menu a:hover {
+  background: #f4f7fc;
+  color: var(--blue) !important;
+}
+
+.nav-links .nav-dropdown-menu a::after {
+  display: none;
+}
+
+@media(max-width:900px) {
+  .nav-dropdown-menu { display: none; }
+}
