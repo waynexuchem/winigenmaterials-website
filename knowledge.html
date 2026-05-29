@@ -4,242 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knowledge Center | Winigen Materials</title>
-<meta name="description" content="Knowledge hub for lithium salts, sodium-ion electrolytes, LiFSI and LiPF6 systems, solid-state electrolyte materials, electrolyte additives, and low-temperature battery formulation.">
+<meta name="description" content="Technical articles on lithium salts, sodium-ion electrolytes, LiFSI and LiPF6 systems, solid-state electrolyte materials, electrolyte additives, and low-temperature battery formulation.">
 <link rel="canonical" href="https://www.winigenmaterials.com/knowledge.html">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Winigen Materials",
-  "url": "https://www.winigenmaterials.com/",
-  "logo": "https://www.winigenmaterials.com/assets/images/winigen-logo.png",
-  "sameAs": ["https://www.linkedin.com/company/118914606/"],
-  "description": "Winigen Materials supplies battery-grade electrolytes, lithium salts, solvents, additives, and solid-state battery materials for lithium-ion and next-generation energy storage systems.",
-  "foundingLocation": {
-    "@type": "Place",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "New Jersey",
-      "addressCountry": "US"
-    }
-  },
-  "areaServed": "United States",
-  "knowsAbout": [
-    "Battery materials",
-    "Lithium-ion battery electrolytes",
-    "Lithium salts",
-    "Electrolyte additives",
-    "Solid-state battery materials",
-    "Sodium-ion battery materials",
-    "Magnesium-ion battery materials",
-    "Potassium-ion battery materials",
-    "Electrolyte formulation",
-    "Battery testing"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "contact@winigenmaterials.com",
-    "contactType": "sales and technical support",
-    "areaServed": "US",
-    "availableLanguage": ["English"]
-  }
-}
-</script>
-
-<style>
-.knowledge-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-  margin-top: 40px;
-}
-
-.knowledge-card {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 34px;
-  box-shadow: 0 12px 34px rgba(15,31,77,0.08);
-  border: 1px solid rgba(15,31,77,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.knowledge-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 48px rgba(15,31,77,0.12);
-}
-
-.knowledge-card h2 {
-  margin-bottom: 18px;
-  line-height: 1.2;
-}
-
-.knowledge-card p {
-  color: #4f5b72;
-  line-height: 1.78;
-}
-
-.knowledge-intro {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.knowledge-pill-row {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 28px;
-}
-
-.knowledge-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.14);
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.24);
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 0.95rem;
-  font-weight: 800;
-  text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.knowledge-pill:hover {
-  background: rgba(255,255,255,0.24);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.knowledge-card {
-  scroll-margin-top: 130px;
-}
-
-.knowledge-card h2 {
-  min-height: 118px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.knowledge-card p:first-of-type {
-  margin-top: 0;
-}
-.knowledge-card h2 a { color: inherit; text-decoration: none; }
-.knowledge-card h2 a:hover { color: var(--blue); }
-.related-link-list { display: grid; gap: 10px; margin-top: 18px; }
-.related-link-list a { display: inline-flex; width: fit-content; padding: 11px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
-.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
-
-@media (max-width: 900px) {
-  .knowledge-grid {
-    grid-template-columns: 1fr;
-  }
-  .knowledge-card h2 {
-    min-height: auto;
-  }
-}
-</style>
+<style>.knowledge-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; margin-top:40px; } .knowledge-card { background:#fff; border-radius:24px; padding:34px; box-shadow:0 12px 34px rgba(15,31,77,.08); border:1px solid rgba(15,31,77,.08); transition:transform .25s ease,box-shadow .25s ease; } .knowledge-card:hover { transform:translateY(-4px); box-shadow:0 20px 48px rgba(15,31,77,.12); } .knowledge-card h2 { min-height:118px; display:flex; align-items:flex-start; margin-bottom:18px; line-height:1.2; } .knowledge-card h2 a { color:inherit; text-decoration:none; } .knowledge-card h2 a:hover { color:var(--blue); } .knowledge-card p { color:#4f5b72; line-height:1.78; } .knowledge-intro { max-width:860px; margin:0 auto; } .knowledge-pill-row { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px; } .knowledge-pill { display:inline-flex; align-items:center; justify-content:center; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.24); border-radius:999px; padding:10px 18px; font-size:.95rem; font-weight:800; text-decoration:none; transition:background .25s ease,transform .25s ease; } .knowledge-pill:hover { background:rgba(255,255,255,.24); color:#fff; transform:translateY(-1px); } .related-link-list { display:grid; gap:10px; margin-top:18px; } .related-link-list a { display:inline-flex; width:fit-content; padding:11px 14px; border:1px solid rgba(18,32,51,.1); border-radius:12px; background:#f8fbff; color:var(--navy); font-weight:850; text-decoration:none; } @media(max-width:900px) { .knowledge-grid { grid-template-columns:1fr; } .knowledge-card h2 { min-height:auto; } }</style>
 </head>
-
 <body>
-
 <header class="header">
   <div class="container nav">
-    <a class="logo" href="/"><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
-    <nav class="nav-links"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a class="active" href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></nav>
+    <a class="logo" href=""><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
+    <nav class="nav-links"><a href="">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a class="active" href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></nav>
     <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
   </div>
-  <div class="mobile-menu"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a class="active" href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></div>
+  <div class="mobile-menu"><a href="">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a class="active" href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></div>
 </header>
-
 <main>
-
-<section class="section dark">
-  <div class="container section-title knowledge-intro">
-    <h1>Battery Materials Knowledge Center</h1>
-    <p>
-      Technical articles on lithium salt selection, sodium-ion electrolytes, LiFSI and LiPF6 electrolyte systems, solid-state electrolyte materials, SEI/CEI additives, and low-temperature battery formulation.
-    </p>
-
-    <div class="knowledge-pill-row">
-      <a class="knowledge-pill" href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI Electrolytes</a>
-      <a class="knowledge-pill" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Lithium Salts</a>
-      <a class="knowledge-pill" href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Electrolytes</a>
-      <a class="knowledge-pill" href="knowledge/solid-state-electrolyte-materials.html">Solid-State Batteries</a>
-      <a class="knowledge-pill" href="knowledge/electrolyte-additives-sei-cei.html">SEI/CEI Additives</a>
-      <a class="knowledge-pill" href="knowledge/low-temperature-electrolytes.html">Low-Temperature Batteries</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container knowledge-grid">
-
+<section class="section dark"><div class="container section-title knowledge-intro"><h1>Battery Materials Knowledge Center</h1><p>Technical articles on lithium salt selection, sodium-ion electrolytes, LiFSI and LiPF6 electrolyte systems, solid-state electrolyte materials, SEI/CEI additives, and low-temperature battery formulation.</p><div class="knowledge-pill-row"><a class="knowledge-pill" href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additives</a><a class="knowledge-pill" href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI Electrolytes</a><a class="knowledge-pill" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Lithium Salt Comparison</a><a class="knowledge-pill" href="knowledge/low-temperature-electrolytes.html">Low-Temperature Electrolytes</a><a class="knowledge-pill" href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Electrolytes</a><a class="knowledge-pill" href="knowledge/solid-state-electrolyte-materials.html">Solid-State Materials</a></div></div></section>
+<section class="section"><div class="container knowledge-grid">
     <article class="knowledge-card">
-      <h2><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 vs LiFSI vs LiTFSI: Choosing Lithium Salts for Electrolyte Development</a></h2>
-      <p>Compare LiPF6, LiFSI, and LiTFSI for lithium-ion, lithium-metal, fast-charge, and advanced electrolyte formulation work.</p>
-      <div class="related-link-list"><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Read article</a></div>
-    </article>
-
-    <article class="knowledge-card">
-      <h2><a href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI Electrolytes for Lithium-Metal and Fast-Charge Batteries</a></h2>
-      <p>Technical overview of LiFSI electrolyte use in lithium-metal, fast-charge, low-temperature, and high-energy battery development.</p>
-      <div class="related-link-list"><a href="knowledge/lifsi-lithium-metal-batteries.html">Read article</a></div>
-    </article>
-
-    <article class="knowledge-card">
-      <h2><a href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Electrolyte Materials: Salts, Solvents, and Additives</a></h2>
-      <p>Technical overview of sodium-ion electrolyte materials, including NaPF6, sodium borate salts, NaTFSI, solvent selection, additive screening, and water control.</p>
-      <div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-materials.html">Read article</a></div>
-    </article>
-
-    <article class="knowledge-card">
-      <h2><a href="knowledge/solid-state-electrolyte-materials.html">Solid-State Electrolyte Materials: Sulfide, Oxide, and Halide Screening</a></h2>
-      <p>Overview of sulfide, oxide, and halide solid-state electrolyte materials, particle size, conductivity screening, and battery research applications.</p>
-      <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-materials.html">Read article</a></div>
-    </article>
-
-    <article class="knowledge-card">
-      <h2><a href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems</a></h2>
-      <p>Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.</p>
+      <h2><a href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additives for SEI, CEI, Silicon Anodes, and High-Voltage Cathodes</a></h2>
+      <p>Learn how FEC, VC, sulfur-containing additives, nitrile additives, and phosphorus-containing additives affect SEI formation, CEI stability, gas generation, impedance growth, and cycle life in advanced lithium batteries.</p>
       <div class="related-link-list"><a href="knowledge/electrolyte-additives-sei-cei.html">Read article</a></div>
     </article>
-
+    <article class="knowledge-card">
+      <h2><a href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI for Lithium-Metal Batteries, Fast Charge, and Low-Temperature Electrolytes</a></h2>
+      <p>Learn why LiFSI is used in lithium-metal, fast-charge, low-temperature, and high-concentration battery electrolytes, including interphase formation, current-collector compatibility, and formulation strategy.</p>
+      <div class="related-link-list"><a href="knowledge/lifsi-lithium-metal-batteries.html">Read article</a></div>
+    </article>
+    <article class="knowledge-card">
+      <h2><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 vs LiFSI vs LiTFSI: How to Choose Lithium Electrolyte Salts for Battery Development</a></h2>
+      <p>Compare LiPF6, LiFSI, and LiTFSI for lithium-ion, lithium-metal, fast-charge, low-temperature, polymer, and specialty electrolyte development.</p>
+      <div class="related-link-list"><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Read article</a></div>
+    </article>
     <article class="knowledge-card">
       <h2><a href="knowledge/low-temperature-electrolytes.html">Low-Temperature Electrolyte Design for Battery Research and Extreme Environments</a></h2>
-      <p>Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, and aerospace or cold-climate batteries.</p>
+      <p>Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.</p>
       <div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
     </article>
-
-  </div>
-</section>
-
+    <article class="knowledge-card">
+      <h2><a href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Battery Electrolyte Materials: Sodium Salts, Solvents, Additives, and Water Control</a></h2>
+      <p>Learn how sodium salts such as NaPF6, NaTFSI, and NaODFB, along with solvents, additives, and water control, affect sodium-ion battery electrolyte performance.</p>
+      <div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-materials.html">Read article</a></div>
+    </article>
+    <article class="knowledge-card">
+      <h2><a href="knowledge/solid-state-electrolyte-materials.html">Solid-State Electrolyte Materials: Sulfide, Oxide, Halide, and Polymer Electrolyte Screening</a></h2>
+      <p>Compare sulfide, oxide, halide, polymer, and hybrid solid-state electrolyte materials for battery development, including ionic conductivity, particle size, moisture sensitivity, and interface compatibility.</p>
+      <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-materials.html">Read article</a></div>
+    </article>
+</div></section>
 </main>
-
-<footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <img src="assets/images/winigen-logo.png" alt="Winigen Materials logo">
-      <h3>Winigen Materials</h3>
-      <p>Battery Materials & Electrochemical Components</p>
-    </div>
-
-    <div>
-      <h4>Location</h4>
-      <p>New Jersey, USA</p>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/js/main.js"></script></body>
+<footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
+<script src="assets/js/main.js"></script>
+</body>
 </html>

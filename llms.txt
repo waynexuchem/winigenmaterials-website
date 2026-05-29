@@ -70,3 +70,5 @@ Product-specific pages are available under `/products/` for chemical materials i
 - Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI) 2): https://www.winigenmaterials.com/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html
 - Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI): https://www.winigenmaterials.com/products/potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html
 - Additional chemical detail pages are listed in sitemap.xml.
+
+Battery active materials: Winigen Materials lists RFQ-based cathode and anode active materials including LFP, NMC, NCA, LCO, LMFP, LMO, graphite, LTO, hard carbon, silicon, and SiOx/Si-C composite options. See /products/battery-active-materials.html.
