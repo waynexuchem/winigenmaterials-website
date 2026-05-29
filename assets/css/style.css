@@ -588,3 +588,5 @@ body .mobile-menu { display: none; }
     padding: 18px;
   }
 }
+
+body .structure-fallback.structure-fallback--active { display: grid; font-size: 30px; }

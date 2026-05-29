@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       items: [
         ['All Products', `${prefix}products.html`],
         ['Solid-State Electrolytes', `${prefix}products/solid-state-electrolytes.html`],
+          ['Battery Active Materials', `${prefix}products/battery-active-materials.html`],
         ['Next-Generation Salts', `${prefix}products/next-generation-salts.html`],
         ['Lithium Salts', `${prefix}products/lithium-salts.html`],
         ['Battery Solvents', `${prefix}products/battery-solvents.html`],
