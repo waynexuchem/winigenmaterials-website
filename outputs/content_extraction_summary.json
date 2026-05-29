@@ -1,0 +1,1870 @@
+{
+  "docx": [
+    {
+      "file": "Electrolyte Additives for SEI and CEI.docx",
+      "paragraph_count": 151,
+      "headings": [],
+      "first_paragraphs": [
+        {
+          "style": "Normal",
+          "text": "Electrolyte Additives for SEI, CEI, Silicon Anodes, and High-Voltage Cathodes"
+        },
+        {
+          "style": "Normal",
+          "text": "Electrolyte additives are used in small amounts, but they can strongly affect battery performance. A few weight percent of an additive may change solid-electrolyte interphase formation, cathode-electrolyte interphase stability, gas generation, impedance growth, lithium plating behavior, transition-metal dissolution effects, and long-term cycle life."
+        },
+        {
+          "style": "Normal",
+          "text": "Additive screening is especially important for silicon-rich anodes, graphite–silicon blends, lithium-metal cells, high-voltage cathodes, nickel-rich cathodes, and aggressive fast-charge conditions."
+        },
+        {
+          "style": "Normal",
+          "text": "For battery developers, the key question is not simply “which additive works best?” but rather which additive package fits the electrode chemistry, electrolyte salt, solvent blend, voltage window, formation protocol, and target operating condition."
+        },
+        {
+          "style": "Normal",
+          "text": "Why Electrolyte Additives Matter"
+        },
+        {
+          "style": "Normal",
+          "text": "Most lithium-ion and lithium-metal electrolytes are not optimized by the bulk solvent and salt alone. During early cycles, electrolyte components decompose at the anode and cathode surfaces to form passivation layers. These interphases can either protect the cell or accelerate failure."
+        },
+        {
+          "style": "Normal",
+          "text": "A successful additive may help:"
+        },
+        {
+          "style": "Normal",
+          "text": "SEI Additives for Graphite, Silicon, and Lithium-Metal Anodes"
+        },
+        {
+          "style": "Normal",
+          "text": "The solid-electrolyte interphase, or SEI, forms on the negative electrode during early cycling. A good SEI should be ionically conductive, electronically insulating, mechanically stable, and chemically protective."
+        },
+        {
+          "style": "Normal",
+          "text": "Silicon-rich anodes make SEI design especially difficult because silicon expands and contracts during lithiation and delithiation. This repeated volume change can crack the SEI, expose fresh surface, consume electrolyte, increase impedance, generate gas, and reduce cycle life."
+        },
+        {
+          "style": "Normal",
+          "text": "Common SEI-focused additive families include:"
+        },
+        {
+          "style": "Normal",
+          "text": "FEC is one of the most widely studied additives for silicon anodes. It has been reported to significantly improve the cyclability of silicon-based electrodes, although its detailed role in SEI formation depends on electrode design, electrolyte composition, and cycling conditions."
+        },
+        {
+          "style": "Normal",
+          "text": "VC and FEC are both common SEI additives, but they do not behave identically. Operando SEI studies show that both can change SEI thickness and mechanical properties, while the resulting passivation behavior can differ significantly depending on the electrode and electrolyte system."
+        },
+        {
+          "style": "Normal",
+          "text": "CEI Additives for High-Voltage Cathodes"
+        },
+        {
+          "style": "Normal",
+          "text": "The cathode-electrolyte interphase, or CEI, forms on the positive electrode surface. At high upper-cutoff voltages, electrolyte solvents, salts, and additives experience stronger oxidative stress. Poor cathode-side passivation can lead to electrolyte oxidation, gas evolution, transition-metal dissolution, impedance growth, oxygen release risk, and accelerated capacity fade."
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "rows": [
+            [
+              "Additive Function",
+              "Why It Matters"
+            ],
+            [
+              "Improve SEI formation",
+              "Reduces continuous electrolyte decomposition at graphite, silicon, or lithium-metal anodes"
+            ],
+            [
+              "Stabilize CEI formation",
+              "Helps protect high-voltage cathode surfaces from oxidation and surface reconstruction"
+            ],
+            [
+              "Reduce impedance growth",
+              "Supports better rate capability and cycle retention"
+            ],
+            [
+              "Suppress gas generation",
+              "Important for pouch-cell swelling, safety, and long-term reliability"
+            ],
+            [
+              "Manage transition-metal effects",
+              "Helps reduce cathode-to-anode cross-talk in nickel-rich or high-voltage systems"
+            ],
+            [
+              "Improve formation efficiency",
+              "Reduces first-cycle loss and improves early-cycle reproducibility"
+            ],
+            [
+              "Support fast charge",
+              "Helps reduce lithium plating risk and interfacial kinetic limitations"
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "rows": [
+            [
+              "Additive Type",
+              "Typical Purpose"
+            ],
+            [
+              "Fluorinated carbonates such as FEC",
+              "Often used for silicon-containing anodes to support LiF-rich or fluorinated SEI chemistry"
+            ],
+            [
+              "Vinylene carbonate, or VC",
+              "Common graphite SEI-forming additive and benchmark additive in carbonate electrolytes"
+            ],
+            [
+              "Sulfur-containing additives",
+              "Can modify SEI chemistry and improve passivation in selected systems"
+            ],
+            [
+              "Phosphorus-containing additives",
+              "May contribute to interphase formation, flame-retardant behavior, or high-voltage stability depending on structure"
+            ],
+            [
+              "Nitrile-containing additives",
+              "Often evaluated for high-voltage or cathode-side stability, while also influencing interfacial behavior"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "rows": [
+            [
+              "Formulation Type",
+              "Purpose"
+            ],
+            [
+              "Baseline electrolyte",
+              "Establishes reference performance"
+            ],
+            [
+              "Single-additive formulations",
+              "Identifies the effect of each additive"
+            ],
+            [
+              "Two-additive blends",
+              "Tests interaction between SEI and CEI additives"
+            ],
+            [
+              "Multi-additive packages",
+              "Approaches real commercial electrolyte design"
+            ],
+            [
+              "Stress-condition formulations",
+              "Tests performance under fast charge, high voltage, low temperature, or elevated temperature"
+            ]
+          ]
+        },
+        {
+          "index": 3,
+          "rows": [
+            [
+              "Metric",
+              "What It Reveals"
+            ],
+            [
+              "First-cycle coulombic efficiency",
+              "Early SEI formation, irreversible lithium loss, and additive consumption"
+            ],
+            [
+              "Long-term coulombic efficiency",
+              "Continuous side reactions and interphase stability"
+            ],
+            [
+              "Capacity retention",
+              "Overall electrolyte–electrode compatibility"
+            ],
+            [
+              "EIS / impedance growth",
+              "SEI/CEI resistance, charge-transfer limitations, and aging"
+            ],
+            [
+              "Gas generation / swelling",
+              "Electrolyte oxidation, additive decomposition, and pouch-cell reliability"
+            ],
+            [
+              "Rate capability",
+              "Ion transport and interfacial kinetics"
+            ],
+            [
+              "Low-temperature performance",
+              "Conductivity, viscosity, desolvation, and interphase resistance"
+            ],
+            [
+              "High-temperature storage",
+              "Chemical stability, gas behavior, and parasitic reactions"
+            ],
+            [
+              "Post-cycling diagnostics",
+              "SEM, XPS, ICP, GC-MS, or other tools can identify failure mechanisms"
+            ]
+          ]
+        },
+        {
+          "index": 4,
+          "rows": [
+            [
+              "Additive Strategy",
+              "Practical Note"
+            ],
+            [
+              "SEI additives",
+              "Support graphite, silicon, and lithium-metal interface stability"
+            ],
+            [
+              "CEI additives",
+              "Support high-voltage cathode and transition-metal-rich systems"
+            ],
+            [
+              "Gas-control additives",
+              "Must be evaluated in pouch cells or sealed formats, not only coin cells"
+            ],
+            [
+              "Fast-charge additives",
+              "Should be tested under realistic charge rate, temperature, and anode loading"
+            ],
+            [
+              "Multi-additive blends",
+              "Can be beneficial, but additive interactions may be positive or negative"
+            ],
+            [
+              "Baseline comparison",
+              "Additive packages should be tested against a baseline electrolyte, not only against each other"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "LiFSI for Lithium-Metal Batteries, Fast Charge, and Low-Temperature Electrolytes.docx",
+      "paragraph_count": 144,
+      "headings": [],
+      "first_paragraphs": [
+        {
+          "style": "Normal",
+          "text": "LiFSI for Lithium-Metal Batteries, Fast Charge, and Low-Temperature Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "Lithium bis(fluorosulfonyl)imide, commonly known as LiFSI, is one of the most important lithium salts used in advanced electrolyte research. Compared with conventional LiPF₆-based electrolyte systems, LiFSI is often evaluated when developers need improved lithium-ion transport, better lithium-metal compatibility, or stronger control over interphase chemistry."
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI is especially relevant for lithium-metal batteries, fast-charge electrolytes, low-temperature operation, high-concentration electrolytes, localized high-concentration electrolytes, and fluorinated electrolyte systems. However, LiFSI is not a universal drop-in replacement for LiPF₆. Its performance depends strongly on solvent selection, salt concentration, additives, electrode chemistry, moisture control, and current-collector compatibility."
+        },
+        {
+          "style": "Normal",
+          "text": "Why LiFSI Matters for Lithium-Metal Batteries"
+        },
+        {
+          "style": "Normal",
+          "text": "Lithium-metal batteries place extreme demands on electrolyte chemistry. Unlike graphite, lithium metal continuously reacts with the electrolyte during plating and stripping. If the interphase is unstable, the cell may suffer from low coulombic efficiency, dendritic lithium growth, dead lithium formation, gas generation, and rapid capacity loss."
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI-containing electrolytes are widely studied because the FSI⁻ anion can participate in forming inorganic-rich or fluorine-rich solid electrolyte interphases on lithium metal. These interphases can help reduce continuous electrolyte decomposition and support more uniform lithium plating and stripping. Fluorinated and anion-derived interphases are frequently discussed as important design strategies for high-voltage lithium-metal batteries. (https://www.cell.com/chem/fulltext/S2451-9294(17)30445-X?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS245192941730445X%3Fshowall%3Dtrue)"
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI in Fast-Charge Electrolyte Development"
+        },
+        {
+          "style": "Normal",
+          "text": "Fast charging stresses both ion transport and interfacial kinetics. Even when the bulk electrolyte has acceptable conductivity, poor desolvation kinetics or unstable interphase chemistry can lead to lithium plating, impedance growth, and accelerated degradation."
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI is often evaluated in fast-charge electrolyte development because it can support strong ionic dissociation and can be paired with solvents or additives that tune lithium-ion solvation structure. In practical formulation work, LiFSI may be studied alongside low-viscosity solvents, fluorinated solvents, weakly coordinating solvents, or localized high-concentration electrolyte designs. Electrolyte-engineering studies show that solvation structure and anion participation can strongly influence lithium-metal interphase formation and coulombic efficiency. (https://www.cell.com/chem/fulltext/S2451-9294(22)00648-9?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2451929422006489%3Fshowall%3Dtrue)"
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI for Low-Temperature Battery Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "Low-temperature operation creates several electrolyte challenges at the same time: reduced ionic conductivity, higher viscosity, slower desolvation, sluggish charge transfer, and increased risk of lithium plating during charge. These challenges are especially severe for high-energy cells and lithium-metal systems. (https://link.springer.com/article/10.1007/s40820-023-01245-9)"
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI can be useful in low-temperature electrolyte screening because it is often compatible with electrolyte designs focused on faster lithium-ion transport and improved interfacial kinetics. However, the salt alone does not solve low-temperature performance. Solvent structure, melting point, viscosity, donor ability, salt concentration, and additive chemistry must be optimized together."
+        },
+        {
+          "style": "Normal",
+          "text": "Key Formulation Variables for LiFSI Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "The performance of a LiFSI-based electrolyte depends on the full formulation. Important variables include:"
+        },
+        {
+          "style": "Normal",
+          "text": "Current-Collector Compatibility"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "rows": [
+            [
+              "Variable",
+              "Why It Matters"
+            ],
+            [
+              "Salt concentration",
+              "Controls ion pairing, solvation structure, conductivity, viscosity, interphase chemistry, and corrosion behavior"
+            ],
+            [
+              "Solvent donor properties",
+              "Affect lithium-ion coordination, desolvation energy, low-temperature kinetics, and interphase formation"
+            ],
+            [
+              "Fluorinated solvents or diluents",
+              "Can help tune solvation structure, oxidative stability, and fluorine-rich interphase formation"
+            ],
+            [
+              "Additive package",
+              "Influences SEI/CEI formation, gas control, impedance growth, and high-voltage compatibility"
+            ],
+            [
+              "Water and impurity control",
+              "Critical because trace moisture can change salt decomposition, gas formation, and interphase chemistry"
+            ],
+            [
+              "Cathode voltage window",
+              "Determines oxidative stress and current-collector/cathode-side compatibility"
+            ],
+            [
+              "Current collectors and cell hardware",
+              "Important because LiFSI systems may introduce aluminum or stainless-steel corrosion concerns in some conditions"
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "rows": [
+            [
+              "Screening Question",
+              "Why It Is Important"
+            ],
+            [
+              "Does LiFSI improve lithium plating/stripping efficiency?",
+              "Indicates whether the electrolyte is stabilizing the lithium-metal interface"
+            ],
+            [
+              "Does impedance grow more slowly than the baseline electrolyte?",
+              "Helps evaluate SEI/CEI stability and transport limitations"
+            ],
+            [
+              "Is gas generation reduced or increased?",
+              "Important for pouch-cell safety, swelling, and long-term reliability"
+            ],
+            [
+              "Is aluminum corrosion controlled at the target voltage?",
+              "Critical for high-voltage cathode systems"
+            ],
+            [
+              "Does the formulation work at low temperature?",
+              "Tests conductivity, viscosity, desolvation, and interfacial kinetics"
+            ],
+            [
+              "Does performance hold under lean electrolyte and practical loading?",
+              "Separates academic electrolyte success from practical cell relevance"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "LiPF₆ vs LiFSI vs LiTFSI.docx",
+      "paragraph_count": 120,
+      "headings": [],
+      "first_paragraphs": [
+        {
+          "style": "Normal",
+          "text": "LiPF₆ vs LiFSI vs LiTFSI: How to Choose Lithium Electrolyte Salts for Battery Development"
+        },
+        {
+          "style": "Normal",
+          "text": "LiPF₆, LiFSI, and LiTFSI are widely used lithium electrolyte salts, but they are not interchangeable in advanced cell development. The salt choice affects ionic conductivity, low-temperature performance, moisture sensitivity, interphase formation, gas generation, aluminum current-collector stability, and long-term cell compatibility."
+        },
+        {
+          "style": "Normal",
+          "text": "For battery researchers and product developers, the key question is not simply “which salt is best?” but rather which salt fits the electrode chemistry, voltage window, solvent system, additives, and performance target."
+        },
+        {
+          "style": "Normal",
+          "text": "Where LiPF₆ Fits"
+        },
+        {
+          "style": "Normal",
+          "text": "Lithium hexafluorophosphate, or LiPF₆, remains the conventional baseline salt for lithium-ion battery electrolytes. It is widely used because it provides a practical balance of ionic conductivity, graphite compatibility, and aluminum current-collector passivation in carbonate-based electrolyte systems."
+        },
+        {
+          "style": "Normal",
+          "text": "In many formulation programs, LiPF₆ is used as the reference salt when screening new solvent blends, additives, or alternative lithium salts. Its limitations are also well known: LiPF₆ can be sensitive to moisture and thermal stress, and decomposition products can contribute to gas generation, impedance growth, and transition-metal dissolution under aggressive operating conditions."
+        },
+        {
+          "style": "Normal",
+          "text": "Best fit: conventional lithium-ion cells, carbonate electrolyte baselines, graphite-containing systems, and benchmark formulations."
+        },
+        {
+          "style": "Normal",
+          "text": "Why LiFSI Is Used in Advanced Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "Lithium bis(fluorosulfonyl)imide, or LiFSI, is increasingly studied in lithium-metal, fast-charge, low-temperature, high-voltage, and high-concentration electrolyte systems. LiFSI can support strong lithium-ion transport and can help form fluorine-rich interphases, especially when paired with carefully selected solvents, diluents, and additives."
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI is often attractive when developers need improved rate capability, low-temperature transport, or lithium-metal compatibility. Recent reviews and studies continue to highlight LiFSI’s role in high-performance electrolyte design, including low-temperature and lithium-metal systems. (https://link.springer.com/article/10.1007/s40820-023-01245-9)"
+        },
+        {
+          "style": "Normal",
+          "text": "However, LiFSI is not a drop-in replacement for LiPF₆. In some formulations, especially at lower salt concentrations or under high-voltage conditions, aluminum current-collector corrosion must be carefully managed. Formulation details such as salt concentration, solvent coordination, additive package, and cathode voltage window can determine whether LiFSI is beneficial or problematic. ( https://www.oaepublish.com/articles/energymater.2023.53)"
+        },
+        {
+          "style": "Normal",
+          "text": "Best fit: lithium-metal electrolytes, fast-charge systems, low-temperature electrolytes, high-concentration/localized high-concentration electrolytes, and advanced interphase-focused formulations."
+        },
+        {
+          "style": "Normal",
+          "text": "Where LiTFSI Is Useful"
+        },
+        {
+          "style": "Normal",
+          "text": "Lithium bis(trifluoromethanesulfonyl)imide, or LiTFSI, is valued for its thermal stability, electrochemical stability, and broad use in specialty electrolyte research. It is common in polymer electrolytes, gel electrolytes, ionic-liquid systems, aqueous “water-in-salt” concepts, and lithium-metal research formulations."
+        },
+        {
+          "style": "Normal",
+          "text": "The main practical limitation is aluminum current-collector corrosion in many high-voltage lithium-ion electrolyte environments. Because of this, LiTFSI is often used as a co-salt, comparison salt, or specialty-system salt rather than as a simple primary replacement for LiPF₆ in conventional high-voltage carbonate electrolytes. Literature on aluminum corrosion frequently identifies LiTFSI- and LiFSI-based electrolytes as systems where corrosion control and passivation strategy become important. (https://www.oaepublish.com/articles/energymater.2023.53)"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "rows": [
+            [
+              "Salt",
+              "Typical Role",
+              "Strengths",
+              "Key Watch-Outs"
+            ],
+            [
+              "LiPF₆",
+              "Conventional lithium-ion baseline salt",
+              "Graphite compatibility, carbonate-system reference, aluminum passivation",
+              "Moisture sensitivity, thermal decomposition, gas/acid generation risk"
+            ],
+            [
+              "LiFSI",
+              "Advanced-performance salt",
+              "Strong ion transport, useful for lithium metal, fast charge, low temperature, high-concentration systems",
+              "Aluminum corrosion risk in some formulations; not always drop-in compatible"
+            ],
+            [
+              "LiTFSI",
+              "Specialty and research salt",
+              "High thermal stability, useful in polymer/specialty electrolytes",
+              "Aluminum corrosion concerns in many high-voltage systems"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Low Temperature Electrolytes.docx",
+      "paragraph_count": 144,
+      "headings": [],
+      "first_paragraphs": [
+        {
+          "style": "Normal",
+          "text": "Low-Temperature Electrolytes for Lithium-Ion and Lithium-Metal Batteries"
+        },
+        {
+          "style": "Normal",
+          "text": "Low-temperature battery operation is limited by slower ion transport, higher electrolyte viscosity, slower charge-transfer kinetics, more resistive interphases, and increased lithium plating risk during charge. These effects become especially important for electric vehicles, aerospace, defense, outdoor energy storage, cold-chain logistics, and other applications that require reliable operation below room temperature."
+        },
+        {
+          "style": "Normal",
+          "text": "Electrolyte design for cold environments must balance ionic conductivity, viscosity, lithium-ion solvation, desolvation kinetics, SEI/CEI stability, safety, and high-voltage compatibility. A formulation that performs well at 25 °C may perform poorly at −20 °C, and a formulation that supports cold discharge may not safely support cold charge or fast charge."
+        },
+        {
+          "style": "Normal",
+          "text": "For battery developers, the key question is not simply “which electrolyte has the highest low-temperature conductivity?” but rather which electrolyte enables the required discharge, charge acceptance, cycle life, and safety under the target cold-temperature protocol."
+        },
+        {
+          "style": "Normal",
+          "text": "Why Batteries Struggle at Low Temperature"
+        },
+        {
+          "style": "Normal",
+          "text": "As temperature decreases, several battery limitations appear at the same time:"
+        },
+        {
+          "style": "Normal",
+          "text": "Recent low-temperature electrolyte reviews emphasize that bulk ion transport, solvation/desolvation behavior, and interphase properties must be optimized together rather than independently."
+        },
+        {
+          "style": "Normal",
+          "text": "Solvent Selection for Low-Temperature Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "Solvent selection is one of the most important variables in low-temperature electrolyte design. Conventional carbonate electrolytes may show increased viscosity and poor transport at sub-zero temperatures, especially when ethylene carbonate-rich systems are used."
+        },
+        {
+          "style": "Normal",
+          "text": "Low-temperature electrolyte screening often evaluates:"
+        },
+        {
+          "style": "Normal",
+          "text": "Low-temperature electrolyte design increasingly focuses on solvation structure, not only solvent melting point or viscosity. Weakly solvating or carefully coordinated solvent systems can help reduce desolvation barriers and improve low-temperature kinetics."
+        },
+        {
+          "style": "Normal",
+          "text": "Salt Selection and Solvation Structure"
+        },
+        {
+          "style": "Normal",
+          "text": "Salt choice affects more than bulk conductivity. Lithium salts influence ion dissociation, ion pairing, solvation structure, interphase chemistry, aluminum current-collector compatibility, and low-temperature impedance."
+        },
+        {
+          "style": "Normal",
+          "text": "Common lithium salts considered in low-temperature electrolyte development include:"
+        },
+        {
+          "style": "Normal",
+          "text": "LiFSI- and LiTFSI-containing systems are frequently investigated in low-temperature and lithium-metal electrolyte research, but they are not simple drop-in replacements for LiPF₆. Their benefits depend on solvent structure, salt concentration, additives, voltage window, and corrosion-control strategy."
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "rows": [
+            [
+              "Low-Temperature Limitation",
+              "Why It Matters"
+            ],
+            [
+              "Higher electrolyte viscosity",
+              "Reduces ion mobility and worsens rate capability"
+            ],
+            [
+              "Lower ionic conductivity",
+              "Increases polarization during charge and discharge"
+            ],
+            [
+              "Slower Li⁺ desolvation",
+              "Limits charge-transfer kinetics at electrode surfaces"
+            ],
+            [
+              "More resistive SEI/CEI layers",
+              "Increases impedance and reduces usable capacity"
+            ],
+            [
+              "Higher lithium plating risk",
+              "Creates safety and lifetime concerns during cold charge"
+            ],
+            [
+              "Reduced electrode diffusion",
+              "Limits active-material utilization at high rate"
+            ],
+            [
+              "Poor recovery after cold exposure",
+              "Indicates irreversible damage or unstable interphase chemistry"
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "rows": [
+            [
+              "Solvent Type",
+              "Why It Is Evaluated"
+            ],
+            [
+              "Linear carbonates",
+              "Lower viscosity than EC-rich systems and common in lithium-ion electrolyte baselines"
+            ],
+            [
+              "Esters",
+              "Often evaluated for low melting point and improved low-temperature transport"
+            ],
+            [
+              "Ethers",
+              "Can support faster Li⁺ transport and are widely studied in lithium-metal systems"
+            ],
+            [
+              "Fluorinated solvents / diluents",
+              "Can tune solvation structure, oxidative stability, and interphase chemistry"
+            ],
+            [
+              "Nitriles",
+              "May offer oxidative stability and alternative solvation behavior"
+            ],
+            [
+              "Weakly solvating solvents",
+              "Can reduce Li⁺ desolvation barriers and improve interfacial kinetics"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "rows": [
+            [
+              "Salt",
+              "Practical Role"
+            ],
+            [
+              "LiPF₆",
+              "Conventional lithium-ion baseline salt for carbonate electrolytes"
+            ],
+            [
+              "LiFSI",
+              "Often evaluated for fast-charge, lithium-metal, low-temperature, and high-concentration electrolyte systems"
+            ],
+            [
+              "LiTFSI",
+              "Useful in specialty, polymer, ether, and lithium-metal electrolytes, with current-collector compatibility considerations"
+            ],
+            [
+              "LiDFOB / LiBOB-type salts",
+              "Often studied as additives or co-salts for interphase and stability control"
+            ]
+          ]
+        },
+        {
+          "index": 3,
+          "rows": [
+            [
+              "Question",
+              "Why It Matters"
+            ],
+            [
+              "Does the additive reduce first-cycle loss?",
+              "Indicates improved early SEI/CEI formation"
+            ],
+            [
+              "Does it reduce impedance after cold cycling?",
+              "Shows whether the interphase remains ionically conductive"
+            ],
+            [
+              "Does it reduce gas generation?",
+              "Important for pouch-cell reliability and swelling"
+            ],
+            [
+              "Does it increase or decrease lithium plating risk?",
+              "Critical for cold charge and fast charge"
+            ],
+            [
+              "Does it recover after warming?",
+              "Separates reversible transport limitation from irreversible degradation"
+            ]
+          ]
+        },
+        {
+          "index": 4,
+          "rows": [
+            [
+              "Test Mode",
+              "What It Measures"
+            ],
+            [
+              "Cold discharge after room-temperature charge",
+              "Usable energy and power in cold environments"
+            ],
+            [
+              "Cold charge acceptance",
+              "Whether the cell can safely accept charge at low temperature"
+            ],
+            [
+              "Cold fast charge",
+              "Lithium plating resistance under aggressive conditions"
+            ],
+            [
+              "Cold cycling",
+              "Long-term interphase and impedance stability"
+            ],
+            [
+              "Room-temperature recovery",
+              "Reversibility after cold exposure"
+            ],
+            [
+              "Post-cold EIS",
+              "Impedance growth and interfacial resistance"
+            ],
+            [
+              "Gas / swelling measurement",
+              "Electrolyte decomposition and pouch-cell reliability"
+            ],
+            [
+              "Post-mortem anode analysis",
+              "Lithium plating, dead lithium, SEI failure, and surface damage"
+            ]
+          ]
+        },
+        {
+          "index": 5,
+          "rows": [
+            [
+              "Screening Principle",
+              "Practical Note"
+            ],
+            [
+              "Tune solvent viscosity and solvation together",
+              "Low viscosity alone is not enough if desolvation or interphase transport is poor"
+            ],
+            [
+              "Compare salts under the same solvent baseline",
+              "Salt effects are hard to interpret if solvent chemistry also changes"
+            ],
+            [
+              "Separate discharge and charge testing",
+              "Cold discharge capability does not prove safe cold charging"
+            ],
+            [
+              "Track lithium plating risk",
+              "Especially important for graphite, silicon, lithium metal, and fast-charge protocols"
+            ],
+            [
+              "Use EIS before and after cold exposure",
+              "Helps separate bulk transport limits from interfacial impedance growth"
+            ],
+            [
+              "Check room-temperature recovery",
+              "Poor recovery may indicate irreversible interphase or plating damage"
+            ],
+            [
+              "Validate in pouch cells",
+              "Gas, swelling, wetting, and pressure effects may not appear clearly in coin cells"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Sodium-Ion Battery Electrolyte Materials.docx",
+      "paragraph_count": 94,
+      "headings": [],
+      "first_paragraphs": [
+        {
+          "style": "Normal",
+          "text": "Sodium-Ion Battery Electrolyte Materials: Sodium Salts, Solvents, Additives, and Water Control"
+        },
+        {
+          "style": "Normal",
+          "text": "Sodium-ion batteries are moving from academic research toward practical cell development because sodium is abundant, widely available, and attractive for cost-sensitive energy storage platforms. As sodium-ion technology scales, electrolyte design becomes one of the most important factors controlling cell performance, safety, manufacturability, and long-term reliability."
+        },
+        {
+          "style": "Normal",
+          "text": "Sodium-ion electrolyte development requires more than selecting a sodium salt. Sodium salts, carbonate solvents, ether solvents, additives, water content, electrode chemistry, and voltage window all influence ionic conductivity, interphase formation, gas behavior, impedance growth, and cycle life."
+        },
+        {
+          "style": "Normal",
+          "text": "For battery R&D teams, the key question is not simply “which sodium salt is best?” but rather which electrolyte system fits the target anode, cathode, voltage range, temperature range, and cost target."
+        },
+        {
+          "style": "Normal",
+          "text": "Sodium Salt Selection for Sodium-Ion Batteries"
+        },
+        {
+          "style": "Normal",
+          "text": "Sodium salt selection strongly affects electrolyte conductivity, solubility, moisture sensitivity, thermal stability, interphase chemistry, and electrode compatibility."
+        },
+        {
+          "style": "Normal",
+          "text": "NaPF₆ is commonly used as a baseline salt for sodium-ion electrolyte development. It is often selected because it offers good conductivity and broad compatibility with carbonate-based solvent systems. A 2023 study comparing NaPF₆ and NaClO₄ concluded that NaPF₆ is more compatible with industrial processes and more favorable for battery performance. (https://pubs.acs.org/doi/10.1021/acsnano.3c07474)"
+        },
+        {
+          "style": "Normal",
+          "text": "However, NaPF₆ also requires careful water control. Studies of NaPF₆-based non-aqueous electrolytes show that trace water can promote hydrolysis and HF formation, which may affect electrolyte stability, gas generation, and cell reproducibility. (https://www.osti.gov/servlets/purl/1593898)"
+        },
+        {
+          "style": "Normal",
+          "text": "NaTFSI is often evaluated for improved thermal stability, lower moisture sensitivity, and different solvation or interphase behavior. It can be useful in specialty sodium-ion electrolytes, but aluminum current-collector corrosion may become a concern in some high-voltage systems. (https://www.sigmaaldrich.com/US/en/technical-documents/technical-article/materials-science-and-engineering/batteries-supercapacitors-and-fuel-cells/role-of-advanced-electrolytes-in-sodium-ion-batteries?srsltid=AfmBOoq4f7JyMZB38_5gwHSylKT38RO_DKZD8XCLsG9fOyxghX-7gz_d&utm)"
+        },
+        {
+          "style": "Normal",
+          "text": "NaODFB and other sodium borate salts can also be evaluated when developers want to tune interphase formation, oxidative stability, gas behavior, or electrode compatibility. These salts may be especially useful as comparison salts, co-salts, or formulation tools rather than simple one-to-one replacements for NaPF₆."
+        },
+        {
+          "style": "Normal",
+          "text": "Solvent Systems for Sodium-Ion Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "The solvent system determines sodium-ion solvation, viscosity, conductivity, low-temperature response, wetting, SEI formation, and cathode-side stability. Sodium-ion electrolyte screening may include:"
+        },
+        {
+          "style": "Normal",
+          "text": "Ether-based electrolytes have seen renewed interest in sodium-ion batteries, but commercial use still requires balancing electrochemical performance, oxidative stability, safety, and cost. (https://pubs.rsc.org/en/content/articlehtml/2025/ee/d5ee00725a?utm)"
+        },
+        {
+          "style": "Normal",
+          "text": "Additive Screening for Sodium-Ion Batteries"
+        },
+        {
+          "style": "Normal",
+          "text": "Electrolyte additives are often used to control SEI and CEI formation, reduce irreversible capacity loss, manage gas generation, suppress impedance growth, and improve cycle life."
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "rows": [
+            [
+              "Solvent Family",
+              "Why It Is Evaluated"
+            ],
+            [
+              "Carbonates",
+              "Common baseline systems for sodium-ion cells; useful for hard carbon and layered oxide screening"
+            ],
+            [
+              "Ethers",
+              "Often studied for improved transport and interfacial behavior, though oxidative stability and safety require careful evaluation"
+            ],
+            [
+              "Nitriles",
+              "Can offer high oxidative stability and different solvation behavior"
+            ],
+            [
+              "Fluorinated solvents",
+              "Useful for tuning interphase chemistry, oxidative stability, and gas behavior"
+            ],
+            [
+              "Esters",
+              "May help with low-temperature transport and viscosity reduction, depending on electrode compatibility"
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "rows": [
+            [
+              "Metric",
+              "Why It Matters"
+            ],
+            [
+              "First-cycle efficiency",
+              "Indicates irreversible sodium loss and early SEI formation behavior"
+            ],
+            [
+              "Impedance growth",
+              "Tracks interfacial degradation and transport limitations"
+            ],
+            [
+              "Gas generation / swelling",
+              "Important for pouch-cell reliability and safety"
+            ],
+            [
+              "Capacity retention",
+              "Measures long-term electrolyte compatibility"
+            ],
+            [
+              "Rate performance",
+              "Tests transport and interfacial kinetics"
+            ],
+            [
+              "Low-temperature behavior",
+              "Reveals conductivity, viscosity, and desolvation limitations"
+            ],
+            [
+              "High-voltage stability",
+              "Evaluates cathode-side oxidation and CEI formation"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "rows": [
+            [
+              "Screening Area",
+              "Recommended Approach"
+            ],
+            [
+              "Salt comparison",
+              "Compare NaPF₆, NaTFSI, NaODFB, and other sodium salts using the same solvent baseline"
+            ],
+            [
+              "Solvent screening",
+              "Evaluate carbonate, ether, nitrile, fluorinated, and ester-containing systems based on electrode pair and voltage window"
+            ],
+            [
+              "Additive screening",
+              "Compare additives against the same baseline electrolyte and track first-cycle efficiency, impedance, gas, and cycle retention"
+            ],
+            [
+              "Water control",
+              "Measure or control moisture in both salts and solvents before interpreting salt or additive effects"
+            ],
+            [
+              "Voltage compatibility",
+              "Check oxidative stability, cathode compatibility, and current-collector corrosion under realistic upper cutoff voltage"
+            ],
+            [
+              "Cell format validation",
+              "Confirm promising coin-cell results in pouch cells when gas, wetting, pressure, and practical loading become important"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Solid State Materials.docx",
+      "paragraph_count": 208,
+      "headings": [],
+      "first_paragraphs": [
+        {
+          "style": "Normal",
+          "text": "Solid-State Electrolyte Materials: Sulfide, Oxide, Halide, and Polymer Electrolyte Screening"
+        },
+        {
+          "style": "Normal",
+          "text": "Solid-state electrolyte development depends on more than a headline ionic conductivity value. In real battery screening, particle size, moisture sensitivity, electronic conductivity, pellet density, interface contact, stack pressure, electrode compatibility, and processing route all influence how a solid electrolyte behaves."
+        },
+        {
+          "style": "Normal",
+          "text": "For battery researchers, the key question is not simply “which solid electrolyte has the highest conductivity?” but rather which material system fits the target cathode, anode, voltage window, processing method, and cell format."
+        },
+        {
+          "style": "Normal",
+          "text": "Solid-state electrolytes are typically evaluated across several material families, including sulfide, oxide, halide, and polymer electrolytes. Each family has different advantages, limitations, handling requirements, and interface challenges."
+        },
+        {
+          "style": "Normal",
+          "text": "Sulfide Solid-State Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "Sulfide electrolytes are attractive because they can offer high room-temperature ionic conductivity and relatively soft, processable powders. Materials such as argyrodite-type sulfides are often studied because they can be cold-pressed into dense pellets and integrated into composite cathodes more readily than many rigid oxide ceramics."
+        },
+        {
+          "style": "Normal",
+          "text": "However, sulfide electrolytes usually require careful moisture control. Exposure to moisture can lead to chemical degradation and, in some cases, generation of hydrogen sulfide. For practical screening, sulfide powders should be handled under dry conditions and compared using consistent pressing pressure, pellet density, particle-size distribution, and electrode-mixing procedures."
+        },
+        {
+          "style": "Normal",
+          "text": "Particle-size selection is especially important. Smaller particles may improve contact area in composite electrodes, while larger particles may be easier to handle and may reduce some surface-driven side reactions. The best particle size depends on the application, including separator-layer formation, cathode composite design, and dry or wet processing route."
+        },
+        {
+          "style": "Normal",
+          "text": "Best fit: high-conductivity solid electrolyte screening, composite cathode development, cold-pressed pellets, sulfide-based solid-state battery research, and lithium-metal interface studies."
+        },
+        {
+          "style": "Normal",
+          "text": "Oxide Solid-State Electrolytes"
+        },
+        {
+          "style": "Normal",
+          "text": "Oxide electrolytes are often evaluated for their chemical stability, air-handling advantages, and compatibility with certain manufacturing environments. Common oxide electrolyte families include garnet-type, NASICON-type, and perovskite-type materials."
+        },
+        {
+          "style": "Normal",
+          "text": "Compared with sulfides, oxides are typically more rigid and harder to densify by simple cold pressing. Many oxide electrolytes require high-temperature sintering or careful ceramic processing to achieve low grain-boundary resistance and meaningful ionic conductivity. As a result, oxide conductivity data should always be interpreted alongside pellet density, sintering conditions, grain-boundary behavior, and electrode contact method."
+        },
+        {
+          "style": "Normal",
+          "text": "Oxide electrolytes may offer advantages for stability and handling, but interface resistance can become a major limitation, especially against lithium metal or composite cathodes. Surface treatment, interlayers, pressure, and processing route often determine whether the material performs well in a practical cell."
+        },
+        {
+          "style": "Normal",
+          "text": "Best fit: chemically stable solid electrolyte platforms, ceramic electrolyte screening, lithium-metal interface studies, separator-layer research, and applications where moisture tolerance and mechanical robustness are important."
+        },
+        {
+          "style": "Normal",
+          "text": "Halide Solid-State Electrolytes"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "rows": [
+            [
+              "Screening Variable",
+              "Why It Matters"
+            ],
+            [
+              "Ionic conductivity",
+              "Measures lithium-ion transport, but depends strongly on pellet preparation and density"
+            ],
+            [
+              "Electronic conductivity",
+              "Low electronic leakage is essential to prevent self-discharge and internal side reactions"
+            ],
+            [
+              "D50 particle size",
+              "Affects powder packing, pellet density, composite electrode contact, and processability"
+            ],
+            [
+              "Particle-size distribution",
+              "Broad or narrow distributions can change pressing, mixing, and electrode uniformity"
+            ],
+            [
+              "Pellet density",
+              "Poor densification can make a high-conductivity material appear worse than it is"
+            ],
+            [
+              "Cold-press pressure",
+              "Conductivity values are not comparable unless pressing conditions are reported"
+            ],
+            [
+              "Moisture exposure",
+              "Can alter sulfide, halide, and some salt-containing polymer systems"
+            ],
+            [
+              "Cathode compatibility",
+              "Determines oxidative stability, CEI behavior, and composite cathode resistance"
+            ],
+            [
+              "Lithium-metal compatibility",
+              "Controls interphase formation, impedance growth, and dendrite-related failure risk"
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "rows": [
+            [
+              "Practical Question",
+              "Why It Matters"
+            ],
+            [
+              "Is the material being tested as a powder, pellet, separator layer, or composite electrode component?",
+              "The same material can behave very differently depending on cell architecture"
+            ],
+            [
+              "Are particle size and pellet density controlled?",
+              "These strongly affect measured conductivity and reproducibility"
+            ],
+            [
+              "Are ionic and electronic conductivity measured separately?",
+              "Solid electrolytes must conduct ions while blocking electrons"
+            ],
+            [
+              "Was moisture exposure controlled?",
+              "Moisture can change chemistry, conductivity, gas behavior, and interfacial stability"
+            ],
+            [
+              "Is the cathode-side voltage window realistic?",
+              "High-voltage compatibility depends on actual upper cutoff voltage and cathode surface chemistry"
+            ],
+            [
+              "Is lithium-metal compatibility tested under practical current density and pressure?",
+              "Ideal symmetric-cell data may not translate directly to full cells"
+            ],
+            [
+              "Is stack pressure reported?",
+              "Many solid-state systems perform differently under different pressure conditions"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "rows": [
+            [
+              "Article claim",
+              "Suggested support"
+            ],
+            [
+              "Sulfides offer high ionic conductivity and processable powders",
+              "Sulfide SSE review"
+            ],
+            [
+              "Sulfides require moisture control / can generate H₂S",
+              "Moisture stability studies"
+            ],
+            [
+              "LLZO/garnet oxides need interface engineering",
+              "LLZO interface reviews"
+            ],
+            [
+              "Halides are attractive for high-voltage cathode compatibility",
+              "Halide reviews"
+            ],
+            [
+              "Conductivity alone is insufficient without processing context",
+              "Use general screening language plus category-specific reviews above"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "xlsx": [
+    {
+      "file": "Winigen Materials Production Partners.xlsx",
+      "sheets": [
+        {
+          "sheet": "电池体系对比",
+          "shape": [
+            11,
+            8
+          ],
+          "preview": [
+            [
+              "Battery System",
+              "Battery",
+              "",
+              "Cathode",
+              "",
+              "",
+              "Anode",
+              ""
+            ],
+            [
+              "",
+              "Characteristics of Battery",
+              "Application Field",
+              "Cathode Material",
+              "Technical Characteristics",
+              "Cost and Price",
+              "Anode Materials",
+              "Cost and Price"
+            ],
+            [
+              "LFP\n(Lithium Iron Phosphate)",
+              "安全性高：热稳定性强，高温或过充时不易分解，热失控风险低。\n循环寿命长：可进行3000次以上充放电循环，容量保持率仍较高。\n能量密度较低：理论比容量约170mAh/g，实际能量密度约200Wh/kg，低于三元材料。\n低温性能差：低温下容量衰减明显。\n应用：电动公交车、储能系统、对安全性要求高的场景。",
+              "广泛应用于电动汽车、储能系统等领域。例如，比亚迪的“刀片电池”就是基于磷酸铁锂技术，在电动汽车市场上有较高的占有率。",
+              "由锂（Li）、铁（Fe）、磷（P）和氧（O）元素组成，化学式为LiFePO₄ 。",
+              "结构特点：具有橄榄石型晶体结构，这种结构十分稳定。在充放电过程中，锂离子可以在结构中可逆地嵌入和脱出，保证了电池的循环性能。\n性能优势：安全性高，即使在高温、过充等极端条件下，也不容易发生分解和燃烧；循环寿命长，可达到2000次以上的充放电循环；成本相对较低，因为铁和磷等元素在自然界中储量丰富。",
+              "不含钴、镍等贵金属，原材料成本低。成本较三元材料低20%-30%。",
+              "天然石墨：成本低、导电性好，但循环寿命受体积膨胀（约10%）限制，多用于低端市场。",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "人造石墨：通过高温石墨化处理（2800℃以上）制备，层状结构有序，循环性能优异（如宁德时代CTP 3.0搭配LFP时能量密度达255 Wh/kg），是当前锂离子电池的主流负极材料（2025年占中国负极材料总出货量的92.7%）。",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "硅碳复合石墨：硅基材料理论比容量高达4200 mAh/g（是石墨的10倍以上），但充放电时体积膨胀剧烈（约300%）。通过纳米化、碳包覆等技术缓解体积效应后，已在数码领域全面铺开，并逐步向动力电池渗透（如特斯拉21700电池采用硅基负极）。",
+              ""
+            ],
+            [
+              "NCA622\n（镍钴铝）体系",
+              "特点：能量密度较高，能够为设备提供更长的续航能力；充放电性能较好。但热稳定性相对较差，对电池的管理系统要求较高。",
+              "主要用于高端电动汽车，如特斯拉部分车型就采用了NCA体系的电池，以满足其对高能量密度和长续航的需求。",
+              "主要成分为镍（Ni）、钴（Co）、铝（Al）和锂（Li），化学表达式可写成LiNi₀.₆Co₀.₂Al₀.₂O₂ ",
+              "技术特性：\n能量密度：＞250 Wh/kg（特斯拉Model 3搭载的松下电池达260 Wh/kg）。\n结构特点：属于层状结构，锂离子可以在层间移动。这种结构使得电池具有较高的能量密度。\n性能优势：能量密度高，能够为设备提供更长的续航时间；充放电效率较高。\n应用领域：常用于高端电动汽车，比如特斯拉部分车型就使用了NCA正极材料的电池。",
+              "镍含量高（80%），受印尼镍矿政策（2026年减产30%）影响波动",
+              "负极：逐步引入硅基材料（如特斯拉21700电池）。\n特点：高镍体系（如NCA811）能量密度高（＞300 Wh/kg），但热稳定性较差。硅基负极可进一步提升能量密度，但需通过电极结构优化（如多孔硅）和特殊粘结剂技术平衡体积膨胀问题。",
+              ""
+            ],
+            [
+              "NCA811",
+              "能量密度高（＞250 Wh/kg），但热稳定性较差。",
+              "特斯拉（松下供应）、高端电动车。",
+              "",
+              "技术特性：\n能量密度：300-350 Wh/kg（宁德时代麒麟电池搭配811达255 Wh/kg）。\n循环寿命：800-1200次（需单晶化技术优化，如容百科技单晶811比容量＞210 mAh/g）。\n性能优势：能量密度是目前三元材料中较高的，能够满足对续航有较高要求的设备；",
+              "在一定程度上降低了钴的使用量，降低了成本。",
+              "",
+              ""
+            ],
+            [
+              "LCO\n（Lithium Cobalt Oxide，钴酸锂)",
+              "能量密度高：比容量约140-150mAh/g，但通过高压化可提升至200mAh/g以上。\n循环寿命较短：约500-1000次循环。\n安全性较低：过充或高温下易分解。",
+              "消费电子（手机、笔记本电池）。",
+              "由锂（Li）、钴（Co）和氧（O）组成，化学式为LiCoO₂ 。",
+              "结构特点：具有层状结构，锂离子可以在层间进行可逆的嵌入和脱出反应。\n性能优势：能量密度较高，输出电压稳定，使得电池在充放电过程中性能较为平稳。",
+              "成本高：钴资源稀缺且价格昂贵。",
+              "负极：传统石墨负极。\n特点：LCO正极材料能量密度高、电压平台稳定，但钴价昂贵且安全性差，多用于消费电子（如手机、笔记本电池），对负极材料成本敏感度较低。",
+              ""
+            ],
+            [
+              "NMC\n镍钴锰",
+              "能量密度适中：比容量约160-200mAh/g，能量密度约230-280Wh/kg。\n循环寿命较长：约1500-2000次循环。\n成本与安全性平衡：通过调整镍、钴、锰比例优化性能。",
+              "广泛应用于电动汽车、电动工具等领域。宝马、戴姆勒等海外车企（宁德时代2026年大规模交付）。",
+              "一般表达式为LiNiₓCoᵧMnzO₂ （x + y + z = 1），根据镍、钴、锰的不同比例有多种型号，如NMC523（LiNi₀.₅Co₀.₂Mn₀.₃O₂ ）、NMC622等",
+              "层状结构，不同比例的镍、钴、锰元素赋予电池不同的性能特点。镍含量越高，能量密度越高，但热稳定性可能会降低；锰含量增加有助于提高电池的安全性和稳定性。\n性能优势：综合性能较好，在能量密度、安全性和成本之间取得了一定的平衡。",
+              "",
+              "石墨",
+              ""
+            ],
+            [
+              "LMFP\n磷酸锰铁锂",
+              "结合了磷酸铁锂的安全性和磷酸锰锂的高电压平台，具有较高的能量密度和较好的安全性。同时，成本相对较低，原材料来源广泛。\n通过掺锰提高电压平台（3.4-4.1V），理论能量密度比LFP高15-20%。\n循环寿命较长：接近LFP水平。",
+              "在电动汽车和储能领域有较大的应用潜力，有望成为下一代主流的电池体系之一。",
+              "磷酸锰铁锂（LiMn₀.₆Fe₀.₄PO₄）",
+              "能量密度：190-210 Wh/kg（电压平台4.1V，较LFP提升20%）。\n结构特点：与磷酸铁锂类似，具有橄榄石型结构，这种结构保证了电池的稳定性。\n性能优势：结合了磷酸铁锂的安全性和磷酸锰锂的高电压平台，能量密度比磷酸铁锂有所提高，同时保持了较好的安全性和循环寿命。",
+              "锰资源丰富，单瓦时成本较LFP低5%-10%。",
+              "",
+              ""
+            ],
+            [
+              "LMO,\n锰酸锂",
+              "能量密度较低：比容量约100-120mAh/g，能量密度约100-140Wh/kg。\n循环寿命较短：约500-1000次循环。",
+              "常用于电动自行车、小型储能设备等领域。例如，一些电动自行车的电池就采用了锰酸锂体系。",
+              "由锂（Li）、锰（Mn）和氧（O）组成，化学式为LiMn₂O₄ 。",
+              "循环寿命：500次左右（需掺杂铝/镁提升结构稳定性）。\n结构特点：具有尖晶石型结构，这种结构使得锂离子在充放电过程中能够快速移动。\n性能优势：成本较低，因为锰元素在自然界中储量丰富；倍率性能好，能够快速充放电。",
+              "成本：无钴化设计，成本最低（≈$50/kWh）",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "sheet": "正极材料厂家",
+          "shape": [
+            19,
+            7
+          ],
+          "preview": [
+            [
+              "国内主流正极材料厂家对比表（2026年5月）",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "企业名称",
+              "证券代码",
+              "核心技术路线",
+              "主要产品",
+              "核心产能布局",
+              "核心客户",
+              "行业地位"
+            ],
+            [
+              "湖南裕能",
+              "301358",
+              "磷酸铁锂（LFP）",
+              "动力/储能用LFP正极材料",
+              "湘潭、广西、四川、贵州基地",
+              "宁德时代、比亚迪、亿纬锂能",
+              "LFP绝对龙头，出货量行业第一"
+            ],
+            [
+              "德方纳米",
+              "300769",
+              "磷酸铁锂（LFP）、磷酸锰铁锂（LMFP）",
+              "动力/储能用LFP、LMFP正极材料",
+              "四川、云南基地",
+              "宁德时代、比亚迪、中创新航",
+              "LFP技术标杆，能量密度行业领先"
+            ],
+            [
+              "融通高科",
+              "未上市",
+              "磷酸铁锂（LFP）",
+              "动力/储能用LFP正极材料",
+              "湖北、江西基地",
+              "宁德时代、比亚迪、国轩高科",
+              "LFP二线龙头，储能+动力双覆盖"
+            ],
+            [
+              "万润新能",
+              "未上市",
+              "磷酸铁锂（LFP）、磷酸锰铁锂（LMFP）",
+              "动力/储能用LFP、LMFP正极材料",
+              "湖北基地",
+              "宁德时代、比亚迪、亿纬锂能",
+              "LFP+LMFP双线布局，性价比突出"
+            ],
+            [
+              "龙蟠科技（德蓝）",
+              "603906",
+              "磷酸铁锂（LFP）",
+              "动力/储能用LFP正极材料",
+              "江苏、四川基地",
+              "宁德时代、比亚迪、国轩高科",
+              "配套头部车企与储能客户，产能稳步扩张"
+            ],
+            [
+              "丰元股份",
+              "002805",
+              "磷酸铁锂（LFP）、锂盐一体化",
+              "动力/储能用LFP正极材料",
+              "山东、云南基地",
+              "宁德时代、比亚迪、国轩高科",
+              "LFP+锂盐一体化布局，成本优势显著"
+            ],
+            [
+              "厦钨新能",
+              "688778",
+              "磷酸铁锂（LFP）、三元正极",
+              "LFP、三元正极材料",
+              "福建基地",
+              "宁德时代、比亚迪、海外头部电池厂",
+              "LFP+三元并行，海外客户拓展领先"
+            ],
+            [
+              "容百科技",
+              "688005",
+              "高镍三元（NCM811/9系）",
+              "高镍NCM/NCA三元正极材料",
+              "宁波、贵州、湖北基地",
+              "宁德时代、比亚迪、LG新能源",
+              "高镍三元龙头，出货量行业第一"
+            ],
+            [
+              "当升科技",
+              "300073",
+              "高镍三元、钠电正极",
+              "高镍NCM三元、钠电正极材料",
+              "江苏、四川、芬兰基地",
+              "宁德时代、比亚迪、海外头部车企",
+              "海外拓展最快，高镍+钠电双布局"
+            ],
+            [
+              "巴莫科技",
+              "未上市",
+              "中镍三元、钴酸锂",
+              "中镍NCM三元、钴酸锂正极材料",
+              "天津、四川基地",
+              "宁德时代、比亚迪、消费电子头部客户",
+              "中镍三元为主，消费+动力双覆盖"
+            ],
+            [
+              "五矿新能",
+              "未上市",
+              "三元正极、钴酸锂",
+              "NCM三元、钴酸锂正极材料",
+              "湖南基地",
+              "宁德时代、比亚迪、消费电子客户",
+              "央企背景，三元+钴酸锂双线布局"
+            ],
+            [
+              "格林美",
+              "002340",
+              "三元前驱体+三元正极一体化",
+              "NCM三元正极材料、三元前驱体",
+              "湖北、江苏基地",
+              "宁德时代、比亚迪、LG新能源",
+              "前驱体+三元一体化，回收闭环优势显著"
+            ],
+            [
+              "珈钠能源",
+              "未上市",
+              "钠电正极（层状/聚阴离子）",
+              "钠电正极材料",
+              "湖北基地",
+              "宁德时代、比亚迪、头部钠电电池厂",
+              "钠电正极龙头，技术路线全覆盖"
+            ],
+            [
+              "钠创新能源",
+              "未上市",
+              "钠电正极（聚阴离子）",
+              "钠电正极材料",
+              "江苏基地",
+              "宁德时代、比亚迪、国轩高科",
+              "钠电正极核心供应商，聚阴离子路线领先"
+            ],
+            [
+              "中信国安",
+              "000839",
+              "锰酸锂",
+              "锰酸锂正极材料",
+              "青海基地",
+              "宁德时代、比亚迪、低端动力客户",
+              "锰酸锂龙头，成本优势显著"
+            ],
+            [
+              "红星发展",
+              "600367",
+              "锰酸锂",
+              "锰酸锂正极材料",
+              "贵州基地",
+              "宁德时代、比亚迪、储能客户",
+              "锰酸锂核心供应商，产能稳定"
+            ],
+            [
+              "湘潭电化",
+              "002125",
+              "锰酸锂",
+              "锰酸锂正极材料",
+              "湖南基地",
+              "宁德时代、比亚迪、低端动力客户",
+              "锰酸锂核心供应商，产业链配套完善"
+            ]
+          ]
+        },
+        {
+          "sheet": "负极材料厂家",
+          "shape": [
+            14,
+            7
+          ],
+          "preview": [
+            [
+              "国内主流负极材料厂家对比表（2026年5月）",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "企业名称",
+              "证券代码",
+              "核心技术路线",
+              "主要产品",
+              "核心产能布局",
+              "核心客户",
+              "行业地位/特点"
+            ],
+            [
+              "贝特瑞",
+              "835185",
+              "天然+人造石墨、硅基负极",
+              "天然石墨、高端人造石墨、硅碳负极",
+              "总产能57.5万吨；硅基0.6万吨",
+              "宁德时代、比亚迪、特斯拉、三星SDI",
+              "负极全栈龙头，天然石墨全球第一，硅基全球第一"
+            ],
+            [
+              "杉杉股份（上海杉杉）",
+              "600884",
+              "人造石墨、硅基负极",
+              "中高端人造石墨、快充负极、硅碳负极",
+              "人造石墨50万吨+，硅基已批量",
+              "宁德时代、比亚迪、LG新能源、SKI",
+              "人造石墨行业第二，硅基一线供应商"
+            ],
+            [
+              "璞泰来（江西紫宸）",
+              "603659",
+              "高端人造石墨、高倍率快充、硅基负极",
+              "针状焦基人造石墨、6C快充负极、硅氧负极",
+              "负极25万吨；石墨化自供90%",
+              "宁德时代、ATL、比亚迪、国轩高科",
+              "高端快充负极第一，消费+动力双强"
+            ],
+            [
+              "中科电气（中科星城）",
+              "300035",
+              "人造石墨、硅碳负极（中试）",
+              "动力用人造石墨、储能长寿命负极",
+              "年化30万吨，在建5.76万吨",
+              "宁德时代、比亚迪、亿纬锂能、国轩高科",
+              "行业增速最快，性价比优势显著"
+            ],
+            [
+              "尚太科技",
+              "003026",
+              "人造石墨（动力为主）",
+              "高性价比动力负极",
+              "总产能18-20万吨，河北基地",
+              "宁德时代、比亚迪、远景能源、欣旺达",
+              "二线龙头，动力负极性价比标杆"
+            ],
+            [
+              "翔丰华",
+              "300890",
+              "人造+天然石墨、硅碳负极",
+              "动力/消费负极、硅碳负极（中试）",
+              "产能15万吨+，四川/福建基地",
+              "宁德时代、国轩高科、孚能科技、亿纬锂能",
+              "技术稳健，海外客户拓展领先"
+            ],
+            [
+              "凯金能源",
+              "未上市",
+              "人造石墨（中低端）",
+              "动力/储能负极",
+              "产能12-15万吨，内蒙古基地",
+              "国轩高科、力神、鹏辉能源、亿纬锂能",
+              "成本优势突出，储能业务占比高"
+            ],
+            [
+              "方大炭素",
+              "600516",
+              "天然石墨+石墨化",
+              "天然负极、石墨化加工",
+              "天然负极8-10万吨",
+              "动力/储能中小客户",
+              "石墨化自供，成本优势显著"
+            ],
+            [
+              "天目先导",
+              "未上市",
+              "CVD气相硅碳负极",
+              "硅碳负极",
+              "常州2000吨，舟山1万吨规划",
+              "宁德时代、ATL、三星、LG新能源",
+              "中科院技术，CVD工艺标杆"
+            ],
+            [
+              "碳一新能源",
+              "未上市",
+              "CVD硅碳负极",
+              "硅碳负极",
+              "衢州1200吨，池州5000吨（2026底）",
+              "头部电池厂认证中",
+              "膨胀控制好，循环寿命长"
+            ],
+            [
+              "圣泉集团",
+              "605589",
+              "生物质（糠醛副产物）硬碳",
+              "钠电硬碳负极",
+              "千吨级量产，规划万吨级",
+              "宁德时代、比亚迪、头部钠电电池厂",
+              "钠电硬碳龙头，成本最低，杂质控制好"
+            ],
+            [
+              "元力股份",
+              "300174",
+              "木质素路线硬碳",
+              "钠电硬碳负极",
+              "中试→量产（2025-2026）",
+              "宁德时代、比亚迪、国轩高科",
+              "活性炭工艺同源，客户认证速度快"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Winigen_Battery-NY_Budgetary_Material_Pricing_20260527.xlsx",
+      "sheets": [
+        {
+          "sheet": "Budgetary Pricing",
+          "shape": [
+            35,
+            11
+          ],
+          "preview": [
+            [
+              "WINIGEN MATERIALS — Budgetary Material Availability & Pricing Table",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Prepared for Battery-NY | First-pass budgetary pricing for standard battery materials | Prepared by Catherine Wen / Winigen Materials | Date: May 27, 2026",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Purpose",
+              "This table is intended as a customer-facing first-pass material availability and budgetary pricing sheet, not a binding formal quotation.",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Pricing basis",
+              "Pilot/kg pricing is a budgetary estimate for small qualification quantities and may include small-quantity handling/standard packaging estimation. Bulk pricing is based on our manufacturing partner's commercial-scale EXW Asia references unless otherwise noted.",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Shipping & logistics",
+              "Final landed cost depends on exact quantity, destination, packaging, hazmat classification, freight mode, customs, and insurance. Ton-scale shipping is especially difficult to finalize until shipment details are confirmed.",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Next action",
+              "Battery-NY to confirm target grades, quantities, packaging, delivery location, and required documentation. Winigen can then issue a formal quote.",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "No.",
+              "Category",
+              "Material",
+              "Grade / Type",
+              "Suggested First-Pass Qty",
+              "Pilot Budget Price ($/kg)",
+              "Bulk Reference ($/ton)",
+              "Pricing Basis",
+              "Estimated Lead Time",
+              "Documentation",
+              "Notes / Clarification Needed"
+            ],
+            [
+              "1",
+              "Cathode active material",
+              "LFP",
+              "Energy grade, carbon-coated, commercial cell-grade",
+              "1 kg baseline; bulk on request",
+              "420",
+              "10559.85",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              "Confirm energy vs power grade, D50, tap density, Fe impurity, carbon content, particle morphology / coating confirmation."
+            ],
+            [
+              "2",
+              "Cathode active material",
+              "LFP",
+              "Power grade, carbon-coated, higher-rate commercial cell-grade",
+              "1 kg baseline; bulk on request",
+              "480",
+              "12500",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              ""
+            ],
+            [
+              "3",
+              "Cathode active material",
+              "NCA622",
+              "Commercial NCA622 cathode powder",
+              "1 kg baseline; bulk on request",
+              "780",
+              "32518.5",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              "Confirm single crystal vs polycrystalline, coating/doping, D50, voltage grade, residual lithium limits."
+            ],
+            [
+              "4",
+              "Cathode active material",
+              "NCA811",
+              "Commercial NCA811 cathode powder",
+              "1 kg baseline; bulk on request",
+              "900",
+              "30969.75",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              ""
+            ],
+            [
+              "5",
+              "Cathode active material",
+              "LCO",
+              "High-voltage / standard LCO to be selected",
+              "1 kg baseline; bulk on request",
+              "1200",
+              "75232.5",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              "Confirm high-voltage grade, D50, Co specification, coating."
+            ],
+            [
+              "6",
+              "Cathode active material",
+              "NMC622",
+              "Commercial NMC622 cathode powder",
+              "1 kg baseline; bulk on request",
+              "700",
+              "30969.75",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              "Confirm Ni content, single crystal vs polycrystalline, coating/doping, D50, voltage grade"
+            ],
+            [
+              "7",
+              "Cathode active material",
+              "NMC811",
+              "Commercial NMC811 cathode powder",
+              "1 kg baseline; bulk on request",
+              "820",
+              "33000",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              ""
+            ],
+            [
+              "8",
+              "Cathode active material",
+              "LMFP",
+              "Energy grade LMFP",
+              "1 kg baseline; bulk on request",
+              "600",
+              "12075",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              "Confirm Mn/Fe ratio, carbon coating, particle size, target voltage/capacity, power grade requires rate-performance specification confirmation."
+            ],
+            [
+              "9",
+              "Cathode active material",
+              "LMFP",
+              "Power grade LMFP",
+              "1 kg baseline; bulk on request",
+              "700",
+              "14500",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              ""
+            ],
+            [
+              "10",
+              "Cathode active material",
+              "LMO",
+              "Commercial LMO cathode powder",
+              "1 kg baseline; bulk on request",
+              "450",
+              "30660",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              "Confirm spinel grade, particle size, Mn dissolution / coating requirements."
+            ],
+            [
+              "11",
+              "Anode active material",
+              "Graphite",
+              "Ordinary graphite, commercial anode grade",
+              "1 kg baseline; bulk on request",
+              "280",
+              "2787.75",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              "Confirm natural vs artificial graphite, D50, capacity, ICE, tap density. Higher-rate option; confirm target rate performance and coating."
+            ],
+            [
+              "12",
+              "Anode active material",
+              "Graphite",
+              "High-power graphite",
+              "1 kg baseline; bulk on request",
+              "380",
+              "2988.3",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              ""
+            ],
+            [
+              "13",
+              "Anode active material",
+              "Graphite",
+              "Ultra-high-power graphite",
+              "1 kg baseline; bulk on request",
+              "480",
+              "3097.5",
+              "Pilot/kg budgetary; bulk EXW Asia reference",
+              "2–3 weeks for pilot qty; production qty TBD",
+              "SDS / COA / TDS",
+              ""
+            ]
+          ]
+        },
+        {
+          "sheet": "Terms & Next Steps",
+          "shape": [
+            12,
+            2
+          ],
+          "preview": [
+            [
+              "WINIGEN MATERIALS — Terms, Assumptions & Customer Clarifications",
+              ""
+            ],
+            [
+              "Section",
+              "Customer Clarifications"
+            ],
+            [
+              "Document status",
+              "This workbook is a first-pass budgetary material availability and pricing table. It is not a binding formal quote."
+            ],
+            [
+              "Pilot/kg pricing",
+              "Pilot pricing reflects small-quantity qualification economics, handling, packaging, and the unit pricing can be much higher than ton-scale production references."
+            ],
+            [
+              "Bulk pricing",
+              "Bulk pricing is included as a commercial-scale reference and is generally EXW Asia unless otherwise stated."
+            ],
+            [
+              "Freight and landed cost",
+              "Shipping, hazmat logistics, import duties, insurance, and final landed cost can be quoted after Battery-NY confirms exact quantity, destination, packaging, and delivery timing. Ton-scale logistics cannot be finalized accurately at this stage."
+            ],
+            [
+              "Lead time",
+              "For R&D/pilot quantities, expected lead time is generally 2–3 weeks after order confirmation, subject to product availability, documentation needs, and shipping arrangements. Production quantities require separate confirmation."
+            ],
+            [
+              "Documentation",
+              "Typical documents available include SDS, COA, TDS, and lot-level quality documentation. Traceability / pre-shipment analysis / certificate of conformity can be discussed as needed."
+            ],
+            [
+              "NDA boundary",
+              "Standard commercial materials and standard electrolyte formulations can be purchased without NDA. Customized electrolyte formulations or proprietary cell chemistry information should be handled under NDA."
+            ],
+            [
+              "Customer inputs needed",
+              "For each priority material: exact grade/specification, quantity, packaging size, delivery location, required documents, and required delivery date."
+            ],
+            [
+              "Recommended next step",
+              "Battery-NY to select priority materials from the table and confirm whether 1 kg baseline quantities are appropriate. Winigen Materials to issue a formal quote for selected items."
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
