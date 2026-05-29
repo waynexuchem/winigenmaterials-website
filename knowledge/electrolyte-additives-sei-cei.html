@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems | Winigen Materials</title>
-<meta name="description" content="Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.">
+<title>Electrolyte Additives for SEI, CEI, Silicon Anodes, and High-Voltage Cathodes | Winigen Materials</title>
+<meta name="description" content="Learn how FEC, VC, sulfur-containing additives, nitrile additives, and phosphorus-containing additives affect SEI formation, CEI stability, gas generation, impedance growth, and cycle life in advanced lithium batteries.">
 <link rel="canonical" href="https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,16 @@
 .article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 34px; align-items: start; }
 .article-main, .article-side { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
 .article-main p { line-height: 1.78; }
+.article-main a { color: var(--blue); font-weight: 800; }
 .article-block { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(18,32,51,.1); }
-.article-list { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
-.article-list li { position: relative; padding-left: 24px; color: #2b3950; line-height: 1.55; }
-.article-list li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.article-table-wrap { overflow-x: auto; margin: 20px 0 22px; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; background: #fff; }
+.article-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.article-table th { background: #14213d; color: #fff; text-align: left; padding: 13px 15px; font-size: 13px; }
+.article-table td { padding: 13px 15px; border-top: 1px solid rgba(18,32,51,.1); color: #2b3950; vertical-align: top; line-height: 1.45; }
+.reference-list { display: grid; gap: 12px; padding-left: 22px; margin: 18px 0 0; }
+.reference-list li { color: #40516f; line-height: 1.58; padding-left: 4px; }
+.reference-list a { color: var(--blue); font-weight: 850; text-decoration: none; }
+.reference-list a:hover { text-decoration: underline; }
 .related-link-list { display: grid; gap: 10px; margin-top: 16px; }
 .related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
 .related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
@@ -30,33 +36,27 @@
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.winigenmaterials.com/#organization",
-  "name": "Winigen Materials",
-  "url": "https://www.winigenmaterials.com/",
-  "logo": "https://www.winigenmaterials.com/assets/images/winigen-logo.png",
-  "sameAs": ["https://www.linkedin.com/company/118914606/"],
-  "description": "Winigen Materials supplies battery-grade lithium salts, low-moisture solvents, electrolyte additives, solid-state electrolytes, and formulation support for advanced battery R&D."
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#article",
-  "headline": "Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems",
-  "description": "Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.",
+  "headline": "Electrolyte Additives for SEI, CEI, Silicon Anodes, and High-Voltage Cathodes",
+  "description": "Learn how FEC, VC, sulfur-containing additives, nitrile additives, and phosphorus-containing additives affect SEI formation, CEI stability, gas generation, impedance growth, and cycle life in advanced lithium batteries.",
   "url": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html",
   "datePublished": "2026-05-25",
-  "dateModified": "2026-05-25",
+  "dateModified": "2026-05-28",
   "author": {
     "@id": "https://www.winigenmaterials.com/#organization"
   },
   "publisher": {
     "@id": "https://www.winigenmaterials.com/#organization"
   },
-  "about": "Electrolyte Additives",
-  "mainEntityOfPage": {
-    "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#webpage"
-  }
+  "about": "Electrolyte additives for SEI and CEI formation",
+  "citation": [
+    "Xu et al., Improved Performance of the Silicon Anode for Li-Ion Batteries: Understanding the Surface Modification Mechanism of Fluoroethylene Carbonate as an Effective Electrolyte Additive, Chemistry of Materials, 2015.",
+    "Klein et al., Re-evaluating common electrolyte additives for high-voltage lithium ion batteries, Cell Reports Physical Science, 2021.",
+    "Hou et al., Recent Advances in Electrolytes for High-Voltage Cathodes of Lithium-Ion Batteries, Transactions of Tianjin University, 2023.",
+    "Zhang et al., Challenges of film-forming additives in low-temperature lithium-ion batteries: A review, Journal of Power Sources, 2024."
+  ],
+  "mainEntityOfPage": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html"
 }</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -65,26 +65,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What are electrolyte additives used for?",
+      "name": "Why are electrolyte additives used in small concentrations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They are used to tune SEI and CEI formation, reduce parasitic reactions, improve cycle life, and support demanding voltage, rate, or temperature conditions."
+        "text": "Small additive levels can strongly influence SEI formation, CEI stability, gas generation, impedance growth, and cycle life."
       }
     },
     {
       "@type": "Question",
-      "name": "Are additives only for lithium-ion batteries?",
+      "name": "Are SEI and CEI additives interchangeable?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Additive concepts also appear in sodium-ion, lithium-metal, silicon-anode, and other advanced electrolyte systems."
+        "text": "No. Additives should be screened against the anode, cathode, voltage window, salt, solvent blend, and formation protocol used in the target cell."
       }
     },
     {
       "@type": "Question",
-      "name": "How much additive is normally needed?",
+      "name": "Which additives are relevant for silicon-rich anodes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Additive loading depends on the chemistry and target behavior, so screening should be done experimentally with the intended electrodes and cycling conditions."
+        "text": "FEC, VC, sulfur-containing additives, phosphorus-containing additives, nitriles, and blended additive packages are commonly evaluated for silicon-rich anode systems."
       }
     }
   ]
@@ -109,7 +109,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems",
+      "name": "Electrolyte Additives for SEI, CEI, Silicon Anodes, and High-Voltage Cathodes",
       "item": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html"
     }
   ]
@@ -129,45 +129,125 @@
     <div class="container section-title">
       <div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / Electrolyte Additives</div>
       <p class="eyebrow">Electrolyte Additives</p>
-      <h1>Electrolyte Additives for SEI, CEI, Silicon-Anode, and High-Voltage Systems</h1>
-      <p>Technical overview of electrolyte additive selection for SEI formation, CEI stability, silicon anodes, high-voltage cathodes, and fast-charge cells.</p>
+      <h1>Electrolyte Additives for SEI, CEI, Silicon Anodes, and High-Voltage Cathodes</h1>
+      <p>Learn how FEC, VC, sulfur-containing additives, nitrile additives, and phosphorus-containing additives affect SEI formation, CEI stability, gas generation, impedance growth, and cycle life in advanced lithium batteries.</p>
     </div>
   </section>
   <section class="section">
     <div class="container article-layout">
       <article class="article-main">
-        <p>Electrolyte additives are used in small amounts, but they can strongly affect SEI formation, CEI stability, gas generation, impedance growth, and cycle life. Additive screening is especially important for silicon-rich anodes, high-voltage cathodes, and aggressive fast-charge conditions.</p>
-        <section class="article-block"><h2>SEI and Silicon-Anode Additives</h2><p>Silicon anodes expand and contract during cycling, so the electrolyte must support a durable and flexible SEI. Additives such as FEC, VC, sulfur-containing additives, nitrile additives, and phosphorus-containing additives are often screened to reduce decomposition and impedance growth.</p></section>
-        <section class="article-block"><h2>CEI and High-Voltage Stability</h2><p>High-voltage cathodes place oxidative stress on electrolyte solvents and salts. Additives can help form cathode-electrolyte interphases, reduce transition-metal dissolution effects, and stabilize cycling under higher upper-cutoff voltages.</p></section>
-        <section class="article-block"><h2>How to Screen Additives</h2><p>A practical additive screen should compare baseline electrolyte, single-additive systems, and multi-additive blends using retention, EIS, gas behavior, low-temperature performance, and post-cycling diagnostics where available.</p></section>
-        <section class="article-block"><h2>Practical Screening Notes</h2><ul class="article-list">
-              <li>SEI additives support graphite, silicon, and lithium-metal interface stability.</li>
-              <li>CEI additives support high-voltage cathode and transition-metal-rich systems.</li>
-              <li>Additive packages should be tested against a baseline electrolyte, not only against each other.</li>
-        </ul></section>
+        <p>Electrolyte additives are used in small amounts, but they can strongly affect battery performance. A few weight percent of an additive may change solid-electrolyte interphase formation, cathode-electrolyte interphase stability, gas generation, impedance growth, lithium plating behavior, transition-metal dissolution effects, and long-term cycle life.</p>
+<p>Additive screening is especially important for silicon-rich anodes, graphite–silicon blends, lithium-metal cells, high-voltage cathodes, nickel-rich cathodes, and aggressive fast-charge conditions.</p>
+<p>For battery developers, the key question is not simply “which additive works best?” but rather which additive package fits the electrode chemistry, electrolyte salt, solvent blend, voltage window, formation protocol, and target operating condition.</p>
+<section class="article-block"><h2>Why Electrolyte Additives Matter</h2>
+<p>Most lithium-ion and lithium-metal electrolytes are not optimized by the bulk solvent and salt alone. During early cycles, electrolyte components decompose at the anode and cathode surfaces to form passivation layers. These interphases can either protect the cell or accelerate failure.</p>
+<p>A successful additive may help:</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Additive Function</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>Improve SEI formation</td><td>Reduces continuous electrolyte decomposition at graphite, silicon, or lithium-metal anodes</td></tr>
+<tr><td>Stabilize CEI formation</td><td>Helps protect high-voltage cathode surfaces from oxidation and surface reconstruction</td></tr>
+<tr><td>Reduce impedance growth</td><td>Supports better rate capability and cycle retention</td></tr>
+<tr><td>Suppress gas generation</td><td>Important for pouch-cell swelling, safety, and long-term reliability</td></tr>
+<tr><td>Manage transition-metal effects</td><td>Helps reduce cathode-to-anode cross-talk in nickel-rich or high-voltage systems</td></tr>
+<tr><td>Improve formation efficiency</td><td>Reduces first-cycle loss and improves early-cycle reproducibility</td></tr>
+<tr><td>Support fast charge</td><td>Helps reduce lithium plating risk and interfacial kinetic limitations</td></tr>
+</tbody></table></div>
+</section>
+<section class="article-block"><h2>SEI Additives for Graphite, Silicon, and Lithium-Metal Anodes</h2>
+<p>The solid-electrolyte interphase, or SEI, forms on the negative electrode during early cycling. A good SEI should be ionically conductive, electronically insulating, mechanically stable, and chemically protective.</p>
+<p>Silicon-rich anodes make SEI design especially difficult because silicon expands and contracts during lithiation and delithiation. This repeated volume change can crack the SEI, expose fresh surface, consume electrolyte, increase impedance, generate gas, and reduce cycle life.</p>
+<p>Common SEI-focused additive families include:</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Additive Type</th><th>Typical Purpose</th></tr></thead>
+<tbody>
+<tr><td>Fluorinated carbonates such as FEC</td><td>Often used for silicon-containing anodes to support LiF-rich or fluorinated SEI chemistry</td></tr>
+<tr><td>Vinylene carbonate, or VC</td><td>Common graphite SEI-forming additive and benchmark additive in carbonate electrolytes</td></tr>
+<tr><td>Sulfur-containing additives</td><td>Can modify SEI chemistry and improve passivation in selected systems</td></tr>
+<tr><td>Phosphorus-containing additives</td><td>May contribute to interphase formation, flame-retardant behavior, or high-voltage stability depending on structure</td></tr>
+<tr><td>Nitrile-containing additives</td><td>Often evaluated for high-voltage or cathode-side stability, while also influencing interfacial behavior</td></tr>
+</tbody></table></div>
+<p>FEC is one of the most widely studied additives for silicon anodes. It has been reported to significantly improve the cyclability of silicon-based electrodes, although its detailed role in SEI formation depends on electrode design, electrolyte composition, and cycling conditions.</p>
+<p>VC and FEC are both common SEI additives, but they do not behave identically. Operando SEI studies show that both can change SEI thickness and mechanical properties, while the resulting passivation behavior can differ significantly depending on the electrode and electrolyte system.</p>
+</section>
+<section class="article-block"><h2>CEI Additives for High-Voltage Cathodes</h2>
+<p>The cathode-electrolyte interphase, or CEI, forms on the positive electrode surface. At high upper-cutoff voltages, electrolyte solvents, salts, and additives experience stronger oxidative stress. Poor cathode-side passivation can lead to electrolyte oxidation, gas evolution, transition-metal dissolution, impedance growth, oxygen release risk, and accelerated capacity fade.</p>
+<p>CEI-focused additive screening is especially important for:</p>
+<p>Nickel-rich NMC cathodes</p>
+<p>High-voltage LCO</p>
+<p>LNMO spinel cathodes</p>
+<p>High-voltage layered oxides</p>
+<p>Lithium-metal full cells with aggressive cathode voltage windows</p>
+<p>High-voltage electrolyte reviews emphasize that electrolyte oxidation and cathode–electrolyte interphase stability are central challenges for high-voltage cathodes.</p>
+<p>A useful CEI additive may help form a thinner, more stable, less resistive cathode-side interphase. In some systems, additives can also help reduce transition-metal dissolution or reduce harmful electrode cross-talk, where dissolved transition metals migrate from the cathode and damage the anode SEI.</p>
+</section>
+<section class="article-block"><h2>Additives for Transition-Metal Dissolution and Electrode Cross-Talk</h2>
+<p>High-voltage and nickel-rich cathodes can release transition-metal species during cycling, especially under high state of charge, elevated temperature, acidic conditions, or electrolyte oxidation. These species may migrate to the anode, contaminate the SEI, increase impedance, and contribute to rollover failure.</p>
+<p>This is why additive screening should not only evaluate the cathode side. A high-voltage additive package should be tested for both:</p>
+<p>Cathode-side protection, including CEI stability and reduced cathode degradation.</p>
+<p>Anode-side consequences, including SEI contamination, lithium plating risk, and impedance growth.</p>
+<p>Some studies comparing common additives for high-voltage cells found that additives can have very different effects on transition-metal-related failure pathways, reinforcing that additive selection must be system-specific rather than generic.</p>
+</section>
+<section class="article-block"><h2>How to Screen Electrolyte Additives</h2>
+<p>A practical additive screening program should compare:</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Formulation Type</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Baseline electrolyte</td><td>Establishes reference performance</td></tr>
+<tr><td>Single-additive formulations</td><td>Identifies the effect of each additive</td></tr>
+<tr><td>Two-additive blends</td><td>Tests interaction between SEI and CEI additives</td></tr>
+<tr><td>Multi-additive packages</td><td>Approaches real commercial electrolyte design</td></tr>
+<tr><td>Stress-condition formulations</td><td>Tests performance under fast charge, high voltage, low temperature, or elevated temperature</td></tr>
+</tbody></table></div>
+<p>Screening should avoid comparing only additive-containing electrolytes against each other. Without a baseline electrolyte, it is difficult to determine whether an additive is improving performance, worsening performance, or simply shifting the failure mode.</p>
+</section>
+<section class="article-block"><h2>Practical Screening Metrics</h2>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Metric</th><th>What It Reveals</th></tr></thead>
+<tbody>
+<tr><td>First-cycle coulombic efficiency</td><td>Early SEI formation, irreversible lithium loss, and additive consumption</td></tr>
+<tr><td>Long-term coulombic efficiency</td><td>Continuous side reactions and interphase stability</td></tr>
+<tr><td>Capacity retention</td><td>Overall electrolyte–electrode compatibility</td></tr>
+<tr><td>EIS / impedance growth</td><td>SEI/CEI resistance, charge-transfer limitations, and aging</td></tr>
+<tr><td>Gas generation / swelling</td><td>Electrolyte oxidation, additive decomposition, and pouch-cell reliability</td></tr>
+<tr><td>Rate capability</td><td>Ion transport and interfacial kinetics</td></tr>
+<tr><td>Low-temperature performance</td><td>Conductivity, viscosity, desolvation, and interphase resistance</td></tr>
+<tr><td>High-temperature storage</td><td>Chemical stability, gas behavior, and parasitic reactions</td></tr>
+<tr><td>Post-cycling diagnostics</td><td>SEM, XPS, ICP, GC-MS, or other tools can identify failure mechanisms</td></tr>
+</tbody></table></div>
+</section>
+<section class="article-block"><h2>Practical Screening Notes</h2>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Additive Strategy</th><th>Practical Note</th></tr></thead>
+<tbody>
+<tr><td>SEI additives</td><td>Support graphite, silicon, and lithium-metal interface stability</td></tr>
+<tr><td>CEI additives</td><td>Support high-voltage cathode and transition-metal-rich systems</td></tr>
+<tr><td>Gas-control additives</td><td>Must be evaluated in pouch cells or sealed formats, not only coin cells</td></tr>
+<tr><td>Fast-charge additives</td><td>Should be tested under realistic charge rate, temperature, and anode loading</td></tr>
+<tr><td>Multi-additive blends</td><td>Can be beneficial, but additive interactions may be positive or negative</td></tr>
+<tr><td>Baseline comparison</td><td>Additive packages should be tested against a baseline electrolyte, not only against each other</td></tr>
+</tbody></table></div>
+</section>
+<section class="article-block"><h2>Bottom Line</h2>
+<p>Electrolyte additives are powerful tools for controlling SEI formation, CEI stability, gas behavior, impedance growth, and cycle life. However, additive performance is highly system-dependent. The same additive can perform well in one electrode pair and poorly in another.</p>
+<p>For silicon-rich anodes, high-voltage cathodes, lithium-metal cells, and fast-charge applications, the best approach is to screen additives as part of a full electrolyte formulation strategy, including salt, solvent blend, additive package, formation protocol, and operating condition.</p>
+<p>At Winigen Materials, we support battery developers with electrolyte additive selection, SEI/CEI-focused formulation screening, high-voltage electrolyte design, silicon-anode electrolyte optimization, and custom electrolyte development for advanced lithium-ion and lithium-metal cells.</p>
+</section>
+        <section class="article-block"><h2>Further Reading</h2><p>FEC and VC are widely studied for silicon-anode and graphite-anode SEI control, but their impact depends strongly on the electrode design and electrolyte formulation.</p><p>High-voltage cathode additive studies emphasize CEI stability, electrolyte oxidation control, and transition-metal dissolution as linked full-cell failure modes.</p></section>
+        <section class="article-block"><h2>References</h2><ol class="reference-list"><li><a href="https://pubs.acs.org/doi/10.1021/acs.chemmater.5b00339">Xu et al., Improved Performance of the Silicon Anode for Li-Ion Batteries: Understanding the Surface Modification Mechanism of Fluoroethylene Carbonate as an Effective Electrolyte Additive, Chemistry of Materials, 2015.</a></li><li><a href="https://cris.uni-muenster.de/portal/en/publication/80195434">Klein et al., Re-evaluating common electrolyte additives for high-voltage lithium ion batteries, Cell Reports Physical Science, 2021.</a></li><li><a href="https://link.springer.com/article/10.1007/s12209-023-00355-0">Hou et al., Recent Advances in Electrolytes for High-Voltage Cathodes of Lithium-Ion Batteries, Transactions of Tianjin University, 2023.</a></li><li><a href="https://www.sciencedirect.com/science/article/pii/S0378775324005111">Zhang et al., Challenges of film-forming additives in low-temperature lithium-ion batteries: A review, Journal of Power Sources, 2024.</a></li></ol></section>
       </article>
       <aside class="article-side">
         <p class="eyebrow">Related Pages</p>
         <h2>Continue Reading</h2>
-        <p>Use these product and family pages to connect the technical topic with available Winigen Materials products.</p>
-        <div class="related-link-list">
-            <a href="../products/electrolyte-additives.html">Electrolyte additives family</a>
-            <a href="../products/4-fluoro-1-3-dioxolan-2-one-fec.html">FEC product page</a>
-            <a href="../products/vinylene-carbonate-vc.html">VC product page</a>
-            <a href="../applications.html">Applications page</a>
-            <a href="../knowledge.html">Knowledge Center</a>
-        </div>
+        <p>Connect this technical topic with Winigen Materials product families, product pages, and formulation support.</p>
+        <div class="related-link-list"><a href="../products/electrolyte-additives.html">Electrolyte additives family</a><a href="../products/custom-electrolyte-formulations.html">Custom electrolyte formulations</a><a href="lifsi-lithium-metal-batteries.html">LiFSI electrolyte guide</a><a href="low-temperature-electrolytes.html">Low-temperature electrolyte guide</a><a href="../knowledge.html">Knowledge Center</a></div>
       </aside>
     </div>
   </section>
   <section class="section" id="faq">
     <div class="container">
       <div class="section-title"><p class="eyebrow">FAQ</p><h2>Common Questions</h2></div>
-      <div class="faq-list">
-          <details><summary>What are electrolyte additives used for?</summary><p>They are used to tune SEI and CEI formation, reduce parasitic reactions, improve cycle life, and support demanding voltage, rate, or temperature conditions.</p></details>
-          <details><summary>Are additives only for lithium-ion batteries?</summary><p>No. Additive concepts also appear in sodium-ion, lithium-metal, silicon-anode, and other advanced electrolyte systems.</p></details>
-          <details><summary>How much additive is normally needed?</summary><p>Additive loading depends on the chemistry and target behavior, so screening should be done experimentally with the intended electrodes and cycling conditions.</p></details>
-      </div>
+      <div class="faq-list"><details><summary>Why are electrolyte additives used in small concentrations?</summary><p>Small additive levels can strongly influence SEI formation, CEI stability, gas generation, impedance growth, and cycle life.</p></details><details><summary>Are SEI and CEI additives interchangeable?</summary><p>No. Additives should be screened against the anode, cathode, voltage window, salt, solvent blend, and formation protocol used in the target cell.</p></details><details><summary>Which additives are relevant for silicon-rich anodes?</summary><p>FEC, VC, sulfur-containing additives, phosphorus-containing additives, nitriles, and blended additive packages are commonly evaluated for silicon-rich anode systems.</p></details></div>
     </div>
   </section>
 </main>

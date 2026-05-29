@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Low-Temperature Electrolyte Design for Battery Research and Extreme Environments | Winigen Materials</title>
-<meta name="description" content="Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, and aerospace or cold-climate batteries.">
+<meta name="description" content="Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.">
 <link rel="canonical" href="https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,16 @@
 .article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 34px; align-items: start; }
 .article-main, .article-side { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
 .article-main p { line-height: 1.78; }
+.article-main a { color: var(--blue); font-weight: 800; }
 .article-block { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(18,32,51,.1); }
-.article-list { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
-.article-list li { position: relative; padding-left: 24px; color: #2b3950; line-height: 1.55; }
-.article-list li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.article-table-wrap { overflow-x: auto; margin: 20px 0 22px; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; background: #fff; }
+.article-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.article-table th { background: #14213d; color: #fff; text-align: left; padding: 13px 15px; font-size: 13px; }
+.article-table td { padding: 13px 15px; border-top: 1px solid rgba(18,32,51,.1); color: #2b3950; vertical-align: top; line-height: 1.45; }
+.reference-list { display: grid; gap: 12px; padding-left: 22px; margin: 18px 0 0; }
+.reference-list li { color: #40516f; line-height: 1.58; padding-left: 4px; }
+.reference-list a { color: var(--blue); font-weight: 850; text-decoration: none; }
+.reference-list a:hover { text-decoration: underline; }
 .related-link-list { display: grid; gap: 10px; margin-top: 16px; }
 .related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
 .related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
@@ -30,33 +36,27 @@
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.winigenmaterials.com/#organization",
-  "name": "Winigen Materials",
-  "url": "https://www.winigenmaterials.com/",
-  "logo": "https://www.winigenmaterials.com/assets/images/winigen-logo.png",
-  "sameAs": ["https://www.linkedin.com/company/118914606/"],
-  "description": "Winigen Materials supplies battery-grade lithium salts, low-moisture solvents, electrolyte additives, solid-state electrolytes, and formulation support for advanced battery R&D."
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html#article",
   "headline": "Low-Temperature Electrolyte Design for Battery Research and Extreme Environments",
-  "description": "Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, and aerospace or cold-climate batteries.",
+  "description": "Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.",
   "url": "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html",
   "datePublished": "2026-05-25",
-  "dateModified": "2026-05-25",
+  "dateModified": "2026-05-28",
   "author": {
     "@id": "https://www.winigenmaterials.com/#organization"
   },
   "publisher": {
     "@id": "https://www.winigenmaterials.com/#organization"
   },
-  "about": "Low-Temperature Electrolytes",
-  "mainEntityOfPage": {
-    "@id": "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html#webpage"
-  }
+  "about": "Low-temperature battery electrolyte design",
+  "citation": [
+    "Yang et al., Electrolyte design principles for low-temperature lithium-ion batteries, eScience, 2023.",
+    "Zhao et al., Low-Temperature Electrolytes for Lithium-Ion Batteries: Current Challenges, Development, and Perspectives, Nano-Micro Letters, 2025.",
+    "Zhang et al., Challenges of film-forming additives in low-temperature lithium-ion batteries: A review, Journal of Power Sources, 2024.",
+    "Logan and Dahn, Electrolyte Design for Fast-Charging Li-Ion Batteries, Trends in Chemistry, 2020."
+  ],
+  "mainEntityOfPage": "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html"
 }</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -65,26 +65,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What limits batteries at low temperature?",
+      "name": "Why do batteries lose performance at low temperature?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "High viscosity, low ionic conductivity, slow interfacial kinetics, and lithium plating risk can all limit cold-temperature performance."
+        "text": "Low temperature increases electrolyte viscosity, lowers conductivity, slows desolvation and charge transfer, and raises lithium-plating risk during charge."
       }
     },
     {
       "@type": "Question",
-      "name": "Can additives improve low-temperature behavior?",
+      "name": "Can salt selection alone solve low-temperature performance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, additives can support interphase stability, but they need to be paired with suitable solvents and salts."
+        "text": "No. Salt selection must be combined with solvent structure, additive package, water control, and formation protocol."
       }
     },
     {
       "@type": "Question",
-      "name": "Is low-temperature discharge the same as cold fast charging?",
+      "name": "What should be measured in low-temperature electrolyte screening?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Cold discharge and cold charge stress different failure modes and should be tested separately."
+        "text": "Conductivity, viscosity, impedance, lithium plating tendency, gas generation, capacity retention, and recovery after cold exposure should be tracked."
       }
     }
   ]
@@ -130,44 +130,127 @@
       <div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / Low-Temperature Electrolytes</div>
       <p class="eyebrow">Low-Temperature Electrolytes</p>
       <h1>Low-Temperature Electrolyte Design for Battery Research and Extreme Environments</h1>
-      <p>Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, and aerospace or cold-climate batteries.</p>
+      <p>Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.</p>
     </div>
   </section>
   <section class="section">
     <div class="container article-layout">
       <article class="article-main">
-        <p>Low-temperature battery operation is limited by slower ion transport, higher electrolyte viscosity, slower charge-transfer kinetics, and increased lithium plating risk. Electrolyte design for cold environments must balance conductivity, interphase stability, safety, and high-voltage compatibility.</p>
-        <section class="article-block"><h2>Solvent and Salt Selection</h2><p>Low-temperature electrolytes often use solvent blends that maintain lower viscosity and better ion transport at sub-zero conditions. Salt choice also matters because dissociation, solvation structure, and interphase chemistry change with temperature.</p></section>
-        <section class="article-block"><h2>Additives and Interphase Control</h2><p>Even when bulk conductivity is acceptable, poor SEI or CEI behavior can limit low-temperature performance. Additive selection can help reduce impedance growth and support more stable cycling under cold discharge or cold charge conditions.</p></section>
-        <section class="article-block"><h2>Testing Considerations</h2><p>Cold-temperature screening should separate discharge capability, charge acceptance, fast-charge behavior, and recovery at room temperature. A formulation that performs well at -20 C may not automatically support more severe -40 C or -70 C requirements.</p></section>
-        <section class="article-block"><h2>Practical Screening Notes</h2><ul class="article-list">
-              <li>Tune solvent viscosity, salt dissociation, and additive chemistry together.</li>
-              <li>Track lithium plating risk during cold charge and fast-charge protocols.</li>
-              <li>Compare low-temperature discharge, charge acceptance, and room-temperature recovery separately.</li>
-        </ul></section>
+        <p>Low-temperature battery operation is limited by slower ion transport, higher electrolyte viscosity, slower charge-transfer kinetics, more resistive interphases, and increased lithium plating risk during charge. These effects become especially important for electric vehicles, aerospace, defense, outdoor energy storage, cold-chain logistics, and other applications that require reliable operation below room temperature.</p>
+<p>Electrolyte design for cold environments must balance ionic conductivity, viscosity, lithium-ion solvation, desolvation kinetics, SEI/CEI stability, safety, and high-voltage compatibility. A formulation that performs well at 25 °C may perform poorly at −20 °C, and a formulation that supports cold discharge may not safely support cold charge or fast charge.</p>
+<p>For battery developers, the key question is not simply “which electrolyte has the highest low-temperature conductivity?” but rather which electrolyte enables the required discharge, charge acceptance, cycle life, and safety under the target cold-temperature protocol.</p>
+<p>Why Batteries Struggle at Low Temperature</p>
+<p>As temperature decreases, several battery limitations appear at the same time:</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Low-Temperature Limitation</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>Higher electrolyte viscosity</td><td>Reduces ion mobility and worsens rate capability</td></tr>
+<tr><td>Lower ionic conductivity</td><td>Increases polarization during charge and discharge</td></tr>
+<tr><td>Slower Li⁺ desolvation</td><td>Limits charge-transfer kinetics at electrode surfaces</td></tr>
+<tr><td>More resistive SEI/CEI layers</td><td>Increases impedance and reduces usable capacity</td></tr>
+<tr><td>Higher lithium plating risk</td><td>Creates safety and lifetime concerns during cold charge</td></tr>
+<tr><td>Reduced electrode diffusion</td><td>Limits active-material utilization at high rate</td></tr>
+<tr><td>Poor recovery after cold exposure</td><td>Indicates irreversible damage or unstable interphase chemistry</td></tr>
+</tbody></table></div>
+<p>Recent low-temperature electrolyte reviews emphasize that bulk ion transport, solvation/desolvation behavior, and interphase properties must be optimized together rather than independently.</p>
+<p>Solvent Selection for Low-Temperature Electrolytes</p>
+<p>Solvent selection is one of the most important variables in low-temperature electrolyte design. Conventional carbonate electrolytes may show increased viscosity and poor transport at sub-zero temperatures, especially when ethylene carbonate-rich systems are used.</p>
+<p>Low-temperature electrolyte screening often evaluates:</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Solvent Type</th><th>Why It Is Evaluated</th></tr></thead>
+<tbody>
+<tr><td>Linear carbonates</td><td>Lower viscosity than EC-rich systems and common in lithium-ion electrolyte baselines</td></tr>
+<tr><td>Esters</td><td>Often evaluated for low melting point and improved low-temperature transport</td></tr>
+<tr><td>Ethers</td><td>Can support faster Li⁺ transport and are widely studied in lithium-metal systems</td></tr>
+<tr><td>Fluorinated solvents / diluents</td><td>Can tune solvation structure, oxidative stability, and interphase chemistry</td></tr>
+<tr><td>Nitriles</td><td>May offer oxidative stability and alternative solvation behavior</td></tr>
+<tr><td>Weakly solvating solvents</td><td>Can reduce Li⁺ desolvation barriers and improve interfacial kinetics</td></tr>
+</tbody></table></div>
+<p>Low-temperature electrolyte design increasingly focuses on solvation structure, not only solvent melting point or viscosity. Weakly solvating or carefully coordinated solvent systems can help reduce desolvation barriers and improve low-temperature kinetics.</p>
+<p>Salt Selection and Solvation Structure</p>
+<p>Salt choice affects more than bulk conductivity. Lithium salts influence ion dissociation, ion pairing, solvation structure, interphase chemistry, aluminum current-collector compatibility, and low-temperature impedance.</p>
+<p>Common lithium salts considered in low-temperature electrolyte development include:</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Salt</th><th>Practical Role</th></tr></thead>
+<tbody>
+<tr><td>LiPF₆</td><td>Conventional lithium-ion baseline salt for carbonate electrolytes</td></tr>
+<tr><td>LiFSI</td><td>Often evaluated for fast-charge, lithium-metal, low-temperature, and high-concentration electrolyte systems</td></tr>
+<tr><td>LiTFSI</td><td>Useful in specialty, polymer, ether, and lithium-metal electrolytes, with current-collector compatibility considerations</td></tr>
+<tr><td>LiDFOB / LiBOB-type salts</td><td>Often studied as additives or co-salts for interphase and stability control</td></tr>
+</tbody></table></div>
+<p>LiFSI- and LiTFSI-containing systems are frequently investigated in low-temperature and lithium-metal electrolyte research, but they are not simple drop-in replacements for LiPF₆. Their benefits depend on solvent structure, salt concentration, additives, voltage window, and corrosion-control strategy.</p>
+<section class="article-block"><h2>Additives and Interphase Control</h2>
+<p>Even when bulk electrolyte conductivity is acceptable, low-temperature performance can still be limited by interfacial resistance. SEI and CEI layers may become more resistive at reduced temperature, increasing charge-transfer impedance and limiting capacity.</p>
+<p>Additives can help tune interphase formation and reduce impedance growth, but they must be screened carefully. Some film-forming additives that work well at room temperature may increase impedance or reduce charge acceptance at low temperature. Recent reviews specifically note that low-temperature additive design must balance SEI protection with ion transport through the interphase.</p>
+<p>Useful additive-screening questions include:</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Question</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>Does the additive reduce first-cycle loss?</td><td>Indicates improved early SEI/CEI formation</td></tr>
+<tr><td>Does it reduce impedance after cold cycling?</td><td>Shows whether the interphase remains ionically conductive</td></tr>
+<tr><td>Does it reduce gas generation?</td><td>Important for pouch-cell reliability and swelling</td></tr>
+<tr><td>Does it increase or decrease lithium plating risk?</td><td>Critical for cold charge and fast charge</td></tr>
+<tr><td>Does it recover after warming?</td><td>Separates reversible transport limitation from irreversible degradation</td></tr>
+</tbody></table></div>
+<p>Cold Discharge vs Cold Charge</p>
+<p>Cold discharge and cold charge should be evaluated separately.</p>
+<p>A cell may discharge acceptably at −20 °C because lithium ions are moving from the anode to the cathode under moderate current. However, charging at the same temperature can be much more dangerous because lithium ions must intercalate into the anode. If graphite intercalation kinetics are too slow, lithium plating can occur.</p>
+<p>This distinction is especially important for:</p>
+<p>EV fast charging in winter</p>
+<p>Outdoor energy storage</p>
+<p>Aerospace and defense systems</p>
+<p>High-energy graphite or silicon-anode cells</p>
+<p>Lithium-metal cells</p>
+<p>Cells charged immediately after cold soak</p>
+<p>Fast charging is already associated with lithium plating risk, and low temperature further increases that risk by slowing transport and interfacial kinetics.</p>
+<p>Testing Considerations for Low-Temperature Electrolytes</p>
+<p>A practical low-temperature screening program should separate different performance modes instead of reporting only one cold-temperature capacity value.</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Test Mode</th><th>What It Measures</th></tr></thead>
+<tbody>
+<tr><td>Cold discharge after room-temperature charge</td><td>Usable energy and power in cold environments</td></tr>
+<tr><td>Cold charge acceptance</td><td>Whether the cell can safely accept charge at low temperature</td></tr>
+<tr><td>Cold fast charge</td><td>Lithium plating resistance under aggressive conditions</td></tr>
+<tr><td>Cold cycling</td><td>Long-term interphase and impedance stability</td></tr>
+<tr><td>Room-temperature recovery</td><td>Reversibility after cold exposure</td></tr>
+<tr><td>Post-cold EIS</td><td>Impedance growth and interfacial resistance</td></tr>
+<tr><td>Gas / swelling measurement</td><td>Electrolyte decomposition and pouch-cell reliability</td></tr>
+<tr><td>Post-mortem anode analysis</td><td>Lithium plating, dead lithium, SEI failure, and surface damage</td></tr>
+</tbody></table></div>
+<p>A formulation that works at −20 °C may not automatically work at −40 °C or −70 °C. Ultra-low-temperature batteries introduce additional challenges such as extremely sluggish ion transport, unstable lithium deposition, and difficulty balancing low viscosity, high carrier concentration, fast desolvation, and stable interfaces.</p>
+<p>Practical Screening Notes</p>
+<div class="article-table-wrap"><table class="article-table">
+<thead><tr><th>Screening Principle</th><th>Practical Note</th></tr></thead>
+<tbody>
+<tr><td>Tune solvent viscosity and solvation together</td><td>Low viscosity alone is not enough if desolvation or interphase transport is poor</td></tr>
+<tr><td>Compare salts under the same solvent baseline</td><td>Salt effects are hard to interpret if solvent chemistry also changes</td></tr>
+<tr><td>Separate discharge and charge testing</td><td>Cold discharge capability does not prove safe cold charging</td></tr>
+<tr><td>Track lithium plating risk</td><td>Especially important for graphite, silicon, lithium metal, and fast-charge protocols</td></tr>
+<tr><td>Use EIS before and after cold exposure</td><td>Helps separate bulk transport limits from interfacial impedance growth</td></tr>
+<tr><td>Check room-temperature recovery</td><td>Poor recovery may indicate irreversible interphase or plating damage</td></tr>
+<tr><td>Validate in pouch cells</td><td>Gas, swelling, wetting, and pressure effects may not appear clearly in coin cells</td></tr>
+</tbody></table></div>
+</section>
+<section class="article-block"><h2>Bottom Line</h2>
+<p>Low-temperature electrolyte design requires a full formulation strategy. Solvent viscosity, lithium salt selection, Li⁺ solvation/desolvation, additive chemistry, SEI/CEI behavior, and lithium plating risk must be optimized together.</p>
+<p>For practical development, low-temperature electrolyte screening should separate discharge capability, charge acceptance, fast-charge behavior, cold cycling stability, and room-temperature recovery. A good electrolyte for −20 °C operation may not be sufficient for −40 °C or ultra-low-temperature applications.</p>
+<p>At Winigen Materials, we support low-temperature battery electrolyte development through lithium salt selection, solvent screening, additive strategy, low-water material handling, and custom formulation support for lithium-ion, silicon-anode, lithium-metal, and specialty battery systems.</p>
+</section>
+        <section class="article-block"><h2>Further Reading</h2><p>Low-temperature electrolyte design reviews emphasize low melting point, low viscosity, suitable lithium-ion solvation, and favorable interphase chemistry.</p><p>Lithium-metal and fast-charge studies connect low-temperature operation with desolvation kinetics, interphase resistance, and lithium plating control.</p></section>
+        <section class="article-block"><h2>References</h2><ol class="reference-list"><li><a href="https://doi.org/10.1016/j.esci.2023.100170">Yang et al., Electrolyte design principles for low-temperature lithium-ion batteries, eScience, 2023.</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12432001/">Zhao et al., Low-Temperature Electrolytes for Lithium-Ion Batteries: Current Challenges, Development, and Perspectives, Nano-Micro Letters, 2025.</a></li><li><a href="https://www.sciencedirect.com/science/article/pii/S0378775324005111">Zhang et al., Challenges of film-forming additives in low-temperature lithium-ion batteries: A review, Journal of Power Sources, 2024.</a></li><li><a href="https://doi.org/10.1016/j.trechm.2020.01.011">Logan and Dahn, Electrolyte Design for Fast-Charging Li-Ion Batteries, Trends in Chemistry, 2020.</a></li></ol></section>
       </article>
       <aside class="article-side">
         <p class="eyebrow">Related Pages</p>
         <h2>Continue Reading</h2>
-        <p>Use these product and family pages to connect the technical topic with available Winigen Materials products.</p>
-        <div class="related-link-list">
-            <a href="../products/custom-electrolyte-formulations.html">Custom formulations family</a>
-            <a href="../products/battery-solvents.html">Battery solvents family</a>
-            <a href="../products/electrolyte-additives.html">Electrolyte additives family</a>
-            <a href="../services.html">Services page</a>
-            <a href="../knowledge.html">Knowledge Center</a>
-        </div>
+        <p>Connect this technical topic with Winigen Materials product families, product pages, and formulation support.</p>
+        <div class="related-link-list"><a href="../products/custom-electrolyte-formulations.html">Custom electrolyte formulations</a><a href="../products/battery-solvents.html">Battery solvents family</a><a href="lifsi-lithium-metal-batteries.html">LiFSI electrolyte guide</a><a href="electrolyte-additives-sei-cei.html">Electrolyte additives guide</a><a href="../knowledge.html">Knowledge Center</a></div>
       </aside>
     </div>
   </section>
   <section class="section" id="faq">
     <div class="container">
       <div class="section-title"><p class="eyebrow">FAQ</p><h2>Common Questions</h2></div>
-      <div class="faq-list">
-          <details><summary>What limits batteries at low temperature?</summary><p>High viscosity, low ionic conductivity, slow interfacial kinetics, and lithium plating risk can all limit cold-temperature performance.</p></details>
-          <details><summary>Can additives improve low-temperature behavior?</summary><p>Yes, additives can support interphase stability, but they need to be paired with suitable solvents and salts.</p></details>
-          <details><summary>Is low-temperature discharge the same as cold fast charging?</summary><p>No. Cold discharge and cold charge stress different failure modes and should be tested separately.</p></details>
-      </div>
+      <div class="faq-list"><details><summary>Why do batteries lose performance at low temperature?</summary><p>Low temperature increases electrolyte viscosity, lowers conductivity, slows desolvation and charge transfer, and raises lithium-plating risk during charge.</p></details><details><summary>Can salt selection alone solve low-temperature performance?</summary><p>No. Salt selection must be combined with solvent structure, additive package, water control, and formation protocol.</p></details><details><summary>What should be measured in low-temperature electrolyte screening?</summary><p>Conductivity, viscosity, impedance, lithium plating tendency, gas generation, capacity retention, and recovery after cold exposure should be tracked.</p></details></div>
     </div>
   </section>
 </main>
