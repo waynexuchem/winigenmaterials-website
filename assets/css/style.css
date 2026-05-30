@@ -296,6 +296,7 @@ body .mobile-menu { display: none; }
   padding: 20px;
   background: radial-gradient(circle at 70% 20%, rgba(184,150,74,.18), transparent 32%), linear-gradient(135deg,#fff 0%,#eef7fc 100%);
   border-bottom: 1px solid rgba(18,32,51,.08);
+  overflow: hidden;
 }
 
 .product-card__media img {
@@ -303,6 +304,39 @@ body .mobile-menu { display: none; }
   max-height: 260px;
   object-fit: contain;
   mix-blend-mode: multiply;
+}
+
+.chemical-structure {
+  transform-origin: center;
+  transition: transform .2s ease;
+}
+
+.chemical-structure--compact {
+  transform: scale(1.34);
+}
+
+.chemical-structure--balanced {
+  transform: scale(1.18);
+}
+
+.chemical-structure--large {
+  transform: scale(1.04);
+}
+
+.structure-panel {
+  overflow: hidden;
+}
+
+.structure-panel .chemical-structure--compact {
+  transform: scale(1.28);
+}
+
+.structure-panel .chemical-structure--balanced {
+  transform: scale(1.14);
+}
+
+.structure-panel .chemical-structure--large {
+  transform: scale(1.02);
 }
 
 .product-card__body,
