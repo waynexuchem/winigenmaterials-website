@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From R&amp;D to Pilot Line: How to Screen Solid-State Electrolyte Materials | Winigen Materials</title>
+<meta name="description" content="A practical solid-state electrolyte screening framework for moving from powder specifications and pellet conductivity to composite electrodes, lithium-metal interfaces, and pilot-scale cell development.">
+<link rel="canonical" href="https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.article-hero { padding: 78px 0; }
+.article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 34px; align-items: start; }
+.article-main, .article-side { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
+.article-main p, .article-main li { line-height: 1.78; }
+.article-main a { color: var(--blue); font-weight: 800; }
+.article-block { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(18,32,51,.1); }
+.screening-flow { display: grid; gap: 10px; margin: 24px 0; }
+.screening-flow span { display: block; padding: 14px 16px; border: 1px solid rgba(42,102,217,.18); border-radius: 14px; background: #f7fbff; color: var(--navy); font-weight: 900; }
+.article-figure { margin: 24px 0; border: 1px solid rgba(18,32,51,.1); border-radius: 18px; overflow: hidden; background: #fff; }
+.article-figure img { width: 100%; display: block; object-fit: contain; background: #f3f8fc; }
+.article-figure figcaption { padding: 14px 16px; color: #53627c; font-size: .95rem; line-height: 1.55; border-top: 1px solid rgba(18,32,51,.08); }
+.figure-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin: 22px 0; }
+.figure-grid figure { margin: 0; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; overflow: hidden; background: #fff; }
+.figure-grid img { width: 100%; height: 210px; object-fit: contain; display: block; background: #f3f8fc; padding: 8px; }
+.figure-grid figcaption { padding: 10px 12px; color: #53627c; font-size: .9rem; line-height: 1.45; border-top: 1px solid rgba(18,32,51,.08); }
+.article-table-wrap { overflow-x: auto; margin: 20px 0 22px; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; background: #fff; }
+.article-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+.article-table th { background: #14213d; color: #fff; text-align: left; padding: 13px 15px; font-size: 13px; }
+.article-table td { padding: 13px 15px; border-top: 1px solid rgba(18,32,51,.1); color: #2b3950; vertical-align: top; line-height: 1.45; }
+.reference-list { display: grid; gap: 12px; padding-left: 22px; margin: 18px 0 0; }
+.reference-list li { color: #40516f; line-height: 1.58; padding-left: 4px; }
+.reference-list a { color: var(--blue); font-weight: 850; text-decoration: none; }
+.reference-list a:hover { text-decoration: underline; }
+.related-link-list { display: grid; gap: 10px; margin-top: 16px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } .figure-grid { grid-template-columns: 1fr; } .figure-grid img { height: auto; min-height: 180px; } }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html#article",
+  "headline": "From R&D to Pilot Line: How to Screen Solid-State Electrolyte Materials for Practical Cell Development",
+  "description": "A practical solid-state electrolyte screening framework for moving from powder specifications and pellet conductivity to composite electrodes, lithium-metal interfaces, and pilot-scale cell development.",
+  "url": "https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html",
+  "datePublished": "2026-05-31",
+  "dateModified": "2026-05-31",
+  "author": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "about": [
+    "Solid-state electrolyte screening",
+    "Solid-state battery materials",
+    "Pilot-scale battery development",
+    "Sulfide solid electrolytes",
+    "Oxide solid electrolytes",
+    "Halide solid electrolytes"
+  ],
+  "citation": [
+    "Narayanan et al., Effect of current density on the solid electrolyte interphase formation at the lithium|Li6PS5Cl interface, Nature Communications, 2022.",
+    "Fu et al., Toward garnet electrolyte-based Li metal batteries: An ultrathin, highly effective, artificial solid-state electrolyte/metallic Li interface, Science Advances, 2017.",
+    "Asano et al., Solid halide electrolytes with high lithium-ion conductivity for application in 4 V class bulk-type all-solid-state batteries, Advanced Materials, 2018.",
+    "Kalnaus et al., Solid-state batteries: The critical role of mechanics, Science, 2023.",
+    "Lu et al., The void formation behaviors in working solid-state Li-metal batteries revealed by operando x-ray tomography, Science Advances, 2022."
+  ],
+  "mainEntityOfPage": "https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is ionic conductivity enough to select a solid-state electrolyte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Ionic conductivity is an early screening metric, but particle size, pellet density, electronic conductivity, moisture, impurity level, phase purity, cathode compatibility, lithium-metal interface behavior, and processing route should also be evaluated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does particle size matter in solid-state electrolyte screening?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Particle size affects powder packing, pressed-pellet density, composite-electrode contact area, slurry behavior, interface uniformity, and reproducibility during scale-up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What data should suppliers provide for solid-state electrolyte screening?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Useful data include XRD phase identification, D10/D50/D90 particle-size distribution, ionic and electronic conductivity, moisture, impurity profile, SEM morphology, handling notes, pressed-pellet conditions, and slurry properties when applicable."
+      }
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.winigenmaterials.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Knowledge",
+      "item": "https://www.winigenmaterials.com/knowledge.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Solid-State Electrolyte Screening",
+      "item": "https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
+    <nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav>
+    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
+</header>
+<main>
+  <section class="section dark article-hero">
+    <div class="container section-title">
+      <p class="eyebrow">Solid-State Battery Development</p>
+      <h1>From R&amp;D to Pilot Line: How to Screen Solid-State Electrolyte Materials for Practical Cell Development</h1>
+      <p>Solid-state electrolyte selection should move beyond one headline conductivity number. Practical screening connects powder specifications, pellet testing, composite-electrode compatibility, interface behavior, and pilot-line readiness.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <article class="article-main">
+        <p>Solid-state batteries attract attention because they promise improved safety, high energy density, and compatibility with next-generation lithium-metal and high-voltage cathode systems. In practice, however, development is rarely limited by a single ionic-conductivity value. Materials that perform well as powders or pressed pellets may struggle when translated into composite electrodes, lithium-metal interfaces, multilayer stacks, or pilot-scale cells.</p>
+        <p>A practical screening workflow should therefore move through staged evidence:</p>
+        <div class="screening-flow" aria-label="Solid-state electrolyte screening workflow">
+          <span>Powder specifications</span>
+          <span>Pellet conductivity</span>
+          <span>Composite electrode compatibility</span>
+          <span>Interface testing</span>
+          <span>Multilayer or pouch-cell validation</span>
+        </div>
+        <p>This progression matters because the requirements for successful materials screening are not the same as the requirements for successful cell development.</p>
+        <figure class="article-figure">
+          <img src="../assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powder, film, and disc examples" loading="lazy">
+          <figcaption>Solid-state electrolyte programs often move from powder screening toward films, discs, composite electrodes, and larger-format cell assemblies.</figcaption>
+        </figure>
+
+        <section class="article-block">
+          <h2>Why Powder Conductivity Is Only the First Step</h2>
+          <p>In early-stage screening, it is tempting to compare solid electrolytes by ionic conductivity alone. But solid-state electrolyte performance depends on particle size, pellet density, electronic conductivity, moisture sensitivity, impurity level, phase purity, interfacial stability, and processing route.</p>
+          <p>A material that delivers strong conductivity in a cold-pressed pellet may still underperform if it shows poor contact with a cathode composite, instability at the lithium-metal interface, or sensitivity to moisture during handling. Similarly, a material with lower nominal conductivity may still be valuable if it offers better processability, lower electronic leakage, or more favorable interfacial behavior.</p>
+          <p>For battery R&amp;D, powder conductivity should be treated as a starting metric rather than a final decision metric.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>Particle Size, Pellet Density, and Pressing Pressure</h2>
+          <p>Particle size is one of the most important variables in solid-state electrolyte screening. It affects powder packing, pellet density, contact area in composite cathodes, cold-press response, slurry behavior, interface uniformity, and reproducibility between labs and scale-up stages.</p>
+          <p>Winigen's <a href="../products/latp-d-50-0-3-um.html">LATP D<sub>50</sub> 0.30 um</a>, <a href="../products/latp-d-50-0-4-um.html">LATP D<sub>50</sub> 0.40 um</a>, and <a href="../products/latp-d-50-0-65-um.html">LATP D<sub>50</sub> 0.65 um</a> products illustrate this point. These oxide grades are listed with pressed-pellet ionic conductivity specifications of &ge;0.55 mS/cm, &ge;0.50 mS/cm, and &ge;0.30 mS/cm at 25 &deg;C, respectively. Even within one oxide family, particle-size grade and pellet test conditions matter.</p>
+          <p>The same principle appears in sulfide materials. Winigen's <a href="../products/li-5-5-ps-4-5-clxbr-1-5-x-d-50-1-um.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub> D<sub>50</sub> 0.759 um</a> and <a href="../products/li-5-5-ps-4-5-cl-x-br-y-d-50-10-um.html">D<sub>50</sub> &gt;10 um</a> grades span cold-press conductivity values from 6.5 mS/cm to &gt;12 mS/cm. This does not mean larger particles are always better. It means particle-size grade, densification, and test format must be interpreted together.</p>
+          <p>Conductivity data are most useful when reported with D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>, pellet thickness, pellet density, pressing pressure, hold time, test temperature, blocking-electrode method, and whether the value reflects total, bulk, or effective conductivity.</p>
+          <div class="figure-grid" aria-label="LATP supporting images">
+            <figure>
+              <img src="../assets/images/solid-state/latp-300nm-powder-photo.jpg" alt="LATP D50 0.30 um powder product image" loading="lazy">
+              <figcaption>LATP D<sub>50</sub> 0.30 um powder image.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/latp-300nm-sem.jpg" alt="LATP D50 0.30 um SEM morphology image" loading="lazy">
+              <figcaption>SEM image for LATP particle morphology review.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/latp-300nm-xrd.jpg" alt="LATP D50 0.30 um XRD pattern" loading="lazy">
+              <figcaption>XRD pattern for LATP phase verification.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Moisture Control for Sulfides and Halides</h2>
+          <p>Moisture control is a major divider between successful lab screening and noisy development work. For sulfides, moisture can affect surface chemistry, interfacial behavior, and practical handling. For halides, water control can also matter for phase stability and reproducibility, depending on chemistry and processing route.</p>
+          <p>Winigen's <a href="../products/li-6-ps-5-cl-d-50-2-um.html">Li<sub>6</sub>PS<sub>5</sub>Cl D<sub>50</sub> 2.123 um</a> page reports 43 ppm water together with D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>, ionic conductivity, electronic conductivity, impurity data, and PSD/XRD images. The <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub> D<sub>50</sub> 0.9 um</a> page specifies water &le;500 ppm and reports measured ionic conductivity of 1.85 mS/cm at 25 &deg;C together with phase identification by XRD.</p>
+          <p>That kind of data presentation helps customers move from "interesting material" to "screenable material." Moisture should be tracked not only as a storage issue, but also as a screening variable that can change conductivity, interfacial behavior, and pilot-line transferability.</p>
+          <div class="figure-grid" aria-label="Li6PS5Cl supporting images">
+            <figure>
+              <img src="../assets/images/solid-state/sulfide-sample-photo.jpg" alt="Representative sulfide solid-state electrolyte sample" loading="lazy">
+              <figcaption>Representative sulfide solid electrolyte sample.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/li6ps5cl-d50-2um-dls.jpg" alt="Li6PS5Cl D50 2.123 um particle-size distribution graph" loading="lazy">
+              <figcaption>Li<sub>6</sub>PS<sub>5</sub>Cl PSD image with D<sub>50</sub> 2.123 um.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/li6ps5cl-d50-2um-xrd-clean.jpg" alt="Li6PS5Cl D50 2.123 um XRD pattern" loading="lazy">
+              <figcaption>Li<sub>6</sub>PS<sub>5</sub>Cl XRD phase-identification image.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Cathode Composite Mixing and Interface Contact</h2>
+          <p>One of the biggest gaps between academic materials screening and practical battery development appears at the cathode composite level. A solid electrolyte may look excellent as a standalone pellet, yet fail to deliver good cathode utilization once mixed with active material and conductive additive.</p>
+          <p>At that stage, the program is no longer only screening a powder. It is screening a composite architecture. Particle morphology, mixing route, solid-electrolyte particle size, binder strategy, and contact mechanics all begin to matter. Fine powders may increase contact area, but they can also affect agglomeration, mixing uniformity, and moisture sensitivity. Larger particles may support different densification or percolation behavior.</p>
+          <p>The LATP product family illustrates the transition from powder screening to process-oriented materials. Winigen lists particle-size-controlled LATP powders as well as <a href="../products/latp-oil-based-slurry-d-50-0-30-um.html">oil-based LATP slurry</a> and <a href="../products/latp-water-based-slurry-d-50-0-65-um.html">water-based LATP slurry</a> formats for formulation and coating development.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>Lithium-Metal Interface Screening</h2>
+          <p>For many advanced solid-state battery programs, lithium-metal compatibility is the real bottleneck. Even when a solid electrolyte shows attractive ionic conductivity, lithium-metal contact can introduce interphase growth, impedance rise, current constriction, void formation, filament propagation, and cycling instability under practical areal capacity and current density.</p>
+          <p>Interface behavior should therefore be tested as a separate stage rather than inferred from pellet data alone. A Nature Communications study on the Li|Li<sub>6</sub>PS<sub>5</sub>Cl interface showed that current density affected interphase evolution and interfacial resistance, underscoring that interface behavior is test-condition-dependent rather than a fixed material label.</p>
+          <p>Useful lithium-metal screening includes symmetric-cell cycling, interfacial impedance tracking, critical-current-density screening, pressure dependence, stripping/plating capacity per cycle, and post-mortem interface analysis.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>From Pellets to Multilayer or Pilot-Scale Cells</h2>
+          <p>The transition from materials screening to pilot-line readiness is where many solid-state programs slow down. Pellet studies often use simple geometry, high stack pressure, idealized interfaces, small active areas, short diffusion distances, and carefully controlled assembly. Multilayer and pilot-scale cells introduce larger electrode area, more difficult pressure distribution, cracking and delamination risk, practical composite-electrode thickness, and stronger dependence on moisture control and process consistency.</p>
+          <p>The screening question shifts from "Can this electrolyte conduct lithium ions?" to "Can this material support a manufacturable and repeatable cell architecture?" That is why solid-state screening should connect materials data with <a href="../applications.html">R&amp;D and pilot-scale development support</a>.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>Practical QC Package for Solid-State Material Screening</h2>
+          <p>A practical solid-state development program should ask suppliers for more than a chemistry name and one conductivity number. The QC package should include XRD phase identification, D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub> particle-size distribution, ionic conductivity, electronic conductivity, moisture or water content, elemental impurity profile, SEM morphology, handling notes, pressed-pellet conditions, slurry properties where applicable, and application notes.</p>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Family</th>
+                  <th>Particle Size</th>
+                  <th>Conductivity Data</th>
+                  <th>Other QC Data</th>
+                  <th>Screening Lesson</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="../products/latp-d-50-0-3-um.html">LATP powder</a></td>
+                  <td>Oxide</td>
+                  <td>D<sub>50</sub> 0.30 +/- 0.05 um</td>
+                  <td>&ge;0.55 mS/cm at 25 &deg;C, pressed pellet</td>
+                  <td>Water &le;500 ppm; magnetic impurities &le;500 ppb; SEM and XRD images</td>
+                  <td>Particle-size-controlled oxide screening</td>
+                </tr>
+                <tr>
+                  <td><a href="../products/li-6-ps-5-cl-d-50-2-um.html">Li<sub>6</sub>PS<sub>5</sub>Cl</a></td>
+                  <td>Sulfide</td>
+                  <td>D<sub>50</sub> 2.123 um</td>
+                  <td>3.5 mS/cm ionic; 1.74 &times; 10<sup>-6</sup> mS/cm electronic</td>
+                  <td>Water 43 ppm; elemental impurity panel; PSD and XRD images</td>
+                  <td>QC package beyond conductivity</td>
+                </tr>
+                <tr>
+                  <td><a href="../products/li-5-5-ps-4-5-clxbr-1-5-x-d-50-1-um.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub></a></td>
+                  <td>Sulfide</td>
+                  <td>D<sub>50</sub> 0.759 um to &gt;10 um</td>
+                  <td>6.5 to &gt;12 mS/cm, cold press depending on grade</td>
+                  <td>Multiple particle-size grades for screening</td>
+                  <td>Particle-size grade and conductivity must be interpreted together</td>
+                </tr>
+                <tr>
+                  <td><a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub></a></td>
+                  <td>Halide</td>
+                  <td>D<sub>50</sub> 0.9 +/- 0.3 um</td>
+                  <td>Measured 1.85 mS/cm at 25 &deg;C</td>
+                  <td>Water &le;500 ppm; XRD main phase listed; impurity specifications</td>
+                  <td>Halide screening for cathode-side solid-state systems</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="article-figure">
+            <img src="../assets/images/solid-state/li3incl6-particle-size.jpg" alt="Li3InCl6 particle-size image" loading="lazy">
+            <figcaption>Li<sub>3</sub>InCl<sub>6</sub> provides a halide example for screening beyond sulfide and oxide electrolyte families.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>Bottom Line</h2>
+          <p>From a battery-development perspective, the most useful solid-state electrolyte is not always the material with the highest single conductivity value. The better question is whether the material can move successfully from powder to pellet, composite electrode, interface validation, and multilayer cell.</p>
+          <p>That requires a screening framework that includes particle size, moisture control, pellet density, electronic leakage, cathode compatibility, lithium-metal interface behavior, and process readiness. For Winigen Materials, multiple particle-size grades, clear specification tables, and supporting characterization images help researchers evaluate solid-state materials in a way that is closer to practical cell development.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>References</h2>
+          <ol class="reference-list">
+            <li><a href="https://www.nature.com/articles/s41467-022-34855-9">Narayanan et al., Effect of current density on the solid electrolyte interphase formation at the lithium|Li<sub>6</sub>PS<sub>5</sub>Cl interface, Nature Communications 13, 7237 (2022).</a></li>
+            <li><a href="https://www.science.org/doi/10.1126/sciadv.1601659">Fu et al., Toward garnet electrolyte-based Li metal batteries: An ultrathin, highly effective, artificial solid-state electrolyte/metallic Li interface, Science Advances 3, e1601659 (2017).</a></li>
+            <li><a href="https://doi.org/10.1002/adma.201803075">Asano et al., Solid halide electrolytes with high lithium-ion conductivity for application in 4 V class bulk-type all-solid-state batteries, Advanced Materials 30, 1803075 (2018).</a></li>
+            <li><a href="https://www.science.org/doi/10.1126/science.abg5998">Kalnaus et al., Solid-state batteries: The critical role of mechanics, Science 381, eabg5998 (2023).</a></li>
+            <li><a href="https://www.science.org/doi/10.1126/sciadv.add0510">Lu et al., The void formation behaviors in working solid-state Li-metal batteries revealed by operando x-ray tomography, Science Advances 8, eadd0510 (2022).</a></li>
+          </ol>
+        </section>
+      </article>
+      <aside class="article-side">
+        <p class="eyebrow">Related Pages</p>
+        <h2>Continue Reading</h2>
+        <p>Connect this screening framework with Winigen product families, product pages, and application support.</p>
+        <div class="related-link-list">
+          <a href="../products/solid-state-electrolytes.html">Solid-state electrolyte products</a>
+          <a href="../products/latp-d-50-0-3-um.html">LATP D50 0.30 um</a>
+          <a href="../products/li-6-ps-5-cl-d-50-2-um.html">Li6PS5Cl D50 2.123 um</a>
+          <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li3InCl6 D50 0.9 um</a>
+          <a href="solid-state-electrolyte-materials.html">Solid-state electrolyte overview</a>
+          <a href="../knowledge.html">Knowledge Center</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title"><p class="eyebrow">FAQ</p><h2>Common Questions</h2></div>
+      <div class="faq-list">
+        <details><summary>Is ionic conductivity enough to select a solid-state electrolyte?</summary><p>No. Ionic conductivity is an early screening metric, but particle size, pellet density, electronic conductivity, moisture, impurity level, phase purity, cathode compatibility, lithium-metal interface behavior, and processing route should also be evaluated.</p></details>
+        <details><summary>Why does particle size matter in solid-state electrolyte screening?</summary><p>Particle size affects powder packing, pressed-pellet density, composite-electrode contact area, slurry behavior, interface uniformity, and reproducibility during scale-up.</p></details>
+        <details><summary>What data should suppliers provide for solid-state electrolyte screening?</summary><p>Useful data include XRD phase identification, D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub> particle-size distribution, ionic and electronic conductivity, moisture, impurity profile, SEM morphology, handling notes, pressed-pellet conditions, and slurry properties when applicable.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

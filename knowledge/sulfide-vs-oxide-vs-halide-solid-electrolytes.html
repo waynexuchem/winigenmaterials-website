@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sulfide vs Oxide vs Halide Solid Electrolytes: Conductivity, Stability, and Processing Tradeoffs | Winigen Materials</title>
+<meta name="description" content="Compare sulfide, oxide, and halide solid-state electrolytes for battery development, including ionic conductivity, moisture sensitivity, high-voltage compatibility, processing route, particle size, and interface behavior.">
+<link rel="canonical" href="https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.article-hero { padding: 78px 0; }
+.article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 34px; align-items: start; }
+.article-main, .article-side { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
+.article-main p, .article-main li { line-height: 1.78; }
+.article-main a { color: var(--blue); font-weight: 800; }
+.article-block { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(18,32,51,.1); }
+.callout { margin: 24px 0; padding: 20px 22px; border: 1px solid rgba(42,102,217,.18); border-left: 5px solid var(--blue); border-radius: 16px; background: #f7fbff; color: var(--navy); font-weight: 850; line-height: 1.65; }
+.article-figure { margin: 24px 0; border: 1px solid rgba(18,32,51,.1); border-radius: 18px; overflow: hidden; background: #fff; }
+.article-figure img { width: 100%; display: block; object-fit: contain; background: #f3f8fc; }
+.article-figure figcaption { padding: 14px 16px; color: #53627c; font-size: .95rem; line-height: 1.55; border-top: 1px solid rgba(18,32,51,.08); }
+.figure-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin: 22px 0; }
+.figure-grid figure { margin: 0; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; overflow: hidden; background: #fff; }
+.figure-grid img { width: 100%; height: 210px; object-fit: contain; display: block; background: #f3f8fc; padding: 8px; }
+.figure-grid figcaption { padding: 10px 12px; color: #53627c; font-size: .9rem; line-height: 1.45; border-top: 1px solid rgba(18,32,51,.08); }
+.article-table-wrap { overflow-x: auto; margin: 20px 0 22px; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; background: #fff; }
+.article-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+.article-table th { background: #14213d; color: #fff; text-align: left; padding: 13px 15px; font-size: 13px; }
+.article-table td { padding: 13px 15px; border-top: 1px solid rgba(18,32,51,.1); color: #2b3950; vertical-align: top; line-height: 1.45; }
+.reference-list { display: grid; gap: 12px; padding-left: 22px; margin: 18px 0 0; }
+.reference-list li { color: #40516f; line-height: 1.58; padding-left: 4px; }
+.reference-list a { color: var(--blue); font-weight: 850; text-decoration: none; }
+.reference-list a:hover { text-decoration: underline; }
+.related-link-list { display: grid; gap: 10px; margin-top: 16px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } .figure-grid { grid-template-columns: 1fr; } .figure-grid img { height: auto; min-height: 180px; } }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html#article",
+  "headline": "Sulfide vs Oxide vs Halide Solid Electrolytes: Conductivity, Stability, and Processing Tradeoffs",
+  "description": "Compare sulfide, oxide, and halide solid-state electrolytes for battery development, including ionic conductivity, moisture sensitivity, high-voltage compatibility, processing route, particle size, and interface behavior.",
+  "url": "https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html",
+  "datePublished": "2026-05-31",
+  "dateModified": "2026-05-31",
+  "author": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "about": [
+    "Sulfide solid electrolytes",
+    "Oxide solid electrolytes",
+    "Halide solid electrolytes",
+    "Solid-state battery materials",
+    "Solid-state electrolyte screening"
+  ],
+  "citation": [
+    "Zhang et al., Sulfide solid electrolytes for all-solid-state lithium batteries: Structure, conductivity, stability and application, Nano Energy, 2018.",
+    "Famprikis et al., Fundamentals of inorganic solid-state electrolytes for batteries, Nature Materials, 2019.",
+    "Wang et al., Challenges and perspectives of garnet solid electrolytes for all solid-state lithium batteries, Journal of Power Sources, 2018.",
+    "Asano et al., Solid halide electrolytes with high lithium-ion conductivity for application in 4 V class bulk-type all-solid-state batteries, Advanced Materials, 2018.",
+    "Ren et al., Halide solid-state electrolytes for all-solid-state batteries: structural design, synthesis, environmental stability, interface optimization and challenges, Chemical Science, 2023."
+  ],
+  "mainEntityOfPage": "https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which solid electrolyte family has the highest ionic conductivity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sulfide solid electrolytes often provide the highest room-temperature ionic conductivity and can be densified by cold pressing, but they require careful handling and interface control."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are oxide solid electrolytes still useful if conductivity can be lower?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oxide solid electrolytes can offer stronger handling and chemical-stability advantages, making them useful for coatings, separator layers, composite electrolytes, and robust ceramic development."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should halide solid electrolytes be considered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Halide solid electrolytes are especially interesting for cathode-side and high-voltage compatibility screening, but they still need validation for moisture sensitivity, phase purity, and composite-cathode behavior."
+      }
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.winigenmaterials.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Knowledge",
+      "item": "https://www.winigenmaterials.com/knowledge.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sulfide vs Oxide vs Halide Solid Electrolytes",
+      "item": "https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
+    <nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav>
+    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
+</header>
+<main>
+  <section class="section dark article-hero">
+    <div class="container section-title">
+      <p class="eyebrow">Solid-State Electrolyte Selection</p>
+      <h1>Sulfide vs Oxide vs Halide Solid Electrolytes: Conductivity, Stability, and Processing Tradeoffs</h1>
+      <p>Compare the main inorganic solid-electrolyte families by conductivity, moisture sensitivity, high-voltage compatibility, interface behavior, particle size, and processing route.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <article class="article-main">
+        <p>Solid-state electrolytes are often discussed as if they belong to one category, but sulfide, oxide, and halide materials behave very differently in practical battery development. Each family has different strengths in ionic conductivity, moisture stability, high-voltage compatibility, pellet pressing, cathode composite preparation, lithium-metal interface behavior, and scale-up processing.</p>
+        <div class="callout">For battery developers, the key question is not simply which solid electrolyte has the highest conductivity. The better question is which family best fits the target cathode, anode, voltage window, interface strategy, processing route, and development stage.</div>
+        <p>Winigen Materials' <a href="../products/solid-state-electrolytes.html">solid-state electrolyte catalog</a> includes oxide powders and slurries, LLZTO garnet-type oxide powder, argyrodite-style sulfide powders with controlled particle-size ranges, and Li<sub>3</sub>InCl<sub>6</sub> halide powder with particle-size and conductivity data. The catalog is structured around practical screening variables such as particle size, conductivity, moisture, impurity data, SEM, and XRD where available.</p>
+        <figure class="article-figure">
+          <img src="../assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powders, films, and discs" loading="lazy">
+          <figcaption>Solid-state electrolyte materials should be compared as processable battery materials, not only as conductivity values in isolation.</figcaption>
+        </figure>
+
+        <section class="article-block">
+          <h2>Sulfide Solid Electrolytes</h2>
+          <p>Sulfide solid electrolytes are attractive because they can deliver high room-temperature ionic conductivity and can often be densified by cold pressing. This makes them useful for early-stage pellet conductivity testing, composite cathode studies, and solid-state lithium battery research. Literature reviews highlight the high conductivity and mechanical compliance of sulfide solid electrolytes, while also emphasizing interface instability, air or moisture sensitivity, and the need for protective strategies.</p>
+          <p>Winigen's sulfide data illustrates this conductivity advantage. The <a href="../products/li-5-5-ps-4-5-cl-1-5-d-50-2-um.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.168 um</a> product page lists 8.5 mS/cm ionic conductivity by electrochemical workstation testing, 1.38 x 10<sup>-6</sup> mS/cm electronic conductivity, 28.8 ppm water, D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub> particle-size data, ICP impurity data, and supporting PSD/XRD/SEM images.</p>
+          <p>Another sulfide example, <a href="../products/li-5-5-ps-4-5-cl-x-br-y-d-50-10-um.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub>, D<sub>50</sub> &gt;10 um</a>, is listed with &gt;12 mS/cm ionic conductivity under cold-pressed pellet conditions and &le;10<sup>-6</sup> mS/cm electronic conductivity, showing why sulfides are often screened when high ionic transport is a priority.</p>
+          <p>Sulfides should not be selected by conductivity alone. Practical performance depends on moisture control, cathode-side stability, lithium-metal interface behavior, stack pressure, and particle-size selection. Air and moisture exposure can degrade sulfide electrolytes and may generate H<sub>2</sub>S, so handling protocol matters.</p>
+          <p><strong>Best fit:</strong> high-conductivity screening, cold-pressed pellet studies, composite cathode development, lithium-metal interface research, and high-power solid-state battery concepts.</p>
+          <div class="figure-grid" aria-label="Sulfide supporting images">
+            <figure>
+              <img src="../assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Li5.5PS4.5Cl1.5 D50 2.168 um particle-size distribution" loading="lazy">
+              <figcaption>Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub> PSD image.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/li55ps45cl15-d50-2um-xrd-clean.jpg" alt="Li5.5PS4.5Cl1.5 XRD pattern" loading="lazy">
+              <figcaption>Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub> XRD pattern.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/li55ps45cl15-d50-2um-sem.jpg" alt="Li5.5PS4.5Cl1.5 SEM morphology" loading="lazy">
+              <figcaption>Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub> SEM morphology.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Oxide Solid Electrolytes</h2>
+          <p>Oxide solid electrolytes are often evaluated because they can offer better chemical robustness and handling advantages compared with many sulfides. Oxide families such as LATP and LLZO/LLZTO are widely used in solid-state battery research, separator coatings, composite electrolyte studies, and cathode blending.</p>
+          <p>Winigen's oxide catalog includes multiple LATP particle-size grades and LATP slurry formats. The <a href="../products/latp-d-50-0-3-um.html">LATP D<sub>50</sub> 0.30 um</a>, <a href="../products/latp-d-50-0-4-um.html">LATP D<sub>50</sub> 0.40 um</a>, and <a href="../products/latp-d-50-0-65-um.html">LATP D<sub>50</sub> 0.65 um</a> powders are listed with pressed-pellet ionic conductivity specifications of &ge;0.55 mS/cm, &ge;0.50 mS/cm, and &ge;0.30 mS/cm, respectively, at 25 &deg;C.</p>
+          <p>The LATP D<sub>50</sub> 0.30 um product page also includes a more complete data package: white powder appearance, particle-size measurement by laser particle-size analyzer, &le;500 ppm water, &le;500 ppb magnetic impurities, &ge;0.55 mS/cm ionic conductivity, cathode-blending use-case guidance, and supporting SEM and XRD images.</p>
+          <p><a href="../products/llzto-powder.html">LLZTO powder</a> represents another important oxide category. Winigen lists it as a Ta-doped LLZO/garnet-type oxide solid electrolyte powder with customizable particle size, intended for garnet electrolyte screening, composite electrolyte studies, and coating development, with SEM and XRD images available. Garnet-type LLZO materials are widely studied because of their lithium-metal relevance, but literature also emphasizes interface engineering, grain-boundary effects, and processing challenges.</p>
+          <p>Compared with sulfides, oxides may be easier to handle, but they are usually more rigid and can require more demanding densification or interface engineering. This is why oxide materials are attractive for coatings, separators, composite electrolytes, or chemically robust architectures, but not always the easiest route for low-resistance full-cell contact.</p>
+          <p><strong>Best fit:</strong> chemically robust electrolyte screening, separator or cathode coating, composite electrolyte studies, oxide ceramic development, and applications where handling stability is important.</p>
+          <div class="figure-grid" aria-label="Oxide supporting images">
+            <figure>
+              <img src="../assets/images/solid-state/latp-300nm-powder-photo.jpg" alt="LATP D50 0.30 um powder" loading="lazy">
+              <figcaption>LATP D<sub>50</sub> 0.30 um powder.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/latp-300nm-sem.jpg" alt="LATP D50 0.30 um SEM image" loading="lazy">
+              <figcaption>LATP SEM morphology image.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/solid-state/latp-300nm-xrd.jpg" alt="LATP D50 0.30 um XRD pattern" loading="lazy">
+              <figcaption>LATP XRD phase-verification image.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Halide Solid Electrolytes</h2>
+          <p>Halide solid electrolytes are increasingly studied because they may offer a useful balance between ionic conductivity, electrochemical stability, cathode compatibility, and processing behavior. Recent halide work describes these materials as promising for high-voltage all-solid-state batteries while still noting the importance of interface stability, moisture control, synthesis route, and cathode composite design.</p>
+          <p>Winigen's catalog currently includes <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub> powder, D<sub>50</sub> 0.9 um</a>, a halide solid electrolyte material for high-purity phase screening, EIS conductivity testing, and solid-state battery research. The product page lists D<sub>50</sub> 0.9 +/- 0.3 um, &le;500 ppm water, &ge;1.5 mS/cm ionic conductivity, a measured value of 1.85 mS/cm at 25 &deg;C after 40 min hold, ICP impurity limits, and XRD phase identification. It also includes a particle-size distribution image with English axis labels.</p>
+          <p>Halides are especially interesting for cathode-side applications because many high-voltage oxide cathodes place severe oxidative stress on sulfide electrolytes. However, halides are not universal solutions. Their performance depends on cathode chemistry, electrolyte composition, moisture exposure, mechanical contact, and composite cathode design.</p>
+          <p><strong>Best fit:</strong> high-voltage cathode compatibility screening, cathode composite studies, halide-based solid-state battery research, and applications where a balance of conductivity and oxidative stability is desired.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/solid-state/li3incl6-particle-size.jpg" alt="Li3InCl6 particle-size distribution image" loading="lazy">
+            <figcaption>Li<sub>3</sub>InCl<sub>6</sub> halide electrolyte powder for high-purity phase screening and EIS conductivity testing.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>Practical Comparison</h2>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Material Family</th>
+                  <th>Typical Strengths</th>
+                  <th>Common Challenges</th>
+                  <th>Winigen Product Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sulfide</td>
+                  <td>High ionic conductivity, cold-press processability, useful for composite cathodes and Li-metal studies</td>
+                  <td>Moisture sensitivity, interface instability, H<sub>2</sub>S handling concern, pressure/contact dependence</td>
+                  <td>Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>; Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub>; Li<sub>6</sub>PS<sub>5</sub>Cl</td>
+                </tr>
+                <tr>
+                  <td>Oxide</td>
+                  <td>Better chemical robustness, handling advantages, coating/separator/composite use</td>
+                  <td>Rigid particles, densification challenges, grain-boundary/interface resistance</td>
+                  <td>LATP powders, LATP slurries, LLZTO</td>
+                </tr>
+                <tr>
+                  <td>Halide</td>
+                  <td>Attractive cathode-side compatibility, balanced conductivity/stability, high-voltage interest</td>
+                  <td>Material-specific moisture and interface behavior, less mature manufacturing base</td>
+                  <td>Li<sub>3</sub>InCl<sub>6</sub></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Product Data Examples</h2>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Family</th>
+                  <th>Particle Size</th>
+                  <th>Conductivity</th>
+                  <th>Other Data Available</th>
+                  <th>Suggested Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="../products/latp-d-50-0-3-um.html">LATP powder</a></td>
+                  <td>Oxide</td>
+                  <td>D<sub>50</sub> 0.30 +/- 0.05 um</td>
+                  <td>&ge;0.55 mS/cm, pressed pellet, 25 &deg;C</td>
+                  <td>Water &le;500 ppm; magnetic impurities &le;500 ppb; SEM and XRD</td>
+                  <td>Particle-size-controlled oxide screening</td>
+                </tr>
+                <tr>
+                  <td><a href="../products/llzto-powder.html">LLZTO powder</a></td>
+                  <td>Oxide</td>
+                  <td>Customizable</td>
+                  <td>Confirm by RFQ/grade</td>
+                  <td>SEM and XRD; garnet electrolyte screening use case</td>
+                  <td>Garnet/LLZO-type oxide example</td>
+                </tr>
+                <tr>
+                  <td><a href="../products/li-5-5-ps-4-5-cl-1-5-d-50-2-um.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub></a></td>
+                  <td>Sulfide</td>
+                  <td>D<sub>50</sub> 2.168 um</td>
+                  <td>8.5 mS/cm ionic; 1.38 x 10<sup>-6</sup> mS/cm electronic</td>
+                  <td>Water 28.8 ppm; ICP impurities; PSD, XRD, and SEM</td>
+                  <td>High-conductivity sulfide example</td>
+                </tr>
+                <tr>
+                  <td><a href="../products/li-6-ps-5-cl-d-50-2-um.html">Li<sub>6</sub>PS<sub>5</sub>Cl</a></td>
+                  <td>Sulfide</td>
+                  <td>D<sub>50</sub> 2.123 um</td>
+                  <td>3.5 mS/cm ionic; 1.74 x 10<sup>-6</sup> mS/cm electronic</td>
+                  <td>Water 43 ppm; ICP impurities; PSD and XRD</td>
+                  <td>Argyrodite sulfide example</td>
+                </tr>
+                <tr>
+                  <td><a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub></a></td>
+                  <td>Halide</td>
+                  <td>D<sub>50</sub> 0.9 +/- 0.3 um</td>
+                  <td>&ge;1.5 mS/cm; measured 1.85 mS/cm at 25 &deg;C</td>
+                  <td>Water &le;500 ppm; ICP limits; XRD phase; PSD image</td>
+                  <td>Halide/high-voltage-cathode screening example</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>How to Choose a Solid Electrolyte Family</h2>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Development Question</th>
+                  <th>Good Starting Point</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Need highest room-temperature ionic conductivity?</td><td>Start with sulfides</td></tr>
+                <tr><td>Need better air/handling robustness?</td><td>Start with oxides</td></tr>
+                <tr><td>Need high-voltage cathode-side compatibility?</td><td>Consider halides</td></tr>
+                <tr><td>Need coating or separator-layer development?</td><td>Consider LATP/LLZTO powders or slurries</td></tr>
+                <tr><td>Need composite cathode contact and cold pressing?</td><td>Consider sulfide powders with controlled D<sub>50</sub></td></tr>
+                <tr><td>Need cathode-side interphase engineering?</td><td>Consider halides or oxide/halide hybrid strategies</td></tr>
+                <tr><td>Need lithium-metal interface screening?</td><td>Compare sulfide, garnet oxide, and interlayer approaches under realistic pressure/current conditions</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>What Data Should Be Compared Before Selection?</h2>
+          <p>A serious solid-state electrolyte comparison should include more than chemistry name and conductivity. Important data include D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub> particle-size distribution, ionic conductivity, electronic conductivity, water content, elemental impurities, XRD phase identification, SEM morphology, pellet density and pressing conditions, cathode compatibility, lithium-metal interface stability, slurry or coating compatibility, and handling/storage requirements.</p>
+          <p>This is why product-page characterization matters. Winigen's sulfide product pages include not only ionic conductivity, but also electronic conductivity, moisture data, ICP impurity data, particle-size distribution, and XRD images where available.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>Bottom Line</h2>
+          <p>Sulfide, oxide, and halide solid electrolytes each solve different parts of the solid-state battery problem. Sulfides are attractive for high conductivity and cold-pressed composite studies, but require careful moisture and interface control. Oxides offer handling and stability advantages, but often need more attention to densification, contact, and interface engineering. Halides are increasingly important for high-voltage cathode-side compatibility, but still require validation of moisture sensitivity, phase purity, and composite cathode behavior.</p>
+          <p>The best screening program does not ask which family is universally best. It asks which material family best fits the target cell architecture and development stage.</p>
+          <p>At Winigen Materials, we support solid-state battery researchers with oxide, sulfide, and halide electrolyte materials, particle-size-controlled powders, selected slurry formats, characterization data, and RFQ-based material matching for practical solid-state battery development.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>References</h2>
+          <ol class="reference-list">
+            <li><a href="https://www.sciencedirect.com/science/article/pii/S2405829717306669">Zhang et al., Sulfide solid electrolytes for all-solid-state lithium batteries: Structure, conductivity, stability and application, Nano Energy, 2018.</a></li>
+            <li><a href="https://www.nature.com/articles/s41563-019-0431-3">Famprikis et al., Fundamentals of inorganic solid-state electrolytes for batteries, Nature Materials, 2019.</a></li>
+            <li><a href="https://www.sciencedirect.com/science/article/pii/S0378775318303628">Wang et al., Challenges and perspectives of garnet solid electrolytes for all solid-state lithium batteries, Journal of Power Sources, 2018.</a></li>
+            <li><a href="https://doi.org/10.1002/adma.201803075">Asano et al., Solid halide electrolytes with high lithium-ion conductivity for application in 4 V class bulk-type all-solid-state batteries, Advanced Materials 30, 1803075 (2018).</a></li>
+            <li><a href="https://pubs.rsc.org/en/content/articlelanding/2023/sc/d3sc02093b">Ren et al., Halide solid-state electrolytes for all-solid-state batteries: structural design, synthesis, environmental stability, interface optimization and challenges, Chemical Science, 2023.</a></li>
+          </ol>
+        </section>
+      </article>
+      <aside class="article-side">
+        <p class="eyebrow">Related Pages</p>
+        <h2>Continue Reading</h2>
+        <p>Connect this comparison with Winigen product families, solid-state product pages, and screening guidance.</p>
+        <div class="related-link-list">
+          <a href="../products/solid-state-electrolytes.html">Solid-state electrolyte products</a>
+          <a href="../products/latp-d-50-0-3-um.html">LATP D50 0.30 um</a>
+          <a href="../products/llzto-powder.html">LLZTO powder</a>
+          <a href="../products/li-6-ps-5-cl-d-50-2-um.html">Li6PS5Cl D50 2.123 um</a>
+          <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li3InCl6 D50 0.9 um</a>
+          <a href="solid-state-electrolyte-screening-rd-to-pilot-line.html">R&D to pilot-line screening guide</a>
+          <a href="solid-state-electrolyte-materials.html">Solid-state electrolyte overview</a>
+          <a href="../knowledge.html">Knowledge Center</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title"><p class="eyebrow">FAQ</p><h2>Common Questions</h2></div>
+      <div class="faq-list">
+        <details><summary>Which solid electrolyte family has the highest ionic conductivity?</summary><p>Sulfide solid electrolytes often provide the highest room-temperature ionic conductivity and can be densified by cold pressing, but they require careful handling and interface control.</p></details>
+        <details><summary>Why are oxide solid electrolytes still useful if conductivity can be lower?</summary><p>Oxide solid electrolytes can offer stronger handling and chemical-stability advantages, making them useful for coatings, separator layers, composite electrolytes, and robust ceramic development.</p></details>
+        <details><summary>When should halide solid electrolytes be considered?</summary><p>Halide solid electrolytes are especially interesting for cathode-side and high-voltage compatibility screening, but they still need validation for moisture sensitivity, phase purity, and composite-cathode behavior.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
