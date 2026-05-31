@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://www.winigenmaterials.com/knowledge.html">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<style>.knowledge-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; margin-top:40px; } .knowledge-card { background:#fff; border-radius:24px; padding:34px; box-shadow:0 12px 34px rgba(15,31,77,.08); border:1px solid rgba(15,31,77,.08); transition:transform .25s ease,box-shadow .25s ease; } .knowledge-card:hover { transform:translateY(-4px); box-shadow:0 20px 48px rgba(15,31,77,.12); } .knowledge-card h2 { min-height:118px; display:flex; align-items:flex-start; margin-bottom:18px; line-height:1.2; } .knowledge-card h2 a { color:inherit; text-decoration:none; } .knowledge-card h2 a:hover { color:var(--blue); } .knowledge-card p { color:#4f5b72; line-height:1.78; } .knowledge-intro { max-width:860px; margin:0 auto; } .knowledge-pill-row { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px; } .knowledge-pill { display:inline-flex; align-items:center; justify-content:center; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.24); border-radius:999px; padding:10px 18px; font-size:.95rem; font-weight:800; text-decoration:none; transition:background .25s ease,transform .25s ease; } .knowledge-pill:hover { background:rgba(255,255,255,.24); color:#fff; transform:translateY(-1px); } .related-link-list { display:grid; gap:10px; margin-top:18px; } .related-link-list a { display:inline-flex; width:fit-content; padding:11px 14px; border:1px solid rgba(18,32,51,.1); border-radius:12px; background:#f8fbff; color:var(--navy); font-weight:850; text-decoration:none; } @media(max-width:900px) { .knowledge-grid { grid-template-columns:1fr; } .knowledge-card h2 { min-height:auto; } }</style>
+<style>.knowledge-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; margin-top:40px; } .knowledge-card { overflow:hidden; background:#fff; border-radius:24px; box-shadow:0 12px 34px rgba(15,31,77,.08); border:1px solid rgba(15,31,77,.08); transition:transform .25s ease,box-shadow .25s ease; } .knowledge-card:hover { transform:translateY(-4px); box-shadow:0 20px 48px rgba(15,31,77,.12); } .knowledge-card img { width:100%; height:190px; object-fit:cover; display:block; } .knowledge-card-body { padding:28px; } .knowledge-card h2 { min-height:116px; display:flex; align-items:flex-start; margin-bottom:16px; font-size:25px; line-height:1.16; letter-spacing:0; } .knowledge-card h2 a { color:inherit; text-decoration:none; } .knowledge-card h2 a:hover { color:var(--blue); } .knowledge-card p { color:#4f5b72; line-height:1.68; } .knowledge-intro { max-width:860px; margin:0 auto; } .knowledge-pill-row { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px; } .knowledge-pill { display:inline-flex; align-items:center; justify-content:center; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.24); border-radius:999px; padding:10px 18px; font-size:.95rem; font-weight:800; text-decoration:none; transition:background .25s ease,transform .25s ease; } .knowledge-pill:hover { background:rgba(255,255,255,.24); color:#fff; transform:translateY(-1px); } .related-link-list { display:grid; gap:10px; margin-top:18px; } .related-link-list a { display:inline-flex; width:fit-content; padding:11px 14px; border:1px solid rgba(18,32,51,.1); border-radius:12px; background:#f8fbff; color:var(--navy); font-weight:850; text-decoration:none; } @media(max-width:1100px) { .knowledge-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } } @media(max-width:720px) { .knowledge-grid { grid-template-columns:1fr; } .knowledge-card h2 { min-height:auto; } }</style>
 </head>
 <body>
 <header class="header">
@@ -23,34 +23,52 @@
 <section class="section dark"><div class="container section-title knowledge-intro"><h1>Battery Materials Knowledge Center</h1><p>Technical articles on lithium salt selection, sodium-ion electrolytes, LiFSI and LiPF6 electrolyte systems, solid-state electrolyte materials, SEI/CEI additives, and low-temperature battery formulation.</p><div class="knowledge-pill-row"><a class="knowledge-pill" href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additives</a><a class="knowledge-pill" href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI Electrolytes</a><a class="knowledge-pill" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Lithium Salt Comparison</a><a class="knowledge-pill" href="knowledge/low-temperature-electrolytes.html">Low-Temperature Electrolytes</a><a class="knowledge-pill" href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Electrolytes</a><a class="knowledge-pill" href="knowledge/solid-state-electrolyte-materials.html">Solid-State Materials</a></div></div></section>
 <section class="section"><div class="container knowledge-grid">
     <article class="knowledge-card">
+      <img src="assets/images/lab-equipment.jpg" alt="Electrolyte additive testing and battery lab equipment" loading="lazy">
+      <div class="knowledge-card-body">
       <h2><a href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additives for SEI, CEI, Silicon Anodes, and High-Voltage Cathodes</a></h2>
       <p>Learn how FEC, VC, sulfur-containing additives, nitrile additives, and phosphorus-containing additives affect SEI formation, CEI stability, gas generation, impedance growth, and cycle life in advanced lithium batteries.</p>
       <div class="related-link-list"><a href="knowledge/electrolyte-additives-sei-cei.html">Read article</a></div>
+      </div>
     </article>
     <article class="knowledge-card">
+      <img src="assets/images/electrolyte-design.jpg" alt="LiFSI electrolyte formulation and battery development" loading="lazy">
+      <div class="knowledge-card-body">
       <h2><a href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI for Lithium-Metal Batteries, Fast Charge, and Low-Temperature Electrolytes</a></h2>
       <p>Learn why LiFSI is used in lithium-metal, fast-charge, low-temperature, and high-concentration battery electrolytes, including interphase formation, current-collector compatibility, and formulation strategy.</p>
       <div class="related-link-list"><a href="knowledge/lifsi-lithium-metal-batteries.html">Read article</a></div>
+      </div>
     </article>
     <article class="knowledge-card">
+      <img src="assets/images/raw-chemicals.jpg" alt="Lithium salts for electrolyte formulation" loading="lazy">
+      <div class="knowledge-card-body">
       <h2><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 vs LiFSI vs LiTFSI: How to Choose Lithium Electrolyte Salts for Battery Development</a></h2>
       <p>Compare LiPF6, LiFSI, and LiTFSI for lithium-ion, lithium-metal, fast-charge, low-temperature, polymer, and specialty electrolyte development.</p>
       <div class="related-link-list"><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Read article</a></div>
+      </div>
     </article>
     <article class="knowledge-card">
+      <img src="assets/images/Low-Temperature Electrolytes.png" alt="Low-temperature electrolyte cycling data" loading="lazy">
+      <div class="knowledge-card-body">
       <h2><a href="knowledge/low-temperature-electrolytes.html">Low-Temperature Electrolyte Design for Battery Research and Extreme Environments</a></h2>
       <p>Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.</p>
       <div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
+      </div>
     </article>
     <article class="knowledge-card">
+      <img src="assets/images/Sodium-Ion High-Rate Cycling.png" alt="Sodium-ion electrolyte high-rate cycling data" loading="lazy">
+      <div class="knowledge-card-body">
       <h2><a href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Battery Electrolyte Materials: Sodium Salts, Solvents, Additives, and Water Control</a></h2>
       <p>Learn how sodium salts such as NaPF6, NaTFSI, and NaODFB, along with solvents, additives, and water control, affect sodium-ion battery electrolyte performance.</p>
       <div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-materials.html">Read article</a></div>
+      </div>
     </article>
     <article class="knowledge-card">
+      <img src="assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powders films and discs" loading="lazy">
+      <div class="knowledge-card-body">
       <h2><a href="knowledge/solid-state-electrolyte-materials.html">Solid-State Electrolyte Materials: Sulfide, Oxide, Halide, and Polymer Electrolyte Screening</a></h2>
       <p>Compare sulfide, oxide, halide, polymer, and hybrid solid-state electrolyte materials for battery development, including ionic conductivity, particle size, moisture sensitivity, and interface compatibility.</p>
       <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-materials.html">Read article</a></div>
+      </div>
     </article>
 </div></section>
 </main>
