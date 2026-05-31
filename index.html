@@ -194,115 +194,6 @@ a.card:active {
   }
 }
 
-.hero-carousel {
-  position: relative;
-  min-height: 650px;
-  display: block;
-  padding: 0;
-  overflow: hidden;
-  background: #0b1324;
-}
-
-.hero-carousel-track {
-  display: flex;
-  width: 100%;
-  min-height: 650px;
-  animation: heroSwipe 64s infinite;
-}
-
-.hero-carousel:hover .hero-carousel-track {
-  animation-play-state: paused;
-}
-
-.hero-slide {
-  position: relative;
-  flex: 0 0 100%;
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(90deg, rgba(8,16,32,0.74) 0%, rgba(8,16,32,0.54) 48%, rgba(8,16,32,0.34) 100%),
-    var(--hero-image) center center / cover no-repeat;
-}
-
-.hero-slide .hero-copy {
-  position: relative;
-  z-index: 1;
-  max-width: 760px;
-}
-
-.hero-slide h1 {
-  color: #fff;
-  font-size: clamp(48px, 5.8vw, 88px);
-  line-height: 1.04;
-  letter-spacing: -.045em;
-}
-
-.hero-slide p {
-  color: rgba(255,255,255,.88);
-  font-size: 19px;
-  font-weight: 650;
-  max-width: 760px;
-}
-
-.hero-slide .eyebrow {
-  color: #8fb9ff;
-}
-
-.hero-slide .btn.secondary {
-  background: rgba(255,255,255,.92);
-}
-
-@keyframes heroSwipe {
-  0%, 9% { transform: translateX(0); }
-  12.5%, 21.5% { transform: translateX(-100%); }
-  25%, 34% { transform: translateX(-200%); }
-  37.5%, 46.5% { transform: translateX(-300%); }
-  50%, 59% { transform: translateX(-400%); }
-  62.5%, 71.5% { transform: translateX(-500%); }
-  75%, 84% { transform: translateX(-600%); }
-  87.5%, 96.5% { transform: translateX(-700%); }
-  100% { transform: translateX(-700%); }
-}
-
-.knowledge-preview-card {
-  padding: 0 !important;
-  overflow: hidden;
-}
-
-.knowledge-preview-card img {
-  width: 100%;
-  height: 178px;
-  display: block;
-  object-fit: cover;
-}
-
-.knowledge-preview-card .content {
-  padding: 24px;
-}
-
-.knowledge-preview-card h3 {
-  min-height: 58px;
-  margin-bottom: 12px;
-}
-
-@media (max-width: 900px) {
-  .hero-carousel,
-  .hero-carousel-track,
-  .hero-slide {
-    min-height: 620px;
-  }
-  .hero-slide h1 {
-    font-size: clamp(42px, 12vw, 64px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-carousel-track {
-    animation: none;
-  }
-}
-
 
 /* Formspree request form feedback */
 .form-status {
@@ -434,28 +325,10 @@ a.card:active {
   <div class="mobile-menu"><a class="active" href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></div>
 </header>
 <main>
-<section class="hero hero-carousel" aria-label="Winigen Materials product families">
-  <div class="hero-carousel-track">
-    <article class="hero-slide" style="--hero-image:url('assets/images/hero-battery.jpg')"><div class="container hero-copy"><div class="eyebrow">Winigen Materials</div><h1>Advanced Battery Materials for Next-Generation Energy Storage</h1><p>Battery-grade lithium salts, low-moisture solvents, electrolyte additives, solid-state electrolytes, and custom formulations for lithium-ion, sodium-ion, magnesium-ion, potassium-ion, silicon-anode, lithium-metal, fast-charge, and low-temperature battery development.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products.html">Explore Products</a></div></div></article>
-    <article class="hero-slide" style="--hero-image:url('assets/images/solid-state-discs.jpg')"><div class="container hero-copy"><div class="eyebrow">Solid-State Materials</div><h1>Sulfide, Oxide & Halide Electrolytes for Solid-State Battery Research</h1><p>Particle-size-controlled LATP, LLZTO, sulfide, and halide electrolyte materials with conductivity, moisture, impurity, DLS, SEM, and XRD characterization where available.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products/solid-state-electrolytes.html">Explore Products</a></div></div></article>
-    <article class="hero-slide" style="--hero-image:url('assets/images/battery-cyclers.jpg')"><div class="container hero-copy"><div class="eyebrow">Battery Active Materials</div><h1>Cathode & Anode Powders for Cell Screening</h1><p>LFP, NMC, NCA, LCO, LMFP, LMO, graphite, hard carbon, LTO, silicon, and SiOx/Si-C active materials for lithium-ion and sodium-ion development.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products/battery-active-materials.html">Explore Products</a></div></div></article>
-    <article class="hero-slide" style="--hero-image:url('assets/images/next-gen-mg-k.png')"><div class="container hero-copy"><div class="eyebrow">Next-Generation Salts</div><h1>Sodium, Magnesium & Potassium Electrolyte Salts</h1><p>Alternative-cation salts for sodium-ion, magnesium-ion, potassium-ion, high-voltage, low-water, and advanced electrolyte formulation studies.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products/next-generation-salts.html">Explore Products</a></div></div></article>
-    <article class="hero-slide" style="--hero-image:url('assets/images/raw-chemicals.jpg')"><div class="container hero-copy"><div class="eyebrow">Lithium Salts</div><h1>Battery-Grade Lithium Salts for Electrolyte Development</h1><p>LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB, and specialty lithium salts for interphase engineering, fast charge, lithium-metal, and low-temperature testing.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products/lithium-salts.html">Explore Products</a></div></div></article>
-    <article class="hero-slide" style="--hero-image:url('assets/images/lab-equipment.jpg')"><div class="container hero-copy"><div class="eyebrow">Battery Solvents</div><h1>Low-Moisture Solvents for Electrolyte Blending</h1><p>Carbonate, ether, nitrile, ester, fluorinated, and specialty solvents for lithium-ion, sodium-ion, fast-charge, and low-temperature electrolyte programs.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products/battery-solvents.html">Explore Products</a></div></div></article>
-    <article class="hero-slide" style="--hero-image:url('assets/images/electrolyte-design.jpg')"><div class="container hero-copy"><div class="eyebrow">Electrolyte Additives</div><h1>Additives for SEI, CEI & Interface Control</h1><p>FEC, VC, sulfur-containing, nitrile, borate, phosphate, and specialty additives for silicon-anode stability, high-voltage cycling, gas control, and fast-charge testing.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products/electrolyte-additives.html">Explore Products</a></div></div></article>
-    <article class="hero-slide" style="--hero-image:url('assets/images/Low-Temperature Electrolytes.png')"><div class="container hero-copy"><div class="eyebrow">Custom Formulations</div><h1>Electrolyte Formulation Support for Demanding Cell Systems</h1><p>Application-specific formulation support for lithium-metal, silicon-anode, sodium-ion, high-rate, high-voltage, and low-temperature battery evaluation.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products/custom-electrolyte-formulations.html">Explore Products</a></div></div></article>
-  </div>
-</section>
-<section class="section"><div class="container"><div class="cards cards-4"><a class="card icon-card" href="products.html#formulations"><img src="assets/icons/electrolyte.svg" alt="Lithium-ion electrolytes icon"><h3>Lithium-Ion Electrolytes</h3><p>Pre-optimized electrolyte formulations</p></a><a class="card icon-card" href="products.html#salts"><img src="assets/icons/raw-materials.svg" alt="Battery raw materials icon"><h3>Battery Raw Materials</h3><p>Salts, solvents & additives</p></a><a class="card icon-card" href="products.html#next-gen"><img src="assets/icons/next-gen.svg" alt="Next-generation battery materials icon"><h3>Next-Gen Battery Systems</h3><p>Na, Mg, K ion & solid-state systems</p></a><a class="card icon-card" href="services.html"><img src="assets/icons/design.svg" alt="Electrolyte design services icon"><h3>Electrolyte Formulation Support</h3><p>Support for lithium-metal, silicon-anode, fast-charge, sodium-ion, and low-temperature battery systems</p></a></div></div></section>
+<section class="hero hero-home-reverted"><div class="container hero-copy"><div class="eyebrow">Winigen Materials</div><h1>Advanced Battery Materials for Next-Generation Energy Storage</h1><p>Battery-grade lithium salts, low-moisture solvents, electrolyte additives, solid-state electrolytes, and custom formulations for lithium-ion, sodium-ion, magnesium-ion, potassium-ion, silicon-anode, lithium-metal, fast-charge, and low-temperature battery development.</p><div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn secondary" href="products.html">Explore Products</a></div></div></section>
+<section class="section"><div class="container"><div class="cards cards-4"><a class="card icon-card" href="products.html#lithium-ion"><img src="assets/icons/electrolyte.svg" alt="Lithium-ion electrolytes icon"><h3>Lithium-Ion Electrolytes</h3><p>Pre-optimized electrolyte formulations</p></a><a class="card icon-card" href="products.html#raw-materials"><img src="assets/icons/raw-materials.svg" alt="Battery raw materials icon"><h3>Battery Raw Materials</h3><p>Salts, solvents & additives</p></a><a class="card icon-card" href="products.html#next-gen"><img src="assets/icons/next-gen.svg" alt="Next-generation battery materials icon"><h3>Next-Gen Battery Systems</h3><p>Na, Mg, K ion & solid-state systems</p></a><a class="card icon-card" href="services.html"><img src="assets/icons/design.svg" alt="Electrolyte design services icon"><h3>Electrolyte Formulation Support</h3><p>Support for lithium-metal, silicon-anode, fast-charge, sodium-ion, and low-temperature battery systems</p></a></div></div></section>
 <section class="section ecosystem"><div class="container"><div class="section-title"><h2>The Product Ecosystem</h2><p>Battery-grade lithium salts, low-moisture solvents, electrolyte additives, and solid-state electrolyte materials for advanced electrolyte formulation, interphase engineering, conductivity screening, and cell evaluation.</p></div><div class="cards cards-4"><article class="card product-card"><img src="assets/images/li-ion-devices.jpg" alt="Devices powered by lithium-ion batteries"><div class="content"><h3>Lithium-Ion Solutions</h3><p>Pre-optimized electrolytes for high-performance mobility and energy storage.</p><div class="highlight">&gt;350 Wh/kg systems</div></div></article><article class="card product-card"><img src="assets/images/raw-chemicals.jpg" alt="Battery electrolyte raw chemicals"><div class="content"><h3>Raw Materials & Additives</h3><p>Battery-grade lithium salts, solvents, and additives for electrolyte formulation, SEI/CEI interphase engineering, and cell screening.</p><div class="highlight">&gt; 99.9% purity / low-water options</div></div></article><article class="card product-card"><img src="assets/images/next-gen-mg-k.png" alt="Alternative ion chemistry materials"><div class="content"><h3>Next-Gen Chemistries</h3><p>Specialized materials for sodium, magnesium, and potassium-ion systems.</p><div class="highlight">Na / Mg / K platforms</div></div></article><article class="card product-card"><img src="assets/images/solid-state-powders.jpg" alt="Solid-state electrolyte powders and pellets"><div class="content"><h3>Solid-State Materials</h3><p>Sulfide, oxide, and halide electrolyte materials for advanced solid-state batteries.</p><div class="highlight">&gt;12 mS/cm ionic conductivity</div></div></article></div></div></section>
-<section class="section"><div class="container"><div class="section-title"><div class="eyebrow">Knowledge Center</div><h2>Technical Knowledge for Battery Materials</h2><p>Focused guides on lithium salt selection, LiFSI electrolytes, solid-state electrolytes, sodium-ion electrolyte materials, electrolyte additives, and low-temperature formulation strategy.</p></div><div class="cards cards-3">
-  <a class="card knowledge-preview-card" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html"><img src="assets/images/raw-chemicals.jpg" alt="Lithium electrolyte salt comparison"><div class="content"><h3>LiPF6 vs LiFSI vs LiTFSI</h3><p>Compare lithium salts for electrolyte formulation, interphase behavior, and advanced cell screening.</p></div></a>
-  <a class="card knowledge-preview-card" href="knowledge/lifsi-lithium-metal-batteries.html"><img src="assets/images/electrolyte-design.jpg" alt="LiFSI electrolyte development"><div class="content"><h3>LiFSI for Lithium-Metal & Fast-Charge Electrolytes</h3><p>Review LiFSI use in lithium-metal, fast-charge, low-temperature, and high-concentration electrolytes.</p></div></a>
-  <a class="card knowledge-preview-card" href="knowledge/solid-state-electrolyte-materials.html"><img src="assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powders, films, and discs"><div class="content"><h3>Solid-State Electrolyte Materials</h3><p>Review sulfide, oxide, and halide electrolyte materials by particle size, conductivity, and processing fit.</p></div></a>
-  <a class="card knowledge-preview-card" href="knowledge/electrolyte-additives-sei-cei.html"><img src="assets/images/lab-equipment.jpg" alt="Electrolyte additive selection and testing"><div class="content"><h3>Electrolyte Additives for SEI/CEI</h3><p>Connect additive selection with silicon-anode stability, high-voltage cycling, and fast-charge testing.</p></div></a>
-  <a class="card knowledge-preview-card" href="knowledge/low-temperature-electrolytes.html"><img src="assets/images/Low-Temperature Electrolytes.png" alt="Low-temperature electrolyte cycling data"><div class="content"><h3>Low-Temperature Electrolyte Design</h3><p>Understand solvent viscosity, salt selection, lithium plating risk, conductivity, and cold-climate testing.</p></div></a>
-  <a class="card knowledge-preview-card" href="knowledge/sodium-ion-electrolyte-materials.html"><img src="assets/images/Sodium-Ion High-Rate Cycling.png" alt="Sodium-ion electrolyte high-rate cycling data"><div class="content"><h3>Sodium-Ion Electrolyte Materials</h3><p>Explore sodium salts, solvents, additives, and water control for sodium-ion battery electrolyte performance.</p></div></a>
-</div></div></section><section class="section"><div class="container split"><div><div class="eyebrow">Applications</div><h2>Materials engineered for demanding energy storage applications.</h2><p>Support for electric vehicles, grid-scale storage, aerospace, consumer electronics, lithium-metal, silicon-anode, sodium-ion, and solid-state battery platforms.</p><a class="btn" href="applications.html">Explore Applications</a></div><div class="image-panel"><img src="assets/images/ess-storage.jpg" alt="Grid energy storage installation"></div></div></section>
+<section class="section"><div class="container"><div class="section-title"><div class="eyebrow">Knowledge Center</div><h2>Technical Knowledge for Battery Materials</h2><p>Focused guides on lithium salt selection, LiFSI electrolytes, solid-state electrolytes, electrolyte additives, and low-temperature formulation strategy.</p></div><div class="cards cards-3"><a class="card" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html"><h3>LiPF6 vs LiFSI vs LiTFSI</h3><p>Compare lithium salts for electrolyte formulation, interphase behavior, and advanced cell screening.</p></a><a class="card" href="knowledge/solid-state-electrolyte-materials.html"><h3>Solid-State Electrolyte Materials</h3><p>Review sulfide, oxide, and halide electrolyte materials by particle size, conductivity, and processing fit.</p></a><a class="card" href="knowledge/electrolyte-additives-sei-cei.html"><h3>Electrolyte Additives for SEI/CEI</h3><p>Connect additive selection with silicon-anode stability, high-voltage cycling, and fast-charge testing.</p></a></div></div></section><section class="section"><div class="container split"><div><div class="eyebrow">Applications</div><h2>Materials engineered for demanding energy storage applications.</h2><p>Support for electric vehicles, grid-scale storage, aerospace, consumer electronics, lithium-metal, silicon-anode, sodium-ion, and solid-state battery platforms.</p><a class="btn" href="applications.html">Explore Applications</a></div><div class="image-panel"><img src="assets/images/ess-storage.jpg" alt="Grid energy storage installation"></div></div></section>
 <section class="section dark"><div class="container split"><div><h2>Start Your Battery Development Project</h2><p>Work with Winigen Materials to identify, source, and optimize battery materials tailored to your application—from lab-scale research to pilot-scale deployment.</p><a class="btn" href="contact.html">Request a Quote</a></div><div class="form-card"><form class="js-formspree-form" action="https://formspree.io/f/mlgzldpy" method="POST" data-form-name="Homepage Inquiry">
   <input type="hidden" name="_subject" value="New homepage inquiry from Winigen Materials website">
   <input type="hidden" name="source_page" value="index.html">
