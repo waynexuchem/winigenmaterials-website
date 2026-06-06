@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Mechanics Matter in Solid-State Electrolyte Screening: Lithium Dendrites in Garnet Electrolytes | Winigen Materials</title>
+<meta name="description" content="A Nature study on lithium dendrite penetration in LLZTO shows why solid-state electrolyte screening must consider fracture, grain boundaries, defects, conductivity, density, and lithium-metal interfaces.">
+<link rel="canonical" href="https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.article-hero { padding: 78px 0; }
+.article-layout { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:34px; align-items:start; }
+.article-main,.article-side { background:rgba(255,255,255,.92); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:32px; }
+.article-main p,.article-main li { line-height:1.78; }
+.article-main a { color:var(--blue); font-weight:800; }
+.article-block { margin-top:30px; padding-top:26px; border-top:1px solid rgba(18,32,51,.1); }
+.study-note { margin:24px 0; padding:18px 20px; border-left:4px solid var(--blue); border-radius:0 14px 14px 0; background:#eef5ff; color:#31415d; line-height:1.7; }
+.article-figure { margin:24px 0; border:1px solid rgba(18,32,51,.1); border-radius:18px; overflow:hidden; background:#fff; }
+.article-figure img { width:100%; display:block; object-fit:contain; background:#f3f8fc; }
+.article-figure figcaption { padding:14px 16px; color:#53627c; font-size:.92rem; line-height:1.55; border-top:1px solid rgba(18,32,51,.08); }
+.figure-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:22px 0; }
+.figure-grid figure { margin:0; border:1px solid rgba(18,32,51,.1); border-radius:16px; overflow:hidden; background:#fff; }
+.figure-grid img { width:100%; height:220px; object-fit:contain; display:block; background:#f3f8fc; padding:8px; }
+.figure-grid figcaption { padding:10px 12px; color:#53627c; font-size:.9rem; line-height:1.45; border-top:1px solid rgba(18,32,51,.08); }
+.article-table-wrap { overflow-x:auto; margin:20px 0 22px; border:1px solid rgba(18,32,51,.1); border-radius:16px; background:#fff; }
+.article-table { width:100%; border-collapse:collapse; min-width:760px; }
+.article-table th { background:#14213d; color:#fff; text-align:left; padding:13px 15px; font-size:13px; }
+.article-table td { padding:13px 15px; border-top:1px solid rgba(18,32,51,.1); color:#2b3950; vertical-align:top; line-height:1.5; }
+.reference-list { display:grid; gap:12px; padding-left:22px; margin:18px 0 0; }
+.reference-list li { color:#40516f; line-height:1.58; padding-left:4px; }
+.related-link-list { display:grid; gap:10px; margin-top:16px; }
+.related-link-list a { display:block; padding:12px 14px; border:1px solid rgba(18,32,51,.1); border-radius:12px; background:#f8fbff; color:var(--navy); font-weight:850; text-decoration:none; }
+.related-link-list a:hover { color:var(--blue); border-color:rgba(42,102,217,.28); }
+.faq-list { display:grid; gap:12px; max-width:920px; margin:0 auto; }
+.faq-list details { border:1px solid var(--border); border-radius:16px; background:rgba(255,255,255,.9); box-shadow:0 10px 26px rgba(15,31,77,.06); padding:18px 20px; }
+.faq-list summary { cursor:pointer; color:var(--navy); font-weight:900; }
+.faq-list p { margin:12px 0 0; }
+@media(max-width:900px) { .article-layout { grid-template-columns:1fr; } .article-main,.article-side { padding:24px; } .figure-grid { grid-template-columns:1fr; } .figure-grid img { height:auto; min-height:180px; } }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html#article",
+  "headline": "Why Mechanics Matter in Solid-State Electrolyte Screening: Lithium Dendrites in Garnet Electrolytes",
+  "description": "A Nature study on lithium dendrite penetration in LLZTO shows why solid-state electrolyte screening must consider fracture, grain boundaries, defects, conductivity, density, and lithium-metal interfaces.",
+  "url": "https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html",
+  "datePublished": "2026-06-06",
+  "dateModified": "2026-06-06",
+  "author": {"@id": "https://www.winigenmaterials.com/#organization"},
+  "publisher": {"@id": "https://www.winigenmaterials.com/#organization"},
+  "about": [
+    "Solid-state electrolyte mechanics",
+    "Lithium dendrite penetration",
+    "LLZTO garnet electrolyte",
+    "Grain-boundary fracture",
+    "Lithium-metal interface testing"
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Mechanically driven Li dendrite penetration in garnet solid electrolyte",
+      "author": "Yuwei Zhang et al.",
+      "datePublished": "2026-04-22",
+      "isPartOf": {"@type": "Periodical", "name": "Nature"},
+      "sameAs": "https://doi.org/10.1038/s41586-026-10415-9"
+    },
+    "Kalnaus et al., Solid-state batteries: The critical role of mechanics, Science, 2023.",
+    "Ning et al., Dendrite initiation and propagation in lithium metal solid-state batteries, Nature, 2023."
+  ],
+  "mainEntityOfPage": "https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can soft lithium metal fracture a hard LLZTO ceramic electrolyte?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The cited Nature study supports a mechanically driven mechanism in which confined lithium fills cracks, builds hydrostatic pressure, and creates tensile stress in LLZTO that can propagate intergranular and transgranular fracture."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is ionic conductivity enough to select a garnet solid electrolyte?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Conductivity should be considered with density, particle morphology, phase purity, grain-boundary integrity, surface preparation, stack pressure, electronic conductivity, and lithium-metal interface behavior."}
+    },
+    {
+      "@type": "Question",
+      "name": "What tests should accompany Li|solid electrolyte|Li cycling?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Useful companion measurements include pellet density, surface finish, applied pressure, current density, areal capacity, EIS evolution, critical-current screening, and post-cycling microscopy or cross-section analysis."}
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html#breadcrumb",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.winigenmaterials.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Knowledge", "item": "https://www.winigenmaterials.com/knowledge.html"},
+    {"@type": "ListItem", "position": 3, "name": "Mechanics and Lithium Dendrites", "item": "https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html"}
+  ]
+}</script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
+    <nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav>
+    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
+</header>
+<main>
+  <section class="section dark article-hero">
+    <div class="container section-title">
+      <p class="eyebrow">Research Perspective</p>
+      <h1>Why Mechanics Matter in Solid-State Electrolyte Screening</h1>
+      <p>Lessons from lithium dendrite penetration in LLZTO garnet electrolytes, and what they mean for practical material and interface screening.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-layout">
+      <article class="article-main">
+        <p>Solid-state batteries are often compared through ionic conductivity, electrochemical stability, and lithium-metal compatibility. Those properties matter, but a 2026 <em>Nature</em> study, <a href="https://doi.org/10.1038/s41586-026-10415-9">Mechanically driven Li dendrite penetration in garnet solid electrolyte</a>, shows why mechanics belongs in the same screening framework.</p>
+        <p>Using cryogenic microscopy, electron-energy-loss spectroscopy, crystallographic mapping, and phase-field fracture models, Zhang and co-workers investigated how lithium penetrates polycrystalline Li<sub>6.6</sub>La<sub>3</sub>Zr<sub>1.6</sub>Ta<sub>0.4</sub>O<sub>12</sub> (LLZTO). Their evidence supports a fracture-driven mechanism: plated lithium occupies cracks, develops a strongly hydrostatic stress state under confinement, and generates tensile stress in the surrounding ceramic.</p>
+        <div class="study-note"><strong>Key implication:</strong> conductivity remains essential, but a conductive ceramic can still fail when defects, grain boundaries, interface geometry, and stress evolution create a mechanically favorable penetration path.</div>
+
+        <section class="article-block">
+          <h2>The Soft-Lithium, Hard-Ceramic Problem</h2>
+          <p>Lithium metal is much softer than a dense garnet ceramic, so penetration can appear counterintuitive. Two broad explanations have been debated: mechanically driven cracking as lithium plates into confined flaws, and electronically enabled lithium deposition inside the electrolyte, including at grain boundaries.</p>
+          <p>The study directly examined material near dendrite tips. Cryo-STEM/EELS showed lithium filling nanoscale crack tips and micrometer-scale cracks. In sampled regions ahead of those tips, the authors did not detect measurable lithium enrichment or isolated lithium-metal nuclei. That result favors crack filling and propagation in the tested material and geometry, while not implying that electronic leakage is irrelevant in every solid electrolyte or cell design.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/mechanics-dendrite-fracture-schematic.jpg" alt="Schematic of mechanically driven lithium dendrite fracture in a solid electrolyte" loading="lazy">
+            <figcaption>Mechanically driven lithium penetration and fracture in a ceramic solid electrolyte. Source: Zhang et al., Supplementary Fig. S32, <em>Nature</em> 652 (2026), <a href="https://doi.org/10.1038/s41586-026-10415-9">doi:10.1038/s41586-026-10415-9</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>Cracks Cross Grains as Well as Grain Boundaries</h2>
+          <p>The observed fracture path was tortuous and included both intergranular and transgranular events. In the in-plane cell analysis, 20 &plusmn; 1% of roughly 100 grains exhibited transgranular cracking. Nearly 75% of the measured intergranular cracks deflected by more than 40 degrees.</p>
+          <p>Phase-field analysis helped interpret those paths. Fitting the experimental crack statistics to the modeled fracture map suggested that average grain-boundary fracture energy was approximately three to five times lower than bulk fracture energy. Grain boundaries were therefore weaker on average, but they were not the only route available to a propagating crack.</p>
+          <p>For material screening, this argues for attention to relative density, pores, surface damage, residual flaws, grain-boundary quality, and microstructural uniformity. A high-conductivity pellet with weak or poorly controlled fracture paths may still be vulnerable during lithium plating.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>Hydrostatic Stress Drives the Fracture Model</h2>
+          <p>Crystallographic measurements showed limited lattice rotation and localized plasticity in the confined lithium. In the authors' phase-field calculations, lithium plating inside a crack produced hydrostatic stress approaching 600 MPa and tensile stress of comparable order in the surrounding LLZTO. The modeled von Mises stress remained much smaller than the hydrostatic component across assumed lithium yield strengths from approximately 1 to 125 MPa and in a purely elastic limit.</p>
+          <p>The distinction matters: the reported stress magnitude is a modeling result constrained by experimental observations, not a direct pressure-gauge measurement inside the crack. Together, however, the microscopy and model support the conclusion that confinement prevents easy stress relaxation and allows lithium plating to drive ceramic fracture.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/mechanics-llzto-stress-yield-strength.jpg" alt="Modeled hydrostatic, von Mises, and LLZTO tensile stress for different lithium yield strengths" loading="lazy">
+            <figcaption>Modeled stress evolution across assumed lithium yield strengths. Hydrostatic stress in lithium remains much larger than mean von Mises stress in the simulations. Source: Zhang et al., Supplementary Fig. S24, <em>Nature</em> 652 (2026), <a href="https://doi.org/10.1038/s41586-026-10415-9">doi:10.1038/s41586-026-10415-9</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>Why Symmetric-Cell Data Need Mechanical Context</h2>
+          <p>Li | solid electrolyte | Li cells remain useful for plating/stripping and interface screening, but a voltage trace or fitted resistance does not identify the failure mechanism by itself. Surface finish, pellet density, stack pressure, current density, transferred capacity, contact area, and pre-existing defects all influence local current and stress.</p>
+          <p>In Supplementary Fig. S10, the authors show cycling at 0.6 mA/cm<sup>2</sup> and EIS before and after the test. Their fit uses constant phase elements for non-ideal responses. The accompanying note attributes the depressed Li-LLZTO interface response to spatially heterogeneous charge and mass transfer. EIS arcs in solid-state cells should therefore not be assumed to represent ideal, spatially uniform interfaces.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/mechanics-llzto-symmetric-cell-eis.jpg" alt="LLZTO symmetric-cell plating stripping and impedance data" loading="lazy">
+            <figcaption>Li | LLZTO | Li cycling and EIS before and after cycling. Source: Zhang et al., Supplementary Fig. S10, <em>Nature</em> 652 (2026), <a href="https://doi.org/10.1038/s41586-026-10415-9">doi:10.1038/s41586-026-10415-9</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead><tr><th>Report with Li symmetric-cell data</th><th>Why it matters</th></tr></thead>
+              <tbody>
+                <tr><td>Pellet density and thickness</td><td>Influence current distribution, resistance, and available fracture paths.</td></tr>
+                <tr><td>Surface preparation</td><td>Changes physical contact, surface contamination, and current constriction.</td></tr>
+                <tr><td>Applied pressure</td><td>Can improve contact while also changing stress and defect evolution.</td></tr>
+                <tr><td>Current density and areal capacity</td><td>Define plating demand more completely than current density alone.</td></tr>
+                <tr><td>EIS before and after cycling</td><td>Tracks changes in bulk, grain-boundary, and interface response when the model is justified.</td></tr>
+                <tr><td>Post-cycling cross sections</td><td>Help distinguish contact loss, interfacial reaction, and internal fracture.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Engineered Defects: Guidance, Not a Production Recipe</h2>
+          <p>The study also tested whether a growing dendrite could be redirected. Arrays of Vickers indents were placed across the anticipated propagation path. Dendrites that encountered cracks associated with those indents deflected by roughly 45 degrees and followed the pre-existing crack direction; a dendrite that missed the engineered obstacle continued and shorted the model cell.</p>
+          <p>This is a mechanics demonstration, not evidence that random defects improve batteries. Uncontrolled cracks remain dangerous. The more useful design lesson is that geometry and local fracture resistance influence where a crack travels, creating future opportunities for tougher grain boundaries, higher fracture toughness, or deliberately designed arrest and redirection features.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/mechanics-llzto-vickers-deflection.jpg" alt="Lithium dendrite deflection near a Vickers indent in LLZTO" loading="lazy">
+            <figcaption>Surface and cross-sectional evidence of dendrite deflection near cracks associated with a Vickers indent. Source: Zhang et al., Supplementary Fig. S25, <em>Nature</em> 652 (2026), <a href="https://doi.org/10.1038/s41586-026-10415-9">doi:10.1038/s41586-026-10415-9</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>What Mechanics Adds to Material Screening</h2>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead><tr><th>Screening property</th><th>Electrochemical or mechanical relevance</th></tr></thead>
+              <tbody>
+                <tr><td>Ionic conductivity</td><td>Sets ion-transport capability, but must be tied to temperature, density, and test geometry.</td></tr>
+                <tr><td>Electronic conductivity</td><td>Helps evaluate whether electronic leakage could support internal reduction or deposition.</td></tr>
+                <tr><td>Particle size and morphology</td><td>Affect packing, green density, sintering, flaw population, composite contact, and coating behavior.</td></tr>
+                <tr><td>Relative density and porosity</td><td>Influence resistance and the distribution of stress concentrators and connected defects.</td></tr>
+                <tr><td>XRD and phase purity</td><td>Confirm the target phase and identify secondary phases that may alter transport or mechanics.</td></tr>
+                <tr><td>Grain-boundary integrity</td><td>Controls both transport and resistance to intergranular crack deflection.</td></tr>
+                <tr><td>Fracture toughness</td><td>Defines resistance to propagation once a flaw experiences sufficient tensile driving force.</td></tr>
+                <tr><td>Li-metal interface response</td><td>Combines wetting, reaction, current distribution, voiding, pressure, and fracture behavior.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Connecting the Study to Winigen Solid-State Materials</h2>
+          <p>The paper studies dense polycrystalline LLZTO rather than loose commercial powder. Powder specifications do not determine final pellet toughness by themselves, but they influence processing, density, microstructure, and reproducibility. The <a href="../products/solid-state-electrolytes.html">Winigen solid-state electrolyte family</a> therefore presents particle size, conductivity, moisture, impurity, SEM, PSD, and XRD data where available.</p>
+          <h3>LLZTO garnet oxide</h3>
+          <p><a href="../products/llzto-powder.html">LLZTO powder</a> directly relates to the garnet chemistry examined in the cited study. It is offered for garnet electrolyte screening, composite electrolyte studies, and coating development, with customizable particle size and supporting SEM and XRD images. Final densification, grain-boundary chemistry, surface preparation, and mechanical properties remain process-dependent and should be measured on the fabricated electrolyte body.</p>
+          <div class="figure-grid" aria-label="LLZTO product and characterization images">
+            <figure><img src="../assets/images/solid-state/llzto-powder-photo.jpg" alt="LLZTO garnet oxide powder" loading="lazy"><figcaption>LLZTO garnet-type oxide powder.</figcaption></figure>
+            <figure><img src="../assets/images/solid-state/llzto-sem.jpg" alt="SEM image of LLZTO powder" loading="lazy"><figcaption>SEM support for LLZTO powder morphology.</figcaption></figure>
+            <figure><img src="../assets/images/solid-state/llzto-xrd.jpg" alt="XRD pattern for LLZTO powder" loading="lazy"><figcaption>XRD support for LLZTO phase review.</figcaption></figure>
+          </div>
+
+          <h3>LATP oxide powders and slurries</h3>
+          <p><a href="../products/latp-d-50-0-3-um.html">LATP powder, D<sub>50</sub> 0.30 &micro;m</a>, illustrates particle-size-controlled oxide screening. The listed specification includes D<sub>50</sub> 0.30 &plusmn; 0.05 &micro;m, water &le;500 ppm, magnetic impurities &le;500 ppb, and ionic conductivity &ge;0.55 mS/cm at 25 &deg;C for a pressed pellet. LATP slurry formats extend the processing discussion toward coatings and composite layers.</p>
+          <div class="figure-grid" aria-label="LATP product and characterization images">
+            <figure><img src="../assets/images/solid-state/latp-300nm-powder-photo.jpg" alt="LATP D50 0.30 micrometer powder" loading="lazy"><figcaption>Particle-size-controlled LATP powder.</figcaption></figure>
+            <figure><img src="../assets/images/solid-state/latp-300nm-sem.jpg" alt="SEM image of LATP powder" loading="lazy"><figcaption>LATP SEM morphology.</figcaption></figure>
+            <figure><img src="../assets/images/solid-state/latp-300nm-xrd.jpg" alt="XRD pattern for LATP powder" loading="lazy"><figcaption>LATP XRD phase support.</figcaption></figure>
+          </div>
+
+          <h3>Sulfide and halide comparison materials</h3>
+          <p>The mechanics lesson extends beyond garnets even though fracture mode, elastic properties, and interface chemistry differ by material. <a href="../products/li-6-ps-5-cl-d-50-2-um.html">Li<sub>6</sub>PS<sub>5</sub>Cl, D<sub>50</sub> 2.123 &micro;m</a> separates ionic conductivity (3.5 mS/cm) from electronic conductivity (1.74 &times; 10<sup>-6</sup> mS/cm) and provides PSD, water, impurity, and XRD information. <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub>, D<sub>50</sub> 0.9 &micro;m</a> provides a halide comparison point for cathode-side solid-state screening.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>A Practical Electrochemical-Mechanical Workflow</h2>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead><tr><th>Stage</th><th>Recommended questions</th></tr></thead>
+              <tbody>
+                <tr><td>1. Powder characterization</td><td>What are the phase, D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>, morphology, moisture, impurities, ionic conductivity, and electronic conductivity?</td></tr>
+                <tr><td>2. Dense-body preparation</td><td>What density and microstructure result from the selected pressing, sintering, or coating process?</td></tr>
+                <tr><td>3. Mechanical baseline</td><td>What are the hardness, modulus, fracture toughness, flaw population, and grain-boundary quality of the processed electrolyte?</td></tr>
+                <tr><td>4. Interface screening</td><td>How do surface finish, interlayers, pressure, current density, and areal capacity affect Li contact and EIS?</td></tr>
+                <tr><td>5. Failure analysis</td><td>Does failure begin through contact loss, reaction, pores, grain boundaries, transgranular cracking, or a combination?</td></tr>
+                <tr><td>6. Cell validation</td><td>Does the selected material survive realistic cathode loading, electrolyte thickness, stack pressure, temperature, and cycling protocol?</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Bottom Line</h2>
+          <p>The central lesson from Zhang and co-workers is that lithium penetration in garnet electrolyte can be an electrochemical-mechanical fracture process. In their LLZTO system, confined lithium filled cracks, developed high hydrostatic stress, and drove both intergranular and transgranular fracture. Grain-boundary weakness and defect geometry influenced the path.</p>
+          <p>For battery developers, conductivity remains necessary but is not sufficient. Material screening should connect powder quality to densification, microstructure, grain-boundary integrity, lithium contact, pressure, current, EIS evolution, and post-cycling fracture evidence.</p>
+          <p>Winigen Materials supports these workflows with <a href="../products/llzto-powder.html">LLZTO garnet oxide powder</a>, <a href="../products/solid-state-electrolytes.html">oxide, sulfide, and halide solid-state materials</a>, particle-size-controlled grades, characterization data, and RFQ-based material matching.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>References</h2>
+          <ol class="reference-list">
+            <li><a href="https://doi.org/10.1038/s41586-026-10415-9">Zhang, Y. et al. Mechanically driven Li dendrite penetration in garnet solid electrolyte. <em>Nature</em> 652, 912-918 (2026). doi:10.1038/s41586-026-10415-9.</a></li>
+            <li><a href="https://doi.org/10.1038/s41586-026-10415-9">Supplementary Information for Mechanically driven Li dendrite penetration in garnet solid electrolyte (2026).</a></li>
+            <li><a href="https://www.science.org/doi/10.1126/science.abg5998">Kalnaus, S. et al. Solid-state batteries: The critical role of mechanics. <em>Science</em> 381, eabg5998 (2023).</a></li>
+            <li><a href="https://doi.org/10.1038/s41586-023-05970-4">Ning, Z. et al. Dendrite initiation and propagation in lithium metal solid-state batteries. <em>Nature</em> 618, 287-293 (2023).</a></li>
+            <li><a href="https://doi.org/10.1016/j.matt.2023.10.014">Athanasiou, C. E. et al. Operando measurements of dendrite-induced stresses in ceramic electrolytes using photoelasticity. <em>Matter</em> 7, 95-106 (2024).</a></li>
+          </ol>
+        </section>
+      </article>
+
+      <aside class="article-side">
+        <p class="eyebrow">Related Pages</p>
+        <h2>Continue Exploring</h2>
+        <p>Connect the mechanics perspective with materials, powder characterization, and development-stage screening.</p>
+        <div class="related-link-list">
+          <a href="../products/solid-state-electrolytes.html">Solid-State Electrolytes</a>
+          <a href="../products/llzto-powder.html">LLZTO Powder</a>
+          <a href="../products/latp-d-50-0-3-um.html">LATP D50 0.30 &micro;m</a>
+          <a href="../products/li-6-ps-5-cl-d-50-2-um.html">Li6PS5Cl D50 2.123 &micro;m</a>
+          <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li3InCl6 D50 0.9 &micro;m</a>
+          <a href="solid-state-electrolyte-materials.html">Solid-State Electrolyte Materials</a>
+          <a href="sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Sulfide vs Oxide vs Halide</a>
+          <a href="compare-solid-state-electrolyte-powders.html">How to Compare SSE Powders</a>
+          <a href="solid-state-electrolyte-screening-rd-to-pilot-line.html">R&amp;D to Pilot-Line Screening</a>
+          <a href="../knowledge.html">Knowledge Center</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title"><p class="eyebrow">FAQ</p><h2>Mechanics and Garnet Electrolytes</h2></div>
+      <div class="faq-list">
+        <details><summary>Can soft lithium metal fracture a hard LLZTO ceramic electrolyte?</summary><p>The cited Nature study supports a mechanism in which confined lithium fills cracks, builds hydrostatic pressure, and creates tensile stress in LLZTO that can propagate intergranular and transgranular fracture.</p></details>
+        <details><summary>Is ionic conductivity enough to select a garnet solid electrolyte?</summary><p>No. Conductivity should be considered with density, particle morphology, phase purity, grain-boundary integrity, surface preparation, stack pressure, electronic conductivity, and lithium-metal interface behavior.</p></details>
+        <details><summary>What tests should accompany Li | solid electrolyte | Li cycling?</summary><p>Useful companion measurements include pellet density, surface finish, applied pressure, current density, transferred areal capacity, EIS evolution, critical-current screening, and post-cycling microscopy or cross-section analysis.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
