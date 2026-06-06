@@ -42,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ['LiFSI Electrolytes', `${prefix}knowledge/lifsi-lithium-metal-batteries.html`],
         ['Sodium-Ion Electrolytes', `${prefix}knowledge/sodium-ion-electrolyte-materials.html`],
         ['Solid-State Electrolytes', `${prefix}knowledge/solid-state-electrolyte-materials.html`],
+        ['Compare SSE Powders', `${prefix}knowledge/compare-solid-state-electrolyte-powders.html`],
+        ['Sulfide vs Oxide vs Halide', `${prefix}knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html`],
+        ['R&D to Pilot Line', `${prefix}knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html`],
+        ['Mechanics & Li Dendrites', `${prefix}knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html`],
         ['SEI/CEI Additives', `${prefix}knowledge/electrolyte-additives-sei-cei.html`],
         ['Low-Temperature Electrolytes', `${prefix}knowledge/low-temperature-electrolytes.html`]
       ]
