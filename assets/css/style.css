@@ -265,6 +265,24 @@ body .mobile-menu { display: none; }
   align-items: stretch;
 }
 
+/* Keep article portfolio navigation available while reading on desktop. */
+.article-layout > .article-side {
+  position: sticky;
+  top: 130px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+@media (max-width: 900px) {
+  .article-layout > .article-side {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 .product-card,
 .formulation-card {
   display: grid;
