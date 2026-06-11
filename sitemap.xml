@@ -666,4 +666,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/knowledge/fast-charge-all-weather-ev-battery-electrolytes.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/knowledge/automotive-battery-materials-roadmap.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
