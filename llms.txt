@@ -35,7 +35,7 @@ LinkedIn: https://www.linkedin.com/company/118914606/
 - Sulfide vs oxide vs halide solid electrolytes: https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html
 - Solid-state electrolyte screening from R&D to pilot line: https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html
 - Mechanics and lithium dendrite penetration in garnet electrolytes: https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html
-- Electrolyte additives for SEI and CEI: https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html
+- Electrolyte additive screening for silicon anodes and high-voltage cathodes: https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html
 - Low-temperature electrolyte design: https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html
 
 ## Product Categories
