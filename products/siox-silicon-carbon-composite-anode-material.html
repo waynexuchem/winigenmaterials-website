@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
-<style>.product-detail-hero { padding: 78px 0; } .product-detail-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: start; } .product-detail-media, .product-detail-main { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; } .product-detail-media { display: grid; place-items: center; min-height: 320px; background: radial-gradient(circle at 70% 20%, rgba(184,150,74,.18), transparent 32%), linear-gradient(135deg,#fff 0%,#eef7fc 100%); } .active-formula-display { font-family: Manrope, Inter, sans-serif; font-size: clamp(34px,5vw,64px); font-weight: 900; color: var(--navy); text-align:center; } .spec-list { display:grid; gap:10px; padding:0; list-style:none; } .spec-list li { position:relative; padding-left:24px; line-height:1.55; color:#2b3950; } .spec-list li::before { content:""; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; background:var(--gold); } @media(max-width:900px) { .product-detail-layout { grid-template-columns:1fr; } }</style>
+<link rel="stylesheet" href="../assets/css/style.css?v=20260614">
+<style>.product-detail-hero { padding: 78px 0; } .product-detail-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: start; } .product-detail-media, .product-detail-main { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; } .product-detail-media { display: grid; place-items: center; min-height: 320px; background: radial-gradient(circle at 70% 20%, rgba(184,150,74,.18), transparent 32%), linear-gradient(135deg,#fff 0%,#eef7fc 100%); } .active-formula-display { font-family: Manrope, Inter, sans-serif; font-size: clamp(34px,5vw,64px); font-weight: 900; color: var(--navy); text-align:center; } .spec-list { display:grid; gap:10px; padding:0; list-style:none; } .spec-list li { position:relative; padding-left:24px; line-height:1.55; color:#2b3950; } .spec-list li::before { content:""; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; background:var(--gold); } @media(max-width:900px) { .product-detail-layout { grid-template-columns:1fr; } }.product-expertise-section{padding-top:0}.product-expertise-panel{background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}.product-expertise-panel h2{max-width:900px;font-size:clamp(26px,3vw,40px)}.product-expertise-panel>p{max-width:980px;line-height:1.75}.product-expertise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:26px 0}.product-expertise-grid>div{padding:22px;border:1px solid rgba(18,32,51,.1);border-radius:14px;background:#f8fbff}.product-expertise-grid h3{margin-top:0}@media(max-width:760px){.product-expertise-panel{padding:24px}.product-expertise-grid{grid-template-columns:1fr}}.product-expertise-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.product-expertise-links a{padding:11px 14px;border:1px solid rgba(42,102,217,.22);border-radius:10px;background:#f8fbff;color:var(--navy);font-weight:850;text-decoration:none}.product-expertise-links a:hover{color:var(--blue);border-color:rgba(42,102,217,.4)}</style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Product",
@@ -102,7 +102,7 @@
       <p class="eyebrow">Product Details</p>
       <h2>SiOx / silicon-carbon composite anode material</h2>
       <dl class="product-card__facts"><div><dt>Category</dt><dd>Anode Active Material</dd></div><div><dt>Availability</dt><dd>RFQ</dd></div><div><dt>Grade</dt><dd>Battery-grade SiOx or Si-C composite option</dd></div><div><dt>Documents</dt><dd>SDS / COA / TDS</dd></div></dl>
-      <section class="article-block"><h3>Typical Specification</h3><ul class="spec-list"><li>Si content and capacity grade by request</li><li>D50 commonly 5-10 um for composite powders</li><li>Initial efficiency and expansion grade-dependent</li><li>Binder compatibility to be confirmed</li></ul><p>These are typical commercial specification ranges for web guidance only. Final values should be confirmed by grade, supplier lot, COA/TDS, and customer application.</p></section>
+      <section class="article-block"><h3>Typical Specification</h3><ul class="spec-list"><li>Si content and capacity grade by request</li><li>D50 commonly 5-10 um for composite powders</li><li>Initial efficiency and expansion grade-dependent</li><li>Binder compatibility to be confirmed</li></ul><p>Specifications vary by grade and production lot. Confirm the applicable COA or TDS, sampling method, and acceptance limits before cell qualification.</p></section>
       <section class="article-block"><h3>Use Cases</h3><ul class="spec-list"><li>SiOx and Si-C composites are used for higher-capacity lithium-ion anodes with more manageable expansion than pure silicon powders.</li><li>Requested materials can be quoted for R&amp;D, pilot-scale qualification, or production-scale sourcing after grade, particle-size, documentation, and packaging requirements are confirmed.</li><li>Typical supporting documents may include SDS, COA, and TDS depending on supplier lot and requested specification.</li></ul></section>
       
     <form class="product-card__rfq" action="../contact.html" method="get">
@@ -125,6 +125,28 @@
       <p style="margin-top:20px"><a class="btn secondary" href="battery-active-materials.html">Back to Battery Active Materials</a></p>
     </article>
   </div></section>
+
+  <section class="section product-expertise-section" id="selection-guide">
+    <div class="container">
+      <article class="product-expertise-panel">
+        <p class="detail-kicker">Technical Selection Guide</p>
+        <h2>How should SiOx / silicon-carbon composite anode material be evaluated?</h2>
+        <p>SiOx / silicon-carbon composite anode material is used to increase anode capacity beyond conventional graphite. Silicon-containing materials undergo substantial volume change, so particle architecture, carbon integration, binder selection, electrolyte additives, prelithiation, and electrode loading must be developed together.</p>
+        <div class="product-expertise-grid">
+          <div><h3>Why developers evaluate it</h3><ul class="spec-list"><li>High-energy silicon-anode development</li><li>FEC and multi-additive electrolyte screening</li><li>Expansion, impedance, and cycle-life studies</li></ul></div>
+          <div><h3>Development considerations</h3><ul class="spec-list"><li>Control expansion and electrode mechanical integrity</li><li>Track first-cycle lithium loss and Coulombic efficiency</li><li>Qualify particle distribution and carbon architecture</li></ul></div>
+        </div>
+        <h3>How to compare it</h3>
+        <p>Compare silicon, SiOx, and silicon-carbon grades at matched electrode design and silicon loading. Higher silicon content can raise capacity but usually increases expansion, irreversible loss, and electrolyte demand.</p>
+        <div class="product-expertise-links" aria-label="Related technical resources">
+          <a href="battery-active-materials.html">Battery Active Materials</a>
+          <a href="../applications.html">Battery Applications</a>
+          <a href="../services.html">Material Selection &amp; Screening Support</a>
+        </div>
+
+      </article>
+    </div>
+  </section>
 </main>
 <footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
 <script src="../assets/js/main.js"></script>
