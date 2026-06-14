@@ -741,3 +741,10 @@ body .mobile-menu { display: none; }
 }
 
 body .structure-fallback.structure-fallback--active { display: grid; font-size: 30px; }
+
+@media(max-width:900px) {
+  .product-detail-hero h1 {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
