@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Coin-cell to pouch-cell battery material validation ladder</title>
+  <desc id="desc">A five-stage workflow from material quality control through coin half-cells, coin full-cells, single-layer pouch cells, and multilayer pouch validation.</desc>
+  <rect width="1200" height="720" fill="#f4f7fb"/>
+  <rect width="1200" height="92" fill="#14213d"/>
+  <text x="48" y="58" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="800">From Material Screening to Pouch-Cell Evidence</text>
+  <text x="48" y="130" fill="#52617b" font-family="Inter,Arial,sans-serif" font-size="18">Each format answers a different question. Passing one stage does not automatically validate the next.</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <path d="M126 520 H1074" stroke="#a8b5c8" stroke-width="8" stroke-linecap="round"/>
+
+    <g transform="translate(40 164)">
+      <rect width="210" height="342" rx="18" fill="#fff" stroke="#b9c9df" stroke-width="2"/>
+      <circle cx="42" cy="42" r="22" fill="#2a66d9"/><text x="42" y="49" fill="#fff" font-size="20" text-anchor="middle" font-weight="800">1</text>
+      <text x="24" y="96" fill="#14213d" font-size="21" font-weight="800">Material QC</text>
+      <text x="24" y="134" fill="#40516f" font-size="16"><tspan x="24">Purity and water</tspan><tspan x="24" dy="27">Particle size</tspan><tspan x="24" dy="27">Surface area</tspan><tspan x="24" dy="27">Morphology</tspan><tspan x="24" dy="27">Batch consistency</tspan></text>
+      <rect x="14" y="286" width="182" height="36" rx="18" fill="#eaf2ff"/><text x="105" y="309" fill="#245fc8" font-size="13" text-anchor="middle" font-weight="800">Is the input controlled?</text>
+    </g>
+
+    <g transform="translate(268 164)">
+      <rect width="210" height="342" rx="18" fill="#fff" stroke="#b9c9df" stroke-width="2"/>
+      <circle cx="42" cy="42" r="22" fill="#2a66d9"/><text x="42" y="49" fill="#fff" font-size="20" text-anchor="middle" font-weight="800">2</text>
+      <text x="24" y="96" fill="#14213d" font-size="21" font-weight="800">Coin Half-Cell</text>
+      <text x="24" y="134" fill="#40516f" font-size="16"><tspan x="24">Capacity potential</tspan><tspan x="24" dy="27">First-cycle loss</tspan><tspan x="24" dy="27">Rate ranking</tspan><tspan x="24" dy="27">Material comparison</tspan><tspan x="24" dy="27">Early failure clues</tspan></text>
+      <rect x="14" y="286" width="182" height="36" rx="18" fill="#eaf2ff"/><text x="105" y="309" fill="#245fc8" font-size="13" text-anchor="middle" font-weight="800">Is the material promising?</text>
+    </g>
+
+    <g transform="translate(496 164)">
+      <rect width="210" height="342" rx="18" fill="#fff" stroke="#72c9bc" stroke-width="2"/>
+      <circle cx="42" cy="42" r="22" fill="#168c83"/><text x="42" y="49" fill="#fff" font-size="20" text-anchor="middle" font-weight="800">3</text>
+      <text x="24" y="96" fill="#14213d" font-size="21" font-weight="800">Coin Full-Cell</text>
+      <text x="24" y="134" fill="#40516f" font-size="16"><tspan x="24">N/P balance</tspan><tspan x="24" dy="27">Salt/additive package</tspan><tspan x="24" dy="27">Voltage-window fit</tspan><tspan x="24" dy="27">Electrode cross-talk</tspan><tspan x="24" dy="27">Formation response</tspan></text>
+      <rect x="14" y="286" width="182" height="36" rx="18" fill="#e4f6f2"/><text x="105" y="309" fill="#167a73" font-size="13" text-anchor="middle" font-weight="800">Does the pair work?</text>
+    </g>
+
+    <g transform="translate(724 164)">
+      <rect width="210" height="342" rx="18" fill="#fff" stroke="#d9bd72" stroke-width="2"/>
+      <circle cx="42" cy="42" r="22" fill="#b8964a"/><text x="42" y="49" fill="#fff" font-size="20" text-anchor="middle" font-weight="800">4</text>
+      <text x="24" y="91" fill="#14213d" font-size="19" font-weight="800"><tspan x="24">Single-Layer</tspan><tspan x="24" dy="23">Pouch</tspan></text>
+      <text x="24" y="150" fill="#40516f" font-size="16"><tspan x="24">Wetting and filling</tspan><tspan x="24" dy="27">Gas and swelling</tspan><tspan x="24" dy="27">Tab and area effects</tspan><tspan x="24" dy="27">Pressure response</tspan><tspan x="24" dy="27">Degassing protocol</tspan></text>
+      <rect x="14" y="286" width="182" height="36" rx="18" fill="#fbf2dc"/><text x="105" y="309" fill="#94731f" font-size="13" text-anchor="middle" font-weight="800">Does the process work?</text>
+    </g>
+
+    <g transform="translate(952 164)">
+      <rect width="210" height="342" rx="18" fill="#fff" stroke="#e49b9b" stroke-width="2"/>
+      <circle cx="42" cy="42" r="22" fill="#cf4141"/><text x="42" y="49" fill="#fff" font-size="20" text-anchor="middle" font-weight="800">5</text>
+      <text x="24" y="91" fill="#14213d" font-size="19" font-weight="800"><tspan x="24">Multilayer</tspan><tspan x="24" dy="23">Pouch</tspan></text>
+      <text x="24" y="150" fill="#40516f" font-size="16"><tspan x="24">Stack uniformity</tspan><tspan x="24" dy="27">Electrolyte loading</tspan><tspan x="24" dy="27">Thermal gradients</tspan><tspan x="24" dy="27">Reproducibility</tspan><tspan x="24" dy="27">Pilot-line controls</tspan></text>
+      <rect x="14" y="286" width="182" height="36" rx="18" fill="#fdeaea"/><text x="105" y="309" fill="#b33131" font-size="13" text-anchor="middle" font-weight="800">Is it scale-ready?</text>
+    </g>
+
+    <g fill="#14213d"><path d="M252 326 l12 10 -12 10z"/><path d="M480 326 l12 10 -12 10z"/><path d="M708 326 l12 10 -12 10z"/><path d="M936 326 l12 10 -12 10z"/></g>
+    <rect x="60" y="558" width="1080" height="100" rx="20" fill="#e8f0fb" stroke="#bed0e8"/>
+    <text x="600" y="591" fill="#14213d" font-size="17" text-anchor="middle" font-weight="800"><tspan x="600">Keep the chemistry constant while changing format, then keep the format constant</tspan><tspan x="600" dy="23">while changing chemistry.</tspan></text>
+    <text x="600" y="638" fill="#52617b" font-size="15" text-anchor="middle">This separation makes impedance, wetting, gas, pressure, and material effects easier to diagnose.</text>
+  </g>
+</svg>
