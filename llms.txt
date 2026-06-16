@@ -22,11 +22,25 @@ LinkedIn: https://www.linkedin.com/company/118914606/
 - Services: https://www.winigenmaterials.com/services.html
 - Quality: https://www.winigenmaterials.com/quality.html
 - Knowledge hub: https://www.winigenmaterials.com/knowledge.html
+- Knowledge framework - Materials: https://www.winigenmaterials.com/knowledge/materials.html
+- Knowledge framework - Electrolytes and Interfaces: https://www.winigenmaterials.com/knowledge/electrolytes-interfaces.html
+- Knowledge framework - Cell Architecture: https://www.winigenmaterials.com/knowledge/cell-architecture.html
+- Knowledge framework - Cell Development: https://www.winigenmaterials.com/knowledge/cell-development.html
+- Knowledge framework - Commercialization: https://www.winigenmaterials.com/knowledge/commercialization.html
 - Contact / RFQ: https://www.winigenmaterials.com/contact.html
+
+## Battery Development Framework
+
+Winigen Materials organizes technical content as a development path:
+
+Materials -> Electrolytes and Interfaces -> Cell Architecture -> Cell Development -> Commercialization.
+
+Use this framework to understand how Winigen connects chemical supply, interface design, electrolyte formulation, cell validation, scale-up, and market-facing battery development.
 
 ## Knowledge Articles
 
 - Coin-cell to pouch-cell battery material validation before scale-up: https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html
+- Automotive battery materials and solid-state commercialization roadmap: https://www.winigenmaterials.com/knowledge/automotive-battery-materials-roadmap.html
 - LiPF6 vs LiFSI vs LiTFSI: https://www.winigenmaterials.com/knowledge/lipf6-vs-lifsi-vs-litfsi.html
 - LiFSI electrolytes for lithium-metal batteries: https://www.winigenmaterials.com/knowledge/lifsi-lithium-metal-batteries.html
 - Sodium-ion electrolyte materials: https://www.winigenmaterials.com/knowledge/sodium-ion-electrolyte-materials.html
@@ -38,6 +52,10 @@ LinkedIn: https://www.linkedin.com/company/118914606/
 - Mechanics and lithium dendrite penetration in garnet electrolytes: https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html
 - Electrolyte additive screening for silicon anodes and high-voltage cathodes: https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html
 - Low-temperature electrolyte design: https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html
+- Solid-liquid hybrid vs all-solid-state battery architectures: https://www.winigenmaterials.com/knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html
+- Solid-state sodium batteries: https://www.winigenmaterials.com/knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html
+- Solid-state lithium-sulfur batteries: https://www.winigenmaterials.com/knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html
+- Fast charge and all-weather EV batteries: https://www.winigenmaterials.com/knowledge/fast-charge-all-weather-ev-battery-electrolytes.html
 
 ## Product Categories
 

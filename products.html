@@ -13,10 +13,16 @@
 <style>
 .catalog-hero { padding: 76px 0 54px; }
 .catalog-hero h1 { max-width: 980px; }
-.catalog-tools { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 360px); gap: 18px; align-items: center; margin: 24px 0 54px; }
+.catalog-tools { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center; margin: 24px 0 54px; padding: 24px; border: 2px solid rgba(42,102,217,.2); border-radius: 18px; background: linear-gradient(180deg,#ffffff 0%,#f7fbff 100%); box-shadow: 0 18px 42px rgba(42,102,217,.1); }
 .tabs { justify-content: flex-start; margin: 0; }
-.tab { box-shadow: 0 8px 18px rgba(15,31,77,.06); }
-.catalog-search { width: 100%; min-height: 54px; border: 1px solid rgba(18,32,51,.14); border-radius: 999px; padding: 0 20px; background: #fff; box-shadow: 0 8px 18px rgba(15,31,77,.06); font-weight: 700; }
+.tab { display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 8px 18px rgba(15,31,77,.06); }
+.tab-count { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; background: rgba(15,31,77,.08); color: inherit; font-size: 12px; font-weight: 900; line-height: 1; }
+.tab.has-matches:not(.active) { border-color: rgba(42,102,217,.5); background: #edf4ff; color: #2867d8; }
+.tab.no-matches { opacity: .48; }
+.catalog-search-wrap { position: relative; order: -1; }
+.catalog-search-wrap::before { content: "Product Search"; position: absolute; top: -10px; left: 18px; z-index: 1; padding: 0 8px; background: #fff; color: #2867d8; font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.catalog-search { width: 100%; min-height: 64px; border: 2px solid rgba(42,102,217,.42); border-radius: 14px; padding: 0 22px; background: #fff; box-shadow: 0 10px 24px rgba(42,102,217,.08), inset 0 1px 0 rgba(255,255,255,.7); color: var(--navy); font-size: 1.08rem; font-weight: 750; }
+.catalog-search:focus { outline: 4px solid rgba(42,102,217,.18); border-color: #2867d8; }
 .product-section { scroll-margin-top: 130px; margin-bottom: 80px; }
 .section-heading { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 28px; }
 .section-heading h2 { margin-bottom: 12px; }
@@ -53,9 +59,9 @@
 
 .catalog-hero { padding: 86px 0; }
 .catalog-hero h1 { max-width: none; }
-.catalog-tools { align-items: center; }
+.catalog-tools { align-items: stretch; }
 .catalog-tools .tabs { align-items: center; }
-.catalog-search { height: 54px; margin: 0; }
+.catalog-search { height: 64px; margin: 0; }
 .product-card { min-width: 0; }
 .product-card__topline { align-items: flex-start; min-height: 40px; }
 .product-card__abbr { max-width: 150px; overflow-wrap: anywhere; line-height: 1.15; }
@@ -3899,7 +3905,7 @@
     <div class="container">
       <div class="catalog-tools">
         <div class="tabs"><a class="tab" href="#solid-state">Solid-State</a><a class="tab" href="#active-materials">Battery Active Materials</a><a class="tab" href="#next-gen">Next-Gen</a><a class="tab" href="#salts">Salts</a><a class="tab" href="#solvents">Solvents</a><a class="tab" href="#additives">Additives</a><a class="tab" href="#formulations">Formulations</a></div>
-        <input class="catalog-search" id="catalog-search" type="search" placeholder="Search chemicals, CAS, formula, category..." aria-label="Search product catalog">
+        <div class="catalog-search-wrap"><input class="catalog-search" id="catalog-search" type="search" placeholder="Try: LiPF6, 21324-40-3, silicon anode, LATP D50, LCO, low-temperature electrolyte" aria-label="Search product catalog"></div>
       </div>
       <div class="family-hub-grid" id="product-family-hubs" aria-label="Product family overview pages">
         <a class="family-hub-card" href="products/solid-state-electrolytes.html"><strong>Solid-State Electrolytes</strong><span>Sulfide, oxide, and halide electrolyte materials for particle-size-controlled conductivity screening and solid-state battery research.</span></a>
@@ -6285,12 +6291,12 @@
       </div>
     </article>
     
-    <article class="product-card" data-product-card data-section="solvents" data-search="solvent bis(2,2,2-trifluoroethyl) carbonate tfec 1513-87-7 c₅h₄f₆o₃ solvents">
+    <article class="product-card" data-product-card data-section="solvents" data-search="solvent bis(2,2,2-trifluoroethyl) carbonate tfec 1513-87-7 c₅h₄f₆o�?solvents">
       <div class="product-card__media">
         <a class="product-media-link" href="products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html" aria-label="View details for Bis(2,2,2-trifluoroethyl) carbonate">
         
         <img class="chemical-structure chemical-structure--large" src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1513-87-7/PNG" alt="Bis(2,2,2-trifluoroethyl) carbonate chemical structure from PubChem" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
-        <div class="structure-fallback"><span>C₅H₄F₆O₃</span></div></a>
+        <div class="structure-fallback"><span>C₅H₄F₆O�?/span></div></a>
       </div>
       <div class="product-card__body">
         <div class="product-card__topline">
@@ -7174,68 +7180,235 @@
   </section>
 </main>
 <footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20260615"></script>
 <script>
-const searchInput = document.getElementById('catalog-search');
-const cards = Array.from(document.querySelectorAll('[data-product-card]'));
-const sections = Array.from(document.querySelectorAll('[data-product-section]'));
-const noResults = document.getElementById('no-results');
-const normalizeSearchText = value => value
-  .toLowerCase()
-  .normalize('NFKD')
-  .replace(/[\u2010-\u2015\u2212]/g, '-')
-  .replace(/[^a-z0-9]+/g, ' ')
-  .trim()
-  .replace(/\s+/g, ' ');
-const compactSearchText = value => normalizeSearchText(value).replace(/\s+/g, '');
-const normalizeCas = value => value.replace(/[^0-9-]/g, '');
-const catalogIndex = cards.map(card => {
-  const rawText = (card.dataset.search || '') + ' ' + (card.textContent || '');
-  const casNumbers = Array.from(new Set(rawText.match(/\b\d{2,7}-\d{2}-\d\b/g) || []));
-  return {
-    card,
-    text: normalizeSearchText(rawText),
-    compact: compactSearchText(rawText),
-    casNumbers,
-    casCompact: casNumbers.map(cas => cas.replace(/-/g, ''))
+(function () {
+  const searchInput = document.getElementById('catalog-search');
+  const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+  const sections = Array.from(document.querySelectorAll('[data-product-section]'));
+  const tabs = Array.from(document.querySelectorAll('.catalog-tools .tab'));
+  const noResults = document.getElementById('no-results');
+  if (!searchInput || !cards.length) return;
+
+  const sectionLabels = {
+    'solid-state': 'Solid-State',
+    'active-materials': 'Battery Active Materials',
+    'next-gen': 'Next-Gen',
+    salts: 'Salts',
+    solvents: 'Solvents',
+    additives: 'Additives',
+    formulations: 'Formulations'
   };
-});
-function cardMatchesSearch(item, rawQuery) {
-  const query = rawQuery.trim();
-  if (!query) return true;
 
-  const casQuery = normalizeCas(query);
-  const compactCasQuery = casQuery.replace(/-/g, '');
-  const fullCasQuery = /^\d{2,7}-\d{2}-\d$/.test(casQuery);
-  if (fullCasQuery) return item.casNumbers.includes(casQuery);
+  const aliases = {
+    silicon: ['silicon anode', 'siox', 'si-c', 'fec', 'vc', 'additive', 'formulation'],
+    'silicon additives': ['silicon anode', 'fec', 'vc', 'electrolyte additive', 'sei'],
+    'lithium metal': ['li foil', 'lithium foil', 'lifsi', 'litfsi', 'solid-state'],
+    'low temperature': ['low-temperature', 'lifsi', 'fluorinated solvent', 'custom formulation'],
+    'fast charge': ['high-rate', 'lifsi', 'fec', 'electrolyte additive', 'custom formulation'],
+    'solid state': ['solid-state', 'latp', 'llzto', 'sulfide', 'halide'],
+    sse: ['solid-state', 'solid electrolyte', 'latp', 'llzto', 'sulfide', 'halide'],
+    sodium: ['sodium-ion', 'napf6', 'naodfb', 'natfsi', 'hard carbon'],
+    latp: ['solid-state oxide', 'li1.3al0.3ti1.7(po4)3'],
+    llzto: ['garnet', 'llzo', 'solid-state oxide'],
+    water: ['moisture', 'low-moisture', 'ppm'],
+    hf: ['water', 'moisture', 'acid scavenging', 'tmsp', 'tmsb']
+  };
 
-  const looksLikeCasPartial = /^[\d\s-]+$/.test(query) && compactCasQuery.length >= 4;
-  if (looksLikeCasPartial) {
-    return item.casNumbers.some(cas => cas.includes(casQuery)) || item.casCompact.some(cas => cas.includes(compactCasQuery));
-  }
+  const weights = {
+    title: 6,
+    abbr: 5,
+    cas: 5,
+    category: 4,
+    section: 3,
+    facts: 3,
+    properties: 3,
+    data: 2,
+    body: 1
+  };
 
-  if (/^[\d\s-]+$/.test(query)) return false;
+  const focusedTerms = {
+    latp: ['latp', 'li13al03ti17po43'],
+    llzto: ['llzto', 'llzo', 'li65la3zr15ta05o12'],
+    lco: ['lco', 'licoo2', 'lithiumcobaltoxide'],
+    lfp: ['lfp', 'lifepo4', 'lithiumironphosphate'],
+    lmfp: ['lmfp', 'limnfepo4'],
+    lmo: ['lmo', 'limn2o4', 'lithiummanganeseoxide'],
+    lnmo: ['lnmo', 'lini05mn15o4'],
+    nmc: ['nmc', 'nmc622', 'nmc811', 'nickelmanganesecobalt'],
+    nca: ['nca', 'nca622', 'nca811', 'nickelcobaltaluminum'],
+    lipf6: ['lipf6', 'lithiumhexafluorophosphate'],
+    lifsi: ['lifsi', 'lithiumbisfluorosulfonylimide'],
+    litfsi: ['litfsi', 'lithiumbistrifluoromethanesulphonylimide'],
+    napf6: ['napf6', 'sodiumhexafluorophosphate']
+  };
 
-  const normalized = normalizeSearchText(query);
-  const compact = compactSearchText(query);
-  const tokens = normalized.split(' ').filter(Boolean);
-  return tokens.every(token => item.text.includes(token)) || (compact.length >= 3 && item.compact.includes(compact));
-}
-function applyCatalogSearch() {
-  const query = searchInput.value;
-  let visibleCount = 0;
-  catalogIndex.forEach(item => {
-    const match = cardMatchesSearch(item, query);
-    item.card.hidden = !match;
-    if (match) visibleCount += 1;
+  const normalize = value => String(value || '')
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[₀-₉]/g, char => '0123456789'['₀₁₂₃₄₅₆₇₈₉'.indexOf(char)])
+    .replace(/[‐-―−]/g, '-')
+    .replace(/[^a-z0-9+µ.-]+/g, ' ')
+    .replace(/\u00b5m/g, 'um')
+    .replace(/\bum\b/g, 'um')
+    .replace(/\bsilicone\b/g, 'silicon')
+    .trim()
+    .replace(/\s+/g, ' ');
+
+  const compact = value => normalize(value).replace(/[^a-z0-9]+/g, '');
+  const tokenize = value => normalize(value).split(' ').filter(token => token.length > 1);
+  const normalizeCas = value => String(value || '').replace(/[^0-9-]/g, '');
+
+  const expandQuery = query => {
+    const normalized = normalize(query);
+    const expanded = new Set(tokenize(normalized));
+    Object.entries(aliases).forEach(([phrase, terms]) => {
+      if (normalized.includes(normalize(phrase))) {
+        terms.forEach(term => tokenize(term).forEach(token => expanded.add(token)));
+      }
+    });
+    return { normalized, tokens: Array.from(expanded) };
+  };
+
+  const scopedText = (root, selector) => Array.from(root.querySelectorAll(selector))
+    .map(node => node.textContent || '')
+    .join(' ');
+
+  const catalogIndex = cards.map(card => {
+    const section = card.dataset.section || '';
+    const title = scopedText(card, 'h3');
+    const abbr = scopedText(card, '.product-card__abbr');
+    const category = scopedText(card, '.product-card__category');
+    const facts = scopedText(card, '.product-card__facts');
+    const properties = scopedText(card, '.product-card__properties, .formulation-card__body p');
+    const body = card.textContent || '';
+    const data = card.dataset.search || '';
+    const rawText = [title, abbr, category, facts, properties, data, body].join(' ');
+    const casNumbers = Array.from(new Set(rawText.match(/\d{2,7}-\d{2}-\d/g) || []));
+    return {
+      card,
+      section,
+      fields: {
+        title: normalize(title),
+        abbr: normalize(abbr),
+        cas: casNumbers.join(' '),
+        category: normalize(category),
+        section: normalize(sectionLabels[section] || section),
+        facts: normalize(facts),
+        properties: normalize(properties),
+        data: normalize(data),
+        body: normalize(body)
+      },
+      compact: compact(rawText),
+      casNumbers,
+      casCompact: casNumbers.map(cas => cas.replace(/-/g, ''))
+    };
   });
-  sections.forEach(section => {
-    const visibleCards = section.querySelectorAll('[data-product-card]:not([hidden])').length;
-    section.hidden = visibleCards === 0 && query.trim().length > 0;
+
+  const scoreItem = (item, rawQuery) => {
+    const query = rawQuery.trim();
+    if (!query) return 1;
+
+    const casQuery = normalizeCas(query);
+    const compactCasQuery = casQuery.replace(/-/g, '');
+    const fullCasQuery = /^\d{2,7}-\d{2}-\d$/.test(casQuery);
+    if (fullCasQuery) return item.casNumbers.includes(casQuery) ? 1000 : 0;
+
+    const looksLikeCasPartial = /^[\d\s-]+$/.test(query) && compactCasQuery.length >= 4;
+    if (looksLikeCasPartial) {
+      return item.casNumbers.some(cas => cas.includes(casQuery)) || item.casCompact.some(cas => cas.includes(compactCasQuery)) ? 500 : 0;
+    }
+
+    if (/^[\d\s-]+$/.test(query)) return 0;
+
+    const { normalized, tokens } = expandQuery(query);
+    const compactQuery = compact(query);
+    const queryTokens = tokenize(query);
+    const focusToken = queryTokens.find(token => focusedTerms[token]);
+    if (focusToken && !focusedTerms[focusToken].some(term => item.compact.includes(term))) return 0;
+    let score = 0;
+
+    Object.entries(weights).forEach(([field, weight]) => {
+      const text = item.fields[field] || '';
+      if (!text) return;
+      if (normalized && text.includes(normalized)) score += weight * 8;
+      tokens.forEach(token => {
+        if (text === token) score += weight * 5;
+        else if (text.includes(` ${token} `) || text.startsWith(`${token} `) || text.endsWith(` ${token}`)) score += weight * 3;
+        else if (text.includes(token)) score += weight;
+      });
+    });
+
+    if (compactQuery.length >= 3 && item.compact.includes(compactQuery)) score += 8;
+    return score;
+  };
+
+  const updateTabs = matchingItems => {
+    const sectionCounts = new Map();
+    matchingItems.forEach(item => sectionCounts.set(item.section, (sectionCounts.get(item.section) || 0) + 1));
+    const hasQuery = Boolean(searchInput.value.trim());
+
+    tabs.forEach(tab => {
+      const href = tab.getAttribute('href') || '';
+      const section = href.startsWith('#') ? href.slice(1) : '';
+      if (!tab.dataset.label) tab.dataset.label = (sectionLabels[section] || tab.textContent.trim()).replace(/\d+$/, '').trim();
+      const count = sectionCounts.get(section) || 0;
+      tab.innerHTML = `${tab.dataset.label}<span class="tab-count">${count}</span>`;
+      tab.classList.toggle('has-matches', hasQuery && count > 0);
+      tab.classList.toggle('no-matches', hasQuery && count === 0);
+      tab.setAttribute('aria-label', `${tab.dataset.label}: ${count} matching products`);
+    });
+  };
+
+  const updateSectionCounts = () => {
+    sections.forEach(section => {
+      const countNode = section.querySelector('.section-count');
+      if (!countNode) return;
+      const visibleCards = section.querySelectorAll('[data-product-card]:not([hidden])').length;
+      const unit = section.id === 'active-materials' ? 'materials' : section.id === 'formulations' ? 'items' : 'products';
+      countNode.textContent = `${visibleCards} ${unit}`;
+    });
+  };
+
+  const applyCatalogSearch = () => {
+    const query = searchInput.value;
+    const scored = catalogIndex
+      .map(item => ({ item, score: scoreItem(item, query) }))
+      .filter(entry => entry.score > 0)
+      .sort((a, b) => b.score - a.score || a.item.fields.title.localeCompare(b.item.fields.title));
+    const matchingItems = scored.map(entry => entry.item);
+    const matchingCards = new Set(matchingItems.map(item => item.card));
+    const orderMap = new Map(scored.map((entry, index) => [entry.item.card, index]));
+
+    catalogIndex.forEach(item => {
+      const match = matchingCards.has(item.card);
+      item.card.hidden = !match;
+      item.card.style.order = match && query.trim() ? orderMap.get(item.card) : '';
+    });
+
+    sections.forEach(section => {
+      const visibleCards = section.querySelectorAll('[data-product-card]:not([hidden])').length;
+      section.hidden = visibleCards === 0 && query.trim().length > 0;
+    });
+
+    updateTabs(query.trim() ? matchingItems : catalogIndex);
+    updateSectionCounts();
+    noResults.style.display = matchingItems.length === 0 ? 'block' : 'none';
+  };
+
+  tabs.forEach(tab => {
+    tab.dataset.label = tab.textContent.trim();
+    tab.addEventListener('click', event => {
+      if (!searchInput.value.trim()) return;
+      event.preventDefault();
+      const target = document.querySelector(tab.getAttribute('href'));
+      if (target && !target.hidden) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
-  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-}
-searchInput.addEventListener('input', applyCatalogSearch);
+
+  searchInput.addEventListener('input', applyCatalogSearch);
+  applyCatalogSearch();
+})();
 </script>
 </body>
 </html>
