@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Sodium-ion electrolyte design is a coupled problem</title>
+  <desc id="desc">Four connected design goals: fast sodium transport, wide-temperature operation, long life and gas control, and complete-cell safety.</desc>
+  <rect width="1600" height="980" fill="#f3f6fb"/>
+  <rect width="1600" height="116" fill="#142542"/>
+  <text x="66" y="73" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="700">Sodium-Ion Electrolyte Design Is a Coupled Problem</text>
+
+  <path d="M635 340 L730 414 M965 340 L870 414 M635 700 L730 590 M965 700 L870 590" stroke="#2f6dde" stroke-width="6" fill="none"/>
+
+  <g>
+    <rect x="58" y="155" width="580" height="285" rx="24" fill="#fff" stroke="#a8c5ff" stroke-width="3"/>
+    <circle cx="112" cy="210" r="25" fill="#2f6dde"/>
+    <text x="112" y="219" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="700">1</text>
+    <text x="155" y="220" fill="#2864d7" font-family="Arial,sans-serif" font-size="31" font-weight="700">Fast Na<tspan baseline-shift="super" font-size="20">+</tspan> transport</text>
+    <text x="96" y="278" fill="#263954" font-family="Arial,sans-serif" font-size="22">
+      <tspan x="96" dy="0">• Low bulk viscosity with useful ionic conductivity</tspan>
+      <tspan x="96" dy="47">• Rapid desolvation at the hard-carbon interface</tspan>
+      <tspan x="96" dy="47">• Low-impedance SEI and CEI formation</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect x="962" y="155" width="580" height="285" rx="24" fill="#fff" stroke="#9fd7d1" stroke-width="3"/>
+    <circle cx="1016" cy="210" r="25" fill="#168f8b"/>
+    <text x="1016" y="219" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="700">2</text>
+    <text x="1059" y="220" fill="#11857f" font-family="Arial,sans-serif" font-size="31" font-weight="700">Wide temperature</text>
+    <text x="1000" y="278" fill="#263954" font-family="Arial,sans-serif" font-size="22">
+      <tspan x="1000" dy="0">• Avoid freezing and steep viscosity rise at low T</tspan>
+      <tspan x="1000" dy="47">• Control volatility and salt degradation at high T</tspan>
+      <tspan x="1000" dy="47">• Preserve both anode SEI and cathode CEI</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect x="58" y="600" width="580" height="285" rx="24" fill="#fff" stroke="#e7c56f" stroke-width="3"/>
+    <circle cx="112" cy="655" r="25" fill="#c49524"/>
+    <text x="112" y="664" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="700">3</text>
+    <text x="155" y="665" fill="#9b7417" font-family="Arial,sans-serif" font-size="30" font-weight="700">Long life and gas control</text>
+    <text x="96" y="723" fill="#263954" font-family="Arial,sans-serif" font-size="22">
+      <tspan x="96" dy="0">• Limit solvent and salt decomposition</tspan>
+      <tspan x="96" dy="47">• Scavenge reactive species where appropriate</tspan>
+      <tspan x="96" dy="47">• Track impedance, swelling, gas, and retention together</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect x="962" y="600" width="580" height="285" rx="24" fill="#fff" stroke="#efb0ad" stroke-width="3"/>
+    <circle cx="1016" cy="655" r="25" fill="#c84b49"/>
+    <text x="1016" y="664" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="700">4</text>
+    <text x="1059" y="665" fill="#bd403f" font-family="Arial,sans-serif" font-size="30" font-weight="700">Complete-cell safety</text>
+    <text x="1000" y="723" fill="#263954" font-family="Arial,sans-serif" font-size="22">
+      <tspan x="1000" dy="0">• Raise the onset of self-heating reactions</tspan>
+      <tspan x="1000" dy="47">• Reduce gas, short-circuit, and ohmic-heating risks</tspan>
+      <tspan x="1000" dy="47">• Validate realistic cells under abuse conditions</tspan>
+    </text>
+  </g>
+
+  <circle cx="800" cy="515" r="164" fill="#fff" stroke="#2f6dde" stroke-width="7"/>
+  <circle cx="800" cy="515" r="122" fill="#e8efff"/>
+  <text x="800" y="490" text-anchor="middle" fill="#142542" font-family="Arial,sans-serif" font-size="35" font-weight="700">Sodium-ion</text>
+  <text x="800" y="535" text-anchor="middle" fill="#142542" font-family="Arial,sans-serif" font-size="35" font-weight="700">electrolyte</text>
+  <text x="800" y="584" text-anchor="middle" fill="#2864d7" font-family="Arial,sans-serif" font-size="23" font-weight="700">salt + solvent + additives</text>
+</svg>

@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes | Winigen Materials</title>
+<meta name="description" content="Screen FEC, VC, LiPO2F2, nitrile, sulfur, and phosphorus additives by SEI and CEI chemistry, gas, impedance, transition-metal cross-talk, temperature, and full-cell failure mode.">
+<link rel="canonical" href="https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260614">
+<style>
+.article-hero { padding: 78px 0; }
+.article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 34px; align-items: start; }
+.article-main, .article-side { min-width: 0; background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
+.article-main p { line-height: 1.78; }
+.article-main a { color: var(--blue); font-weight: 800; }
+.article-block { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(18,32,51,.1); }
+.article-table-wrap { overflow-x: auto; margin: 20px 0 22px; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; background: #fff; }
+.article-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.article-table th { background: #14213d; color: #fff; text-align: left; padding: 13px 15px; font-size: 13px; }
+.article-table td { padding: 13px 15px; border-top: 1px solid rgba(18,32,51,.1); color: #2b3950; vertical-align: top; line-height: 1.45; }
+.article-figure { margin: 26px 0; border: 1px solid rgba(18,32,51,.1); border-radius: 18px; overflow: hidden; background: #fff; }
+.article-figure img { display: block; width: 100%; height: auto; object-fit: contain; background: #f4f7fb; }
+.article-figure figcaption { padding: 14px 16px; color: #53627c; font-size: .92rem; line-height: 1.58; border-top: 1px solid rgba(18,32,51,.08); }
+.article-figure figcaption a { font-weight: 800; }
+.reference-list { display: grid; gap: 12px; padding-left: 22px; margin: 18px 0 0; }
+.reference-list li { color: #40516f; line-height: 1.58; padding-left: 4px; }
+.reference-list a { color: var(--blue); font-weight: 850; text-decoration: none; }
+.reference-list a:hover { text-decoration: underline; }
+.related-link-list { display: grid; gap: 10px; margin-top: 16px; }
+.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
+.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
+.article-callout { margin: 24px 0; padding: 22px 24px; border-left: 4px solid var(--blue); border-radius: 0 14px 14px 0; background: #eef5ff; }
+.article-callout strong { color: var(--navy); }
+.failure-map { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 10px; margin: 24px 0; }
+.failure-map div { min-height: 118px; padding: 16px; border: 1px solid rgba(42,102,217,.16); border-radius: 14px; background: #f8fbff; }
+.failure-map strong { display: block; color: var(--navy); margin-bottom: 8px; }
+.failure-map span { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.screening-flow { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 8px; margin: 22px 0; counter-reset: stage; }
+.screening-flow div { position: relative; padding: 16px 12px; border-radius: 12px; background: #14213d; color: #fff; text-align: center; font-weight: 800; font-size: 13px; line-height: 1.35; }
+.screening-flow div::before { counter-increment: stage; content: counter(stage); display: grid; place-items: center; width: 24px; height: 24px; margin: 0 auto 8px; border-radius: 50%; background: var(--gold); color: #fff; }
+.product-reference-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin: 22px 0; }
+.product-reference-card { display: grid; grid-template-rows: 132px auto; min-width: 0; border: 1px solid rgba(18,32,51,.1); border-radius: 14px; overflow: hidden; background: #fff; text-decoration: none; }
+.product-reference-card img { width: 100%; height: 132px; padding: 14px; object-fit: contain; background: #f6f8fb; mix-blend-mode: multiply; }
+.product-reference-card span { padding: 12px 14px; color: var(--navy); font-weight: 850; line-height: 1.3; }
+.citation { white-space: nowrap; font-size: .82em; vertical-align: super; }
+.article-checklist { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 22px; padding: 0; list-style: none; }
+.article-checklist li { position: relative; padding: 12px 14px 12px 38px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; color: #40516f; background: #fff; }
+.article-checklist li::before { content: ""; position: absolute; left: 15px; top: 18px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
+.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
+.faq-list p { margin: 12px 0 0; }
+@media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } .failure-map,.screening-flow { grid-template-columns: 1fr 1fr; } .product-reference-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:560px) { .failure-map,.screening-flow,.product-reference-grid,.article-checklist { grid-template-columns: 1fr; } }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#article",
+  "headline": "Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes: SEI, CEI, Gas, Impedance, and Cross-Talk",
+  "description": "A failure-mode-driven guide to screening FEC, VC, LiPO2F2, nitrile, sulfur, and phosphorus additives for silicon anodes, high-voltage cathodes, gas control, impedance, and transition-metal cross-talk.",
+  "url": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html",
+  "datePublished": "2026-05-25",
+  "dateModified": "2026-06-14",
+  "author": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "image": [
+    "https://www.winigenmaterials.com/assets/images/knowledge/additives-silicon-sei-fec-vc.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/additives-high-voltage-cross-talk.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/additives-screening-evidence-chain.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/fec-siox-screening-performance-cc-by.jpg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/fec-siox-xps-transition-metal-cc-by.jpg"
+  ],
+  "about": [
+    "Electrolyte additive screening",
+    "Silicon-anode solid-electrolyte interphase",
+    "High-voltage cathode-electrolyte interphase",
+    "Transition-metal dissolution and electrode cross-talk"
+  ],
+  "citation": [
+    "Xu et al., Improved Performance of the Silicon Anode for Li-Ion Batteries: Understanding the Surface Modification Mechanism of Fluoroethylene Carbonate as an Effective Electrolyte Additive, Chemistry of Materials, 2015.",
+    "Schroder et al., The Effect of Fluoroethylene Carbonate as an Additive on the Solid Electrolyte Interphase on Silicon Lithium-Ion Electrodes, Chemistry of Materials, 2015.",
+    "Jin et al., Understanding Fluoroethylene Carbonate and Vinylene Carbonate Based Electrolytes for Si Anodes in Lithium Ion Batteries with NMR Spectroscopy, Journal of the American Chemical Society, 2018.",
+    "Klein et al., Re-evaluating common electrolyte additives for high-voltage lithium ion batteries, Cell Reports Physical Science, 2021.",
+    "Hou et al., Recent Advances in Electrolytes for High-Voltage Cathodes of Lithium-Ion Batteries, Transactions of Tianjin University, 2023.",
+    "Sahore et al., Transition-metal dissolution from NMC cathodes under high-voltage conditions, 2020.",
+    "Wu et al., Strategies for inhibiting transition-metal dissolution in lithium-ion batteries, 2023.",
+    "Zhang et al., Challenges of film-forming additives in low-temperature lithium-ion batteries: A review, Journal of Power Sources, 2024.",
+    "Arifiadi et al., Evaluation of Alternative Lithium Salts for Li Ion Batteries With SiOx-Containing Anodes: Characteristic Failure Mechanisms and Different Impacts of the Fluoroethylene Carbonate Additive, Small Science, 2026."
+  ],
+  "mainEntityOfPage": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why are electrolyte additives described as sacrificial reactants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many additives are selected to react before major solvent or salt decomposition pathways dominate. Their controlled reduction or oxidation can alter SEI or CEI composition, but their benefit depends on dosage, electrode chemistry, formation, and the complete electrolyte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are FEC and VC interchangeable for silicon anodes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. FEC and VC can produce different reaction products and interphase chemistries. They should be compared under the same silicon morphology, binder, loading, electrolyte, formation protocol, temperature, and cell format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should be measured in a high-voltage additive screen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A serious screen should include retention, long-term coulombic efficiency, impedance growth, gas or swelling, high-voltage storage, transition-metal dissolution or anode deposition, and post-mortem analysis where failure identification is important."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an additive that improves room-temperature cycling hurt low-temperature performance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A protective interphase can still become a kinetic barrier at low temperature. Cold-charge acceptance, polarization, plating risk, impedance, and recovery should be measured separately from room-temperature retention."
+      }
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.winigenmaterials.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Knowledge",
+      "item": "https://www.winigenmaterials.com/knowledge.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes",
+      "item": "https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
+    <nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav>
+    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
+</header>
+<main>
+  <section class="section dark article-hero">
+    <div class="container section-title">
+      <div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / Electrolyte Additive Screening</div>
+      <p class="eyebrow">Electrolyte Additives</p>
+      <h1>Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes</h1>
+      <p>How controlled sacrificial reactions tune SEI and CEI chemistry, gas evolution, impedance growth, transition-metal cross-talk, low-temperature kinetics, and full-cell failure timing.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <article class="article-main">
+        <p>Electrolyte additives are not magic ingredients. They are controlled sacrificial reactants selected to change which reactions occur first, where those reactions occur, and what interphase remains after formation. A useful additive can shift solid-electrolyte interphase (SEI) or cathode-electrolyte interphase (CEI) chemistry, reduce gas evolution, slow impedance growth, limit transition-metal cross-talk, or delay a dominant failure mode.</p>
+        <p>The same additive can also create a new problem. It may be consumed too quickly, form a resistive film, generate gas, interfere with another additive, corrode a current collector, or protect one electrode while destabilizing the other. Additive selection therefore begins with a failure mode, not a list of popular molecules.</p>
+        <div class="article-callout"><strong>Central screening question:</strong> Which reaction or transport limitation is controlling cell failure under the target electrode chemistry, voltage window, temperature, charge rate, formation protocol, electrolyte loading, and cell format?</div>
+
+        <section class="article-block">
+          <h2>1. Additive Screening Is Failure-Mode Engineering</h2>
+          <p>SEI and CEI formation are only part of the problem. Full-cell aging couples reactions at both electrodes through electrolyte oxidation products, dissolved transition metals, salt decomposition, acid generation, gas, and changes in lithium inventory. An additive package should be evaluated as a system-level intervention.</p>
+          <div class="failure-map" role="img" aria-label="Five coupled failure modes targeted during electrolyte additive screening">
+            <div><strong>Interphase chemistry</strong><span>SEI and CEI composition, thickness, uniformity, and continued repair.</span></div>
+            <div><strong>Gas evolution</strong><span>Formation gas, storage gas, oxidation products, and pouch swelling.</span></div>
+            <div><strong>Impedance growth</strong><span>Film resistance, charge-transfer resistance, and loss of rate capability.</span></div>
+            <div><strong>Electrode cross-talk</strong><span>Transition-metal dissolution, anode deposition, acid, and soluble reaction products.</span></div>
+            <div><strong>Failure timing</strong><span>Formation loss, gradual fade, rollover, lithium plating, or thermal acceleration.</span></div>
+          </div>
+          <p>This framing changes experimental design. A capacity-retention curve alone cannot show whether an additive reduced parasitic reactions, delayed rollover, changed gas composition, or merely traded lower early impedance for faster late-life degradation.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>2. Silicon Anodes: FEC, VC, and a Continually Rebuilt SEI</h2>
+          <p>Silicon presents an unusually difficult interphase problem because lithiation and delithiation produce large volume changes. Expansion can crack the SEI, expose fresh silicon, consume electrolyte and cyclable lithium, and increase both gas generation and impedance. The relevant question is not simply whether an additive forms an SEI, but whether the interphase can remain passivating while the electrode repeatedly changes shape.</p>
+          <p>FEC is widely used as a silicon-anode screening additive because its reduction changes SEI chemistry and can improve cycling stability. Xu and co-workers combined electrochemical evaluation with synchrotron-based photoelectron spectroscopy to examine how FEC modifies silicon-electrode surface chemistry.<a class="citation" href="#ref-1">[1]</a> Schroder and co-workers used carefully controlled XPS and ToF-SIMS depth profiling and reported fluoride-ion and LiF formation associated with FEC reduction.<a class="citation" href="#ref-2">[2]</a> These results support discussing FEC as a specific reaction pathway, not as a generic film former.</p>
+          <p>LiF-containing interphases are often associated with passivation, but â€œmore LiFâ€?is not a universal optimization rule. Performance also depends on silicon morphology, surface area, binder, conductive network, electrode loading, salt and solvent composition, additive concentration, formation temperature, and the rate at which the additive is consumed.</p>
+          <p>VC is another common SEI-forming additive, especially in carbonate electrolytes. NMR work comparing FEC- and VC-containing silicon systems showed that the two additives generate different reaction products and should not be treated as interchangeable substitutes.<a class="citation" href="#ref-3">[3]</a> A serious comparison therefore holds the electrode and test protocol constant while measuring both electrochemical performance and interphase chemistry.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/additives-silicon-sei-fec-vc.svg" alt="Conceptual comparison of FEC and VC pathways in silicon-anode SEI screening">
+            <figcaption>Conceptual comparison of silicon-anode failure and the distinct interphase pathways associated with FEC- and VC-containing electrolytes. Original Winigen schematic synthesized from Xu et al., <em>Chemistry of Materials</em> (2015), <a href="https://doi.org/10.1021/acs.chemmater.5b00339">doi:10.1021/acs.chemmater.5b00339</a>; Schroder et al., <em>Chemistry of Materials</em> (2015), <a href="https://www.osti.gov/pages/biblio/1261351">OSTI 1261351</a>; and Jin et al., <em>JACS</em> (2018), <a href="https://doi.org/10.1021/jacs.8b03408">doi:10.1021/jacs.8b03408</a>. The diagram is interpretive and does not reproduce experimental data.</figcaption>
+          </figure>
+          <div class="article-table-wrap"><table class="article-table">
+            <thead><tr><th>Silicon-screening variable</th><th>Why it must be controlled</th><th>Useful measurements</th></tr></thead>
+            <tbody>
+              <tr><td>Silicon morphology and loading</td><td>Surface area and expansion determine electrolyte demand and SEI repair frequency.</td><td>Electrode density, thickness change, SEM, areal capacity</td></tr>
+              <tr><td>FEC or VC concentration</td><td>Too little may be depleted early; too much can alter viscosity, gas, and film resistance.</td><td>First-cycle efficiency, long-term CE, GC-MS, EIS</td></tr>
+              <tr><td>Formation protocol</td><td>Current, temperature, and voltage holds affect which reactions dominate.</td><td>Formation gas, differential capacity, impedance</td></tr>
+              <tr><td>Full-cell lithium inventory</td><td>Half-cell improvements may not transfer when lithium inventory is limited.</td><td>N/P ratio, full-cell retention, lithium inventory loss</td></tr>
+            </tbody>
+          </table></div>
+          <p>A recent full-cell study by Arifiadi and co-workers illustrates why FEC must be evaluated together with salt chemistry rather than as an isolated variable. Their SiO<sub>x</sub>-graphite/NMC622 comparison connected formation charge consumption, cycle life, discharge capacity, electrolyte conductivity, initial voltage drop, and polarization growth across LiPF<sub>6</sub>, LiBF<sub>4</sub>, LiBOB, and LiDFOB formulations with and without FEC.<a class="citation" href="#ref-9">[9]</a></p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/fec-siox-screening-performance-cc-by.jpg" alt="Formation charge, cycle life, conductivity, voltage drop, and polarization data for SiOx graphite full cells with alternative salts and FEC">
+            <figcaption>Formation charge consumption, cycle number at 70% state of health, discharge capacity, electrolyte conductivity, initial voltage drop, and polarization growth for SiO<sub>x</sub>-graphite/NMC622 cells using alternative lithium salts with and without FEC. Reproduced unchanged from Arifiadi et al., Figure 3, <em>Small Science</em> 6 (2026), <a href="https://doi.org/10.1002/smsc.202500637">doi:10.1002/smsc.202500637</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>3. High-Voltage Cathodes: CEI, Oxidation, Gas, and Surface Reconstruction</h2>
+          <p>High-voltage operation increases oxidative stress on solvents, salts, and additives. The resulting reactions can generate gas, acidic species, resistive surface films, and soluble products while accelerating cathode surface reconstruction and transition-metal dissolution. The CEI is therefore not an isolated coating; it is part of a coupled cathode-electrolyte degradation network.</p>
+          <p>High-voltage electrolyte reviews emphasize oxidation resistance, cathode surface stability, gas control, and electrolyte/cathode compatibility across high-Ni NMC, high-voltage LCO, LNMO, and related layered oxides.<a class="citation" href="#ref-5">[5]</a> Additives such as lithium difluorophosphate (LiPO<sub>2</sub>F<sub>2</sub>), nitrile-containing molecules, sulfur-containing compounds, and phosphorus- or silyl-containing additives are often screened to alter CEI formation, scavenge reactive species, or suppress damaging secondary reactions.</p>
+          <p>The correct endpoint depends on the application. A thin film that lowers initial impedance may not survive high-voltage storage. A more resistive CEI may be acceptable if it substantially reduces gas and metal dissolution. Cathode protection must also be checked against consequences at graphite, silicon, or lithium metal.</p>
+          <ul class="article-checklist">
+            <li>High-voltage cycling and voltage-hold leakage current</li>
+            <li>Elevated-temperature storage and pouch swelling</li>
+            <li>Cathode and anode EIS evolution</li>
+            <li>Gas quantity and composition</li>
+            <li>Cathode XPS, TEM, or surface-sensitive analysis</li>
+            <li>Transition metals in electrolyte and on the anode</li>
+          </ul>
+        </section>
+
+        <section class="article-block">
+          <h2>4. Transition-Metal Dissolution and Electrode Cross-Talk</h2>
+          <p>Nickel, manganese, and cobalt dissolved from a high-voltage cathode can migrate through the electrolyte and deposit on the negative electrode. This cross-talk can alter SEI chemistry, increase parasitic reactions, raise impedance, and contribute to rollover-type failure. Studies of high-voltage NMC systems show why dissolution and deposition should be measured rather than inferred from cathode retention alone.<a class="citation" href="#ref-6">[6]</a></p>
+          <p>Strategies reviewed for limiting transition-metal dissolution include surface stabilization, control of acidic species, and sacrificial electrolyte additives such as LiPO<sub>2</sub>F<sub>2</sub>, but the benefit remains formulation- and electrode-dependent.<a class="citation" href="#ref-7">[7]</a> ICP analysis of stored electrolyte, harvested electrodes, or separator regions can connect full-cell fade with movement of Ni, Mn, and Co. Anode XPS or microscopy can then show whether a cathode-side intervention produced a meaningful reduction in cross-talk.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/additives-high-voltage-cross-talk.svg" alt="High-voltage cathode degradation and transition-metal cross-talk to the anode">
+            <figcaption>High-voltage cathode degradation can generate gas, soluble products, and dissolved transition metals that move through the electrolyte and modify the anode SEI. Original Winigen schematic synthesized from Klein et al., <em>Cell Reports Physical Science</em> (2021), <a href="https://doi.org/10.1016/j.xcrp.2021.100521">doi:10.1016/j.xcrp.2021.100521</a>; Hou et al., <em>Transactions of Tianjin University</em> (2023), <a href="https://doi.org/10.1007/s12209-023-00355-0">doi:10.1007/s12209-023-00355-0</a>; Sahore et al. (2020), <a href="https://www.osti.gov/servlets/purl/1607632">OSTI full text</a>; and Wu et al. (2023), <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10331417/">PMC10331417</a>. The diagram is interpretive and does not reproduce experimental data.</figcaption>
+          </figure>
+          <p>The same 2026 study paired surface-composition analysis after formation with ICP-OES measurement of Ni, Co, and Mn on the SiO<sub>x</sub>-graphite anode after cycling. The comparison provides a direct example of why interphase chemistry and transition-metal deposition belong in the same additive-screening dataset.<a class="citation" href="#ref-9">[9]</a></p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/fec-siox-xps-transition-metal-cc-by.jpg" alt="XPS surface composition and transition-metal deposition data for SiOx graphite and NMC electrodes with alternative salts and FEC">
+            <figcaption>Surface composition of SiO<sub>x</sub>-graphite and NMC electrodes after formation, plus Ni, Co, and Mn content measured on the SiO<sub>x</sub>-graphite anode after 200 cycles. Reproduced unchanged from Arifiadi et al., Figure 6, <em>Small Science</em> 6 (2026), <a href="https://doi.org/10.1002/smsc.202500637">doi:10.1002/smsc.202500637</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+          <div class="article-callout"><strong>Practical implication:</strong> A â€œhigh-voltage additiveâ€?should be judged at both electrodes. Cathode retention without anode post-mortem data can miss the mechanism that determines late-life failure.</div>
+        </section>
+
+        <section class="article-block">
+          <h2>5. Why Single-Additive Results Often Fail in Full Cells</h2>
+          <p>Additives compete for electrons, oxidize at different potentials, react with decomposition products, and change the environment in which other additives operate. A molecule that performs well in a half-cell or simple baseline electrolyte may behave differently after a co-additive changes water, HF, solvation, or interphase composition.</p>
+          <p>Klein and co-workers re-evaluated common additives including VC, FEC, and LiDFP in high-voltage lithium-ion cells and highlighted additive-specific tradeoffs involving rollover behavior and electrode cross-talk.<a class="citation" href="#ref-4">[4]</a> The lesson is not that one additive is universally superior. It is that early-cycle improvement, cathode protection, anode contamination, lithium plating, and late-life failure must be evaluated together.</p>
+          <p>Pairing an SEI-focused additive with a CEI-focused additive is a reasonable screening strategy, but interaction effects must be measured. The second additive may improve the opposite electrode, consume the first additiveâ€™s reaction products, or produce a thicker and more resistive combined interphase.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>6. Low Temperature and Fast Charge: When Protection Becomes Resistance</h2>
+          <p>An interphase that improves room-temperature cycle life can still hinder low-temperature charging. As temperature falls, bulk conductivity decreases, viscosity increases, desolvation slows, and charge-transfer resistance rises. A thick or poorly conducting SEI can intensify polarization and increase lithium-plating risk.</p>
+          <p>A 2024 review of film-forming additives for low-temperature lithium-ion batteries emphasizes the linked problems of low available capacity, reduced charge efficiency, and plating or dendrite risk.<a class="citation" href="#ref-8">[8]</a> Additive screens intended for fast charge or cold operation should therefore include cold-charge acceptance and post-cold recovery, not only room-temperature cycling.</p>
+          <ul class="article-checklist">
+            <li>EIS before and after cold exposure</li>
+            <li>Cold discharge and cold charge measured separately</li>
+            <li>Voltage relaxation and plating diagnostics</li>
+            <li>Recovery after return to room temperature</li>
+            <li>Gas or swelling after repeated cold-charge events</li>
+            <li>Realistic anode loading and N/P ratio</li>
+          </ul>
+        </section>
+
+        <section class="article-block">
+          <h2>7. Additive-Family Comparison</h2>
+          <div class="article-table-wrap"><table class="article-table">
+            <thead><tr><th>Additive family</th><th>Examples</th><th>Primary target</th><th>Mechanistic hypothesis</th><th>What to measure</th><th>Principal risk</th></tr></thead>
+            <tbody>
+              <tr><td>Fluorinated carbonates</td><td>FEC</td><td>Silicon or lithium-metal SEI</td><td>Fluorinated and LiF-containing interphase chemistry</td><td>First-cycle efficiency, long-term CE, XPS, EIS, gas, electrode thickness</td><td>Consumption, gas, or excessive film resistance</td></tr>
+              <tr><td>Unsaturated carbonates</td><td>VC</td><td>Graphite SEI and selected silicon systems</td><td>Polymeric and organic-rich passivation pathways</td><td>First-cycle efficiency, EIS, gas, XPS or NMR</td><td>Resistive SEI or poor fit with the high-voltage package</td></tr>
+              <tr><td>Lithium phosphate additives</td><td>LiPO<sub>2</sub>F<sub>2</sub> / LiDFP</td><td>High-voltage full cells</td><td>SEI/CEI tuning and possible cross-talk suppression</td><td>ICP, anode metal deposition, EIS, storage, retention</td><td>Strong formulation dependence</td></tr>
+              <tr><td>Nitriles</td><td>ADN, SN, multifunctional nitriles</td><td>High-voltage stability and cathode coordination</td><td>Oxidation resistance and cathode-surface interactions</td><td>LSV, storage gas, CEI analysis, aluminum corrosion</td><td>Viscosity, reduction stability, or compatibility</td></tr>
+              <tr><td>Sulfur-containing additives</td><td>DTD, cyclic sulfates, sultones</td><td>SEI/CEI modification</td><td>Sulfur-containing interphase products and altered passivation</td><td>EIS, XPS, gas, formation efficiency, storage</td><td>Gas or resistive films at unsuitable concentration</td></tr>
+              <tr><td>Phosphorus and silyl additives</td><td>TMSP, TMSB, TTPi-type compounds</td><td>Reactive-species control and CEI modification</td><td>Acid or water scavenging and cathode-side reaction products</td><td>HF or water, gas, XPS, ICP, storage</td><td>Parasitic reactions or additive interaction</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section class="article-block">
+          <h2>8. A Practical Additive Screening Matrix</h2>
+          <p>A disciplined program moves from an interpretable baseline toward complexity. Every stage should preserve at least one control that reveals whether the next additive changed the intended failure mode.</p>
+          <figure class="article-figure">
+            <img src="../assets/images/knowledge/additives-screening-evidence-chain.svg" alt="Six-stage evidence chain for electrolyte additive screening">
+            <figcaption>A staged evidence chain for additive screening: baseline, single-additive, paired-additive, full-package, stress-condition, and post-mortem evaluation. Original Winigen framework informed by the full-cell tradeoffs reported by Klein et al., <em>Cell Reports Physical Science</em> (2021), <a href="https://doi.org/10.1016/j.xcrp.2021.100521">doi:10.1016/j.xcrp.2021.100521</a>, and the low-temperature screening considerations reviewed by Zhang et al., <em>Journal of Power Sources</em> (2024), <a href="https://doi.org/10.1016/j.jpowsour.2024.234559">doi:10.1016/j.jpowsour.2024.234559</a>. This figure is a screening framework, not reported experimental data.</figcaption>
+          </figure>
+          <div class="article-table-wrap"><table class="article-table">
+            <thead><tr><th>Stage</th><th>Question</th><th>Minimum useful outputs</th></tr></thead>
+            <tbody>
+              <tr><td>Baseline</td><td>What is the untreated failure mode?</td><td>Formation efficiency, retention, long-term CE, EIS, gas</td></tr>
+              <tr><td>Single additive</td><td>What does each molecule change by itself?</td><td>Matched concentration series, formation profile, impedance, swelling</td></tr>
+              <tr><td>Paired additives</td><td>Do SEI- and CEI-directed reactions cooperate or interfere?</td><td>Both-electrode EIS, storage, gas, electrode post-mortem</td></tr>
+              <tr><td>Multi-additive package</td><td>Does the combined formulation remain balanced?</td><td>Full-cell retention, rollover, temperature and rate response</td></tr>
+              <tr><td>Stress testing</td><td>Does protection survive the target use case?</td><td>High-voltage storage, cold charge, fast charge, hot cycling</td></tr>
+              <tr><td>Diagnosis</td><td>Which failure mode was delayed, shifted, or accelerated?</td><td>XPS, SEM, ICP, GC-MS, gas analysis, lithium-plating diagnostics as needed</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section class="article-block">
+          <h2>Minimum Serious Test Set</h2>
+          <p>Not every program needs every analytical technique. The minimum set should still distinguish early interphase formation, gradual parasitic reaction, kinetic loss, gas generation, and cross-talk.</p>
+          <ul class="article-checklist">
+            <li>First-cycle coulombic efficiency</li>
+            <li>Long-term coulombic efficiency</li>
+            <li>Capacity and energy retention</li>
+            <li>EIS growth by state of charge</li>
+            <li>Pouch swelling or quantified gas</li>
+            <li>High-voltage storage</li>
+            <li>Low-temperature charge acceptance</li>
+            <li>Transition-metal ICP where relevant</li>
+            <li>XPS or SEM for interphase failure</li>
+            <li>GC-MS when volatile products matter</li>
+          </ul>
+        </section>
+
+        <section class="article-block">
+          <h2>Winigen Materials Additive Portfolio</h2>
+          <p>Winigen supplies materials that can be assembled into controlled screening matrices, including FEC and VC benchmarks, sulfur-containing additives, nitriles, phosphorus- and silyl-containing additives, lithium salts, low-moisture solvents, and custom electrolyte formulation support. Product availability does not imply that a molecule is suitable for every electrode pair; it provides the material basis for a structured comparison.</p>
+          <div class="product-reference-grid">
+            <a class="product-reference-card" href="../products/4-fluoro-1-3-dioxolan-2-one-fec.html"><img src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/114435-02-8/PNG" alt="Fluoroethylene carbonate chemical structure" loading="lazy"><span>Fluoroethylene carbonate (FEC)</span></a>
+            <a class="product-reference-card" href="../products/vinylene-carbonate-vc.html"><img src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/872-36-6/PNG" alt="Vinylene carbonate chemical structure" loading="lazy"><span>Vinylene carbonate (VC)</span></a>
+            <a class="product-reference-card" href="../products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html"><img src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1072-53-3/PNG" alt="DTD chemical structure" loading="lazy"><span>1,3,2-Dioxathiolane 2,2-dioxide (DTD)</span></a>
+            <a class="product-reference-card" href="../products/adiponitrile-adn.html"><img src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/111-69-3/PNG" alt="Adiponitrile chemical structure" loading="lazy"><span>Adiponitrile (ADN)</span></a>
+            <a class="product-reference-card" href="../products/tris-trimethylsilyl-phosphate-tmsp.html"><img src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/PNG" alt="TMSP chemical structure" loading="lazy"><span>Tris-(trimethylsilyl)-phosphate (TMSP)</span></a>
+            <a class="product-reference-card" href="../products/lithium-difluorophosphate-lipo-2-f-2.html"><img src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/lithium%20difluorophosphate/PNG" alt="Lithium difluorophosphate chemical structure" loading="lazy"><span>Lithium difluorophosphate (LiPO<sub>2</sub>F<sub>2</sub>)</span></a>
+          </div>
+        </section>
+
+        <section class="article-block">
+          <h2>Bottom Line</h2>
+          <p>Electrolyte additives should be selected by failure mode, electrode chemistry, voltage window, formation protocol, temperature, and cell design. FEC and VC are not interchangeable silicon-SEI ingredients. A cathode-side additive must be checked for anode consequences. A room-temperature passivation benefit must be re-tested under cold charge and fast charge. A multi-additive package must be evaluated for interaction effects rather than inferred from single-additive data.</p>
+          <p>The goal is not to identify the additive with the best isolated cycling curve. It is to determine which controlled reaction package delays the failure mode that matters in the intended cell.</p>
+        </section>
+
+        <section class="article-block"><h2>References</h2><ol class="reference-list">
+          <li id="ref-1"><a href="https://doi.org/10.1021/acs.chemmater.5b00339">Xu et al. Improved Performance of the Silicon Anode for Li-Ion Batteries: Understanding the Surface Modification Mechanism of Fluoroethylene Carbonate as an Effective Electrolyte Additive. <em>Chemistry of Materials</em> (2015).</a></li>
+          <li id="ref-2"><a href="https://www.osti.gov/pages/biblio/1261351">Schroder et al. The Effect of Fluoroethylene Carbonate as an Additive on the Solid Electrolyte Interphase on Silicon Lithium-Ion Electrodes. <em>Chemistry of Materials</em> (2015).</a></li>
+          <li id="ref-3"><a href="https://doi.org/10.1021/jacs.8b03408">Jin et al. Understanding Fluoroethylene Carbonate and Vinylene Carbonate Based Electrolytes for Si Anodes in Lithium Ion Batteries with NMR Spectroscopy. <em>Journal of the American Chemical Society</em> (2018).</a></li>
+          <li id="ref-4"><a href="https://doi.org/10.1016/j.xcrp.2021.100521">Klein et al. Re-evaluating Common Electrolyte Additives for High-Voltage Lithium-Ion Batteries. <em>Cell Reports Physical Science</em> (2021).</a></li>
+          <li id="ref-5"><a href="https://doi.org/10.1007/s12209-023-00355-0">Hou et al. Recent Advances in Electrolytes for High-Voltage Cathodes of Lithium-Ion Batteries. <em>Transactions of Tianjin University</em> (2023).</a></li>
+          <li id="ref-6"><a href="https://www.osti.gov/servlets/purl/1607632">Sahore et al. Study of transition-metal dissolution from NMC532 under high-voltage conditions (2020).</a></li>
+          <li id="ref-7"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10331417/">Wu et al. Review of strategies for inhibiting transition-metal dissolution in lithium-ion batteries (2023).</a></li>
+          <li id="ref-8"><a href="https://doi.org/10.1016/j.jpowsour.2024.234559">Zhang et al. Challenges of Film-Forming Additives in Low-Temperature Lithium-Ion Batteries: A Review. <em>Journal of Power Sources</em> (2024).</a></li>
+          <li id="ref-9"><a href="https://doi.org/10.1002/smsc.202500637">Arifiadi et al. Evaluation of Alternative Lithium Salts for Li Ion Batteries With SiO<sub>x</sub>-Containing Anodes: Characteristic Failure Mechanisms and Different Impacts of the Fluoroethylene Carbonate Additive. <em>Small Science</em> 6 (2026). Licensed under CC BY 4.0.</a></li>
+        </ol></section>
+      </article>
+      <aside class="article-side">
+        <p class="eyebrow">Winigen Portfolio</p>
+        <h2>Related Products and Articles</h2>
+        <p>Connect the failure-mode discussion with materials, formulations, and adjacent technical guides.</p>
+        <div class="related-link-list">
+          <a href="../products/electrolyte-additives.html">Electrolyte Additives</a>
+          <a href="../products/4-fluoro-1-3-dioxolan-2-one-fec.html">Fluoroethylene Carbonate (FEC)</a>
+          <a href="../products/vinylene-carbonate-vc.html">Vinylene Carbonate (VC)</a>
+          <a href="../products/lithium-difluorophosphate-lipo-2-f-2.html">Lithium Difluorophosphate</a>
+          <a href="../products/adiponitrile-adn.html">Adiponitrile</a>
+          <a href="../products/custom-electrolyte-formulations.html">Custom Electrolyte Formulations</a>
+          <a href="low-temperature-electrolytes.html">Low-Temperature Electrolytes</a>
+          <a href="fast-charge-all-weather-ev-battery-electrolytes.html">Fast-Charge Electrolytes</a>
+          <a href="lipf6-vs-lifsi-vs-litfsi.html">Lithium Salt Comparison</a>
+          <a href="../knowledge.html">Knowledge Center</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title"><p class="eyebrow">FAQ</p><h2>Common Questions</h2></div>
+      <div class="faq-list">
+        <details><summary>Why are electrolyte additives described as sacrificial reactants?</summary><p>Many additives are selected to react before major solvent or salt decomposition pathways dominate. Their controlled reduction or oxidation can alter SEI or CEI composition, but their benefit depends on dosage, electrode chemistry, formation, and the complete electrolyte.</p></details>
+        <details><summary>Are FEC and VC interchangeable for silicon anodes?</summary><p>No. FEC and VC can produce different reaction products and interphase chemistries. Compare them under the same silicon morphology, binder, loading, electrolyte, formation protocol, temperature, and cell format.</p></details>
+        <details><summary>What should be measured in a high-voltage additive screen?</summary><p>Include retention, long-term coulombic efficiency, impedance growth, gas or swelling, high-voltage storage, transition-metal dissolution or anode deposition, and post-mortem analysis where failure identification matters.</p></details>
+        <details><summary>Can an additive that improves room-temperature cycling hurt low-temperature performance?</summary><p>Yes. A protective interphase can still become a kinetic barrier at low temperature. Cold-charge acceptance, polarization, plating risk, impedance, and recovery should be measured separately from room-temperature retention.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
+<script src="../assets/js/main.js?v=20260615"></script>
+</body>
+</html>

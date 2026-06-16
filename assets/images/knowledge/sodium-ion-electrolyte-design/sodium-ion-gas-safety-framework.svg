@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Gas suppression is part of safety, not a substitute for safety testing</title>
+  <desc id="desc">A three-stage framework covering decomposition pathways, electrolyte controls, and complete-cell validation.</desc>
+  <rect width="1600" height="1060" fill="#f3f6fb"/>
+  <rect width="1600" height="116" fill="#142542"/>
+  <text x="62" y="72" fill="#fff" font-family="Arial,sans-serif" font-size="38" font-weight="700">Gas Suppression Is Part of Safety, Not a Substitute for Safety Testing</text>
+
+  <g>
+    <rect x="65" y="165" width="455" height="620" rx="24" fill="#fff" stroke="#efb0ad" stroke-width="3"/>
+    <text x="100" y="220" fill="#bd403f" font-family="Arial,sans-serif" font-size="28" font-weight="700">1. Decomposition pathways</text>
+    <rect x="100" y="265" width="385" height="100" rx="16" fill="#fae8e9"/>
+    <text x="292" y="304" text-anchor="middle" fill="#142542" font-family="Arial,sans-serif" font-size="22" font-weight="700">PC / EMC + salt + trace water</text>
+    <text x="292" y="338" text-anchor="middle" fill="#40516f" font-family="Arial,sans-serif" font-size="18">thermal and electrochemical stress</text>
+    <path d="M292 375 V430" stroke="#c84b49" stroke-width="5"/><path d="M279 414 l13 18 13 -18" fill="none" stroke="#c84b49" stroke-width="5"/>
+    <rect x="100" y="445" width="385" height="100" rx="16" fill="#fbf1d7"/>
+    <text x="292" y="486" text-anchor="middle" fill="#142542" font-family="Arial,sans-serif" font-size="22" font-weight="700">Reactive intermediates</text>
+    <text x="292" y="520" text-anchor="middle" fill="#40516f" font-family="Arial,sans-serif" font-size="18">radicals, proton sources, unstable interfaces</text>
+    <path d="M292 555 V610" stroke="#c84b49" stroke-width="5"/><path d="M279 594 l13 18 13 -18" fill="none" stroke="#c84b49" stroke-width="5"/>
+    <rect x="100" y="625" width="385" height="110" rx="16" fill="#edf1f7"/>
+    <text x="292" y="668" text-anchor="middle" fill="#142542" font-family="Arial,sans-serif" font-size="22" font-weight="700">Gas + impedance + heat</text>
+    <text x="292" y="704" text-anchor="middle" fill="#40516f" font-family="Arial,sans-serif" font-size="18">H₂, CO₂, CO, and hydrocarbons may appear</text>
+  </g>
+
+  <g>
+    <rect x="573" y="165" width="455" height="620" rx="24" fill="#fff" stroke="#9fd7d1" stroke-width="3"/>
+    <text x="608" y="220" fill="#11857f" font-family="Arial,sans-serif" font-size="28" font-weight="700">2. Electrolyte controls</text>
+    <g fill="#168f8b">
+      <circle cx="625" cy="295" r="13"/><circle cx="625" cy="375" r="13"/><circle cx="625" cy="455" r="13"/>
+      <circle cx="625" cy="535" r="13"/><circle cx="625" cy="615" r="13"/>
+    </g>
+    <text x="660" y="302" fill="#263954" font-family="Arial,sans-serif" font-size="20">
+      <tspan x="660">Stable SEI formation on hard carbon</tspan>
+      <tspan x="660" dy="80">Stable CEI formation at the cathode</tspan>
+      <tspan x="660" dy="80">Water and HF control</tspan>
+      <tspan x="660" dy="80">Reactive-species scavenging</tspan>
+      <tspan x="660" dy="80">Balanced solvent oxidation</tspan>
+      <tspan x="660" dy="28">and reduction</tspan>
+    </text>
+    <rect x="605" y="682" width="390" height="72" rx="15" fill="#e2f3ef"/>
+    <text x="800" y="711" text-anchor="middle" fill="#11857f" font-family="Arial,sans-serif" font-size="17" font-weight="700">
+      <tspan x="800">Measure gas, impedance,</tspan>
+      <tspan x="800" dy="25">and retention together</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect x="1080" y="165" width="455" height="620" rx="24" fill="#fff" stroke="#a8c5ff" stroke-width="3"/>
+    <text x="1115" y="220" fill="#2864d7" font-family="Arial,sans-serif" font-size="28" font-weight="700">3. Complete-cell validation</text>
+    <rect x="1115" y="265" width="385" height="82" rx="16" fill="#e8efff"/>
+    <rect x="1115" y="370" width="385" height="82" rx="16" fill="#e8efff"/>
+    <rect x="1115" y="475" width="385" height="100" rx="16" fill="#e8efff"/>
+    <rect x="1115" y="598" width="385" height="82" rx="16" fill="#e8efff"/>
+    <g text-anchor="middle" fill="#142542" font-family="Arial,sans-serif" font-size="21" font-weight="700">
+      <text x="1307" y="316">Formation and storage</text>
+      <text x="1307" y="421">High-temperature cycling</text>
+      <text x="1307" y="515"><tspan x="1307">Pouch swelling and</tspan><tspan x="1307" dy="29">gas analysis</tspan></text>
+      <text x="1307" y="649">Abuse and thermal testing</text>
+    </g>
+    <text x="1307" y="726" text-anchor="middle" fill="#40516f" font-family="Arial,sans-serif" font-size="19">
+      <tspan x="1307">Use realistic state of charge,</tspan>
+      <tspan x="1307" dy="29">cell format, loading, and temperature.</tspan>
+    </text>
+  </g>
+
+  <rect x="65" y="825" width="1470" height="150" rx="24" fill="#fff4d8" stroke="#ddb33c" stroke-width="3"/>
+  <text x="800" y="868" text-anchor="middle" fill="#76540c" font-family="Arial,sans-serif" font-size="29" font-weight="700">Flame-retardant electrolyte ≠ nonflammable battery ≠ no thermal runaway</text>
+  <text x="800" y="908" text-anchor="middle" fill="#40516f" font-family="Arial,sans-serif" font-size="20">
+    <tspan x="800">Safety depends on cathode state, anode interface, separator behavior, current distribution,</tspan>
+    <tspan x="800" dy="31">gas generation, heat release, and complete-cell design.</tspan>
+  </text>
+</svg>

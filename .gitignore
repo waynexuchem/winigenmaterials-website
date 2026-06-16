@@ -1,0 +1,8 @@
+outputs/
+scripts/
+.codex_deps/
+literature/
+_data.py
+.vscode/
+__pycache__/
+*.pyc
