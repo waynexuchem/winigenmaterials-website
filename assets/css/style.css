@@ -748,3 +748,13 @@ body .structure-fallback.structure-fallback--active { display: grid; font-size: 
     word-break: normal;
   }
 }
+
+/* Long-form knowledge articles use justified body copy; compact UI stays left-aligned. */
+.article-main > p,
+.article-main .article-block > p,
+.article-main .article-callout,
+.article-main .article-figure figcaption,
+.article-main .reference-list li {
+  text-align: justify !important;
+  text-justify: inter-word;
+}

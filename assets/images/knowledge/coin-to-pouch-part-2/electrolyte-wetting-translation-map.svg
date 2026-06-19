@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 760" role="img" aria-label="Electrolyte wetting translation map from coin cells to pouch cells">
+<defs><style>
+.title{font:800 27px Inter,Arial,sans-serif;fill:#fff}.sub{font:600 13px Inter,Arial,sans-serif;fill:#d8e2ef}.h{font:800 19px Inter,Arial,sans-serif;fill:#122033}.p{font:600 13px Inter,Arial,sans-serif;fill:#40516f}.small{font:700 12px Inter,Arial,sans-serif;fill:#53627c}.label{font:800 15px Inter,Arial,sans-serif;fill:#122033}.panel{fill:#fff;stroke:#d6dfec;stroke-width:1.5}.navy{fill:#14213d}.line{stroke:#14213d;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.arrow{marker-end:url(#arrow)}
+</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z" fill="#14213d"/></marker></defs>
+<rect width="1120" height="760" rx="28" fill="#f3f6fb"/>
+<rect width="1120" height="96" rx="28" class="navy"/>
+<text x="42" y="48" class="title">Electrolyte Wetting Becomes a Scale-Up Variable</text>
+<text x="42" y="73" class="sub">The same electrolyte can rank differently when electrode area, electrolyte amount, and fill path change</text>
+
+<g transform="translate(48 124)">
+  <rect width="306" height="336" rx="20" class="panel"/>
+  <text x="24" y="38" class="h">Coin-cell screening</text>
+  <circle cx="153" cy="147" r="75" fill="#dbe6f4" stroke="#8aa1bd" stroke-width="5"/>
+  <circle cx="153" cy="147" r="47" fill="#fff" stroke="#2f6edb" stroke-width="4"/>
+  <text x="153" y="142" text-anchor="middle" class="label">excess</text>
+  <text x="153" y="163" text-anchor="middle" class="label">electrolyte</text>
+  <rect x="22" y="252" width="262" height="62" rx="12" fill="#eef4fb"/>
+  <text x="153" y="278" text-anchor="middle" class="p">Good for early salt, solvent,</text>
+  <text x="153" y="299" text-anchor="middle" class="p">additive, and electrode comparison.</text>
+</g>
+
+<path d="M380 286H480" class="line arrow"/>
+<text x="430" y="248" text-anchor="middle" style="font:800 17px Inter,Arial,sans-serif;fill:#2f6edb">translate</text>
+<text x="430" y="269" text-anchor="middle" style="font:800 17px Inter,Arial,sans-serif;fill:#2f6edb">carefully</text>
+
+<g transform="translate(512 124)">
+  <rect width="560" height="336" rx="20" class="panel"/>
+  <text x="24" y="38" class="h">Pouch-cell validation</text>
+  <g transform="translate(58 78)">
+    <rect width="412" height="34" rx="7" fill="#bfc8d5"/>
+    <rect y="39" width="412" height="48" rx="7" fill="#7b59b7"/>
+    <rect y="92" width="412" height="39" rx="7" fill="#8dc4e8"/>
+    <rect y="136" width="412" height="34" rx="7" fill="#77889a"/>
+    <path d="M14 20C78 -12 128 62 196 24S320 -4 398 29" stroke="#2f6edb" stroke-width="4" fill="none" stroke-dasharray="8 7"/>
+    <path d="M20 67C92 30 132 112 210 68S326 39 397 79" stroke="#2f6edb" stroke-width="4" fill="none" stroke-dasharray="8 7"/>
+    <path d="M16 116C83 81 139 152 210 116S330 86 396 126" stroke="#2f6edb" stroke-width="4" fill="none" stroke-dasharray="8 7"/>
+    <circle cx="112" cy="57" r="9" fill="#cf3b3b"/><circle cx="286" cy="103" r="9" fill="#cf3b3b"/><circle cx="354" cy="149" r="9" fill="#cf3b3b"/>
+  </g>
+  <text x="244" y="67" text-anchor="middle" class="small">longer, tortuous in-plane wetting paths</text>
+  <circle cx="426" cy="60" r="8" fill="#cf3b3b"/><text x="442" y="64" class="small">dry spots / trapped gas</text>
+  <rect x="22" y="252" width="516" height="62" rx="12" fill="#eef4fb"/>
+  <text x="280" y="278" text-anchor="middle" class="p">Tests whether wetting remains uniform at larger area,</text>
+  <text x="280" y="299" text-anchor="middle" class="p">higher loading, and leaner E/C ratio.</text>
+</g>
+
+<g transform="translate(48 500)">
+  <rect width="1024" height="202" rx="20" class="panel"/>
+  <text x="24" y="42" class="h">Variables that can change the apparent winner</text>
+  <g transform="translate(24 74)"><rect width="184" height="94" rx="14" fill="#eaf2ff" stroke="#9cc0ff"/><text x="18" y="34" class="label">E/C ratio</text><text x="18" y="61" class="small">less excess electrolyte</text></g>
+  <g transform="translate(222 74)"><rect width="184" height="94" rx="14" fill="#e4f5f2" stroke="#9ad8d0"/><text x="18" y="34" class="label">Wetting time</text><text x="18" y="61" class="small">rest, vacuum, fill path</text></g>
+  <g transform="translate(420 74)"><rect width="184" height="94" rx="14" fill="#fff4d9" stroke="#e0bd62"/><text x="18" y="34" class="label">Formation</text><text x="18" y="61" class="small">SEI / CEI and gas</text></g>
+  <g transform="translate(618 74)"><rect width="184" height="94" rx="14" fill="#fff0f0" stroke="#f0a2a2"/><text x="18" y="34" class="label">Pressure</text><text x="18" y="61" class="small">stack contact uniformity</text></g>
+  <g transform="translate(816 74)"><rect width="184" height="94" rx="14" fill="#eef3f9" stroke="#c9d4e3"/><text x="18" y="34" class="label">Gas</text><text x="18" y="58" class="small">swelling, soft spots,</text><text x="18" y="76" class="small">and degassing</text></g>
+</g>
+</svg>

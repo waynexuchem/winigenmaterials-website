@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 520" role="img" aria-label="Gas measurement framework for pouch cell formation and cycling">
+<defs><style>
+.title{font:800 27px Inter,Arial,sans-serif;fill:#fff}.sub{font:600 14px Inter,Arial,sans-serif;fill:#d8e2ef}.h{font:800 20px Inter,Arial,sans-serif;fill:#122033}.p{font:600 14px Inter,Arial,sans-serif;fill:#40516f}.small{font:700 13px Inter,Arial,sans-serif;fill:#53627c}.panel{fill:#fff;stroke:#d6dfec;stroke-width:1.5}.axis{stroke:#14213d;stroke-width:2;fill:none}
+</style></defs>
+<rect width="1120" height="520" rx="28" fill="#f3f6fb"/>
+<rect width="1120" height="92" rx="28" fill="#14213d"/>
+<text x="42" y="46" class="title">Gas Diagnostics: Measure Amount, Timing, and Consequence</text>
+<text x="42" y="70" class="sub">A swelling observation becomes useful evidence only when it is connected to process stage and cell response</text>
+
+<g transform="translate(40 124)">
+  <rect width="326" height="328" rx="20" class="panel"/>
+  <text x="24" y="40" class="h">1. Quantify amount</text>
+  <path d="M72 92Q72 62 102 62H178Q208 62 208 92V222H72Z" fill="#eaf2ff" stroke="#2f6edb" stroke-width="3"/>
+  <path d="M83 186Q83 104 112 92H168Q197 104 197 186" fill="#9cc0ff" opacity=".7"/>
+  <circle cx="116" cy="135" r="11" fill="#cf3b3b"/><circle cx="158" cy="112" r="8" fill="#cf3b3b"/>
+  <line x1="238" y1="76" x2="238" y2="222" class="axis"/><line x1="226" y1="92" x2="250" y2="92" class="axis"/><line x1="226" y1="142" x2="250" y2="142" class="axis"/><line x1="226" y1="192" x2="250" y2="192" class="axis"/>
+  <text x="24" y="266" class="p">Thickness change, buoyancy,</text><text x="24" y="288" class="p">internal pressure, or controlled</text><text x="24" y="310" class="p">degassing mass and volume.</text>
+</g>
+
+<g transform="translate(397 124)">
+  <rect width="326" height="328" rx="20" class="panel"/>
+  <text x="24" y="40" class="h">2. Locate timing</text>
+  <line x1="40" y1="188" x2="286" y2="188" class="axis"/>
+  <circle cx="52" cy="188" r="10" fill="#2f6edb"/><circle cx="108" cy="188" r="10" fill="#168b84"/><circle cx="164" cy="188" r="10" fill="#bd9540"/><circle cx="220" cy="188" r="10" fill="#cf3b3b"/><circle cx="276" cy="188" r="10" fill="#64748b"/>
+  <path d="M40 154C82 152 88 106 108 101S145 169 164 133S199 71 220 89S250 151 286 123" stroke="#cf3b3b" stroke-width="4" fill="none"/>
+  <text x="52" y="218" text-anchor="middle" class="small">fill</text><text x="108" y="218" text-anchor="middle" class="small">rest</text><text x="164" y="218" text-anchor="middle" class="small">form</text><text x="220" y="218" text-anchor="middle" class="small">store</text><text x="276" y="218" text-anchor="middle" class="small">cycle</text>
+  <text x="24" y="266" class="p">Before formation, during holds,</text><text x="24" y="288" class="p">after rest and storage, and under</text><text x="24" y="310" class="p">temperature or rate stress.</text>
+</g>
+
+<g transform="translate(754 124)">
+  <rect width="326" height="328" rx="20" class="panel"/>
+  <text x="24" y="40" class="h">3. Measure consequence</text>
+  <line x1="48" y1="218" x2="280" y2="218" class="axis"/><line x1="48" y1="218" x2="48" y2="78" class="axis"/>
+  <path d="M58 201C94 190 128 174 158 147S220 111 270 84" stroke="#cf3b3b" stroke-width="4" fill="none"/>
+  <path d="M58 96C101 102 143 121 180 146S232 184 270 199" stroke="#2f6edb" stroke-width="4" fill="none"/>
+  <text x="154" y="92" class="small">EIS / DCIR</text><text x="154" y="211" class="small">contact quality</text>
+  <text x="24" y="266" class="p">Soft spots, delamination, leakage,</text><text x="24" y="288" class="p">impedance growth, and post-mortem</text><text x="24" y="310" class="p">gas and interphase chemistry.</text>
+</g>
+</svg>

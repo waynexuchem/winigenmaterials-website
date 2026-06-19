@@ -1,6 +1,6 @@
 window.winigenKnowledgeArticles = [
   {
-    title: "From Coin Cell to Pouch Cell: How to Validate Battery Materials Before Scale-Up",
+    title: "From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up",
     stage: "Cell Development",
     stages: ["Cell Development", "Commercialization"],
     category: "Validation and Scale-Up",
@@ -10,6 +10,18 @@ window.winigenKnowledgeArticles = [
     summary: "How to validate battery materials across coin cells, full cells, pouch cells, formation, wetting, gas generation, swelling, pressure, and scale-up evidence.",
     excerpt: "A coin cell can identify promising chemistry, but pouch cells reveal whether the chemistry survives practical electrode area, electrolyte filling, formation, gas generation, pressure distribution, and manufacturing variation.",
     url: "knowledge/coin-cell-to-pouch-cell-battery-material-validation.html"
+  },
+  {
+    title: "From Coin Cell to Pouch Cell, Part 2: Why Wetting, Gas, and Formation Change Battery Material Rankings",
+    stage: "Cell Development",
+    stages: ["Cell Development", "Electrolytes & Interfaces", "Commercialization"],
+    category: "Validation and Scale-Up",
+    tags: ["coin cell", "pouch cell", "wetting", "E/C ratio", "formation", "gas generation", "swelling", "vacuum filling", "ionic transport", "impedance"],
+    keywords: ["electrolyte amount", "electrolyte to capacity ratio", "pore saturation", "local ionic pathways", "electrolyte starvation", "rest time", "drying history", "additive consumption", "N/P ratio", "areal capacity", "electrode porosity", "pressure", "stack uniformity", "high loading", "impedance deconvolution", "ohmic resistance", "charge transfer", "diffusion impedance", "degassing", "ranking reversal", "trapped gas"],
+    related_products: ["lithium salts", "solvents", "additives", "active materials", "custom formulations", "solid-state electrolytes"],
+    summary: "Why coin-cell rankings can change in pouch cells through electrolyte starvation, local ionic pathways, E/C ratio, wetting, formation gas, pressure, impedance components, and high-loading electrode effects.",
+    excerpt: "Coin cells are useful for early discovery, but pouch cells expose format-dependent failure modes: electrolyte wetting, E/C ratio, gas generation, formation protocol, pressure distribution, current distribution, and scale-dependent impedance.",
+    url: "knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html"
   },
   {
     title: "Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes",
