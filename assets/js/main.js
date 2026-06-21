@@ -170,3 +170,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Discourage casual saving or dragging of protected article figures.
+document.addEventListener('contextmenu', function (event) {
+  if (event.target.closest('.protected-figure')) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener('dragstart', function (event) {
+  if (event.target.closest('.protected-figure')) {
+    event.preventDefault();
+  }
+});

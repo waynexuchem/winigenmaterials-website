@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N/P Ratio in Lithium-Ion Batteries: Plating Risk, Fast Charge, and Energy Density | Winigen Materials</title>
+<meta name="description" content="Learn how lithium-ion battery N/P ratio controls lithium plating risk, fast-charge capability, cycle life, and energy density, with calculations and graphite, silicon, LFP, and NMC design guidance.">
+<link rel="canonical" href="https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260618">
+<style>
+.article-hero{padding:78px 0}.article-hero .section-title{max-width:1080px}.article-hero h1{font-size:clamp(42px,5vw,70px)}.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:34px;align-items:start}.article-main,.article-side{min-width:0;background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}.article-side{position:sticky;top:104px}.article-main p{line-height:1.78;text-align:justify}.article-main a{color:var(--blue);font-weight:800}.article-block{margin-top:30px;padding-top:26px;border-top:1px solid rgba(18,32,51,.1)}.article-block>ul,.article-block>ol{display:grid;gap:10px;padding-left:30px;line-height:1.68}.article-block>ul li,.article-block>ol li{padding-left:4px}.article-callout{margin:24px 0;padding:22px 24px;border-left:4px solid var(--blue);border-radius:0 14px 14px 0;background:#eef5ff}.article-callout strong{color:var(--navy)}.article-figure{margin:26px 0;border:1px solid rgba(18,32,51,.1);border-radius:18px;overflow:hidden;background:#fff}.article-figure img{display:block;width:100%;height:auto;object-fit:contain;background:#f4f7fb}.article-figure figcaption{padding:14px 16px;color:#53627c;font-size:.92rem;line-height:1.58;border-top:1px solid rgba(18,32,51,.08)}.article-table-wrap{overflow-x:auto;margin:20px 0 22px;border:1px solid rgba(18,32,51,.1);border-radius:16px;background:#fff}.article-table{width:100%;border-collapse:collapse;min-width:760px}.article-table th{background:#14213d;color:#fff;text-align:left;padding:13px 15px;font-size:13px}.article-table td{padding:13px 15px;border-top:1px solid rgba(18,32,51,.1);color:#2b3950;vertical-align:top;line-height:1.48}.formula-box{margin:22px 0;padding:20px 24px;border:1px solid rgba(42,102,217,.22);border-radius:14px;background:#f7faff;color:var(--navy);font-size:1.08rem;font-weight:800;text-align:center}.formula-equation{display:flex;align-items:center;justify-content:center;gap:14px}.formula-equation .fraction{display:inline-grid;grid-template-rows:auto auto;align-items:center;min-width:min(620px,78%);font-size:1.05rem}.formula-equation .numerator{padding:0 16px 9px;border-bottom:2px solid var(--navy)}.formula-equation .denominator{padding:9px 16px 0}.reference-list{display:grid;gap:12px;padding-left:22px;margin:18px 0 0}.reference-list li{color:#40516f;line-height:1.58;padding-left:4px}.reference-list a{color:var(--blue);font-weight:850;text-decoration:none}.reference-list a:hover{text-decoration:underline}.related-link-list{display:grid;gap:10px;margin-top:16px}.related-link-list a{display:block;padding:12px 14px;border:1px solid rgba(18,32,51,.1);border-radius:12px;background:#f8fbff;color:var(--navy);font-weight:850;text-decoration:none}.related-link-list a:hover{color:var(--blue);border-color:rgba(42,102,217,.28)}.faq-list{display:grid;gap:12px;max-width:920px;margin:0 auto}.faq-list details{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.9);box-shadow:0 10px 26px rgba(15,31,77,.06);padding:18px 20px}.faq-list summary{cursor:pointer;color:var(--navy);font-weight:900}.faq-list p{margin:12px 0 0}.cta-panel{margin-top:30px;padding:28px;border:1px solid rgba(42,102,217,.22);border-radius:18px;background:#eaf2ff}.cta-panel .btn{margin-top:8px;color:#fff}.cta-panel .btn:hover{color:#fff}@media(max-width:900px){.article-layout{grid-template-columns:1fr}.article-side{position:static}.article-main,.article-side{padding:24px}}@media(max-width:560px){.article-hero{padding:56px 0}.article-main,.article-side{padding:20px}.article-table{min-width:680px}.formula-equation{align-items:stretch;flex-direction:column;gap:10px}.formula-equation .fraction{min-width:100%;font-size:.92rem}}
+</style>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"TechArticle",
+  "@id":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html#article",
+  "headline":"N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density",
+  "description":"A practical guide to lithium-ion battery N/P ratio calculation, lithium plating margin, fast-charge behavior, silicon-anode utilization, and coin-to-pouch validation.",
+  "url":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html",
+  "datePublished":"2026-06-19",
+  "dateModified":"2026-06-20",
+  "author":{"@id":"https://www.winigenmaterials.com/#organization"},
+  "publisher":{"@id":"https://www.winigenmaterials.com/#organization"},
+  "image":[
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-receiving-capacity.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-calculation-example.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/voltage-capacity-matching.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-tradeoff-window.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/yourey-fast-charge-np-ratio-figure-3-cc-by.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/nominal-vs-effective-np-ratio.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/coin-vs-pouch-np-ratio.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-full-cell-design.png"
+  ],
+  "about":["N/P ratio","electrode balancing","lithium plating","fast charging","silicon anodes","graphite anodes","pouch-cell validation"],
+  "citation":[
+    "Kasnatscheew et al., A Tutorial into Practical Capacity and Mass Balancing of Lithium Ion Batteries, Journal of The Electrochemical Society 164, A2479-A2486 (2017).",
+    "Kim et al., Effects of capacity ratios between anode and cathode on electrochemical properties for lithium polymer batteries, Electrochimica Acta 155, 431-436 (2015).",
+    "Abe and Kumagai, Effect of negative/positive capacity ratio on the rate and cycling performances of LiFePO4/graphite lithium-ion batteries, Journal of Energy Storage 19, 96-102 (2018).",
+    "Yourey et al., Design Considerations for Fast Charging Lithium Ion Cells for NMC/MCMB Electrode Pairs, Batteries 7, 4 (2021).",
+    "Chen et al., Effect of N/P ratios on the performance of LiNi0.8Co0.15Al0.05O2/SiOx-graphite lithium-ion batteries, Journal of Power Sources 439, 227056 (2019).",
+    "Luo et al., Examining Effects of Negative to Positive Capacity Ratio in Three-Electrode Lithium-Ion Cells with Layered Oxide Cathode and Si Anode, ACS Applied Energy Materials 5, 5513-5518 (2022).",
+    "Mu et al., Impacts of negative to positive capacities ratios on the performance of next-generation lithium-ion batteries, Electrochimica Acta 406, 139878 (2022).",
+    "Dong et al., Challenges and Strategies of Fast-Charging Li-Ion Batteries, Energy Materials Advances 5, 0113 (2024)."
+  ],
+  "mainEntityOfPage":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html"
+}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "@id":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html#faq",
+  "mainEntity":[
+    {"@type":"Question","name":"What does N/P ratio mean in a lithium-ion battery?","acceptedAnswer":{"@type":"Answer","text":"N/P ratio is the practical reversible areal capacity of the negative electrode divided by that of the positive electrode. It describes the anode receiving-capacity margin available during charge."}},
+    {"@type":"Question","name":"What happens when N/P ratio is too low?","acceptedAnswer":{"@type":"Answer","text":"The negative electrode can approach full lithiation too early. Under high current, low temperature, high state of charge, aging, or local nonuniformity, its potential may approach the lithium-plating regime."}},
+    {"@type":"Question","name":"Is a higher N/P ratio always safer or better?","acceptedAnswer":{"@type":"Answer","text":"No. More negative-electrode capacity can add plating margin, but it also adds inactive cell mass and volume, reduces energy density, and can increase first-cycle lithium consumption and interphase burden."}},
+    {"@type":"Question","name":"Why can effective anode receiving margin decrease during fast charging?","acceptedAnswer":{"@type":"Answer","text":"Nominal N/P is usually calculated from low-rate reversible capacity. Fast charge, low temperature, aging, tortuosity, wetting variation, nonuniform current, and interfacial resistance can reduce the anode capacity that is kinetically accessible during operation."}},
+    {"@type":"Question","name":"Should N/P ratio be validated in pouch cells?","acceptedAnswer":{"@type":"Answer","text":"Yes. Larger electrode area, coating variation, anode overhang, wetting, pressure distribution, formation, and local current density can create local plating risk even when average electrode capacities appear correctly balanced."}}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.winigenmaterials.com/"},
+    {"@type":"ListItem","position":2,"name":"Knowledge","item":"https://www.winigenmaterials.com/knowledge.html"},
+    {"@type":"ListItem","position":3,"name":"Cell Development","item":"https://www.winigenmaterials.com/knowledge/cell-development.html"},
+    {"@type":"ListItem","position":4,"name":"N/P Ratio Design","item":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html"}
+  ]
+}</script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav"><a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a><nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav><button class="mobile-toggle" aria-label="Open menu">&#9776;</button></div>
+  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
+</header>
+<main>
+  <section class="section dark article-hero">
+    <div class="container section-title">
+      <div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / <a href="cell-development.html">Cell Development</a></div>
+      <p class="eyebrow">Electrode Balance and Cell Design</p>
+      <h1>N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density</h1>
+      <p>N/P ratio is not merely an electrode-capacity calculation. It is a design margin that links lithium inventory, negative-electrode utilization, plating risk, fast-charge behavior, cycle life, and practical cell energy.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-layout">
+      <article class="article-main">
+        <p>The central cell-design question is simple: does the negative electrode have enough reversible lithium-storage capacity to receive the lithium released by the positive electrode during charge, without forcing local regions into lithium-metal deposition?</p>
+        <p>The answer cannot be reduced to one universal N/P number. A nominally balanced cell can still plate lithium when it is charged too quickly, charged at low temperature, poorly wetted, over-calendered, aged, locally misaligned, or operated near full state of charge. Conversely, increasing negative-electrode capacity adds margin but also lowers energy density and changes first-cycle lithium loss. N/P ratio is therefore best treated as a controlled engineering tradeoff.</p>
+        <div class="article-callout"><strong>Core principle:</strong> N/P ratio is the negative electrode's receiving-capacity margin. Its useful value depends on practical reversible capacity, electrode kinetics, formation, temperature, rate, aging target, and cell geometry.</div>
+
+        <section class="article-block">
+          <h2>1. What N/P Ratio Means</h2>
+          <p>For a conventional lithium-ion full cell, N/P ratio is the practical reversible areal capacity of the negative electrode divided by the practical reversible areal capacity of the positive electrode:<sup><a href="#ref-1">[1]</a></sup></p>
+          <div class="formula-box formula-equation"><span>N/P =</span><span class="fraction"><span class="numerator">negative-electrode reversible areal capacity</span><span class="denominator">positive-electrode reversible areal capacity</span></span></div>
+          <p>The negative electrode may be graphite, silicon-graphite, SiO<sub>x</sub>-graphite, hard carbon, titanium oxide, or any other anode material. The positive electrode may be LFP, LMFP, NMC, NCA, LCO, LNMO, or any other cathode material. For an insertion-type cell, N/P above 1 means the negative electrode has more low-rate reversible capacity than the positive electrode is expected to deliver.</p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/np-ratio-receiving-capacity.png" alt="N/P ratio concept showing lithium moving from cathode to anode during charge and the negative electrode receiving-capacity margin" draggable="false">
+            </div>
+            <figcaption>Conceptual figure showing N/P ratio as a receiving-capacity margin. The useful margin is determined by practical reversible capacity, not by theoretical capacity alone; the schematic is not digitized from literature data. &copy; Winigen Materials.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>2. Calculate N/P from Practical Electrode Data</h2>
+          <p>Areal capacity should be calculated from dry coating loading, active-material fraction, and a practical reversible specific capacity measured within the intended voltage, rate, and temperature window. Loading should be identified as single-sided or double-sided. Theoretical capacity is not sufficient because electrode formulation, porosity, utilization, formation, and cutoff conditions change the capacity that is actually accessible.<sup><a href="#ref-1">[1]</a></sup></p>
+          <p>For a single-sided LFP cathode with 30 mg/cm² dry coating loading, 96 wt% active material, and 160 mAh/g practical reversible capacity, the positive-electrode areal capacity is 4.61 mAh/cm². A graphite anode with 16 mg/cm² dry coating loading, 95 wt% active material, and 350 mAh/g practical reversible capacity provides 5.32 mAh/cm². The resulting N/P ratio is 1.15.</p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/np-ratio-calculation-example.png" alt="Worked N/P ratio calculation using an LFP cathode and graphite anode" draggable="false">
+            </div>
+            <figcaption>Conceptual worked example using practical areal capacity. In production design, both electrode capacities should be based on representative lots and the intended formation and operating window. &copy; Winigen Materials.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>3. How Voltage-Capacity Matching Sets Usable Cell Capacity</h2>
+          <p>The LFP/graphite-style example below places the positive- and negative-electrode half-cell voltage curves on the same charge-capacity axis.</p>
+          <p>During charge, the cathode is delithiated and its potential rises versus Li/Li<sup>+</sup>. At the same time, the anode is lithiated and its potential decreases toward the lithium-plating region near 0 V versus Li/Li<sup>+</sup>. The full-cell voltage is the difference between these two electrode potentials at the same charge capacity:</p>
+          <div class="formula-box">V<sub>cell</sub>(q) = U<sub>positive</sub>(q / Q<sub>p</sub>) - U<sub>negative</sub>(q / Q<sub>n</sub>)</div>
+          <p>Here, Q<sub>p</sub> is the practical reversible areal capacity of the positive electrode, Q<sub>n</sub> is the practical reversible areal capacity of the negative electrode, and q is the charge passed from the discharged state during full-cell charging.</p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/voltage-capacity-matching.png" alt="Three-panel voltage-capacity matching diagram comparing low balanced and high N/P ratio" draggable="false">
+            </div>
+            <figcaption><strong>Figure.</strong> Electrode voltage matching and usable full-cell capacity at different N/P ratios. In the top plot of each panel, the cathode and anode half-cell potentials are overlaid on a common full-cell charge-capacity axis. The bottom plot shows the corresponding full-cell voltage, calculated as V<sub>cell</sub>(q) = U<sub>cathode</sub>(q / Q<sub>p</sub>) - U<sub>anode</sub>(q / Q<sub>n</sub>). When N/P is too low, the anode reaches its safe lithiation endpoint before the cathode reaches its charge cutoff, increasing lithium-plating risk. With a balanced N/P ratio, the cathode sets usable capacity while the anode retains a controlled receiving buffer. When N/P is too high, the cell carries excess unused anode capacity, reducing cell-level energy density. Conceptual Winigen Materials illustration; curves are not digitized literature data. &copy; Winigen Materials.</figcaption>
+          </figure>
+          <p>At low N/P, the anode reaches its safe lithiation endpoint before the cathode reaches its charge cutoff; further cathode delithiation cannot be accommodated safely by insertion alone. At balanced N/P, the cathode sets usable capacity while the anode retains a controlled receiving buffer. At excessive N/P, the cathode still limits usable capacity while unused anode material adds mass, volume, interphase area, and first-cycle lithium demand.</p>
+          <p>N/P is therefore a voltage-capacity matching problem connecting electrode loading, practical reversible capacity, cutoff voltage, lithium-plating margin, and cell-level energy density.<sup><a href="#ref-1">[1]</a></sup></p>
+        </section>
+
+        <section class="article-block">
+          <h2>4. Why N/P Ratio Matters</h2>
+          <p>During charge, the positive electrode releases lithium while the negative electrode accepts it. If the negative electrode reaches a highly lithiated state too early, its potential approaches 0 V versus Li/Li<sup>+</sup>. Local overpotential can then drive metallic lithium deposition, especially during fast charge, cold charge, high-SOC operation, or nonuniform current distribution. Plated lithium may become electrically isolated, thicken the interphase, raise impedance, and create aging or safety concerns.<sup><a href="#ref-4">[4]</a></sup></p>
+          <p>Increasing N/P can lower average negative-electrode utilization and provide more receiving margin. That benefit is not free: additional negative-electrode coating adds mass and volume, reduces the positive-electrode fraction of the cell, and can consume more cyclable lithium during first-cycle interphase formation. Kasnatscheew et al. frame this directly as a tradeoff between lithium-plating protection and specific energy.<sup><a href="#ref-1">[1]</a></sup></p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/np-ratio-tradeoff-window.png" alt="Tradeoff map showing decreasing lithium plating risk and increasing energy penalty as N/P ratio rises" draggable="false">
+            </div>
+            <figcaption>Conceptual figure showing the N/P tradeoff. The balanced region depends on chemistry, electrode design, charge protocol, temperature, manufacturing capability, and life target; it is not a universal fixed window or digitized literature data. &copy; Winigen Materials.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>5. What Happens When N/P Is Too Low</h2>
+          <p>At low N/P, the negative electrode must operate at higher utilization to accept the positive electrode's charge. This reduces tolerance for coating variation, cathode-anode mismatch, capacity-estimation error, and loss of active negative-electrode area. The risk becomes more severe when ionic transport or interfacial kinetics are slow.</p>
+          <ul>
+            <li>Negative-electrode potential approaches the lithium-plating regime earlier.</li>
+            <li>Local current hotspots can plate even when the average N/P calculation appears acceptable.</li>
+            <li>Fast charge, low temperature, high SOC, aging, and high loading reduce available margin.</li>
+            <li>Dead lithium, impedance growth, capacity fade, and potentially higher local heat generation can follow.<sup><a href="#ref-4">[4]</a></sup></li>
+          </ul>
+          <p>Kim et al. reported that raising N/P above approximately 1.10 suppressed lithium plating under their 0.85C, 25&nbsp;&deg;C test condition, while N/P 1.20 improved cycling. That result is useful evidence, but it should not be converted into a universal threshold because electrode chemistry, design, and charging conditions determine where plating begins.<sup><a href="#ref-2">[2]</a></sup></p>
+        </section>
+
+        <section class="article-block">
+          <h2>6. What Happens When N/P Is Too High</h2>
+          <p>A larger negative electrode can reduce its utilization and add kinetic margin, but excessive oversizing penalizes cell-level energy. More negative-electrode active material, binder, conductive additive, coating thickness, and associated current-collector area must be carried for the same positive-electrode capacity. A larger interphase-forming surface can also increase first-cycle lithium loss.</p>
+          <p>The tension is especially clear in fast-charge design. Yourey et al. compared N:P reversible-capacity ratios of 1.2:1 and 1.7:1 for NMC/MCMB electrode pairs. The higher-ratio design accepted about 16% more capacity during a ten-minute charge in their study, but it also delivered lower reversible specific capacity because more negative-electrode capacity remained underutilized and irreversible loss increased.<sup><a href="#ref-6">[6]</a></sup></p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/yourey-fast-charge-np-ratio-figure-3-cc-by.png" alt="Published fast-charge comparison for 1.2 to 1 and 1.7 to 1 negative-to-positive reversible capacity ratios" draggable="false">
+            </div>
+            <figcaption>Calculated lithiation time and accelerated graphite-electrode lithiation protocol for 1.2:1 and 1.7:1 N:P designs. Reproduced from Yourey et al., <em>Batteries</em> 7, 4 (2021), Figure 3, <a href="https://doi.org/10.3390/batteries7010004">doi:10.3390/batteries7010004</a>, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>7. Practical Starting Ranges Are Not Universal Specifications</h2>
+          <p>Published studies and industrial designs frequently place insertion-anode N/P somewhat above 1, but the appropriate value depends on how capacity is measured and what failure mode the cell must avoid. The ranges below are starting points for screening discussion, not product or safety specifications.<sup><a href="#ref-1">[1]</a></sup><sup><a href="#ref-2">[2]</a></sup><sup><a href="#ref-3">[3]</a></sup></p>
+          <div class="article-table-wrap"><table class="article-table"><thead><tr><th>Cell system</th><th>Screening discussion</th><th>Variables that can shift the target</th></tr></thead><tbody>
+            <tr><td>LFP / graphite</td><td>Studies commonly compare ratios near 1.0 to 1.2. Higher margin can favor long life or rate tolerance; lower margin can favor initial energy.</td><td>Graphite grade, areal loading, formation, high-rate aging, and low-temperature charge.</td></tr>
+            <tr><td>NMC / graphite</td><td>Often designed with a controlled margin above 1 while limiting excess negative-electrode mass.</td><td>Upper cutoff voltage, graphite kinetics, loading, fast-charge target, and manufacturing variation.</td></tr>
+            <tr><td>High-Ni NMC / graphite</td><td>Requires careful joint control of negative-electrode margin and positive-electrode degradation.</td><td>Lithium inventory loss, cross-talk, gas, high-SOC storage, and high-voltage formation.</td></tr>
+            <tr><td>SiO<sub>x</sub>-graphite or Si-graphite</td><td>Capacity balancing must consider first-cycle efficiency, silicon utilization, expansion, and interphase repair.</td><td>Silicon fraction, prelithiation, binder, porosity, pressure, and cycle depth.</td></tr>
+            <tr><td>Fast-charge cells</td><td>May benefit from additional negative-electrode margin, but N/P alone cannot fix transport limitation.</td><td>Electrolyte conductivity, wetting, tortuosity, desolvation, SEI resistance, temperature, and charge protocol.</td></tr>
+          </tbody></table></div>
+          <p>Abe and Kumagai illustrated the tradeoff in LFP/graphite cells at N/P ratios of 0.87, 1.03, and 1.20. The lowest ratio produced the highest initial specific capacity, while N/P 1.20 provided the strongest 5000-cycle retention and better high-rate aging in their design.<sup><a href="#ref-3">[3]</a></sup></p>
+        </section>
+
+        <section class="article-block">
+          <h2>8. Silicon Changes the N/P Design Problem</h2>
+          <p>For silicon-containing negative electrodes, N/P determines more than lithium-plating margin. It also changes how deeply silicon is utilized. Higher silicon utilization can increase expansion, interphase fracture and repair, electrolyte consumption, impedance, and irreversible lithium loss. A higher N/P ratio can reduce average anode utilization and mechanical severity, but it also increases the quantity of underused negative-electrode material.<sup><a href="#ref-5">[5]</a></sup><sup><a href="#ref-7">[7]</a></sup><sup><a href="#ref-8">[8]</a></sup></p>
+          <p>Three-electrode measurements are especially valuable because full-cell voltage does not reveal whether a capacity or impedance change originates at the positive or negative electrode. Luo et al. used individual electrode potentials in NMC532/Si cells and found that higher N/P improved reversibility, retention, and impedance behavior, consistent with lower silicon volume-change severity. Mu et al. similarly showed for Si-Gr/NMC811 that increasing N/P changes positive- and negative-electrode utilization in opposite directions.<sup><a href="#ref-7">[7]</a></sup><sup><a href="#ref-8">[8]</a></sup></p>
+          <p>Practical silicon designs should therefore report silicon fraction, first-cycle efficiency, prelithiation condition if used, negative-electrode expansion, pressure, formation protocol, and reversible areal capacity alongside nominal N/P.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>9. Nominal N/P and Effective Receiving Margin Are Different</h2>
+          <p>Nominal N/P is normally calculated from low-rate reversible capacity. During fast charging, however, the entire negative electrode is not equally available. Electrolyte transport, desolvation, interphase resistance, graphite solid-state diffusion, pore tortuosity, local wetting, temperature, and state of charge determine how much receiving capacity is kinetically accessible at a particular moment.</p>
+          <p>This produces a useful distinction: <strong>nominal N/P is a design number; effective receiving margin is an operating-condition result.</strong> Dong et al. describe how high charging rates can reduce the negative-electrode sites available for lithium insertion. A cell calculated at N/P 1.15 under low-rate conditions can therefore exhaust its local or kinetically accessible receiving margin during a cold or aggressive charge.<sup><a href="#ref-9">[9]</a></sup></p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/nominal-vs-effective-np-ratio.png" alt="Nominal N/P design compared with accessible negative-electrode receiving margin under fast charge, low temperature, aging, wetting, pressure, and current variation" draggable="false">
+            </div>
+            <figcaption>Conceptual figure distinguishing nominal N/P from effective receiving margin. The accessible anode capacity is condition- and design-dependent; the diagram shows the causal pathway rather than a universal numerical correction or digitized literature data. &copy; Winigen Materials.</figcaption>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h2>10. Coin Cells and Pouch Cells Expose Different N/P Risks</h2>
+          <p>Coin cells are valuable for measuring half-cell capacity, formation response, and early full-cell ranking. Their small electrode area, fixture-defined compression, and commonly generous electrolyte amount can nevertheless hide local balance problems. A pouch cell introduces larger coating area, anode overhang, registration error, spatial wetting variation, pressure gradients, current-distribution effects, and visible gas or swelling.</p>
+          <p>Average N/P can remain unchanged while local receiving margin is exhausted. Cathode-anode misalignment, insufficient anode overhang, a dry region, local loss of active material, or uneven pressure can force neighboring negative-electrode regions to higher local utilization. This is why a pouch-cell validation plan should connect electrode maps, overhang, loading uniformity, E/C ratio, formation, pressure, and post-charge plating diagnostics.</p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/coin-vs-pouch-np-ratio.png" alt="Small-format full-cell and pouch-cell comparison showing how local coating, wetting, overhang, and pressure variation can exhaust receiving margin" draggable="false">
+            </div>
+            <figcaption>Conceptual figure showing how an acceptable average N/P ratio can still contain local receiving-capacity shortfalls. Pouch-cell validation tests whether the designed margin survives area, wetting, registration, pressure, and process variation. &copy; Winigen Materials.</figcaption>
+          </figure>
+          <p>This extends the validation logic developed in <a href="coin-cell-to-pouch-cell-battery-material-validation.html">From Coin Cell to Pouch Cell, Part 1</a> and <a href="coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">Part 2: Wetting, Gas, and Formation</a>.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>11. A Practical N/P Screening Workflow</h2>
+          <ol>
+            <li><strong>Measure practical half-cell capacities.</strong> Use representative electrode lots, relevant rates, and intended voltage limits.</li>
+            <li><strong>Calculate nominal areal-capacity balance.</strong> Include single- or double-sided dry loading, active fraction, practical capacity, and uncertainty.</li>
+            <li><strong>Confirm full-cell utilization.</strong> Track first-cycle efficiency, lithium inventory loss, voltage profile, and dQ/dV.</li>
+            <li><strong>Use a reference electrode where possible.</strong> Three-electrode testing separates positive- and negative-electrode potentials.</li>
+            <li><strong>Stress the receiving margin.</strong> Test fast charge, low temperature, high SOC, aging, and realistic formation separately.</li>
+            <li><strong>Track impedance and plating evidence.</strong> Compare EIS/DCIR at matched SOC, temperature, rest time, and pressure; use post-mortem or operando plating diagnostics where justified.</li>
+            <li><strong>Validate the geometry.</strong> Use realistic loading, E/C ratio, N/P distribution, overhang, pressure, and replicate pouch cells.</li>
+          </ol>
+        </section>
+
+        <section class="article-block">
+          <h2>12. Quantitative Metadata Needed to Interpret N/P</h2>
+          <div class="article-table-wrap"><table class="article-table"><thead><tr><th>Parameter</th><th>Recommended reporting</th><th>Why it matters</th></tr></thead><tbody>
+            <tr><td>Positive and negative areal capacity</td><td>mAh/cm², with measurement rate and voltage range</td><td>Defines the numerator and denominator using accessible capacity.</td></tr>
+            <tr><td>Dry coating loading and active fraction</td><td>mg/cm<sup>2</sup> and wt%; identify single- or double-sided loading</td><td>Allows the balance calculation to be audited.</td></tr>
+            <tr><td>Electrode density and porosity</td><td>g/cm<sup>3</sup> and % after calendering</td><td>Changes transport, utilization, wetting, and effective margin.</td></tr>
+            <tr><td>First-cycle efficiency</td><td>Per electrode and full cell where available</td><td>Quantifies cyclable-lithium loss and silicon/graphite interphase burden.</td></tr>
+            <tr><td>Overhang and registration</td><td>mm by edge or mapped area</td><td>Average N/P does not capture local cathode-anode mismatch.</td></tr>
+            <tr><td>Formation and charge protocol</td><td>C-rate, current steps, voltage holds, temperature, rest, and pressure</td><td>Controls electrode utilization, interphase formation, and plating risk.</td></tr>
+            <tr><td>E/C ratio and wetting</td><td>g/Ah, total mass, fill method, and rest time</td><td>Local electrolyte starvation can reduce effective negative-electrode access.</td></tr>
+            <tr><td>Plating diagnostics</td><td>Voltage relaxation, dQ/dV, reference potential, microscopy, or other method</td><td>Capacity retention alone cannot prove absence of plating.</td></tr>
+            <tr><td>Replicates and variability</td><td>n, mean, standard deviation, and failure count</td><td>Separates a real N/P effect from build or coating variation.</td></tr>
+          </tbody></table></div>
+        </section>
+
+        <section class="article-block">
+          <h2>13. N/P Ratio Depends on the Full Cell Design</h2>
+          <p>N/P ratio is an important electrode-balance number, but it should not be interpreted by itself. In practical cell design, the same nominal N/P ratio can represent very different risk depending on the anode chemistry, cathode loading, silicon content, electrolyte formulation, separator system, pressure condition, and charge protocol.</p>
+          <p>For graphite-rich cells, N/P ratio mainly describes the negative electrode's receiving-capacity margin during charge. The key concern is whether the graphite anode can accept lithium without approaching lithium plating under fast charge, low temperature, high SOC, aging, or local nonuniformity.</p>
+          <p>For silicon-containing anodes, the same N/P number carries additional meaning. Silicon increases anode capacity, but it also introduces lower first-cycle efficiency, volume expansion, SEI repair, swelling, and stronger dependence on binder, pressure, formation, and electrolyte additives. In these systems, N/P ratio affects not only plating margin, but also how deeply the silicon-containing anode is utilized.</p>
+          <p>For lithium-metal cells, the balance question changes again. The negative electrode is no longer a conventional insertion material with a fixed reversible intercalation capacity. Instead, the practical concern becomes lithium inventory, dead lithium formation, lithium morphology, interface stability, pressure, and the amount of lithium excess needed to support the target cycle life.</p>
+          <p>This is why N/P ratio should be evaluated together with the full cell design package: cathode chemistry, anode chemistry, practical reversible capacity, first-cycle efficiency, electrode loading, porosity, electrolyte wetting, formation protocol, separator design, pressure, temperature, and charge rate.</p>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/np-ratio/np-ratio-full-cell-design.png" alt="Three-card comparison showing how graphite, silicon-composite, and lithium-metal anodes require different interpretations of electrode balance" draggable="false">
+            </div>
+            <figcaption>The same nominal balance number can represent different design risk depending on anode chemistry. In graphite-rich cells, N/P ratio mainly describes lithium receiving-capacity margin and plating risk. In silicon-containing anodes, N/P also affects silicon utilization, expansion, first-cycle loss, and SEI repair. Lithium-metal cells instead require explicit lithium-inventory, interface, morphology, pressure, and cycle-life analysis. Conceptual Winigen Materials illustration; no proprietary cell-design data shown. &copy; Winigen Materials.</figcaption>
+          </figure>
+          <p><strong>The practical lesson is simple:</strong> N/P ratio is a useful starting point, but the real design question is whether the negative electrode can safely and repeatedly receive lithium under the actual operating and manufacturing conditions of the cell.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>14. How N/P Ratio Connects to Battery Materials Selection</h2>
+          <p>N/P ratio is often treated as a cell-design calculation, but every term in that calculation depends on material selection. The positive-electrode material defines the lithium source and the denominator of the ratio. LFP, LMFP, NMC, NCA, LCO, LMO, and LNMO differ in practical capacity, voltage window, loading target, moisture sensitivity, and high-voltage behavior. The relevant input is the practical reversible areal capacity of the chosen grade and electrode formulation, not a generic theoretical value.</p>
+          <p>The negative-electrode grade defines lithium receiving capacity and first-cycle lithium demand. Winigen's standard graphite listing, for example, gives a typical reversible-capacity range of 340-360 mAh/g and commonly at least 90% first-cycle efficiency, subject to grade and lot confirmation. High-power graphite changes particle-size and rate tradeoffs. Silicon, SiO<sub>x</sub>, and Si-C composites introduce additional variables: silicon fraction, capacity grade, initial efficiency, expansion, particle size, binder compatibility, and the degree of silicon utilization.</p>
+          <p>Electrolyte formulation changes the practical meaning of the calculated margin. A cell with an acceptable nominal N/P can still plate lithium if wetting is incomplete, low-temperature transport is weak, interfacial impedance is high, or the SEI is unstable. Salts, solvents, and additives can improve kinetics and interphase durability, but they do not replace correct electrode balancing. N/P should therefore be evaluated together with material grade, first-cycle efficiency, electrolyte formulation, formation, charge rate, temperature, pouch-cell pressure, wetting, and electrode alignment.</p>
+          <div class="article-table-wrap"><table class="article-table"><thead><tr><th>Design question</th><th>Relevant Winigen material or support</th></tr></thead><tbody>
+            <tr><td>What is the cathode's practical areal capacity?</td><td><a href="../products/battery-active-materials.html">LFP, LMFP, NMC, NCA, LCO, LMO, and LNMO active materials</a>, with grade-specific capacity, morphology, PSD, moisture, and documentation review.</td></tr>
+            <tr><td>What is the anode's reversible receiving capacity?</td><td><a href="../products/graphite-anode-material-standard-grade.html">Standard graphite</a>, <a href="../products/graphite-anode-material-high-power-grade.html">high-power graphite</a>, silicon, SiO<sub>x</sub>/Si-C, LTO, hard carbon, and lithium-metal options.</td></tr>
+            <tr><td>How much lithium is lost during formation?</td><td>Graphite and silicon-composite grade selection, first-cycle-efficiency review, and formation-sensitive full-cell comparison.</td></tr>
+            <tr><td>How should silicon expansion and utilization be controlled?</td><td><a href="../products/silicon-anode-powder.html">Silicon powder</a> and <a href="../products/siox-silicon-carbon-composite-anode-material.html">SiO<sub>x</sub>/Si-C composite</a> selection by particle size, silicon content, capacity grade, initial efficiency, expansion, and binder compatibility.</td></tr>
+            <tr><td>How stable is the negative-electrode interphase?</td><td><a href="../products/electrolyte-additives.html">FEC, VC, sulfur-containing, nitrile, phosphorus, and other additive screening</a> for SEI/CEI, gas, impedance, fast-charge, and temperature response.</td></tr>
+            <tr><td>Can the cell fast charge without plating?</td><td><a href="../products/custom-electrolyte-formulations.html">High-rate and low-temperature electrolyte formulation support</a>, including solvent, LiFSI/co-salt, additive, wetting, formation, and impedance strategy.</td></tr>
+            <tr><td>Will the balance translate to pouch cells?</td><td>R&amp;D-to-pilot screening across wetting, formation, EIS/DCIR, gas and swelling, stack pressure, registration, and replicate-cell validation with strategic partners.</td></tr>
+          </tbody></table></div>
+          <p>Winigen Materials supplies the active materials, electrolyte salts, solvents, additives, and formulation support that determine practical electrode balance. Final material selection should confirm morphology, particle-size distribution, reversible capacity, initial efficiency, moisture, packaging, COA/TDS availability, and the intended cell-validation stage.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>15. Bottom Line</h2>
+          <p>N/P ratio is a receiving-capacity margin, not a magic constant. Too little margin raises negative-electrode utilization and can increase lithium-plating sensitivity. Too much margin adds mass, volume, interphase area, and first-cycle loss while reducing cell-level energy. The right balance is the lowest margin that remains robust across the intended rate, temperature, aging, formation, electrode variation, and cell format.</p>
+          <p>For graphite, silicon-containing, fast-charge, and high-loading cells, nominal N/P should be paired with an effective-margin analysis. The most credible design evidence combines practical half-cell capacity, three-electrode or anode-potential information, formation response, matched-condition impedance, plating diagnostics, and realistic pouch-cell validation.</p>
+        </section>
+
+        <section class="article-block">
+          <h2>References and Further Reading</h2>
+          <p><strong>Figure-use note:</strong> Literature figures and tables are cited for technical context but are not reproduced unless their reuse license is explicit. The conceptual diagrams on this page are original illustrations and should not be interpreted as digitized data from the cited papers.</p>
+          <ol class="reference-list">
+            <li id="ref-1">Kasnatscheew, J. et al. A Tutorial into Practical Capacity and Mass Balancing of Lithium Ion Batteries. <em>Journal of The Electrochemical Society</em> 164, A2479-A2486 (2017). <a href="https://doi.org/10.1149/2.0961712jes">doi:10.1149/2.0961712jes</a>.</li>
+            <li id="ref-2">Kim, C.-S. et al. Effects of capacity ratios between anode and cathode on electrochemical properties for lithium polymer batteries. <em>Electrochimica Acta</em> 155, 431-436 (2015). <a href="https://doi.org/10.1016/j.electacta.2014.12.005">doi:10.1016/j.electacta.2014.12.005</a>.</li>
+            <li id="ref-3">Abe, Y. &amp; Kumagai, S. Effect of negative/positive capacity ratio on the rate and cycling performances of LiFePO<sub>4</sub>/graphite lithium-ion batteries. <em>Journal of Energy Storage</em> 19, 96-102 (2018). <a href="https://doi.org/10.1016/j.est.2018.07.012">doi:10.1016/j.est.2018.07.012</a>.</li>
+            <li id="ref-4">Waldmann, T. et al. Li plating as unwanted side reaction in commercial Li-ion cells: A review. <em>Journal of Power Sources</em> 384, 107-124 (2018). <a href="https://doi.org/10.1016/j.jpowsour.2018.02.063">doi:10.1016/j.jpowsour.2018.02.063</a>.</li>
+            <li id="ref-5">Chen, Z. et al. Effect of N/P ratios on the performance of LiNi<sub>0.8</sub>Co<sub>0.15</sub>Al<sub>0.05</sub>O<sub>2</sub>/SiO<sub>x</sub>-graphite lithium-ion batteries. <em>Journal of Power Sources</em> 439, 227056 (2019). <a href="https://doi.org/10.1016/j.jpowsour.2019.227056">doi:10.1016/j.jpowsour.2019.227056</a>.</li>
+            <li id="ref-6">Yourey, W. et al. Design Considerations for Fast Charging Lithium Ion Cells for NMC/MCMB Electrode Pairs. <em>Batteries</em> 7, 4 (2021). <a href="https://doi.org/10.3390/batteries7010004">doi:10.3390/batteries7010004</a>.</li>
+            <li id="ref-7">Luo, M. et al. Examining Effects of Negative to Positive Capacity Ratio in Three-Electrode Lithium-Ion Cells with Layered Oxide Cathode and Si Anode. <em>ACS Applied Energy Materials</em> 5, 5513-5518 (2022). <a href="https://doi.org/10.1021/acsaem.2c00665">doi:10.1021/acsaem.2c00665</a>.</li>
+            <li id="ref-8">Mu, G. et al. Impacts of negative to positive capacities ratios on the performance of next-generation lithium-ion batteries. <em>Electrochimica Acta</em> 406, 139878 (2022). <a href="https://doi.org/10.1016/j.electacta.2022.139878">doi:10.1016/j.electacta.2022.139878</a>.</li>
+            <li id="ref-9">Dong, T. et al. Challenges and Strategies of Fast-Charging Li-Ion Batteries. <em>Energy Materials Advances</em> 5, 0113 (2024). <a href="https://doi.org/10.34133/energymatadv.0113">doi:10.34133/energymatadv.0113</a>.</li>
+          </ol>
+        </section>
+
+        <div class="cta-panel"><h2>Discuss Electrode Balance and Cell Validation</h2><p>Share your cathode and anode chemistry, loading, practical capacity, silicon fraction, formation protocol, charge target, and cell format. Winigen Materials can help identify relevant active materials, electrolyte components, and a practical screening sequence, and can arrange development, testing, and validation with strategic partners.</p><a class="btn" href="../contact.html?topic=N%2FP%20ratio%20and%20cell%20design">Contact Winigen Materials</a></div>
+            <p class="article-copyright">All original diagrams on this page are &copy; Winigen Materials unless otherwise noted. They may not be reproduced, modified, or redistributed without permission.</p>
+    </article>
+
+      <aside class="article-side">
+        <p class="eyebrow">Winigen Portfolio</p>
+        <h2>Related Materials and Guides</h2>
+        <p>Connect electrode balance with active-material selection, electrolyte design, and cell-format validation.</p>
+        <div class="related-link-list">
+          <a href="../products/battery-active-materials.html">Battery Active Materials</a>
+          <a href="../products/graphite-anode-material-standard-grade.html">Graphite Anode Material</a>
+          <a href="../products/silicon-anode-powder.html">Silicon Anode Powder</a>
+          <a href="../products/siox-silicon-carbon-composite-anode-material.html">SiO<sub>x</sub>/Si-C Anode Material</a>
+          <a href="../products/lithium-iron-phosphate-lfp-energy-grade.html">LFP Cathode Material</a>
+          <a href="../products/lithium-nickel-manganese-cobalt-oxide-nmc811.html">NMC811 Cathode Material</a>
+          <a href="../products/electrolyte-additives.html">Electrolyte Additives</a>
+          <a href="coin-cell-to-pouch-cell-battery-material-validation.html">Coin to Pouch, Part 1</a>
+          <a href="coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">Coin to Pouch, Part 2</a>
+          <a href="fast-charge-all-weather-ev-battery-electrolytes.html">Fast-Charge Battery Design</a>
+          <a href="../knowledge.html">Knowledge Center</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container"><div class="section-title"><p class="eyebrow">Frequently Asked Questions</p><h2>N/P Ratio Design Questions</h2></div><div class="faq-list">
+      <details><summary>What does N/P ratio mean in a lithium-ion battery?</summary><p>N/P ratio is the practical reversible areal capacity of the negative electrode divided by that of the positive electrode. It describes the anode receiving-capacity margin during charge.</p></details>
+      <details><summary>What happens when N/P ratio is too low?</summary><p>The negative electrode reaches high lithiation earlier and has less tolerance for rate, cold temperature, aging, and local nonuniformity. Its potential can approach the lithium-plating regime.</p></details>
+      <details><summary>Is a higher N/P ratio always better?</summary><p>No. A higher ratio can add receiving margin but also increases negative-electrode mass, volume, interphase area, and first-cycle lithium consumption while lowering cell-level energy density.</p></details>
+      <details><summary>Why can effective anode receiving margin decrease during fast charge?</summary><p>Fast charge can make only part of the negative-electrode capacity kinetically accessible because of electrolyte transport, desolvation, interphase resistance, diffusion, wetting, temperature, and current nonuniformity.</p></details>
+      <details><summary>Should N/P be validated in pouch cells?</summary><p>Yes. Pouch cells expose loading variation, registration, overhang, wetting, pressure, and local current distribution that average coin-cell calculations may not capture.</p></details>
+    </div></div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
+<script src="../assets/js/main.js?v=20260615"></script>
+</body>
+</html>

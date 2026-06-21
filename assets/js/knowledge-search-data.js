@@ -24,6 +24,18 @@ window.winigenKnowledgeArticles = [
     url: "knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html"
   },
   {
+    title: "N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density",
+    stage: "Cell Development",
+    stages: ["Cell Development", "Materials", "Electrolytes & Interfaces"],
+    category: "Electrode Balance and Cell Design",
+    tags: ["N/P ratio", "electrode balancing", "lithium plating", "fast charge", "graphite", "silicon anode", "LFP", "NMC"],
+    keywords: ["negative positive capacity ratio", "areal capacity", "anode oversizing", "effective N/P", "lithium inventory", "three electrode cell", "pouch cell", "anode overhang", "first cycle efficiency", "silicon utilization", "cold charge"],
+    related_products: ["graphite anode", "silicon anode", "SiOx silicon carbon", "LFP", "NMC811", "electrolyte additives", "battery active materials"],
+    summary: "How to calculate and validate N/P ratio across graphite and silicon anodes, lithium-plating margin, fast-charge conditions, energy-density tradeoffs, and pouch-cell geometry.",
+    excerpt: "N/P ratio is the negative electrode's receiving-capacity margin, linking practical areal capacity with plating risk, electrode utilization, fast charge, cycle life, and cell-level energy.",
+    url: "knowledge/np-ratio-lithium-ion-battery-design.html"
+  },
+  {
     title: "Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes",
     stage: "Electrolytes & Interfaces",
     stages: ["Electrolytes & Interfaces", "Materials", "Cell Development"],

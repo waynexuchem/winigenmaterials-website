@@ -758,3 +758,39 @@ body .structure-fallback.structure-fallback--active { display: grid; font-size: 
   text-align: justify !important;
   text-justify: inter-word;
 }
+
+/* Light-touch protection for original knowledge-article figures. */
+.protected-figure,
+.protected-figure img {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.figure-lock {
+  position: relative;
+}
+
+.figure-lock img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.figure-lock::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.article-copyright {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(20, 40, 73, 0.14);
+  color: #5b6d8e;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}

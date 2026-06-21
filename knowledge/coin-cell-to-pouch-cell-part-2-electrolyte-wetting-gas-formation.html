@@ -25,12 +25,12 @@
   "author":{"@id":"https://www.winigenmaterials.com/#organization"},
   "publisher":{"@id":"https://www.winigenmaterials.com/#organization"},
   "image":[
-    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-translation-map.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-translation-map.png",
     "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-process-chain-kaden-cc-by.jpg",
-    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/lean-electrolyte-and-trapped-gas.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/lean-electrolyte-and-trapped-gas.png",
     "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/formation-process-design-schomburg-cc-by.jpg",
-    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/formation-gas-swelling-causal-chain.svg",
-    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/gas-measurement-framework.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/formation-gas-swelling-causal-chain.png",
+    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-part-2/gas-measurement-framework.png",
     "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg"
   ],
   "about":[
@@ -102,9 +102,11 @@
         <p>The point is not that coin cells are unreliable. Coin cells are excellent for early material discovery, mechanism screening, electrolyte/additive comparison, and low-material-demand experiments. The point is that pouch cells test additional variables that a coin-cell fixture often masks or over-simplifies.</p>
         <div class="article-callout"><strong>Central point:</strong> coin cells mainly test intrinsic electrochemical compatibility under small-area, electrolyte-rich, fixture-defined conditions. Pouch cells test whether the same chemistry remains robust when local ionic transport, gas evolution, interphase formation, pressure distribution, and manufacturing variability become coupled.</div>
 
-        <figure class="article-figure">
-          <img src="../assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-translation-map.svg" alt="Electrolyte wetting translation map comparing coin cell screening and pouch cell validation">
-          <figcaption>Schematic showing why electrolyte amount, wetting time, vacuum fill, formation, pressure, and gas can change how a formulation translates from coin cells to pouch cells.</figcaption>
+        <figure class="article-figure protected-figure">
+          <div class="figure-lock">
+            <img src="../assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-translation-map.png" alt="Electrolyte wetting translation map comparing coin cell screening and pouch cell validation" draggable="false">
+          </div>
+          <figcaption>Schematic showing why electrolyte amount, wetting time, vacuum fill, formation, pressure, and gas can change how a formulation translates from coin cells to pouch cells. © Winigen Materials.</figcaption>
         </figure>
 
         <section class="article-block">
@@ -160,29 +162,37 @@
         <section class="article-block">
           <h2>4. Wetting Is a Hidden Translation Variable</h2>
           <p>Electrolyte filling and wetting are quality-critical manufacturing steps. Kaden and co-workers reviewed how wetting depends on the entire production chain, including mixing, coating, calendering, drying, stacking, filling, formation, and aging.<sup><a href="#ref-3">[3]</a></sup> A cathode or anode can look chemically sound and still fail because pore structure, binder distribution, calendering density, separator wettability, or rest time prevents uniform electrolyte saturation.</p>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-process-chain-kaden-cc-by.jpg" alt="Battery production process chain and properties relevant to electrolyte wetting">
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-process-chain-kaden-cc-by.jpg" alt="Battery production process chain and properties relevant to electrolyte wetting" draggable="false">
+            </div>
             <figcaption>Electrolyte wetting depends on upstream electrode production, cell production, filling, formation, and aging conditions. Reproduced from Kaden et al., Figure 2, <em>Batteries</em> 9, 164 (2023), <a href="https://doi.org/10.3390/batteries9030164">doi:10.3390/batteries9030164</a>, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
           </figure>
           <p>Pouch validation therefore needs wetting metadata. Record electrolyte mass, E/C ratio, fill temperature, vacuum level, vacuum hold, injection sequence, rest time before formation, cell orientation, separator type, electrode porosity, electrode loading, calendered density, and drying history. Without those details, a failed pouch build may be misdiagnosed as a poor additive or salt.</p>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-part-2/lean-electrolyte-and-trapped-gas.svg" alt="Lean electrolyte, E/C ratio, high-loading electrode, wetting time, vacuum fill, and trapped gas schematic">
-            <figcaption>Schematic: at lower E/C ratio and higher electrode loading, electrolyte wetting becomes a pore-network and process-control problem. Lautenschlaeger et al. used pore-scale lattice Boltzmann modeling to show that particle size, binder distribution, volume fraction, wetting behavior, electrolyte saturation, and trapped residual gas can all affect filling.<sup><a href="#ref-5">[5]</a></sup></figcaption>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-part-2/lean-electrolyte-and-trapped-gas.png" alt="Lean electrolyte, E/C ratio, high-loading electrode, wetting time, vacuum fill, and trapped gas schematic" draggable="false">
+            </div>
+            <figcaption>Schematic: at lower E/C ratio and higher electrode loading, electrolyte wetting becomes a pore-network and process-control problem. Lautenschlaeger et al. used pore-scale lattice Boltzmann modeling to show that particle size, binder distribution, volume fraction, wetting behavior, electrolyte saturation, and trapped residual gas can all affect filling.<sup><a href="#ref-5">[5]</a></sup> © Winigen Materials.</figcaption>
           </figure>
         </section>
 
         <section class="article-block">
           <h2>5. Formation Is Not Just the First Cycle</h2>
           <p>Formation is a cell-finishing process. It defines SEI and CEI chemistry, consumes additives, consumes lithium inventory, generates gas, changes impedance, and determines whether the cell needs degassing and resealing before meaningful cycling. Schomburg and co-workers describe formation as an interlocking problem between material/cell design and process conditions such as temperature, pressure, formation cycling, and degassing.<sup><a href="#ref-4">[4]</a></sup></p>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-part-2/formation-process-design-schomburg-cc-by.jpg" alt="Knowledge-driven lithium-ion battery formation process design coupling material and cell design with process conditions">
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-part-2/formation-process-design-schomburg-cc-by.jpg" alt="Knowledge-driven lithium-ion battery formation process design coupling material and cell design with process conditions" draggable="false">
+            </div>
             <figcaption>Formation connects material and cell design with process conditions such as temperature, pressure, formation cycling, and degassing. Reproduced from Schomburg et al., Figure 30, <em>Energy &amp; Environmental Science</em> 17, 2686-2733 (2024), <a href="https://doi.org/10.1039/D3EE03559J">doi:10.1039/D3EE03559J</a>, under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</figcaption>
           </figure>
           <p>For electrolyte and additive screening, this matters because some additives are intentionally consumed during formation. A formulation that looks excellent in an electrolyte-rich coin cell may consume too much additive, generate too much gas, or build a resistive interphase under pouch-cell formation conditions. Conversely, a formulation that looks modest in an early coin test may perform better after an optimized fill, rest, and formation protocol.</p>
           <p>Minimum formation data to request includes formation current and voltage profile, temperature, stack pressure or fixture condition, rest time before formation, degassing timing, first-cycle efficiency, dQ/dV or voltage profile during formation, EIS/DCIR before and after formation, thickness change or gas volume, and post-formation OCV/self-discharge.</p>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-part-2/formation-gas-swelling-causal-chain.svg" alt="Formation protocol additive consumption gas generation swelling and impedance causal chain">
-            <figcaption>Schematic connecting formation protocol, interphase growth, additive consumption, gas generation, swelling, and impedance. The measurement sequence is informed by the formation-process framework of Schomburg et al.<sup><a href="#ref-4">[4]</a></sup> and the gas-diagnostics review of Zheng et al.<sup><a href="#ref-6">[6]</a></sup></figcaption>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-part-2/formation-gas-swelling-causal-chain.png" alt="Formation protocol additive consumption gas generation swelling and impedance causal chain" draggable="false">
+            </div>
+            <figcaption>Schematic connecting formation protocol, interphase growth, additive consumption, gas generation, swelling, and impedance. The measurement sequence is informed by the formation-process framework of Schomburg et al.<sup><a href="#ref-4">[4]</a></sup> and the gas-diagnostics review of Zheng et al.<sup><a href="#ref-6">[6]</a></sup> © Winigen Materials.</figcaption>
           </figure>
         </section>
 
@@ -190,9 +200,11 @@
           <h2>6. Gas Generation Becomes Visible in Pouch Cells</h2>
           <p>Gas evolution can lead to pouch swelling, smoking, and device-level failure, and gas monitoring can reveal dynamic chemical events such as SEI formation, electrode structural change, and electrolyte degradation.<sup><a href="#ref-6">[6]</a></sup> In practical pouch development, gas is not just a safety note. It is a diagnostic signal.</p>
           <p>A good gas-and-swelling screen should distinguish formation gas, storage gas, high-temperature gas, high-voltage gas, and gas generated during aggressive rate or low-temperature operation. It should also distinguish gas volume from gas consequence: a small amount of gas may be manageable if degassing and sealing are robust, while localized gas pockets can create soft regions, contact loss, delamination, and current-density gradients.</p>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-part-2/gas-measurement-framework.svg" alt="Gas measurement framework covering volume timing and electrochemical consequence">
-            <figcaption>Schematic measurement framework: quantify how much gas forms, when it forms, and whether it changes pressure, contact, impedance, leakage, or post-mortem chemistry.</figcaption>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-part-2/gas-measurement-framework.png" alt="Gas measurement framework covering volume timing and electrochemical consequence" draggable="false">
+            </div>
+            <figcaption>Schematic measurement framework: quantify how much gas forms, when it forms, and whether it changes pressure, contact, impedance, leakage, or post-mortem chemistry. © Winigen Materials.</figcaption>
           </figure>
         </section>
 
@@ -202,13 +214,17 @@
           <p>Son et al. reported that impedance, rate performance, cycling stability, and lithium plating signatures differed between coin and pouch cells even with matched materials and electrochemical conditions.<sup><a href="#ref-1">[1]</a></sup> The lesson is not that coin-cell ranking is useless. The lesson is that final ranking should be based on a controlled translation test.</p>
           <p>In coin-to-pouch translation, impedance should not be treated as a single number. Ohmic resistance can shift with electrolyte amount, separator wetting, tab geometry, and current-collector path. Interfacial resistance can shift with formation protocol, additive consumption, CEI/SEI chemistry, contact loss, and gas pockets. Diffusion or low-frequency impedance can shift with electrode loading, tortuosity, and local electrolyte starvation. This is why EIS before formation, after formation, and during aging is more useful than a single end-of-test impedance value. EIS should be compared at matched SOC, temperature, rest time, and compression condition.</p>
           <p>A translation study should not compare one coin cell against one pouch cell. Replicate count, cell-to-cell scatter, failure distribution, and outlier behavior matter because pouch cells introduce more process variables than coin cells. Ranking confidence should come from a controlled lot, a documented process, and enough replicate cells to separate material effects from assembly variation.</p>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg" alt="Coin and pouch cell rate performance cycling impedance and lithium plating comparison">
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg" alt="Coin and pouch cell rate performance cycling impedance and lithium plating comparison" draggable="false">
+            </div>
             <figcaption>Rate performance, cycling, impedance evolution, and post-mortem graphite-anode observations can differ by format even when chemistry is held constant. Reproduced from Son et al., Figures 3 and 4, <em>Energy &amp; Environmental Materials</em> (2023), <a href="https://doi.org/10.1002/eem2.12615">doi:10.1002/eem2.12615</a>, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
           </figure>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-part-2/coin-pouch-ranking-reversal.svg" alt="Framework showing why a coin-cell winner can rank lower in pouch cells">
-            <figcaption>Schematic comparison of illustrative rankings across retention, rate capability, and impedance growth. The axes define the metric and test progression; the curves demonstrate why chemistry A and chemistry B may rank differently after pouch-cell process variables become visible.</figcaption>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-part-2/coin-pouch-ranking-reversal.png" alt="Framework showing why a coin-cell winner can rank lower in pouch cells" draggable="false">
+            </div>
+            <figcaption>Schematic comparison of illustrative rankings across retention, rate capability, and impedance growth. The axes define the metric and test progression; the curves demonstrate why chemistry A and chemistry B may rank differently after pouch-cell process variables become visible. © Winigen Materials.</figcaption>
           </figure>
         </section>
 
@@ -239,10 +255,10 @@
               <thead><tr><th>Parameter</th><th>Recommended reporting format</th><th>Why it matters</th></tr></thead>
               <tbody>
                 <tr><td>E/C ratio</td><td>g electrolyte per Ah, plus total electrolyte mass</td><td>Controls lean-electrolyte stress, wetting margin, and additive inventory.</td></tr>
-                <tr><td>Areal capacity</td><td>mAh/cm<sup>2</sup> for cathode and anode</td><td>Determines practical transport demand and relevance to high-energy cells.</td></tr>
+                <tr><td>Areal capacity</td><td>mAh/cm² for cathode and anode</td><td>Determines practical transport demand and relevance to high-energy cells.</td></tr>
                 <tr><td>Electrode loading</td><td>mg/cm<sup>2</sup> and active-material wt%</td><td>Connects material utilization with electrode architecture.</td></tr>
                 <tr><td>Electrode porosity / density</td><td>% porosity or g/cm<sup>3</sup> after calendering</td><td>Controls wetting kinetics, tortuosity, and ionic resistance.</td></tr>
-                <tr><td>N/P ratio</td><td>Capacity ratio based on practical reversible capacity</td><td>Affects lithium inventory, plating risk, and full-cell interpretation.</td></tr>
+                <tr><td><a href="np-ratio-lithium-ion-battery-design.html">N/P ratio</a></td><td>Capacity ratio based on practical reversible capacity</td><td>Affects lithium inventory, plating risk, and full-cell interpretation.</td></tr>
                 <tr><td>Formation protocol</td><td>C-rate, voltage holds, temperature, rest time, pressure</td><td>Controls SEI/CEI chemistry, gas evolution, and early impedance.</td></tr>
                 <tr><td>Pressure condition</td><td>psi or MPa, fixture type, and pressure uniformity if known</td><td>Important for lithium metal, silicon, solid-state, and high-loading electrodes.</td></tr>
                 <tr><td>Gas / swelling</td><td>Thickness change %, gas volume, or degassing mass/volume</td><td>Reveals parasitic reactions and pouch-specific reliability risk.</td></tr>
@@ -256,7 +272,7 @@
 
         <section class="article-block">
           <h2>Winigen Perspective</h2>
-          <p>Winigen Materials supplies <a href="../products/lithium-salts.html">lithium salts</a>, <a href="../products/next-generation-salts.html">next-generation salts</a>, <a href="../products/battery-solvents.html">low-moisture solvents</a>, <a href="../products/electrolyte-additives.html">electrolyte additives</a>, <a href="../products/battery-active-materials.html">battery active materials</a>, <a href="../products/solid-state-electrolytes.html">solid-state electrolytes</a>, and <a href="../products/custom-formulations.html">custom electrolyte formulations</a>. Material access is only part of scale-up. Winigen can also arrange development, testing, and validation of customer materials, processes, and application requirements with strategic partners, connecting candidate selection to the target cell format and evidence plan.</p>
+          <p>Winigen Materials supplies <a href="../products/lithium-salts.html">lithium salts</a>, <a href="../products/next-generation-salts.html">next-generation salts</a>, <a href="../products/battery-solvents.html">low-moisture solvents</a>, <a href="../products/electrolyte-additives.html">electrolyte additives</a>, <a href="../products/battery-active-materials.html">battery active materials</a>, <a href="../products/solid-state-electrolytes.html">solid-state electrolytes</a>, and <a href="../products/custom-electrolyte-formulations.html">custom electrolyte formulations</a>. Material access is only part of scale-up. Winigen can also arrange development, testing, and validation of customer materials, processes, and application requirements with strategic partners, connecting candidate selection to the target cell format and evidence plan.</p>
           <p>For a pouch-cell program, the right question is not simply, "Which salt or additive gave the best coin-cell retention?" A better question is: "Which material set gives reproducible performance when electrolyte amount, wetting, formation, gas, pressure, N/P ratio, and electrode loading are controlled?"</p>
           <div class="cta-panel">
             <h2>Discuss Your Pouch-Cell Translation Plan</h2>
@@ -276,7 +292,8 @@
             <li id="ref-6"><a href="https://doi.org/10.1002/celc.202400065">Zheng, T. et al. Gas Evolution in Li-Ion Rechargeable Batteries: A Review on Operando Sensing Technologies, Gassing Mechanisms, and Emerging Trends. <em>ChemElectroChem</em> 11, e202400065 (2024).</a></li>
           </ol>
         </section>
-      </article>
+            <p class="article-copyright">All original diagrams on this page are © Winigen Materials unless otherwise noted. They may not be reproduced, modified, or redistributed without permission.</p>
+    </article>
 
       <aside class="article-side">
         <p class="eyebrow">Winigen Portfolio</p>
@@ -284,7 +301,7 @@
         <p>Connect pouch-cell translation with material families and screening resources.</p>
         <div class="related-link-list">
           <a href="coin-cell-to-pouch-cell-battery-material-validation.html">Part 1: Coin to Pouch Validation</a>
-          <a href="../products/custom-formulations.html">Custom Formulations</a>
+          <a href="../products/custom-electrolyte-formulations.html">Custom Formulations</a>
           <a href="../products/electrolyte-additives.html">Electrolyte Additives</a>
           <a href="../products/battery-solvents.html">Battery Solvents</a>
           <a href="../products/lithium-salts.html">Lithium Salts</a>

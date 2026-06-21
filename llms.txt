@@ -41,6 +41,7 @@ Use this framework to understand how Winigen connects chemical supply, interface
 
 - Coin-cell to pouch-cell battery material validation before scale-up, Part 1: https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html
 - Coin-cell to pouch-cell battery material validation, Part 2 - why wetting, gas, and formation change battery material rankings: https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html
+- N/P ratio design for lithium-ion batteries, including electrode balancing, lithium-plating risk, fast charge, silicon anodes, and pouch-cell validation: https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html
 - Automotive battery materials and solid-state commercialization roadmap: https://www.winigenmaterials.com/knowledge/automotive-battery-materials-roadmap.html
 - LiPF6 vs LiFSI vs LiTFSI: https://www.winigenmaterials.com/knowledge/lipf6-vs-lifsi-vs-litfsi.html
 - LiFSI electrolytes for lithium-metal batteries: https://www.winigenmaterials.com/knowledge/lifsi-lithium-metal-batteries.html

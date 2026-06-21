@@ -25,11 +25,11 @@
   "author":{"@id":"https://www.winigenmaterials.com/#organization"},
   "publisher":{"@id":"https://www.winigenmaterials.com/#organization"},
   "image":[
-    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-to-pouch-validation-ladder.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-to-pouch-validation-ladder.png",
     "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-pouch-cell-architecture-voltage-cc-by.jpg",
-    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/pouch-cell-process-control-map.svg",
+    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/pouch-cell-process-control-map.png",
     "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg",
-    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/battery-scale-up-qc-evidence-chain.svg"
+    "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/battery-scale-up-qc-evidence-chain.png"
   ],
   "about":[
     "Pouch-cell validation",
@@ -100,9 +100,11 @@
         <p>When a program moves into larger-area cells, the question changes. The team is no longer asking only whether a salt, solvent, additive, active material, or solid electrolyte can work. It is asking whether the complete materials system can be filled, wetted, formed, compressed, degassed, sealed, cycled, and reproduced under practical constraints.</p>
         <div class="article-callout"><strong>Core principle:</strong> scale-up validation should preserve enough experimental control to separate chemistry effects from cell-format and process effects. A disappointing pouch cell does not automatically mean the material is poor; a strong coin cell does not automatically mean the process is ready.</div>
 
-        <figure class="article-figure">
-          <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-to-pouch-validation-ladder.svg" alt="Five-stage battery material validation ladder from material QC to multilayer pouch cells">
-          <figcaption>A staged validation ladder for connecting material quality, coin-cell screening, full-cell pairing, single-layer pouch learning, and multilayer pouch reproducibility. Winigen Materials framework.</figcaption>
+        <figure class="article-figure protected-figure">
+          <div class="figure-lock">
+            <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-to-pouch-validation-ladder.png" alt="Five-stage battery material validation ladder from material QC to multilayer pouch cells" draggable="false">
+          </div>
+          <figcaption>A staged validation ladder for connecting material quality, coin-cell screening, full-cell pairing, single-layer pouch learning, and multilayer pouch reproducibility. Winigen Materials framework. © Winigen Materials.</figcaption>
         </figure>
 
         <section class="article-block">
@@ -111,8 +113,10 @@
           <p>The limitation is not that coin-cell data are inherently bad. The limitation is that cell hardware contributes its own pressure, contact resistance, electrolyte excess, gas volume, current path, and thermal environment. Research-cell reviews therefore recommend choosing the cell format according to the question being asked and avoiding claims that exceed what the fixture can establish.<sup><a href="#ref-2">[2]</a></sup></p>
           <p>Son and co-workers provided a particularly clear format comparison using the same NCA cathode, graphite anode, electrolyte, loading, calendaring, and electrochemical conditions in approximately 7 mAh coin cells and pouch cells ranging from 24 to about 1000 mAh.<sup><a href="#ref-1">[1]</a></sup> The normalized second-cycle voltage profiles were closely aligned, yet impedance, rate performance, aging, and lithium-plating behavior differed strongly with format.</p>
 
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-cell-architecture-voltage-cc-by.jpg" alt="Coin-cell and pouch-cell construction with capacity and normalized voltage profiles">
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-cell-architecture-voltage-cc-by.jpg" alt="Coin-cell and pouch-cell construction with capacity and normalized voltage profiles" draggable="false">
+            </div>
             <figcaption>Coin and pouch construction and second-cycle voltage profiles for matched NCA/graphite cells. Normalizing capacity makes the voltage curves appear similar, but that similarity does not establish equivalent impedance or aging behavior. Reproduced from Son et al., Figure 1, <em>Energy &amp; Environmental Materials</em> (2023), <a href="https://doi.org/10.1002/eem2.12615">doi:10.1002/eem2.12615</a>, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
           </figure>
         </section>
@@ -144,9 +148,11 @@
             <div class="metric-card"><strong>Measure sensitivity</strong><span>Repeat across electrolyte loading, separator, electrode porosity, and aging time before formation.</span></div>
           </div>
 
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-validation/pouch-cell-process-control-map.svg" alt="Pouch-cell process controls for wetting formation gas swelling and pressure">
-            <figcaption>Pouch cells expose coupled filling, formation, gas, swelling, pressure, and large-area contact effects. Winigen Materials framework.</figcaption>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-validation/pouch-cell-process-control-map.png" alt="Pouch-cell process controls for wetting formation gas swelling and pressure" draggable="false">
+            </div>
+            <figcaption>Pouch cells expose coupled filling, formation, gas, swelling, pressure, and large-area contact effects. Winigen Materials framework. © Winigen Materials.</figcaption>
           </figure>
         </section>
 
@@ -184,8 +190,10 @@
           <p>In the matched-format study by Son et al., the high-frequency series resistance was 6.227 ohm for the coin cell and 0.025 ohm for the 1 Ah pouch cell; the combined SEI and charge-transfer semicircle contribution was 11.84 and 0.05 ohm, respectively.<sup><a href="#ref-1">[1]</a></sup> The authors showed that much of the resistance difference can be understood through electrode area and parallel reaction pathways, while extra coin-cell hardware can add contact resistance.</p>
           <p>The practical lesson is not that pouch cells are always intrinsically better. It is that raw resistance in ohms cannot be compared casually between cell sizes. Report electrode area, capacity, loading, state of charge, temperature, perturbation amplitude, and normalization method. Then connect impedance to the actual performance question: polarization, power, heat, lithium plating, or degradation.</p>
 
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg" alt="Rate performance cycle retention impedance and graphite post-mortem comparison for coin and pouch cells">
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg" alt="Rate performance cycle retention impedance and graphite post-mortem comparison for coin and pouch cells" draggable="false">
+            </div>
             <figcaption>Rate performance, capacity retention, EIS evolution, and graphite-anode post-mortem comparison for matched coin and pouch NCA/graphite cells. In this study, the higher-resistance coin format showed lower rate capability, faster early fade, and visible lithium plating. Reproduced from Son et al., Figure 4, <em>Energy &amp; Environmental Materials</em> (2023), <a href="https://doi.org/10.1002/eem2.12615">doi:10.1002/eem2.12615</a>, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
           </figure>
         </section>
@@ -193,9 +201,11 @@
         <section class="article-block">
           <h2>What to Measure Before Scale-Up</h2>
           <p>A credible pouch-cell program needs an evidence chain that links incoming materials to electrode process, assembly, electrochemistry, and failure analysis. Scale-up reviews consistently identify reproducibility, material quantity, process compatibility, and the gap between laboratory demonstrations and manufacturing constraints as central challenges.<sup><a href="#ref-8">[8]</a></sup></p>
-          <figure class="article-figure">
-            <img src="../assets/images/knowledge/coin-to-pouch-validation/battery-scale-up-qc-evidence-chain.svg" alt="Battery scale-up quality-control evidence chain">
-            <figcaption>A practical QC chain for distinguishing material, electrode, assembly, electrochemical, and failure-mechanism variation. Winigen Materials framework.</figcaption>
+          <figure class="article-figure protected-figure">
+            <div class="figure-lock">
+              <img src="../assets/images/knowledge/coin-to-pouch-validation/battery-scale-up-qc-evidence-chain.png" alt="Battery scale-up quality-control evidence chain" draggable="false">
+            </div>
+            <figcaption>A practical QC chain for distinguishing material, electrode, assembly, electrochemical, and failure-mechanism variation. Winigen Materials framework. © Winigen Materials.</figcaption>
           </figure>
 
           <div class="article-table-wrap"><table class="article-table">
@@ -248,7 +258,8 @@
             <li id="ref-8"><a href="https://doi.org/10.1038/s41565-019-0371-8">Cao, Y. et al. Bridging the academic and industrial metrics for next-generation practical batteries. <em>Nature Nanotechnology</em> 14, 200-207 (2019).</a></li>
           </ol>
         </section>
-      </article>
+            <p class="article-copyright">All original diagrams on this page are © Winigen Materials unless otherwise noted. They may not be reproduced, modified, or redistributed without permission.</p>
+    </article>
 
       <aside class="article-side">
         <p class="eyebrow">Winigen Portfolio</p>
