@@ -9,6 +9,11 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
+<meta name="author" content="Winigen Materials">
+<meta property="article:author" content="https://www.winigenmaterials.com/about.html">
+<meta property="article:publisher" content="https://www.winigenmaterials.com/">
+
+<link rel="author" href="https://www.winigenmaterials.com/about.html">
 <meta property="og:site_name" content="Winigen Materials">
 <meta property="og:title" content="N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density">
 <meta property="og:description" content="Learn how lithium-ion battery N/P ratio controls lithium plating risk, fast-charge capability, cycle life, and energy density, with calculations and graphite, silicon, LFP, and NMC design guidance.">
@@ -33,38 +38,58 @@
 .article-hero{padding:78px 0}.article-hero .section-title{max-width:1080px}.article-hero h1{font-size:clamp(42px,5vw,70px)}.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:34px;align-items:start}.article-main,.article-side{min-width:0;background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}.article-side{position:sticky;top:104px}.article-main p{line-height:1.78;text-align:justify}.article-main a{color:var(--blue);font-weight:800}.article-block{margin-top:30px;padding-top:26px;border-top:1px solid rgba(18,32,51,.1)}.article-block>ul,.article-block>ol{display:grid;gap:10px;padding-left:30px;line-height:1.68}.article-block>ul li,.article-block>ol li{padding-left:4px}.article-callout{margin:24px 0;padding:22px 24px;border-left:4px solid var(--blue);border-radius:0 14px 14px 0;background:#eef5ff}.article-callout strong{color:var(--navy)}.article-figure{margin:26px 0;border:1px solid rgba(18,32,51,.1);border-radius:18px;overflow:hidden;background:#fff}.article-figure img{display:block;width:100%;height:auto;object-fit:contain;background:#f4f7fb}.article-figure figcaption{padding:14px 16px;color:#53627c;font-size:.92rem;line-height:1.58;border-top:1px solid rgba(18,32,51,.08)}.article-table-wrap{overflow-x:auto;margin:20px 0 22px;border:1px solid rgba(18,32,51,.1);border-radius:16px;background:#fff}.article-table{width:100%;border-collapse:collapse;min-width:760px}.article-table th{background:#14213d;color:#fff;text-align:left;padding:13px 15px;font-size:13px}.article-table td{padding:13px 15px;border-top:1px solid rgba(18,32,51,.1);color:#2b3950;vertical-align:top;line-height:1.48}.formula-box{margin:22px 0;padding:20px 24px;border:1px solid rgba(42,102,217,.22);border-radius:14px;background:#f7faff;color:var(--navy);font-size:1.08rem;font-weight:800;text-align:center}.formula-equation{display:flex;align-items:center;justify-content:center;gap:14px}.formula-equation .fraction{display:inline-grid;grid-template-rows:auto auto;align-items:center;min-width:min(620px,78%);font-size:1.05rem}.formula-equation .numerator{padding:0 16px 9px;border-bottom:2px solid var(--navy)}.formula-equation .denominator{padding:9px 16px 0}.reference-list{display:grid;gap:12px;padding-left:22px;margin:18px 0 0}.reference-list li{color:#40516f;line-height:1.58;padding-left:4px}.reference-list a{color:var(--blue);font-weight:850;text-decoration:none}.reference-list a:hover{text-decoration:underline}.related-link-list{display:grid;gap:10px;margin-top:16px}.related-link-list a{display:block;padding:12px 14px;border:1px solid rgba(18,32,51,.1);border-radius:12px;background:#f8fbff;color:var(--navy);font-weight:850;text-decoration:none}.related-link-list a:hover{color:var(--blue);border-color:rgba(42,102,217,.28)}.faq-list{display:grid;gap:12px;max-width:920px;margin:0 auto}.faq-list details{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.9);box-shadow:0 10px 26px rgba(15,31,77,.06);padding:18px 20px}.faq-list summary{cursor:pointer;color:var(--navy);font-weight:900}.faq-list p{margin:12px 0 0}.cta-panel{margin-top:30px;padding:28px;border:1px solid rgba(42,102,217,.22);border-radius:18px;background:#eaf2ff}.cta-panel .btn{margin-top:8px;color:#fff}.cta-panel .btn:hover{color:#fff}@media(max-width:900px){.article-layout{grid-template-columns:1fr}.article-side{position:static}.article-main,.article-side{padding:24px}}@media(max-width:560px){.article-hero{padding:56px 0}.article-main,.article-side{padding:20px}.article-table{min-width:680px}.formula-equation{align-items:stretch;flex-direction:column;gap:10px}.formula-equation .fraction{min-width:100%;font-size:.92rem}}
 </style>
 <script type="application/ld+json">{
-  "@context":"https://schema.org",
-  "@type":"TechArticle",
-  "@id":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html#article",
-  "headline":"N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density",
-  "description":"A practical guide to lithium-ion battery N/P ratio calculation, lithium plating margin, fast-charge behavior, silicon-anode utilization, and coin-to-pouch validation.",
-  "url":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html",
-  "datePublished":"2026-06-19",
-  "dateModified":"2026-06-20",
-  "author":{"@id":"https://www.winigenmaterials.com/#organization"},
-  "publisher":{"@id":"https://www.winigenmaterials.com/#organization"},
-  "image":[
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-receiving-capacity.png",
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-calculation-example.png",
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/voltage-capacity-matching.png",
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-tradeoff-window.png",
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/yourey-fast-charge-np-ratio-figure-3-cc-by.png",
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/nominal-vs-effective-np-ratio.png",
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/coin-vs-pouch-np-ratio.png",
-    "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-full-cell-design.png"
-  ],
-  "about":["N/P ratio","electrode balancing","lithium plating","fast charging","silicon anodes","graphite anodes","pouch-cell validation"],
-  "citation":[
-    "Kasnatscheew et al., A Tutorial into Practical Capacity and Mass Balancing of Lithium Ion Batteries, Journal of The Electrochemical Society 164, A2479-A2486 (2017).",
-    "Kim et al., Effects of capacity ratios between anode and cathode on electrochemical properties for lithium polymer batteries, Electrochimica Acta 155, 431-436 (2015).",
-    "Abe and Kumagai, Effect of negative/positive capacity ratio on the rate and cycling performances of LiFePO4/graphite lithium-ion batteries, Journal of Energy Storage 19, 96-102 (2018).",
-    "Yourey et al., Design Considerations for Fast Charging Lithium Ion Cells for NMC/MCMB Electrode Pairs, Batteries 7, 4 (2021).",
-    "Chen et al., Effect of N/P ratios on the performance of LiNi0.8Co0.15Al0.05O2/SiOx-graphite lithium-ion batteries, Journal of Power Sources 439, 227056 (2019).",
-    "Luo et al., Examining Effects of Negative to Positive Capacity Ratio in Three-Electrode Lithium-Ion Cells with Layered Oxide Cathode and Si Anode, ACS Applied Energy Materials 5, 5513-5518 (2022).",
-    "Mu et al., Impacts of negative to positive capacities ratios on the performance of next-generation lithium-ion batteries, Electrochimica Acta 406, 139878 (2022).",
-    "Dong et al., Challenges and Strategies of Fast-Charging Li-Ion Batteries, Energy Materials Advances 5, 0113 (2024)."
-  ],
-  "mainEntityOfPage":"https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html"
+    "@context":  "https://schema.org",
+    "@type":  "TechArticle",
+    "@id":  "https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html#article",
+    "headline":  "N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density",
+    "description":  "A practical guide to lithium-ion battery N/P ratio calculation, lithium plating margin, fast-charge behavior, silicon-anode utilization, and coin-to-pouch validation.",
+    "url":  "https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html",
+    "datePublished":  "2026-06-19",
+    "dateModified":  "2026-06-20",
+    "author":  {
+                   "@type":  "Organization",
+                   "name":  "Winigen Materials",
+                   "url":  "https://www.winigenmaterials.com/"
+               },
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "Winigen Materials",
+                      "url":  "https://www.winigenmaterials.com/",
+                      "logo":  {
+                                   "@type":  "ImageObject",
+                                   "url":  "https://www.winigenmaterials.com/assets/images/winigen-logo.png"
+                               }
+                  },
+    "image":  [
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-receiving-capacity.png",
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-calculation-example.png",
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/voltage-capacity-matching.png",
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-tradeoff-window.png",
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/yourey-fast-charge-np-ratio-figure-3-cc-by.png",
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/nominal-vs-effective-np-ratio.png",
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/coin-vs-pouch-np-ratio.png",
+                  "https://www.winigenmaterials.com/assets/images/knowledge/np-ratio/np-ratio-full-cell-design.png"
+              ],
+    "about":  [
+                  "N/P ratio",
+                  "electrode balancing",
+                  "lithium plating",
+                  "fast charging",
+                  "silicon anodes",
+                  "graphite anodes",
+                  "pouch-cell validation"
+              ],
+    "citation":  [
+                     "Kasnatscheew et al., A Tutorial into Practical Capacity and Mass Balancing of Lithium Ion Batteries, Journal of The Electrochemical Society 164, A2479-A2486 (2017).",
+                     "Kim et al., Effects of capacity ratios between anode and cathode on electrochemical properties for lithium polymer batteries, Electrochimica Acta 155, 431-436 (2015).",
+                     "Abe and Kumagai, Effect of negative/positive capacity ratio on the rate and cycling performances of LiFePO4/graphite lithium-ion batteries, Journal of Energy Storage 19, 96-102 (2018).",
+                     "Yourey et al., Design Considerations for Fast Charging Lithium Ion Cells for NMC/MCMB Electrode Pairs, Batteries 7, 4 (2021).",
+                     "Chen et al., Effect of N/P ratios on the performance of LiNi0.8Co0.15Al0.05O2/SiOx-graphite lithium-ion batteries, Journal of Power Sources 439, 227056 (2019).",
+                     "Luo et al., Examining Effects of Negative to Positive Capacity Ratio in Three-Electrode Lithium-Ion Cells with Layered Oxide Cathode and Si Anode, ACS Applied Energy Materials 5, 5513-5518 (2022).",
+                     "Mu et al., Impacts of negative to positive capacities ratios on the performance of next-generation lithium-ion batteries, Electrochimica Acta 406, 139878 (2022).",
+                     "Dong et al., Challenges and Strategies of Fast-Charging Li-Ion Batteries, Energy Materials Advances 5, 0113 (2024)."
+                 ],
+    "mainEntityOfPage":  "https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html"
 }</script>
 <script type="application/ld+json">{
   "@context":"https://schema.org",
