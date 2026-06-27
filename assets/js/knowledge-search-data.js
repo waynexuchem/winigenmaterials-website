@@ -211,6 +211,18 @@ window.winigenKnowledgeArticles = [
     url: "knowledge/fast-charge-all-weather-ev-battery-electrolytes.html"
   },
   {
+    title: "Battery Materials Optimization: From Chemistry Choice to Validated Cell Performance",
+    stage: "Commercialization",
+    stages: ["Materials", "Electrolytes & Interfaces", "Cell Development", "Commercialization"],
+    category: "Battery Systems Optimization",
+    tags: ["battery materials", "chemistry selection", "electrode processing", "electrolyte formulation", "interfaces", "N/P ratio", "pouch cell", "application optimization"],
+    keywords: ["LFP", "LMFP", "NMC", "NCA", "sodium-ion", "silicon anode", "lithium metal", "solid-state", "fast charge", "low temperature", "SEI", "CEI", "formation", "degradation", "manufacturing", "validation", "tradeoffs", "cell performance"],
+    related_products: ["battery active materials", "lithium salts", "sodium salts", "solvents", "electrolyte additives", "solid-state electrolytes", "custom formulations"],
+    summary: "Why chemistry choice must be connected with material grade, electrode processing, electrolyte formulation, degradation modes, and validation evidence.",
+    excerpt: "Chemistry starts the design. Processing, microstructure, interphases, mechanics, and validation determine whether the cell meets its application target.",
+    url: "knowledge/battery-materials-optimization-chemistry-cell-performance.html"
+  },
+  {
     title: "Automotive Battery Materials and Solid-State Commercialization Roadmap",
     stage: "Commercialization",
     stages: ["Commercialization", "Cell Architecture"],
