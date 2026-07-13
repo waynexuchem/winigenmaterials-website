@@ -3,12 +3,448 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quality | Winigen Materials</title>
-<meta name="description" content="Winigen Materials supplies battery-grade electrolytes, salts, solvents, additives, and solid-state materials for energy storage development.">
+<title>Battery Material COA & Quality Documentation | Electrolyte Moisture Testing | Winigen Materials</title>
+<meta name="description" content="Winigen Materials provides battery material COAs, electrolyte certificate of analysis support, battery solvent quality documentation, electrolyte moisture testing data, SDS support, lot traceability, and packaging coordination for battery-grade materials.">
 <link rel="canonical" href="https://www.winigenmaterials.com/quality.html">
+<meta property="og:title" content="Battery Material COA & Quality Documentation | Winigen Materials">
+<meta property="og:description" content="Lot-specific COAs, analytical release data, moisture-sensitive handling guidance, lot traceability, and packaging support for battery-grade materials.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.winigenmaterials.com/quality.html">
+<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/quality/redacted-coa-preview.png">
+<meta property="og:image:width" content="1700">
+<meta property="og:image:height" content="1120">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.winigenmaterials.com/assets/images/quality/redacted-coa-preview.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .quality-hero {
+    padding: 96px 0 72px;
+  }
+
+  .quality-hero .section-title {
+    max-width: 960px;
+  }
+
+  .quality-hero p {
+    font-size: 19px;
+  }
+
+  .quality-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .quality-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .quality-card {
+    min-height: 250px;
+  }
+
+  .quality-card .eyebrow {
+    margin-bottom: 8px;
+  }
+
+  .document-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .release-docs {
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 34px;
+  }
+
+  .release-docs__panel {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 26px;
+    box-shadow: 0 12px 30px rgba(15,31,77,.08);
+  }
+
+  .release-docs__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .release-docs__list li {
+    position: relative;
+    padding: 12px 12px 12px 36px;
+    border: 1px solid rgba(42,102,217,.16);
+    border-radius: 14px;
+    background: #f7faff;
+    color: var(--navy);
+    font-weight: 850;
+  }
+
+  .release-docs__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 13px;
+    top: 11px;
+    color: var(--blue);
+    font-weight: 900;
+  }
+
+  .doc-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .doc-thumb {
+    min-height: 224px;
+    border: 1px solid rgba(18,32,51,.14);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 10px 22px rgba(15,31,77,.08);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .doc-thumb__bar {
+    height: 18px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #14213d, #2a66d9);
+  }
+
+  .doc-thumb h3 {
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin: 0 0 4px;
+    color: var(--navy);
+  }
+
+  .doc-thumb__line {
+    height: 7px;
+    border-radius: 999px;
+    background: #dfe8f5;
+  }
+
+  .doc-thumb__line.short {
+    width: 64%;
+  }
+
+  .doc-thumb__rows {
+    display: grid;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .doc-thumb__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 10px;
+    color: var(--muted);
+    border-bottom: 1px solid rgba(18,32,51,.09);
+    padding-bottom: 5px;
+  }
+
+  .doc-thumb__stamp {
+    margin-top: auto;
+    align-self: flex-end;
+    border: 2px solid rgba(42,102,217,.45);
+    color: var(--blue);
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .08em;
+  }
+
+  .quality-workflow {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .workflow-step {
+    position: relative;
+    background: #fff;
+    border: 1px solid rgba(42,102,217,.16);
+    border-radius: 16px;
+    padding: 18px 12px 16px;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(15,31,77,.07);
+  }
+
+  .workflow-step:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--blue);
+    font-size: 24px;
+    font-weight: 900;
+    z-index: 1;
+  }
+
+  .workflow-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(42,102,217,.1);
+    color: var(--blue);
+    font-weight: 900;
+  }
+
+  .workflow-step h3 {
+    font-size: 15px;
+    line-height: 1.25;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .why-quality {
+    background: #fff;
+    border: 1px solid rgba(42,102,217,.15);
+    border-left: 5px solid var(--blue);
+    border-radius: 22px;
+    padding: 28px;
+    margin-top: 32px;
+    box-shadow: 0 12px 30px rgba(15,31,77,.08);
+  }
+
+  .failure-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 18px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .failure-list li {
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #f7faff;
+    color: var(--navy);
+    font-weight: 800;
+  }
+
+  .document-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(15,31,77,.08);
+    overflow: hidden;
+  }
+
+  .document-card header {
+    padding: 22px 24px;
+    background: linear-gradient(135deg, #14213d, #254887);
+    color: #fff;
+  }
+
+  .document-card header p {
+    color: rgba(255,255,255,.72);
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .document-card h3 {
+    color: inherit;
+    margin-bottom: 8px;
+  }
+
+  .doc-body {
+    padding: 22px 24px 24px;
+  }
+
+  .metric-list {
+    display: grid;
+    gap: 10px;
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .metric-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 12px;
+    border: 1px solid rgba(18,32,51,.09);
+    border-radius: 12px;
+    background: #f7faff;
+    color: var(--text);
+    font-weight: 750;
+  }
+
+  .metric-list span {
+    color: var(--muted);
+    font-weight: 650;
+  }
+
+  .redaction-note {
+    border-left: 4px solid var(--gold);
+    background: rgba(184,150,74,.11);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-top: 20px;
+  }
+
+  .redaction-note p {
+    margin: 0;
+  }
+
+  .coa-preview {
+    margin: 28px 0 0;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .coa-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .coa-preview figcaption,
+  .packaging-photo figcaption {
+    padding: 14px 18px 16px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    border-top: 1px solid var(--border);
+    background: #fff;
+  }
+
+  .method-table th,
+  .method-table td {
+    font-size: 15px;
+  }
+
+  .packaging-section {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 34px;
+    align-items: center;
+  }
+
+  .packaging-photo {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    background: #fff;
+  }
+
+  .packaging-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .quality-checklist {
+    display: grid;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .quality-checklist div {
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  .quality-cta {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(184,150,74,.15), transparent 34%),
+      linear-gradient(135deg, #e8f1ff, #f8fbff);
+    border: 1px solid rgba(42,102,217,.15);
+    border-radius: 28px;
+    padding: 42px;
+    box-shadow: var(--shadow);
+  }
+
+  .quality-faq {
+    display: grid;
+    gap: 12px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .quality-faq details {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 10px 26px rgba(15,31,77,.06);
+    padding: 18px 20px;
+  }
+
+  .quality-faq summary {
+    cursor: pointer;
+    color: var(--navy);
+    font-weight: 900;
+  }
+
+  .quality-faq p {
+    margin: 12px 0 0;
+  }
+
+  @media(max-width:900px) {
+    .quality-grid,
+    .document-grid,
+    .packaging-section,
+    .release-docs,
+    .quality-workflow {
+      grid-template-columns: 1fr;
+    }
+
+    .doc-thumbnails,
+    .failure-list,
+    .release-docs__list {
+      grid-template-columns: 1fr;
+    }
+
+    .workflow-step:not(:last-child)::after {
+      content: "↓";
+      right: auto;
+      left: 50%;
+      top: auto;
+      bottom: -22px;
+      transform: translateX(-50%);
+    }
+
+    .quality-hero {
+      padding: 64px 0 52px;
+    }
+  }
+</style>
 
 <script type="application/ld+json">
 {
@@ -49,6 +485,103 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/quality.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.winigenmaterials.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quality",
+      "item": "https://www.winigenmaterials.com/quality.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "@id": "https://www.winigenmaterials.com/assets/images/quality/redacted-coa-preview.png#image",
+  "contentUrl": "https://www.winigenmaterials.com/assets/images/quality/redacted-coa-preview.png",
+  "url": "https://www.winigenmaterials.com/assets/images/quality/redacted-coa-preview.png",
+  "name": "Redacted Certificate of Analysis Preview for Battery Materials",
+  "caption": "Redacted representative Certificate of Analysis preview for battery-grade material quality documentation.",
+  "description": "A redacted COA preview associated with battery material quality documentation, analytical release data, lot-specific reporting, and Certificate of Analysis support from Winigen Materials.",
+  "encodingFormat": "image/png",
+  "width": 1700,
+  "height": 1120,
+  "about": [
+    "Certificate of Analysis",
+    "battery materials",
+    "quality documentation",
+    "analytical release data"
+  ],
+  "creator": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "copyrightHolder": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/quality.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I request a COA before placing an order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Customers can request available COA examples, SDS information, specification details, or representative release documentation before placing an order. Lot-specific COAs are tied to the actual material lot supplied."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can documentation be customized?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Documentation scope can often be coordinated based on product family, customer application, shipment quantity, and available analytical data. Requirements should be discussed before ordering when a project needs specific release attributes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are customer names removed from examples?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Public examples and previews are redacted. Customer names, analyst names, reviewer names, purchase order details, document numbers, and order-specific identifiers are not published on this page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What testing is available for electrolytes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Representative electrolyte release data may include composition, moisture, HF or acidity, color, density, conductivity, and formulation notes. Testing scope depends on the electrolyte system and customer requirement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do all products have identical test packages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Test packages vary by product family, grade, supplier lot, customer requirement, and intended application. Solvents, additives, custom electrolytes, active materials, and solid-state electrolytes use different quality attributes."
+      }
+    }
+  ]
+}
+</script>
 
 </head>
 
@@ -65,33 +598,422 @@
 
 <main>
 
-<section class="section dark">
+<section class="section dark quality-hero">
   <div class="container section-title">
-    <h1>Quality & Compliance Support</h1>
+    <div class="eyebrow">Quality Documentation</div>
+    <h1>Quality Documentation for Battery-Grade Materials</h1>
     <p>
-      Winigen Materials emphasizes quality, documentation, safe packaging, and regulatory awareness for battery-grade materials.
+      Lot-specific COAs, analytical release data, moisture-sensitive handling guidance, and packaging support for battery salts, solvents, additives, electrolytes, cathode materials, and solid-state materials.
     </p>
+    <div class="quality-actions">
+      <a class="btn" href="contact.html?topic=Quality%20Documentation">Request COA / SDS</a>
+      <a class="btn secondary" href="#packaging">Discuss Packaging Requirements</a>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container cards cards-3">
-
-    <div class="card">
-      <h3>TSCA Awareness</h3>
-      <p>Winigen Materials maintains awareness of U.S. chemical regulations, including the Toxic Substances Control Act (TSCA).</p>
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Documentation Package</div>
+      <h2>What Our Quality Documents Can Include</h2>
+      <p>
+        Winigen Materials supports battery researchers, universities, pilot-line developers, and industrial cell manufacturers with lot-specific documentation and analytical release data for battery-grade materials.
+      </p>
     </div>
 
-    <div class="card">
-      <h3>Documentation</h3>
-      <p>Product documentation such as SDS, COA, and technical data sheets can be supported upon request.</p>
+    <div class="quality-grid">
+      <div class="card quality-card">
+        <div class="eyebrow">01</div>
+        <h3>Lot-Specific COA</h3>
+        <p>Certificates of Analysis can include lot number, production or inspection date, retest or expiry date, disposition, storage condition, and handling notes.</p>
+      </div>
+
+      <div class="card quality-card">
+        <div class="eyebrow">02</div>
+        <h3>Battery-Relevant Testing</h3>
+        <p>Typical release data may include purity, water, acidity or HF, color, ionic impurities, metal impurities, density, conductivity, particle size, BET, tap density, and electrochemical checks where applicable.</p>
+      </div>
+
+      <div class="card quality-card">
+        <div class="eyebrow">03</div>
+        <h3>Moisture-Sensitive Handling</h3>
+        <p>Materials can be documented with storage and handling guidance such as sealed, dry, inert-atmosphere storage and protection from moisture.</p>
+      </div>
+
+      <div class="card quality-card">
+        <div class="eyebrow">04</div>
+        <h3>Packaging Coordination</h3>
+        <p>Packaging and labeling can be coordinated based on material class, quantity, moisture sensitivity, destination, and customer handling requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section ecosystem">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Release Evidence</div>
+      <h2>Representative Release Documentation</h2>
+      <p>
+        The public examples below are summarized from representative document formats. Customer names, analyst names, reviewer names, document numbers, and order-specific details are omitted or redacted for confidentiality.
+      </p>
     </div>
 
-    <div class="card">
-      <h3>Packaging & Shipping</h3>
-      <p>Secure packaging and labeling formats for safe material handling and shipment coordination.</p>
+    <div class="release-docs">
+      <div class="release-docs__panel">
+        <h3>Documentation package examples</h3>
+        <p>Depending on product family and order scope, release documentation can combine analytical results, shipment records, and traceability details that help researchers and procurement teams verify the exact material lot received.</p>
+        <ul class="release-docs__list">
+          <li>COA</li>
+          <li>Inspection Report</li>
+          <li>Packaging</li>
+          <li>Lot Traceability</li>
+        </ul>
+      </div>
+      <div class="doc-thumbnails" aria-label="Representative redacted document previews">
+        <article class="doc-thumb">
+          <div class="doc-thumb__bar"></div>
+          <h3>Certificate of Analysis</h3>
+          <div class="doc-thumb__line"></div>
+          <div class="doc-thumb__line short"></div>
+          <div class="doc-thumb__rows">
+            <div class="doc-thumb__row"><span>Moisture</span><strong>ppm</strong></div>
+            <div class="doc-thumb__row"><span>Purity</span><strong>wt%</strong></div>
+            <div class="doc-thumb__row"><span>Disposition</span><strong>PASS</strong></div>
+          </div>
+          <div class="doc-thumb__stamp">REDACTED</div>
+        </article>
+        <article class="doc-thumb">
+          <div class="doc-thumb__bar"></div>
+          <h3>Inspection Report</h3>
+          <div class="doc-thumb__line"></div>
+          <div class="doc-thumb__line short"></div>
+          <div class="doc-thumb__rows">
+            <div class="doc-thumb__row"><span>D50</span><strong>um</strong></div>
+            <div class="doc-thumb__row"><span>BET</span><strong>m2/g</strong></div>
+            <div class="doc-thumb__row"><span>Tap density</span><strong>g/cm3</strong></div>
+          </div>
+          <div class="doc-thumb__stamp">LOT DATA</div>
+        </article>
+        <article class="doc-thumb">
+          <div class="doc-thumb__bar"></div>
+          <h3>Packaging Record</h3>
+          <div class="doc-thumb__line"></div>
+          <div class="doc-thumb__line short"></div>
+          <div class="doc-thumb__rows">
+            <div class="doc-thumb__row"><span>Inner seal</span><strong>Checked</strong></div>
+            <div class="doc-thumb__row"><span>Label</span><strong>Matched</strong></div>
+            <div class="doc-thumb__row"><span>Lot number</span><strong>Verified</strong></div>
+          </div>
+          <div class="doc-thumb__stamp">TRACEABLE</div>
+        </article>
+      </div>
     </div>
 
+    <div class="document-grid">
+      <article class="document-card">
+        <header>
+          <h3>Representative COA: Battery-Grade DEC</h3>
+          <p>Carbonate solvent release summary</p>
+        </header>
+        <div class="doc-body">
+          <ul class="metric-list">
+            <li><span>Purity</span>99.992 wt%</li>
+            <li><span>Moisture</span>5.6 ppm</li>
+            <li><span>Color</span>Hazen 3.0</li>
+            <li><span>Volatile impurities</span>0 ppm</li>
+            <li><span>Disposition</span>PASS</li>
+          </ul>
+          <p>Representative solvent COA format with GC purity, Karl Fischer moisture, color, chloride, sulfate, and trace metal impurity checks.</p>
+        </div>
+      </article>
+
+      <article class="document-card">
+        <header>
+          <h3>Representative COA: Battery-Grade FEC</h3>
+          <p>Electrolyte additive release summary</p>
+        </header>
+        <div class="doc-body">
+          <ul class="metric-list">
+            <li><span>Purity</span>99.96 wt%</li>
+            <li><span>Moisture</span>3.2 ppm</li>
+            <li><span>Acidity</span>10.2 ppm</li>
+            <li><span>Volatile impurities</span>0 ppm</li>
+            <li><span>Disposition</span>PASS</li>
+          </ul>
+          <p>Representative additive COA format for silicon-anode and electrolyte development work, including moisture, acidity, ionic impurities, and metal impurity review.</p>
+        </div>
+      </article>
+
+      <article class="document-card">
+        <header>
+          <h3>Representative COA: Custom Electrolyte</h3>
+          <p>Formulated electrolyte release summary</p>
+        </header>
+        <div class="doc-body">
+          <ul class="metric-list">
+          <li><span>Formulation</span>1.0 M LiDFOB + 0.4 M LiBF₄</li>
+            <li><span>Solvent blend</span>DEC/FEC</li>
+            <li><span>Moisture</span>11.45 ppm</li>
+            <li><span>HF</span>25.08 ppm</li>
+            <li><span>Conductivity</span>3.18 mS/cm at 25°C</li>
+          </ul>
+          <p>Representative formulation COA format showing composition, moisture, HF, color, density, and conductivity reporting for custom electrolyte screening.</p>
+        </div>
+      </article>
+
+      <article class="document-card">
+        <header>
+          <h3>Representative Inspection Report: LNMO Cathode</h3>
+          <p>Active-material quality inspection summary</p>
+        </header>
+        <div class="doc-body">
+          <ul class="metric-list">
+            <li><span>D50</span>7.5 µm</li>
+            <li><span>BET surface area</span>0.34 m²/g</li>
+            <li><span>Tap density</span>1.59 g/cm³</li>
+            <li><span>Moisture</span>70 ppm</li>
+            <li><span>0.1C discharge</span>128.1 mAh/g</li>
+          </ul>
+          <p>Representative active-material inspection format with particle size, BET, tap density, residual lithium, moisture, metal impurity, and coin-cell performance checks.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="redaction-note">
+      <p><strong>Confidentiality note:</strong> Public previews are intentionally redacted. Customer names, analyst names, reviewer names, purchase order information, and order-specific identifiers are not published on this page.</p>
+    </div>
+
+    <figure class="coa-preview">
+      <img src="assets/images/quality/redacted-coa-preview.png" alt="Redacted example Certificate of Analysis preview for battery-grade DEC" loading="eager" decoding="async">
+      <figcaption>Redacted representative COA preview. Customer names, personnel names, document numbers, purchase-order details, and order-specific identifiers are omitted.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Release Workflow</div>
+      <h2>From Supplier Lot to Customer Verification</h2>
+      <p>
+        Battery materials quality documentation is most useful when it follows the material through production, inspection, testing, packaging, and shipment.
+      </p>
+    </div>
+    <div class="quality-workflow" aria-label="Quality documentation workflow">
+      <div class="workflow-step"><div class="workflow-icon">1</div><h3>Supplier Production</h3></div>
+      <div class="workflow-step"><div class="workflow-icon">2</div><h3>Incoming QC</h3></div>
+      <div class="workflow-step"><div class="workflow-icon">3</div><h3>Analytical Testing</h3></div>
+      <div class="workflow-step"><div class="workflow-icon">4</div><h3>COA Review</h3></div>
+      <div class="workflow-step"><div class="workflow-icon">5</div><h3>Packaging</h3></div>
+      <div class="workflow-step"><div class="workflow-icon">6</div><h3>Shipment</h3></div>
+      <div class="workflow-step"><div class="workflow-icon">7</div><h3>Customer Verification</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Analytical Methods</div>
+      <h2>Representative Test Methods</h2>
+      <p>
+        Test packages depend on the product family. The table below summarizes common quality attributes used for <a href="products/battery-solvents.html">battery-grade solvents</a>, <a href="products/electrolyte-additives.html">electrolyte additives</a>, salts, <a href="products/custom-electrolyte-formulations.html">custom electrolyte formulations</a>, active materials, and <a href="products/solid-state-electrolytes.html">solid-state electrolyte materials</a>.
+      </p>
+      <p>
+        Testing scope, acceptance criteria, and release specifications vary by product family, grade, supplier lot, customer requirement, and intended application.
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="method-table">
+        <thead>
+          <tr>
+            <th>Quality Attribute</th>
+            <th>Representative Methods</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Moisture</td>
+            <td>Karl Fischer titration</td>
+            <td>Water affects salt stability, HF generation, SEI/CEI formation, and cell reproducibility. See <a href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">why moisture control matters in battery material screening</a>.</td>
+          </tr>
+          <tr>
+            <td>Purity / organics</td>
+            <td>GC</td>
+            <td>Confirms solvent or additive purity and volatile impurity profile.</td>
+          </tr>
+          <tr>
+            <td>HF / acidity</td>
+            <td>Acid-base titration</td>
+            <td>Relevant to electrolyte stability, transition-metal dissolution, and high-voltage cell behavior. See the <a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 degradation and salt-selection article</a>.</td>
+          </tr>
+          <tr>
+            <td>Metal impurities</td>
+            <td>ICP-OES / ICP-MS</td>
+            <td>Trace metals can influence self-discharge, parasitic reactions, and gas generation.</td>
+          </tr>
+          <tr>
+            <td>Color</td>
+            <td>APHA / Pt-Co / Hazen</td>
+            <td>Practical screen for discoloration, oxidation, or contamination.</td>
+          </tr>
+          <tr>
+            <td>Conductivity / density</td>
+            <td>Conductivity meter, densitometer</td>
+            <td>Useful for electrolyte formulation release and batch-to-batch reproducibility.</td>
+          </tr>
+          <tr>
+            <td>Particle size</td>
+            <td>Laser diffraction</td>
+            <td>Important for slurry behavior, powder handling, electrode uniformity, and solid-state electrolyte screening. See <a href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">how particle size affects solid-state electrolyte screening</a>.</td>
+          </tr>
+          <tr>
+            <td>Surface area / tap density</td>
+            <td>BET, tap-density analyzer</td>
+            <td>Affects reactivity, binder demand, packing behavior, electrode loading, and processing fit.</td>
+          </tr>
+          <tr>
+            <td>Electrochemical release</td>
+            <td>Coin-cell test where applicable</td>
+            <td>Provides an application-relevant check for active materials and selected battery materials.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="why-quality">
+      <h3>Why Quality Matters</h3>
+      <p>Poor control of moisture, metallic impurities, particle size, acidity, or electrolyte composition can contribute to:</p>
+      <ul class="failure-list">
+        <li>HF generation</li>
+        <li>Transition-metal dissolution</li>
+        <li>Gas evolution</li>
+        <li>Poor cycle life</li>
+        <li>Reduced coulombic efficiency</li>
+        <li>Inconsistent formation</li>
+        <li>Batch-to-batch variation</li>
+      </ul>
+      <p>Therefore, analytical release documentation is not simply paperwork. It is an important part of ensuring reproducible battery research and manufacturing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section ecosystem">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Product Families</div>
+      <h2>Quality Documentation by Product Family</h2>
+      <p>
+        Different battery materials need different release checks. This summary helps customers understand what documentation topics are commonly relevant before requesting a COA, SDS, or specification review.
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="method-table">
+        <thead>
+          <tr>
+            <th>Product Family</th>
+            <th>Common Documentation Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="products/battery-solvents.html">Battery solvents</a></td>
+            <td><strong>Purity</strong>, <strong>moisture</strong>, <strong>color</strong>, <strong>volatile impurities</strong>, <strong>ionic impurities</strong>, and <strong>metal impurities</strong>.</td>
+          </tr>
+          <tr>
+            <td><a href="products/electrolyte-additives.html">Electrolyte additives</a></td>
+            <td><strong>Purity</strong>, <strong>moisture</strong>, <strong>acidity</strong>, <strong>chloride</strong>, <strong>sulfate</strong>, <strong>trace metals</strong>, and <strong>storage condition</strong>.</td>
+          </tr>
+          <tr>
+            <td><a href="products/custom-electrolyte-formulations.html">Custom electrolytes</a></td>
+            <td><strong>Composition</strong>, <strong>moisture</strong>, <strong>HF or acidity</strong>, <strong>color</strong>, <strong>density</strong>, <strong>conductivity</strong>, and <strong>formulation notes</strong>.</td>
+          </tr>
+          <tr>
+            <td><a href="products/battery-active-materials.html">Cathode and anode materials</a></td>
+            <td><strong>Particle size</strong>, <strong>BET</strong>, <strong>tap density</strong>, <strong>residual lithium</strong>, <strong>moisture</strong>, <strong>impurity profile</strong>, and <strong>electrochemical checks</strong>.</td>
+          </tr>
+          <tr>
+            <td><a href="products/solid-state-electrolytes.html">Solid-state electrolytes</a></td>
+            <td><strong>Particle size</strong>, <strong>ionic conductivity</strong>, <strong>electronic conductivity</strong>, <strong>moisture sensitivity</strong>, <strong>powder handling</strong>, and <strong>lot-level specifications</strong>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section ecosystem" id="packaging">
+  <div class="container packaging-section">
+    <figure class="packaging-photo">
+      <img src="assets/images/quality/moisture-sensitive-packaging.png" alt="Example packaging preparation for sealed battery materials with cushioning" loading="eager" decoding="async">
+      <figcaption>Example packaging preparation for sealed battery material samples. Final packaging configuration depends on material class, quantity, route, and carrier requirements.</figcaption>
+    </figure>
+    <div>
+      <div class="eyebrow">Shipment &amp; Packaging Quality</div>
+      <h2>Shipment &amp; Packaging Quality for Moisture-Sensitive Battery Materials</h2>
+      <p>
+        Battery-grade solvents, additives, salts, electrolytes, solid-state powders, and active materials often require moisture-aware packaging and careful shipment coordination. Packaging configuration depends on material class, quantity, destination, and handling requirements.
+      </p>
+      <p>
+        Winigen Materials coordinates packaging and labeling requirements based on the material type, shipment quantity, destination, and applicable carrier or regulatory requirements.
+      </p>
+      <div class="quality-checklist">
+        <div>Sealed inner packaging for moisture-sensitive materials</div>
+        <div>Cushioning and secondary containment as appropriate</div>
+        <div>Storage and handling notes included with documentation</div>
+        <div>SDS, COA, and specification review available upon request</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="quality-faq" id="faq">
+      <details>
+        <summary>Can I request a COA before placing an order?</summary>
+        <p>Yes. Customers can request available COA examples, SDS information, specification details, or representative release documentation before placing an order. Lot-specific COAs are tied to the actual material lot supplied.</p>
+      </details>
+      <details>
+        <summary>Can documentation be customized?</summary>
+        <p>Documentation scope can often be coordinated based on product family, customer application, shipment quantity, and available analytical data. Requirements should be discussed before ordering when a project needs specific release attributes.</p>
+      </details>
+      <details>
+        <summary>Are customer names removed from examples?</summary>
+        <p>Yes. Public examples and previews are redacted. Customer names, analyst names, reviewer names, purchase order details, document numbers, and order-specific identifiers are not published on this page.</p>
+      </details>
+      <details>
+        <summary>What testing is available for electrolytes?</summary>
+        <p>Representative electrolyte release data may include composition, moisture, HF or acidity, color, density, conductivity, and formulation notes. Testing scope depends on the electrolyte system and customer requirement.</p>
+      </details>
+      <details>
+        <summary>Do all products have identical test packages?</summary>
+        <p>No. Test packages vary by product family, grade, supplier lot, customer requirement, and intended application. Solvents, additives, custom electrolytes, active materials, and solid-state electrolytes use different quality attributes.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container quality-cta">
+    <div class="eyebrow">Request Support</div>
+    <h2>Need COA, SDS, or Specification Review Before Ordering?</h2>
+    <p>
+      Tell us the material, target quantity, destination, and application. We can help provide available documentation and discuss packaging, storage, and handling requirements before shipment.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="contact.html?topic=Quality%20Documentation">Request Quality Documentation</a>
+      <a class="btn secondary" href="products.html">Review Product Portfolio</a>
+    </div>
   </div>
 </section>
 
