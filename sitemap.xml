@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products.html</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -674,7 +674,7 @@
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/services.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -755,5 +755,41 @@
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/battery-ceramic-functional-coating-materials.html</loc>
+    <lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/wbm-p07-boehmite-powder.html</loc>
+    <lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/wbm-s10-boehmite-ceramic-coating-slurry.html</loc>
+    <lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/alumina-functional-coating-materials.html</loc>
+    <lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/wal-p05-alumina-coating-powder.html</loc>
+    <lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/wal-a07-alumina-cathode-additive.html</loc>
+    <lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/wal-m300-mesoporous-alumina.html</loc>
+    <lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/wal-m400-mesoporous-alumina.html</loc>
+    <lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/wal-m07-mesoporous-alumina.html</loc>
+    <lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
   </url>
 </urlset>

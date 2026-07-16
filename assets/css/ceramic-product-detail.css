@@ -1,0 +1,22 @@
+.product-detail-hero { padding: 78px 0; }
+.product-detail-layout { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 34px; align-items: start; }
+.structure-panel, .detail-panel, .application-panel { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+.structure-panel { display: grid; place-items: center; min-height: 440px; padding: 24px; background: linear-gradient(135deg,#fff,#eef7fc); }
+.structure-panel img { width: 100%; max-height: 470px; object-fit: contain; border-radius: 12px; }
+.detail-panel, .application-panel { padding: 30px; }
+.detail-kicker { color: var(--blue); font-size: 13px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.detail-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 24px 0; }
+.detail-fact { padding: 15px; border: 1px solid rgba(18,32,51,.1); border-radius: 14px; background: #f8fbff; }
+.detail-fact dt { color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; }
+.detail-fact dd { margin: 5px 0 0; font-weight: 850; }
+.spec-list { display: grid; gap: 10px; padding: 0; list-style: none; }
+.spec-list li { position: relative; padding-left: 24px; }
+.spec-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.detail-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.characterization-table { width: 100%; border-collapse: collapse; }
+.characterization-table th, .characterization-table td { padding: 13px; border: 1px solid var(--border); text-align: left; }
+.characterization-table th { background: var(--navy); color: #fff; }
+.qualification-note { margin-top: 22px; padding: 18px; border-left: 4px solid var(--gold); background: #fff9e9; }
+.application-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.application-grid > div { padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: #f8fbff; }
+@media(max-width:900px) { .product-detail-layout, .application-grid { grid-template-columns: 1fr; } .structure-panel { min-height: 300px; } .detail-facts { grid-template-columns: 1fr; } }
