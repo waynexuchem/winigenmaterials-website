@@ -1,5 +1,17 @@
 window.winigenKnowledgeArticles = [
   {
+    title: "Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure",
+    stage: "Cell Development",
+    stages: ["Cell Development", "Materials", "Electrolytes & Interfaces"],
+    category: "Formation and Cathode Structure",
+    tags: ["formation", "lithium-rich cathode", "LLO", "oxygen redox", "first charge", "residual lithium", "cathode structure"],
+    keywords: ["fast formation", "2C", "0.2C", "oxygen-redox-related plateau", "high-voltage plateau", "self-pinning", "Li-rich layered oxide", "lithium-rich layered oxide", "first-cycle capacity", "formation protocol", "CEI", "SEI", "gas", "pressure", "ageing", "knowledge-based process design"],
+    related_products: ["battery active materials", "cathode materials", "electrolyte additives", "lithium salts", "custom formulations"],
+    summary: "A technical review of formation rate, reaction heterogeneity, residual lithium, plateau access, structural evolution, and later cycling in lithium-rich cathodes.",
+    excerpt: "For lithium-rich layered oxide cathodes, first-charge rate changes reaction heterogeneity, plateau access, residual lithium, structural evolution, and later cycling.",
+    url: "knowledge/fast-formation-lithium-rich-cathodes.html"
+  },
+  {
     title: "From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up",
     stage: "Cell Development",
     stages: ["Cell Development", "Commercialization"],
