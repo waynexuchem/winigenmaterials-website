@@ -1,5 +1,17 @@
 window.winigenKnowledgeArticles = [
   {
+    title: "Beyond N/P Ratio: Electrode Balancing Is Fundamentally a Problem of Spatial Reaction Uniformity",
+    stage: "Cell Development",
+    stages: ["Cell Development", "Materials", "Electrolytes & Interfaces", "Commercialization"],
+    category: "Electrode Balance and Reaction Uniformity",
+    tags: ["N/P ratio", "reaction heterogeneity", "lithium plating", "fast charge", "porosity", "tortuosity", "silicon anode", "electrode manufacturing"],
+    keywords: ["local lithium acceptance margin", "local accessible receiving capacity", "spatial reaction uniformity", "electrode density variation", "particle size", "electrolyte wetting", "stack pressure", "silicon expansion", "aging", "current distribution", "graded electrode", "conductive additive", "binder distribution", "local SOC", "effective N/P"],
+    related_products: ["finished electrodes", "graphite anode", "silicon anode", "SiOx silicon carbon", "LFP", "NMC811", "electrolyte additives", "battery active materials"],
+    summary: "A spatial framework that connects nominal N/P ratio with local charge- and rate-based lithium-acceptance margins, reaction heterogeneity, manufacturing, silicon expansion, aging, and fast charging.",
+    excerpt: "Inventory sets the balance envelope; local accessibility determines where demanding operation reaches the lithium-deposition regime first.",
+    url: "knowledge/beyond-np-ratio-spatial-reaction-uniformity.html"
+  },
+  {
     title: "Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure",
     stage: "Cell Development",
     stages: ["Cell Development", "Materials", "Electrolytes & Interfaces"],

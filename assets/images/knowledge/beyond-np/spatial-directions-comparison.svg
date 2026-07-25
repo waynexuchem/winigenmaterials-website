@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="870" viewBox="0 0 1440 870" role="img" aria-labelledby="title desc">
+  <title id="title">Two spatial directions shape reaction uniformity</title>
+  <desc id="desc">A cross-sectional view shows through-thickness transport, while a top-down view shows in-plane current, thermal, pressure, coating, registration, overhang, and edge effects. A two-way connector emphasizes that the fields are coupled.</desc>
+  <defs>
+    <linearGradient id="pageBg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#edf3fb"/>
+    </linearGradient>
+    <linearGradient id="collectorField" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop stop-color="#2f72d6" stop-opacity=".48"/>
+      <stop offset=".45" stop-color="#73a0e1" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#dce9fb" stop-opacity=".05"/>
+    </linearGradient>
+    <radialGradient id="thermalField">
+      <stop stop-color="#e45b63" stop-opacity=".92"/>
+      <stop offset=".48" stop-color="#f1a24d" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#f1a24d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pressureField">
+      <stop stop-color="#9361ad" stop-opacity=".35"/>
+      <stop offset=".58" stop-color="#b99ccc" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#b99ccc" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="porousTexture" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="9" r="4" fill="#9bb8df" opacity=".34"/>
+      <circle cx="25" cy="22" r="5" fill="#b5cae7" opacity=".42"/>
+    </pattern>
+    <pattern id="coatingBands" width="52" height="52" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+      <rect width="24" height="52" fill="#5b91df" opacity=".10"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#10244a" flood-opacity=".12"/>
+    </filter>
+    <marker id="arrowCouple" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto-start-reverse">
+      <path d="M0 0L9 4.5L0 9Z" fill="#53657e"/>
+    </marker>
+    <style>
+      .display{font-family:Manrope,Arial,sans-serif}.sans{font-family:Inter,Arial,sans-serif}
+      .navy{fill:#0f1f4d}.muted{fill:#53657e}
+      .panel-title{font:800 27px Manrope,Arial,sans-serif;fill:#0f1f4d}
+      .section-label{font:800 17px Inter,Arial,sans-serif;letter-spacing:1.5px}
+      .mechanism{font:700 16px Inter,Arial,sans-serif;fill:#17264b}
+      .small{font:500 16px Inter,Arial,sans-serif;fill:#53657e}
+      .callout{font:700 16px Inter,Arial,sans-serif;fill:#17264b}
+    </style>
+  </defs>
+
+  <rect width="1440" height="870" rx="28" fill="url(#pageBg)"/>
+  <text x="64" y="68" class="sans" font-size="20" font-weight="800" letter-spacing="2" fill="#2a66d9">SPATIAL REACTION UNIFORMITY</text>
+  <text x="64" y="112" class="display navy" font-size="36" font-weight="800">Two spatial directions shape how uniformly an electrode reacts</text>
+  <text x="64" y="145" class="sans muted" font-size="19">Through-thickness transport and in-plane boundary conditions create different—but coupled—forms of heterogeneity.</text>
+
+  <!-- Through-thickness panel -->
+  <g transform="translate(52 184)" filter="url(#shadow)">
+    <rect width="646" height="528" rx="24" fill="#fff" stroke="#d5e1f1"/>
+    <text x="34" y="46" class="section-label" fill="#2a66d9">01 · CROSS-SECTION</text>
+    <text x="34" y="82" class="panel-title">Through thickness</text>
+    <text x="34" y="111" class="small">Opposing ion and electron access across electrode depth</text>
+
+    <g transform="translate(34 142)">
+      <rect width="112" height="170" rx="14" fill="#e8edf4"/>
+      <rect x="112" width="408" height="170" fill="#eaf2ff" stroke="#a9bfde"/>
+      <rect x="112" width="408" height="170" fill="url(#porousTexture)"/>
+      <rect x="520" width="34" height="170" rx="5" fill="#9eacc0"/>
+      <line x1="112" y1="-10" x2="112" y2="190" stroke="#2a66d9" stroke-width="3" stroke-dasharray="7 6"/>
+
+      <text x="56" y="48" text-anchor="middle" class="callout">Separator</text>
+      <text x="316" y="48" text-anchor="middle" class="callout">Porous electrode</text>
+      <text x="537" y="195" text-anchor="middle" class="small">CC</text>
+
+      <path d="M24 108H84" stroke="#2a66d9" stroke-width="5"/>
+      <path d="M96 108L82 99V117Z" fill="#2a66d9"/>
+      <text x="58" y="141" text-anchor="middle" class="sans" font-size="21" font-weight="800" fill="#2a66d9">Li⁺</text>
+      <path d="M504 108H444" stroke="#17264b" stroke-width="5"/>
+      <path d="M432 108L446 99V117Z" fill="#17264b"/>
+      <text x="472" y="141" text-anchor="middle" class="sans" font-size="21" font-weight="800" fill="#17264b">e⁻</text>
+
+      <text x="121" y="196" class="sans" font-size="14" font-weight="700" fill="#2a66d9">Separator/electrode interface</text>
+      <path d="M112 224H520" stroke="#718198" stroke-width="2"/>
+      <path d="M112 215V233M520 215V233" stroke="#718198" stroke-width="2"/>
+      <text x="316" y="253" text-anchor="middle" class="callout">Electrode thickness</text>
+    </g>
+
+    <text x="34" y="420" class="sans" font-size="15" font-weight="800" letter-spacing="1.2" fill="#53657e">PRIMARY DETERMINANTS</text>
+    <g transform="translate(34 438)">
+      <rect width="136" height="62" rx="12" fill="#eaf2ff"/>
+      <text x="68" y="38" text-anchor="middle" class="mechanism">Ionic transport</text>
+      <rect x="148" width="136" height="62" rx="12" fill="#edf3fb"/>
+      <text x="216" y="27" text-anchor="middle" class="mechanism">Electronic<tspan x="216" dy="20">transport</tspan></text>
+      <rect x="296" width="136" height="62" rx="12" fill="#eaf2ff"/>
+      <text x="364" y="27" text-anchor="middle" class="mechanism">Interfacial<tspan x="364" dy="20">kinetics</tspan></text>
+      <rect x="444" width="136" height="62" rx="12" fill="#edf3fb"/>
+      <text x="512" y="27" text-anchor="middle" class="mechanism">Electrode<tspan x="512" dy="20">microstructure</tspan></text>
+    </g>
+  </g>
+
+  <!-- Coupling between views -->
+  <rect x="706" y="340" width="28" height="84" rx="14" fill="#edf3fb" stroke="#cdd9e9"/>
+  <text x="720" y="382" text-anchor="middle" dominant-baseline="middle" class="sans" font-size="12" font-weight="800" letter-spacing="1" fill="#53657e" transform="rotate(-90 720 382)">COUPLED</text>
+  <path d="M707 452H733" stroke="#53657e" stroke-width="3" marker-start="url(#arrowCouple)" marker-end="url(#arrowCouple)"/>
+
+  <!-- In-plane panel -->
+  <g transform="translate(742 184)" filter="url(#shadow)">
+    <rect width="646" height="528" rx="24" fill="#fff" stroke="#d5e1f1"/>
+    <text x="34" y="46" class="section-label" fill="#7b3f98">02 · TOP VIEW</text>
+    <text x="34" y="82" class="panel-title">In plane</text>
+    <text x="34" y="111" class="small">Lateral variation across electrode area and cell boundaries</text>
+
+    <g transform="translate(34 136)">
+      <!-- Cathode and offset anode outlines -->
+      <rect width="410" height="260" rx="18" fill="#eef5ff" stroke="#73a0dc" stroke-width="4"/>
+      <rect width="410" height="260" rx="18" fill="url(#coatingBands)"/>
+      <rect x="12" y="10" width="386" height="238" rx="13" fill="none" stroke="#e58a59" stroke-width="6" stroke-dasharray="16 11"/>
+
+      <!-- Current-collector field -->
+      <rect width="410" height="260" rx="18" fill="url(#collectorField)"/>
+      <path d="M34 72C130 31 218 97 356 33" fill="none" stroke="#2f72d6" stroke-width="4" opacity=".72"/>
+      <path d="M31 106C145 68 230 129 374 66" fill="none" stroke="#2f72d6" stroke-width="3" opacity=".48"/>
+
+      <!-- Thermal and pressure scalar fields -->
+      <ellipse cx="316" cy="104" rx="108" ry="91" fill="url(#thermalField)"/>
+      <ellipse cx="145" cy="190" rx="126" ry="74" fill="url(#pressureField)"/>
+      <ellipse cx="145" cy="190" rx="92" ry="48" fill="none" stroke="#7b3f98" stroke-width="4" opacity=".72"/>
+      <ellipse cx="145" cy="190" rx="119" ry="67" fill="none" stroke="#7b3f98" stroke-width="3" opacity=".42"/>
+
+      <!-- In-plane coordinate axes -->
+      <path d="M28 229H91" stroke="#17264b" stroke-width="3"/>
+      <path d="M104 229L91 222V236Z" fill="#17264b"/>
+      <path d="M28 229V166" stroke="#17264b" stroke-width="3"/>
+      <path d="M28 153L21 166H35Z" fill="#17264b"/>
+      <text x="114" y="235" class="callout">x</text><text x="20" y="145" class="callout">y</text>
+
+      <!-- Explicit physical keys -->
+      <path d="M348 43L440 39" stroke="#2f72d6" stroke-width="3"/>
+      <text x="448" y="35" class="callout">Current-collector</text>
+      <text x="448" y="55" class="small">potential field</text>
+
+      <path d="M316 104L440 99" stroke="#e17a4c" stroke-width="3"/>
+      <text x="448" y="96" class="callout">Thermal-gradient field</text>
+      <text x="448" y="116" class="small">temperature variation</text>
+
+      <path d="M218 190L440 166" stroke="#7b3f98" stroke-width="3"/>
+      <text x="448" y="163" class="callout">Stack-pressure /</text>
+      <text x="448" y="183" class="small">contact field</text>
+
+      <path d="M392 238L440 229" stroke="#e58a59" stroke-width="3"/>
+      <text x="448" y="223" class="callout">Edges, overhang</text>
+      <text x="448" y="243" class="small">and registration</text>
+    </g>
+
+    <text x="34" y="420" class="sans" font-size="15" font-weight="800" letter-spacing="1.2" fill="#53657e">PRIMARY DETERMINANTS</text>
+    <g transform="translate(34 438)">
+      <rect width="108" height="62" rx="12" fill="#f3ecf8"/>
+      <text x="54" y="27" text-anchor="middle" class="mechanism">Tab<tspan x="54" dy="20">geometry</tspan></text>
+      <rect x="116" width="108" height="62" rx="12" fill="#edf3fb"/>
+      <text x="170" y="27" text-anchor="middle" class="mechanism">Collector<tspan x="170" dy="20">resistance</tspan></text>
+      <rect x="232" width="108" height="62" rx="12" fill="#f3ecf8"/>
+      <text x="286" y="27" text-anchor="middle" class="mechanism">Thermal<tspan x="286" dy="20">gradients</tspan></text>
+      <rect x="348" width="108" height="62" rx="12" fill="#edf3fb"/>
+      <text x="402" y="27" text-anchor="middle" class="mechanism">Stack<tspan x="402" dy="20">pressure</tspan></text>
+      <rect x="464" width="116" height="62" rx="12" fill="#f3ecf8"/>
+      <text x="522" y="27" text-anchor="middle" class="mechanism">Coating /<tspan x="522" dy="20">alignment</tspan></text>
+    </g>
+  </g>
+
+  <text x="720" y="753" text-anchor="middle" class="sans muted" font-size="19">Local conditions in plane reshape the through-thickness reaction profile at every (x,y) position.</text>
+  <g transform="translate(52 778)">
+    <rect width="1336" height="60" rx="17" fill="#17264b"/>
+    <text x="668" y="38" text-anchor="middle" class="sans" font-size="21" font-weight="700" fill="#fff">Reaction uniformity is a three-dimensional field: j = j(x,y,z,t).</text>
+  </g>
+</svg>

@@ -762,6 +762,7 @@ body .structure-fallback.structure-fallback--active { display: grid; font-size: 
 /* Light-touch protection for original knowledge-article figures. */
 .protected-figure,
 .protected-figure img {
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
 }

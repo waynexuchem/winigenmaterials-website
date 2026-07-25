@@ -6,3 +6,4 @@ _data.py
 .vscode/
 __pycache__/
 *.pyc
+knowledge/references/

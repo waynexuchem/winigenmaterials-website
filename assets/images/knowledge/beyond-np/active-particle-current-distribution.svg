@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-labelledby="title desc">
+  <title id="title">How active-particle population changes local working current</title>
+  <desc id="desc">The same applied electrode current is distributed over many active particles in a solid-solution regime or concentrated onto fewer active particles and phase boundaries in a two-phase regime.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#edf3fb"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#10244a" flood-opacity=".11"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#2a66d9"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#df5a62"/>
+    </marker>
+    <style>
+      .display{font-family:Manrope,Arial,sans-serif}.sans{font-family:Inter,Arial,sans-serif}
+      .navy{fill:#0f1f4d}.muted{fill:#53657e}.panel-title{font:800 25px Manrope,Arial,sans-serif;fill:#0f1f4d}
+      .body{font:500 18px Inter,Arial,sans-serif;fill:#53657e}.label{font:800 18px Inter,Arial,sans-serif;fill:#17264b}
+    </style>
+  </defs>
+
+  <rect width="1200" height="570" rx="28" fill="url(#bg)"/>
+  <text x="600" y="54" text-anchor="middle" class="display navy" font-size="32" font-weight="800">The same applied current can produce very different local currents</text>
+  <text x="600" y="86" text-anchor="middle" class="sans muted" font-size="18">Current partitioning depends on how many particles and phase boundaries are active at that moment.</text>
+
+  <g transform="translate(446 106)">
+    <rect width="308" height="54" rx="16" fill="#17264b"/>
+    <text x="154" y="34" text-anchor="middle" class="sans" font-size="19" font-weight="800" fill="#fff">Same applied electrode current</text>
+    <path d="M154 54V88M154 88H-176V110M154 88H484V110" fill="none" stroke="#2a66d9" stroke-width="4"/>
+  </g>
+
+  <!-- Many active particles -->
+  <g transform="translate(54 216)" filter="url(#shadow)">
+    <rect width="520" height="272" rx="22" fill="#fff" stroke="#cad9ed"/>
+    <text x="260" y="42" text-anchor="middle" class="panel-title">Many active particles and interfaces</text>
+    <text x="260" y="70" text-anchor="middle" class="body">Current is distributed across a larger active area</text>
+
+    <g transform="translate(70 94)">
+      <g fill="#79a7e8" stroke="#2a66d9" stroke-width="2">
+        <circle cx="28" cy="25" r="18"/><circle cx="92" cy="25" r="18"/><circle cx="156" cy="25" r="18"/><circle cx="220" cy="25" r="18"/><circle cx="284" cy="25" r="18"/><circle cx="348" cy="25" r="18"/>
+        <circle cx="28" cy="87" r="18"/><circle cx="92" cy="87" r="18"/><circle cx="156" cy="87" r="18"/><circle cx="220" cy="87" r="18"/><circle cx="284" cy="87" r="18"/><circle cx="348" cy="87" r="18"/>
+      </g>
+      <g stroke="#2a66d9" stroke-width="3" marker-end="url(#arrow)">
+        <path d="M28 0V13"/><path d="M92 0V13"/><path d="M156 0V13"/><path d="M220 0V13"/><path d="M284 0V13"/><path d="M348 0V13"/>
+        <path d="M28 62V75"/><path d="M92 62V75"/><path d="M156 62V75"/><path d="M220 62V75"/><path d="M284 62V75"/><path d="M348 62V75"/>
+      </g>
+    </g>
+
+    <text x="260" y="244" text-anchor="middle" class="display" font-size="24" font-weight="800" fill="#2a66d9">Lower local working current, j<tspan baseline-shift="sub" font-size="16">local</tspan></text>
+  </g>
+
+  <!-- Few active particles -->
+  <g transform="translate(626 216)" filter="url(#shadow)">
+    <rect width="520" height="272" rx="22" fill="#fff" stroke="#ead0c2"/>
+    <text x="260" y="42" text-anchor="middle" class="panel-title">Few active particles and phase boundaries</text>
+    <text x="260" y="70" text-anchor="middle" class="body">Current is concentrated onto a smaller active area</text>
+
+    <g transform="translate(104 90)">
+      <g>
+        <circle cx="65" cy="61" r="34" fill="#f1b24f" stroke="#dd744e" stroke-width="3"/>
+        <path d="M65 27A34 34 0 0 1 65 95Z" fill="#df5a62"/>
+        <circle cx="208" cy="61" r="34" fill="#f1b24f" stroke="#dd744e" stroke-width="3"/>
+        <path d="M208 27A34 34 0 0 1 208 95Z" fill="#df5a62"/>
+        <circle cx="351" cy="61" r="34" fill="#f1b24f" stroke="#dd744e" stroke-width="3"/>
+        <path d="M351 27A34 34 0 0 1 351 95Z" fill="#df5a62"/>
+      </g>
+      <g stroke="#df5a62" stroke-width="9" marker-end="url(#arrowRed)">
+        <path d="M65 -8V20"/><path d="M208 -8V20"/><path d="M351 -8V20"/>
+      </g>
+      <g stroke="#17264b" stroke-width="3" stroke-dasharray="5 4">
+        <line x1="65" y1="27" x2="65" y2="95"/><line x1="208" y1="27" x2="208" y2="95"/><line x1="351" y1="27" x2="351" y2="95"/>
+      </g>
+    </g>
+
+    <text x="260" y="244" text-anchor="middle" class="display" font-size="24" font-weight="800" fill="#df5a62">Higher local working current, j<tspan baseline-shift="sub" font-size="16">local</tspan></text>
+  </g>
+
+  <g transform="translate(54 516)">
+    <rect width="1092" height="36" rx="12" fill="#e8f1ff"/>
+    <text x="546" y="24" text-anchor="middle" class="sans" font-size="17" font-weight="700" fill="#17264b">Instantaneous electrochemically active area—not nominal BET area—controls how strongly each active interface is loaded.</text>
+  </g>
+</svg>
