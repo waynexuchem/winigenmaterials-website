@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Ultra-Low-Temperature Lithium-Ion Cell Design</title>
+  <desc id="desc">Social preview card showing six coupled design domains around a lithium-ion pouch cell and the outputs useful energy, deliverable power, and safe rechargeability.</desc>
+  <metadata>Winigen Materials social preview artwork, 2026.</metadata>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0b1830"/>
+      <stop offset=".58" stop-color="#142b54"/>
+      <stop offset="1" stop-color="#173a6a"/>
+    </linearGradient>
+    <linearGradient id="cell" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2f70df"/>
+      <stop offset=".58" stop-color="#238fc3"/>
+      <stop offset="1" stop-color="#25b4bf"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f6db8f"/>
+      <stop offset="1" stop-color="#ae7828"/>
+    </linearGradient>
+    <filter id="cellShadow" x="-18%" y="-20%" width="136%" height="145%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#020a18" flood-opacity=".32"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#68cde8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1120" cy="-30" r="280" fill="#3774bf" opacity=".13"/>
+  <circle cx="1160" cy="670" r="310" fill="#2ab5c1" opacity=".08"/>
+  <path d="M620 66V564" stroke="#7fb7e1" stroke-opacity=".22"/>
+
+  <!-- Headline -->
+  <g font-family="Manrope,Inter,Arial,sans-serif">
+    <text x="58" y="118" fill="#70d4ee" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="2.2">BELOW −20°C • CELL-LEVEL ENGINEERING</text>
+    <text x="58" y="194" fill="#fff" font-size="48" font-weight="800">Ultra-Low-Temperature</text>
+    <text x="58" y="255" fill="#fff" font-size="48" font-weight="800">Lithium-Ion Cell Design</text>
+    <text x="58" y="316" fill="#c7d9ef" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="650">Electrolyte kinetics • electrode architecture</text>
+    <text x="58" y="346" fill="#c7d9ef" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="650">Safe rechargeability</text>
+  </g>
+
+  <!-- Simplified six-domain system map -->
+  <g font-family="Inter,Arial,sans-serif">
+    <!-- faint pouch silhouette -->
+    <g opacity=".36">
+      <rect x="790" y="151" width="250" height="340" rx="34" fill="none" stroke="#8bb9dc" stroke-width="2"/>
+      <rect x="829" y="128" width="46" height="24" rx="6" fill="#8bb9dc"/>
+      <rect x="955" y="128" width="46" height="24" rx="6" fill="#8bb9dc"/>
+      <path d="M815 188H1015M815 454H1015" stroke="#8bb9dc" stroke-width="2"/>
+    </g>
+
+    <!-- connectors -->
+    <g fill="none" stroke="#68cde8" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)" opacity=".86">
+      <path d="M752 182C785 190 797 213 812 237"/>
+      <path d="M748 308H804"/>
+      <path d="M752 435C783 425 798 402 812 380"/>
+      <path d="M1050 182C1038 194 1028 215 1018 237"/>
+      <path d="M1050 308H1026"/>
+      <path d="M1050 435C1038 423 1028 401 1018 380"/>
+    </g>
+
+    <!-- central cell -->
+    <g filter="url(#cellShadow)">
+      <rect x="806" y="216" width="220" height="188" rx="24" fill="url(#cell)" stroke="#79d6e6" stroke-opacity=".58"/>
+      <text x="916" y="249" text-anchor="middle" fill="#dff7ff" font-size="12" font-weight="850" letter-spacing="1.8">SYSTEM OUTPUTS</text>
+      <line x1="832" y1="265" x2="1000" y2="265" stroke="#dff7ff" stroke-opacity=".42"/>
+      <text x="916" y="302" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Useful energy</text>
+      <text x="916" y="338" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Deliverable power</text>
+      <text x="916" y="374" text-anchor="middle" fill="#fff" font-size="20.5" font-weight="800">Safe rechargeability</text>
+    </g>
+
+    <!-- domain labels -->
+    <g font-size="15.5" font-weight="750">
+      <circle cx="742" cy="180" r="5" fill="#3f7ee7"/>
+      <text x="726" y="185" text-anchor="end" fill="#eef7ff">Electrolyte</text>
+
+      <circle cx="742" cy="308" r="5" fill="#2db2bd"/>
+      <text x="726" y="313" text-anchor="end" fill="#eef7ff">Electrode architecture</text>
+
+      <circle cx="742" cy="438" r="5" fill="#7186ea"/>
+      <text x="726" y="443" text-anchor="end" fill="#eef7ff">Graphite receiving margin</text>
+
+      <circle cx="1060" cy="180" r="5" fill="#ed7652"/>
+      <text x="1076" y="185" fill="#eef7ff">Cell hardware</text>
+
+      <circle cx="1060" cy="308" r="5" fill="#efaa36"/>
+      <text x="1076" y="313" fill="#eef7ff">Thermal state</text>
+
+      <circle cx="1060" cy="438" r="5" fill="#a15ad0"/>
+      <text x="1076" y="443" fill="#eef7ff">Protocol</text>
+    </g>
+  </g>
+
+  <!-- Branding; logo mark is composited into the final PNG at x=58, y=516 -->
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="130" y="548" fill="#fff" font-size="17" font-weight="800" letter-spacing=".6">WINIGEN MATERIALS</text>
+    <text x="130" y="570" fill="#9fb9d6" font-size="12.5" font-weight="600" letter-spacing=".8">BATTERY MATERIALS &amp; CELL DEVELOPMENT</text>
+  </g>
+</svg>

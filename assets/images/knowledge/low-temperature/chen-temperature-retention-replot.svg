@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Cold-discharge capacity retention of 1 Ah LCO/graphite pouch cells</title>
+  <desc id="desc">Room-temperature-charge and cold-discharge capacity retention for base and EHFB electrolytes, normalized independently to each electrolyte's 25-degree-Celsius discharge capacity and plotted on a numerical temperature axis. A conceptual voltage-capacity panel distinguishes capacity retention from delivered energy.</desc>
+  <metadata>Capacity-retention values replotted from Chen et al., Nature Communications 14, 8326 (2023), Figure 6c–d, under CC BY 4.0. Plot design and annotations modified by Winigen Materials.</metadata>
+  <defs>
+    <style>
+      text{font-family:Inter,Arial,sans-serif}
+      .h{fill:#14213d;font-size:29px;font-weight:800}
+      .sub{fill:#566b87;font-size:15px}
+      .axis{stroke:#7188a9;stroke-width:1.8}
+      .grid{stroke:#dbe4ef;stroke-width:1}
+      .vgrid{stroke:#e8eef5;stroke-width:1}
+      .tick{fill:#60718c;font-size:13px}
+      .lab{fill:#263a59;font-size:15px;font-weight:700}
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" rx="26" fill="#f4f7fb"/>
+  <text x="58" y="56" class="h">Cold-discharge capacity retention of 1 Ah LCO/graphite pouch cells</text>
+  <text x="58" y="85" class="sub">Cells were charged at room temperature and discharged at the selected cold temperature; this protocol does not evaluate same-temperature rechargeability.</text>
+
+  <!-- Published capacity-retention replot on a true numerical temperature axis -->
+  <g transform="translate(58 124)">
+    <rect width="820" height="482" rx="20" fill="#fff" stroke="#c6d4e7"/>
+    <g transform="translate(96 58)">
+      <line x1="0" y1="340" x2="650" y2="340" class="axis"/>
+      <line x1="0" y1="0" x2="0" y2="340" class="axis"/>
+
+      <g class="grid">
+        <line x1="0" y1="272" x2="650" y2="272"/>
+        <line x1="0" y1="204" x2="650" y2="204"/>
+        <line x1="0" y1="136" x2="650" y2="136"/>
+        <line x1="0" y1="68" x2="650" y2="68"/>
+        <line x1="0" y1="0" x2="650" y2="0"/>
+      </g>
+      <g class="vgrid">
+        <line x1="65" y1="0" x2="65" y2="340"/><line x1="130" y1="0" x2="130" y2="340"/>
+        <line x1="195" y1="0" x2="195" y2="340"/><line x1="260" y1="0" x2="260" y2="340"/>
+        <line x1="325" y1="0" x2="325" y2="340"/><line x1="390" y1="0" x2="390" y2="340"/>
+        <line x1="455" y1="0" x2="455" y2="340"/><line x1="520" y1="0" x2="520" y2="340"/>
+        <line x1="585" y1="0" x2="585" y2="340"/><line x1="650" y1="0" x2="650" y2="340"/>
+      </g>
+
+      <g class="tick" text-anchor="end">
+        <text x="-12" y="345">0</text><text x="-12" y="277">20</text><text x="-12" y="209">40</text>
+        <text x="-12" y="141">60</text><text x="-12" y="73">80</text><text x="-12" y="5">100</text>
+      </g>
+      <g class="tick" text-anchor="middle">
+        <text x="0" y="364">−70</text><text x="65" y="364">−60</text><text x="130" y="364">−50</text>
+        <text x="195" y="364">−40</text><text x="260" y="364">−30</text><text x="325" y="364">−20</text>
+        <text x="390" y="364">−10</text><text x="455" y="364">0</text><text x="520" y="364">10</text>
+        <text x="585" y="364">20</text><text x="650" y="364">30</text>
+      </g>
+      <text x="325" y="402" text-anchor="middle" class="lab">Discharge temperature (°C)</text>
+      <text transform="translate(-66 170) rotate(-90)" text-anchor="middle" class="lab">Capacity retention relative to 25°C (%)</text>
+
+      <!-- x = 6.5(T + 70), with axis spanning −70 to 30°C -->
+      <polyline points="0,333.2 65,328.4 130,319.6 195,310.8 260,247.9 325,205.0 617.5,0" fill="none" stroke="#7f91ad" stroke-width="4.5" stroke-linejoin="round"/>
+      <polyline points="0,139.7 65,121.4 130,104.0 195,88.4 260,71.1 325,46.6 617.5,0" fill="none" stroke="#22a6b3" stroke-width="5.5" stroke-linejoin="round"/>
+      <g fill="#7f91ad" stroke="#fff" stroke-width="2.5">
+        <circle cx="0" cy="333.2" r="6.5"/><circle cx="65" cy="328.4" r="6.5"/><circle cx="130" cy="319.6" r="6.5"/>
+        <circle cx="195" cy="310.8" r="6.5"/><circle cx="260" cy="247.9" r="6.5"/><circle cx="325" cy="205.0" r="6.5"/><circle cx="617.5" cy="0" r="6.5"/>
+      </g>
+      <g fill="#22a6b3" stroke="#fff" stroke-width="2.5">
+        <circle cx="0" cy="139.7" r="7.5"/><circle cx="65" cy="121.4" r="7.5"/><circle cx="130" cy="104.0" r="7.5"/>
+        <circle cx="195" cy="88.4" r="7.5"/><circle cx="260" cy="71.1" r="7.5"/><circle cx="325" cy="46.6" r="7.5"/><circle cx="617.5" cy="0" r="7.5"/>
+      </g>
+
+      <g fill="none" stroke-width="1.4">
+        <path d="M6 137L34 96" stroke="#22a6b3"/><path d="M6 331L34 307" stroke="#7f91ad"/>
+      </g>
+      <text x="40" y="92" fill="#16818a" font-size="15" font-weight="850">EHFB: 58.9%</text>
+      <text x="40" y="303" fill="#647590" font-size="15" font-weight="850">Base: 2.0%</text>
+      <path d="M623 8L670 38V65" fill="none" stroke="#60718c" stroke-width="1.2"/>
+      <rect x="540" y="65" width="145" height="26" rx="5" fill="#fff" stroke="#cbd8e6"/>
+      <text x="612.5" y="82" text-anchor="middle" fill="#52657f" font-size="12.5" font-weight="750">25°C reference: 100%</text>
+    </g>
+    <g transform="translate(572 24)">
+      <line x1="0" y1="0" x2="34" y2="0" stroke="#22a6b3" stroke-width="5.5"/><text x="44" y="5" class="lab">EHFB</text>
+      <line x1="112" y1="0" x2="146" y2="0" stroke="#7f91ad" stroke-width="4.5"/><text x="156" y="5" class="lab">Base</text>
+    </g>
+  </g>
+
+  <!-- Conceptual distinction between capacity retention and delivered energy -->
+  <g transform="translate(908 124)">
+    <rect width="234" height="482" rx="20" fill="#e8f1f8" stroke="#bfd0df"/>
+    <text x="20" y="38" fill="#17324c" font-size="18.5" font-weight="800">Capacity retention</text>
+    <text x="20" y="62" fill="#17324c" font-size="18.5" font-weight="800">is not energy retention</text>
+    <text x="20" y="90" fill="#42627d" font-size="15.5" font-weight="750">E = ∫ V dQ</text>
+
+    <g font-size="11.5" font-weight="800">
+      <line x1="20" y1="111" x2="42" y2="111" stroke="#47b8d4" stroke-width="4"/><text x="49" y="115" fill="#247f98">25°C</text>
+      <line x1="108" y1="111" x2="130" y2="111" stroke="#e78b38" stroke-width="4"/><text x="137" y="115" fill="#a75b1f">Low temperature</text>
+    </g>
+
+    <g transform="translate(30 130)">
+      <line x1="0" y1="215" x2="174" y2="215" stroke="#6f8ca7" stroke-width="1.8"/>
+      <line x1="0" y1="0" x2="0" y2="215" stroke="#6f8ca7" stroke-width="1.8"/>
+      <line x1="0" y1="170" x2="174" y2="170" stroke="#9b6a51" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+      <path d="M4 32C55 36 110 58 150 100C157 122 162 146 164 170L164 215H4Z" fill="#55c1dc" fill-opacity=".16"/>
+      <path d="M4 82C40 91 78 110 108 140C111 151 113 161 114 170L114 215H4Z" fill="#f09a45" fill-opacity=".19"/>
+      <path d="M4 32C55 36 110 58 150 100C157 122 162 146 164 170" fill="none" stroke="#47b8d4" stroke-width="4"/>
+      <path d="M4 82C40 91 78 110 108 140C111 151 113 161 114 170" fill="none" stroke="#e78b38" stroke-width="4"/>
+
+      <rect x="4" y="151" width="77" height="18" rx="3" fill="#e8f1f8"/>
+      <text x="8" y="164" fill="#8b5a42" font-size="11" font-weight="750">cutoff voltage</text>
+      <text x="87" y="239" text-anchor="middle" fill="#526d84" font-size="11.5">discharged capacity Q</text>
+      <text transform="translate(-17 107.5) rotate(-90)" text-anchor="middle" fill="#526d84" font-size="11.5">voltage V</text>
+    </g>
+
+    <text x="20" y="397" fill="#17324c" font-size="13.5" font-weight="800">Cold polarization lowers</text>
+    <text x="20" y="416" fill="#17324c" font-size="13.5" font-weight="800">delivered energy through:</text>
+    <text x="20" y="442" fill="#405d76" font-size="12.5">• lower average discharge voltage</text>
+    <text x="20" y="465" fill="#405d76" font-size="12">• earlier arrival at the cutoff voltage</text>
+  </g>
+</svg>

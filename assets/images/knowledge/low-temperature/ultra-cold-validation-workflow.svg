@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Development and validation loop for ultra-low-temperature cells</title>
+  <desc id="desc">Seven compact development steps proceed from application definition to thermal strategy, with an explicit feedback loop to revise architecture and cold protocols when targets are not met.</desc>
+  <metadata>Conceptual Winigen Materials framework. © Winigen Materials 2026. All rights reserved.</metadata>
+  <defs>
+    <linearGradient id="pageBg" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f7faff"/>
+      <stop offset="1" stop-color="#edf3fa"/>
+    </linearGradient>
+    <linearGradient id="thermalBg" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#fff7f1"/>
+      <stop offset="1" stop-color="#fffaf7"/>
+    </linearGradient>
+    <filter id="softShadow" x="-12%" y="-18%" width="124%" height="145%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#19365f" flood-opacity=".10"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#4d82b5"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#dd714a"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="758" rx="22" fill="url(#pageBg)" stroke="#c9d8e8" stroke-width="2"/>
+
+  <g font-family="Manrope,Inter,Arial,sans-serif">
+    <text x="54" y="58" fill="#14213d" font-size="31" font-weight="800">Development and validation loop for ultra-low-temperature cells</text>
+    <text x="54" y="88" fill="#48617f" font-family="Inter,Arial,sans-serif" font-size="16">Begin with the duty cycle, identify the controlling limitations, validate the practical design, and iterate using measured evidence.</text>
+    <line x1="54" y1="111" x2="1146" y2="111" stroke="#c8d7e7" stroke-width="1.5"/>
+
+    <!-- phase labels -->
+    <g font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="1.2">
+      <text x="55" y="141" fill="#2a66d9">DEFINE AND CONTROL</text>
+      <text x="55" y="351" fill="#218d9c">RESOLVE AND VALIDATE</text>
+      <text x="55" y="563" fill="#c65c37">DECIDE AND ITERATE</text>
+    </g>
+
+    <!-- connectors behind boxes -->
+    <g fill="none" stroke="#4d82b5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowBlue)">
+      <path d="M374 232H420"/>
+      <path d="M780 232H826"/>
+      <path d="M1006 296V319H330V365"/>
+      <path d="M374 442H420"/>
+      <path d="M780 442H826"/>
+      <path d="M1006 506V530H780V552"/>
+    </g>
+
+    <!-- Step 1 -->
+    <g transform="translate(54 156)" filter="url(#softShadow)">
+      <rect width="320" height="140" rx="12" fill="#fff" stroke="#b9cce2" stroke-width="1.5"/>
+      <rect width="6" height="140" rx="3" fill="#2a66d9"/>
+      <rect x="22" y="18" width="38" height="27" rx="6" fill="#e8f0ff"/>
+      <text x="41" y="37" text-anchor="middle" fill="#2a66d9" font-size="13" font-weight="900">01</text>
+      <text x="72" y="38" fill="#14213d" font-size="19" font-weight="800">Define the application</text>
+      <text x="22" y="76" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">storage • discharge • recharge</text>
+      <text x="22" y="101" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">energy • power • warm-up • life</text>
+      <text x="22" y="126" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">safety and abuse constraints</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(420 156)" filter="url(#softShadow)">
+      <rect width="360" height="140" rx="12" fill="#fff" stroke="#b9cce2" stroke-width="1.5"/>
+      <rect width="6" height="140" rx="3" fill="#2a66d9"/>
+      <rect x="22" y="18" width="38" height="27" rx="6" fill="#e8f0ff"/>
+      <text x="41" y="37" text-anchor="middle" fill="#2a66d9" font-size="13" font-weight="900">02</text>
+      <text x="72" y="38" fill="#14213d" font-size="18" font-weight="800">Lock a controlled baseline</text>
+      <text x="22" y="76" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">same electrodes • N/P • E/C</text>
+      <text x="22" y="101" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">formation • pressure • format</text>
+      <text x="22" y="126" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">controlled room-temperature reference</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(826 156)" filter="url(#softShadow)">
+      <rect width="320" height="140" rx="12" fill="#fff" stroke="#b9cce2" stroke-width="1.5"/>
+      <rect width="6" height="140" rx="3" fill="#2a66d9"/>
+      <rect x="22" y="18" width="38" height="27" rx="6" fill="#e8f0ff"/>
+      <text x="41" y="37" text-anchor="middle" fill="#2a66d9" font-size="13" font-weight="900">03</text>
+      <text x="72" y="30" fill="#14213d" font-size="17" font-weight="800">Characterize properties</text>
+      <text x="72" y="51" fill="#14213d" font-size="17" font-weight="800">over temperature</text>
+      <text x="22" y="78" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16">phase behavior • conductivity</text>
+      <text x="22" y="103" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16">viscosity • wetting • compatibility</text>
+      <text x="22" y="128" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="15">full thermal range • equilibration history</text>
+    </g>
+
+    <!-- Step 4 -->
+    <g transform="translate(54 366)" filter="url(#softShadow)">
+      <rect width="320" height="140" rx="12" fill="#fff" stroke="#a9ced5" stroke-width="1.5"/>
+      <rect width="6" height="140" rx="3" fill="#25a4b3"/>
+      <rect x="22" y="18" width="38" height="27" rx="6" fill="#e3f5f7"/>
+      <text x="41" y="37" text-anchor="middle" fill="#168493" font-size="13" font-weight="900">04</text>
+      <text x="72" y="30" fill="#14213d" font-size="17" font-weight="800">Identify the rate-limiting</text>
+      <text x="72" y="51" fill="#14213d" font-size="17" font-weight="800">processes</text>
+      <text x="22" y="78" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16">bulk and pore transport</text>
+      <text x="22" y="103" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16">electrode kinetics • EIS/DRT</text>
+      <text x="22" y="128" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="15">three-electrode cells where possible</text>
+    </g>
+
+    <!-- Step 5 -->
+    <g transform="translate(420 366)" filter="url(#softShadow)">
+      <rect width="360" height="140" rx="12" fill="#fff" stroke="#a9ced5" stroke-width="1.5"/>
+      <rect width="6" height="140" rx="3" fill="#25a4b3"/>
+      <rect x="22" y="18" width="38" height="27" rx="6" fill="#e3f5f7"/>
+      <text x="41" y="37" text-anchor="middle" fill="#168493" font-size="13" font-weight="900">05</text>
+      <text x="72" y="38" fill="#14213d" font-size="18" font-weight="800">Optimize practical architecture</text>
+      <text x="22" y="76" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">loading • porosity • separator • E/C</text>
+      <text x="22" y="101" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">pressure • collectors • tab placement</text>
+      <text x="22" y="126" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16.5">retain energy and manufacturing relevance</text>
+    </g>
+
+    <!-- Step 6 -->
+    <g transform="translate(826 366)" filter="url(#softShadow)">
+      <rect width="320" height="140" rx="12" fill="#fff" stroke="#a9ced5" stroke-width="1.5"/>
+      <rect width="6" height="140" rx="3" fill="#25a4b3"/>
+      <rect x="22" y="18" width="38" height="27" rx="6" fill="#e3f5f7"/>
+      <text x="41" y="37" text-anchor="middle" fill="#168493" font-size="13" font-weight="900">06</text>
+      <text x="72" y="38" fill="#14213d" font-size="17.5" font-weight="800">Validate realistic protocols</text>
+      <text x="22" y="76" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16">soak • thermal boundary • cutoff</text>
+      <text x="22" y="101" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="16">energy • power • recharge • recovery</text>
+      <text x="22" y="126" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="15">cycling • plating diagnostics • aged cells</text>
+    </g>
+
+    <!-- Step 7 -->
+    <g transform="translate(520 560)" filter="url(#softShadow)">
+      <rect width="520" height="134" rx="12" fill="url(#thermalBg)" stroke="#e6b6a5" stroke-width="1.5"/>
+      <rect width="6" height="134" rx="3" fill="#ed7049"/>
+      <rect x="22" y="18" width="38" height="27" rx="6" fill="#ffebe4"/>
+      <text x="41" y="37" text-anchor="middle" fill="#c95735" font-size="13" font-weight="900">07</text>
+      <text x="72" y="38" fill="#14213d" font-size="18" font-weight="800">Select the thermal strategy</text>
+      <text x="22" y="72" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="15.5">direct operation • derating • staged charge</text>
+      <text x="22" y="97" fill="#405876" font-family="Inter,Arial,sans-serif" font-size="15.5">self-heating or mandatory preheat</text>
+      <text x="22" y="122" fill="#93462d" font-family="Inter,Arial,sans-serif" font-size="15.5" font-weight="700">time • energy • uniformity • life • safety</text>
+    </g>
+
+    <!-- explicit feedback loop -->
+    <path d="M520 635H430C390 635 360 610 360 575V535H214V514" fill="none" stroke="#dd714a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 7" marker-end="url(#arrowOrange)"/>
+    <rect x="54" y="704" width="730" height="34" rx="10" fill="#fff" stroke="#d4dfea"/>
+    <circle cx="75" cy="721" r="6" fill="#dd714a"/>
+    <text x="92" y="726" fill="#93462d" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="750">If targets are not met, return to the measured limiting process and revise the design accordingly.</text>
+  </g>
+</svg>

@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Cell-level design domain below −20°C</title>
+  <desc id="desc">Six coupled cell-design domains converge on useful energy, deliverable power, and safe rechargeability.</desc>
+  <metadata>Copyright © 2026 Winigen Materials. All rights reserved. Reproduction, modification, or redistribution requires permission.</metadata>
+  <defs>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0d1c38"/>
+      <stop offset="1" stop-color="#1b3970"/>
+    </linearGradient>
+    <linearGradient id="outputFill" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2a66d9"/>
+      <stop offset="1" stop-color="#2eb7c5"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#77d7ef"/>
+    </marker>
+    <filter id="nodeShadow" x="-10%" y="-15%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#061126" flood-opacity=".24"/>
+    </filter>
+    <style>
+      text{font-family:Inter,Arial,sans-serif}
+      .domain-title{fill:#18324a;font-size:19.5px;font-weight:750}
+      .descriptor{fill:#546b7e;font-size:14.5px}
+      .domain-index{font-size:11px;font-weight:850;letter-spacing:.4px}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="658" rx="19" fill="url(#canvas)" stroke="#294a78" stroke-width="2"/>
+  <text x="55" y="56" fill="#fff" font-family="Manrope,Inter,Arial,sans-serif" font-size="32" font-weight="750">Cell-level design domain below −20°C</text>
+  <text x="55" y="88" fill="#b9ccec" font-size="16.5">Electrolyte optimization is necessary but insufficient; useful cell performance emerges only when six coupled domains are matched.</text>
+  <line x1="55" y1="108" x2="1145" y2="108" stroke="#6284ae" stroke-opacity=".48"/>
+
+  <!-- Faint pouch-cell cross-section silhouette -->
+  <g aria-hidden="true">
+    <rect x="492" y="119" width="42" height="18" rx="3" fill="#9ddcf0" fill-opacity=".13" stroke="#9ddcf0" stroke-opacity=".34"/>
+    <rect x="666" y="119" width="42" height="18" rx="3" fill="#9ddcf0" fill-opacity=".13" stroke="#9ddcf0" stroke-opacity=".34"/>
+    <rect x="444" y="132" width="312" height="416" rx="22" fill="#72c9e4" fill-opacity=".055" stroke="#9ddcf0" stroke-opacity=".34" stroke-width="1.5"/>
+    <rect x="463" y="153" width="274" height="374" rx="13" fill="none" stroke="#b8e6f4" stroke-opacity=".26"/>
+    <g fill-opacity=".15">
+      <rect x="478" y="174" width="244" height="13" rx="3" fill="#6da9ea"/>
+      <rect x="478" y="193" width="244" height="7" rx="2" fill="#d7eff7"/>
+      <rect x="478" y="206" width="244" height="13" rx="3" fill="#ef8661"/>
+      <rect x="478" y="227" width="244" height="13" rx="3" fill="#6da9ea"/>
+      <rect x="478" y="246" width="244" height="7" rx="2" fill="#d7eff7"/>
+      <rect x="478" y="429" width="244" height="7" rx="2" fill="#d7eff7"/>
+      <rect x="478" y="442" width="244" height="13" rx="3" fill="#ef8661"/>
+      <rect x="478" y="463" width="244" height="13" rx="3" fill="#6da9ea"/>
+      <rect x="478" y="482" width="244" height="7" rx="2" fill="#d7eff7"/>
+      <rect x="478" y="495" width="244" height="13" rx="3" fill="#ef8661"/>
+    </g>
+    <path d="M456 141L744 538M744 141L456 538" stroke="#b8e6f4" stroke-opacity=".05"/>
+  </g>
+
+  <!-- Recessed connector curves -->
+  <g fill="none" stroke="#77d7ef" stroke-width="1.8" stroke-linecap="round" opacity=".82">
+    <path d="M372 192C415 198 441 238 457 281"/>
+    <path d="M372 333C415 333 439 334 457 337"/>
+    <path d="M372 474C415 467 441 424 457 399"/>
+    <path d="M828 192C785 198 759 238 743 281"/>
+    <path d="M828 333C785 333 761 334 743 337"/>
+    <path d="M828 474C785 467 759 424 743 399"/>
+  </g>
+
+  <!-- Coupled design domains -->
+  <g filter="url(#nodeShadow)">
+    <g transform="translate(55 140)">
+      <rect width="335" height="104" rx="11" fill="#f5f9ff" stroke="#c5d5e7"/>
+      <rect width="5" height="104" rx="2.5" fill="#356dd3"/>
+      <rect x="18" y="16" width="30" height="22" rx="4" fill="#356dd3" fill-opacity=".12"/>
+      <text x="33" y="31" text-anchor="middle" class="domain-index" fill="#356dd3">D1</text>
+      <text x="60" y="33" class="domain-title">Electrolyte</text>
+      <text x="20" y="66" class="descriptor">phase stability · ionic transport</text>
+      <text x="20" y="88" class="descriptor">solvation · desolvation · SEI/CEI</text>
+    </g>
+    <g transform="translate(55 281)">
+      <rect width="335" height="104" rx="11" fill="#f5f9ff" stroke="#c5d5e7"/>
+      <rect width="5" height="104" rx="2.5" fill="#2b9eaa"/>
+      <rect x="18" y="16" width="30" height="22" rx="4" fill="#2b9eaa" fill-opacity=".12"/>
+      <text x="33" y="31" text-anchor="middle" class="domain-index" fill="#23858f">D2</text>
+      <text x="60" y="33" class="domain-title">Electrode architecture</text>
+      <text x="20" y="66" class="descriptor">loading · porosity · tortuosity</text>
+      <text x="20" y="88" class="descriptor">thickness · particle transport</text>
+    </g>
+    <g transform="translate(55 422)">
+      <rect width="335" height="104" rx="11" fill="#f5f9ff" stroke="#c5d5e7"/>
+      <rect width="5" height="104" rx="2.5" fill="#6378d8"/>
+      <rect x="18" y="16" width="30" height="22" rx="4" fill="#6378d8" fill-opacity=".12"/>
+      <text x="33" y="31" text-anchor="middle" class="domain-index" fill="#5469c5">D3</text>
+      <text x="60" y="33" class="domain-title">Graphite receiving margin</text>
+      <text x="20" y="66" class="descriptor">N/P · SOC · active area</text>
+      <text x="20" y="88" class="descriptor">local insertion kinetics</text>
+    </g>
+    <g transform="translate(810 140)">
+      <rect width="335" height="104" rx="11" fill="#f5f9ff" stroke="#c5d5e7"/>
+      <rect x="330" width="5" height="104" rx="2.5" fill="#d86f4b"/>
+      <rect x="18" y="16" width="30" height="22" rx="4" fill="#d86f4b" fill-opacity=".12"/>
+      <text x="33" y="31" text-anchor="middle" class="domain-index" fill="#bc5b3b">D4</text>
+      <text x="60" y="33" class="domain-title" style="font-size:18.5px">Cell architecture &amp; hardware</text>
+      <text x="20" y="66" class="descriptor">separator · tabs · contacts</text>
+      <text x="20" y="88" class="descriptor">format · pressure · E/C</text>
+    </g>
+    <g transform="translate(810 281)">
+      <rect width="335" height="104" rx="11" fill="#f5f9ff" stroke="#c5d5e7"/>
+      <rect x="330" width="5" height="104" rx="2.5" fill="#d89b32"/>
+      <rect x="18" y="16" width="30" height="22" rx="4" fill="#d89b32" fill-opacity=".13"/>
+      <text x="33" y="31" text-anchor="middle" class="domain-index" fill="#b37a1c">D5</text>
+      <text x="60" y="33" class="domain-title">Thermal state</text>
+      <text x="20" y="66" class="descriptor">soak · gradients · heat transfer</text>
+      <text x="20" y="88" class="descriptor">conditioning energy</text>
+    </g>
+    <g transform="translate(810 422)">
+      <rect width="335" height="104" rx="11" fill="#f5f9ff" stroke="#c5d5e7"/>
+      <rect x="330" width="5" height="104" rx="2.5" fill="#8b61bd"/>
+      <rect x="18" y="16" width="30" height="22" rx="4" fill="#8b61bd" fill-opacity=".12"/>
+      <text x="33" y="31" text-anchor="middle" class="domain-index" fill="#7550a3">D6</text>
+      <text x="60" y="33" class="domain-title">Operating protocol</text>
+      <text x="20" y="66" class="descriptor">charge/discharge temperature</text>
+      <text x="20" y="88" class="descriptor">rate · cutoff · rest · recovery</text>
+    </g>
+  </g>
+
+  <!-- Compact output node -->
+  <g filter="url(#nodeShadow)">
+    <rect x="475" y="254" width="250" height="172" rx="13" fill="url(#outputFill)" stroke="#62c6df" stroke-opacity=".55" stroke-width="1.2"/>
+    <line x1="497" y1="298" x2="703" y2="298" stroke="#d7f4fb" stroke-opacity=".52"/>
+    <text x="600" y="281" text-anchor="middle" fill="#eaffff" font-size="13" font-weight="800" letter-spacing="1.6">SYSTEM OUTPUTS</text>
+    <text x="600" y="329" text-anchor="middle" fill="#fff" font-family="Manrope,Inter,Arial,sans-serif" font-size="23.5" font-weight="700">Useful energy</text>
+    <text x="600" y="364" text-anchor="middle" fill="#fff" font-family="Manrope,Inter,Arial,sans-serif" font-size="23.5" font-weight="700">Deliverable power</text>
+    <text x="600" y="399" text-anchor="middle" fill="#fff" font-family="Manrope,Inter,Arial,sans-serif" font-size="23.5" font-weight="700">Safe rechargeability</text>
+  </g>
+
+  <!-- Foreground terminal arrowheads -->
+  <g fill="none" stroke="#77d7ef" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M457 281C462 284 466 288 469 291"/>
+    <path d="M457 337C462 338 466 339 469 340"/>
+    <path d="M457 399C462 396 466 392 469 389"/>
+    <path d="M743 281C738 284 734 288 731 291"/>
+    <path d="M743 337C738 338 734 339 731 340"/>
+    <path d="M743 399C738 396 734 392 731 389"/>
+  </g>
+
+  <line x1="55" y1="576" x2="1145" y2="576" stroke="#6284ae" stroke-opacity=".48"/>
+  <text x="600" y="611" text-anchor="middle" fill="#b9ccec" font-size="14.5">Conceptual Winigen Materials framework.</text>
+</svg>

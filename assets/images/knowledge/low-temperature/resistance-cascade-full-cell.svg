@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cooling steepens transport gradients and localizes graphite reaction</title>
+  <desc id="desc">Conceptual porous full-cell cross sections at 25 and minus 40 degrees Celsius with separate aligned profiles for electrolyte concentration, graphite polarization magnitude, and local reaction rate. Cooling steepens concentration gradients, raises separator-side graphite polarization, localizes graphite reaction, and increases local lithium-plating risk.</desc>
+  <metadata>Copyright © 2026 Winigen Materials. All rights reserved. Conceptual profiles are qualitative and not fitted data. Reproduction, modification, or redistribution requires permission.</metadata>
+  <defs>
+    <marker id="warmArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0l10 5-10 5z" fill="#2a66d9"/>
+    </marker>
+    <marker id="coldArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0l10 5-10 5z" fill="#ed7049"/>
+    </marker>
+    <style>
+      text{font-family:Inter,Arial,sans-serif}
+      .h{fill:#14213d;font-size:28px;font-weight:800}
+      .sub{fill:#5b6d88;font-size:15px}
+      .lab{fill:#263a59;font-size:15px;font-weight:750}
+      .small{fill:#5b6d88;font-size:12.5px}
+      .tiny{fill:#647590;font-size:11px}
+      .white{fill:#fff}
+      .profile-title{font-size:12.5px;font-weight:800}
+      .axis{stroke:#9aacc4;stroke-width:1.4}
+      .guide{stroke:#d8e2ef;stroke-width:1;stroke-dasharray:3 4}
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" rx="26" fill="#f4f7fb"/>
+  <text x="58" y="54" class="h">Cooling steepens transport gradients and localizes graphite reaction</text>
+  <text x="58" y="82" class="sub">Electrolyte concentration, graphite polarization, and local reaction rate are distinct but coupled spatial fields.</text>
+
+  <!-- 25°C row -->
+  <g transform="translate(58 108)">
+    <rect width="1084" height="330" rx="22" fill="#fff" stroke="#bfd0e7" stroke-width="1.7"/>
+    <rect x="22" y="18" width="112" height="40" rx="20" fill="#e5f4ee"/>
+    <text x="78" y="45" text-anchor="middle" fill="#187964" font-size="20" font-weight="800">25°C</text>
+    <text x="158" y="44" class="lab">Moderate polarization · broadly distributed graphite reaction</text>
+
+    <g transform="translate(84 88)">
+      <text x="184" y="-12" text-anchor="middle" class="small">porous cathode</text>
+      <text x="414" y="-12" text-anchor="middle" class="small">separator</text>
+      <text x="650" y="-12" text-anchor="middle" class="small">porous graphite</text>
+      <rect x="0" y="0" width="22" height="96" fill="#aeb8c7"/>
+      <rect x="22" y="0" width="328" height="96" rx="3" fill="#c9d5ee"/>
+      <g fill="#667faa">
+        <circle cx="76" cy="25" r="17"/><circle cx="128" cy="68" r="21"/><circle cx="185" cy="28" r="18"/>
+        <circle cx="235" cy="68" r="18"/><circle cx="286" cy="26" r="21"/><circle cx="325" cy="69" r="16"/>
+      </g>
+      <rect x="350" y="0" width="128" height="96" fill="#d2ebf7"/>
+      <path d="M378 13v70M414 13v70M450 13v70" stroke="#fff" stroke-width="7" opacity=".82"/>
+      <rect x="478" y="0" width="362" height="96" rx="3" fill="#454e5e"/>
+      <g fill="#222a36" stroke="#87a6d5" stroke-width="3.5">
+        <circle cx="520" cy="25" r="17"/><circle cx="570" cy="67" r="21"/><circle cx="625" cy="27" r="18"/>
+        <circle cx="679" cy="67" r="18"/><circle cx="739" cy="27" r="21"/><circle cx="798" cy="67" r="17"/>
+      </g>
+      <g fill="none" stroke="#67c9de" stroke-width="5.5" opacity=".5">
+        <circle cx="520" cy="25" r="23"/><circle cx="570" cy="67" r="27"/><circle cx="625" cy="27" r="24"/>
+        <circle cx="679" cy="67" r="24"/><circle cx="739" cy="27" r="27"/><circle cx="798" cy="67" r="23"/>
+      </g>
+      <rect x="840" y="0" width="22" height="96" fill="#c68f65"/>
+      <text x="11" y="118" text-anchor="middle" class="tiny">Al</text>
+      <text x="851" y="118" text-anchor="middle" class="tiny">Cu</text>
+      <path d="M292 48H350M366 48H424M440 48H506" stroke="#2a66d9" stroke-width="4" marker-end="url(#warmArrow)"/>
+      <g fill="#62cbe1">
+        <circle cx="306" cy="48" r="5.5"/><circle cx="380" cy="48" r="5.5"/><circle cx="454" cy="48" r="5.5"/>
+      </g>
+      <text x="650" y="118" text-anchor="middle" fill="#42627d" font-size="11.5">Halo intensity ∝ local reaction rate</text>
+    </g>
+
+    <!-- Warm spatial profiles -->
+    <g transform="translate(84 229)">
+      <g>
+        <text x="0" y="0" fill="#247f98" class="profile-title">Electrolyte concentration, c<tspan baseline-shift="sub">e</tspan>(x)</text>
+        <path d="M0 72V15M0 72H270" class="axis" fill="none"/>
+        <path d="M0 29C74 30 151 32 270 36" fill="none" stroke="#47b8d4" stroke-width="4"/>
+        <path d="M108 15V72M150 15V72" class="guide"/>
+        <text x="54" y="88" text-anchor="middle" class="tiny">Cathode</text><text x="129" y="88" text-anchor="middle" class="tiny">Separator</text><text x="210" y="88" text-anchor="middle" class="tiny">Graphite</text>
+      </g>
+      <g transform="translate(356 0)">
+        <text x="0" y="0" fill="#c95d39" class="profile-title">Graphite polarization, |η<tspan baseline-shift="sub">gr</tspan>(x)|</text>
+        <path d="M0 72V15M0 72H270" class="axis" fill="none"/>
+        <path d="M0 60C72 57 148 54 270 57" fill="none" stroke="#ed7049" stroke-width="4"/>
+        <text x="135" y="88" text-anchor="middle" class="tiny">Graphite position: separator → Cu</text>
+      </g>
+      <g transform="translate(712 0)">
+        <text x="0" y="0" fill="#2a66d9" class="profile-title">Local reaction rate, j<tspan baseline-shift="sub">rxn</tspan>(x)</text>
+        <path d="M0 72V15M0 72H270" class="axis" fill="none"/>
+        <path d="M0 45C74 43 166 46 270 47" fill="none" stroke="#2a66d9" stroke-width="4"/>
+        <text x="135" y="88" text-anchor="middle" class="tiny">Graphite position: separator → Cu</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- −40°C row -->
+  <g transform="translate(58 458)">
+    <rect width="1084" height="350" rx="22" fill="#14213d"/>
+    <rect x="22" y="18" width="112" height="40" rx="20" fill="#335b98"/>
+    <text x="78" y="45" text-anchor="middle" class="white" font-size="20" font-weight="800">−40°C</text>
+    <text x="158" y="44" fill="#d8e8ff" font-size="15" font-weight="750">Steep gradients · separator-side reaction localization · plating risk</text>
+
+    <g transform="translate(84 88)">
+      <text x="184" y="-12" text-anchor="middle" fill="#bdd0eb" font-size="12.5">porous cathode</text>
+      <text x="414" y="-12" text-anchor="middle" fill="#bdd0eb" font-size="12.5">separator</text>
+      <text x="650" y="-12" text-anchor="middle" fill="#bdd0eb" font-size="12.5">porous graphite</text>
+      <rect x="0" y="0" width="22" height="96" fill="#aeb8c7"/>
+      <rect x="22" y="0" width="328" height="96" rx="3" fill="#8397be"/>
+      <g fill="#53688f">
+        <circle cx="76" cy="25" r="17"/><circle cx="128" cy="68" r="21"/><circle cx="185" cy="28" r="18"/>
+        <circle cx="235" cy="68" r="18"/><circle cx="286" cy="26" r="21"/><circle cx="325" cy="69" r="16"/>
+      </g>
+      <rect x="350" y="0" width="128" height="96" fill="#8ecbe8"/>
+      <path d="M378 13v70M414 13v70M450 13v70" stroke="#fff" stroke-width="7" opacity=".62"/>
+      <rect x="478" y="0" width="362" height="96" rx="3" fill="#303846"/>
+      <g fill="#1e2631" stroke="#5e7394" stroke-width="3.5">
+        <circle cx="520" cy="25" r="17" stroke="#ff9b7e" stroke-width="5.5"/>
+        <circle cx="570" cy="67" r="21" stroke="#ff9b7e" stroke-width="4.5"/>
+        <circle cx="625" cy="27" r="18" stroke="#b8786d"/>
+        <circle cx="679" cy="67" r="18"/><circle cx="739" cy="27" r="21"/><circle cx="798" cy="67" r="17"/>
+      </g>
+      <g fill="none" stroke="#ff9b7e">
+        <circle cx="520" cy="25" r="25" stroke-width="8" opacity=".58"/>
+        <circle cx="570" cy="67" r="29" stroke-width="6" opacity=".4"/>
+        <circle cx="625" cy="27" r="25" stroke-width="4" opacity=".25"/>
+        <circle cx="679" cy="67" r="24" stroke-width="3" opacity=".14"/>
+        <circle cx="739" cy="27" r="27" stroke-width="2" opacity=".08"/>
+        <circle cx="798" cy="67" r="23" stroke-width="1.5" opacity=".05"/>
+      </g>
+      <rect x="840" y="0" width="22" height="96" fill="#c68f65"/>
+      <text x="11" y="118" text-anchor="middle" fill="#bdd0eb" font-size="11">Al</text>
+      <text x="851" y="118" text-anchor="middle" fill="#bdd0eb" font-size="11">Cu</text>
+      <path d="M292 48H382" stroke="#ed7049" stroke-width="5.5" marker-end="url(#coldArrow)"/>
+      <path d="M402 48H462" stroke="#ed7049" stroke-width="3.5" marker-end="url(#coldArrow)"/>
+      <g fill="#ff9b7e">
+        <circle cx="330" cy="48" r="5.5"/><circle cx="414" cy="48" r="7"/><circle cx="452" cy="48" r="9"/>
+      </g>
+      <!-- Local metallic lithium deposit on the separator-facing graphite particle -->
+      <path d="M507 8L499 12L504 16L495 20L501 24L493 29L501 32L497 38L507 40L510 34L507 29L512 24L508 19L513 14Z" fill="#dfe5ed" stroke="#ed7049" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M498 29L486 103H520" fill="none" stroke="#ffb49f" stroke-width="1.5"/>
+      <text x="526" y="108" fill="#ffb49f" font-size="11.5" font-weight="800">local Li metal deposition</text>
+    </g>
+
+    <!-- Cold spatial profiles -->
+    <g transform="translate(84 229)">
+      <g>
+        <text x="0" y="0" fill="#7fd9ec" class="profile-title">Electrolyte concentration, c<tspan baseline-shift="sub">e</tspan>(x)</text>
+        <path d="M0 78V15M0 78H270" stroke="#9fb5d5" stroke-width="1.4" fill="none"/>
+        <path d="M0 25C78 27 155 39 270 69" fill="none" stroke="#63cbe1" stroke-width="4.5"/>
+        <path d="M108 15V78M150 15V78" stroke="#50698e" stroke-width="1" stroke-dasharray="3 4"/>
+        <text x="54" y="94" text-anchor="middle" fill="#bdd0eb" font-size="11">Cathode</text><text x="129" y="94" text-anchor="middle" fill="#bdd0eb" font-size="11">Separator</text><text x="210" y="94" text-anchor="middle" fill="#bdd0eb" font-size="11">Graphite</text>
+      </g>
+      <g transform="translate(356 0)">
+        <text x="0" y="0" fill="#ffb49f" class="profile-title">Graphite polarization, |η<tspan baseline-shift="sub">gr</tspan>(x)|</text>
+        <path d="M0 78V15M0 78H270" stroke="#9fb5d5" stroke-width="1.4" fill="none"/>
+        <path d="M0 22C42 25 74 38 112 55C159 69 218 72 270 73" fill="none" stroke="#ff8b6b" stroke-width="4.5"/>
+        <text x="135" y="94" text-anchor="middle" fill="#bdd0eb" font-size="11">Graphite position: separator → Cu</text>
+      </g>
+      <g transform="translate(712 0)">
+        <text x="0" y="0" fill="#9fbfff" class="profile-title">Local reaction rate, j<tspan baseline-shift="sub">rxn</tspan>(x)</text>
+        <path d="M0 78V15M0 78H270" stroke="#9fb5d5" stroke-width="1.4" fill="none"/>
+        <path d="M0 18C18 20 32 28 48 40C70 58 105 69 145 73C190 76 235 77 270 77" fill="none" stroke="#82a9ff" stroke-width="4.5"/>
+        <text x="135" y="94" text-anchor="middle" fill="#bdd0eb" font-size="11">Graphite position: separator → Cu</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="58" y="852" fill="#334f70" font-size="14" font-weight="650">Profiles are qualitative; each field uses an independent vertical scale.</text>
+</svg>

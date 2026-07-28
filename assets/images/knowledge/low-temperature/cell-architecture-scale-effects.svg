@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Cell format and scale amplify electrical and thermal nonuniformity</title>
+  <desc id="desc">A conceptual comparison of coin, small pouch, and multi-ampere-hour pouch cells at the same chemistry and nominal C-rate. Increasing cell capacity and area increase absolute current, collector path length, contact resistance, pressure variation, and thermal nonuniformity.</desc>
+  <metadata>Copyright © 2026 Winigen Materials. All rights reserved. Conceptual cell-format comparison, field maps, layout, and annotations are original Winigen Materials work. Reproduction, modification, or redistribution requires permission.</metadata>
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f7faff"/><stop offset="1" stop-color="#edf3f9"/>
+    </linearGradient>
+    <radialGradient id="coinHeat">
+      <stop stop-color="#f6aa3c" stop-opacity=".42"/><stop offset="1" stop-color="#6bc8df" stop-opacity=".12"/>
+    </radialGradient>
+    <linearGradient id="smallHeat" x1="0" x2="1">
+      <stop stop-color="#6bc8df" stop-opacity=".16"/><stop offset=".72" stop-color="#f6aa3c" stop-opacity=".32"/><stop offset="1" stop-color="#ed7049" stop-opacity=".52"/>
+    </linearGradient>
+    <radialGradient id="largeHeat" cx=".72" cy=".22" r=".85">
+      <stop stop-color="#ed7049" stop-opacity=".67"/><stop offset=".38" stop-color="#f6aa3c" stop-opacity=".38"/><stop offset="1" stop-color="#6bc8df" stop-opacity=".13"/>
+    </radialGradient>
+    <linearGradient id="pressure" x1="0" x2="1">
+      <stop stop-color="#9d5bd1" stop-opacity=".10"/><stop offset=".5" stop-color="#9d5bd1" stop-opacity=".46"/><stop offset="1" stop-color="#9d5bd1" stop-opacity=".13"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#2a66d9"/>
+    </marker>
+    <marker id="purpleArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#9858cd"/>
+    </marker>
+    <style>
+      text{font-family:Inter,Arial,sans-serif;fill:#172642}
+      .cardTitle{font-size:22px;font-weight:850}
+      .body{font-size:15px;fill:#405a7b}
+      .small{font-size:13px;fill:#506786}
+      .tag{font-size:13px;font-weight:800}
+      .white{fill:#fff}
+      .light{fill:#d1dded}
+      .mutedLight{fill:#bdd0eb}
+      .warm{fill:#ffb49f}
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="28" fill="url(#page)"/>
+  <text id="titleText" x="58" y="55" font-size="30" font-weight="900">Cell format and scale amplify electrical and thermal nonuniformity</text>
+  <text x="58" y="83" font-size="15.5" fill="#526987">At the same chemistry and nominal C-rate, absolute current, current-path length, contact resistance,</text>
+  <text x="58" y="105" font-size="15.5" fill="#526987">pressure distribution, and heat transfer all change with cell format and scale.</text>
+  <line x1="58" y1="124" x2="1142" y2="124" stroke="#cad8e8"/>
+
+  <!-- Coin cell -->
+  <g transform="translate(58 150)">
+    <rect width="324" height="438" rx="22" fill="#fff" stroke="#bfd2e7" stroke-width="1.5"/>
+    <rect width="6" height="438" rx="3" fill="#2f67d8"/>
+    <text x="27" y="42" class="cardTitle">Coin cell</text>
+    <text x="27" y="68" class="body">compact stack · small absolute current</text>
+
+    <circle cx="162" cy="188" r="91" fill="#dfe8f2" stroke="#7a8daa" stroke-width="4"/>
+    <circle cx="162" cy="188" r="76" fill="url(#coinHeat)" stroke="#b9c8d9" stroke-width="2"/>
+    <circle cx="162" cy="188" r="57" fill="#c7d6e5"/>
+    <path d="M114 168H210M114 188H210M114 208H210" stroke="#304d75" stroke-width="7" stroke-linecap="round"/>
+    <path d="M98 188H123M201 188H226" stroke="#2a66d9" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="162" y="305" text-anchor="middle" class="small">short electronic and heat-flow paths</text>
+
+    <rect x="24" y="332" width="125" height="31" rx="15.5" fill="#e8f0ff"/>
+    <text x="86.5" y="352" text-anchor="middle" font-size="12.5" font-weight="800" fill="#245ac7">excess electrolyte</text>
+    <rect x="157" y="332" width="143" height="31" rx="15.5" fill="#e5f6f1"/>
+    <text x="228.5" y="352" text-anchor="middle" font-size="12.2" font-weight="800" fill="#187964">more uniform pressure</text>
+    <text x="27" y="397" class="body">• short electronic and heat-flow paths</text>
+    <text x="27" y="422" font-size="14.2" fill="#405a7b">• simple contacts and collection geometry</text>
+  </g>
+
+  <!-- Small pouch -->
+  <g transform="translate(438 150)">
+    <rect width="324" height="438" rx="22" fill="#fff" stroke="#bfd2e7" stroke-width="1.5"/>
+    <rect width="6" height="438" rx="3" fill="#28a7b5"/>
+    <text x="27" y="42" class="cardTitle">Small pouch cell</text>
+    <text x="27" y="68" class="body">moderate area · emerging gradients</text>
+
+    <g transform="translate(60 101)">
+      <rect x="37" y="-14" width="28" height="18" rx="3" fill="#c89062"/>
+      <rect x="139" y="-14" width="28" height="18" rx="3" fill="#c89062"/>
+      <rect width="204" height="190" rx="13" fill="#d9e6ef" stroke="#7b91aa" stroke-width="3"/>
+      <rect x="13" y="14" width="178" height="162" rx="8" fill="url(#smallHeat)"/>
+      <path d="M20 158C66 143 115 110 157 55C170 39 182 27 191 19" fill="none" stroke="#2a66d9" stroke-width="4" marker-end="url(#arrow)"/>
+      <path d="M21 135C66 124 107 97 142 53" fill="none" stroke="#2a66d9" stroke-width="2.5" opacity=".62"/>
+      <circle cx="172" cy="31" r="14" fill="#ed7049" opacity=".38"/>
+      <rect x="12" y="143" width="128" height="18" rx="9" fill="#fff" opacity=".82"/>
+      <text x="76" y="156" text-anchor="middle" font-size="11.2" font-weight="800" fill="#245ac7">current-collector path</text>
+      <rect x="48" y="35" width="146" height="18" rx="9" fill="#fff" opacity=".86"/>
+      <text x="121" y="48" text-anchor="middle" font-size="11.2" font-weight="800" fill="#bd4b2d">higher local temperature</text>
+      <text x="102" y="211" text-anchor="middle" class="small">tab-side electrical and thermal concentration</text>
+    </g>
+    <rect x="24" y="332" width="128" height="31" rx="15.5" fill="#e8f0ff"/>
+    <text x="88" y="352" text-anchor="middle" class="tag" fill="#245ac7">moderate E/C</text>
+    <rect x="166" y="332" width="133" height="31" rx="15.5" fill="#fff0ea"/>
+    <text x="232.5" y="352" text-anchor="middle" class="tag" fill="#bd4b2d">tab/contact losses</text>
+    <text x="27" y="397" class="body">• longer in-plane collector path</text>
+    <text x="27" y="422" font-size="14.2" fill="#405a7b">• weld, contact, and pressure effects</text>
+  </g>
+
+  <!-- Multi-Ah pouch -->
+  <g transform="translate(818 150)">
+    <rect width="324" height="438" rx="22" fill="#14213d"/>
+    <rect width="6" height="438" rx="3" fill="#ed7049"/>
+    <text x="27" y="42" class="cardTitle white">Multi-Ah pouch cell</text>
+    <text x="27" y="68" class="mutedLight" font-size="15">large area · coupled field nonuniformity</text>
+
+    <g transform="translate(40 101)">
+      <rect x="38" y="-14" width="35" height="18" rx="3" fill="#c89062"/>
+      <rect x="173" y="-14" width="35" height="18" rx="3" fill="#c89062"/>
+      <rect width="244" height="190" rx="13" fill="#dce6ed" stroke="#8296ae" stroke-width="3"/>
+      <rect x="13" y="14" width="218" height="162" rx="8" fill="url(#largeHeat)"/>
+      <path d="M21 159C75 148 140 111 198 38" fill="none" stroke="#2a66d9" stroke-width="5" marker-end="url(#arrow)"/>
+      <path d="M22 135C82 126 130 94 173 49" fill="none" stroke="#2a66d9" stroke-width="3" opacity=".68"/>
+      <path d="M23 111C75 104 111 84 142 53" fill="none" stroke="#2a66d9" stroke-width="2" opacity=".46"/>
+      <circle cx="199" cy="35" r="23" fill="#ed7049" opacity=".4"/>
+      <!-- Distinct pressure zones and compression arrows -->
+      <rect x="15" y="18" width="68" height="154" rx="7" fill="#9858cd" opacity=".08"/>
+      <rect x="84" y="18" width="68" height="154" rx="7" fill="#9858cd" opacity=".20"/>
+      <rect x="153" y="18" width="76" height="154" rx="7" fill="#9858cd" opacity=".11"/>
+      <g stroke="#9858cd" stroke-width="2.6" marker-end="url(#purpleArrow)">
+        <path d="M49 22V43"/><path d="M118 22V51"/><path d="M191 22V39"/>
+        <path d="M49 168V147"/><path d="M118 168V139"/><path d="M191 168V151"/>
+      </g>
+      <rect x="17" y="126" width="130" height="18" rx="9" fill="#fff" opacity=".85"/>
+      <text x="82" y="139" text-anchor="middle" font-size="11.2" font-weight="800" fill="#245ac7">current concentration</text>
+      <rect x="118" y="48" width="108" height="18" rx="9" fill="#fff" opacity=".85"/>
+      <text x="172" y="61" text-anchor="middle" font-size="11.2" font-weight="800" fill="#bd4b2d">thermal gradient</text>
+      <rect x="52" y="78" width="140" height="18" rx="9" fill="#fff" opacity=".85"/>
+      <text x="122" y="91" text-anchor="middle" font-size="11.2" font-weight="800" fill="#7d43b1">stack-pressure variation</text>
+      <text x="122" y="211" text-anchor="middle" class="mutedLight" font-size="13">current, temperature, and pressure fields diverge</text>
+    </g>
+    <rect x="24" y="332" width="108" height="31" rx="15.5" fill="#283a5e"/>
+    <text x="78" y="352" text-anchor="middle" class="tag white">lean E/C</text>
+    <rect x="144" y="332" width="155" height="31" rx="15.5" fill="#5d302c"/>
+    <text x="221.5" y="352" text-anchor="middle" font-size="12.2" font-weight="800" class="warm">large absolute current</text>
+    <text x="27" y="392" class="light" font-size="14.2">• long collector and contact paths</text>
+    <text x="27" y="414" class="light" font-size="13.7">• internal current and temperature gradients<tspan x="39" dy="17">and stack-pressure variation</tspan></text>
+  </g>
+
+  <!-- Scale relation and field legend -->
+  <g transform="translate(58 618)">
+    <rect width="1084" height="108" rx="18" fill="#e8f0fb"/>
+    <text x="25" y="34" font-size="19" font-weight="900" fill="#294f8c">The same nominal C-rate does not impose the same cell-level load</text>
+    <text x="25" y="67" font-size="18" font-weight="850" fill="#172642">I = (C-rate) × Q<tspan baseline-shift="sub" font-size="12">rated</tspan></text>
+    <text x="255" y="67" font-size="15.2" fill="#405a7b">Larger capacity increases absolute current, magnifying path-dependent voltage loss and heat generation.</text>
+    <circle cx="39" cy="91" r="7" fill="#ed7049" opacity=".65"/>
+    <text x="54" y="96" font-size="12.5" fill="#506786">higher local heat generation / temperature</text>
+    <line x1="339" y1="91" x2="371" y2="91" stroke="#2a66d9" stroke-width="4"/>
+    <text x="383" y="96" font-size="12.5" fill="#506786">current-collector path</text>
+    <rect x="570" y="83" width="10" height="16" rx="2" fill="#9858cd" opacity=".16"/>
+    <rect x="582" y="83" width="10" height="16" rx="2" fill="#9858cd" opacity=".48"/>
+    <rect x="594" y="83" width="10" height="16" rx="2" fill="#9858cd" opacity=".25"/>
+    <text x="616" y="96" font-size="12.5" fill="#506786">stack-pressure variation</text>
+  </g>
+</svg>

@@ -3,291 +3,247 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Low-Temperature Electrolyte Design for Battery Research and Extreme Environments | Winigen Materials</title>
-<meta name="description" content="Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.">
+<title>Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability | Winigen Materials</title>
+<meta name="description" content="A technical framework for matching electrolyte solvation and transport with graphite kinetics, electrode loading, cell hardware and resistance, charging limits, and thermal strategy below −20°C, including operation below −60°C.">
 <link rel="canonical" href="https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta name="author" content="Winigen Materials">
-<meta property="article:author" content="https://www.winigenmaterials.com/about.html">
-<meta property="article:publisher" content="https://www.winigenmaterials.com/">
-
+<meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta name="author" content="Winigen Materials"><meta property="article:author" content="https://www.winigenmaterials.com/about.html"><meta property="article:publisher" content="https://www.winigenmaterials.com/">
 <link rel="author" href="https://www.winigenmaterials.com/about.html">
 <meta property="og:site_name" content="Winigen Materials">
-<meta property="og:title" content="Low-Temperature Electrolyte Design for Battery Research and Extreme Environments">
-<meta property="og:description" content="Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.">
+<meta property="og:title" content="Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability">
+<meta property="og:description" content="Electrolyte solvation, graphite kinetics, electrode loading, cell hardware and resistance, charging limits, and thermal strategy below −20°C, including operation below −60°C.">
 <meta property="og:url" content="https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html">
-<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png">
-<meta property="og:image:secure_url" content="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Low-Temperature Electrolyte Design for Battery Research and Extreme Environments - Winigen Materials Knowledge Center">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Low-Temperature Electrolyte Design for Battery Research and Extreme Environments">
-<meta name="twitter:description" content="Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.">
-<meta name="twitter:image" content="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png">
-<meta name="twitter:image:alt" content="Low-Temperature Electrolyte Design for Battery Research and Extreme Environments - Winigen Materials Knowledge Center">
-<link rel="image_src" href="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css?v=20260618">
+<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png?v=20260727-1"><meta property="og:image:secure_url" content="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png?v=20260727-1"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Ultra-low-temperature lithium-ion cell design integrating electrolyte kinetics, electrode architecture, and rechargeability">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability"><meta name="twitter:description" content="Why cold energy, power, and rechargeability require electrolyte, electrode, cell, thermal, and protocol co-design."><meta name="twitter:image" content="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png?v=20260727-1"><meta name="twitter:image:alt" content="Ultra-low-temperature lithium-ion cell design integrating electrolyte kinetics, electrode architecture, and rechargeability">
+<link rel="image_src" href="https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png?v=20260727-1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/style.css?v=20260725">
 <style>
-.article-hero { padding: 78px 0; }
-.article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 34px; align-items: start; }
-.article-main, .article-side { background: rgba(255,255,255,.92); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
-.article-main p { line-height: 1.78; }
-.article-main a { color: var(--blue); font-weight: 800; }
-.article-block { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(18,32,51,.1); }
-.article-table-wrap { overflow-x: auto; margin: 20px 0 22px; border: 1px solid rgba(18,32,51,.1); border-radius: 16px; background: #fff; }
-.article-table { width: 100%; border-collapse: collapse; min-width: 620px; }
-.article-table th { background: #14213d; color: #fff; text-align: left; padding: 13px 15px; font-size: 13px; }
-.article-table td { padding: 13px 15px; border-top: 1px solid rgba(18,32,51,.1); color: #2b3950; vertical-align: top; line-height: 1.45; }
-.reference-list { display: grid; gap: 12px; padding-left: 22px; margin: 18px 0 0; }
-.reference-list li { color: #40516f; line-height: 1.58; padding-left: 4px; }
-.reference-list a { color: var(--blue); font-weight: 850; text-decoration: none; }
-.reference-list a:hover { text-decoration: underline; }
-.related-link-list { display: grid; gap: 10px; margin-top: 16px; }
-.related-link-list a { display: block; padding: 12px 14px; border: 1px solid rgba(18,32,51,.1); border-radius: 12px; background: #f8fbff; color: var(--navy); font-weight: 850; text-decoration: none; }
-.related-link-list a:hover { color: var(--blue); border-color: rgba(42,102,217,.28); }
-.faq-list { display: grid; gap: 12px; max-width: 920px; margin: 0 auto; }
-.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(15,31,77,.06); padding: 18px 20px; }
-.faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
-.faq-list p { margin: 12px 0 0; }
-@media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } }
+.article-hero{padding:78px 0}.article-hero .section-title{max-width:1120px}.article-hero h1{font-size:clamp(40px,5vw,66px)}.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:34px;align-items:start}.article-main,.article-side{min-width:0;background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}.article-side{position:sticky;top:104px}.article-main p{line-height:1.8;text-align:justify}.article-main a{color:var(--blue);font-weight:800}.article-block{margin-top:32px;padding-top:28px;border-top:1px solid rgba(18,32,51,.1)}.article-block>ul,.article-block>ol{display:grid;gap:10px;padding-left:30px;line-height:1.7}.article-callout{margin:24px 0;padding:22px 24px;border-left:4px solid var(--blue);border-radius:0 14px 14px 0;background:#eef5ff}.article-callout strong{color:var(--navy)}.thesis-callout{background:#132343;color:#fff;border-left-color:#56b9ef;font-size:1.12rem}.thesis-callout strong{color:#fff}.caution-callout{background:#fff4ed;border-left-color:#ed7049}.figure-takeaway{margin:24px 0 -12px;padding:15px 18px;border-radius:12px;background:#eaf2ff;color:#294f8c;line-height:1.55}.article-figure{counter-increment:article-figure;margin:30px 0;border:1px solid rgba(18,32,51,.12);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(15,31,77,.08)}.article-main{counter-reset:article-figure}.article-figure img{display:block;width:100%;height:auto;object-fit:contain;background:#f4f7fb}.article-figure figcaption{position:relative;padding:15px 18px 15px 70px;color:#53627c;font-size:.92rem;line-height:1.58;text-align:left;border-top:1px solid rgba(18,32,51,.08)}.article-figure figcaption:before{content:"Fig. " counter(article-figure);position:absolute;left:16px;top:15px;color:#14213d;font-weight:900}.metric-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.metric-card{padding:18px;border:1px solid rgba(18,32,51,.12);border-top:5px solid var(--blue);border-radius:14px;background:#f8fbff}.metric-card:nth-child(2){border-top-color:#22a6b3}.metric-card:nth-child(3){border-top-color:#ed7049}.metric-card strong{display:block;color:#14213d;font-size:1rem}.metric-card span{display:block;margin-top:7px;color:#53627c;font-size:.86rem;line-height:1.5}.development-steps{counter-reset:dev;list-style:none;padding:0!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important}.development-steps li{position:relative;padding:18px 18px 18px 58px;border:1px solid rgba(18,32,51,.12);border-radius:14px;background:#f8fbff;line-height:1.55}.development-steps li:before{counter-increment:dev;content:counter(dev);position:absolute;left:16px;top:16px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#2a66d9;color:#fff;font-weight:900}.metadata-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 24px}.metadata-groups p{margin:0;padding:15px 16px;border:1px solid rgba(18,32,51,.11);border-radius:13px;background:#f8fbff;line-height:1.55!important;text-align:left!important}.metadata-groups strong{display:block;margin-bottom:5px;color:#14213d}.article-table-wrap{overflow-x:auto;margin:22px 0;border:1px solid rgba(18,32,51,.1);border-radius:16px;background:#fff}.article-table{width:100%;border-collapse:collapse;min-width:820px}.article-table th{background:#14213d;color:#fff;text-align:left;padding:13px 15px;font-size:13px}.article-table td{padding:13px 15px;border-top:1px solid rgba(18,32,51,.1);color:#2b3950;vertical-align:top;line-height:1.5}.formula-box{margin:22px 0;padding:22px 24px;border:1px solid rgba(42,102,217,.22);border-radius:14px;background:#f7faff;color:var(--navy);text-align:center}.formula-box .equation{font-size:1.1rem;font-weight:900}.formula-box .note{display:block;margin-top:10px;color:#53627c;font-size:.92rem;line-height:1.55}.reference-list{display:grid;gap:12px;padding-left:22px;margin:18px 0 0}.reference-list li{color:#40516f;line-height:1.58;padding-left:4px}.related-link-list{display:grid;gap:10px;margin-top:16px}.related-link-list a{display:block;padding:12px 14px;border:1px solid rgba(18,32,51,.1);border-radius:12px;background:#f8fbff;color:var(--navy);font-weight:850;text-decoration:none}.faq-list{display:grid;gap:12px;max-width:920px;margin:0 auto}.faq-list details{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.9);box-shadow:0 10px 26px rgba(15,31,77,.06);padding:18px 20px}.faq-list summary{cursor:pointer;color:var(--navy);font-weight:900}.faq-list p{margin:12px 0 0}.cta-panel{margin-top:30px;padding:28px;border:1px solid rgba(42,102,217,.22);border-radius:18px;background:#eaf2ff}.cta-panel .btn{margin-top:8px;color:#fff}.question-box{margin:28px 0;padding:30px;border-radius:18px;background:linear-gradient(135deg,#14213d,#263d70);color:#fff}.question-box p{margin:0;text-align:left;font-family:Manrope,Arial,sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.35}.question-box span{display:block;margin-bottom:10px;color:#7fc7ff;font-family:Inter,Arial,sans-serif;font-size:14px;letter-spacing:1.6px;text-transform:uppercase}.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.tag-row span{padding:7px 11px;border-radius:999px;background:#e9f1ff;color:#294f8c;font-size:13px;font-weight:800}@media(max-width:900px){.article-layout{grid-template-columns:1fr}.article-side{position:static}.article-main,.article-side{padding:24px}}@media(max-width:680px){.metric-strip,.development-steps,.metadata-groups{grid-template-columns:1fr}.article-figure{margin-inline:-8px}.article-figure figcaption{padding-left:68px}}@media(max-width:560px){.article-hero{padding:56px 0}.article-main,.article-side{padding:20px}.article-table{min-width:760px}}
+@media(max-width:680px){.article-main p{text-align:left}}
+.article-figure figcaption{padding-left:18px}.article-figure figcaption:before{display:none}
+.question-box{position:relative;overflow:hidden;background:#10264f;border:1px solid rgba(91,196,244,.62);box-shadow:0 12px 28px rgba(15,35,75,.18)}
+.question-box:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:#5bc4f4}
+.question-box span{color:#bfeaff}
+.question-box p{color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.16)}
+.winigen-original .figure-lock::before,.winigen-replot .figure-lock::before{position:absolute;right:12px;bottom:9px;z-index:3;padding:0;border:0;background:none;color:rgba(255,255,255,.72);font:600 10px/1.2 Inter,Arial,sans-serif;letter-spacing:.15px;pointer-events:none;text-shadow:0 1px 2px rgba(13,28,56,.9)}
+.winigen-original .figure-lock::before{content:"© Winigen Materials"}
+.winigen-replot .figure-lock::before{content:"Winigen Materials replot"}
+.receiving-margin-figure .figure-lock::before,.electrode-loading-figure .figure-lock::before,.cell-scale-figure .figure-lock::before{bottom:5px}
+.compact-claim-table{min-width:0;table-layout:fixed}.compact-claim-table th,.compact-claim-table td{padding:10px 11px;font-size:12.5px;line-height:1.42;overflow-wrap:break-word}.compact-claim-table th:nth-child(1),.compact-claim-table td:nth-child(1){width:23%}.compact-claim-table th:nth-child(2),.compact-claim-table td:nth-child(2){width:47%}.compact-claim-table th:nth-child(3),.compact-claim-table td:nth-child(3){width:30%}
+.compact-temperature-table{min-width:0;table-layout:fixed}.compact-temperature-table th,.compact-temperature-table td{overflow-wrap:break-word}.compact-temperature-table th:first-child,.compact-temperature-table td:first-child{width:32%}
+.compact-landmark-table{min-width:0;table-layout:fixed}.compact-landmark-table th,.compact-landmark-table td{padding:10px 9px;font-size:12px;line-height:1.42;overflow-wrap:break-word}.compact-landmark-table th:nth-child(1),.compact-landmark-table td:nth-child(1){width:14%}.compact-landmark-table th:nth-child(2),.compact-landmark-table td:nth-child(2){width:27%}.compact-landmark-table th:nth-child(3),.compact-landmark-table td:nth-child(3){width:27%}.compact-landmark-table th:nth-child(4),.compact-landmark-table td:nth-child(4){width:32%}
+.reporting-standard-table{min-width:0;table-layout:fixed}.reporting-standard-table th,.reporting-standard-table td{padding:11px 12px;font-size:12.5px;line-height:1.48;overflow-wrap:break-word}.reporting-standard-table th:first-child,.reporting-standard-table td:first-child{width:23%}.reporting-standard-table th:last-child,.reporting-standard-table td:last-child{width:77%}
+@media(max-width:560px){.winigen-original .figure-lock::before,.winigen-replot .figure-lock::before{right:7px;bottom:6px;font-size:9px}}
+@media(max-width:560px){.compact-claim-table th,.compact-claim-table td{padding:8px 7px;font-size:11.5px;line-height:1.38}}
 </style>
-<script type="application/ld+json">{
-    "@context":  "https://schema.org",
-    "@type":  "TechArticle",
-    "@id":  "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html#article",
-    "headline":  "Low-Temperature Electrolyte Design for Battery Research and Extreme Environments",
-    "description":  "Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.",
-    "url":  "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html",
-    "datePublished":  "2026-05-25",
-    "dateModified":  "2026-05-28",
-    "author":  {
-                   "@type":  "Organization",
-                   "name":  "Winigen Materials",
-                   "url":  "https://www.winigenmaterials.com/"
-               },
-    "publisher":  {
-                      "@type":  "Organization",
-                      "name":  "Winigen Materials",
-                      "url":  "https://www.winigenmaterials.com/",
-                      "logo":  {
-                                   "@type":  "ImageObject",
-                                   "url":  "https://www.winigenmaterials.com/assets/images/winigen-logo.png"
-                               }
-                  },
-    "about":  "Low-temperature battery electrolyte design",
-    "citation":  [
-                     "Yang et al., Electrolyte design principles for low-temperature lithium-ion batteries, eScience, 2023.",
-                     "Zhao et al., Low-Temperature Electrolytes for Lithium-Ion Batteries: Current Challenges, Development, and Perspectives, Nano-Micro Letters, 2025.",
-                     "Zhang et al., Challenges of film-forming additives in low-temperature lithium-ion batteries: A review, Journal of Power Sources, 2024.",
-                     "Logan and Dahn, Electrolyte Design for Fast-Charging Li-Ion Batteries, Trends in Chemistry, 2020."
-                 ],
-    "mainEntityOfPage":  "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html"
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why do batteries lose performance at low temperature?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Low temperature increases electrolyte viscosity, lowers conductivity, slows desolvation and charge transfer, and raises lithium-plating risk during charge."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can salt selection alone solve low-temperature performance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Salt selection must be combined with solvent structure, additive package, water control, and formation protocol."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should be measured in low-temperature electrolyte screening?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Conductivity, viscosity, impedance, lithium plating tendency, gas generation, capacity retention, and recovery after cold exposure should be tracked."
-      }
-    }
-  ]
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "@id": "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html#breadcrumb",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.winigenmaterials.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Knowledge",
-      "item": "https://www.winigenmaterials.com/knowledge.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Low-Temperature Electrolyte Design for Battery Research and Extreme Environments",
-      "item": "https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html"
-    }
-  ]
-}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html#article","headline":"Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability","description":"A technical framework for matching electrolyte solvation and transport with graphite kinetics, electrode loading, cell hardware and resistance, charging limits, and thermal strategy below −20°C, including operation below −60°C.","url":"https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html","datePublished":"2026-05-25","dateModified":"2026-07-27","author":{"@type":"Organization","name":"Winigen Materials","url":"https://www.winigenmaterials.com/"},"publisher":{"@type":"Organization","name":"Winigen Materials","url":"https://www.winigenmaterials.com/","logo":{"@type":"ImageObject","url":"https://www.winigenmaterials.com/assets/images/winigen-logo.png"}},"image":["https://www.winigenmaterials.com/assets/images/knowledge/social/low-temperature-electrolytes.png?v=20260727-1","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/ultra-cold-system-map.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/resistance-cascade-full-cell.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/solvation-desolvation-sei-pathway.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/chen-temperature-retention-replot.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/electrode-loading-cold-gradient.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/cell-architecture-scale-effects.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/graphite-receiving-margin.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/cold-protocol-evidence-hierarchy.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/thermal-gradient-local-risk.svg","https://www.winigenmaterials.com/assets/images/knowledge/low-temperature/ultra-cold-validation-workflow.svg"],"about":["ultra-low-temperature lithium-ion batteries","low-temperature electrolyte","graphite kinetics","lithium plating","electrode loading","cell hardware and resistance","cold charging","battery thermal management"],"mainEntityOfPage":"https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html#faq","mainEntity":[{"@type":"Question","name":"Does an electrolyte remaining liquid prove useful ultra-low-temperature cell performance?","acceptedAnswer":{"@type":"Answer","text":"No. Liquidity is only a prerequisite. Useful cell energy and power also depend on ionic transport, desolvation, interphase transport, electrode architecture, cell resistance, thermal state, and the rate and cutoff used in the test."}},{"@type":"Question","name":"Why is charging at low temperature harder than discharging?","acceptedAnswer":{"@type":"Answer","text":"During charge, lithium must enter the graphite anode. A local graphite surface potential below the lithium/lithium-ion equilibrium potential of zero volts supplies the thermodynamic driving force for lithium deposition; the measured onset also depends on nucleation overpotential, local concentration, reference placement, and spatial resolution."}},{"@type":"Question","name":"What must an ultra-low-temperature battery paper report?","acceptedAnswer":{"@type":"Answer","text":"At minimum: charge and discharge temperature, soak, rate, cutoff, cell format and capacity, electrode areal loading and thickness, N/P ratio, electrolyte quantity, cycle count, energy as well as capacity, and plating or recovery evidence for cold charging claims."}},{"@type":"Question","name":"Can electrolyte optimization eliminate the need for preheating?","acceptedAnswer":{"@type":"Answer","text":"Sometimes for low-rate discharge or carefully derated charging, but not universally. Depending on duty cycle and pack design, active conditioning may be preferable for high power or fast recharge at very low temperature."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.winigenmaterials.com/"},{"@type":"ListItem","position":2,"name":"Knowledge","item":"https://www.winigenmaterials.com/knowledge.html"},{"@type":"ListItem","position":3,"name":"Electrolytes and Interfaces","item":"https://www.winigenmaterials.com/knowledge/electrolytes-interfaces.html"},{"@type":"ListItem","position":4,"name":"Ultra-Low-Temperature Cell Design","item":"https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html"}]}</script>
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
-    <nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav>
-    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
-  </div>
-  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
-</header>
+<header class="header"><div class="container nav"><a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a><nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav><button class="mobile-toggle" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div></header>
 <main>
-  <section class="section dark article-hero">
-    <div class="container section-title">
-      <div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / Low-Temperature Electrolytes</div>
-      <p class="eyebrow">Low-Temperature Electrolytes</p>
-      <h1>Low-Temperature Electrolyte Design for Battery Research and Extreme Environments</h1>
-      <p>Low-temperature electrolyte design considerations for solvent viscosity, salt selection, lithium plating risk, ionic conductivity, desolvation, and cold-climate battery testing.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container article-layout">
-      <article class="article-main">
-        <p>Low-temperature battery operation is limited by slower ion transport, higher electrolyte viscosity, slower charge-transfer kinetics, more resistive interphases, and increased lithium plating risk during charge. These effects become especially important for electric vehicles, aerospace, defense, outdoor energy storage, cold-chain logistics, and other applications that require reliable operation below room temperature.</p>
-<p>Electrolyte design for cold environments must balance ionic conductivity, viscosity, lithium-ion solvation, desolvation kinetics, SEI/CEI stability, safety, and high-voltage compatibility. A formulation that performs well at 25 °C may perform poorly at �?0 °C, and a formulation that supports cold discharge may not safely support cold charge or fast charge.</p>
-<p>For battery developers, the key question is not simply “which electrolyte has the highest low-temperature conductivity?�?but rather which electrolyte enables the required discharge, charge acceptance, cycle life, and safety under the target cold-temperature protocol.</p>
-<p>Why Batteries Struggle at Low Temperature</p>
-<p>As temperature decreases, several battery limitations appear at the same time:</p>
-<div class="article-table-wrap"><table class="article-table">
-<thead><tr><th>Low-Temperature Limitation</th><th>Why It Matters</th></tr></thead>
-<tbody>
-<tr><td>Higher electrolyte viscosity</td><td>Reduces ion mobility and worsens rate capability</td></tr>
-<tr><td>Lower ionic conductivity</td><td>Increases polarization during charge and discharge</td></tr>
-<tr><td>Slower Li�?desolvation</td><td>Limits charge-transfer kinetics at electrode surfaces</td></tr>
-<tr><td>More resistive SEI/CEI layers</td><td>Increases impedance and reduces usable capacity</td></tr>
-<tr><td>Higher lithium plating risk</td><td>Creates safety and lifetime concerns during cold charge</td></tr>
-<tr><td>Reduced electrode diffusion</td><td>Limits active-material utilization at high rate</td></tr>
-<tr><td>Poor recovery after cold exposure</td><td>Indicates irreversible damage or unstable interphase chemistry</td></tr>
-</tbody></table></div>
-<p>Recent low-temperature electrolyte reviews emphasize that bulk ion transport, solvation/desolvation behavior, and interphase properties must be optimized together rather than independently.</p>
-<p>Solvent Selection for Low-Temperature Electrolytes</p>
-<p>Solvent selection is one of the most important variables in low-temperature electrolyte design. Conventional carbonate electrolytes may show increased viscosity and poor transport at sub-zero temperatures, especially when ethylene carbonate-rich systems are used.</p>
-<p>Low-temperature electrolyte screening often evaluates:</p>
-<div class="article-table-wrap"><table class="article-table">
-<thead><tr><th>Solvent Type</th><th>Why It Is Evaluated</th></tr></thead>
-<tbody>
-<tr><td>Linear carbonates</td><td>Lower viscosity than EC-rich systems and common in lithium-ion electrolyte baselines</td></tr>
-<tr><td>Esters</td><td>Often evaluated for low melting point and improved low-temperature transport</td></tr>
-<tr><td>Ethers</td><td>Can support faster Li�?transport and are widely studied in lithium-metal systems</td></tr>
-<tr><td>Fluorinated solvents / diluents</td><td>Can tune solvation structure, oxidative stability, and interphase chemistry</td></tr>
-<tr><td>Nitriles</td><td>May offer oxidative stability and alternative solvation behavior</td></tr>
-<tr><td>Weakly solvating solvents</td><td>Can reduce Li�?desolvation barriers and improve interfacial kinetics</td></tr>
-</tbody></table></div>
-<p>Low-temperature electrolyte design increasingly focuses on solvation structure, not only solvent melting point or viscosity. Weakly solvating or carefully coordinated solvent systems can help reduce desolvation barriers and improve low-temperature kinetics.</p>
-<p>Salt Selection and Solvation Structure</p>
-<p>Salt choice affects more than bulk conductivity. Lithium salts influence ion dissociation, ion pairing, solvation structure, interphase chemistry, aluminum current-collector compatibility, and low-temperature impedance.</p>
-<p>Common lithium salts considered in low-temperature electrolyte development include:</p>
-<div class="article-table-wrap"><table class="article-table">
-<thead><tr><th>Salt</th><th>Practical Role</th></tr></thead>
-<tbody>
-<tr><td>LiPF�?/td><td>Conventional lithium-ion baseline salt for carbonate electrolytes</td></tr>
-<tr><td>LiFSI</td><td>Often evaluated for fast-charge, lithium-metal, low-temperature, and high-concentration electrolyte systems</td></tr>
-<tr><td>LiTFSI</td><td>Useful in specialty, polymer, ether, and lithium-metal electrolytes, with current-collector compatibility considerations</td></tr>
-<tr><td>LiDFOB / LiBOB-type salts</td><td>Often studied as additives or co-salts for interphase and stability control</td></tr>
-</tbody></table></div>
-<p>LiFSI- and LiTFSI-containing systems are frequently investigated in low-temperature and lithium-metal electrolyte research, but they are not simple drop-in replacements for LiPF�? Their benefits depend on solvent structure, salt concentration, additives, voltage window, and corrosion-control strategy.</p>
-<section class="article-block"><h2>Additives and Interphase Control</h2>
-<p>Even when bulk electrolyte conductivity is acceptable, low-temperature performance can still be limited by interfacial resistance. SEI and CEI layers may become more resistive at reduced temperature, increasing charge-transfer impedance and limiting capacity.</p>
-<p>Additives can help tune interphase formation and reduce impedance growth, but they must be screened carefully. Some film-forming additives that work well at room temperature may increase impedance or reduce charge acceptance at low temperature. Recent reviews specifically note that low-temperature additive design must balance SEI protection with ion transport through the interphase.</p>
-<p>Useful additive-screening questions include:</p>
-<div class="article-table-wrap"><table class="article-table">
-<thead><tr><th>Question</th><th>Why It Matters</th></tr></thead>
-<tbody>
-<tr><td>Does the additive reduce first-cycle loss?</td><td>Indicates improved early SEI/CEI formation</td></tr>
-<tr><td>Does it reduce impedance after cold cycling?</td><td>Shows whether the interphase remains ionically conductive</td></tr>
-<tr><td>Does it reduce gas generation?</td><td>Important for pouch-cell reliability and swelling</td></tr>
-<tr><td>Does it increase or decrease lithium plating risk?</td><td>Critical for cold charge and fast charge</td></tr>
-<tr><td>Does it recover after warming?</td><td>Separates reversible transport limitation from irreversible degradation</td></tr>
-</tbody></table></div>
-<p>Cold Discharge vs Cold Charge</p>
-<p>Cold discharge and cold charge should be evaluated separately.</p>
-<p>A cell may discharge acceptably at �?0 °C because lithium ions are moving from the anode to the cathode under moderate current. However, charging at the same temperature can be much more dangerous because lithium ions must intercalate into the anode. If graphite intercalation kinetics are too slow, lithium plating can occur.</p>
-<p>This distinction is especially important for:</p>
-<p>EV fast charging in winter</p>
-<p>Outdoor energy storage</p>
-<p>Aerospace and defense systems</p>
-<p>High-energy graphite or silicon-anode cells</p>
-<p>Lithium-metal cells</p>
-<p>Cells charged immediately after cold soak</p>
-<p>Fast charging is already associated with lithium plating risk, and low temperature further increases that risk by slowing transport and interfacial kinetics.</p>
-<p>Testing Considerations for Low-Temperature Electrolytes</p>
-<p>A practical low-temperature screening program should separate different performance modes instead of reporting only one cold-temperature capacity value.</p>
-<div class="article-table-wrap"><table class="article-table">
-<thead><tr><th>Test Mode</th><th>What It Measures</th></tr></thead>
-<tbody>
-<tr><td>Cold discharge after room-temperature charge</td><td>Usable energy and power in cold environments</td></tr>
-<tr><td>Cold charge acceptance</td><td>Whether the cell can safely accept charge at low temperature</td></tr>
-<tr><td>Cold fast charge</td><td>Lithium plating resistance under aggressive conditions</td></tr>
-<tr><td>Cold cycling</td><td>Long-term interphase and impedance stability</td></tr>
-<tr><td>Room-temperature recovery</td><td>Reversibility after cold exposure</td></tr>
-<tr><td>Post-cold EIS</td><td>Impedance growth and interfacial resistance</td></tr>
-<tr><td>Gas / swelling measurement</td><td>Electrolyte decomposition and pouch-cell reliability</td></tr>
-<tr><td>Post-mortem anode analysis</td><td>Lithium plating, dead lithium, SEI failure, and surface damage</td></tr>
-</tbody></table></div>
-<p>A formulation that works at �?0 °C may not automatically work at �?0 °C or �?0 °C. Ultra-low-temperature batteries introduce additional challenges such as extremely sluggish ion transport, unstable lithium deposition, and difficulty balancing low viscosity, high carrier concentration, fast desolvation, and stable interfaces.</p>
-<p>Practical Screening Notes</p>
-<div class="article-table-wrap"><table class="article-table">
-<thead><tr><th>Screening Principle</th><th>Practical Note</th></tr></thead>
-<tbody>
-<tr><td>Tune solvent viscosity and solvation together</td><td>Low viscosity alone is not enough if desolvation or interphase transport is poor</td></tr>
-<tr><td>Compare salts under the same solvent baseline</td><td>Salt effects are hard to interpret if solvent chemistry also changes</td></tr>
-<tr><td>Separate discharge and charge testing</td><td>Cold discharge capability does not prove safe cold charging</td></tr>
-<tr><td>Track lithium plating risk</td><td>Especially important for graphite, silicon, lithium metal, and fast-charge protocols</td></tr>
-<tr><td>Use EIS before and after cold exposure</td><td>Helps separate bulk transport limits from interfacial impedance growth</td></tr>
-<tr><td>Check room-temperature recovery</td><td>Poor recovery may indicate irreversible interphase or plating damage</td></tr>
-<tr><td>Validate in pouch cells</td><td>Gas, swelling, wetting, and pressure effects may not appear clearly in coin cells</td></tr>
-</tbody></table></div>
-</section>
-<section class="article-block"><h2>Bottom Line</h2>
-<p>Low-temperature electrolyte design requires a full formulation strategy. Solvent viscosity, lithium salt selection, Li�?solvation/desolvation, additive chemistry, SEI/CEI behavior, and lithium plating risk must be optimized together.</p>
-<p>For practical development, low-temperature electrolyte screening should separate discharge capability, charge acceptance, fast-charge behavior, cold cycling stability, and room-temperature recovery. A good electrolyte for �?0 °C operation may not be sufficient for �?0 °C or ultra-low-temperature applications.</p>
-<p>At Winigen Materials, we support low-temperature battery electrolyte development through lithium salt selection, solvent screening, additive strategy, low-water material handling, and custom formulation support for lithium-ion, silicon-anode, lithium-metal, and specialty battery systems.</p>
-</section>
-        <section class="article-block"><h2>Further Reading</h2><p>Low-temperature electrolyte design reviews emphasize low melting point, low viscosity, suitable lithium-ion solvation, and favorable interphase chemistry.</p><p>Lithium-metal and fast-charge studies connect low-temperature operation with desolvation kinetics, interphase resistance, and lithium plating control.</p></section>
-        <section class="article-block"><h2>References</h2><ol class="reference-list"><li><a href="https://doi.org/10.1016/j.esci.2023.100170">Yang et al., Electrolyte design principles for low-temperature lithium-ion batteries, eScience, 2023.</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12432001/">Zhao et al., Low-Temperature Electrolytes for Lithium-Ion Batteries: Current Challenges, Development, and Perspectives, Nano-Micro Letters, 2025.</a></li><li><a href="https://www.sciencedirect.com/science/article/pii/S0378775324005111">Zhang et al., Challenges of film-forming additives in low-temperature lithium-ion batteries: A review, Journal of Power Sources, 2024.</a></li><li><a href="https://doi.org/10.1016/j.trechm.2020.01.011">Logan and Dahn, Electrolyte Design for Fast-Charging Li-Ion Batteries, Trends in Chemistry, 2020.</a></li></ol></section>
-            <p class="article-copyright">All original diagrams on this page are © Winigen Materials unless otherwise noted. They may not be reproduced, modified, or redistributed without permission.</p>
-    </article>
-      <aside class="article-side">
-        <p class="eyebrow">Related Pages</p>
-        <h2>Continue Reading</h2>
-        <p>Connect this technical topic with Winigen Materials product families, product pages, and formulation support.</p>
-        <div class="related-link-list"><a href="../products/custom-electrolyte-formulations.html">Custom electrolyte formulations</a><a href="../products/battery-solvents.html">Battery solvents family</a><a href="lifsi-lithium-metal-batteries.html">LiFSI electrolyte guide</a><a href="electrolyte-additives-sei-cei.html">Electrolyte additives guide</a><a href="../knowledge.html">Knowledge Center</a></div>
-      </aside>
-    </div>
-  </section>
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-title"><p class="eyebrow">FAQ</p><h2>Common Questions</h2></div>
-      <div class="faq-list"><details><summary>Why do batteries lose performance at low temperature?</summary><p>Low temperature increases electrolyte viscosity, lowers conductivity, slows desolvation and charge transfer, and raises lithium-plating risk during charge.</p></details><details><summary>Can salt selection alone solve low-temperature performance?</summary><p>No. Salt selection must be combined with solvent structure, additive package, water control, and formation protocol.</p></details><details><summary>What should be measured in low-temperature electrolyte screening?</summary><p>Conductivity, viscosity, impedance, lithium plating tendency, gas generation, capacity retention, and recovery after cold exposure should be tracked.</p></details></div>
-    </div>
-  </section>
+  <section class="section dark article-hero"><div class="container section-title"><div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / <a href="electrolytes-interfaces.html">Electrolytes &amp; Interfaces</a></div><p class="eyebrow">Integrated Low-Temperature Cell Engineering</p><h1>Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability</h1><p>A systems-level perspective on electrolyte transport, graphite kinetics, practical electrode loading, cell resistance, charging limits, and thermal strategy below −20°C, including operation below −60°C.</p></div></section>
+
+  <section class="section"><div class="container article-layout"><article class="article-main">
+    <p>Low temperature does not degrade a lithium-ion cell through one mechanism. As the temperature falls, ionic transport slows, interfacial resistance rises, concentration gradients steepen, and graphite becomes less able to accept lithium safely during charge. At that point, the performance of the electrolyte can no longer be separated from the architecture and operating conditions of the cell.</p>
+    <p>For consistency, this article defines the ultra-low-temperature domain as temperatures below −20°C. This is a reporting boundary rather than a universal physical threshold. Within this range, the dominant limitation may shift with chemistry, state of charge, aging, electrode loading, cell format, current, and thermal conditions.</p>
+    <div class="article-callout thesis-callout"><strong>Ultra-low-temperature performance is a cell-level outcome, not an electrolyte property alone.</strong></div>
+    <p>This distinction matters because the literature often compresses very different demonstrations into a single statement such as “the battery operates at −70°C.” A cell charged at 25°C and discharged once at −70°C has demonstrated cold discharge, not cold rechargeability. Likewise, a thin, electrolyte-rich coin cell may retain capacity while a practical ampere-hour pouch cell reaches its voltage cutoff much earlier. The scientific claim should be no broader than the test protocol and cell design that support it.</p>
+    <figure class="article-figure protected-figure winigen-original"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/ultra-cold-system-map.svg?v=20260725-5" alt="Scientific conceptual framework showing six coupled cell-design domains converging on useful energy, deliverable power, and safe rechargeability within a faint pouch-cell cross-section" loading="eager" decoding="async" draggable="false"></div><figcaption>Coupled design domains governing cell performance below −20°C. Their relative influence depends on chemistry, state, loading, format, current, and thermal boundary; −20°C is a reporting boundary, not a universal transition. &copy; Winigen Materials.</figcaption></figure>
+
+    <section class="article-block"><h2>1. What Does “Works at Low Temperature” Actually Mean?</h2>
+      <p>“Works at low temperature” may mean electrolyte liquidity, discharge energy, pulse power, rechargeability, repeated cycling, or operation in a realistic cell. Evaluation must begin by identifying the demonstrated function.</p>
+      <div class="article-table-wrap"><table class="article-table compact-claim-table"><thead><tr><th>Demonstration</th><th>What should be reported</th><th>What it establishes</th></tr></thead><tbody>
+        <tr><td>Electrolyte remains liquid</td><td>Phase behavior, hold time, conductivity, viscosity, and thermal history</td><td>The electrolyte remains physically mobile under the test conditions</td></tr>
+        <tr><td>Cold discharge</td><td>Charge temperature, cold soak, discharge temperature, rate, cutoff, voltage curve, capacity, and energy</td><td>The cell can deliver energy at low temperature</td></tr>
+        <tr><td>Cold power</td><td>SOC, pulse duration, rest time, voltage limit, power, resistance, and temperature rise</td><td>The cell can deliver short-duration power without excessive voltage collapse</td></tr>
+        <tr><td>Cold rechargeability</td><td>Charge temperature and rate, graphite potential or other plating evidence, Coulombic efficiency, rest behavior, and recovery</td><td>The cell can accept lithium safely at low temperature</td></tr>
+        <tr><td>Same-temperature cold cycling</td><td>Charge and discharge at the stated temperature, cycle count, efficiency, capacity or energy retention, and recovery</td><td>The cell can operate repeatedly under the stated cold condition</td></tr>
+        <tr><td>Practical-cell validation</td><td>Cell format, capacity, electrode loading, thickness, porosity, N/P ratio, electrolyte quantity, pressure, and current-collection design</td><td>The result is relevant to a realistic cell architecture</td></tr>
+      </tbody></table></div>
+      <p>Capacity retention also needs a clear reference: normalization at the same room-temperature rate is not equivalent to normalization against a slower baseline. Full voltage curves are preferable because lower voltage and earlier cutoff can reduce delivered energy even when capacity remains.</p>
+      <figure class="article-figure protected-figure winigen-replot"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/chen-temperature-retention-replot.svg?v=20260725-4" alt="Numerical-temperature-axis replot of capacity retention normalized independently to each electrolyte's 25-degree-Celsius discharge capacity, with a conceptual voltage-capacity panel distinguishing capacity retention from delivered energy" loading="lazy" decoding="async" draggable="false"></div><figcaption>Room-temperature-charge/cold-discharge capacity retention for 1 Ah LCO/graphite pouch cells, normalized independently to each electrolyte’s 25°C discharge capacity. Data were replotted from Chen et al., Figure 6c–d, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<sup><a href="#ref-1">[1]</a></sup> Winigen Materials modified the styling, numerical temperature axis, selected points, and annotations; the voltage–capacity panel is conceptual. Replot design &copy; Winigen Materials; source data remain under CC BY 4.0.</figcaption></figure>
+    </section>
+
+    <section class="article-block"><h2>2. Why Limitations Couple as Temperature Falls</h2>
+      <p>Cooling increases electrolyte viscosity, reduces ionic mobility, and can change ion association and effective carrier concentration. Porous-electrode concentration and potential gradients steepen while Li<sup>+</sup> desolvation, SEI transport, charge transfer, and solid-state diffusion slow.<sup><a href="#ref-2">[2]</a></sup></p>
+      <p>These processes do not act independently. They consume the same finite voltage margin. During discharge, a useful schematic expression is</p>
+      <div class="formula-box"><span class="equation">V<sub>cell</sub> = U<sub>eq</sub> − I R<sub>ohmic</sub> − &eta;<sub>pore</sub> − &eta;<sub>SEI</sub> − &eta;<sub>ct,a</sub> − &eta;<sub>ct,c</sub> − &eta;<sub>solid</sub></span><span class="note"><em>U</em><sub>eq</sub> denotes the full-cell equilibrium voltage at the local electrode states.</span></div>
+      <p>The polarization terms represent pore transport, interphase transport, charge transfer, and solid diffusion. Their growth lowers discharge voltage and advances cutoff; during charge, it raises the required terminal voltage and can move the graphite surface toward plating. Exact signs depend on convention, but every loss consumes the same electrochemical margin.</p>
+      <p>Porous-electrode architecture amplifies the bulk electrolyte penalty. A common representation is</p>
+      <div class="formula-box"><span class="equation">&kappa;<sub>eff</sub> = &kappa;&epsilon;/&tau;<sub>f</sub></span></div>
+      <p>Here, &kappa; is bulk conductivity, &epsilon; connected porosity, and &tau;<sub>f</sub> the tortuosity factor; equivalent forms follow from other tortuosity definitions. Thick, poorly connected coatings amplify a decrease in &kappa;. Reaction may then shift toward the separator, leaving deeper material underutilized and increasing interfacial current density and plating risk.<sup><a href="#ref-10">[10]</a></sup></p>
+      <figure class="article-figure protected-figure winigen-original"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/resistance-cascade-full-cell.svg?v=20260726-1" alt="Porous full-cell cross sections and aligned spatial profiles comparing electrolyte concentration, graphite polarization, and local reaction rate at 25 and minus 40 degrees Celsius" loading="lazy" decoding="async" draggable="false"></div><figcaption>Conceptual porous-cell response at 25°C and −40°C. Cooling steepens electrolyte gradients, increases graphite polarization, and shifts lithiation toward the separator, consuming receiving and terminal-voltage margin. Profiles are qualitative and use independent vertical scales. &copy; Winigen Materials.</figcaption></figure>
+      <p>A thin, low-loading coin-cell electrode can therefore conceal a limitation that dominates in a practical coating.<sup><a href="#ref-4">[4]</a></sup></p>
+      <p>Bulk conductivity is only one part of the response. Chen et al. reduced the apparent activation energies assigned to SEI transport and charge transfer by changing solvation.<sup><a href="#ref-1">[1]</a></sup> Xu et al. used three-electrode pouch cells to show that graphite remained above 0 V versus Li/Li<sup>+</sup> at −30°C under their tested condition.<sup><a href="#ref-3">[3]</a></sup> Together, these results show that formulation changes interfacial kinetics as well as bulk mobility, while electrode-potential measurements directly test the charging condition.</p>
+      <p>The controlling process can shift among bulk and pore transport, desolvation, SEI conduction, charge transfer, and solid diffusion with chemistry, state, age, loading, current, and format. The design target is therefore the full polarization spectrum, not one electrolyte property.</p>
+      <p>For reporting purposes, this article uses four temperature intervals:</p>
+      <div class="article-table-wrap"><table class="article-table compact-temperature-table"><thead><tr><th>Temperature range</th><th>Engineering interpretation</th></tr></thead><tbody>
+        <tr><td>0 to −20°C</td><td>Cold operation with chemistry- and design-dependent transport and kinetic penalties</td></tr>
+        <tr><td>−20 to −40°C</td><td>Increasingly coupled transport and kinetic limitations</td></tr>
+        <tr><td>−40 to −60°C</td><td>Large transport and kinetic penalties often require electrolyte–architecture co-design</td></tr>
+        <tr><td>Below −60°C</td><td>Specialized chemistry, aggressive derating, active heating, or a combination of these approaches</td></tr>
+      </tbody></table></div>
+      <p>These intervals organize comparison for a stated chemistry and design. They are not phase boundaries and do not imply that the same process becomes rate controlling in every cell at the same temperature.</p>
+    </section>
+
+    <section class="article-block"><h2>3. What Landmark Ultra-Low-Temperature Studies Demonstrate</h2>
+      <p>The lowest reported temperature is not enough to compare low-temperature battery studies. The result must be interpreted together with the charge and discharge temperatures, cycle count, cell format, electrode loading, electrolyte quantity, and rate. The three primary studies below use different electrolyte concepts and establish different levels of practical evidence.</p>
+      <div class="article-table-wrap"><table class="article-table compact-landmark-table"><thead><tr><th>Study</th><th>Cell and practical context</th><th>Cold protocol</th><th>Reported result and interpretation</th></tr></thead><tbody>
+        <tr><td>Chen et al.<sup><a href="#ref-1">[1]</a></sup></td><td>1 Ah, 4.5 V graphite-based pouch</td><td>One cycle entirely at −60°C; separate 25°C charge followed by −70°C discharge</td><td>334 mAh for the −60°C same-temperature cycle. Separate −70°C discharge delivered 716 mAh, reported as 61% of 25°C capacity.</td></tr>
+        <tr><td>Xu et al.<sup><a href="#ref-3">[3]</a></sup></td><td>NMC811/graphite coin cells, &gt;2.5 mAh cm<sup>−2</sup>; pouch validation at 2.5 g Ah<sup>−1</sup> E/C</td><td>Same-temperature charge/discharge to −60°C; pouch cycling at −30°C</td><td>75% at −50°C and 54% at −60°C at 0.1C. Pouch cycling at −30°C with &gt;99.9% average CE.</td></tr>
+        <tr><td>Lu et al.<sup><a href="#ref-5">[5]</a></sup></td><td>1.2 Ah graphite/NMC811 pouch, 2.85 mAh cm<sup>−2</sup></td><td>Same-temperature charge and discharge at −65°C</td><td>0.62 Ah reversible capacity at −65°C in an Ah-scale, practical-loading pouch cell.</td></tr>
+      </tbody></table></div>
+      <figure class="article-figure protected-figure winigen-original"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/cold-protocol-evidence-hierarchy.svg?v=20260726-4" alt="Comparison map of cell context, cold protocol, and validation evidence for ultra-low-temperature studies by Chen, Xu, and Lu" loading="lazy" decoding="async" draggable="false"></div><figcaption>Protocol and validation breadth in Chen et al.<sup><a href="#ref-1">[1]</a></sup>, Xu et al.<sup><a href="#ref-3">[3]</a></sup>, and Lu et al.<sup><a href="#ref-5">[5]</a></sup> Symbols distinguish cold discharge, one same-temperature cycle, repeated cycling, and Ah-scale pouch validation. Evidence classification and graphic design &copy; Winigen Materials.</figcaption></figure>
+      <p>These studies are complementary, not rank-ordered by minimum temperature. Chen et al.’s −70°C result demonstrates discharge after room-temperature charging; its separate −60°C result adds one-cycle same-temperature evidence. The meaningful comparison is the demonstrated function, cell design, and support for safe, repeatable operation.</p>
+    </section>
+
+    <section class="article-block"><h2>4. Low-Temperature Electrolyte Design Is a Multi-Objective Problem</h2>
+      <p>Electrolyte properties do not improve together automatically. Lower viscosity and weaker Li<sup>+</sup> coordination can aid transport and desolvation, yet poor salt dissociation reduces mobile carriers. Fluorination may improve phase or interphase behavior while affecting viscosity, density, cost, stability, and compatibility. The target is a balance of bulk transport, interfacial exchange, phase stability, and durability.</p>
+      <h3>4.1 Remain mobile through the full thermal history</h3>
+      <p>Pure-solvent melting points do not define the phase behavior of a formulation. Concentration, solvent ratio, additives, ion association, supercooling, nucleation, and glass formation shift the apparent liquid range. Cooling and heating traces are both needed because a clear, rapidly cooled sample may be a metastable liquid.</p>
+      <p>Conductivity and viscosity should follow a defined thermal history and equilibration period; cooling rate, quenching, holds, and partial crystallization all affect interpretation.</p>
+      <h3>4.2 Dissociate salt without binding Li<sup>+</sup> too strongly</h3>
+      <p>Strongly coordinating solvents can improve salt dissociation but raise the desolvation penalty at graphite. Very weak solvation can ease interfacial exchange yet suppress conductivity through insufficient dissociation or poor transport connectivity. A balanced environment must sustain carriers while permitting rapid solvent exchange.</p>
+      <figure class="article-figure protected-figure winigen-original"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/solvation-desolvation-sei-pathway.svg?v=20260726-9" alt="Mechanistic comparison of excessively weak, strongly coordinating, and balanced solvation, followed by desolvation, SEI transport, graphite insertion, and competing lithium plating" loading="lazy" decoding="async" draggable="false"></div><figcaption>Conceptual Li<sup>+</sup> pathway from bulk electrolyte through desolvation and the SEI into graphite. Balanced solvation must preserve mobile carriers while enabling interfacial transfer and insertion before lithium plating competes. Barrier heights are qualitative. &copy; Winigen Materials.</figcaption></figure>
+      <h3>4.3 Form an interphase that conducts Li<sup>+</sup> with minimal polarization</h3>
+      <p>The SEI must suppress electron transfer and electrolyte reduction while preserving Li<sup>+</sup> transport, contact, and chemical stability. Labels such as “LiF-rich” omit thickness, continuity, defects, organic fraction, and formation history—all determinants of resistance.<sup><a href="#ref-2">[2]</a></sup> A moderate-conductivity electrolyte can therefore outperform one with higher bulk conductivity if desolvation and SEI transport are faster.</p>
+      <h3>4.4 Remain compatible with the complete high-voltage cell</h3>
+      <p>Nitriles, ethers, esters, carbonates, and fluorinated solvents trade volatility, flammability, oxidation stability, viscosity, density, and graphite compatibility.<sup><a href="#ref-6">[6]</a></sup> Concentrated, dual-salt, and high-entropy formulations also alter ion association, aluminum corrosion, wetting, interphase precursors, cost, and processing.<sup><a href="#ref-2">[2]</a></sup></p>
+      <p>A favorable lithium-metal half-cell result does not establish compatibility with graphite, aluminum, or a 4.3–4.5 V cathode. Full-cell tests should reproduce representative cathode surface area and voltage and assess current-collector corrosion, gas generation, formation efficiency, storage, and cycling.</p>
+      <div class="article-callout caution-callout"><strong>Avoid a one-property optimization.</strong> Low melting point, low viscosity, high conductivity, weak solvation, and a fluorine-rich interphase can each be beneficial. None alone defines a successful low-temperature full-cell electrolyte.</div>
+    </section>
+
+    <section class="article-block"><h2>5. Graphite Often Sets the Safe Cold-Charging Limit</h2>
+      <p>In graphite-based cells, the negative electrode often sets the safe charging limit at low temperature. Cold-discharge voltage and energy reflect polarization across the full cell, but cold rechargeability depends critically on whether graphite can accept the incoming lithium without metallic deposition.</p>
+      <p>During charge, Li<sup>+</sup> must move through the electrolyte-filled pore network, shed its solvation shell, cross the SEI, and enter graphite. These steps determine the kinetically accessible insertion flux under the stated condition. If lithium arrives faster than it can be inserted, surface polarization increases and metallic deposition becomes competitive.<sup><a href="#ref-11">[11]</a></sup></p>
+      <p>Metallic lithium deposition becomes thermodynamically favorable when the local graphite surface potential falls below the local Li/Li<sup>+</sup> equilibrium potential, conventionally referenced near 0 V versus Li/Li<sup>+</sup>. Actual nucleation may require additional overpotential, while a measured full-electrode or reference-electrode potential can remain above 0 V even if an unresolved local region has crossed the plating condition.<sup><a href="#ref-7">[7]</a></sup></p>
+      <p>The relevant safety quantity is the <em>local lithium-receiving margin</em>: the difference between kinetically accessible graphite insertion flux and lithium arrival flux. It depends on both remaining lithiation capacity and insertion kinetics.</p>
+      <p>Four groups of variables govern this margin: graphite particle dimensions, staging behavior, and active area; electrode loading, porosity, tortuosity, and N/P ratio; SEI condition and wetting; and SOC, current, temperature, and age. A generous average N/P ratio cannot protect a dry, compressed, or high-resistance region.<sup><a href="#ref-11">[11]</a>, <a href="#ref-12">[12]</a></sup></p>
+      <div class="formula-box"><span class="equation">M<sub>Li</sub>(x) = j<sub>insert,accessible</sub>(x) − j<sub>arrival</sub>(x)</span><span class="note">Here, j<sub>insert,accessible</sub> is the kinetically accessible local graphite insertion flux under the stated condition. Qualitatively, M<sub>Li</sub> &gt; 0 indicates that graphite can accept the arriving lithium; M<sub>Li</sub> &le; 0 indicates that metallic lithium deposition can become competitive. This expression is a local engineering balance, not a universal kinetic law.</span></div>
+      <figure class="article-figure protected-figure winigen-original receiving-margin-figure"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/graphite-receiving-margin.svg?v=20260727-14" alt="Illustrative porous graphite electrode during cold charge with graded local lithiation activity, localized lithium deposition, a comparison of lithium arrival and accessible local insertion flux, and a second plot showing the resulting local receiving margin across zero" loading="lazy" decoding="async" draggable="false"></div><figcaption>Illustrative local lithium-receiving margin in a practical porous graphite electrode during cold charge. In an electrolyte-transport-limited case, lithium arrival and reaction are concentrated near the separator-facing region. The left plot compares Li<sup>+</sup> arrival flux with the kinetically accessible local graphite insertion flux. The right plot shows their difference directly: a negative margin indicates that metallic lithium deposition can become competitive, whereas a positive margin indicates that local insertion can accommodate the arriving lithium. The particle distribution and spatial profiles are qualitative rather than simulated fields. Conceptual Winigen Materials illustration. &copy; Winigen Materials.</figcaption></figure>
+      <p>Aging generally shrinks or redistributes this margin. Loss of cyclable lithium changes electrode balancing and SOC alignment, while SEI growth, pore blockage, wetting changes, gas-induced contact loss, and mechanical degradation increase local resistance or reduce active area. A fresh cell that avoids plating under a given cold-charge protocol may cross the local plating boundary after extended cycling. Aged-cell validation is therefore part of charge-safety validation, not only lifetime testing.</p>
+    </section>
+
+    <section class="article-block"><h2>6. Electrode and Cell Architecture Decide Whether the Electrolyte Can Work</h2>
+      <p>Low-temperature scale-up contains a persistent trap: thin, low-loading laboratory electrodes shorten ionic and solid-state transport distances, while coin cells often provide excess electrolyte, favorable external heat transfer, comparatively constrained stack geometry, and short electronic paths. A formulation that performs well under those conditions can polarize much more strongly when transferred to a thick coating, lean E/C, ampere-hour format, or less favorable thermal boundary. The same chemistry therefore does not guarantee the same low-temperature cell response.<sup><a href="#ref-4">[4]</a></sup></p>
+
+      <h3>6.1 Electrode architecture controls the local reaction distribution</h3>
+      <p>Areal loading and coating thickness set the electrolyte-filled pore length, solid diffusion distance, current per active area, and usable capacity before voltage cutoff. Connected porosity and tortuosity determine how severely a cold-induced loss of bulk conductivity is amplified inside the coating.<sup><a href="#ref-10">[10]</a></sup> Aggressive calendering can improve volumetric energy while increasing pore-transport polarization, and a lean electrolyte inventory can expose wetting or depletion limitations that a flooded laboratory cell conceals.</p>
+      <p>Graphite particle dimensions, morphology, surface area, and coating affect diffusion length, staging behavior, SEI burden, and kinetically accessible insertion rate. N/P ratio and overhang set average and edge inventory margin but cannot guarantee local accessibility. Separator thickness, porosity, permeability, compression, and electrolyte uptake add another transport segment before Li<sup>+</sup> reaches graphite. At a fixed nominal C-rate, these variables can produce very different spatial reaction fields even when the average geometric current density is known.</p>
+      <figure class="article-figure protected-figure winigen-original electrode-loading-figure"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/electrode-loading-cold-gradient.svg?v=20260726-2" alt="Electrode-architecture comparison during cold charge showing a short, generously wetted laboratory graphite coating with distributed lithiation and a coating more than twice as deep with separator-side localization and collector-side underutilization" loading="lazy" decoding="async" draggable="false"></div><figcaption>Electrode-architecture effect during cold charge. The thin laboratory coating has a short separator-to-collector pore path and distributed local lithiation activity. The practical coating is more than twice as deep; under the illustrated leaner-electrolyte condition, reaction localizes near the separator and the collector-facing region becomes kinetically underutilized. Average current density is I/A<sub>geometric</sub>; local interfacial current density is set by the reaction distribution. Conceptual Winigen Materials illustration. &copy; Winigen Materials.</figcaption></figure>
+
+      <h3>6.2 Cell hardware controls electrical and thermal uniformity</h3>
+      <p>Cell format introduces limitations that cannot be represented by a one-dimensional electrode cross-section. At the same nominal C-rate, absolute current increases with cell capacity. As cell area and capacity grow, longer current-collector paths, tab placement, weld resistance, and external contacts produce additional ohmic loss and in-plane current nonuniformity.</p>
+      <p>Mechanical and thermal boundary conditions also become less uniform. Stack pressure and interfacial contact may vary across the face of a pouch cell. Greater thermal mass and longer heat-flow paths can create core-to-surface, tab-to-edge, and center-to-edge temperature differences.<sup><a href="#ref-13">[13]</a></sup> Local resistance generates heat, while temperature changes kinetics, resistance, and current distribution.<sup><a href="#ref-14">[14]</a></sup> Pressure separately alters contact and pore structure.</p>
+      <p>A coin cell, a small pouch cell, and a multi-Ah pouch cell can therefore exhibit different cold polarization even when they use the same active materials and electrolyte. Transferable low-temperature studies should report tab number and location, current-collector thickness, weld and contact resistance, cell dimensions, stack pressure, fixture condition, thermal boundary, and, where possible, spatially resolved temperature, voltage, or DCIR—not only chemistry and nominal C-rate.</p>
+      <figure class="article-figure protected-figure winigen-original cell-scale-figure"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/cell-architecture-scale-effects.svg?v=20260726-6" alt="Scientific comparison of coin, small-pouch, and multi-ampere-hour pouch cells showing increasing absolute current, current-collector path length, contact resistance, pressure variation, and thermal nonuniformity at the same chemistry and nominal C-rate" loading="lazy" decoding="async" draggable="false"></div><figcaption>Conceptual comparison of cell-level electrical, mechanical, and thermal boundary conditions across coin, small-pouch, and multi-Ah pouch formats. At the same nominal C-rate, larger cells carry greater absolute current and typically introduce longer current-collector paths, more significant tab and contact resistance, leaner electrolyte conditions, pressure variation, and internal thermal gradients. The illustrated field shapes are qualitative rather than simulated values. Conceptual Winigen Materials illustration. &copy; Winigen Materials.</figcaption></figure>
+
+      <h3>6.3 Minimum architecture metadata and design tensions</h3>
+      <p>A transferable low-temperature result requires enough architecture metadata to explain both average performance and spatial nonuniformity.</p>
+      <div class="metadata-groups">
+        <p><strong>Electrode construction:</strong> areal loading, areal capacity, active-material fraction, dry and calendered thickness, density, and porosity after calendering.</p>
+        <p><strong>Graphite and cell balance:</strong> particle-size distribution, morphology, BET surface area, surface treatment, reversible capacity, initial Coulombic efficiency (ICE), N/P ratio, electrode alignment, and overhang.</p>
+        <p><strong>Separator and electrolyte:</strong> separator thickness, porosity, permeability or Gurley value, electrolyte quantity in g Ah<sup>−1</sup> or &micro;L mAh<sup>−1</sup>, and the filling, vacuum, wetting, formation, and aging protocols.</p>
+        <p><strong>Cell hardware and boundary conditions:</strong> format, rated capacity, dimensions, tab design, current-collector thickness, contact and weld resistance, stack pressure, fixture condition, soak history, and thermal boundary.</p>
+      </div>
+      <div class="article-callout caution-callout"><strong>Design tensions in low-temperature cells</strong>
+        <ul>
+          <li>Lower loading shortens transport paths but reduces cell-level energy density.</li>
+          <li>Higher porosity improves ionic transport but lowers volumetric energy density and may weaken particle contact.</li>
+          <li>Smaller graphite particles shorten diffusion length but increase SEI area, first-cycle loss, and gas-generation risk.</li>
+          <li>More electrolyte improves wetting and transport but lowers practical energy density.</li>
+          <li>Weaker solvation can reduce the desolvation penalty while decreasing salt dissociation or mobile-carrier concentration.</li>
+          <li>Greater fluorination can improve phase or interphase behavior while increasing cost, density, viscosity, or environmental burden.</li>
+          <li>Active heating improves kinetics but adds energy consumption, mass, controls, and thermal-uniformity challenges.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="article-block"><h2>7. Safe Cold Charging Requires Dynamic Current Limits</h2>
+      <p>Cold discharge and cold charge fail in different ways. During discharge, increasing polarization mainly lowers the operating voltage and causes the cell to reach its lower cutoff earlier. During charge, the same transport and kinetic limitations can push a local graphite region beyond its lithium-receiving margin, allowing metallic lithium deposition to compete with insertion.</p>
+      <p>Some deposited lithium may strip during rest or the following discharge. Some may become electrically isolated or react further with the electrolyte to form additional SEI. Reversible plating can therefore be difficult to detect from capacity alone, while irreversible plating consumes cyclable lithium and electrolyte, raises impedance, and increases safety risk.</p>
+      <p>Cold-charge control should consequently be based on graphite acceptance rather than the full-cell voltage limit alone.</p>
+      <p><strong>Adjust current with temperature and state of charge.</strong> Graphite receiving margin generally decreases as the anode approaches high lithiation. A fixed conservative current may underuse available capability at low SOC, yet exceed the safe local insertion rate near the top of charge. Current limits should therefore vary with temperature, SOC, aging state, and cell resistance.</p>
+      <p><strong>Use staged or adaptive charge limits.</strong> Temperature, SOC, DCIR, impedance or relaxation response, and validated cell models can inform a dynamic current ceiling. CC–CV charging may be part of this strategy, but reaching the full-cell voltage limit does not itself establish that graphite remains free of plating. CV duration and dV/dt can indicate changing polarization, but neither is standalone proof.</p>
+      <p><strong>Evaluate pulse protocols by mechanism, not only charge time.</strong> Rest periods may relax electrolyte concentration gradients and restore local insertion margin. They may also allow recently deposited lithium to strip, making a plating-prone protocol appear more reversible than it is. Pulse current, duty cycle, rest duration, temperature rise, total charge time, and post-rest behavior should all be reported.</p>
+      <p><strong>Use complementary plating diagnostics.</strong> No single method resolves every uncertainty. Three-electrode measurements probe negative-electrode potential but may miss spatially localized high-polarization regions.<sup><a href="#ref-11">[11]</a></sup> High-precision Coulombic efficiency and relaxation signatures reveal electrochemical consequences but are not uniquely specific to plating. Operando structural or spectroscopic methods, post-mortem analysis, and room-temperature recovery tests provide additional evidence. Spatially resolved chemical quantification has shown that irreversible plating can be strongly heterogeneous across pouch cells.<sup><a href="#ref-12">[12]</a></sup> Conclusions are strongest when several methods agree.<sup><a href="#ref-7">[7]</a></sup></p>
+      <div class="question-box"><span>Graphite acceptance—not the voltage ceiling</span><p>Can every active graphite region accept the imposed lithium flux at the stated temperature, SOC, and aging state?</p></div>
+    </section>
+
+    <section class="article-block"><h2>8. Thermal Management Is Part of the Electrochemistry</h2>
+      <p>At very low temperature, active thermal conditioning may be preferable to direct operation for high-power discharge or rapid recharge. The best strategy depends on chemistry, cell design, duty cycle, available energy, and allowable warm-up time.</p>
+      <p>External heaters and thermal plates warm the cell from its surface. Embedded foils and self-heating architectures generate heat nearer the electrode stack, while AC excitation or bidirectional pulses use internal electrical losses.<sup><a href="#ref-8">[8]</a>, <a href="#ref-9">[9]</a></sup></p>
+      <p>Electrically driven methods can also impose electrochemical cycling and polarization, so amplitude, frequency or duty cycle, SOC window, temperature rise, and electrode-potential response require validation. Methods should be compared by conditioning energy, warm-up time, added mass, uniformity, overtemperature, control complexity, and degradation—not only final temperature.</p>
+      <p>Temperature uniformity matters as much as the mean. A module averaging −10°C may still contain colder cells or colder regions within a cell. Those regions can retain higher ionic and interfacial resistance, lower graphite receiving margin, and greater susceptibility to early cutoff or lithium plating. Rapid heating can also create tab-to-core, face-to-edge, or surface-to-center gradients that are not captured by a single surface sensor.<sup><a href="#ref-13">[13]</a></sup> Over repeated operation, thermal and current nonuniformity can reinforce spatially uneven degradation.<sup><a href="#ref-14">[14]</a></sup></p>
+      <figure class="article-figure protected-figure winigen-original"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/thermal-gradient-local-risk.svg?v=20260726-6" alt="Pouch cell with tabs, a surface sensor, illustrative internal temperature contours, current redistribution toward a warmer lower-resistance region, and electrochemical susceptibility in a colder local region" loading="lazy" decoding="async" draggable="false"></div><figcaption>Conceptual effect of internal temperature gradients on local electrochemical state in a pouch cell. A surface sensor or pack-average temperature can miss a colder core or edge region with higher transport and interfacial resistance, reduced graphite receiving margin, and greater susceptibility to early cutoff or lithium plating. The illustrated temperature field and example temperatures are qualitative rather than measured or simulated values. Conceptual Winigen Materials illustration. &copy; Winigen Materials.</figcaption></figure>
+      <p>The thermal target should therefore be operational rather than descriptive. A useful requirement might specify that the battery must deliver a defined power within two minutes after a −50°C soak, consume less than 5% of stored energy for conditioning, maintain an acceptable internal temperature spread, and keep all graphite regions within a validated non-plating condition.</p>
+      <p><strong>A thermal strategy is successful only when the coldest electrochemically active region—not merely the mean or surface temperature—meets the performance and safety requirement.</strong></p>
+    </section>
+
+    <section class="article-block"><h2>9. A Development Framework for Ultra-Low-Temperature Cells</h2>
+      <p>Ultra-low-temperature development should begin with the required duty cycle, not with an isolated solvent or additive. A disciplined program moves from application requirements to a controlled baseline, mechanism-resolved diagnostics, practical architecture, realistic validation, and an explicit thermal decision.</p>
+      <figure class="article-figure protected-figure winigen-original"><div class="figure-lock"><img src="../assets/images/knowledge/low-temperature/ultra-cold-validation-workflow.svg?v=20260727-4" alt="Seven-step iterative development and validation framework for ultra-low-temperature lithium-ion cells, with failed targets returning to rate-limiting-process diagnosis" loading="lazy" decoding="async" draggable="false"></div><figcaption>Iterative development framework for ultra-low-temperature lithium-ion cells. The program begins with application requirements and a controlled baseline, then resolves the limiting transport and kinetic processes before optimizing practical architecture and validating realistic cold protocols. Thermal strategy is selected using measured system performance, with failed targets feeding back into mechanism diagnosis, architecture, and protocol design. Conceptual Winigen Materials framework. &copy; Winigen Materials.</figcaption></figure>
+      <ol class="development-steps">
+        <li><strong>Define the application.</strong> Specify storage, discharge, and charge temperatures separately, together with required energy, power, SOC window, warm-up time, lifetime, and abuse constraints.</li>
+        <li><strong>Lock a controlled room-temperature baseline.</strong> Hold electrode lots, loading, density, N/P ratio, separator, electrolyte quantity, formation, pressure, and cell format constant before attributing performance changes to the electrolyte.</li>
+        <li><strong>Characterize physical properties over temperature.</strong> Measure phase behavior, conductivity, viscosity, salt solubility, wetting, volatility, flammability, and compatibility with electrodes and current collectors. A single value at 25°C is not sufficient.</li>
+        <li><strong>Identify the rate-limiting processes.</strong> Combine bulk-transport measurements with graphite and cathode half-cells, full cells, matched-SOC EIS or DRT, and three-electrode measurements where possible. Apparent activation energies should be interpreted cautiously when processes overlap or deviate from Arrhenius behavior.</li>
+        <li><strong>Optimize the practical architecture.</strong> Co-design loading, thickness, porosity, tortuosity, particle size, separator, E/C, stack pressure, current collectors, and tab placement. Every improvement in cold power should be evaluated against its room-temperature energy and manufacturing penalty.</li>
+        <li><strong>Validate realistic cold protocols.</strong> Define the soak, thermal boundary, charge and discharge temperatures, rate, cutoff, recovery, and cycle count. Evaluate discharge energy, pulse power, cold recharge, plating behavior, and aged-cell response separately.</li>
+        <li><strong>Select the thermal strategy using system data.</strong> Compare direct cold operation, derated charging, staged charging, self-heating, and mandatory preheating on conditioning time, energy, mass, uniformity, lifetime, and safety.</li>
+      </ol>
+      <p>A useful target is written as a constrained system problem. For example: maximize delivered energy at −40°C and 0.5C while maintaining all relevant graphite regions within a validated non-plating envelope during 0.2C recharge, with E/C below 3 g Ah<sup>−1</sup>, cathode areal capacity above 3 mAh cm<sup>−2</sup>, and conditioning energy below 3% of stored energy.</p>
+    </section>
+
+    <section class="article-block"><h2>10. Minimum Reporting Standard for Claims Below −20°C</h2>
+      <p>Section 6.3 identifies the architecture data needed to judge transferability. The following consolidated standard defines the minimum information needed to interpret a complete low-temperature performance claim.</p>
+      <div class="article-table-wrap"><table class="article-table reporting-standard-table"><thead><tr><th>Domain</th><th>Minimum information to report</th></tr></thead><tbody>
+        <tr><td>Thermal protocol</td><td>Chamber setpoint and measured cell temperature; sensor position; soak duration; temperature ramp; charge, rest, and discharge temperatures; thermal boundary; self-heating and measured temperature rise</td></tr>
+        <tr><td>Electrical protocol</td><td>Formation and preconditioning; initial SOC; C-rate and absolute current; CC–CV criteria; rest periods; voltage cutoffs; pulse duration and duty cycle; cycle count</td></tr>
+        <tr><td>Cell architecture</td><td>Format; rated and measured capacity; electrode area; cathode and anode chemistry; active-material fraction; loading; areal capacity; dry and calendered thickness; density; porosity; N/P ratio; alignment and overhang</td></tr>
+        <tr><td>Electrolyte and separator</td><td>Complete formulation and concentration basis; water specification; E/C; fill, vacuum, wetting, and formation procedure; separator chemistry, thickness, porosity, and permeability; electrolyte thermal and phase history</td></tr>
+        <tr><td>Performance</td><td>Full voltage curves; capacity; delivered Wh; average discharge voltage; power; DCIR or EIS at matched SOC; Coulombic efficiency; normalization denominator; replicate count; uncertainty or cell-to-cell variation</td></tr>
+        <tr><td>Charge safety</td><td>Negative-electrode potential where available; plating diagnostics; relaxation and recovery behavior; gas or swelling; self-discharge; post-mortem evidence; aged-cell validation</td></tr>
+      </tbody></table></div>
+      <p>This information distinguishes a phase-stability result, a low-rate cold discharge, a power demonstration, and validated cold rechargeability.</p>
+    </section>
+
+    <section class="article-block"><h2>11. Implications for Materials Development</h2>
+      <p>Electrolyte development should begin with a defined electrode and cell architecture. Solvent and salt selection determine phase behavior, conductivity, viscosity, solvation, electrochemical stability, and interphase precursors. Graphite grade determines particle diffusion length, surface area, morphology, tap density, and SEI demand. Cathode and anode loading, porosity, and balance determine the lithium flux that the graphite must receive. Finished-electrode processing turns these materials into actual ionic, electronic, and thermal transport paths.</p>
+      <p>The development target should therefore be a coupled specification rather than a request for “the best low-temperature solvent.” At minimum, it should define the target temperature and duty cycle, cell chemistry and voltage, electrode areal capacities and porosities, N/P ratio, E/C, formation protocol, required energy and power, allowable conditioning time, and the evidence required to exclude unacceptable lithium plating.</p>
+    </section>
+
+    <section class="article-block"><h2>References and Figure Rights</h2>
+      <p><strong>Figure rights.</strong> Original conceptual illustrations and the design and annotations of Winigen-created replots are &copy; Winigen Materials. Selected numerical data from Chen et al. were replotted under CC BY 4.0; each adapted figure identifies its source and modifications. No complete journal figure is reproduced. Third-party data remain subject to the licenses and attributions stated in the relevant captions.</p>
+      <ol class="reference-list">
+        <li id="ref-1">Chen, Y. et al. Breaking solvation dominance of ethylene carbonate via molecular charge engineering enables lower temperature battery. <em>Nature Communications</em> 14, 8326 (2023). <a href="https://doi.org/10.1038/s41467-023-43163-9">doi:10.1038/s41467-023-43163-9</a>. CC BY 4.0.</li>
+        <li id="ref-2">Zhao, Y.; Geng, L.; Meng, W.; Ye, J. Low-Temperature Electrolytes for Lithium-Ion Batteries: Current Challenges, Development, and Perspectives. <em>Nano-Micro Letters</em> 18, 65 (2026). <a href="https://doi.org/10.1007/s40820-025-01914-x">doi:10.1007/s40820-025-01914-x</a>. CC BY 4.0; third-party figure exclusions apply.</li>
+        <li id="ref-3">Xu, J. et al. Electrolyte design for Li-ion batteries under extreme operating conditions. <em>Nature</em> 614, 694–700 (2023). <a href="https://doi.org/10.1038/s41586-022-05627-8">doi:10.1038/s41586-022-05627-8</a>.</li>
+        <li id="ref-4">Zhan, J. et al. Cell Design for Improving Low-Temperature Performance of Lithium-Ion Batteries for Electric Vehicles. <em>Batteries</em> 9, 373 (2023). <a href="https://doi.org/10.3390/batteries9070373">doi:10.3390/batteries9070373</a>. CC BY 4.0.</li>
+        <li id="ref-5">Lu, D. et al. Ligand-channel-enabled ultrafast Li-ion conduction. <em>Nature</em> 627, 101–107 (2024). <a href="https://doi.org/10.1038/s41586-024-07045-4">doi:10.1038/s41586-024-07045-4</a>.</li>
+        <li id="ref-6">Jeong, D.; Tackett, B. M.; Pol, V. G. Tailored Li-ion battery electrodes and electrolytes for extreme condition operations. <em>Communications Chemistry</em> 8, 170 (2025). <a href="https://doi.org/10.1038/s42004-025-01564-5">doi:10.1038/s42004-025-01564-5</a>. CC BY-NC-ND 4.0; adapted material is not permitted under the license, and third-party exclusions may apply.</li>
+        <li id="ref-7">Waldmann, T. et al. Li plating as unwanted side reaction in commercial Li-ion cells: A review. <em>Journal of Power Sources</em> 384, 107–124 (2018). <a href="https://doi.org/10.1016/j.jpowsour.2018.02.063">doi:10.1016/j.jpowsour.2018.02.063</a>.</li>
+        <li id="ref-8">Yang, X.-G. et al. Fast charging of lithium-ion batteries at all temperatures. <em>Proceedings of the National Academy of Sciences</em> 115, 7266–7271 (2018). <a href="https://doi.org/10.1073/pnas.1807115115">doi:10.1073/pnas.1807115115</a>.</li>
+        <li id="ref-9">Zeng, X. et al. Extreme fast charging of commercial Li-ion batteries via combined thermal switching and self-heating approaches. <em>Nature Communications</em> 13, 6615 (2022). <a href="https://doi.org/10.1038/s41467-022-34037-3">doi:10.1038/s41467-022-34037-3</a>.</li>
+        <li id="ref-10">Lu, X. et al. 3D microstructure design of lithium-ion battery electrodes assisted by X-ray nano-computed tomography and modelling. <em>Nature Communications</em> 11, 2079 (2020). <a href="https://doi.org/10.1038/s41467-020-15811-x">doi:10.1038/s41467-020-15811-x</a>.</li>
+        <li id="ref-11">Finegan, D. P. et al. Spatial dynamics of lithiation and lithium plating during high-rate operation of graphite electrodes. <em>Energy &amp; Environmental Science</em> 13, 2570–2584 (2020). <a href="https://doi.org/10.1039/D0EE01191F">doi:10.1039/D0EE01191F</a>.</li>
+        <li id="ref-12">Paul, P. P. et al. Quantification of heterogeneous, irreversible lithium plating in extreme fast charging of lithium-ion batteries. <em>Energy &amp; Environmental Science</em> 14, 4979–4988 (2021). <a href="https://doi.org/10.1039/D1EE01216A">doi:10.1039/D1EE01216A</a>.</li>
+        <li id="ref-13">Lin, J.; Chu, H. N.; Howey, D. A.; Monroe, C. W. Multiscale coupling of surface temperature with solid diffusion in large lithium-ion pouch cells. <em>Communications Engineering</em> 1, 1 (2022). <a href="https://doi.org/10.1038/s44172-022-00005-8">doi:10.1038/s44172-022-00005-8</a>.</li>
+        <li id="ref-14">Li, S. et al. Effect of thermal gradients on inhomogeneous degradation in lithium-ion batteries. <em>Communications Engineering</em> 2, 74 (2023). <a href="https://doi.org/10.1038/s44172-023-00124-w">doi:10.1038/s44172-023-00124-w</a>.</li>
+      </ol>
+    </section>
+
+    <div class="cta-panel"><h2>Develop an Ultra-Low-Temperature Cell Stack</h2><p>Share the target temperature and duty cycle, cathode and anode chemistry, areal loading, N/P ratio, E/C, cell format, voltage window, warm-up allowance, and required validation evidence. Winigen Materials can support electrolyte formulation, graphite and cathode selection, finished-electrode design, and practical-cell validation.</p><a class="btn" href="../contact.html?topic=Ultra-low-temperature%20electrolyte%20and%20cell%20development">Contact Winigen Materials</a></div>
+    <p class="article-copyright">Original Winigen Materials illustrations, figure layouts, annotations, and article text are &copy; Winigen Materials. Third-party data remain subject to the licenses and attributions stated in the relevant figure captions.</p>
+  </article>
+
+  <aside class="article-side"><p class="eyebrow">Winigen Portfolio</p><h2>Related Materials and Guides</h2><p>Connect cold electrolyte kinetics with practical electrodes, cell balance, and thermal strategy.</p><div class="related-link-list"><a href="fast-charge-all-weather-ev-battery-electrolytes.html">Fast-Charge and All-Weather EV Batteries</a><a href="beyond-np-ratio-spatial-reaction-uniformity.html">Local Lithium Receiving Capacity</a><a href="np-ratio-lithium-ion-battery-design.html">N/P Ratio Design Guide</a><a href="coin-cell-to-pouch-cell-battery-material-validation.html">Coin-to-Pouch Validation</a><a href="coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">Wetting, Gas, and Formation</a><a href="electrolyte-additives-sei-cei.html">Electrolyte Additives and Interphases</a><a href="../products/custom-electrolyte-formulations.html">Custom Electrolyte Formulations</a><a href="../products/battery-solvents.html">Battery Solvents</a><a href="../products/lithium-salts.html">Lithium Salts</a><a href="../products/graphite-anode-material-high-power-grade.html">High-Power Graphite</a><a href="../services.html">Development Services</a></div></aside>
+  </div></section>
+
+  <section class="section soft"><div class="container"><div class="section-title"><p class="eyebrow">Frequently Asked Questions</p><h2>Ultra-Low-Temperature Cell Design</h2></div><div class="faq-list"><details><summary>Does an electrolyte remaining liquid prove useful cold-cell performance?</summary><p>No. Liquidity is a prerequisite. Useful cell energy and power also depend on bulk and pore transport, desolvation, interphase resistance, electrode loading, cell hardware, thermal state, and the rate and cutoff used.</p></details><details><summary>Why is cold charging harder than cold discharge?</summary><p>During charge, lithium must enter graphite. A local graphite surface potential below the Li/Li<sup>+</sup> equilibrium potential of 0 V versus Li/Li<sup>+</sup> supplies the thermodynamic driving force for lithium deposition. The measured onset also depends on nucleation overpotential, local concentration, reference placement, and spatial resolution.</p></details><details><summary>What should be reported for a result below −20°C?</summary><p>Charge and discharge temperatures, soak, rate, cutoff, format and capacity, electrode loading and thickness, N/P, E/C, voltage and energy curves, cycle count, and plating/recovery evidence for any cold-charge claim.</p></details><details><summary>Can a better electrolyte eliminate preheating?</summary><p>Not universally. Depending on chemistry, duty cycle, and pack design, active conditioning may be preferable for high power or fast recharge at very low temperature.</p></details></div></div></section>
 </main>
-<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
-<script src="../assets/js/main.js?v=20260615"></script>
+<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer><script src="../assets/js/main.js?v=20260725"></script>
 </body>
 </html>

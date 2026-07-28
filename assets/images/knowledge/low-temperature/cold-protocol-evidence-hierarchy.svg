@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Protocol and validation level matter more than the lowest reported temperature</title>
+  <desc id="desc">Comparison of cell context, thermal protocol, and validation evidence for ultra-low-temperature studies by Xu, Chen, and Lu, followed by a four-step evidence ladder.</desc>
+  <metadata>Copyright © 2026 Winigen Materials. All rights reserved. Comparative framework, layout, icons, and annotations are original Winigen Materials work. Study conditions are summarized from the cited primary literature. Reproduction, modification, or redistribution requires permission.</metadata>
+  <defs>
+    <marker id="ladderArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#7f93ae"/>
+    </marker>
+    <symbol id="pouchCell" viewBox="0 0 36 30">
+      <rect x="1" y="5" width="34" height="24" rx="3" fill="#fff" stroke="currentColor" stroke-width="2"/>
+      <rect x="7" y="1" width="6" height="5" rx="1" fill="currentColor"/>
+      <rect x="23" y="1" width="6" height="5" rx="1" fill="currentColor"/>
+      <path d="M5 10H31" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".65"/>
+    </symbol>
+    <style>
+      text{font-family:Inter,Arial,sans-serif}
+      .h{fill:#14213d;font-size:28px;font-weight:800}
+      .sub{fill:#5b6d88;font-size:15px}
+      .head{fill:#536b87;font-size:11.5px;font-weight:800;letter-spacing:.7px}
+      .study{fill:#14213d;font-size:18px;font-weight:850}
+      .body{fill:#3f526e;font-size:13px}
+      .evidence{fill:#203653;font-size:13px;font-weight:750}
+      .tag{font-size:10px;font-weight:850;letter-spacing:.45px}
+      .tag-value{font-size:12px;font-weight:850}
+      .legend{fill:#40536e;font-size:11.5px}
+      .ladder-title{fill:#14213d;font-size:15px;font-weight:850}
+      .ladder-text{fill:#40536e;font-size:12px;font-weight:700}
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" rx="26" fill="#f4f7fb"/>
+  <text x="58" y="54" class="h">Protocol and validation level matter more than the lowest reported temperature</text>
+  <text x="58" y="82" class="sub">Studies are compared by cell context, thermal protocol, and validation breadth—not by the coldest printed number alone.</text>
+
+  <!-- Evidence-code legend -->
+  <g transform="translate(58 104)">
+    <rect width="1084" height="52" rx="13" fill="#fff" stroke="#c9d7e8"/>
+    <circle cx="28" cy="26" r="9" fill="#fff" stroke="#2a66d9" stroke-width="2.5"/>
+    <text x="45" y="30" class="legend">cold discharge only</text>
+
+    <path d="M225 17A9 9 0 0 0 225 35Z" fill="#25a8b5"/>
+    <circle cx="225" cy="26" r="9" fill="none" stroke="#25a8b5" stroke-width="2.5"/>
+    <text x="242" y="30" class="legend">one same-temperature cycle</text>
+
+    <circle cx="510" cy="26" r="9" fill="#2a66d9" stroke="#2a66d9" stroke-width="2.5"/>
+    <text x="527" y="30" class="legend">repeated same-temperature cycling</text>
+
+    <use href="#pouchCell" x="830" y="12" width="31" height="27" color="#ed7049"/>
+    <text x="867" y="30" class="legend">Ah-scale pouch validation</text>
+  </g>
+
+  <!-- Column headers -->
+  <text x="78" y="181" class="head">STUDY</text>
+  <text x="220" y="181" class="head">CELL AND PRACTICAL CONTEXT</text>
+  <text x="500" y="181" class="head">COLD PROTOCOL</text>
+  <text x="860" y="181" class="head">EVIDENCE DEMONSTRATED</text>
+
+  <!-- Xu row -->
+  <g transform="translate(58 354)">
+    <rect width="1084" height="146" rx="16" fill="#fff" stroke="#bdd0e8" stroke-width="1.5"/>
+    <rect width="6" height="146" rx="3" fill="#2a66d9"/>
+    <path d="M142 18V128M422 18V128M782 18V128" stroke="#d7e1ed" stroke-width="1"/>
+
+    <text x="20" y="42" class="study">Xu et al.</text>
+    <text x="20" y="65" class="body">2023 [3]</text>
+
+    <text x="162" y="35" class="body">
+      <tspan x="162" dy="0">Practical-loading NMC811/graphite coins</tspan>
+      <tspan x="162" dy="20">Lean-electrolyte pouch validation</tspan>
+    </text>
+    <rect x="162" y="88" width="108" height="25" rx="12.5" fill="#e9f1ff"/>
+    <text x="216" y="104.5" text-anchor="middle" fill="#2a66d9" class="tag-value">&gt;2.5 mAh cm⁻²</text>
+    <rect x="278" y="88" width="116" height="25" rx="12.5" fill="#e5f4ee"/>
+    <text x="336" y="104.5" text-anchor="middle" fill="#187964" class="tag-value">2.5 g Ah⁻¹ E/C</text>
+
+    <text x="442" y="35" class="body">
+      <tspan x="442" dy="0">Same-temperature operation to −60°C</tspan>
+      <tspan x="442" dy="20">Pouch cycling at −30°C</tspan>
+    </text>
+    <path d="M454 91H658" stroke="#6c86ac" stroke-width="2"/>
+    <circle cx="472" cy="91" r="5" fill="#2a66d9"/><circle cx="640" cy="91" r="5" fill="#2a66d9"/>
+    <text x="472" y="114" text-anchor="middle" class="body">−60°C</text>
+    <text x="640" y="114" text-anchor="middle" class="body">−30°C cycling</text>
+
+    <circle cx="816" cy="39" r="11" fill="#2a66d9"/>
+    <text x="839" y="35" class="evidence">
+      <tspan x="839" dy="0">Practical-loading cold operation</tspan>
+      <tspan x="839" dy="20">Sustained pouch cycling at −30°C</tspan>
+    </text>
+    <use href="#pouchCell" x="810" y="85" width="32" height="29" color="#ed7049"/>
+    <rect x="853" y="88" width="86" height="25" rx="12.5" fill="#e9f1ff"/>
+    <text x="896" y="104.5" text-anchor="middle" fill="#2a66d9" class="tag">LOADING</text>
+    <rect x="947" y="88" width="90" height="25" rx="12.5" fill="#e5f4ee"/>
+    <text x="992" y="104.5" text-anchor="middle" fill="#187964" class="tag">LEAN E/C</text>
+  </g>
+
+  <!-- Chen row -->
+  <g transform="translate(58 194)">
+    <rect width="1084" height="146" rx="16" fill="#edf3fa" stroke="#b8c9df" stroke-width="1.5"/>
+    <rect width="6" height="146" rx="3" fill="#25a8b5"/>
+    <path d="M142 18V128M422 18V128M782 18V128" stroke="#cfdae7" stroke-width="1"/>
+
+    <text x="20" y="42" class="study">Chen et al.</text>
+    <text x="20" y="65" class="body">2023 [1]</text>
+
+    <text x="162" y="35" class="body">
+      <tspan x="162" dy="0">4.5 V graphite-based cell</tspan>
+      <tspan x="162" dy="20">1 Ah pouch; loading not reported</tspan>
+    </text>
+    <use href="#pouchCell" x="162" y="81" width="36" height="31" color="#ed7049"/>
+
+    <text x="442" y="32" class="body">
+      <tspan x="442" dy="0">One same-temperature cycle at −60°C</tspan>
+      <tspan x="442" dy="20">25°C charge → −70°C discharge</tspan>
+    </text>
+    <rect x="442" y="80" width="120" height="27" rx="8" fill="#dff3f5"/>
+    <text x="502" y="98" text-anchor="middle" fill="#187a84" class="tag-value">CYCLE −60°C</text>
+    <rect x="573" y="80" width="163" height="27" rx="8" fill="#e8eef6"/>
+    <text x="654.5" y="98" text-anchor="middle" fill="#516984" class="tag-value">25°C → DISCHARGE −70°C</text>
+
+    <path d="M805 28A11 11 0 0 0 805 50Z" fill="#25a8b5"/>
+    <circle cx="805" cy="39" r="11" fill="none" stroke="#25a8b5" stroke-width="2.5"/>
+    <text x="829" y="44" class="evidence">One-cycle cold recharge at −60°C</text>
+    <circle cx="805" cy="85" r="11" fill="#fff" stroke="#2a66d9" stroke-width="2.5"/>
+    <text x="829" y="90" class="evidence">−70°C result: discharge only</text>
+  </g>
+
+  <!-- Lu row -->
+  <g transform="translate(58 514)">
+    <rect width="1084" height="146" rx="16" fill="#fff" stroke="#bdd0e8" stroke-width="1.5"/>
+    <rect width="6" height="146" rx="3" fill="#ed7049"/>
+    <path d="M142 18V128M422 18V128M782 18V128" stroke="#d7e1ed" stroke-width="1"/>
+
+    <text x="20" y="42" class="study">Lu et al.</text>
+    <text x="20" y="65" class="body">2024 [5]</text>
+
+    <text x="162" y="35" class="body">
+      <tspan x="162" dy="0">1.2 Ah graphite/NMC811 pouch</tspan>
+      <tspan x="162" dy="20">Practical cathode loading</tspan>
+    </text>
+    <use href="#pouchCell" x="162" y="81" width="36" height="31" color="#ed7049"/>
+    <rect x="208" y="86" width="122" height="25" rx="12.5" fill="#e9f1ff"/>
+    <text x="269" y="102.5" text-anchor="middle" fill="#2a66d9" class="tag-value">2.85 mAh cm⁻²</text>
+
+    <text x="442" y="36" class="body">
+      <tspan x="442" dy="0">Same-temperature operation at −65°C</tspan>
+      <tspan x="442" dy="20">0.62 Ah reversible capacity</tspan>
+    </text>
+    <rect x="442" y="82" width="196" height="28" rx="9" fill="#fff0eb"/>
+    <text x="540" y="100.5" text-anchor="middle" fill="#bd4f31" class="tag">CHARGE + DISCHARGE −65°C</text>
+
+    <path d="M805 28A11 11 0 0 0 805 50Z" fill="#25a8b5"/>
+    <circle cx="805" cy="39" r="11" fill="none" stroke="#25a8b5" stroke-width="2.5"/>
+    <text x="829" y="34" class="evidence">
+      <tspan x="829" dy="0">Ah-scale same-temperature operation</tspan>
+      <tspan x="829" dy="20">Practical-loading pouch</tspan>
+    </text>
+    <use href="#pouchCell" x="810" y="87" width="32" height="29" color="#ed7049"/>
+    <rect x="853" y="90" width="86" height="25" rx="12.5" fill="#e9f1ff"/>
+    <text x="896" y="106.5" text-anchor="middle" fill="#2a66d9" class="tag">LOADING</text>
+  </g>
+
+  <!-- Evidence ladder -->
+  <g transform="translate(58 688)">
+    <rect width="1084" height="132" rx="18" fill="#fff" stroke="#c9d7e8"/>
+    <text x="22" y="28" class="ladder-title">Validation breadth</text>
+
+    <rect x="22" y="46" width="205" height="48" rx="12" fill="#eef3f9"/>
+    <text x="124.5" y="74" text-anchor="middle" class="ladder-text">Cold discharge</text>
+    <path d="M232 70H270" stroke="#7f93ae" stroke-width="2" marker-end="url(#ladderArrow)"/>
+
+    <rect x="280" y="46" width="220" height="48" rx="12" fill="#e8f5f6"/>
+    <text x="390" y="67" text-anchor="middle" class="ladder-text">One same-temperature</text>
+    <text x="390" y="82" text-anchor="middle" class="ladder-text">cycle</text>
+    <path d="M505 70H543" stroke="#7f93ae" stroke-width="2" marker-end="url(#ladderArrow)"/>
+
+    <rect x="553" y="46" width="218" height="48" rx="12" fill="#e9f1ff"/>
+    <text x="662" y="67" text-anchor="middle" class="ladder-text">Repeated same-temperature</text>
+    <text x="662" y="82" text-anchor="middle" class="ladder-text">cycling</text>
+    <path d="M776 70H814" stroke="#7f93ae" stroke-width="2" marker-end="url(#ladderArrow)"/>
+
+    <rect x="824" y="46" width="238" height="48" rx="12" fill="#fff0eb"/>
+    <text x="943" y="66" text-anchor="middle" class="ladder-text">Practical Ah-scale validation</text>
+    <text x="943" y="82" text-anchor="middle" class="ladder-text">with loading and plating diagnostics</text>
+
+    <text x="22" y="116" fill="#536b87" font-size="12">Broader validation does not imply equal relevance to every application.</text>
+  </g>
+
+  <text x="58" y="860" fill="#536b87" font-size="12">Conceptual comparison; study-specific conditions remain essential.</text>
+</svg>

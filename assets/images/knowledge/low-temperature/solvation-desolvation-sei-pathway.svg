@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Balanced solvation and interphase design for low-temperature graphite insertion</title>
+  <desc id="desc">Strongly coordinating and balanced solvation pathways are compared from bulk electrolyte through desolvation, SEI transport, and graphite insertion, with excessively weak solvation identified as a bulk-transport failure mode and qualitative interfacial barriers shown below.</desc>
+  <metadata>Copyright © 2026 Winigen Materials. All rights reserved. Conceptual molecular pathway, interphase microstructures, relative barrier profiles, layout, and annotations are original Winigen Materials work. Relative barrier heights are qualitative and are not fitted data. Reproduction, modification, or redistribution requires permission.</metadata>
+  <defs>
+    <marker id="blueArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#2a66d9"/>
+    </marker>
+    <marker id="tealArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#25a8b5"/>
+    </marker>
+    <marker id="orangeArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#ed7049"/>
+    </marker>
+    <marker id="orangeFineArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#ed7049"/>
+    </marker>
+    <style>
+      text{font-family:Inter,Arial,sans-serif}
+      .h{fill:#14213d;font-size:28px;font-weight:800}
+      .sub{fill:#5b6d88;font-size:15px}
+      .card-title{font-size:15.5px;font-weight:850}
+      .solvation-note{fill:#536b87;font-size:12.5px}
+      .row-title{fill:#14213d;font-size:18px;font-weight:850}
+      .label{fill:#304560;font-size:14.5px;font-weight:750}
+      .small{fill:#536b87;font-size:13px}
+      .tiny{fill:#5d7089;font-size:12px}
+      .white{fill:#fff}
+      .profile-title{fill:#14213d;font-size:19px;font-weight:850}
+      .profile-note{fill:#5d7089;font-size:13.5px}
+      .axis-label{fill:#5d7089;font-size:13.5px}
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" rx="26" fill="#f4f7fb"/>
+  <text x="58" y="54" class="h">Balanced solvation and interphase design for low-temperature graphite insertion</text>
+  <text x="58" y="82" class="sub">Mobile carriers, labile coordination, a continuous SEI transport pathway, and rapid insertion must be achieved together.</text>
+
+  <!-- Solvation design window -->
+  <g transform="translate(58 104)">
+    <rect width="1084" height="84" rx="16" fill="#fff" stroke="#c7d5e7"/>
+    <rect x="16" y="10" width="320" height="64" rx="12" fill="#fff0eb"/>
+    <text x="32" y="33" fill="#b64c31" class="card-title">TOO STRONG</text>
+    <text x="32" y="52" class="solvation-note"><tspan x="32">Good dissociation · persistent shell</tspan><tspan x="32" dy="15">High desolvation penalty</tspan></text>
+
+    <rect x="350" y="10" width="384" height="64" rx="13" fill="#e5f4ee" stroke="#8dcbbb" stroke-width="1.5"/>
+    <text x="370" y="33" fill="#187964" class="card-title">BALANCED SOLVATION WINDOW</text>
+    <text x="370" y="52" class="solvation-note"><tspan x="370">Sufficient dissociation · exchangeable shell</tspan><tspan x="370" dy="15">Favorable interphase</tspan></text>
+
+    <rect x="748" y="10" width="320" height="64" rx="12" fill="#f0ecfa"/>
+    <text x="764" y="33" fill="#7251a6" class="card-title">TOO WEAK</text>
+    <text x="764" y="52" class="solvation-note"><tspan x="764">Easy desolvation · insufficient dissociation</tspan><tspan x="764" dy="15">Bulk transport limited</tspan></text>
+  </g>
+
+  <!-- Strongly coordinating pathway -->
+  <g transform="translate(58 210)">
+    <rect width="1084" height="176" rx="18" fill="#fff" stroke="#c7d5e7"/>
+    <rect width="6" height="176" rx="3" fill="#ed7049"/>
+    <text x="22" y="29" class="row-title">Strong coordination</text>
+    <text x="245" y="29" class="small">mobile carriers retained; slower interfacial exchange</text>
+
+    <!-- Chemically suggestive first solvation shell -->
+    <g transform="translate(113 100)">
+      <circle r="20" fill="#2a66d9"/>
+      <text x="0" y="6" text-anchor="middle" class="white" font-size="15" font-weight="850">Li⁺</text>
+      <g stroke="#7389a9" stroke-width="2.5">
+        <line x1="-19" y1="-8" x2="-42" y2="-19"/><line x1="19" y1="-8" x2="42" y2="-19"/>
+        <line x1="-19" y1="9" x2="-42" y2="23"/><line x1="19" y1="9" x2="42" y2="23"/>
+      </g>
+      <g>
+        <circle cx="-45" cy="-20" r="7" fill="#ed7049"/><rect x="-74" y="-30" width="24" height="20" rx="8" fill="#91a7c6"/>
+        <circle cx="45" cy="-20" r="7" fill="#ed7049"/><rect x="50" y="-30" width="24" height="20" rx="8" fill="#91a7c6"/>
+        <circle cx="-45" cy="24" r="7" fill="#ed7049"/><rect x="-74" y="14" width="24" height="20" rx="8" fill="#91a7c6"/>
+        <circle cx="45" cy="24" r="7" fill="#ed7049"/><rect x="50" y="14" width="24" height="20" rx="8" fill="#91a7c6"/>
+      </g>
+      <path d="M-10-30L0-38L10-30L0-22Z" fill="#8b6db6"/>
+      <text x="0" y="65" text-anchor="middle" class="tiny">persistent solvent shell</text>
+    </g>
+    <text x="113" y="53" text-anchor="middle" class="label">Bulk solvation</text>
+
+    <path d="M188 100H278" stroke="#7189aa" stroke-width="4" marker-end="url(#blueArrow)"/>
+    <text x="233" y="87" text-anchor="middle" class="tiny">pore transport</text>
+
+    <!-- Physical desolvation -->
+    <g transform="translate(335 100)">
+      <circle r="15" fill="#2a66d9"/><text x="0" y="5" text-anchor="middle" class="white" font-size="12" font-weight="850">Li⁺</text>
+      <circle cx="-25" cy="-14" r="6" fill="#ed7049"/><rect x="-47" y="-22" width="18" height="16" rx="6" fill="#91a7c6"/>
+      <circle cx="-23" cy="18" r="6" fill="#ed7049"/><rect x="-45" y="10" width="18" height="16" rx="6" fill="#91a7c6"/>
+      <path d="M25-8C45-33 65-33 83-8" fill="none" stroke="#ed7049" stroke-width="3"/>
+      <circle cx="90" cy="0" r="12" fill="#2a66d9"/><text x="90" y="4" text-anchor="middle" class="white" font-size="10" font-weight="850">Li⁺</text>
+      <path d="M36-20L54-34M33 19L54 34" stroke="#879bb7" stroke-width="2" marker-end="url(#orangeArrow)"/>
+      <circle cx="63" cy="-40" r="5" fill="#ed7049"/><rect x="69" y="-47" width="17" height="14" rx="5" fill="#91a7c6"/>
+      <circle cx="63" cy="40" r="5" fill="#ed7049"/><rect x="69" y="33" width="17" height="14" rx="5" fill="#91a7c6"/>
+    </g>
+    <text x="378" y="53" text-anchor="middle" class="label">Solvent removal</text>
+    <text x="378" y="161" text-anchor="middle" fill="#b64c31" font-size="11" font-weight="800">larger desolvation barrier</text>
+
+    <path d="M452 100H513" stroke="#ed7049" stroke-width="4" marker-end="url(#orangeArrow)"/>
+
+    <!-- Thick, tortuous SEI -->
+    <g transform="translate(530 58)">
+      <rect width="92" height="96" rx="10" fill="#c5cfd9"/>
+      <path d="M13 10L39 29L17 48L50 67L25 86M78 10L53 29L77 47L45 67L69 86" fill="none" stroke="#6f7f91" stroke-width="6" stroke-linecap="round"/>
+      <path d="M38 25L55 39M35 55L54 71" stroke="#1f2b3a" stroke-width="8"/>
+    </g>
+    <text x="576" y="53" text-anchor="middle" class="label">High-impedance SEI</text>
+    <text x="576" y="169" text-anchor="middle" class="tiny">thick · tortuous · discontinuous</text>
+
+    <!-- Graphite and competing plating -->
+    <g transform="translate(665 57)">
+      <rect width="272" height="98" rx="12" fill="#303846"/>
+      <g stroke="#7d8da4" stroke-width="7" stroke-linecap="round">
+        <path d="M24 24H248"/><path d="M24 49H248"/><path d="M24 74H248"/>
+      </g>
+      <circle cx="93" cy="24" r="6.5" fill="#66cce0"/>
+      <circle cx="164" cy="49" r="6.5" fill="#66cce0"/>
+      <path d="M-42 49H-6" stroke="#ed7049" stroke-width="4" marker-end="url(#orangeFineArrow)"/>
+      <path d="M-33 49C-20 40-10 24 5 10" fill="none" stroke="#ed7049" stroke-width="3" stroke-linecap="round" marker-end="url(#orangeFineArrow)"/>
+      <path d="M1 7L9 1L16 3L23-5L30 2L37-7L43 1L51-2L57 7Z" fill="#dfe5ed" stroke="#ed7049" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M16 3L21 7M30 2L34 7M43 1L47 7" fill="none" stroke="#aab6c5" stroke-width="1.6"/>
+      <text x="46" y="16" fill="#ffb49f" font-size="13" font-weight="850">competing Li plating</text>
+    </g>
+    <text x="801" y="53" text-anchor="middle" class="label">Graphite insertion</text>
+    <text x="801" y="169" text-anchor="middle" class="tiny">lower insertion flux · smaller plating margin</text>
+
+    <rect x="955" y="62" width="111" height="88" rx="12" fill="#fff0eb"/>
+    <text x="1010.5" y="88" text-anchor="middle" fill="#b64c31" font-size="13" font-weight="850">INTERFACE</text>
+    <text x="1010.5" y="110" text-anchor="middle" class="small">slow exchange</text>
+    <text x="1010.5" y="131" text-anchor="middle" class="small">higher risk</text>
+  </g>
+
+  <!-- Balanced pathway -->
+  <g transform="translate(58 402)">
+    <rect width="1084" height="176" rx="18" fill="#eef7f8" stroke="#a9d4d8" stroke-width="1.5"/>
+    <rect width="6" height="176" rx="3" fill="#25a8b5"/>
+    <text x="22" y="29" class="row-title">Balanced pathway</text>
+    <text x="230" y="29" class="small">mobile carriers + rapid interfacial transfer</text>
+
+    <g transform="translate(113 100)">
+      <circle r="20" fill="#2a66d9"/>
+      <text x="0" y="6" text-anchor="middle" class="white" font-size="15" font-weight="850">Li⁺</text>
+      <g stroke="#38a7b6" stroke-width="2" stroke-dasharray="4 3">
+        <line x1="-18" y1="-8" x2="-39" y2="-18"/><line x1="18" y1="-8" x2="39" y2="-18"/><line x1="-18" y1="9" x2="-39" y2="22"/>
+      </g>
+      <g>
+        <circle cx="-42" cy="-19" r="7" fill="#ed7049"/><rect x="-70" y="-28" width="23" height="18" rx="7" fill="#58c7d9"/>
+        <circle cx="42" cy="-19" r="7" fill="#ed7049"/><rect x="47" y="-28" width="23" height="18" rx="7" fill="#58c7d9"/>
+        <circle cx="-42" cy="23" r="7" fill="#ed7049"/><rect x="-70" y="14" width="23" height="18" rx="7" fill="#58c7d9"/>
+      </g>
+      <path d="M23 22L36 11L49 22L36 33Z" fill="#8b6db6"/>
+      <text x="0" y="65" text-anchor="middle" class="tiny">exchangeable mixed shell</text>
+    </g>
+    <text x="113" y="53" text-anchor="middle" class="label">Bulk solvation</text>
+
+    <path d="M188 100H278" stroke="#25a8b5" stroke-width="4" marker-end="url(#tealArrow)"/>
+    <circle cx="214" cy="100" r="5.5" fill="#63cbe1"/><circle cx="246" cy="100" r="5.5" fill="#63cbe1"/>
+    <text x="233" y="87" text-anchor="middle" class="tiny">mobile carriers</text>
+
+    <g transform="translate(335 100)">
+      <circle r="15" fill="#2a66d9"/><text x="0" y="5" text-anchor="middle" class="white" font-size="12" font-weight="850">Li⁺</text>
+      <circle cx="-24" cy="-13" r="6" fill="#ed7049"/><rect x="-45" y="-21" width="17" height="16" rx="6" fill="#58c7d9"/>
+      <path d="M24-7C36-20 49-20 61-7" fill="none" stroke="#25a8b5" stroke-width="3"/>
+      <circle cx="71" cy="0" r="12" fill="#2a66d9"/><text x="71" y="4" text-anchor="middle" class="white" font-size="10" font-weight="850">Li⁺</text>
+      <path d="M20-18L42-34" stroke="#38a7b6" stroke-width="2" marker-end="url(#tealArrow)"/>
+      <circle cx="50" cy="-40" r="5" fill="#ed7049"/><rect x="56" y="-47" width="17" height="14" rx="5" fill="#58c7d9"/>
+    </g>
+    <text x="378" y="53" text-anchor="middle" class="label">Solvent exchange</text>
+    <text x="378" y="161" text-anchor="middle" fill="#187964" font-size="11" font-weight="800">lower desolvation barrier</text>
+
+    <path d="M434 100H531" stroke="#25a8b5" stroke-width="4" marker-end="url(#tealArrow)"/>
+
+    <!-- Thin SEI with continuous channel -->
+    <g transform="translate(548 59)">
+      <rect width="56" height="94" rx="9" fill="#7693a4"/>
+      <path d="M15 8C43 21 13 35 41 48C13 61 43 74 16 87" fill="none" stroke="#7fe0e8" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="28" cy="21" r="4" fill="#dff9fb"/><circle cx="28" cy="48" r="4" fill="#dff9fb"/><circle cx="28" cy="75" r="4" fill="#dff9fb"/>
+    </g>
+    <text x="576" y="53" text-anchor="middle" class="label">Low-impedance SEI</text>
+    <text x="576" y="169" text-anchor="middle" class="tiny">thin · continuous Li⁺ pathway</text>
+
+    <g transform="translate(665 57)">
+      <rect width="272" height="98" rx="12" fill="#303846"/>
+      <g stroke="#7d8da4" stroke-width="7" stroke-linecap="round">
+        <path d="M24 24H248"/><path d="M24 49H248"/><path d="M24 74H248"/>
+      </g>
+      <g fill="#63cbe1">
+        <circle cx="58" cy="24" r="7"/><circle cx="96" cy="49" r="7"/><circle cx="136" cy="74" r="7"/>
+        <circle cx="177" cy="24" r="7"/><circle cx="215" cy="49" r="7"/>
+      </g>
+      <path d="M-40 49H-6" stroke="#25a8b5" stroke-width="4" marker-end="url(#tealArrow)"/>
+    </g>
+    <text x="801" y="53" text-anchor="middle" class="label">Graphite insertion</text>
+    <text x="801" y="169" text-anchor="middle" class="tiny">higher insertion flux · larger plating margin</text>
+
+    <rect x="955" y="62" width="111" height="88" rx="12" fill="#dff2f3"/>
+    <text x="1010.5" y="88" text-anchor="middle" fill="#187964" font-size="13" font-weight="850">INTERFACE</text>
+    <text x="1010.5" y="110" text-anchor="middle" class="small">fast exchange</text>
+    <text x="1010.5" y="131" text-anchor="middle" class="small">larger margin</text>
+  </g>
+
+  <!-- Molecular-species and SEI-pathway legend -->
+  <g transform="translate(58 594)">
+    <rect width="1084" height="70" rx="11" fill="#fff" stroke="#d1dce9"/>
+
+    <text x="18" y="22" class="label">Species key</text>
+    <circle cx="124" cy="17" r="9" fill="#2a66d9"/>
+    <text x="124" y="21" text-anchor="middle" class="white" font-size="8" font-weight="850">Li⁺</text>
+    <text x="140" y="22" class="small">lithium ion</text>
+
+    <rect x="252" y="8" width="25" height="18" rx="7" fill="#91a7c6"/>
+    <circle cx="284" cy="17" r="7" fill="#ed7049"/>
+    <text x="300" y="22" class="small">coordinating solvent</text>
+
+    <path d="M482 17L493 8L504 17L493 26Z" fill="#8b6db6"/>
+    <text x="518" y="22" class="small">anion</text>
+
+    <line x1="18" y1="34" x2="1066" y2="34" stroke="#e2e9f2"/>
+    <text x="18" y="57" class="label">SEI pathway key</text>
+    <path d="M145 42L173 62M173 42L145 62" stroke="#1f2b3a" stroke-width="5"/>
+    <text x="187" y="57" class="small">resistive or poorly connected Li⁺ path</text>
+    <path d="M476 41C500 48 477 56 502 63" fill="none" stroke="#7fe0e8" stroke-width="5" stroke-linecap="round"/>
+    <text x="518" y="57" class="small">continuous Li⁺-conduction channel</text>
+  </g>
+
+  <!-- Qualitative barrier sequence -->
+  <g transform="translate(58 678)">
+    <rect width="1084" height="170" rx="17" fill="#fff" stroke="#c7d5e7"/>
+    <text x="20" y="28" class="profile-title">Qualitative interfacial barrier sequence</text>
+    <text x="1048" y="28" text-anchor="end" class="profile-note">relative barrier heights; not a fitted reaction coordinate</text>
+
+    <line x1="70" y1="125" x2="1020" y2="125" stroke="#a9b8ca" stroke-width="1.5"/>
+    <path d="M70 118C150 118 166 92 230 98C295 104 302 44 374 51C445 58 451 56 516 62C584 68 592 38 664 45C738 52 745 84 812 91C882 99 914 115 1020 116" fill="none" stroke="#ed7049" stroke-width="4.5"/>
+    <path d="M70 118C150 118 170 105 230 108C292 111 311 82 374 86C440 90 458 91 516 93C580 96 602 78 664 82C728 86 758 101 812 105C882 110 920 116 1020 116" fill="none" stroke="#25a8b5" stroke-width="4.5"/>
+
+    <text x="380" y="39" fill="#b64c31" font-size="14.5" font-weight="800">strong coordination</text>
+    <text x="320" y="78" fill="#187964" font-size="14.5" font-weight="800">balanced</text>
+    <text x="1018" y="104" text-anchor="end" class="profile-note">inserted state</text>
+
+    <path d="M215 37V132M410 37V132M607 37V132M804 37V132" stroke="#e0e7ef" stroke-width="1" stroke-dasharray="3 4"/>
+    <g text-anchor="middle" class="axis-label">
+      <text x="140" y="151">bulk/pore transport</text>
+      <text x="312" y="151">desolvation</text>
+      <text x="510" y="151">SEI migration</text>
+      <text x="706" y="151">charge transfer</text>
+      <text x="912" y="151">graphite insertion</text>
+    </g>
+  </g>
+
+  <text x="58" y="884" fill="#536b87" font-size="13">Conceptual Winigen Materials mechanism map; chemistry- and state-dependent behavior must be measured.</text>
+</svg>

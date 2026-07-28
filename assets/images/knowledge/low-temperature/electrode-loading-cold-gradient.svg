@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Practical electrode loading changes the local reaction field</title>
+  <desc id="desc">During cold charge, a short and generously wetted laboratory graphite coating is compared with a practical coating more than twice as deep. Thin gray particle rings represent SEI, colored halos represent local lithiation rate, and the practical coating shows separator-side localization and collector-side underutilization.</desc>
+  <metadata>Copyright © 2026 Winigen Materials. All rights reserved. Conceptual electrode architecture, reaction fields, layout, and annotations are original Winigen Materials work. Reproduction, modification, or redistribution requires permission.</metadata>
+  <defs>
+    <linearGradient id="thickPore" x1="0" x2="1">
+      <stop stop-color="#67c5db"/>
+      <stop offset=".48" stop-color="#a8d4e5"/>
+      <stop offset="1" stop-color="#e6f2f6"/>
+    </linearGradient>
+    <marker id="blueArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#2a66d9"/>
+    </marker>
+    <marker id="orangeArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#ed7049"/>
+    </marker>
+    <style>
+      text{font-family:Inter,Arial,sans-serif}
+      .h{fill:#14213d;font-size:31px;font-weight:800}
+      .sub{fill:#5b6d88;font-size:17px}
+      .card-title{fill:#14213d;font-size:19px;font-weight:850}
+      .label{fill:#304560;font-size:15px;font-weight:800}
+      .small{fill:#5b6d88;font-size:14.2px}
+      .white{fill:#fff}
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="26" fill="#f4f7fb"/>
+  <text x="58" y="56" class="h">Practical electrode loading changes the local reaction field</text>
+  <text x="58" y="86" class="sub">At the same nominal C-rate, coating thickness, pore length, and electrolyte availability can produce very different local current distributions.</text>
+  <text x="58" y="112" fill="#294f8c" font-size="15" font-weight="850">Cold charge; Li⁺ enters graphite from the separator side.</text>
+
+  <!-- Thin laboratory coating -->
+  <g transform="translate(58 140)">
+    <rect width="480" height="430" rx="22" fill="#fff" stroke="#c6d4e7"/>
+    <rect x="22" y="18" width="220" height="42" rx="21" fill="#e5f4ee"/>
+    <text x="132" y="46" text-anchor="middle" fill="#187964" class="card-title">Thin laboratory coating</text>
+    <text x="25" y="86" class="small">short pore path · generously wetted · lower polarization</text>
+
+    <g transform="translate(105 112)">
+      <rect width="56" height="210" rx="11" fill="#d9eff8"/>
+      <path d="M19 16V194M40 16V194" stroke="#fff" stroke-width="9"/>
+      <text x="28" y="235" text-anchor="middle" class="small">separator</text>
+
+      <rect x="56" width="162" height="210" rx="3" fill="#8bc9df"/>
+      <!-- Uniform reaction glows -->
+      <g fill="none" stroke="#52cad8" stroke-width="8" opacity=".42">
+        <circle cx="94" cy="45" r="32"/><circle cx="172" cy="45" r="32"/>
+        <circle cx="94" cy="108" r="32"/><circle cx="172" cy="108" r="32"/>
+        <circle cx="94" cy="171" r="32"/><circle cx="172" cy="171" r="32"/>
+      </g>
+      <!-- Thin, uniform SEI rings -->
+      <g fill="#242b35" stroke="#7e91ad" stroke-width="4">
+        <circle cx="94" cy="45" r="25"/><circle cx="172" cy="45" r="25"/>
+        <circle cx="94" cy="108" r="25"/><circle cx="172" cy="108" r="25"/>
+        <circle cx="94" cy="171" r="25"/><circle cx="172" cy="171" r="25"/>
+      </g>
+
+      <rect x="218" width="22" height="210" fill="#c68f65"/>
+      <text x="229" y="235" text-anchor="middle" class="small">Cu</text>
+
+      <!-- Flux reaches through the short coating -->
+      <g fill="none" stroke="#2a66d9" stroke-linecap="round" marker-end="url(#blueArrow)">
+        <path d="M17 44H78" stroke-width="4"/>
+        <path d="M17 107H124" stroke-width="4"/>
+        <path d="M17 170H158" stroke-width="4"/>
+      </g>
+      <text x="136" y="267" text-anchor="middle" fill="#187964" font-size="15.8" font-weight="850">distributed lithiation through coating depth</text>
+    </g>
+  </g>
+
+  <!-- Practical thick coating -->
+  <g transform="translate(562 140)">
+    <rect width="580" height="430" rx="22" fill="#14213d"/>
+    <rect x="22" y="18" width="238" height="42" rx="21" fill="#315b95"/>
+    <text x="141" y="46" text-anchor="middle" class="white" font-size="19" font-weight="850">Practical thick coating</text>
+    <text x="25" y="86" fill="#bdd0eb" font-size="14.5">long pore path · lean electrolyte · transport-limited reaction field</text>
+
+    <g transform="translate(58 112)">
+      <rect width="56" height="210" rx="11" fill="#b8d9ec"/>
+      <path d="M19 16V194M40 16V194" stroke="#eaf8ff" stroke-width="9" opacity=".72"/>
+      <text x="28" y="235" text-anchor="middle" fill="#bdd0eb" font-size="14.2">separator</text>
+
+      <rect x="56" width="370" height="210" rx="3" fill="url(#thickPore)"/>
+      <!-- Graded lithiation-rate glows: strong, moderate, weak -->
+      <g fill="none" stroke="#ed7049">
+        <circle cx="94" cy="44" r="34" stroke-width="11" opacity=".58"/>
+        <circle cx="94" cy="108" r="35" stroke-width="11" opacity=".58"/>
+        <circle cx="94" cy="172" r="33" stroke-width="11" opacity=".58"/>
+        <circle cx="166" cy="45" r="32" stroke-width="8" opacity=".34"/>
+        <circle cx="166" cy="108" r="33" stroke-width="8" opacity=".34"/>
+        <circle cx="166" cy="171" r="31" stroke-width="8" opacity=".34"/>
+        <circle cx="240" cy="48" r="33" stroke-width="5" opacity=".14"/>
+        <circle cx="240" cy="113" r="31" stroke-width="5" opacity=".14"/>
+      </g>
+      <!-- Uniform thin gray SEI around all particles -->
+      <g fill="#242b35" stroke="#71839e" stroke-width="4">
+        <circle cx="94" cy="44" r="25"/><circle cx="166" cy="45" r="24"/><circle cx="240" cy="48" r="26"/><circle cx="315" cy="43" r="24"/><circle cx="385" cy="48" r="25"/>
+        <circle cx="94" cy="108" r="27"/><circle cx="166" cy="108" r="25"/><circle cx="240" cy="113" r="24"/><circle cx="315" cy="108" r="27"/><circle cx="385" cy="116" r="23"/>
+        <circle cx="94" cy="172" r="24"/><circle cx="166" cy="171" r="23"/><circle cx="240" cy="174" r="25"/><circle cx="315" cy="173" r="24"/><circle cx="385" cy="174" r="22"/>
+      </g>
+
+      <rect x="426" width="22" height="210" fill="#c68f65"/>
+      <text x="437" y="235" text-anchor="middle" fill="#bdd0eb" font-size="14.2">Cu</text>
+
+      <!-- Flux is concentrated close to the separator -->
+      <g fill="none" stroke="#ed7049" stroke-linecap="round" marker-end="url(#orangeArrow)">
+        <path d="M16 44H92" stroke-width="6"/>
+        <path d="M16 107H82" stroke-width="5"/>
+        <path d="M16 170H70" stroke-width="4"/>
+      </g>
+    </g>
+    <text x="145" y="379" text-anchor="middle" fill="#ffb49f" font-size="15.2" font-weight="850">separator-side localization</text>
+    <text x="425" y="379" text-anchor="middle" fill="#bdd0eb" font-size="15.2" font-weight="800">collector-side underutilization</text>
+  </g>
+
+  <!-- Legend and precise local-current statement -->
+  <g transform="translate(58 600)">
+    <rect width="1084" height="112" rx="17" fill="#eaf2ff"/>
+    <text x="24" y="29" fill="#294f8c" font-size="17" font-weight="900">Reaction-field key</text>
+    <circle cx="180" cy="24" r="11" fill="#242b35" stroke="#7e91ad" stroke-width="3"/>
+    <text x="202" y="29" class="small">thin gray ring = SEI</text>
+    <circle cx="405" cy="24" r="16" fill="none" stroke="#ed7049" stroke-width="7" opacity=".48"/>
+    <text x="433" y="29" class="small">halo intensity = local lithiation rate</text>
+
+    <line x1="24" y1="47" x2="1060" y2="47" stroke="#ccdaeb"/>
+    <text x="24" y="73" fill="#294f8c" font-size="17" font-weight="900">Average current density is I/A<tspan baseline-shift="sub" font-size="11.5">geometric</tspan>; local interfacial current density is determined by the reaction distribution.</text>
+    <text x="24" y="98" class="small">With a nonuniform reaction field, separator-facing regions can carry several times the electrode-average interfacial current while collector-facing material remains underutilized.</text>
+  </g>
+</svg>
