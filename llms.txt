@@ -85,12 +85,12 @@ This file is intended as a concise guide for AI assistants and search systems. T
 ## Product Detail Pages
 
 Product-specific pages are available under `/products/` for chemical materials in the catalog. Examples include:
-- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-10-um.html
-- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-5-um.html
-- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-2-um.html
-- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-1-5-d-50-1-um.html
-- Li 6 PS 5 Cl: https://www.winigenmaterials.com/products/li-6-ps-5-cl-d-50-10-um.html
-- Li 5.5 PS 4.5 Cl x Br y: https://www.winigenmaterials.com/products/li-5-5-ps-4-5-cl-x-br-y-d-50-10-um.html
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/gsh01.html
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/gsh02.html
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/gsh03.html
+- Li 5.5 PS 4.5 Cl 1.5: https://www.winigenmaterials.com/products/gsh04.html
+- Li 6 PS 5 Cl: https://www.winigenmaterials.com/products/gsl01.html
+- Li 5.5 PS 4.5 Cl x Br y: https://www.winigenmaterials.com/products/gsb01.html
 - LATP: https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html
 - Li 3 InCl 6: https://www.winigenmaterials.com/products/li-3-incl-6-d-50-0-9-um.html
 - Sodium hexafluorophosphate (NaPF 6): https://www.winigenmaterials.com/products/sodium-hexafluorophosphate-napf-6.html
