@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
       match: ['products.html', '../products.html'],
       items: [
         ['All Products', `${prefix}products.html`],
+        ['Ceramic & Functional Coatings', `${prefix}products/battery-ceramic-functional-coating-materials.html`],
+        ['Alumina Coating Materials', `${prefix}products/alumina-functional-coating-materials.html`],
         ['Solid-State Electrolytes', `${prefix}products/solid-state-electrolytes.html`],
           ['Battery Active Materials', `${prefix}products/battery-active-materials.html`],
         ['Next-Generation Salts', `${prefix}products/next-generation-salts.html`],
