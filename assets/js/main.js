@@ -1,3 +1,18 @@
+const protectedHosts = [
+  'winigenmaterials.com',
+  'www.winigenmaterials.com'
+];
+
+const isProductionSite = protectedHosts.includes(window.location.hostname);
+
+if (isProductionSite) {
+  document.body.classList.add('production-site');
+} else {
+  document.querySelectorAll('.protected-figure img[draggable="false"]').forEach((image) => {
+    image.removeAttribute('draggable');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.mobile-toggle');
   const menu = document.querySelector('.mobile-menu');
@@ -173,15 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Discourage casual saving or dragging of protected article figures.
-document.addEventListener('contextmenu', function (event) {
-  if (event.target.closest('.protected-figure')) {
-    event.preventDefault();
-  }
-});
+// Discourage casual saving or dragging of protected article figures on production only.
+if (isProductionSite) {
+  document.addEventListener('contextmenu', function (event) {
+    if (event.target.closest('.protected-figure')) {
+      event.preventDefault();
+    }
+  });
 
-document.addEventListener('dragstart', function (event) {
-  if (event.target.closest('.protected-figure')) {
-    event.preventDefault();
-  }
-});
+  document.addEventListener('dragstart', function (event) {
+    if (event.target.closest('.protected-figure')) {
+      event.preventDefault();
+    }
+  });
+}

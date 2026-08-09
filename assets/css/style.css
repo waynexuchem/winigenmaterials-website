@@ -760,8 +760,8 @@ body .structure-fallback.structure-fallback--active { display: grid; font-size: 
 }
 
 /* Light-touch protection for original knowledge-article figures. */
-.protected-figure,
-.protected-figure img {
+.production-site .protected-figure,
+.production-site .protected-figure img {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
@@ -775,12 +775,15 @@ body .structure-fallback.structure-fallback--active { display: grid; font-size: 
   display: block;
   width: 100%;
   height: auto;
+}
+
+.production-site .figure-lock img {
   pointer-events: none;
   -webkit-user-drag: none;
   user-drag: none;
 }
 
-.figure-lock::after {
+.production-site .figure-lock::after {
   content: "";
   position: absolute;
   inset: 0;
