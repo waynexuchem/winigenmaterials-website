@@ -8,3 +8,5 @@ _data.py
 __pycache__/
 *.pyc
 knowledge/references/
+stripe-worker/.dev.vars
+stripe-worker/.wrangler/

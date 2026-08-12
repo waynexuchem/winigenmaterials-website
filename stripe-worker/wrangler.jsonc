@@ -1,0 +1,26 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "winigen-stripe-test",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+	"vars": {
+		"SITE_ORIGIN": "https://www.winigenmaterials.com",
+		"STRIPE_TEST_PRICE_ID": "price_1U36KK8Hut8EXxjZ1DEstFtu"
+	},
+	"secrets": {
+		"required": [
+			"STRIPE_SECRET_KEY",
+			"STRIPE_WEBHOOK_SECRET"
+		]
+	},
+	"d1_databases": [
+		{
+      "binding": "ORDERS_DB",
+      "database_name": "winigen-stripe-test-orders",
+      "database_id": "58e2b981-78be-41f6-a456-83cd4c613710",
+			"migrations_dir": "migrations"
+		}
+	]
+}

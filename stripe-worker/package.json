@@ -1,0 +1,13 @@
+{
+  "name": "winigen-stripe-test-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply winigen-stripe-test-orders --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
