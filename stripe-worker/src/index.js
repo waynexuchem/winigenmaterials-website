@@ -168,15 +168,16 @@ function bytesToHex(bytes) {
   return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
-async function verifyStripeSignature(rawBody, signatureHeader, endpointSecret) {
-  if (!signatureHeader) return false;
+async function verifyStripeSignature(rawBodyBytes, signatureHeader, endpointSecret) {
+  if (!signatureHeader) return { valid: false, reason: 'missing_signature' };
 
   const { timestamp, signatures } = parseStripeSignature(signatureHeader);
   const timestampNumber = Number(timestamp);
   const isRecent = Number.isFinite(timestampNumber)
     && Math.abs(Math.floor(Date.now() / 1000) - timestampNumber) <= webhookToleranceSeconds;
 
-  if (!isRecent || signatures.length === 0) return false;
+  if (!isRecent) return { valid: false, reason: 'timestamp_outside_tolerance' };
+  if (signatures.length === 0) return { valid: false, reason: 'missing_v1_signature' };
 
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey(
@@ -186,10 +187,15 @@ async function verifyStripeSignature(rawBody, signatureHeader, endpointSecret) {
     false,
     ['sign']
   );
-  const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(`${timestamp}.${rawBody}`));
+  const prefix = encoder.encode(`${timestamp}.`);
+  const signedPayload = new Uint8Array(prefix.length + rawBodyBytes.length);
+  signedPayload.set(prefix);
+  signedPayload.set(rawBodyBytes, prefix.length);
+  const signature = await crypto.subtle.sign('HMAC', key, signedPayload);
   const expected = bytesToHex(new Uint8Array(signature));
+  const valid = signatures.some(candidate => timingSafeEqual(candidate, expected));
 
-  return signatures.some(candidate => timingSafeEqual(candidate, expected));
+  return { valid, reason: valid ? null : 'signature_mismatch' };
 }
 
 async function recordWebhookEvent(event, env) {
@@ -237,27 +243,41 @@ async function handleCompletedCheckout(event, env) {
 }
 
 async function handleWebhook(request, env) {
-  const rawBody = await request.text();
+  const rawBodyBytes = new Uint8Array(await request.arrayBuffer());
   const signature = request.headers.get('Stripe-Signature');
-  const valid = await verifyStripeSignature(rawBody, signature, env.STRIPE_WEBHOOK_SECRET);
+  const verification = await verifyStripeSignature(rawBodyBytes, signature, env.STRIPE_WEBHOOK_SECRET);
 
-  if (!valid) return new Response('Invalid Stripe signature.', { status: 400 });
+  if (!verification.valid) {
+    console.warn('Stripe webhook verification failed', { reason: verification.reason });
+    return new Response('Invalid Stripe signature.', { status: 400 });
+  }
 
   let event;
   try {
-    event = JSON.parse(rawBody);
+    event = JSON.parse(new TextDecoder().decode(rawBodyBytes));
   } catch {
+    console.warn('Stripe webhook contained invalid JSON after verification');
     return new Response('Invalid JSON payload.', { status: 400 });
   }
 
-  const isNewEvent = await recordWebhookEvent(event, env);
-  if (!isNewEvent) return new Response('Already processed.', { status: 200 });
+  try {
+    const isNewEvent = await recordWebhookEvent(event, env);
+    if (!isNewEvent) return new Response('Already processed.', { status: 200 });
 
-  if (event.type === 'checkout.session.completed') {
-    await handleCompletedCheckout(event, env);
+    if (event.type === 'checkout.session.completed') {
+      await handleCompletedCheckout(event, env);
+    }
+
+    console.log('Stripe webhook processed', { eventId: event.id, eventType: event.type });
+    return new Response('OK', { status: 200 });
+  } catch (error) {
+    console.error('Stripe webhook processing failed', {
+      eventId: event.id,
+      eventType: event.type,
+      message: error.message
+    });
+    return new Response('Webhook processing failed.', { status: 500 });
   }
-
-  return new Response('OK', { status: 200 });
 }
 
 export default {
