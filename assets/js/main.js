@@ -19,12 +19,12 @@ async function initializeEcommerce() {
   try {
     const styles = document.createElement('link');
     styles.rel = 'stylesheet';
-    styles.href = '/assets/css/ecommerce.css?v=20260812';
+    styles.href = '/assets/css/ecommerce.css?v=20260813c';
     document.head.appendChild(styles);
     await loadSharedScript('/assets/js/ecommerce-catalog.js?v=20260813');
-    await loadSharedScript('/assets/js/cart.js?v=20260813');
-    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260813');
-    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260813');
+    await loadSharedScript('/assets/js/cart.js?v=20260813c');
+    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260813c');
+    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260813c');
     initializeCartNavigation();
     initializeCartPage();
   } catch (error) {
@@ -34,14 +34,27 @@ async function initializeEcommerce() {
 
 function initializeCartNavigation() {
   const nav = document.querySelector('.nav-links');
-  if (!nav || nav.querySelector('.nav-cart') || !window.WinigenCart) return;
-  const link = document.createElement('a');
-  link.className = 'nav-cart';
-  link.href = window.location.pathname.includes('/products/') || window.location.pathname.includes('/knowledge/') ? '../cart.html' : 'cart.html';
-  link.setAttribute('aria-label', 'View cart');
-  link.innerHTML = 'Cart <span class="nav-cart__count" aria-live="polite">0</span>';
-  nav.appendChild(link);
-  const update = () => { link.querySelector('.nav-cart__count').textContent = window.WinigenCart.itemCount(); };
+  if (!nav || !window.WinigenCart) return;
+  const isSubpage = window.location.pathname.includes('/products/') || window.location.pathname.includes('/knowledge/');
+  const cartHref = isSubpage ? '../cart.html' : 'cart.html';
+  const links = [];
+  const addCartLink = host => {
+    if (!host || host.querySelector('.nav-cart')) return;
+    const link = document.createElement('a');
+    link.className = 'nav-cart';
+    link.href = cartHref;
+    link.setAttribute('aria-label', 'View cart');
+    link.innerHTML = 'Cart <span class="nav-cart__count" aria-live="polite">0</span>';
+    host.appendChild(link);
+    links.push(link);
+  };
+  addCartLink(nav);
+  addCartLink(document.querySelector('.mobile-menu'));
+  const update = () => links.forEach(link => {
+    const count = window.WinigenCart.itemCount();
+    link.querySelector('.nav-cart__count').textContent = count;
+    link.classList.toggle('nav-cart--has-items', count > 0);
+  });
   update();
   window.addEventListener('winigen:cart-change', update);
 }
@@ -50,10 +63,14 @@ function initializeCartPage() {
   const root = document.querySelector('#cart-root');
   const catalog = window.WINIGEN_ECOMMERCE_CATALOG;
   if (!root || !catalog || !window.WinigenCart) return;
+  if (root.dataset.cartReady !== 'true') {
+    root.dataset.cartReady = 'true';
+    window.addEventListener('winigen:cart-change', initializeCartPage);
+  }
   const variants = new Map(catalog.products.flatMap(product => product.variants.map(variant => [variant.key, { ...variant, product }])));
   const cartItems = window.WinigenCart.readCart().items.map(item => ({ ...item, variant: variants.get(item.variantKey) })).filter(item => item.variant);
   if (cartItems.length === 0) {
-    root.innerHTML = '<p>Your cart is empty.</p><p><a class="btn" href="products.html">Continue Shopping</a></p>';
+    root.innerHTML = '<section class="cart-empty"><p class="detail-kicker">Materials Cart</p><h2>Your cart is currently empty.</h2><p>Browse material specifications and select a package when you are ready to order.</p><div class="cart-actions"><a class="btn" href="products.html">Browse Products</a><a class="btn secondary" href="products.html">Continue Shopping</a></div></section>';
     return;
   }
   const subtotal = cartItems.reduce((total, item) => total + (item.variant.approvedRetailPriceUsd || 0) * item.quantity, 0);
@@ -61,7 +78,7 @@ function initializeCartPage() {
   const blockedItems = cartItems.filter(item => !activeItems.includes(item));
   const shippingRank = { STANDARD_RD: 1, FIXED_SPECIAL_HANDLING: 2, SHIPPING_REVIEW: 3, RFQ_SHIPPING: 4 };
   const cartShippingClass = cartItems.reduce((highest, item) => shippingRank[item.variant.product.shippingClass] > shippingRank[highest] ? item.variant.product.shippingClass : highest, 'STANDARD_RD');
-  const rows = cartItems.map(item => `<tr><td><strong>${item.variant.product.name}</strong><br><small>${item.variant.product.grade} · ${item.variant.label}</small></td><td><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="25" value="${item.quantity}"></td><td>${item.variant.approvedRetailPriceUsd ? `$${item.variant.approvedRetailPriceUsd.toFixed(2)}` : 'Pending approval'}</td><td>${item.variant.approvedRetailPriceUsd ? `$${(item.variant.approvedRetailPriceUsd * item.quantity).toFixed(2)}` : 'Pending approval'}</td><td><button class="btn secondary" data-cart-remove="${item.variant.key}" type="button">Remove</button></td></tr>`).join('');
+  const rows = cartItems.map(item => `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span>${item.variant.label}</span></td><td><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="25" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity">+</button></div></td><td>${item.variant.approvedRetailPriceUsd ? `$${item.variant.approvedRetailPriceUsd.toFixed(2)}` : 'Pending approval'}</td><td><strong>${item.variant.approvedRetailPriceUsd ? `$${(item.variant.approvedRetailPriceUsd * item.quantity).toFixed(2)}` : 'Pending approval'}</strong></td><td><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`).join('');
   const shippingMessage = blockedItems.length > 0
     ? 'Some cart packages are still being confirmed and cannot proceed.'
     : cartShippingClass === 'RFQ_SHIPPING'
@@ -70,12 +87,20 @@ function initializeCartPage() {
         ? 'Material prices are fixed. Shipping requires confirmation before payment; your cart will be retained.'
         : cartShippingClass === 'FIXED_SPECIAL_HANDLING'
           ? 'A fixed special-handling rate will be applied by the Worker.'
-          : 'Provisional U.S. shipping and handling is $89.00.';
+          : 'Shipping shown at checkout applies to eligible U.S. research orders. Larger, specialized, or international orders may require shipping confirmation.';
   const shippingAmount = !blockedItems.length && cartShippingClass === 'STANDARD_RD' ? 89 : null;
   const total = shippingAmount === null ? null : subtotal + shippingAmount;
   const shippingTotal = shippingAmount === null ? shippingMessage : `$${shippingAmount.toFixed(2)}`;
-  root.innerHTML = `<table class="cart-table"><thead><tr><th>Product / package</th><th>Quantity</th><th>Unit price</th><th>Subtotal</th><th></th></tr></thead><tbody>${rows}</tbody></table><aside class="cart-summary"><p><span>Merchandise subtotal</span><strong>${blockedItems.length ? 'Pending approval' : `$${subtotal.toFixed(2)}`}</strong></p><p><span>Shipping & handling</span><strong>${shippingTotal}</strong></p><p class="cart-note">${shippingMessage}</p><p><span>Order total</span><strong>${total === null ? 'Pending review' : `$${total.toFixed(2)}`}</strong></p><div class="cart-actions"><button class="btn" id="cart-proceed" type="button" ${blockedItems.length ? 'disabled' : ''}>Proceed to Secure Checkout</button><a class="btn secondary" href="products.html">Continue Shopping</a><button class="btn secondary" id="cart-rfq" type="button">Request Quote Instead</button></div></aside>`;
+  root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><p><span>Merchandise subtotal</span><strong>${blockedItems.length ? 'Pending approval' : `$${subtotal.toFixed(2)}`}</strong></p><p><span>Shipping & Handling</span><strong>${shippingTotal}</strong></p><p class="cart-note">${shippingMessage}</p><p class="cart-summary__total"><span>Order total</span><strong>${total === null ? 'Pending review' : `$${total.toFixed(2)}`}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button" ${blockedItems.length ? 'disabled' : ''}>Proceed to Secure Checkout</button><p class="cart-trust">Secure payment processed by Stripe.</p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button">Request Quote</button></div></aside></div>`;
   root.querySelectorAll('[data-cart-quantity]').forEach(input => input.addEventListener('change', () => window.WinigenCart.update(input.dataset.cartQuantity, Number(input.value))));
+  root.querySelectorAll('[data-cart-decrease]').forEach(button => button.addEventListener('click', () => {
+    const item = cartItems.find(entry => entry.variant.key === button.dataset.cartDecrease);
+    window.WinigenCart.update(button.dataset.cartDecrease, item.quantity - 1);
+  }));
+  root.querySelectorAll('[data-cart-increase]').forEach(button => button.addEventListener('click', () => {
+    const item = cartItems.find(entry => entry.variant.key === button.dataset.cartIncrease);
+    window.WinigenCart.update(button.dataset.cartIncrease, item.quantity + 1);
+  }));
   root.querySelectorAll('[data-cart-remove]').forEach(button => button.addEventListener('click', () => window.WinigenCart.remove(button.dataset.cartRemove)));
   const goToReview = (action, response) => {
     window.WinigenCart.saveReview({ action, ...response });

@@ -24,7 +24,7 @@
     const panel = document.createElement('section');
     panel.className = 'ecommerce-panel';
     panel.dataset.ecommercePanel = 'true';
-    panel.innerHTML = `<p class="detail-kicker">Online Ordering Available</p><p class="ecommerce-status"></p><label>Package<select class="ecommerce-package"></select></label><label>Quantity<input class="ecommerce-quantity" type="number" min="1" max="25" value="1"></label><p class="ecommerce-price"></p><button class="btn" type="button">Add to Cart</button><a class="btn secondary" href="../contact.html?inquiry_type=Request%20for%20Quote">Request Quote for Larger Quantities</a>`;
+    panel.innerHTML = `<header class="ecommerce-panel__header"><p class="detail-kicker">Online Ordering Available</p><p class="ecommerce-panel__product">${product.name}<span>${product.grade}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" aria-label="Select package"></select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price"></p><p class="ecommerce-status"></p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="../contact.html?inquiry_type=Request%20for%20Quote">Request a quote for bulk or custom quantities</a></div><p class="ecommerce-panel__note">Shipping shown at checkout applies to eligible U.S. research orders. Larger, specialized, or international orders may require shipping confirmation.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>`;
     const select = panel.querySelector('.ecommerce-package');
     const price = panel.querySelector('.ecommerce-price');
     const status = panel.querySelector('.ecommerce-status');
@@ -41,9 +41,16 @@
         ? 'Material price is fixed. Shipping requires confirmation before payment.'
         : 'Package and pricing are available for secure checkout.';
     };
+    const quantityInput = panel.querySelector('.ecommerce-quantity');
+    const setQuantity = value => {
+      quantityInput.value = String(Math.max(1, Math.min(25, Number(value) || 1)));
+    };
     select.addEventListener('change', update);
-    panel.querySelector('button').addEventListener('click', () => {
-      cart.add(select.value, Number(panel.querySelector('.ecommerce-quantity').value));
+    quantityInput.addEventListener('change', () => setQuantity(quantityInput.value));
+    panel.querySelector('[data-quantity-decrease]').addEventListener('click', () => setQuantity(Number(quantityInput.value) - 1));
+    panel.querySelector('[data-quantity-increase]').addEventListener('click', () => setQuantity(Number(quantityInput.value) + 1));
+    panel.querySelector('[data-add-to-cart]').addEventListener('click', () => {
+      cart.add(select.value, Number(quantityInput.value));
     });
     update();
     actionHost.insertAdjacentElement('beforebegin', panel);

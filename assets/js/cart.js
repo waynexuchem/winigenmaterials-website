@@ -22,16 +22,17 @@
 
   function add(variantKey, quantity) {
     const cart = readCart();
+    const safeQuantity = Math.max(1, Math.min(25, Number.parseInt(quantity, 10) || 1));
     const existing = cart.items.find(item => item.variantKey === variantKey);
-    if (existing) existing.quantity += quantity;
-    else cart.items.push({ variantKey, quantity });
+    if (existing) existing.quantity = Math.min(25, existing.quantity + safeQuantity);
+    else cart.items.push({ variantKey, quantity: safeQuantity });
     writeCart(cart);
   }
 
   function update(variantKey, quantity) {
     const cart = readCart();
     const item = cart.items.find(entry => entry.variantKey === variantKey);
-    if (item) item.quantity = quantity;
+    if (item) item.quantity = Math.max(0, Math.min(25, Number.parseInt(quantity, 10) || 0));
     cart.items = cart.items.filter(entry => entry.quantity > 0);
     writeCart(cart);
   }

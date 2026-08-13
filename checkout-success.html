@@ -5,20 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#12305d">
-  <title>Test Checkout Complete | Winigen Materials</title>
+  <title>Payment Received | Winigen Materials</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>.checkout-result { min-height: 100vh; display:grid; place-items:center; padding:48px 0; } .checkout-result .card { width:min(600px,92vw); text-align:center; }</style>
+  <style>.checkout-result { min-height:100vh; display:grid; place-items:center; padding:48px 20px; background:#f6f9fc; } .checkout-result__panel { width:min(620px,100%); background:#fff; border:1px solid #cbd7e5; border-top:4px solid #1c6f99; border-radius:6px; padding:38px; } .checkout-result__mode { color:#9a6522; font-size:12px; font-weight:800; letter-spacing:0; text-transform:uppercase; } .checkout-result h1 { color:#142d4c; margin:12px 0; } .checkout-result p { color:#566a82; line-height:1.6; } .checkout-result__status { border-top:1px solid #dbe4ed; border-bottom:1px solid #dbe4ed; color:#253b55; margin:24px 0; padding:16px 0; } .checkout-result__actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; } @media (max-width:600px) { .checkout-result__panel { padding:28px 22px; } .checkout-result__actions .btn { width:100%; text-align:center; } }</style>
 </head>
 <body>
   <main class="checkout-result">
-    <section class="card" aria-labelledby="checkout-success-title">
-      <div class="eyebrow">Test Mode</div>
-      <h1 id="checkout-success-title">Checkout complete</h1>
-      <p>The payment return was received. The verified webhook records payment status separately. No order has been released for fulfillment.</p>
-      <a class="btn secondary" href="/stripe-test.html?new=1">Create another test checkout</a>
+    <section class="checkout-result__panel" aria-labelledby="checkout-success-title">
+      <p class="checkout-result__mode">Test Mode</p>
+      <h1 id="checkout-success-title">Payment received</h1>
+      <p>Your order is pending fulfillment review.</p>
+      <p class="checkout-result__status">Payment confirmation does not mean shipment has been released. Winigen will review the order before any fulfillment action.</p>
+      <p id="checkout-reference" hidden></p>
+      <div class="checkout-result__actions"><a class="btn" href="/products.html">Return to Products</a><a class="btn secondary" href="/contact.html">Contact Winigen</a></div>
     </section>
   </main>
+  <script>
+    const sessionId = new URLSearchParams(window.location.search).get('session_id');
+    const reference = document.querySelector('#checkout-reference');
+    if (sessionId && reference) {
+      reference.hidden = false;
+      reference.textContent = `Checkout reference: ${sessionId}`;
+    }
+  </script>
 </body>
 </html>
