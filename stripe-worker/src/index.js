@@ -1,3 +1,6 @@
+import { CATALOG_VERSION, VARIANTS_BY_KEY } from './catalog.js';
+import { createOrderNotificationRecords, deliverOrderNotification } from './email/notifications.js';
+
 const checkoutPath = '/api/create-checkout-session';
 const webhookPath = '/api/stripe-webhook';
 const webhookToleranceSeconds = 300;
@@ -6,6 +9,13 @@ const testCheckoutOrigins = new Set([
   'http://localhost:5500',
   'https://www.winigenmaterials.com'
 ]);
+const shippingPrecedence = {
+  STANDARD_RD: 1,
+  FIXED_SPECIAL_HANDLING: 2,
+  SHIPPING_REVIEW: 3,
+  RFQ_SHIPPING: 4
+};
+const standardShippingAmount = 8900;
 
 function jsonResponse(body, status = 200, origin) {
   const headers = new Headers({
@@ -33,6 +43,59 @@ function isValidAttemptId(value) {
   return typeof value === 'string' && /^[A-Za-z0-9_-]{16,128}$/.test(value);
 }
 
+function isValidQuantity(value) {
+  return Number.isInteger(value) && value >= 1 && value <= 25;
+}
+
+function createCartFingerprint(items) {
+  return items.map(item => `${item.variant.key}:${item.quantity}`).sort().join('|');
+}
+
+function resolveCart(cart) {
+  if (!Array.isArray(cart) || cart.length === 0 || cart.length > 25) {
+    throw new Error('A cart must contain between 1 and 25 items.');
+  }
+
+  const normalized = new Map();
+  for (const item of cart) {
+    if (!item || typeof item.variantKey !== 'string' || !isValidQuantity(item.quantity)) {
+      throw new Error('Cart contains an invalid item.');
+    }
+    const variant = VARIANTS_BY_KEY.get(item.variantKey);
+    if (!variant || variant.approvalStatus !== 'ACTIVE' || variant.product.commercialStatus === 'RFQ_ONLY') {
+      throw new Error('Cart contains a package that is not available for online ordering.');
+    }
+    const existing = normalized.get(item.variantKey);
+    normalized.set(item.variantKey, { variant, quantity: (existing?.quantity || 0) + item.quantity });
+  }
+
+  const items = Array.from(normalized.values());
+  if (items.some(item => item.quantity > 25)) throw new Error('A package quantity exceeds the online ordering limit.');
+  const shippingClass = items.reduce((current, item) => (
+    shippingPrecedence[item.variant.product.shippingClass] > shippingPrecedence[current]
+      ? item.variant.product.shippingClass
+      : current
+  ), 'STANDARD_RD');
+  const merchandiseSubtotal = items.reduce((total, item) => total + Math.round(item.variant.approvedRetailPriceUsd * 100) * item.quantity, 0);
+  return { items, shippingClass, merchandiseSubtotal };
+}
+
+function createReviewPayload(resolvedCart, action) {
+  return {
+    action,
+    catalogVersion: CATALOG_VERSION,
+    merchandiseSubtotal: resolvedCart.merchandiseSubtotal,
+    items: resolvedCart.items.map(({ variant, quantity }) => ({
+      sku: variant.sku,
+      name: variant.product.name,
+      grade: variant.product.grade,
+      packageLabel: variant.label,
+      quantity,
+      unitAmount: Math.round(variant.approvedRetailPriceUsd * 100)
+    }))
+  };
+}
+
 async function nextOrderId(db) {
   const orderDate = createOrderDate();
   const result = await db.prepare(`
@@ -45,27 +108,33 @@ async function nextOrderId(db) {
   return `WM-T-${orderDate}-${String(result.last_number).padStart(4, '0')}`;
 }
 
-async function getOrCreateAttempt(attemptId, env) {
+async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null) {
   const existing = await env.ORDERS_DB.prepare(`
-    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url
+    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url, checkout_cart_hash
     FROM test_orders
     WHERE checkout_attempt_id = ?
   `).bind(attemptId).first();
 
-  if (existing) return existing;
+  if (existing) {
+    if (checkoutCartHash && existing.checkout_cart_hash && existing.checkout_cart_hash !== checkoutCartHash) {
+      throw new Error('Checkout attempt does not match the current cart.');
+    }
+    return existing;
+  }
 
   const proposedOrderId = await nextOrderId(env.ORDERS_DB);
   await env.ORDERS_DB.prepare(`
     INSERT OR IGNORE INTO test_orders (
       winigen_order_id,
       checkout_attempt_id,
+      checkout_cart_hash,
       payment_status,
       fulfillment_status
-    ) VALUES (?, ?, 'PENDING', 'NOT_APPLICABLE')
-  `).bind(proposedOrderId, attemptId).run();
+    ) VALUES (?, ?, ?, 'PENDING', 'NOT_APPLICABLE')
+  `).bind(proposedOrderId, attemptId, checkoutCartHash).run();
 
   return env.ORDERS_DB.prepare(`
-    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url
+    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url, checkout_cart_hash
     FROM test_orders
     WHERE checkout_attempt_id = ?
   `).bind(attemptId).first();
@@ -109,6 +178,40 @@ async function createCheckoutSession(order, attemptId, env) {
   return payload;
 }
 
+async function createCartCheckoutSession(order, attemptId, resolvedCart, env) {
+  const params = new URLSearchParams({
+    mode: 'payment',
+    success_url: `${env.SITE_ORIGIN}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${env.SITE_ORIGIN}/checkout-cancel.html`,
+    customer_creation: 'always',
+    'payment_method_types[0]': 'card',
+    'shipping_address_collection[allowed_countries][0]': 'US',
+    'metadata[winigen_order_id]': order.winigen_order_id,
+    'metadata[checkout_attempt_id]': attemptId,
+    'metadata[catalog_version]': CATALOG_VERSION,
+    'payment_intent_data[metadata][winigen_order_id]': order.winigen_order_id
+  });
+  resolvedCart.items.forEach(({ variant, quantity }, index) => {
+    params.set(`line_items[${index}][price]`, variant.stripeTestPriceId);
+    params.set(`line_items[${index}][quantity]`, String(quantity));
+  });
+  if (resolvedCart.shippingClass === 'STANDARD_RD') {
+    params.set('shipping_options[0][shipping_rate_data][type]', 'fixed_amount');
+    params.set('shipping_options[0][shipping_rate_data][display_name]', 'U.S. research materials shipping and handling');
+    params.set('shipping_options[0][shipping_rate_data][fixed_amount][amount]', String(standardShippingAmount));
+    params.set('shipping_options[0][shipping_rate_data][fixed_amount][currency]', 'usd');
+  }
+
+  const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`, 'Content-Type': 'application/x-www-form-urlencoded', 'Idempotency-Key': `winigen-checkout-${attemptId}` },
+    body: params.toString()
+  });
+  const payload = await response.json();
+  if (!response.ok) throw new Error('Unable to create the test Checkout Session.');
+  return payload;
+}
+
 async function handleCreateCheckoutSession(request, env) {
   const origin = request.headers.get('Origin');
   if (!isAllowedOrigin(request)) {
@@ -124,6 +227,30 @@ async function handleCreateCheckoutSession(request, env) {
 
   if (!isValidAttemptId(body.attemptId)) {
     return jsonResponse({ error: 'Invalid checkout attempt.' }, 400, origin);
+  }
+
+  if (Array.isArray(body.cart)) {
+    try {
+      const resolvedCart = resolveCart(body.cart);
+      if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq'), 200, origin);
+      if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review'), 200, origin);
+      const cartHash = createCartFingerprint(resolvedCart.items);
+      const order = await getOrCreateAttempt(body.attemptId, env, cartHash);
+      if (order.stripe_checkout_session_id && order.checkout_url) return jsonResponse({ action: 'checkout', url: order.checkout_url, orderId: order.winigen_order_id }, 200, origin);
+      const session = await createCartCheckoutSession(order, body.attemptId, resolvedCart, env);
+      const lineStatements = resolvedCart.items.map(({ variant, quantity }, index) => env.ORDERS_DB.prepare(`
+        INSERT INTO test_order_lines (winigen_order_id, sku, product_slug, product_name, grade, package_label, package_unit, package_quantity, unit_amount, currency, quantity, stripe_price_id, catalog_version, line_subtotal, shipping_amount, order_total)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'usd', ?, ?, ?, ?, ?, ?)
+      `).bind(order.winigen_order_id, variant.sku, variant.product.slug, variant.product.name, variant.product.grade, variant.label, variant.unit, variant.quantity, Math.round(variant.approvedRetailPriceUsd * 100), quantity, variant.stripeTestPriceId, CATALOG_VERSION, Math.round(variant.approvedRetailPriceUsd * 100) * quantity, index === 0 && resolvedCart.shippingClass === 'STANDARD_RD' ? standardShippingAmount : 0, resolvedCart.merchandiseSubtotal + (resolvedCart.shippingClass === 'STANDARD_RD' ? standardShippingAmount : 0)));
+      await env.ORDERS_DB.batch([
+        env.ORDERS_DB.prepare(`UPDATE test_orders SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?, shipping_amount = ?, shipping_class = ?, catalog_version = ?, updated_at = CURRENT_TIMESTAMP WHERE winigen_order_id = ?`).bind(session.id, session.url, resolvedCart.merchandiseSubtotal, resolvedCart.shippingClass === 'STANDARD_RD' ? standardShippingAmount : 0, resolvedCart.shippingClass, CATALOG_VERSION, order.winigen_order_id),
+        ...lineStatements
+      ]);
+      return jsonResponse({ action: 'checkout', url: session.url, orderId: order.winigen_order_id }, 200, origin);
+    } catch (error) {
+      console.error('Cart checkout attempt failed', { message: error.message });
+      return jsonResponse({ error: error.message || 'Unable to process the cart.' }, 400, origin);
+    }
   }
 
   try {
@@ -240,9 +367,15 @@ async function handleCompletedCheckout(event, env) {
     paymentStatus,
     fulfillmentStatus
   });
+
+  const order = await env.ORDERS_DB.prepare(`
+    SELECT winigen_order_id, payment_status, fulfillment_status
+    FROM test_orders WHERE stripe_checkout_session_id = ?
+  `).bind(session.id).first();
+  return order;
 }
 
-async function handleWebhook(request, env) {
+async function handleWebhook(request, env, ctx) {
   const rawBodyBytes = new Uint8Array(await request.arrayBuffer());
   const signature = request.headers.get('Stripe-Signature');
   const verification = await verifyStripeSignature(rawBodyBytes, signature, env.STRIPE_WEBHOOK_SECRET);
@@ -265,7 +398,15 @@ async function handleWebhook(request, env) {
     if (!isNewEvent) return new Response('Already processed.', { status: 200 });
 
     if (event.type === 'checkout.session.completed') {
-      await handleCompletedCheckout(event, env);
+      const order = await handleCompletedCheckout(event, env);
+      if (order?.payment_status === 'PAID' && order.fulfillment_status === 'NOT_RELEASED') {
+        const notificationTypes = await createOrderNotificationRecords(event.id, order.winigen_order_id, env);
+        if (notificationTypes.length > 0) {
+          ctx.waitUntil(Promise.all(notificationTypes.map(type => (
+            deliverOrderNotification(event.id, order.winigen_order_id, type, env)
+          ))));
+        }
+      }
     }
 
     console.log('Stripe webhook processed', { eventId: event.id, eventType: event.type });
@@ -281,7 +422,7 @@ async function handleWebhook(request, env) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin');
 
@@ -303,7 +444,7 @@ export default {
     }
 
     if (request.method === 'POST' && url.pathname === webhookPath) {
-      return handleWebhook(request, env);
+      return handleWebhook(request, env, ctx);
     }
 
     return new Response('Not found.', { status: 404 });

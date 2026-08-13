@@ -17,12 +17,18 @@
 	},
 	"vars": {
 		"SITE_ORIGIN": "https://www.winigenmaterials.com",
-		"STRIPE_TEST_PRICE_ID": "price_1U36KK8Hut8EXxjZ1DEstFtu"
+		"STRIPE_TEST_PRICE_ID": "price_1U36KK8Hut8EXxjZ1DEstFtu",
+		"EMAIL_MODE": "test",
+		"EMAIL_PROVIDER": "resend",
+		"TEST_ORDER_EMAIL_FROM": "orders@notify.winigenmaterials.com",
+		"ORDER_EMAIL_REPLY_TO": "orders@winigenmaterials.com"
 	},
 	"secrets": {
 		"required": [
 			"STRIPE_SECRET_KEY",
-			"STRIPE_WEBHOOK_SECRET"
+			"STRIPE_WEBHOOK_SECRET",
+			"RESEND_API_KEY",
+			"TEST_ORDER_EMAIL_RECIPIENT"
 		]
 	},
 	"d1_databases": [
