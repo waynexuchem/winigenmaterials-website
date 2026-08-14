@@ -10,7 +10,8 @@ async function loadOrderForNotification(orderId, env) {
     FROM test_orders WHERE winigen_order_id = ?
   `).bind(orderId).first();
   const lineItems = await env.ORDERS_DB.prepare(`
-    SELECT product_name, grade, package_label, quantity FROM test_order_lines
+    SELECT product_name, grade, package_label, unit_amount, line_subtotal, currency, quantity
+    FROM test_order_lines
     WHERE winigen_order_id = ? ORDER BY id
   `).bind(orderId).all();
   return { order, lineItems: lineItems.results || [] };

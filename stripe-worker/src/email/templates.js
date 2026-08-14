@@ -10,7 +10,11 @@ function escapeHtml(value) {
 }
 
 function lineAmount(item, currency) {
-  return Number.isInteger(item.line_subtotal) ? formatAmount(item.line_subtotal, currency) : 'Not available';
+  if (Number.isInteger(item.line_subtotal)) return formatAmount(item.line_subtotal, item.currency || currency);
+  if (Number.isInteger(item.unit_amount) && Number.isInteger(item.quantity)) {
+    return formatAmount(item.unit_amount * item.quantity, item.currency || currency);
+  }
+  return 'Not available';
 }
 
 function orderLinesHtml(order, lineItems) {
@@ -45,7 +49,7 @@ export function createInternalOrderEmail(order, lineItems, env) {
 export function createCustomerTestOrderEmail(order, lineItems, env) {
   const banner = 'TEST MODE — NO GOODS WILL BE SHIPPED';
   const intended = order.customer_email || 'Not available';
-  const html = `<p style="color:#9a6522;font-size:12px;font-weight:700">${banner}</p><h1 style="color:#142d4c;font-size:24px;margin:8px 0">Payment received</h1><p style="font-size:16px">Order ${escapeHtml(order.winigen_order_id)}</p><p>Thank you for your order. Payment has been received and your order is now pending fulfillment review.</p><p><strong>Intended customer recipient for this test:</strong> ${escapeHtml(intended)}</p><h2 style="color:#142d4c;font-size:16px;margin-top:26px">Order summary</h2>${orderLinesHtml(order, lineItems)}<h2 style="color:#142d4c;font-size:16px;margin-top:26px">Order totals</h2>${totalsHtml(order)}<h2 style="color:#142d4c;font-size:16px;margin-top:26px">Order status</h2><p>Payment: <strong>Received</strong><br>Fulfillment: <strong>Pending review</strong></p><p style="color:#627489;font-size:13px;margin-top:26px">Questions? Reply to this email or contact <a href="mailto:orders@winigenmaterials.com">orders@winigenmaterials.com</a>.</p>`;
-  const text = `${banner}\n\nPAYMENT RECEIVED\nOrder ${order.winigen_order_id}\n\nThank you for your order. Payment has been received and your order is now pending fulfillment review.\n\nIntended customer recipient for this test: ${intended}\n\nORDER SUMMARY\n${orderLinesText(order, lineItems)}\n\nORDER TOTALS\n${totalsText(order)}\n\nORDER STATUS\nPayment: Received\nFulfillment: Pending review\n\nQuestions? Reply to this email or contact orders@winigenmaterials.com.`;
+  const html = `<p style="color:#9a6522;font-size:12px;font-weight:700">${banner}</p><h1 style="color:#142d4c;font-size:24px;margin:8px 0">Payment received</h1><p style="font-size:16px">Order ${escapeHtml(order.winigen_order_id)}</p><p>Your order is now pending fulfillment review.</p><p>Payment has been successfully received. Winigen will review your order, shipping requirements, and fulfillment eligibility before shipment is released.</p><p>We will contact you if additional information is required.</p><p><strong>Intended customer recipient for this test:</strong> ${escapeHtml(intended)}</p><h2 style="color:#142d4c;font-size:16px;margin-top:26px">Order summary</h2>${orderLinesHtml(order, lineItems)}<h2 style="color:#142d4c;font-size:16px;margin-top:26px">Order totals</h2>${totalsHtml(order)}<h2 style="color:#142d4c;font-size:16px;margin-top:26px">Order status</h2><p>Payment: <strong>Received</strong><br>Fulfillment: <strong>Pending review</strong></p><p style="color:#627489;font-size:13px;margin-top:26px">Questions? Reply to this email or contact <a href="mailto:orders@winigenmaterials.com">orders@winigenmaterials.com</a>.</p>`;
+  const text = `${banner}\n\nPAYMENT RECEIVED\nOrder ${order.winigen_order_id}\n\nYour order is now pending fulfillment review.\n\nPayment has been successfully received. Winigen will review your order, shipping requirements, and fulfillment eligibility before shipment is released.\n\nWe will contact you if additional information is required.\n\nIntended customer recipient for this test: ${intended}\n\nORDER SUMMARY\n${orderLinesText(order, lineItems)}\n\nORDER TOTALS\n${totalsText(order)}\n\nORDER STATUS\nPayment: Received\nFulfillment: Pending review\n\nQuestions? Reply to this email or contact orders@winigenmaterials.com.`;
   return { from: `Winigen Orders <${env.TEST_ORDER_EMAIL_FROM}>`, replyTo: env.ORDER_EMAIL_REPLY_TO, subject: `TEST – Payment Received – Winigen Materials Order ${order.winigen_order_id}`, html: shell(html), text, metadata: { order_id: order.winigen_order_id, notification_type: 'CUSTOMER_TEST', mode: 'test' } };
 }
