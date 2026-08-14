@@ -1,15 +1,8 @@
-export const supportedShippingCountries = [
-  'US', 'CA', 'MX',
-  'GB', 'DE', 'FR', 'IT', 'ES', 'NL', 'BE', 'CH', 'AT', 'SE', 'NO', 'DK', 'FI', 'IE', 'PL', 'CZ',
-  'AU', 'NZ', 'JP', 'KR', 'SG', 'TW', 'HK'
-];
+import { SHIPPING_REGION_BY_COUNTRY, SUPPORTED_SHIPPING_COUNTRIES } from './shipping-countries.js';
+
+export const supportedShippingCountries = SUPPORTED_SHIPPING_COUNTRIES;
 
 const supportedCountrySet = new Set(supportedShippingCountries);
-const canadaMexico = new Set(['CA', 'MX']);
-const europeUnitedKingdom = new Set([
-  'GB', 'DE', 'FR', 'IT', 'ES', 'NL', 'BE', 'CH', 'AT', 'SE', 'NO', 'DK', 'FI', 'IE', 'PL', 'CZ'
-]);
-const asiaPacific = new Set(['AU', 'NZ', 'JP', 'KR', 'SG', 'TW', 'HK']);
 
 const testShippingRates = {
   UNITED_STATES: 8900,
@@ -23,11 +16,8 @@ export function resolveTestShippingDestination(value) {
   const country = typeof value === 'string' ? value.trim().toUpperCase() : '';
   if (!supportedCountrySet.has(country)) return null;
 
-  let region = 'OTHER_SUPPORTED';
-  if (country === 'US') region = 'UNITED_STATES';
-  else if (canadaMexico.has(country)) region = 'CANADA_MEXICO';
-  else if (europeUnitedKingdom.has(country)) region = 'EUROPE_UNITED_KINGDOM';
-  else if (asiaPacific.has(country)) region = 'ASIA_PACIFIC';
+  const region = SHIPPING_REGION_BY_COUNTRY.get(country);
+  if (!region || !Number.isInteger(testShippingRates[region])) return null;
 
   return { country, amount: testShippingRates[region], currency: 'usd' };
 }

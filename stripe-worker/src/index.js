@@ -229,7 +229,10 @@ async function handleShippingQuote(request, env) {
 
   const shippingDestination = resolveTestShippingDestination(body.destinationCountry);
   if (!shippingDestination) {
-    return jsonResponse({ action: 'shipping_review', error: 'Shipping to this destination requires review.' }, 200, origin);
+    return jsonResponse({
+      action: 'shipping_review',
+      error: 'Shipping to this destination is not currently available through online checkout. Please contact Winigen Materials for shipping assistance.'
+    }, 400, origin);
   }
 
   return jsonResponse({
@@ -289,8 +292,8 @@ async function handleCreateCheckoutSession(request, env) {
       if (!shippingDestination) {
         return jsonResponse({
           ...createReviewPayload(resolvedCart, 'shipping_review'),
-          error: 'Shipping to this destination requires review.'
-        }, 200, origin);
+          error: 'Shipping to this destination is not currently available through online checkout. Please contact Winigen Materials for shipping assistance.'
+        }, 400, origin);
       }
       if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq', shippingDestination.country), 200, origin);
       if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country), 200, origin);

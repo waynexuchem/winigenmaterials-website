@@ -22,6 +22,7 @@ async function initializeEcommerce() {
     styles.href = '/assets/css/ecommerce.css?v=20260815c';
     document.head.appendChild(styles);
     await loadSharedScript('/assets/js/ecommerce-catalog.js?v=20260813');
+    await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
     await loadSharedScript('/assets/js/cart.js?v=20260815d');
     await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260814c');
     await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260815b');
@@ -94,15 +95,17 @@ function initializeCartPage() {
   const blockedItems = cartItems.filter(item => !activeItems.includes(item));
   const shippingRank = { STANDARD_RD: 1, FIXED_SPECIAL_HANDLING: 2, SHIPPING_REVIEW: 3, RFQ_SHIPPING: 4 };
   const cartShippingClass = cartItems.reduce((highest, item) => shippingRank[item.variant.product.shippingClass] > shippingRank[highest] ? item.variant.product.shippingClass : highest, 'STANDARD_RD');
-  const shippingCountries = [
-    ['US', 'United States'], ['CA', 'Canada'], ['MX', 'Mexico'],
-    ['GB', 'United Kingdom'], ['DE', 'Germany'], ['FR', 'France'], ['IT', 'Italy'], ['ES', 'Spain'], ['NL', 'Netherlands'], ['BE', 'Belgium'], ['CH', 'Switzerland'], ['AT', 'Austria'], ['SE', 'Sweden'], ['NO', 'Norway'], ['DK', 'Denmark'], ['FI', 'Finland'], ['IE', 'Ireland'], ['PL', 'Poland'], ['CZ', 'Czech Republic'],
-    ['AU', 'Australia'], ['NZ', 'New Zealand'], ['JP', 'Japan'], ['KR', 'South Korea'], ['SG', 'Singapore'], ['TW', 'Taiwan'], ['HK', 'Hong Kong']
-  ];
-  const supportedCountryCodes = new Set(shippingCountries.map(([code]) => code));
+  const shippingCountries = window.WINIGEN_SHIPPING_COUNTRIES;
+  if (!shippingCountries) return;
+  const allShippingCountries = [...shippingCountries.pinned, ...shippingCountries.groups.flatMap(group => group.countries)];
+  const supportedCountryCodes = new Set(allShippingCountries.map(country => country.code));
   const storedDestination = window.WinigenCart.getShippingDestination();
   const destinationCountry = supportedCountryCodes.has(storedDestination) ? storedDestination : 'US';
-  const destinationOptions = shippingCountries.map(([code, name]) => `<option value="${code}"${code === destinationCountry ? ' selected' : ''}>${name}</option>`).join('');
+  const createDestinationOption = ({ code, name }) => `<option value="${code}"${code === destinationCountry ? ' selected' : ''}>${name}</option>`;
+  const destinationOptions = [
+    ...shippingCountries.pinned.map(createDestinationOption),
+    ...shippingCountries.groups.map(group => `<optgroup label="${group.label}">${group.countries.map(createDestinationOption).join('')}</optgroup>`)
+  ].join('');
   const rows = cartItems.map(item => `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="25" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity">+</button></div></td><td class="cart-price-cell">${item.variant.approvedRetailPriceUsd ? `$${item.variant.approvedRetailPriceUsd.toFixed(2)}` : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.approvedRetailPriceUsd ? `$${(item.variant.approvedRetailPriceUsd * item.quantity).toFixed(2)}` : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`).join('');
   const shippingMessage = blockedItems.length > 0
     ? 'Some cart packages are still being confirmed and cannot proceed.'
@@ -116,7 +119,7 @@ function initializeCartPage() {
   const canQuoteShipping = !blockedItems.length && cartShippingClass === 'STANDARD_RD';
   const shippingTotal = canQuoteShipping ? 'Calculating…' : shippingMessage;
   const orderTotal = canQuoteShipping ? 'Calculating…' : 'Pending review';
-  root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" aria-describedby="shipping-destination-note">${destinationOptions}</select><small id="shipping-destination-note">The Worker calculates the shipping charge for this country.</small></div><p><span>Merchandise subtotal</span><strong>${blockedItems.length ? 'Pending approval' : `$${subtotal.toFixed(2)}`}</strong></p><p><span>Shipping &amp; Handling</span><strong id="cart-shipping-amount">${shippingTotal}</strong></p><p class="cart-note" id="cart-shipping-note">${shippingMessage}</p><p class="cart-summary__total"><span>Order total</span><strong id="cart-order-total">${orderTotal}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${canQuoteShipping || blockedItems.length ? ' disabled' : ''}>Proceed to Secure Checkout</button><p class="cart-trust">Secure payment processed by Stripe.</p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button">Request Quote</button></div></aside></div>`;
+  root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" name="shippingCountry" aria-describedby="shipping-destination-note shipping-destination-help">${destinationOptions}</select><small id="shipping-destination-note">The Worker calculates the shipping charge for this country.</small><small id="shipping-destination-help" class="cart-destination__help">Don't see your country? <a href="contact.html?inquiry_type=Shipping%20Review&amp;product_interest=Shipping%20availability">Contact us for shipping availability.</a></small></div><p><span>Merchandise subtotal</span><strong>${blockedItems.length ? 'Pending approval' : `$${subtotal.toFixed(2)}`}</strong></p><p><span>Shipping &amp; Handling</span><strong id="cart-shipping-amount">${shippingTotal}</strong></p><p class="cart-note" id="cart-shipping-note">${shippingMessage}</p><p class="cart-summary__total"><span>Order total</span><strong id="cart-order-total">${orderTotal}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${canQuoteShipping || blockedItems.length ? ' disabled' : ''}>Proceed to Secure Checkout</button><p class="cart-trust">Secure payment processed by Stripe.</p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button">Request Quote</button></div></aside></div>`;
   root.querySelectorAll('[data-cart-quantity]').forEach(input => input.addEventListener('change', () => window.WinigenCart.update(input.dataset.cartQuantity, Number(input.value))));
   root.querySelectorAll('[data-cart-decrease]').forEach(button => button.addEventListener('click', () => {
     const item = cartItems.find(entry => entry.variant.key === button.dataset.cartDecrease);
