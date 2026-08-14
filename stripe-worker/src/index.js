@@ -201,7 +201,7 @@ async function createCartCheckoutSession(order, attemptId, resolvedCart, shippin
   });
   if (resolvedCart.shippingClass === 'STANDARD_RD') {
     params.set('shipping_options[0][shipping_rate_data][type]', 'fixed_amount');
-    params.set('shipping_options[0][shipping_rate_data][display_name]', 'Shipping & Handling');
+    params.set('shipping_options[0][shipping_rate_data][display_name]', 'Estimated Shipping & Handling');
     params.set('shipping_options[0][shipping_rate_data][fixed_amount][amount]', String(shippingDestination.amount));
     params.set('shipping_options[0][shipping_rate_data][fixed_amount][currency]', 'usd');
   }

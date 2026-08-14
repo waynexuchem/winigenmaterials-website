@@ -1,5 +1,17 @@
 {
-  "version": "2026-08-13",
+  "version": "2026-08-14",
+  "shippingRatesUsd": {
+    "regionDefaults": {
+      "UNITED_STATES": 89,
+      "CANADA_MEXICO": 129,
+      "EUROPE": 159,
+      "ASIA": 169,
+      "OCEANIA": 189,
+      "SOUTH_AMERICA": 199,
+      "AFRICA_MIDDLE_EAST": 219
+    },
+    "countryOverrides": {}
+  },
   "pinned": [
     { "code": "US", "name": "United States", "shippingRegion": "UNITED_STATES" }
   ],
@@ -14,7 +26,7 @@
     },
     {
       "label": "Europe",
-      "shippingRegion": "EUROPE_UNITED_KINGDOM",
+      "shippingRegion": "EUROPE",
       "countries": [
         { "code": "AT", "name": "Austria" },
         { "code": "BE", "name": "Belgium" },
@@ -46,29 +58,29 @@
     },
     {
       "label": "Asia",
-      "shippingRegion": "ASIA_PACIFIC",
+      "shippingRegion": "ASIA",
       "countries": [
         { "code": "CN", "name": "China" },
         { "code": "HK", "name": "Hong Kong" },
         { "code": "IN", "name": "India" },
         { "code": "ID", "name": "Indonesia" },
-        { "code": "IL", "name": "Israel" },
+        { "code": "IL", "name": "Israel", "shippingRegion": "AFRICA_MIDDLE_EAST" },
         { "code": "JP", "name": "Japan" },
         { "code": "MY", "name": "Malaysia" },
         { "code": "PH", "name": "Philippines" },
-        { "code": "SA", "name": "Saudi Arabia" },
+        { "code": "SA", "name": "Saudi Arabia", "shippingRegion": "AFRICA_MIDDLE_EAST" },
         { "code": "SG", "name": "Singapore" },
         { "code": "KR", "name": "South Korea" },
         { "code": "TW", "name": "Taiwan" },
         { "code": "TH", "name": "Thailand" },
-        { "code": "TR", "name": "Türkiye" },
-        { "code": "AE", "name": "United Arab Emirates" },
+        { "code": "TR", "name": "Türkiye", "shippingRegion": "AFRICA_MIDDLE_EAST" },
+        { "code": "AE", "name": "United Arab Emirates", "shippingRegion": "AFRICA_MIDDLE_EAST" },
         { "code": "VN", "name": "Vietnam" }
       ]
     },
     {
       "label": "Oceania",
-      "shippingRegion": "ASIA_PACIFIC",
+      "shippingRegion": "OCEANIA",
       "countries": [
         { "code": "AU", "name": "Australia" },
         { "code": "NZ", "name": "New Zealand" }
@@ -76,7 +88,7 @@
     },
     {
       "label": "South America",
-      "shippingRegion": "OTHER_SUPPORTED",
+      "shippingRegion": "SOUTH_AMERICA",
       "countries": [
         { "code": "AR", "name": "Argentina" },
         { "code": "BR", "name": "Brazil" },
@@ -86,7 +98,7 @@
     },
     {
       "label": "Africa",
-      "shippingRegion": "OTHER_SUPPORTED",
+      "shippingRegion": "AFRICA_MIDDLE_EAST",
       "countries": [
         { "code": "EG", "name": "Egypt" },
         { "code": "MA", "name": "Morocco" },

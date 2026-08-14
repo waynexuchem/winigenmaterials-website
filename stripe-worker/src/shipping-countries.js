@@ -70,206 +70,216 @@ export const SHIPPING_REGION_BY_COUNTRY = new Map([
   ],
   [
     "AT",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "BE",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "HR",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "CZ",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "DK",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "EE",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "FI",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "FR",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "DE",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "HU",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "IE",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "IT",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "LV",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "LT",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "LU",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "NL",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "NO",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "PL",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "PT",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "RO",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "SK",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "SI",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "ES",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "SE",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "CH",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "GB",
-    "EUROPE_UNITED_KINGDOM"
+    "EUROPE"
   ],
   [
     "CN",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "HK",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "IN",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "ID",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "IL",
-    "ASIA_PACIFIC"
+    "AFRICA_MIDDLE_EAST"
   ],
   [
     "JP",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "MY",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "PH",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "SA",
-    "ASIA_PACIFIC"
+    "AFRICA_MIDDLE_EAST"
   ],
   [
     "SG",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "KR",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "TW",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "TH",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "TR",
-    "ASIA_PACIFIC"
+    "AFRICA_MIDDLE_EAST"
   ],
   [
     "AE",
-    "ASIA_PACIFIC"
+    "AFRICA_MIDDLE_EAST"
   ],
   [
     "VN",
-    "ASIA_PACIFIC"
+    "ASIA"
   ],
   [
     "AU",
-    "ASIA_PACIFIC"
+    "OCEANIA"
   ],
   [
     "NZ",
-    "ASIA_PACIFIC"
+    "OCEANIA"
   ],
   [
     "AR",
-    "OTHER_SUPPORTED"
+    "SOUTH_AMERICA"
   ],
   [
     "BR",
-    "OTHER_SUPPORTED"
+    "SOUTH_AMERICA"
   ],
   [
     "CL",
-    "OTHER_SUPPORTED"
+    "SOUTH_AMERICA"
   ],
   [
     "CO",
-    "OTHER_SUPPORTED"
+    "SOUTH_AMERICA"
   ],
   [
     "EG",
-    "OTHER_SUPPORTED"
+    "AFRICA_MIDDLE_EAST"
   ],
   [
     "MA",
-    "OTHER_SUPPORTED"
+    "AFRICA_MIDDLE_EAST"
   ],
   [
     "ZA",
-    "OTHER_SUPPORTED"
+    "AFRICA_MIDDLE_EAST"
   ]
 ]);
+export const SHIPPING_REGION_DEFAULTS = {
+  "UNITED_STATES": 8900,
+  "CANADA_MEXICO": 12900,
+  "EUROPE": 15900,
+  "ASIA": 16900,
+  "OCEANIA": 18900,
+  "SOUTH_AMERICA": 19900,
+  "AFRICA_MIDDLE_EAST": 21900
+};
+export const COUNTRY_SHIPPING_OVERRIDES = {};
