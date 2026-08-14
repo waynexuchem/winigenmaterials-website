@@ -4,6 +4,7 @@ import { resolveTestShippingDestination } from './shipping.js';
 
 const checkoutPath = '/api/create-checkout-session';
 const shippingQuotePath = '/api/shipping-quote';
+const orderStatusPath = '/api/order-status';
 const webhookPath = '/api/stripe-webhook';
 const webhookToleranceSeconds = 300;
 const testCheckoutOrigins = new Set([
@@ -236,6 +237,31 @@ async function handleShippingQuote(request, env) {
     destinationCountry: shippingDestination.country,
     shippingAmount: shippingDestination.amount,
     currency: shippingDestination.currency
+  }, 200, origin);
+}
+
+async function handleOrderStatus(request, env) {
+  const origin = request.headers.get('Origin');
+  if (!isAllowedOrigin(request)) return jsonResponse({ error: 'Origin not allowed.' }, 403);
+
+  const sessionId = new URL(request.url).searchParams.get('session_id') || '';
+  if (!/^cs_test_[A-Za-z0-9]{20,255}$/.test(sessionId)) {
+    return jsonResponse({ error: 'Order status is unavailable.' }, 400, origin);
+  }
+
+  const order = await env.ORDERS_DB.prepare(`
+    SELECT winigen_order_id, payment_status, fulfillment_status
+    FROM test_orders
+    WHERE stripe_checkout_session_id = ?
+    LIMIT 1
+  `).bind(sessionId).first();
+
+  if (!order) return jsonResponse({ error: 'Order status is unavailable.' }, 404, origin);
+
+  return jsonResponse({
+    orderId: order.winigen_order_id,
+    paymentStatus: order.payment_status,
+    fulfillmentStatus: order.fulfillment_status
   }, 200, origin);
 }
 
@@ -479,6 +505,10 @@ export default {
 
     if (request.method === 'POST' && url.pathname === shippingQuotePath) {
       return handleShippingQuote(request, env);
+    }
+
+    if (request.method === 'GET' && url.pathname === orderStatusPath) {
+      return handleOrderStatus(request, env);
     }
 
     if (request.method === 'POST' && url.pathname === webhookPath) {

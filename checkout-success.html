@@ -8,27 +8,53 @@
   <title>Payment Received | Winigen Materials</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>.checkout-result { min-height:100vh; display:grid; place-items:center; padding:48px 20px; background:#f6f9fc; } .checkout-result__panel { width:min(620px,100%); background:#fff; border:1px solid #cbd7e5; border-top:4px solid #1c6f99; border-radius:6px; padding:38px; } .checkout-result__mode { color:#9a6522; font-size:12px; font-weight:800; letter-spacing:0; text-transform:uppercase; } .checkout-result h1 { color:#142d4c; margin:12px 0; } .checkout-result p { color:#566a82; line-height:1.6; } .checkout-result__status { border-top:1px solid #dbe4ed; border-bottom:1px solid #dbe4ed; color:#253b55; margin:24px 0; padding:16px 0; } .checkout-result__actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; } @media (max-width:600px) { .checkout-result__panel { padding:28px 22px; } .checkout-result__actions .btn { width:100%; text-align:center; } }</style>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260815">
+  <link rel="stylesheet" href="assets/css/ecommerce.css?v=20260815e">
 </head>
 <body>
+  <header class="header"><div class="container nav"><a class="logo" href="/"><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"></a><nav class="nav-links"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></nav><button class="mobile-toggle" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></div></header>
   <main class="checkout-result">
-    <section class="checkout-result__panel" aria-labelledby="checkout-success-title">
-      <p class="checkout-result__mode">Test Mode</p>
-      <h1 id="checkout-success-title">Payment received</h1>
-      <p>Your order is pending fulfillment review.</p>
-      <p class="checkout-result__status">Payment confirmation does not mean shipment has been released. Winigen will review the order before any fulfillment action.</p>
-      <p id="checkout-reference" hidden></p>
-      <div class="checkout-result__actions"><a class="btn" href="/products.html">Return to Products</a><a class="btn secondary" href="/contact.html">Contact Winigen</a></div>
-    </section>
+    <div class="container">
+      <section class="checkout-result__panel" aria-labelledby="checkout-success-title">
+        <p class="checkout-result__mode">Test Mode</p>
+        <h1 id="checkout-success-title">Payment received</h1>
+        <p>Your order is pending fulfillment review.</p>
+        <p class="checkout-result__status">Payment confirmation does not mean shipment has been released. Winigen will review the order before any fulfillment action.</p>
+        <p class="checkout-result__order" id="checkout-order" hidden></p>
+        <div class="checkout-result__actions"><a class="btn" href="/products.html">Return to Products</a><a class="btn secondary" href="/contact.html">Contact Winigen</a></div>
+      </section>
+    </div>
   </main>
+  <footer class="footer" data-global-footer></footer>
   <script>
     const sessionId = new URLSearchParams(window.location.search).get('session_id');
-    const reference = document.querySelector('#checkout-reference');
-    if (sessionId && reference) {
-      reference.hidden = false;
-      reference.textContent = `Checkout reference: ${sessionId}`;
-    }
+    const order = document.querySelector('#checkout-order');
+    window.history.replaceState({}, '', '/checkout-success.html');
+
+    const loadOrderStatus = async () => {
+      if (!sessionId || !/^cs_test_[A-Za-z0-9]{20,255}$/.test(sessionId) || !order) return;
+
+      for (let attempt = 0; attempt < 5; attempt += 1) {
+        try {
+          const response = await fetch(`https://winigen-stripe-test.winigen.workers.dev/api/order-status?session_id=${encodeURIComponent(sessionId)}`, { cache: 'no-store' });
+          const payload = await response.json();
+          if (!response.ok) return;
+          if (/^WM-T-\d{8}-\d{4}$/.test(payload.orderId)) {
+            order.hidden = false;
+            order.textContent = `Order number: ${payload.orderId}`;
+          }
+          if (payload.paymentStatus === 'PAID') return;
+        } catch {
+          return;
+        }
+        await new Promise(resolve => setTimeout(resolve, 1200));
+      }
+    };
+
+    loadOrderStatus();
   </script>
+  <script src="assets/js/main.js?v=20260815e"></script>
 </body>
 </html>
