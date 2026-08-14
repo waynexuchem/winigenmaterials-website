@@ -19,13 +19,13 @@ async function initializeEcommerce() {
   try {
     const styles = document.createElement('link');
     styles.rel = 'stylesheet';
-    styles.href = '/assets/css/ecommerce.css?v=20260815c';
+    styles.href = '/assets/css/ecommerce.css?v=20260815f';
     document.head.appendChild(styles);
     await loadSharedScript('/assets/js/ecommerce-catalog.js?v=20260813');
     await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
     await loadSharedScript('/assets/js/cart.js?v=20260815d');
     await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260814c');
-    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260815b');
+    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260815f');
     initializeCartNavigation();
     initializeCartPage();
   } catch (error) {
@@ -87,11 +87,11 @@ function initializeCartPage() {
   const variants = new Map(catalog.products.flatMap(product => product.variants.map(variant => [variant.key, { ...variant, product }])));
   const cartItems = window.WinigenCart.readCart().items.map(item => ({ ...item, variant: variants.get(item.variantKey) })).filter(item => item.variant);
   if (cartItems.length === 0) {
-    root.innerHTML = '<section class="cart-empty"><p class="detail-kicker">Materials Cart</p><h2>Your cart is currently empty.</h2><p>Browse material specifications and select a package when you are ready to order.</p><div class="cart-actions"><a class="btn" href="products.html">Browse Products</a><a class="btn secondary" href="products.html">Continue Shopping</a></div></section>';
+    root.innerHTML = '<section class="cart-empty"><h2>Your cart is currently empty.</h2><p>Browse battery materials and select a package when you are ready to order.</p><div class="cart-actions"><a class="btn" href="products.html">Browse Products</a></div></section>';
     return;
   }
-  const subtotal = cartItems.reduce((total, item) => total + (item.variant.approvedRetailPriceUsd || 0) * item.quantity, 0);
-  const activeItems = cartItems.filter(item => item.variant.approvalStatus === 'ACTIVE' && Number.isFinite(item.variant.approvedRetailPriceUsd));
+  const subtotal = cartItems.reduce((total, item) => total + (item.variant.unitAmount || 0) * item.quantity, 0);
+  const activeItems = cartItems.filter(item => item.variant.approvalStatus === 'ACTIVE' && Number.isInteger(item.variant.unitAmount) && item.variant.unitAmount > 0);
   const blockedItems = cartItems.filter(item => !activeItems.includes(item));
   const shippingRank = { STANDARD_RD: 1, FIXED_SPECIAL_HANDLING: 2, SHIPPING_REVIEW: 3, RFQ_SHIPPING: 4 };
   const cartShippingClass = cartItems.reduce((highest, item) => shippingRank[item.variant.product.shippingClass] > shippingRank[highest] ? item.variant.product.shippingClass : highest, 'STANDARD_RD');
@@ -106,7 +106,8 @@ function initializeCartPage() {
     ...shippingCountries.pinned.map(createDestinationOption),
     ...shippingCountries.groups.map(group => `<optgroup label="${group.label}">${group.countries.map(createDestinationOption).join('')}</optgroup>`)
   ].join('');
-  const rows = cartItems.map(item => `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="25" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity">+</button></div></td><td class="cart-price-cell">${item.variant.approvedRetailPriceUsd ? `$${item.variant.approvedRetailPriceUsd.toFixed(2)}` : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.approvedRetailPriceUsd ? `$${(item.variant.approvedRetailPriceUsd * item.quantity).toFixed(2)}` : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`).join('');
+  const formatMoney = cents => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cents / 100);
+  const rows = cartItems.map(item => `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="25" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity">+</button></div></td><td class="cart-price-cell">${item.variant.unitAmount ? formatMoney(item.variant.unitAmount) : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.unitAmount ? formatMoney(item.variant.unitAmount * item.quantity) : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`).join('');
   const shippingMessage = blockedItems.length > 0
     ? 'Some cart packages are still being confirmed and cannot proceed.'
     : cartShippingClass === 'RFQ_SHIPPING'
@@ -114,12 +115,12 @@ function initializeCartPage() {
       : cartShippingClass === 'SHIPPING_REVIEW'
         ? 'Material prices are fixed. Shipping requires confirmation before payment; your cart will be retained.'
         : cartShippingClass === 'FIXED_SPECIAL_HANDLING'
-          ? 'A fixed special-handling rate will be applied by the Worker.'
-          : 'Shipping is estimated based on destination and order contents. Rates shown here are for Stripe sandbox testing.';
+          ? 'A fixed special-handling rate applies to this order.'
+          : 'Test shipping rate shown for sandbox validation.';
   const canQuoteShipping = !blockedItems.length && cartShippingClass === 'STANDARD_RD';
   const shippingTotal = canQuoteShipping ? 'Calculating…' : shippingMessage;
   const orderTotal = canQuoteShipping ? 'Calculating…' : 'Pending review';
-  root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" name="shippingCountry" aria-describedby="shipping-destination-note shipping-destination-help">${destinationOptions}</select><small id="shipping-destination-note">The Worker calculates the shipping charge for this country.</small><small id="shipping-destination-help" class="cart-destination__help">Don't see your country? <a href="contact.html?inquiry_type=Shipping%20Review&amp;product_interest=Shipping%20availability">Contact us for shipping availability.</a></small></div><p><span>Merchandise subtotal</span><strong>${blockedItems.length ? 'Pending approval' : `$${subtotal.toFixed(2)}`}</strong></p><p><span>Estimated Shipping &amp; Handling</span><strong id="cart-shipping-amount">${shippingTotal}</strong></p><p class="cart-note" id="cart-shipping-note">${shippingMessage}</p><p class="cart-summary__total"><span>Order total</span><strong id="cart-order-total">${orderTotal}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${canQuoteShipping || blockedItems.length ? ' disabled' : ''}>Proceed to Secure Checkout</button><p class="cart-trust">Secure payment processed by Stripe.</p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button">Request Quote</button></div></aside></div>`;
+  root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" name="shippingCountry" aria-describedby="shipping-destination-note shipping-destination-help">${destinationOptions}</select><small id="shipping-destination-note">Shipping is estimated based on destination and order contents.</small><small id="shipping-destination-help" class="cart-destination__help">Don't see your country? <a href="contact.html?inquiry_type=Shipping%20Review&amp;product_interest=Shipping%20availability">Contact us for shipping availability.</a></small></div><p><span>Merchandise subtotal</span><strong>${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><p><span>Estimated Shipping &amp; Handling</span><strong id="cart-shipping-amount">${shippingTotal}</strong></p><p class="cart-note" id="cart-shipping-note">${shippingMessage}</p><p class="cart-summary__total"><span>Order total</span><strong id="cart-order-total">${orderTotal}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${canQuoteShipping || blockedItems.length ? ' disabled' : ''}>Proceed to Secure Checkout</button><p class="cart-trust"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Secure payment processed by Stripe</span></p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button"><span>Need a custom order?</span> Request Quote</button></div></aside></div>`;
   root.querySelectorAll('[data-cart-quantity]').forEach(input => input.addEventListener('change', () => window.WinigenCart.update(input.dataset.cartQuantity, Number(input.value))));
   root.querySelectorAll('[data-cart-decrease]').forEach(button => button.addEventListener('click', () => {
     const item = cartItems.find(entry => entry.variant.key === button.dataset.cartDecrease);
@@ -139,8 +140,8 @@ function initializeCartPage() {
     window.location.href = `contact.html?cart_review=${action}`;
   };
   root.querySelector('#cart-rfq').addEventListener('click', () => {
-    const items = cartItems.map(item => ({ sku: item.variant.sku, name: item.variant.product.name, grade: item.variant.product.grade, packageLabel: item.variant.label, quantity: item.quantity, unitAmount: Math.round((item.variant.approvedRetailPriceUsd || 0) * 100) }));
-    goToReview('rfq', { items, merchandiseSubtotal: Math.round(subtotal * 100), destinationCountry });
+    const items = cartItems.map(item => ({ sku: item.variant.sku, name: item.variant.product.name, grade: item.variant.product.grade, packageLabel: item.variant.label, quantity: item.quantity, unitAmount: item.variant.unitAmount || 0 }));
+    goToReview('rfq', { items, merchandiseSubtotal: subtotal, destinationCountry });
   });
   root.querySelector('#cart-proceed')?.addEventListener('click', async () => {
     const button = root.querySelector('#cart-proceed');
@@ -174,9 +175,8 @@ function initializeCartPage() {
       if (payload.destinationCountry !== destinationCountry || !Number.isInteger(payload.shippingAmount) || payload.shippingAmount < 0) {
         throw new Error('The shipping quote response was invalid.');
       }
-      const shippingAmount = payload.shippingAmount / 100;
-      root.querySelector('#cart-shipping-amount').textContent = `$${shippingAmount.toFixed(2)}`;
-      root.querySelector('#cart-order-total').textContent = `$${(subtotal + shippingAmount).toFixed(2)}`;
+      root.querySelector('#cart-shipping-amount').textContent = formatMoney(payload.shippingAmount);
+      root.querySelector('#cart-order-total').textContent = formatMoney(subtotal + payload.shippingAmount);
       root.querySelector('#cart-proceed').disabled = false;
     }).catch(error => {
       if (root.querySelector('#shipping-destination')?.value !== destinationCountry) return;

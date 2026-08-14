@@ -27,24 +27,30 @@ function fail(message) {
   throw new Error(`Catalog validation failed: ${message}`);
 }
 
+function normalizeVisibleNotation(value) {
+  return value.replace(/\+\/-/g, '±').replace(/\b(\d+(?:\.\d+)?)\s*um\b/g, '$1 µm');
+}
+
 function resolveVariants(product, templates) {
-  const template = templates[product.packageTemplate];
-  if (!template) fail(`${product.skuBase} references unknown package template ${product.packageTemplate}.`);
+  const template = product.packages || templates[product.packageTemplate];
+  if (!template) fail(`${product.skuBase} has no package definitions.`);
 
   return template.map(templateVariant => {
-    const override = product.variantOverrides?.[templateVariant.key] || {};
+    const packageId = templateVariant.id || templateVariant.key;
+    const override = product.variantOverrides?.[packageId] || {};
     return {
-      key: `${product.skuBase}-${templateVariant.key}`,
-      sku: override.sku || `${product.skuBase}-${templateVariant.key}`,
+      id: packageId,
+      key: `${product.skuBase}-${packageId}`,
+      sku: override.sku || `${product.skuBase}-${packageId}`,
       label: override.label || templateVariant.label,
       unit: override.unit || templateVariant.unit,
-      quantity: override.quantity || templateVariant.quantity,
+      quantity: override.quantity ?? templateVariant.quantity,
       packageBasis: override.packageBasis || 'PROPOSED_TEMPLATE',
       packageBasisConfirmationStatus: override.packageBasisConfirmationStatus || 'PROPOSED',
       approvalStatus: override.approvalStatus || templateVariant.approvalStatus,
-      approvedRetailPriceUsd: override.approvedRetailPriceUsd ?? null,
-      stripeTestPriceId: override.stripeTestPriceId ?? null,
-      pricingStatus: override.pricingStatus || 'PROPOSED'
+      unitAmount: override.unitAmount ?? templateVariant.unitAmount ?? null,
+      currency: String(override.currency || templateVariant.currency || product.currency || 'usd').toLowerCase(),
+      pricingStatus: override.pricingStatus || templateVariant.pricingStatus || 'PROPOSED'
     };
   });
 }
@@ -59,25 +65,35 @@ function validateProduct(product, templates, slugs, skus) {
   if (!validShippingClasses.has(product.shippingClass)) fail(`${product.skuBase} has an invalid shipping class.`);
 
   const variants = resolveVariants(product, templates);
+  if (product.commercialStatus === 'ONLINE_CHECKOUT' && variants.length === 0) {
+    fail(`${product.skuBase} is ONLINE_CHECKOUT without packages.`);
+  }
+  const packageIds = new Set();
   for (const variant of variants) {
+    if (!variant.id) fail(`${product.skuBase} has a package without an ID.`);
+    if (packageIds.has(variant.id)) fail(`${product.skuBase} has duplicate package ID ${variant.id}.`);
+    packageIds.add(variant.id);
     if (skus.has(variant.sku)) fail(`Duplicate SKU ${variant.sku}.`);
     skus.add(variant.sku);
     if (!validApprovalStates.has(variant.approvalStatus)) fail(`${variant.sku} has an invalid approval status.`);
     if (!validApprovalStates.has(variant.packageBasisConfirmationStatus)) fail(`${variant.sku} has an invalid package-basis confirmation status.`);
     if (!variant.label || !variant.unit || !Number.isFinite(variant.quantity)) fail(`${variant.sku} has an invalid package.`);
     if (variant.approvalStatus === 'ACTIVE') {
-      if (product.commercialStatus === 'RFQ_ONLY') fail(`${variant.sku} cannot be ACTIVE while RFQ_ONLY.`);
-      if (!Number.isFinite(variant.approvedRetailPriceUsd) || variant.approvedRetailPriceUsd <= 0) {
+      if (product.commercialStatus !== 'ONLINE_CHECKOUT') fail(`${variant.sku} cannot be ACTIVE unless ONLINE_CHECKOUT.`);
+      if (!Number.isInteger(variant.unitAmount) || variant.unitAmount <= 0) {
         fail(`${variant.sku} is ACTIVE without an approved retail price.`);
       }
-      if (!variant.stripeTestPriceId) fail(`${variant.sku} is ACTIVE without a Stripe test Price ID.`);
-      if (variant.pricingStatus !== 'TEST_PRICE_ONLY' && variant.pricingStatus !== 'APPROVED_RETAIL') {
-        fail(`${variant.sku} is ACTIVE without an approved pricing status.`);
-      }
+      if (variant.currency !== 'usd') fail(`${variant.sku} uses unsupported currency ${variant.currency}.`);
+      if (variant.pricingStatus !== 'APPROVED_RETAIL') fail(`${variant.sku} is ACTIVE without APPROVED_RETAIL pricing.`);
+    } else if (variant.unitAmount === 0) {
+      fail(`${variant.sku} contains a zero-dollar placeholder price.`);
     }
   }
+  if (product.commercialStatus === 'ONLINE_CHECKOUT' && !variants.some(variant => variant.approvalStatus === 'ACTIVE')) {
+    fail(`${product.skuBase} is ONLINE_CHECKOUT without an ACTIVE package.`);
+  }
 
-  return { ...product, variants };
+  return { ...product, name: normalizeVisibleNotation(product.name), variants };
 }
 
 function validateShippingCountries(shippingSource) {
@@ -138,11 +154,25 @@ const { allEntries: shippingEntries, regionDefaults, countryOverrides } = valida
 
 // Keep checkout-only mappings in the Worker projection. Variant overrides can
 // contain Stripe Price IDs, so they are intentionally omitted from the browser.
-const browserProducts = products.map(({ variants, variantOverrides, ...product }) => ({
+const browserProducts = products.map(({ variants, variantOverrides, packages, ...product }) => ({
   ...product,
-  variants: variants.map(({ stripeTestPriceId, pricingStatus, ...variant }) => variant)
+  variants: variants.map(({ pricingStatus, ...variant }) => variant)
 }));
-const workerProducts = products;
+const workerProducts = products.map(({ variants, variantOverrides, packages, packageTemplate, ...product }) => ({
+  ...product,
+  variants
+}));
+
+for (const browserProduct of browserProducts) {
+  const workerProduct = workerProducts.find(product => product.slug === browserProduct.slug);
+  if (!workerProduct) fail(`${browserProduct.slug} is missing from the Worker projection.`);
+  for (const browserVariant of browserProduct.variants) {
+    const workerVariant = workerProduct.variants.find(variant => variant.key === browserVariant.key);
+    if (!workerVariant || browserVariant.unitAmount !== workerVariant.unitAmount || browserVariant.currency !== workerVariant.currency) {
+      fail(`${browserVariant.key} differs between browser and Worker projections.`);
+    }
+  }
+}
 
 const browserSource = `/* Generated by npm run build:catalog. Do not edit directly. */\nwindow.WINIGEN_ECOMMERCE_CATALOG = ${JSON.stringify({ catalogVersion: source.catalogVersion, products: browserProducts }, null, 2)};\n`;
 const workerSource = `// Generated by npm run build:catalog. Do not edit directly.\nexport const CATALOG_VERSION = ${JSON.stringify(source.catalogVersion)};\nexport const PRODUCTS = ${JSON.stringify(workerProducts, null, 2)};\nexport const VARIANTS_BY_KEY = new Map(PRODUCTS.flatMap(product => product.variants.map(variant => [variant.key, { ...variant, product }])));\n`;

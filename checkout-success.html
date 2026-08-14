@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="assets/css/style.css?v=20260815">
-  <link rel="stylesheet" href="assets/css/ecommerce.css?v=20260815e">
+  <link rel="stylesheet" href="assets/css/ecommerce.css?v=20260815f">
 </head>
 <body>
   <header class="header"><div class="container nav"><a class="logo" href="/"><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"></a><nav class="nav-links"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></nav><button class="mobile-toggle" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></div></header>
@@ -20,10 +20,9 @@
       <section class="checkout-result__panel" aria-labelledby="checkout-success-title">
         <p class="checkout-result__mode">Test Mode</p>
         <h1 id="checkout-success-title">Payment received</h1>
-        <p>Your order is now pending fulfillment review.</p>
-        <p class="checkout-result__status">Payment has been successfully received. Winigen will review your order, shipping requirements, and fulfillment eligibility before shipment is released.</p>
-        <p>A payment confirmation has been sent to your email. We will contact you if additional information is required.</p>
-        <p class="checkout-result__order" id="checkout-order" hidden></p>
+        <p class="checkout-result__status">Your order has been received and is pending fulfillment review.</p>
+        <div class="checkout-result__order" id="checkout-order" hidden><span>Order number</span><strong id="checkout-order-number"></strong></div>
+        <p>We’ll email you when your order is approved for processing or if additional information is needed.</p>
         <div class="checkout-result__actions"><a class="btn" href="/products.html">Return to Products</a><a class="btn secondary" href="/contact.html">Contact Winigen</a></div>
       </section>
     </div>
@@ -32,10 +31,11 @@
   <script>
     const sessionId = new URLSearchParams(window.location.search).get('session_id');
     const order = document.querySelector('#checkout-order');
+    const orderNumber = document.querySelector('#checkout-order-number');
     window.history.replaceState({}, '', '/checkout-success.html');
 
     const loadOrderStatus = async () => {
-      if (!sessionId || !/^cs_test_[A-Za-z0-9]{20,255}$/.test(sessionId) || !order) return;
+      if (!sessionId || !/^cs_test_[A-Za-z0-9]{20,255}$/.test(sessionId) || !order || !orderNumber) return;
 
       for (let attempt = 0; attempt < 5; attempt += 1) {
         try {
@@ -44,7 +44,7 @@
           if (!response.ok) return;
           if (/^WM-T-\d{8}-\d{4}$/.test(payload.orderId)) {
             order.hidden = false;
-            order.textContent = `Order number: ${payload.orderId}`;
+            orderNumber.textContent = payload.orderId;
           }
           if (payload.paymentStatus === 'PAID') return;
         } catch {
@@ -56,6 +56,6 @@
 
     loadOrderStatus();
   </script>
-  <script src="assets/js/main.js?v=20260815e"></script>
+  <script src="assets/js/main.js?v=20260815f"></script>
 </body>
 </html>

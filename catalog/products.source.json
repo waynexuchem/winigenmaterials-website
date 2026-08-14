@@ -1,0 +1,4017 @@
+{
+  "version": "2026-08-13",
+  "generatedFrom": "Canonical products listed on products.html; maintain this file as the semantic product source after initial seeding.",
+  "commerceStatusValues": [
+    "active_checkout",
+    "rfq",
+    "sample_only",
+    "temporarily_unavailable",
+    "informational"
+  ],
+  "familyOrder": [
+    "lithium-salts",
+    "battery-solvents",
+    "electrolyte-additives",
+    "next-generation-salts",
+    "solid-state-electrolytes",
+    "custom-formulations",
+    "active-materials",
+    "functional-coatings"
+  ],
+  "families": [
+    {
+      "slug": "lithium-salts",
+      "name": "Lithium Salts",
+      "url": "/products/lithium-salts.html"
+    },
+    {
+      "slug": "battery-solvents",
+      "name": "Battery Solvents",
+      "url": "/products/battery-solvents.html"
+    },
+    {
+      "slug": "electrolyte-additives",
+      "name": "Electrolyte Additives",
+      "url": "/products/electrolyte-additives.html"
+    },
+    {
+      "slug": "next-generation-salts",
+      "name": "Next-Gen Salts",
+      "url": "/products/next-generation-salts.html"
+    },
+    {
+      "slug": "solid-state-electrolytes",
+      "name": "Solid-State Electrolytes",
+      "url": "/products/solid-state-electrolytes.html"
+    },
+    {
+      "slug": "custom-formulations",
+      "name": "Custom Formulations",
+      "url": "/products/custom-electrolyte-formulations.html"
+    },
+    {
+      "slug": "active-materials",
+      "name": "Active Materials",
+      "url": "/products/battery-active-materials.html"
+    },
+    {
+      "slug": "functional-coatings",
+      "name": "Functional Coatings",
+      "url": "/products.html#functional-coatings"
+    }
+  ],
+  "products": [
+    {
+      "slug": "lithium-hexafluorophosphate-lipf6",
+      "url": "/products/lithium-hexafluorophosphate-lipf6.html",
+      "name": "Lithium hexafluorophosphate (LiPF6)",
+      "description": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 20 ppm.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-LS-LIPF6",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-40-3/PNG",
+      "aliases": [
+        "LiPF6"
+      ],
+      "commercialIntents": [
+        "Lithium hexafluorophosphate (LiPF6) supplier",
+        "where to buy Lithium hexafluorophosphate (LiPF6)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "lithium-hexafluorophosphate-lipf6",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiPF6"
+        },
+        {
+          "name": "CAS Number",
+          "value": "21324-40-3"
+        },
+        {
+          "name": "Formula",
+          "value": "LiPF6"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 20 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-difluorophosphate-lipo-2-f-2",
+      "url": "/products/lithium-difluorophosphate-lipo-2-f-2.html",
+      "name": "Lithium difluorophosphate (LiPO2F2)",
+      "description": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-LS-LIPO2F2",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/24389-25-1/PNG",
+      "aliases": [
+        "LiPO2F2",
+        "LiDFP"
+      ],
+      "commercialIntents": [
+        "Lithium difluorophosphate (LiPO2F2) supplier",
+        "where to buy Lithium difluorophosphate (LiPO2F2)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "lithium-difluorophosphate-lipo-2-f-2",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiPO2F2"
+        },
+        {
+          "name": "CAS Number",
+          "value": "24389-25-1"
+        },
+        {
+          "name": "Formula",
+          "value": "LiPO2F2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-bis-oxalato-borate-libob",
+      "url": "/products/lithium-bis-oxalato-borate-libob.html",
+      "name": "Lithium bis(oxalato)borate (LiBOB)",
+      "description": "Lithium bis(oxalato)borate (LiBOB), CAS 244761-29-3, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-LS-LIBOB",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/244761-29-3/PNG",
+      "aliases": [
+        "LiBOB"
+      ],
+      "commercialIntents": [
+        "Lithium bis(oxalato)borate (LiBOB) supplier",
+        "where to buy Lithium bis(oxalato)borate (LiBOB)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "lithium-bis-oxalato-borate-libob",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiBOB"
+        },
+        {
+          "name": "CAS Number",
+          "value": "244761-29-3"
+        },
+        {
+          "name": "Formula",
+          "value": "C4BLiO8"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-difluoro-oxalate-borate-liodfb",
+      "url": "/products/lithium-difluoro-oxalate-borate-liodfb.html",
+      "name": "Lithium difluoro oxalate borate (LiODFB)",
+      "description": "Lithium difluoro oxalate borate (LiODFB), CAS 409071-16-5, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-LS-LIODFB",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/409071-16-5/PNG",
+      "aliases": [
+        "LiODFB",
+        "LiDFOB"
+      ],
+      "commercialIntents": [
+        "Lithium difluoro oxalate borate (LiODFB) supplier",
+        "where to buy Lithium difluoro oxalate borate (LiODFB)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "lithium-difluoro-oxalate-borate-liodfb",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiODFB"
+        },
+        {
+          "name": "CAS Number",
+          "value": "409071-16-5"
+        },
+        {
+          "name": "Formula",
+          "value": "C2BF2LiO4"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
+      "url": "/products/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.html",
+      "name": "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI)",
+      "description": "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI), CAS 90076-65-6, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-LS-LITFSI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/90076-65-6/PNG",
+      "aliases": [
+        "LiTFSI"
+      ],
+      "commercialIntents": [
+        "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI) supplier",
+        "where to buy Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiTFSI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "90076-65-6"
+        },
+        {
+          "name": "Formula",
+          "value": "LiN(CF3SO2)2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
+      "url": "/products/lithium-bis-fluorosulfonyl-imide-lifsi.html",
+      "name": "Lithium bis(fluorosulfonyl)imide (LiFSI)",
+      "description": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-LS-LIFSI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/171611-11-3/PNG",
+      "aliases": [
+        "LiFSI"
+      ],
+      "commercialIntents": [
+        "Lithium bis(fluorosulfonyl)imide (LiFSI) supplier",
+        "where to buy Lithium bis(fluorosulfonyl)imide (LiFSI)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "lithium-bis-fluorosulfonyl-imide-lifsi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiFSI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "171611-11-3"
+        },
+        {
+          "name": "Formula",
+          "value": "LiN(SO2F)2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-tetrafluoroborate-libf-4",
+      "url": "/products/lithium-tetrafluoroborate-libf-4.html",
+      "name": "Lithium tetrafluoroborate (LiBF4)",
+      "description": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-LS-LIBF4",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/14283-07-9/PNG",
+      "aliases": [
+        "LiBF4"
+      ],
+      "commercialIntents": [
+        "Lithium tetrafluoroborate (LiBF4) supplier",
+        "where to buy Lithium tetrafluoroborate (LiBF4)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "lithium-tetrafluoroborate-libf-4",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiBF4"
+        },
+        {
+          "name": "CAS Number",
+          "value": "14283-07-9"
+        },
+        {
+          "name": "Formula",
+          "value": "LiBF4"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "ethylene-carbonate-ec",
+      "url": "/products/ethylene-carbonate-ec.html",
+      "name": "Ethylene carbonate (EC)",
+      "description": "Ethylene carbonate (EC), CAS 96-49-1, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid above 35°C; crystalline solid at room temperature..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-EC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/96-49-1/PNG",
+      "aliases": [
+        "EC"
+      ],
+      "commercialIntents": [
+        "EC supplier",
+        "where to buy EC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "ethylene-carbonate-ec",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "EC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "96-49-1"
+        },
+        {
+          "name": "Formula",
+          "value": "C3H4O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid above 35°C; crystalline solid at room temperature."
+        }
+      ]
+    },
+    {
+      "slug": "dimethyl-carbonate-dmc",
+      "url": "/products/dimethyl-carbonate-dmc.html",
+      "name": "Dimethyl carbonate (DMC)",
+      "description": "Dimethyl carbonate (DMC), CAS 616-38-6, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-DMC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/616-38-6/PNG",
+      "aliases": [
+        "DMC"
+      ],
+      "commercialIntents": [
+        "DMC supplier",
+        "where to buy DMC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "dimethyl-carbonate-dmc",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "DMC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "616-38-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C3H6O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "diethyl-carbonate-dec",
+      "url": "/products/diethyl-carbonate-dec.html",
+      "name": "Diethyl carbonate (DEC)",
+      "description": "Diethyl carbonate (DEC), CAS 105-58-8, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-DEC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-58-8/PNG",
+      "aliases": [
+        "DEC"
+      ],
+      "commercialIntents": [
+        "DEC supplier",
+        "where to buy DEC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "diethyl-carbonate-dec",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "DEC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "105-58-8"
+        },
+        {
+          "name": "Formula",
+          "value": "C5H10O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "ethyl-methyl-carbonate-emc",
+      "url": "/products/ethyl-methyl-carbonate-emc.html",
+      "name": "Ethyl methyl carbonate (EMC)",
+      "description": "Ethyl methyl carbonate (EMC), CAS 623-53-0, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-EMC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/623-53-0/PNG",
+      "aliases": [
+        "EMC"
+      ],
+      "commercialIntents": [
+        "EMC supplier",
+        "where to buy EMC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "ethyl-methyl-carbonate-emc",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "EMC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "623-53-0"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H8O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "propylene-carbonate-pc",
+      "url": "/products/propylene-carbonate-pc.html",
+      "name": "Propylene carbonate (PC)",
+      "description": "Propylene carbonate (PC), CAS 108-32-7, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-PC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/108-32-7/PNG",
+      "aliases": [
+        "PC"
+      ],
+      "commercialIntents": [
+        "PC supplier",
+        "where to buy PC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "propylene-carbonate-pc",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "PC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "108-32-7"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H6O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "acetonitrile-an",
+      "url": "/products/acetonitrile-an.html",
+      "name": "Acetonitrile (AN)",
+      "description": "Acetonitrile (AN), CAS 75-05-8, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-AN",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/75-05-8/PNG",
+      "aliases": [
+        "AN"
+      ],
+      "commercialIntents": [
+        "AN supplier",
+        "where to buy AN"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "acetonitrile-an",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "AN"
+        },
+        {
+          "name": "CAS Number",
+          "value": "75-05-8"
+        },
+        {
+          "name": "Formula",
+          "value": "CH3CN"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "ethyl-acetate-ea",
+      "url": "/products/ethyl-acetate-ea.html",
+      "name": "Ethyl acetate (EA)",
+      "description": "Ethyl acetate (EA), CAS 141-78-6, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-EA",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/141-78-6/PNG",
+      "aliases": [
+        "EA"
+      ],
+      "commercialIntents": [
+        "EA supplier",
+        "where to buy EA"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "ethyl-acetate-ea",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "EA"
+        },
+        {
+          "name": "CAS Number",
+          "value": "141-78-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H8O2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless liquid."
+        }
+      ]
+    },
+    {
+      "slug": "2-2-difluoroethyl-acetate-dfea",
+      "url": "/products/2-2-difluoroethyl-acetate-dfea.html",
+      "name": "2,2-Difluoroethyl acetate (DFEA)",
+      "description": "2,2-Difluoroethyl acetate (DFEA), CAS 1550-44-3, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-DFEA",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1550-44-3/PNG",
+      "aliases": [
+        "DFEA",
+        "2"
+      ],
+      "commercialIntents": [
+        "DFEA supplier",
+        "where to buy DFEA"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "2-2-difluoroethyl-acetate-dfea",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "DFEA"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1550-44-3"
+        },
+        {
+          "name": "Formula",
+          "value": "DFEA"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Liquid."
+        }
+      ]
+    },
+    {
+      "slug": "1-2-dimethoxyethane-dme",
+      "url": "/products/1-2-dimethoxyethane-dme.html",
+      "name": "1,2-Dimethoxyethane (DME)",
+      "description": "1,2-Dimethoxyethane (DME), CAS 110-71-4, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-DME",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-71-4/PNG",
+      "aliases": [
+        "DME",
+        "1"
+      ],
+      "commercialIntents": [
+        "DME supplier",
+        "where to buy DME"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-2-dimethoxyethane-dme",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "DME"
+        },
+        {
+          "name": "CAS Number",
+          "value": "110-71-4"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H10O2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
+      "url": "/products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html",
+      "name": "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether (TTE)",
+      "description": "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether (TTE), CAS 16627-68-2, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-TTE",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16627-68-2/PNG",
+      "aliases": [
+        "TTE",
+        "1"
+      ],
+      "commercialIntents": [
+        "TTE supplier",
+        "where to buy TTE"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TTE"
+        },
+        {
+          "name": "CAS Number",
+          "value": "16627-68-2"
+        },
+        {
+          "name": "Formula",
+          "value": "C5H4F8O"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
+      "url": "/products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html",
+      "name": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC)",
+      "description": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC), CAS 156783-95-8, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Transparent liquid..",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-FEMC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/156783-95-8/PNG",
+      "aliases": [
+        "FEMC",
+        "Methyl 2"
+      ],
+      "commercialIntents": [
+        "FEMC supplier",
+        "where to buy FEMC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "FEMC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "156783-95-8"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H5F3O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
+      "url": "/products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html",
+      "name": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC)",
+      "description": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC), CAS 1513-87-7, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-TFEC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1513-87-7/PNG",
+      "aliases": [
+        "TFEC",
+        "Bis(2"
+      ],
+      "commercialIntents": [
+        "TFEC supplier",
+        "where to buy TFEC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TFEC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1513-87-7"
+        },
+        {
+          "name": "Formula",
+          "value": "C5H4F6O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "hexafluoroisopropylmethyl-ether",
+      "url": "/products/hexafluoroisopropylmethyl-ether.html",
+      "name": "Hexafluoroisopropylmethyl ether",
+      "description": "Hexafluoroisopropylmethyl ether, CAS 13171-18-1, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-HFIPME",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13171-18-1/PNG",
+      "aliases": [
+        "HFPM",
+        "HFIPME"
+      ],
+      "commercialIntents": [
+        "HFPM supplier",
+        "where to buy HFPM"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "hexafluoroisopropylmethyl-ether",
+      "additionalProperty": [
+        {
+          "name": "CAS Number",
+          "value": "13171-18-1"
+        },
+        {
+          "name": "Formula",
+          "value": "C₄H₄F₆O"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "sulfolane",
+      "url": "/products/sulfolane.html",
+      "name": "Sulfolane (Sulfolane)",
+      "description": "Sulfolane (Sulfolane), CAS 126-33-0, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-SULFOLANE",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/126-33-0/PNG",
+      "aliases": [
+        "Sulfolane"
+      ],
+      "commercialIntents": [
+        "Sulfolane (Sulfolane) supplier",
+        "where to buy Sulfolane (Sulfolane)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "sulfolane",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "Sulfolane"
+        },
+        {
+          "name": "CAS Number",
+          "value": "126-33-0"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H8O2 S"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Water",
+          "value": "< 100 ppm"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "vinylene-carbonate-vc",
+      "url": "/products/vinylene-carbonate-vc.html",
+      "name": "Vinylene carbonate (VC)",
+      "description": "Vinylene carbonate (VC), CAS 872-36-6, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid at room temperature; crystalline at lower temperature..",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-VC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/872-36-6/PNG",
+      "aliases": [
+        "VC"
+      ],
+      "commercialIntents": [
+        "VC supplier",
+        "where to buy VC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "vinylene-carbonate-vc",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "VC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "872-36-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C3H2O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid at room temperature; crystalline at lower temperature."
+        }
+      ]
+    },
+    {
+      "slug": "vinyl-ethylene-carbonate-vec",
+      "url": "/products/vinyl-ethylene-carbonate-vec.html",
+      "name": "Vinyl ethylene carbonate (VEC)",
+      "description": "Vinyl ethylene carbonate (VEC), CAS 4427-96-7, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-VEC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4427-96-7/PNG",
+      "aliases": [
+        "VEC"
+      ],
+      "commercialIntents": [
+        "VEC supplier",
+        "where to buy VEC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "vinyl-ethylene-carbonate-vec",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "VEC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "4427-96-7"
+        },
+        {
+          "name": "Formula",
+          "value": "C5H6O3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "1-3-propanediol-cyclic-sulfate-ts",
+      "url": "/products/1-3-propanediol-cyclic-sulfate-ts.html",
+      "name": "1,3-Propanediol cyclic sulfate (TS)",
+      "description": "1,3-Propanediol cyclic sulfate (TS), CAS 1073-05-8, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TS",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1073-05-8/PNG",
+      "aliases": [
+        "TS",
+        "1"
+      ],
+      "commercialIntents": [
+        "TS supplier",
+        "where to buy TS"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-3-propanediol-cyclic-sulfate-ts",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TS"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1073-05-8"
+        },
+        {
+          "name": "Formula",
+          "value": "C3H6O4S"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
+      "url": "/products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html",
+      "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
+      "description": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-DTD",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1072-53-3/PNG",
+      "aliases": [
+        "DTD",
+        "1"
+      ],
+      "commercialIntents": [
+        "DTD supplier",
+        "where to buy DTD"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "DTD"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1072-53-3"
+        },
+        {
+          "name": "Formula",
+          "value": "C2H4O4S"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "prop-1-ene-1-3-sultone-pst",
+      "url": "/products/prop-1-ene-1-3-sultone-pst.html",
+      "name": "Prop-1-ene-1,3-sultone (PST)",
+      "description": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-PST",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21806-61-1/PNG",
+      "aliases": [
+        "PST",
+        "Prop-1-ene-1"
+      ],
+      "commercialIntents": [
+        "PST supplier",
+        "where to buy PST"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "prop-1-ene-1-3-sultone-pst",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "PST"
+        },
+        {
+          "name": "CAS Number",
+          "value": "21806-61-1"
+        },
+        {
+          "name": "Formula",
+          "value": "C3H4O3 S"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
+      "url": "/products/4-fluoro-1-3-dioxolan-2-one-fec.html",
+      "name": "4-Fluoro-1,3-dioxolan-2-one (FEC)",
+      "description": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid at room temperature; crystalline at lower temperature..",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-FEC",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/114435-02-8/PNG",
+      "aliases": [
+        "FEC",
+        "4-Fluoro-1",
+        "fluoroethylene carbonate"
+      ],
+      "commercialIntents": [
+        "FEC supplier",
+        "where to buy FEC"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "4-fluoro-1-3-dioxolan-2-one-fec",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "FEC"
+        },
+        {
+          "name": "CAS Number",
+          "value": "114435-02-8"
+        },
+        {
+          "name": "Formula",
+          "value": "C3H3FO3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid at room temperature; crystalline at lower temperature."
+        }
+      ]
+    },
+    {
+      "slug": "succinonitrile-sn",
+      "url": "/products/succinonitrile-sn.html",
+      "name": "Succinonitrile (SN)",
+      "description": "Succinonitrile (SN), CAS 110-61-2, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Solid at room temperature..",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-SN",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-61-2/PNG",
+      "aliases": [
+        "SN"
+      ],
+      "commercialIntents": [
+        "SN supplier",
+        "where to buy SN"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "succinonitrile-sn",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "SN"
+        },
+        {
+          "name": "CAS Number",
+          "value": "110-61-2"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H4N2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Solid at room temperature."
+        }
+      ]
+    },
+    {
+      "slug": "adiponitrile-adn",
+      "url": "/products/adiponitrile-adn.html",
+      "name": "Adiponitrile (ADN)",
+      "description": "Adiponitrile (ADN), CAS 111-69-3, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-ADN",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/111-69-3/PNG",
+      "aliases": [
+        "ADN"
+      ],
+      "commercialIntents": [
+        "ADN supplier",
+        "where to buy ADN"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "adiponitrile-adn",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "ADN"
+        },
+        {
+          "name": "CAS Number",
+          "value": "111-69-3"
+        },
+        {
+          "name": "Formula",
+          "value": "C6H8N2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless transparent liquid."
+        }
+      ]
+    },
+    {
+      "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
+      "url": "/products/1-2-bis-2-cyanoethoxy-ethane-dene.html",
+      "name": "1,2-Bis(2-cyanoethoxy)ethane (DENE)",
+      "description": "1,2-Bis(2-cyanoethoxy)ethane (DENE), CAS 3386-87-6, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-DENE",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3386-87-6/PNG",
+      "aliases": [
+        "DENE",
+        "1"
+      ],
+      "commercialIntents": [
+        "DENE supplier",
+        "where to buy DENE"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-2-bis-2-cyanoethoxy-ethane-dene",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "DENE"
+        },
+        {
+          "name": "CAS Number",
+          "value": "3386-87-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C8H12N2O2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "1-3-6-hexanetricarbonitrile-htcn",
+      "url": "/products/1-3-6-hexanetricarbonitrile-htcn.html",
+      "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
+      "description": "1,3,6-Hexanetricarbonitrile (HTCN), CAS 1772-25-4, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-HTCN",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1772-25-4/PNG",
+      "aliases": [
+        "HTCN",
+        "1"
+      ],
+      "commercialIntents": [
+        "HTCN supplier",
+        "where to buy HTCN"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-3-6-hexanetricarbonitrile-htcn",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "HTCN"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1772-25-4"
+        },
+        {
+          "name": "Formula",
+          "value": "C9H11N3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
+      "url": "/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html",
+      "name": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
+      "description": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS), CAS 99591-74-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Solid powder..",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-MMDS",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/99591-74-9/PNG",
+      "aliases": [
+        "MMDS",
+        "1"
+      ],
+      "commercialIntents": [
+        "MMDS supplier",
+        "where to buy MMDS"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "MMDS"
+        },
+        {
+          "name": "CAS Number",
+          "value": "99591-74-9"
+        },
+        {
+          "name": "Formula",
+          "value": "C2H4O6S2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Solid powder."
+        }
+      ]
+    },
+    {
+      "slug": "tris-trimethylsilyl-borate-tmsb",
+      "url": "/products/tris-trimethylsilyl-borate-tmsb.html",
+      "name": "Tris(trimethylsilyl)borate (TMSB)",
+      "description": "Tris(trimethylsilyl)borate (TMSB), CAS 4325-85-3, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TMSB",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4325-85-3/PNG",
+      "aliases": [
+        "TMSB"
+      ],
+      "commercialIntents": [
+        "TMSB supplier",
+        "where to buy TMSB"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "tris-trimethylsilyl-borate-tmsb",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TMSB"
+        },
+        {
+          "name": "CAS Number",
+          "value": "4325-85-3"
+        },
+        {
+          "name": "Formula",
+          "value": "[(CH 3) 3 SiO] 3 B"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "tris-trimethylsilyl-phosphate-tmsp",
+      "url": "/products/tris-trimethylsilyl-phosphate-tmsp.html",
+      "name": "Tris-(trimethylsilyl)-phosphate (TMSP)",
+      "description": "Tris-(trimethylsilyl)-phosphate (TMSP), CAS 10497-05-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Liquid..",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TMSP",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/PNG",
+      "aliases": [
+        "TMSP"
+      ],
+      "commercialIntents": [
+        "TMSP supplier",
+        "where to buy TMSP"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "tris-trimethylsilyl-phosphate-tmsp",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TMSP"
+        },
+        {
+          "name": "CAS Number",
+          "value": "10497-05-9"
+        },
+        {
+          "name": "Formula",
+          "value": "[(CH 3) 3 SiO] 3 P(O)"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Liquid."
+        }
+      ]
+    },
+    {
+      "slug": "1-3-propanesultone-ps",
+      "url": "/products/1-3-propanesultone-ps.html",
+      "name": "1,3-Propanesultone (PS)",
+      "description": "1,3-Propanesultone (PS), CAS 1120-71-4, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless liquid..",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-PS",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1120-71-4/PNG",
+      "aliases": [
+        "PS",
+        "1"
+      ],
+      "commercialIntents": [
+        "PS supplier",
+        "where to buy PS"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-3-propanesultone-ps",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "PS"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1120-71-4"
+        },
+        {
+          "name": "Formula",
+          "value": "C6H12O6S2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        },
+        {
+          "name": "Physical",
+          "value": "Colorless liquid."
+        }
+      ]
+    },
+    {
+      "slug": "tetraethylammonium-tetrafluoroborate-teabf-4",
+      "url": "/products/tetraethylammonium-tetrafluoroborate-teabf-4.html",
+      "name": "Tetraethylammonium tetrafluoroborate (TEABF4)",
+      "description": "Tetraethylammonium tetrafluoroborate (TEABF4), CAS 429-06-1, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TEABF4",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/429-06-1/PNG",
+      "aliases": [
+        "TEABF4"
+      ],
+      "commercialIntents": [
+        "TEABF4 supplier",
+        "where to buy TEABF4"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "tetraethylammonium-tetrafluoroborate-teabf-4",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TEABF4"
+        },
+        {
+          "name": "CAS Number",
+          "value": "429-06-1"
+        },
+        {
+          "name": "Formula",
+          "value": "TEABF4"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "trimethylsilyl-phosphite-ttpi",
+      "url": "/products/trimethylsilyl-phosphite-ttpi.html",
+      "name": "Trimethylsilyl phosphite (TTPi)",
+      "description": "Trimethylsilyl phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TTPI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1795-31-9/PNG",
+      "aliases": [
+        "TTPi",
+        "TMSPi"
+      ],
+      "commercialIntents": [
+        "Trimethylsilyl phosphite (TTPi) supplier",
+        "where to buy Trimethylsilyl phosphite (TTPi)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "trimethylsilyl-phosphite-ttpi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TTPi"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1795-31-9"
+        },
+        {
+          "name": "Formula",
+          "value": "C9H33O6PSi3"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery material grade"
+        }
+      ]
+    },
+    {
+      "slug": "sodium-hexafluorophosphate-napf-6",
+      "url": "/products/sodium-hexafluorophosphate-napf-6.html",
+      "name": "Sodium hexafluorophosphate (NaPF6)",
+      "description": "Sodium hexafluorophosphate (NaPF6), CAS 21324-39-0, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 20 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-NAPF6",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-39-0/PNG",
+      "aliases": [
+        "NaPF6"
+      ],
+      "commercialIntents": [
+        "Sodium hexafluorophosphate (NaPF6) supplier",
+        "where to buy Sodium hexafluorophosphate (NaPF6)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "sodium-hexafluorophosphate-napf-6",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "NaPF6"
+        },
+        {
+          "name": "CAS Number",
+          "value": "21324-39-0"
+        },
+        {
+          "name": "Formula",
+          "value": "NaPF6"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 20 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "sodium-difluoro-oxalate-borate-naodfb",
+      "url": "/products/sodium-difluoro-oxalate-borate-naodfb.html",
+      "name": "Sodium difluoro oxalate borate (NaODFB)",
+      "description": "Sodium difluoro oxalate borate (NaODFB), CAS 2102517-30-4, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-NAODFB",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/2102517-30-4/PNG",
+      "aliases": [
+        "NaODFB",
+        "NaDFOB"
+      ],
+      "commercialIntents": [
+        "Sodium difluoro oxalate borate (NaODFB) supplier",
+        "where to buy Sodium difluoro oxalate borate (NaODFB)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "sodium-difluoro-oxalate-borate-naodfb",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "NaODFB"
+        },
+        {
+          "name": "CAS Number",
+          "value": "2102517-30-4"
+        },
+        {
+          "name": "Formula",
+          "value": "NaODFB"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2",
+      "url": "/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html",
+      "name": "Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI)2)",
+      "description": "Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI)2), CAS 133395-16-1, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-MGTFSI2",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/133395-16-1/PNG",
+      "aliases": [
+        "TFSI"
+      ],
+      "commercialIntents": [
+        "TFSI supplier",
+        "where to buy TFSI"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "Mg(TFSI)2"
+        },
+        {
+          "name": "CAS Number",
+          "value": "133395-16-1"
+        },
+        {
+          "name": "Formula",
+          "value": "Mg(TFSI)2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "potassium-bis-trifluoromethanesulfonyl-imide-ktfsi",
+      "url": "/products/potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html",
+      "name": "Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI)",
+      "description": "Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI), CAS 90076-67-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-KTFSI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/90076-67-8/PNG",
+      "aliases": [
+        "KTFSI"
+      ],
+      "commercialIntents": [
+        "KTFSI supplier",
+        "where to buy KTFSI"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "potassium-bis-trifluoromethanesulfonyl-imide-ktfsi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "KTFSI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "90076-67-8"
+        },
+        {
+          "name": "Formula",
+          "value": "KTFSI"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "sodium-bis-trifluoromethanesulfonyl-imide-natfsi",
+      "url": "/products/sodium-bis-trifluoromethanesulfonyl-imide-natfsi.html",
+      "name": "Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI)",
+      "description": "Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI), CAS 91742-21-1, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-NATFSI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/91742-21-1/PNG",
+      "aliases": [
+        "NaTFSI"
+      ],
+      "commercialIntents": [
+        "Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI) supplier",
+        "where to buy Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "sodium-bis-trifluoromethanesulfonyl-imide-natfsi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "NaTFSI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "91742-21-1"
+        },
+        {
+          "name": "Formula",
+          "value": "NaTFSI"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "potassium-hexafluorophosphate-kpf-6",
+      "url": "/products/potassium-hexafluorophosphate-kpf-6.html",
+      "name": "Potassium hexafluorophosphate (KPF6)",
+      "description": "Potassium hexafluorophosphate (KPF6), CAS 17084-13-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-KPF6",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/17084-13-8/PNG",
+      "aliases": [
+        "KPF6"
+      ],
+      "commercialIntents": [
+        "KPF6 supplier",
+        "where to buy KPF6"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "potassium-hexafluorophosphate-kpf-6",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "KPF6"
+        },
+        {
+          "name": "CAS Number",
+          "value": "17084-13-8"
+        },
+        {
+          "name": "Formula",
+          "value": "KPF6"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "potassium-bis-fluorosulfonyl-imide-kfsi",
+      "url": "/products/potassium-bis-fluorosulfonyl-imide-kfsi.html",
+      "name": "Potassium bis(fluorosulfonyl)imide (KFSI)",
+      "description": "Potassium bis(fluorosulfonyl)imide (KFSI), CAS 14984-76-0, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-KFSI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/14984-76-0/PNG",
+      "aliases": [
+        "KFSI"
+      ],
+      "commercialIntents": [
+        "KFSI supplier",
+        "where to buy KFSI"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "potassium-bis-fluorosulfonyl-imide-kfsi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "KFSI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "14984-76-0"
+        },
+        {
+          "name": "Formula",
+          "value": "KFSI"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "magnesium-borohydride-mg-bh-4-2",
+      "url": "/products/magnesium-borohydride-mg-bh-4-2.html",
+      "name": "Magnesium borohydride (Mg(BH4)2)",
+      "description": "Magnesium borohydride (Mg(BH 4) 2), CAS 16903-37-0, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-MGBH42",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16903-37-0/PNG",
+      "aliases": [
+        "BH4"
+      ],
+      "commercialIntents": [
+        "BH4 supplier",
+        "where to buy BH4"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "magnesium-borohydride-mg-bh-4-2",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "Mg(BH 4) 2"
+        },
+        {
+          "name": "CAS Number",
+          "value": "16903-37-0"
+        },
+        {
+          "name": "Formula",
+          "value": "Mg(BH 4) 2"
+        },
+        {
+          "name": "Availability",
+          "value": "RFQ"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
+          "name": "Purity",
+          "value": "> 99.9%"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 50 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "latp-d-50-0-3-um",
+      "url": "/products/latp-d-50-0-3-um.html",
+      "name": "LATP powder, D50 0.30 µm",
+      "description": "LATP oxide solid electrolyte powder for cathode blending and lithium-ion battery safety, rate, and cycle-performance screening.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "WM-SSE-LATP-030",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-powder-photo.jpg",
+      "aliases": [
+        "LATP powder",
+        "lithium aluminum titanium phosphate"
+      ],
+      "commercialIntents": [
+        "LATP powder supplier",
+        "where to buy LATP powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "latp-d-50-0-3-um",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "White powder, no visible foreign matter"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "0.30 ± 0.05 µm"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 500 ppm"
+        },
+        {
+          "name": "Magnetic impurities",
+          "value": "≤ 500 ppb"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "≥ 0.55 mS/cm"
+        },
+        {
+          "name": "Use case",
+          "value": "Cathode blending for lithium-ion batteries"
+        }
+      ]
+    },
+    {
+      "slug": "latp-d-50-0-4-um",
+      "url": "/products/latp-d-50-0-4-um.html",
+      "name": "LATP powder, D50 0.40 µm",
+      "description": "LATP oxide solid electrolyte powder for separator, current-collector, and electrode coating studies.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "WM-SSE-LATP-040",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-400nm-powder-photo.jpg",
+      "aliases": [
+        "LATP powder",
+        "lithium aluminum titanium phosphate"
+      ],
+      "commercialIntents": [
+        "LATP powder supplier",
+        "where to buy LATP powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "latp-d-50-0-4-um",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "White powder, no visible foreign matter"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "0.40 ± 0.10 µm"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 500 ppm"
+        },
+        {
+          "name": "Magnetic impurities",
+          "value": "≤ 500 ppb"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "≥ 0.5 mS/cm"
+        },
+        {
+          "name": "Use case",
+          "value": "Separator, current-collector, or electrode coating"
+        }
+      ]
+    },
+    {
+      "slug": "latp-d-50-0-65-um",
+      "url": "/products/latp-d-50-0-65-um.html",
+      "name": "LATP powder, D50 0.65 µm",
+      "description": "LATP oxide solid electrolyte powder with broader particle size for coating and solid-electrolyte screening workflows.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "WM-SSE-LATP-065",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-600nm-powder-photo.jpg",
+      "aliases": [
+        "LATP powder",
+        "lithium aluminum titanium phosphate"
+      ],
+      "commercialIntents": [
+        "LATP powder supplier",
+        "where to buy LATP powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "latp-d-50-0-65-um",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "White powder, no visible foreign matter"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "0.65 ± 0.15 µm"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 500 ppm"
+        },
+        {
+          "name": "Magnetic impurities",
+          "value": "≤ 500 ppb"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "≥ 0.3 mS/cm"
+        },
+        {
+          "name": "Use case",
+          "value": "Separator, current-collector, or electrode coating"
+        }
+      ]
+    },
+    {
+      "slug": "llzto-powder",
+      "url": "/products/llzto-powder.html",
+      "name": "LLZTO powder",
+      "description": "LLZTO garnet-type oxide solid electrolyte powder. Particle-size customization is available for research and process-development needs.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "WM-SSE-LLZTO",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/llzto-powder-photo.jpg",
+      "aliases": [
+        "lithium lanthanum zirconium tantalum oxide"
+      ],
+      "commercialIntents": [
+        "LLZTO powder supplier",
+        "where to buy LLZTO powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "llzto-powder",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "White to off-white powder"
+        },
+        {
+          "name": "Composition",
+          "value": "Ta-doped LLZO / LLZTO"
+        },
+        {
+          "name": "Particle size",
+          "value": "Customizable by request"
+        },
+        {
+          "name": "Use case",
+          "value": "Garnet electrolyte screening, composite electrolyte studies, and coating development"
+        }
+      ]
+    },
+    {
+      "slug": "latp-slurry",
+      "url": "/products/latp-slurry.html",
+      "name": "LATP slurry",
+      "description": "Configurable LATP oxide-electrolyte slurry with selectable D50 particle size and water-based or oil-based carrier for coating development.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "WM-SSE-LATP-SLURRY",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-water-slurry-photo.jpg",
+      "aliases": [
+        "lithium aluminum titanium phosphate"
+      ],
+      "commercialIntents": [
+        "LATP slurry supplier",
+        "where to buy LATP slurry"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "latp-slurry",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "White slurry, uniform color"
+        },
+        {
+          "name": "D50 options",
+          "value": "0.15 µm, 0.30 µm, or 0.65 µm"
+        },
+        {
+          "name": "Solid content",
+          "value": "Target value -0.5% to +1.5%; typical range 20-40%"
+        },
+        {
+          "name": "Carrier solvent",
+          "value": "Water-based or oil-based carrier"
+        },
+        {
+          "name": "Magnetic impurities",
+          "value": "≤ 500 ppb"
+        },
+        {
+          "name": "Use case",
+          "value": "Coating, separator-layer, and composite-electrolyte development"
+        }
+      ]
+    },
+    {
+      "slug": "gsh04",
+      "url": "/products/gsh04.html",
+      "name": "Li5.5PS4.5Cl1.5, D50 0.925 µm",
+      "description": "Li5.5PS4.5Cl1.5, D50 0.925 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSH04",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5Cl1.5"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5Cl1.5 supplier",
+        "where to buy Li5.5PS4.5Cl1.5"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsh04",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "D10 particle size",
+          "value": "0.474 µm"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "0.925 µm"
+        },
+        {
+          "name": "D90 particle size",
+          "value": "2.019 µm"
+        },
+        {
+          "name": "Water",
+          "value": "17 ppm"
+        },
+        {
+          "name": "Elemental impurities",
+          "value": "Ca 10.59 ppm; Cr 2.7 ppm; Cu ND; Fe 7.56 ppm; Mg 2.39 ppm; Na 19.23 ppm; K 1.2 ppm; Si 39.68 ppm; Zn 6.23 ppm"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "6.2 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "1.67 x 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsh03",
+      "url": "/products/gsh03.html",
+      "name": "Li5.5PS4.5Cl1.5, D50 2.168 µm",
+      "description": "Li5.5PS4.5Cl1.5, D50 2.168 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSH03",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5Cl1.5"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5Cl1.5 supplier",
+        "where to buy Li5.5PS4.5Cl1.5"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsh03",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "D10 particle size",
+          "value": "0.567 µm"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "2.168 µm"
+        },
+        {
+          "name": "D90 particle size",
+          "value": "6.592 µm"
+        },
+        {
+          "name": "Water",
+          "value": "28.8 ppm"
+        },
+        {
+          "name": "Elemental impurities",
+          "value": "Ca 9.64 ppm; Cr 4.41 ppm; Cu ND; Fe 7.53 ppm; Mg 2.56 ppm; Na 11.38 ppm; K 1.75 ppm; Si 33.9 ppm; Zn 4.98 ppm"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "8.5 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "1.38 x 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsh02",
+      "url": "/products/gsh02.html",
+      "name": "Li5.5PS4.5Cl1.5, D50 4.5 ± 1.5 µm",
+      "description": "Li5.5PS4.5Cl1.5, D50 4.5 ± 1.5 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSH02",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5Cl1.5"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5Cl1.5 supplier",
+        "where to buy Li5.5PS4.5Cl1.5"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsh02",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "Particle size",
+          "value": "D50 4.5 ± 1.5 µm"
+        },
+        {
+          "name": "Water",
+          "value": "Lot-dependent; confirm by COA/TDS"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": ">5 mS/cm, cold press"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "≤ 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsh01",
+      "url": "/products/gsh01.html",
+      "name": "Li5.5PS4.5Cl1.5, D50 >10 µm",
+      "description": "Li5.5PS4.5Cl1.5, D50 >10 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSH01",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5Cl1.5"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5Cl1.5 supplier",
+        "where to buy Li5.5PS4.5Cl1.5"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsh01",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "Particle size",
+          "value": "D50 >10 µm"
+        },
+        {
+          "name": "Water",
+          "value": "Lot-dependent; confirm by COA/TDS"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": ">10 mS/cm, cold press"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "≤ 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsb04",
+      "url": "/products/gsb04.html",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 µm",
+      "description": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSB04",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5ClxBr1.5-x supplier",
+        "where to buy Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsb04",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "D10 particle size",
+          "value": "0.427 µm"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "0.759 µm"
+        },
+        {
+          "name": "D90 particle size",
+          "value": "1.277 µm"
+        },
+        {
+          "name": "Water",
+          "value": "61.6 ppm"
+        },
+        {
+          "name": "Elemental impurities",
+          "value": "Ca 13.8 ppm; Cr 3.43 ppm; Cu 0.17 ppm; Fe 5.79 ppm; Mg 2.71 ppm; Na 24.92 ppm; K 4.1 ppm; Si 67.62 ppm; Zn 2.7 ppm"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "6.5 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "2.37 x 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsb03",
+      "url": "/products/gsb03.html",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 µm",
+      "description": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSB03",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5ClxBr1.5-x supplier",
+        "where to buy Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsb03",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "D10 particle size",
+          "value": "0.623 µm"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "2.398 µm"
+        },
+        {
+          "name": "D90 particle size",
+          "value": "6.559 µm"
+        },
+        {
+          "name": "Water",
+          "value": "21.4 ppm"
+        },
+        {
+          "name": "Elemental impurities",
+          "value": "Ca 17.08 ppm; Cr 3.19 ppm; Cu ND; Fe 4.71 ppm; Mg 2.02 ppm; Na 20.38 ppm; K 4.93 ppm; Si 41.46 ppm; Zn 0.92 ppm"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "9.2 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "1.84 x 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsb02",
+      "url": "/products/gsb02.html",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 ± 1.5 µm",
+      "description": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 ± 1.5 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSB02",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5ClxBr1.5-x supplier",
+        "where to buy Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsb02",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "Particle size",
+          "value": "D50 4.5 ± 1.5 µm"
+        },
+        {
+          "name": "Water",
+          "value": "Lot-dependent; confirm by COA/TDS"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": ">8 mS/cm, cold press"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "≤ 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsb01",
+      "url": "/products/gsb01.html",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 >10 µm",
+      "description": "Li5.5PS4.5ClxBr1.5-x, D50 >10 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSB01",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commercialIntents": [
+        "Li5.5PS4.5ClxBr1.5-x supplier",
+        "where to buy Li5.5PS4.5ClxBr1.5-x"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsb01",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "Particle size",
+          "value": "D50 >10 µm"
+        },
+        {
+          "name": "Water",
+          "value": "Lot-dependent; confirm by COA/TDS"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": ">12 mS/cm, cold press"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "≤ 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsl04",
+      "url": "/products/gsl04.html",
+      "name": "Li6PS5Cl, D50 0.734 µm",
+      "description": "Li6PS5Cl, D50 0.734 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSL04",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li6PS5Cl",
+        "lithium argyrodite electrolyte"
+      ],
+      "commercialIntents": [
+        "Li6PS5Cl supplier",
+        "where to buy Li6PS5Cl"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsl04",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "D10 particle size",
+          "value": "0.445 µm"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "0.734 µm"
+        },
+        {
+          "name": "D90 particle size",
+          "value": "1.128 µm"
+        },
+        {
+          "name": "Water",
+          "value": "28.8 ppm"
+        },
+        {
+          "name": "Elemental impurities",
+          "value": "Ca 9.64 ppm; Cr 2.01 ppm; Cu ND; Fe 15.03 ppm; Mg 0.59 ppm; Na 27.61 ppm; K 2.5 ppm; Si 28.26 ppm; Zn 1 ppm"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "3.1 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "2.04 x 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsl03",
+      "url": "/products/gsl03.html",
+      "name": "Li6PS5Cl, D50 2.123 µm",
+      "description": "Li6PS5Cl, D50 2.123 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSL03",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li6PS5Cl",
+        "lithium argyrodite electrolyte"
+      ],
+      "commercialIntents": [
+        "Li6PS5Cl supplier",
+        "where to buy Li6PS5Cl"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsl03",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "D10 particle size",
+          "value": "0.555 µm"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "2.123 µm"
+        },
+        {
+          "name": "D90 particle size",
+          "value": "6.573 µm"
+        },
+        {
+          "name": "Water",
+          "value": "43 ppm"
+        },
+        {
+          "name": "Elemental impurities",
+          "value": "Ca 20.45 ppm; Cr 2.517 ppm; Cu ND; Fe 9.656 ppm; Mg 2.146 ppm; Na 7.591 ppm; K 1.783 ppm; Si 8.257 ppm; Zn 2.673 ppm"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "3.5 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "1.74 x 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsl02",
+      "url": "/products/gsl02.html",
+      "name": "Li6PS5Cl, D50 4.5 ± 1.5 µm",
+      "description": "Li6PS5Cl, D50 4.5 ± 1.5 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSL02",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li6PS5Cl",
+        "lithium argyrodite electrolyte"
+      ],
+      "commercialIntents": [
+        "Li6PS5Cl supplier",
+        "where to buy Li6PS5Cl"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsl02",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "Particle size",
+          "value": "D50 4.5 ± 1.5 µm"
+        },
+        {
+          "name": "Water",
+          "value": "Lot-dependent; confirm by COA/TDS"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": ">4 mS/cm, cold press"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "≤ 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "gsl01",
+      "url": "/products/gsl01.html",
+      "name": "Li6PS5Cl, D50 >10 µm",
+      "description": "Li6PS5Cl, D50 >10 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "GSL01",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
+      "aliases": [
+        "Li6PS5Cl",
+        "lithium argyrodite electrolyte"
+      ],
+      "commercialIntents": [
+        "Li6PS5Cl supplier",
+        "where to buy Li6PS5Cl"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "gsl01",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "Gray-white powder, uniform color, no visible agglomeration"
+        },
+        {
+          "name": "Particle size",
+          "value": "D50 >10 µm"
+        },
+        {
+          "name": "Water",
+          "value": "Lot-dependent; confirm by COA/TDS"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": ">4 mS/cm, cold press"
+        },
+        {
+          "name": "Electronic conductivity",
+          "value": "≤ 10^-6 mS/cm"
+        }
+      ]
+    },
+    {
+      "slug": "li-3-incl-6-d-50-0-9-um",
+      "url": "/products/li-3-incl-6-d-50-0-9-um.html",
+      "name": "Li3InCl6 powder, D50 0.9 µm",
+      "description": "Li3InCl6 halide solid electrolyte powder for high-purity phase screening, EIS conductivity testing, and solid-state battery research.",
+      "family": "solid-state-electrolytes",
+      "category": "Solid-State Electrolytes",
+      "sku": "WM-SSE-LI3INCL6-090",
+      "image": "https://www.winigenmaterials.com/assets/images/solid-state/li3incl6-powder-photo.jpg",
+      "aliases": [
+        "Li3InCl6 powder"
+      ],
+      "commercialIntents": [
+        "Li3InCl6 powder supplier",
+        "where to buy Li3InCl6 powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "li-3-incl-6-d-50-0-9-um",
+      "additionalProperty": [
+        {
+          "name": "Appearance",
+          "value": "White powder"
+        },
+        {
+          "name": "D10 particle size",
+          "value": "0.5 ± 0.05 µm"
+        },
+        {
+          "name": "D50 particle size",
+          "value": "0.9 ± 0.3 µm"
+        },
+        {
+          "name": "D90 particle size",
+          "value": "20 ± 0.2 µm"
+        },
+        {
+          "name": "D99 particle size",
+          "value": "31 ± 0.3 µm"
+        },
+        {
+          "name": "Water",
+          "value": "≤ 500 ppm"
+        },
+        {
+          "name": "Ionic conductivity",
+          "value": "≥ 1.5 mS/cm; measured value 1.85 mS/cm at 25 degC after 40 min hold"
+        },
+        {
+          "name": "Elemental impurities",
+          "value": "Ca ≤50 ppm; Cr ≤50 ppm; Cu ≤50 ppm; Fe ≤500 ppm; K ≤500 ppm; Mg ≤50 ppm; Na ≤500 ppm; Zn ≤50 ppm; Zr ≤50 ppm"
+        },
+        {
+          "name": "Phase",
+          "value": "Main phase 04-009-9027"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-iron-phosphate-lfp-energy-grade",
+      "url": "/products/lithium-iron-phosphate-lfp-energy-grade.html",
+      "name": "Lithium iron phosphate (LFP) - energy grade",
+      "description": "Energy-grade LFP is used for safer, lower-cost lithium-ion cells, storage batteries, and cathode formulation screening where cycle life and thermal stability matter.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LFP"
+      ],
+      "commercialIntents": [
+        "LFP supplier",
+        "where to buy LFP"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 0.8-2 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density typically 0.8-1.3 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Discharge capacity typically ≥150 mAh/g"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤1000 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-iron-phosphate-lfp-power-grade",
+      "url": "/products/lithium-iron-phosphate-lfp-power-grade.html",
+      "name": "Lithium iron phosphate (LFP) - power grade",
+      "description": "Power-grade LFP is selected for higher-rate cathode studies, fast-charge screening, and applications where power capability is prioritized over maximum tap density.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LFP"
+      ],
+      "commercialIntents": [
+        "LFP supplier",
+        "where to buy LFP"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 0.5-1.5 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Carbon-coated power-grade morphology"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Rate-performance grade; confirm target C-rate"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤1000 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-nickel-cobalt-aluminum-oxide-nca622",
+      "url": "/products/lithium-nickel-cobalt-aluminum-oxide-nca622.html",
+      "name": "Lithium nickel cobalt aluminum oxide (NCA622)",
+      "description": "NCA622 is used in high-energy cathode screening where nickel-rich layered oxide behavior, surface coating, and electrolyte compatibility need evaluation.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "NCA622"
+      ],
+      "commercialIntents": [
+        "NCA622 supplier",
+        "where to buy NCA622"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 10-15 µm for secondary particles"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density typically ≥2.0 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Residual lithium commonly controlled by grade"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-nickel-cobalt-aluminum-oxide-nca811",
+      "url": "/products/lithium-nickel-cobalt-aluminum-oxide-nca811.html",
+      "name": "Lithium nickel cobalt aluminum oxide (NCA811)",
+      "description": "NCA811 is evaluated for high-energy cathode systems where electrolyte oxidation, gas generation, and thermal stability must be carefully controlled.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "NCA811"
+      ],
+      "commercialIntents": [
+        "NCA811 supplier",
+        "where to buy NCA811"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 commonly 10-15 µm for polycrystalline grades"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density typically ≥2.0 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "High-nickel grade; coating/doping to be confirmed"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-cobalt-oxide-lco",
+      "url": "/products/lithium-cobalt-oxide-lco.html",
+      "name": "Lithium cobalt oxide (LCO)",
+      "description": "LCO is used for consumer-electronics cathode studies, high-voltage electrolyte screening, and benchmark layered oxide formulations.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LCO"
+      ],
+      "commercialIntents": [
+        "LCO supplier",
+        "where to buy LCO"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 10-18 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density commonly ≥2.5 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Standard or high-voltage grade available by request"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-nickel-manganese-cobalt-oxide-nmc622",
+      "url": "/products/lithium-nickel-manganese-cobalt-oxide-nmc622.html",
+      "name": "Lithium nickel manganese cobalt oxide (NMC622)",
+      "description": "NMC622 provides a balanced high-energy cathode platform for electrolyte screening, surface-coating studies, and Li-ion cell development.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "NMC622"
+      ],
+      "commercialIntents": [
+        "NMC622 supplier",
+        "where to buy NMC622"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 10-15 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density typically ≥2.0 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Single-crystal or polycrystalline grade by request"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-nickel-manganese-cobalt-oxide-nmc811",
+      "url": "/products/lithium-nickel-manganese-cobalt-oxide-nmc811.html",
+      "name": "Lithium nickel manganese cobalt oxide (NMC811)",
+      "description": "NMC811 is used for high-energy cell research where electrolyte stability, CEI formation, gas generation, and thermal behavior are key screening concerns.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "NMC811"
+      ],
+      "commercialIntents": [
+        "NMC811 supplier",
+        "where to buy NMC811"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 commonly 10-15 µm for secondary-particle grades"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density typically ≥2.1 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Residual Li commonly ≤0.5 wt% by grade"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-manganese-iron-phosphate-lmfp-energy-grade",
+      "url": "/products/lithium-manganese-iron-phosphate-lmfp-energy-grade.html",
+      "name": "Lithium manganese iron phosphate (LMFP) - energy grade",
+      "description": "Energy-grade LMFP is evaluated as a higher-voltage phosphate cathode material for improved energy density while retaining LFP-like safety advantages.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LMFP"
+      ],
+      "commercialIntents": [
+        "LMFP supplier",
+        "where to buy LMFP"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "Mn/Fe ratio to be confirmed by target grade"
+        },
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 0.8-2 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Higher voltage than LFP; capacity grade-dependent"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤1000 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-manganese-iron-phosphate-lmfp-power-grade",
+      "url": "/products/lithium-manganese-iron-phosphate-lmfp-power-grade.html",
+      "name": "Lithium manganese iron phosphate (LMFP) - power grade",
+      "description": "Power-grade LMFP supports cathode studies targeting a balance of phosphate safety, elevated voltage, and improved rate performance.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LMFP"
+      ],
+      "commercialIntents": [
+        "LMFP supplier",
+        "where to buy LMFP"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "Mn/Fe ratio to be confirmed"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Particle morphology tuned for rate capability"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Rate-performance grade; confirm target C-rate"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤1000 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-manganese-oxide-lmo",
+      "url": "/products/lithium-manganese-oxide-lmo.html",
+      "name": "Lithium manganese oxide (LMO)",
+      "description": "LMO is used for spinel cathode screening, cost-sensitive lithium-ion studies, rate-performance evaluation, and LMO/NMC blend development.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LMO"
+      ],
+      "commercialIntents": [
+        "LMO supplier",
+        "where to buy LMO"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 8-15 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density commonly ≥1.8 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Specific capacity typically 100-120 mAh/g"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-nickel-manganese-oxide-lnmo",
+      "url": "/products/lithium-nickel-manganese-oxide-lnmo.html",
+      "name": "Lithium nickel manganese oxide (LNMO)",
+      "description": "LNMO is a high-voltage spinel cathode material for advanced lithium-ion cell screening, high-voltage electrolyte compatibility studies, and manganese-rich cathode development.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LNMO"
+      ],
+      "commercialIntents": [
+        "LNMO supplier",
+        "where to buy LNMO"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 5-15 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density commonly ≥1.8 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Specific capacity typically 125-140 mAh/g"
+        },
+        {
+          "name": "Typical specification",
+          "value": "High-voltage spinel, ~4.7 V vs Li/Li+"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "graphite-anode-material-standard-grade",
+      "url": "/products/graphite-anode-material-standard-grade.html",
+      "name": "Graphite anode material - standard grade",
+      "description": "Standard graphite is used for lithium-ion anode formulation, baseline electrode development, and electrolyte compatibility screening.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [],
+      "commercialIntents": [
+        "Graphite anode material - standard grade supplier",
+        "where to buy Graphite anode material - standard grade"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 10-20 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density typically ≥1.0 g/cm3"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Reversible capacity typically 340-360 mAh/g"
+        },
+        {
+          "name": "Typical specification",
+          "value": "First-cycle efficiency commonly ≥90%"
+        }
+      ]
+    },
+    {
+      "slug": "graphite-anode-material-high-power-grade",
+      "url": "/products/graphite-anode-material-high-power-grade.html",
+      "name": "Graphite anode material - high-power grade",
+      "description": "High-power graphite is used for fast-charge, high-rate, and power-oriented lithium-ion anode screening.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [],
+      "commercialIntents": [
+        "Graphite anode material - high-power grade supplier",
+        "where to buy Graphite anode material - high-power grade"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "Particle-size distribution tuned for rate capability"
+        },
+        {
+          "name": "Typical specification",
+          "value": "D50 commonly 8-16 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density and coating grade to be confirmed"
+        },
+        {
+          "name": "Typical specification",
+          "value": "First-cycle efficiency commonly ≥90%"
+        }
+      ]
+    },
+    {
+      "slug": "graphite-anode-material-ultra-high-power-grade",
+      "url": "/products/graphite-anode-material-ultra-high-power-grade.html",
+      "name": "Graphite anode material - ultra-high-power grade",
+      "description": "Ultra-high-power graphite supports aggressive rate-capability and fast-charge screening where kinetics are more important than maximum volumetric energy density.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [],
+      "commercialIntents": [
+        "Graphite anode material - ultra-high-power grade supplier",
+        "where to buy Graphite anode material - ultra-high-power grade"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "Rate-performance grade; confirm target C-rate"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Particle-size and coating package to be confirmed"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Tap density typically lower than high-density energy grades"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-titanate-lto",
+      "url": "/products/lithium-titanate-lto.html",
+      "name": "Lithium titanate (LTO)",
+      "description": "LTO is selected for high-power, long-cycle-life, and safer anode systems where higher anode potential is acceptable.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [
+        "LTO"
+      ],
+      "commercialIntents": [
+        "LTO supplier",
+        "where to buy LTO"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 0.5-2 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Specific capacity typically 160-175 mAh/g"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Rate grade and surface area to be confirmed"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-metal-foil-on-copper-current-collector",
+      "url": "/products/lithium-metal-foil-on-copper-current-collector.html",
+      "name": "Lithium metal foil on copper current collector",
+      "description": "Lithium metal foil on copper current collector, specified as 50 µm lithium on 10 µm copper, for lithium-metal pouch-cell, anode-free, and interface-screening studies.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [],
+      "commercialIntents": [
+        "Lithium metal foil on copper current collector supplier",
+        "where to buy Lithium metal foil on copper current collector"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "Lithium thickness 50 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Copper current collector thickness 10 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Lithium metal foil laminated on Cu"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Width, length, surface protection, and packaging by RFQ"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Dry-room / inert handling recommended"
+        }
+      ]
+    },
+    {
+      "slug": "hard-carbon-anode-material",
+      "url": "/products/hard-carbon-anode-material.html",
+      "name": "Hard carbon anode material",
+      "description": "Hard carbon is the leading sodium-ion anode platform and is used for Na-ion full-cell development, electrolyte screening, and formation optimization.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [],
+      "commercialIntents": [
+        "Hard carbon anode material supplier",
+        "where to buy Hard carbon anode material"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "D50 typically 5-12 µm"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Reversible sodium capacity commonly 280-330 mAh/g"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Initial coulombic efficiency grade-dependent"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Moisture typically ≤500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "silicon-anode-powder",
+      "url": "/products/silicon-anode-powder.html",
+      "name": "Silicon anode powder",
+      "description": "Silicon powder is used for high-capacity anode development, silicon-carbon composites, binder screening, and electrolyte/additive optimization.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [],
+      "commercialIntents": [
+        "Silicon anode powder supplier",
+        "where to buy Silicon anode powder"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "Nano-Si or micron-Si option by request"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Purity commonly ≥99%"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Particle size and oxide layer to be confirmed"
+        },
+        {
+          "name": "Typical specification",
+          "value": "High capacity; expansion management required"
+        }
+      ]
+    },
+    {
+      "slug": "siox-silicon-carbon-composite-anode-material",
+      "url": "/products/siox-silicon-carbon-composite-anode-material.html",
+      "name": "SiOx / silicon-carbon composite anode material",
+      "description": "SiOx and Si-C composites are used for higher-capacity lithium-ion anodes with more manageable expansion than pure silicon powders.",
+      "family": "active-materials",
+      "category": "Active Materials",
+      "sku": null,
+      "image": null,
+      "aliases": [],
+      "commercialIntents": [
+        "SiOx / silicon-carbon composite anode material supplier",
+        "where to buy SiOx / silicon-carbon composite anode material"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Typical specification",
+          "value": "Si content and capacity grade by request"
+        },
+        {
+          "name": "Typical specification",
+          "value": "D50 commonly 5-10 µm for composite powders"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Initial efficiency and expansion grade-dependent"
+        },
+        {
+          "name": "Typical specification",
+          "value": "Binder compatibility to be confirmed"
+        }
+      ]
+    },
+    {
+      "slug": "wbm-p07-boehmite-powder",
+      "url": "/products/wbm-p07-boehmite-powder.html",
+      "name": "WBM-P07 Fine Boehmite Powder",
+      "description": "WBM-P07 fine boehmite powder for ceramic coating slurry preparation, separator coating, and electrode coating formulation development.",
+      "family": "functional-coatings",
+      "category": "Functional Coatings",
+      "sku": "WBM-P07",
+      "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/wbm-p07-boehmite-sem.png",
+      "aliases": [],
+      "commercialIntents": [
+        "WBM-P07 Fine Boehmite Powder supplier",
+        "where to buy WBM-P07 Fine Boehmite Powder"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Chemical identity",
+          "value": "gamma-AlO(OH)"
+        },
+        {
+          "name": "D50",
+          "value": "0.3-0.7 µm"
+        },
+        {
+          "name": "D90",
+          "value": "≤ 1.2 µm"
+        },
+        {
+          "name": "BET",
+          "value": "10-20 m2/g"
+        },
+        {
+          "name": "Purity",
+          "value": "≥ 99.9 wt%"
+        }
+      ]
+    },
+    {
+      "slug": "wal-p05-alumina-coating-powder",
+      "url": "/products/wal-p05-alumina-coating-powder.html",
+      "name": "WAL-P05 Fine Alumina Coating Powder",
+      "description": "WAL-P05 high-purity fine alumina powder for separator and electrode coating, ceramic slurry preparation, and filler evaluation.",
+      "family": "functional-coatings",
+      "category": "Functional Coatings",
+      "sku": "WAL-P05",
+      "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-p05-sem.jpg",
+      "aliases": [],
+      "commercialIntents": [
+        "WAL-P05 Fine Alumina Coating Powder supplier",
+        "where to buy WAL-P05 Fine Alumina Coating Powder"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Purity",
+          "value": "≥ 99.9%"
+        },
+        {
+          "name": "D50",
+          "value": "0.4-0.6 µm"
+        },
+        {
+          "name": "D90",
+          "value": "≤ 1.2 µm"
+        },
+        {
+          "name": "BET",
+          "value": "5-9 m2/g"
+        },
+        {
+          "name": "Moisture",
+          "value": "≤ 3,500 ppm"
+        }
+      ]
+    },
+    {
+      "slug": "wal-a07-alumina-cathode-additive",
+      "url": "/products/wal-a07-alumina-cathode-additive.html",
+      "name": "WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation",
+      "description": "WAL-A07 high-purity fine alumina powder for evaluating low-level cathode incorporation and composite-electrode interfaces.",
+      "family": "functional-coatings",
+      "category": "Functional Coatings",
+      "sku": "WAL-A07",
+      "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-a07-sem.jpg",
+      "aliases": [],
+      "commercialIntents": [
+        "WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation supplier",
+        "where to buy WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Purity",
+          "value": "≥ 99.9%"
+        },
+        {
+          "name": "D50",
+          "value": "0.4-0.8 µm"
+        },
+        {
+          "name": "D90",
+          "value": "≤ 2.0 µm"
+        },
+        {
+          "name": "BET",
+          "value": "3.5-8.5 m2/g"
+        }
+      ]
+    },
+    {
+      "slug": "wal-m300-mesoporous-alumina",
+      "url": "/products/wal-m300-mesoporous-alumina.html",
+      "name": "WAL-M300 Mesoporous Alumina",
+      "description": "WAL-M300 high-purity mesoporous alumina with 150-300 m2/g BET and 3-5 µm D50 for high-surface-area material studies.",
+      "family": "functional-coatings",
+      "category": "Functional Coatings",
+      "sku": "WAL-M300",
+      "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m300-sem.jpg",
+      "aliases": [],
+      "commercialIntents": [
+        "WAL-M300 Mesoporous Alumina supplier",
+        "where to buy WAL-M300 Mesoporous Alumina"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Purity",
+          "value": "≥ 99.99%"
+        },
+        {
+          "name": "D50",
+          "value": "3-5 µm"
+        },
+        {
+          "name": "BET",
+          "value": "150-300 m2/g"
+        },
+        {
+          "name": "Pore volume",
+          "value": "0.4-0.6 cm3/g"
+        }
+      ]
+    },
+    {
+      "slug": "wal-m400-mesoporous-alumina",
+      "url": "/products/wal-m400-mesoporous-alumina.html",
+      "name": "WAL-M400 Mesoporous Alumina",
+      "description": "WAL-M400 high-purity mesoporous alumina with 250-400 m2/g BET and 4-6 µm D50 for high-surface-area material studies.",
+      "family": "functional-coatings",
+      "category": "Functional Coatings",
+      "sku": "WAL-M400",
+      "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m400-sem.jpg",
+      "aliases": [],
+      "commercialIntents": [
+        "WAL-M400 Mesoporous Alumina supplier",
+        "where to buy WAL-M400 Mesoporous Alumina"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Purity",
+          "value": "≥ 99.99%"
+        },
+        {
+          "name": "D50",
+          "value": "4-6 µm"
+        },
+        {
+          "name": "BET",
+          "value": "250-400 m2/g"
+        },
+        {
+          "name": "Pore volume",
+          "value": "0.5-1.2 cm3/g"
+        }
+      ]
+    },
+    {
+      "slug": "wal-m07-mesoporous-alumina",
+      "url": "/products/wal-m07-mesoporous-alumina.html",
+      "name": "WAL-M07 Fine Mesoporous Alumina",
+      "description": "WAL-M07 fine mesoporous alumina with 20-50 m2/g BET and 0.5-1.0 µm D50 for ceramic additive and coating studies.",
+      "family": "functional-coatings",
+      "category": "Functional Coatings",
+      "sku": "WAL-M07",
+      "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m07-sem.jpg",
+      "aliases": [],
+      "commercialIntents": [
+        "WAL-M07 Fine Mesoporous Alumina supplier",
+        "where to buy WAL-M07 Fine Mesoporous Alumina"
+      ],
+      "commerceStatus": "rfq",
+      "schemaOfferEligible": false,
+      "ecommerceSlug": null,
+      "additionalProperty": [
+        {
+          "name": "Purity",
+          "value": "≥ 99.9%"
+        },
+        {
+          "name": "D50",
+          "value": "0.5-1.0 µm"
+        },
+        {
+          "name": "BET",
+          "value": "20-50 m2/g"
+        },
+        {
+          "name": "Pore volume",
+          "value": "0.02-0.2 cm3/g"
+        }
+      ]
+    }
+  ]
+}

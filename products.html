@@ -8,27 +8,33 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#12305d">
-<title>Products | Winigen Materials</title>
-<meta name="description" content="Search battery ceramic and functional coating materials, lithium salts, solvents, electrolyte additives, solid-state electrolytes, cathode/anode materials, and custom formulations from Winigen Materials.">
+<title>Battery Materials &amp; Electrochemical Components | Winigen Materials</title>
+<meta name="description" content="Browse battery electrolyte salts, solvents, additives, solid-state electrolytes, active materials, functional coatings, and formulation support from Winigen Materials.">
 <link rel="canonical" href="https://www.winigenmaterials.com/products.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260815">
 <style>
 .catalog-hero { padding: 76px 0 54px; }
 .catalog-hero h1 { max-width: 980px; }
-.catalog-tools { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center; margin: 24px 0 54px; padding: 24px; border: 2px solid rgba(42,102,217,.2); border-radius: 18px; background: linear-gradient(180deg,#ffffff 0%,#f7fbff 100%); box-shadow: 0 18px 42px rgba(42,102,217,.1); }
+.catalog-tools { display: grid; grid-template-columns: 1fr; gap: 8px; align-items: center; margin: 24px 0 16px; padding: 20px; border: 2px solid rgba(42,102,217,.2); border-radius: 12px; background: linear-gradient(180deg,#ffffff 0%,#f7fbff 100%); box-shadow: 0 12px 30px rgba(42,102,217,.08); }
 .tabs { justify-content: flex-start; margin: 0; }
-.tab { display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 8px 18px rgba(15,31,77,.06); }
+.tab { display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 5px 14px rgba(15,31,77,.05); white-space: nowrap; }
 .tab-count { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; background: rgba(15,31,77,.08); color: inherit; font-size: 12px; font-weight: 900; line-height: 1; }
+.tab.active { border-color: rgba(42,102,217,.52); background: #edf4ff; color: #2867d8; }
 .tab.has-matches:not(.active) { border-color: rgba(42,102,217,.5); background: #edf4ff; color: #2867d8; }
 .tab.no-matches { opacity: .48; }
-.catalog-search-wrap { position: relative; order: -1; }
-.catalog-search-wrap::before { content: "Product Search"; position: absolute; top: -10px; left: 18px; z-index: 1; padding: 0 8px; background: #fff; color: #2867d8; font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-.catalog-search { width: 100%; min-height: 64px; border: 2px solid rgba(42,102,217,.42); border-radius: 14px; padding: 0 22px; background: #fff; box-shadow: 0 10px 24px rgba(42,102,217,.08), inset 0 1px 0 rgba(255,255,255,.7); color: var(--navy); font-size: 1.08rem; font-weight: 750; }
+.catalog-search-wrap { position: relative; }
+.catalog-search-label { color: #2867d8; font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.catalog-search-help { margin: 0 0 8px; color: #52647d; font-size: 14px; line-height: 1.4; }
+.catalog-search { width: 100%; min-height: 56px; border: 2px solid rgba(42,102,217,.38); border-radius: 10px; padding: 0 18px; background: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.7); color: var(--navy); font-size: 1rem; font-weight: 700; }
 .catalog-search:focus { outline: 4px solid rgba(42,102,217,.18); border-color: #2867d8; }
-.product-section { scroll-margin-top: 130px; margin-bottom: 80px; }
+.catalog-filter-bar { position: sticky; top: 110px; z-index: 40; margin: 0 0 38px; padding: 10px 0; background: rgba(243,246,250,.96); border-bottom: 1px solid rgba(18,32,51,.1); backdrop-filter: blur(12px); }
+.catalog-filter-bar .tabs { gap: 8px; }
+.catalog-filter-bar .tab--rfq-start { margin-left: 12px; position: relative; }
+.catalog-filter-bar .tab--rfq-start::before { content: ""; position: absolute; left: -11px; top: 7px; bottom: 7px; width: 1px; background: rgba(18,32,51,.18); }
+.product-section { scroll-margin-top: 250px; margin-bottom: 80px; }
 .section-heading { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 28px; }
 .section-heading h2 { margin-bottom: 12px; }
 .section-heading p:not(.eyebrow) { max-width: 760px; }
@@ -59,14 +65,13 @@
 .product-card__controls { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
 .product-card select { min-height: 48px; border-radius: 12px; }
 .no-results { display: none; padding: 34px; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; text-align: center; box-shadow: var(--shadow); }
-@media(max-width:1100px) { .product-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .catalog-tools { grid-template-columns: 1fr; } }
+@media(max-width:1100px) { .product-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .catalog-tools { grid-template-columns: 1fr; } .catalog-filter-bar { margin-inline: -4vw; padding-inline: 4vw; overflow-x: auto; scrollbar-width: none; } .catalog-filter-bar::-webkit-scrollbar { display: none; } .catalog-filter-bar .tabs { flex-wrap: nowrap; width: max-content; } }
 @media(max-width:680px) { .catalog-hero { padding-top: 44px; } .product-card-grid { grid-template-columns: 1fr; } .section-heading { display: block; } .section-count { display: inline-block; margin-top: 6px; } .product-card, .formulation-card { min-height: 0; } .product-card__media { min-height: 260px; } .product-card__controls { grid-template-columns: 1fr; } .product-card__controls .btn { width: 100%; } }
 
 .catalog-hero { padding: 86px 0; }
 .catalog-hero h1 { max-width: none; }
 .catalog-tools { align-items: stretch; }
-.catalog-tools .tabs { align-items: center; }
-.catalog-search { height: 64px; margin: 0; }
+.catalog-search { height: 56px; margin: 0; }
 .product-card { min-width: 0; }
 .product-card__topline { align-items: flex-start; min-height: 40px; }
 .product-card__abbr { max-width: 150px; overflow-wrap: anywhere; line-height: 1.15; }
@@ -80,7 +85,8 @@
 .product-card__properties li { overflow-wrap: anywhere; }
 .formula-text { font-variant-numeric: lining-nums; }
 .formula-text sub, .product-card__properties sub, .product-card__properties sup { font-size: .64em; line-height: 0; }
-@media(max-width:680px) { .catalog-tools { gap: 16px; } .catalog-search { width: 100%; } .product-card h3 { min-height: auto; -webkit-line-clamp: unset; } }
+@media(max-width:900px) { .catalog-filter-bar { top: 92px; } .product-section { scroll-margin-top: 170px; } }
+@media(max-width:680px) { .catalog-tools { gap: 7px; margin-top: 12px; padding: 16px; } .catalog-search { width: 100%; } .catalog-search-help { font-size: 13px; } .catalog-filter-bar { padding-block: 8px; } .catalog-filter-bar .tab { padding: 9px 13px; font-size: 13px; } .catalog-filter-bar .tab--rfq-start { margin-left: 8px; } .product-card h3 { min-height: auto; -webkit-line-clamp: unset; } }
 
 .product-card__facts { align-content: start; }
 .product-card__facts div { min-height: 70px; }
@@ -99,3842 +105,862 @@
 .formulation-card p { min-height: 126px; }
 .formulation-card .product-card__rfq { margin-top: auto; }
 @media(max-width:680px) { .formulation-card h3, .formulation-card p { min-height: auto; } .formulation-card__media { min-height: 210px; padding: 18px; } }
-
-
-.family-hub-grid { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 16px; margin: -24px 0 54px; }
-.family-hub-card { display: block; min-width: 0; padding: 18px 20px; border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 8px 20px rgba(15,31,77,.06); color: var(--text); text-decoration: none; transition: transform .2s, box-shadow .2s, border-color .2s; }
-.family-hub-card strong { display: block; margin-bottom: 6px; color: var(--navy); font-family: Manrope, Inter, sans-serif; font-size: 18px; line-height: 1.2; letter-spacing: 0; }
-.family-hub-card span { display: block; color: var(--muted); line-height: 1.45; font-size: 14px; }
-.family-hub-card:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(15,31,77,.1); border-color: rgba(42,102,217,.22); }
-@media(max-width:1100px) { .family-hub-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); margin-top: -18px; } }
-@media(max-width:680px) { .family-hub-grid { grid-template-columns: 1fr; margin: -8px 0 38px; } }
 </style>
-<script type="application/ld+json">[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://www.winigenmaterials.com/#organization",
-    "name": "Winigen Materials",
-    "url": "https://www.winigenmaterials.com/",
-    "logo": "https://www.winigenmaterials.com/assets/images/winigen-logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/118914606/"
-    ],
-    "email": "contact@winigenmaterials.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "New Jersey",
-      "addressCountry": "US"
-    },
-    "description": "Winigen Materials supplies battery materials, electrolyte salts, solvents, additives, solid-state electrolyte materials, and custom electrolyte formulations for energy storage research and development.",
-    "areaServed": "US",
-    "knowsAbout": [
-      "Battery materials",
-      "Electrolyte salts",
-      "Lithium-ion battery electrolytes",
-      "Sodium-ion battery electrolytes",
-      "Solid-state electrolytes",
-      "Battery solvents",
-      "Electrolyte additives"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "email": "contact@winigenmaterials.com",
-      "availableLanguage": [
-        "English"
-      ]
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": "https://www.winigenmaterials.com/products.html#webpage",
-    "url": "https://www.winigenmaterials.com/products.html",
-    "name": "Battery Materials, Electrolyte Components & Solid-State Systems",
-    "isPartOf": {
-      "@id": "https://www.winigenmaterials.com/#website"
-    },
-    "about": {
-      "@id": "https://www.winigenmaterials.com/#organization"
-    },
-    "description": "Searchable Winigen Materials product catalog covering expanded solid-state electrolyte powders and slurries, battery active materials, next-generation salts, lithium salts, solvents, additives, and custom electrolyte formulations.",
-    "breadcrumb": {
-      "@id": "https://www.winigenmaterials.com/products.html#breadcrumb"
-    },
-    "mainEntity": {
-      "@type": "ItemList",
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.winigenmaterials.com/products.html#collection",
+      "url": "https://www.winigenmaterials.com/products.html",
       "name": "Winigen Materials Product Catalog",
-      "numberOfItems": 80,
+      "description": "Battery materials and electrochemical components for research, development, screening, and pilot-scale energy-storage programs.",
+      "isPartOf": {
+        "@id": "https://www.winigenmaterials.com/#website"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Battery materials"
+        }
+      ],
+      "mainEntity": {
+        "@id": "https://www.winigenmaterials.com/products.html#products"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.winigenmaterials.com/products.html#products",
+      "name": "Winigen Materials Product Catalog products",
+      "numberOfItems": 88,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
+          "name": "Lithium hexafluorophosphate (LiPF6)",
+          "url": "https://www.winigenmaterials.com/products/lithium-hexafluorophosphate-lipf6.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP powder, D50 0.30 um",
-            "category": "Solid-State Oxide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-powder-photo.jpg",
-            "description": "LATP oxide solid electrolyte powder for cathode blending and lithium-ion battery safety, rate, and cycle-performance screening.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White powder, no visible foreign matter"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.30 +/- 0.05 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "<= 500 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">= 0.55 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Cathode blending for lithium-ion batteries"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-hexafluorophosphate-lipf6.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "Lithium difluorophosphate (LiPO2F2)",
+          "url": "https://www.winigenmaterials.com/products/lithium-difluorophosphate-lipo-2-f-2.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP powder, D50 0.40 um",
-            "category": "Solid-State Oxide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-d-50-0-4-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-400nm-powder-photo.jpg",
-            "description": "LATP oxide solid electrolyte powder for separator, current-collector, and electrode coating studies.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White powder, no visible foreign matter"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.40 +/- 0.10 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "<= 500 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">= 0.5 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Separator, current-collector, or electrode coating"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-difluorophosphate-lipo-2-f-2.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 3,
+          "name": "Lithium bis(oxalato)borate (LiBOB)",
+          "url": "https://www.winigenmaterials.com/products/lithium-bis-oxalato-borate-libob.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP powder, D50 0.65 um",
-            "category": "Solid-State Oxide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-d-50-0-65-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-600nm-powder-photo.jpg",
-            "description": "LATP oxide solid electrolyte powder with broader particle size for coating and solid-electrolyte screening workflows.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White powder, no visible foreign matter"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.65 +/- 0.15 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "<= 500 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">= 0.3 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Separator, current-collector, or electrode coating"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-bis-oxalato-borate-libob.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 4,
+          "name": "Lithium difluoro oxalate borate (LiODFB)",
+          "url": "https://www.winigenmaterials.com/products/lithium-difluoro-oxalate-borate-liodfb.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP water-based slurry, D50 0.65 um",
-            "category": "Solid-State Oxide Slurry",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-water-based-slurry-d-50-0-65-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-water-slurry-photo.jpg",
-            "description": "Water-based LATP slurry for separator coating and aqueous process development.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White slurry, uniform color"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.65 +/- 0.15 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Solid content",
-                "value": "Target value -0.5% to +1.5%; typical range 20-40%"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Viscosity",
-                "value": "<= 80 mPa.s"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "pH",
-                "value": "5-9"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Lithium-ion battery separator coating"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-difluoro-oxalate-borate-liodfb.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 5,
+          "name": "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI)",
+          "url": "https://www.winigenmaterials.com/products/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP water-based slurry, D50 0.30 um",
-            "category": "Solid-State Oxide Slurry",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-water-based-slurry-d-50-0-30-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-water-slurry-photo.jpg",
-            "description": "Water-based LATP slurry with fine particle size for separator coating studies.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White slurry, uniform color"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.30 +/- 0.05 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Solid content",
-                "value": "Target value -0.5% to +1.5%; typical range 20-40%"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Viscosity",
-                "value": "<= 80 mPa.s"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "pH",
-                "value": "5-9"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Lithium-ion battery separator coating"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 6,
+          "name": "Lithium bis(fluorosulfonyl)imide (LiFSI)",
+          "url": "https://www.winigenmaterials.com/products/lithium-bis-fluorosulfonyl-imide-lifsi.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP water-based slurry, D50 0.15 um",
-            "category": "Solid-State Oxide Slurry",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-water-based-slurry-d-50-0-15-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-water-slurry-photo.jpg",
-            "description": "Water-based LATP slurry for current-collector and electrode coating applications.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White slurry, uniform color"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.15 +/- 0.05 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Solid content",
-                "value": "Target value -0.5% to +1.5%; typical range 20-40%"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Viscosity",
-                "value": "<= 80 mPa.s"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "pH",
-                "value": "5-9"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Current-collector or electrode coating"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-bis-fluorosulfonyl-imide-lifsi.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 7,
+          "name": "Lithium tetrafluoroborate (LiBF4)",
+          "url": "https://www.winigenmaterials.com/products/lithium-tetrafluoroborate-libf-4.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP oil-based slurry, D50 0.65 um",
-            "category": "Solid-State Oxide Slurry",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-oil-based-slurry-d-50-0-65-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-oil-slurry-photo.jpg",
-            "description": "Oil-based LATP slurry for cathode current-collector coating development.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White slurry, uniform color"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.65 +/- 0.15 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Solid content",
-                "value": "Target value -0.5% to +1.5%; typical range 20-40%"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "<= 500 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Viscosity",
-                "value": "<= 80 mPa.s"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "pH",
-                "value": "8-12"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Cathode current-collector coating"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-tetrafluoroborate-libf-4.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 8,
+          "name": "Ethylene carbonate (EC)",
+          "url": "https://www.winigenmaterials.com/products/ethylene-carbonate-ec.html",
           "item": {
-            "@type": "Product",
-            "name": "LATP oil-based slurry, D50 0.30 um",
-            "category": "Solid-State Oxide Slurry",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/latp-oil-based-slurry-d-50-0-30-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-oil-slurry-photo.jpg",
-            "description": "Oil-based LATP slurry for current-collector and electrode coating development.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White slurry, uniform color"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.30 +/- 0.05 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Solid content",
-                "value": "Target value -0.5% to +1.5%; typical range 20-40%"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "<= 500 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Viscosity",
-                "value": "<= 80 mPa.s"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "pH",
-                "value": "8-12"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Magnetic impurities",
-                "value": "<= 500 ppb"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Current-collector or electrode coating"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/ethylene-carbonate-ec.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 9,
+          "name": "Dimethyl carbonate (DMC)",
+          "url": "https://www.winigenmaterials.com/products/dimethyl-carbonate-dmc.html",
           "item": {
-            "@type": "Product",
-            "name": "LLZTO powder",
-            "category": "Solid-State Oxide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/llzto-powder.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/llzto-powder-photo.jpg",
-            "description": "LLZTO garnet-type oxide solid electrolyte powder. Particle-size customization is available for research and process-development needs.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White to off-white powder"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Composition",
-                "value": "Ta-doped LLZO / LLZTO"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Particle size",
-                "value": "Customizable by request"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Use case",
-                "value": "Garnet electrolyte screening, composite electrolyte studies, and coating development"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/dimethyl-carbonate-dmc.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 10,
+          "name": "Diethyl carbonate (DEC)",
+          "url": "https://www.winigenmaterials.com/products/diethyl-carbonate-dec.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5Cl1.5, D50 >10 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsh01.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5Cl1.5, D50 >10 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Particle size",
-                "value": "D50 >10 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "Lot-dependent; confirm by COA/TDS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">10 mS/cm, cold press"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "<= 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/diethyl-carbonate-dec.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 11,
+          "name": "Ethyl methyl carbonate (EMC)",
+          "url": "https://www.winigenmaterials.com/products/ethyl-methyl-carbonate-emc.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5Cl1.5, D50 4.5 +/- 1.5 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsh02.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5Cl1.5, D50 4.5 +/- 1.5 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Particle size",
-                "value": "D50 4.5 +/- 1.5 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "Lot-dependent; confirm by COA/TDS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">5 mS/cm, cold press"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "<= 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/ethyl-methyl-carbonate-emc.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 12,
+          "name": "Propylene carbonate (PC)",
+          "url": "https://www.winigenmaterials.com/products/propylene-carbonate-pc.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5Cl1.5, D50 2.168 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsh03.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5Cl1.5, D50 2.168 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D10 particle size",
-                "value": "0.567 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "2.168 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D90 particle size",
-                "value": "6.592 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "28.8 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Elemental impurities",
-                "value": "Ca 9.64 ppm; Cr 4.41 ppm; Cu ND; Fe 7.53 ppm; Mg 2.56 ppm; Na 11.38 ppm; K 1.75 ppm; Si 33.9 ppm; Zn 4.98 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": "8.5 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "1.38 x 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/propylene-carbonate-pc.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 13,
+          "name": "Acetonitrile (AN)",
+          "url": "https://www.winigenmaterials.com/products/acetonitrile-an.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5Cl1.5, D50 0.925 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsh04.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5Cl1.5, D50 0.925 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D10 particle size",
-                "value": "0.474 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.925 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D90 particle size",
-                "value": "2.019 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "17 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Elemental impurities",
-                "value": "Ca 10.59 ppm; Cr 2.7 ppm; Cu ND; Fe 7.56 ppm; Mg 2.39 ppm; Na 19.23 ppm; K 1.2 ppm; Si 39.68 ppm; Zn 6.23 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": "6.2 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "1.67 x 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/acetonitrile-an.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 14,
+          "name": "Ethyl acetate (EA)",
+          "url": "https://www.winigenmaterials.com/products/ethyl-acetate-ea.html",
           "item": {
-            "@type": "Product",
-            "name": "Li6PS5Cl, D50 >10 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsl01.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li6PS5Cl, D50 >10 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Particle size",
-                "value": "D50 >10 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "Lot-dependent; confirm by COA/TDS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">4 mS/cm, cold press"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "<= 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/ethyl-acetate-ea.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 15,
+          "name": "2,2-Difluoroethyl acetate (DFEA)",
+          "url": "https://www.winigenmaterials.com/products/2-2-difluoroethyl-acetate-dfea.html",
           "item": {
-            "@type": "Product",
-            "name": "Li6PS5Cl, D50 4.5 +/- 1.5 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsl02.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li6PS5Cl, D50 4.5 +/- 1.5 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Particle size",
-                "value": "D50 4.5 +/- 1.5 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "Lot-dependent; confirm by COA/TDS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">4 mS/cm, cold press"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "<= 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/2-2-difluoroethyl-acetate-dfea.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 16,
+          "name": "1,2-Dimethoxyethane (DME)",
+          "url": "https://www.winigenmaterials.com/products/1-2-dimethoxyethane-dme.html",
           "item": {
-            "@type": "Product",
-            "name": "Li6PS5Cl, D50 2.123 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsl03.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li6PS5Cl, D50 2.123 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D10 particle size",
-                "value": "0.555 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "2.123 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D90 particle size",
-                "value": "6.573 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "43 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Elemental impurities",
-                "value": "Ca 20.45 ppm; Cr 2.517 ppm; Cu ND; Fe 9.656 ppm; Mg 2.146 ppm; Na 7.591 ppm; K 1.783 ppm; Si 8.257 ppm; Zn 2.673 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": "3.5 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "1.74 x 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-2-dimethoxyethane-dme.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 17,
+          "name": "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether (TTE)",
+          "url": "https://www.winigenmaterials.com/products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html",
           "item": {
-            "@type": "Product",
-            "name": "Li6PS5Cl, D50 0.734 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsl04.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li6PS5Cl, D50 0.734 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D10 particle size",
-                "value": "0.445 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.734 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D90 particle size",
-                "value": "1.128 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "28.8 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Elemental impurities",
-                "value": "Ca 9.64 ppm; Cr 2.01 ppm; Cu ND; Fe 15.03 ppm; Mg 0.59 ppm; Na 27.61 ppm; K 2.5 ppm; Si 28.26 ppm; Zn 1 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": "3.1 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "2.04 x 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 18,
+          "name": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC)",
+          "url": "https://www.winigenmaterials.com/products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5ClxBr1.5-x, D50 >10 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsb01.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5ClxBr1.5-x, D50 >10 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Particle size",
-                "value": "D50 >10 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "Lot-dependent; confirm by COA/TDS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">12 mS/cm, cold press"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "<= 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 19,
+          "name": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC)",
+          "url": "https://www.winigenmaterials.com/products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 +/- 1.5 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsb02.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 +/- 1.5 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Particle size",
-                "value": "D50 4.5 +/- 1.5 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "Lot-dependent; confirm by COA/TDS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">8 mS/cm, cold press"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "<= 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 20,
+          "name": "Hexafluoroisopropylmethyl ether",
+          "url": "https://www.winigenmaterials.com/products/hexafluoroisopropylmethyl-ether.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsb03.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D10 particle size",
-                "value": "0.623 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "2.398 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D90 particle size",
-                "value": "6.559 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "21.4 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Elemental impurities",
-                "value": "Ca 17.08 ppm; Cr 3.19 ppm; Cu ND; Fe 4.71 ppm; Mg 2.02 ppm; Na 20.38 ppm; K 4.93 ppm; Si 41.46 ppm; Zn 0.92 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": "9.2 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "1.84 x 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/hexafluoroisopropylmethyl-ether.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 21,
+          "name": "Sulfolane (Sulfolane)",
+          "url": "https://www.winigenmaterials.com/products/sulfolane.html",
           "item": {
-            "@type": "Product",
-            "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 um",
-            "category": "Solid-State Sulfide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/gsb04.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg",
-            "description": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 um is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "Gray-white powder, uniform color, no visible agglomeration"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D10 particle size",
-                "value": "0.427 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.759 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D90 particle size",
-                "value": "1.277 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "61.6 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Elemental impurities",
-                "value": "Ca 13.8 ppm; Cr 3.43 ppm; Cu 0.17 ppm; Fe 5.79 ppm; Mg 2.71 ppm; Na 24.92 ppm; K 4.1 ppm; Si 67.62 ppm; Zn 2.7 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": "6.5 mS/cm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Electronic conductivity",
-                "value": "2.37 x 10^-6 mS/cm"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/sulfolane.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 22,
+          "name": "Vinylene carbonate (VC)",
+          "url": "https://www.winigenmaterials.com/products/vinylene-carbonate-vc.html",
           "item": {
-            "@type": "Product",
-            "name": "Li3InCl6 powder, D50 0.9 um",
-            "category": "Solid-State Halide",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/li-3-incl-6-d-50-0-9-um.html",
-            "image": "https://www.winigenmaterials.com/assets/images/solid-state/li3incl6-powder-photo.jpg",
-            "description": "Li3InCl6 halide solid electrolyte powder for high-purity phase screening, EIS conductivity testing, and solid-state battery research.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Appearance",
-                "value": "White powder"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D10 particle size",
-                "value": "0.5 +/- 0.05 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D50 particle size",
-                "value": "0.9 +/- 0.3 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D90 particle size",
-                "value": "20 +/- 0.2 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "D99 particle size",
-                "value": "31 +/- 0.3 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Water",
-                "value": "<= 500 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Ionic conductivity",
-                "value": ">= 1.5 mS/cm; measured value 1.85 mS/cm at 25 degC after 40 min hold"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Elemental impurities",
-                "value": "Ca <=50 ppm; Cr <=50 ppm; Cu <=50 ppm; Fe <=500 ppm; K <=500 ppm; Mg <=50 ppm; Na <=500 ppm; Zn <=50 ppm; Zr <=50 ppm"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Phase",
-                "value": "Main phase 04-009-9027"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/vinylene-carbonate-vc.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 23,
+          "name": "Vinyl ethylene carbonate (VEC)",
+          "url": "https://www.winigenmaterials.com/products/vinyl-ethylene-carbonate-vec.html",
           "item": {
-            "@type": "Product",
-            "name": "Sodium hexafluorophosphate",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/sodium-hexafluorophosphate-napf-6.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "NaPF6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "21324-39-0"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 20ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/vinyl-ethylene-carbonate-vec.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 24,
+          "name": "1,3-Propanediol cyclic sulfate (TS)",
+          "url": "https://www.winigenmaterials.com/products/1-3-propanediol-cyclic-sulfate-ts.html",
           "item": {
-            "@type": "Product",
-            "name": "Sodium difluoro oxalate borate",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/sodium-difluoro-oxalate-borate-naodfb.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "NaODFB"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "2102517-30-4"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-3-propanediol-cyclic-sulfate-ts.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 25,
+          "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
+          "url": "https://www.winigenmaterials.com/products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html",
           "item": {
-            "@type": "Product",
-            "name": "Magnesium bis-(trifluoromethylsulfonyl)-imide",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "Mg(TFSI)2"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "133395-16-1"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 26,
+          "name": "Prop-1-ene-1,3-sultone (PST)",
+          "url": "https://www.winigenmaterials.com/products/prop-1-ene-1-3-sultone-pst.html",
           "item": {
-            "@type": "Product",
-            "name": "Potassium bis-(trifluoromethanesulfonyl)-imide",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "KTFSI"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "90076-67-8"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/prop-1-ene-1-3-sultone-pst.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 27,
+          "name": "4-Fluoro-1,3-dioxolan-2-one (FEC)",
+          "url": "https://www.winigenmaterials.com/products/4-fluoro-1-3-dioxolan-2-one-fec.html",
           "item": {
-            "@type": "Product",
-            "name": "Sodium bis-(trifluoromethanesulfonyl)-imide",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/sodium-bis-trifluoromethanesulfonyl-imide-natfsi.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "NaTFSI"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "91742-21-1"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/4-fluoro-1-3-dioxolan-2-one-fec.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 28,
+          "name": "Succinonitrile (SN)",
+          "url": "https://www.winigenmaterials.com/products/succinonitrile-sn.html",
           "item": {
-            "@type": "Product",
-            "name": "Potassium hexafluorophosphate",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/potassium-hexafluorophosphate-kpf-6.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "KPF6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "17084-13-8"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/succinonitrile-sn.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 29,
+          "name": "Adiponitrile (ADN)",
+          "url": "https://www.winigenmaterials.com/products/adiponitrile-adn.html",
           "item": {
-            "@type": "Product",
-            "name": "Potassium bis(fluorosulfonyl)imide",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/potassium-bis-fluorosulfonyl-imide-kfsi.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "KFSI"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "14984-76-0"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/adiponitrile-adn.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 30,
+          "name": "1,2-Bis(2-cyanoethoxy)ethane (DENE)",
+          "url": "https://www.winigenmaterials.com/products/1-2-bis-2-cyanoethoxy-ethane-dene.html",
           "item": {
-            "@type": "Product",
-            "name": "Magnesium borohydride",
-            "category": "Next-Gen Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/magnesium-borohydride-mg-bh-4-2.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "Mg(BH 4 ) 2"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "16903-37-0"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-2-bis-2-cyanoethoxy-ethane-dene.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 31,
+          "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
+          "url": "https://www.winigenmaterials.com/products/1-3-6-hexanetricarbonitrile-htcn.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium hexafluorophosphate",
-            "category": "Lithium Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-hexafluorophosphate-lipf6.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "LiPF6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "21324-40-3"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 20ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-3-6-hexanetricarbonitrile-htcn.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 32,
+          "name": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
+          "url": "https://www.winigenmaterials.com/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium difluorophosphate",
-            "category": "Lithium Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-difluorophosphate-lipo-2-f-2.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "LiPO2F2"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "24389-25-1"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 33,
+          "name": "Tris(trimethylsilyl)borate (TMSB)",
+          "url": "https://www.winigenmaterials.com/products/tris-trimethylsilyl-borate-tmsb.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium bis(oxalato)borate",
-            "category": "Lithium Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-bis-oxalato-borate-libob.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "LiBOB"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "244761-29-3"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/tris-trimethylsilyl-borate-tmsb.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 34,
+          "name": "Tris-(trimethylsilyl)-phosphate (TMSP)",
+          "url": "https://www.winigenmaterials.com/products/tris-trimethylsilyl-phosphate-tmsp.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium difluoro oxalate borate",
-            "category": "Lithium Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-difluoro-oxalate-borate-liodfb.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "LiODFB"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "409071-16-5"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/tris-trimethylsilyl-phosphate-tmsp.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 35,
+          "name": "1,3-Propanesultone (PS)",
+          "url": "https://www.winigenmaterials.com/products/1-3-propanesultone-ps.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium bis-(trifluoromethane- sulphonyl)imide",
-            "category": "Lithium Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "LiTFSI"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "90076-65-6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/1-3-propanesultone-ps.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 36,
+          "name": "Tetraethylammonium tetrafluoroborate (TEABF4)",
+          "url": "https://www.winigenmaterials.com/products/tetraethylammonium-tetrafluoroborate-teabf-4.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium bis(fluorosulfonyl)imide",
-            "category": "Lithium Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-bis-fluorosulfonyl-imide-lifsi.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "LiFSI"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "171611-11-3"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/tetraethylammonium-tetrafluoroborate-teabf-4.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 37,
+          "name": "Trimethylsilyl phosphite (TTPi)",
+          "url": "https://www.winigenmaterials.com/products/trimethylsilyl-phosphite-ttpi.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium tetrafluoroborate",
-            "category": "Lithium Salt",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-tetrafluoroborate-libf-4.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "LiBF4"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "14283-07-9"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "> 99.9% purity"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "<= 50ppm water"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/trimethylsilyl-phosphite-ttpi.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 38,
+          "name": "Sodium hexafluorophosphate (NaPF6)",
+          "url": "https://www.winigenmaterials.com/products/sodium-hexafluorophosphate-napf-6.html",
           "item": {
-            "@type": "Product",
-            "name": "Ethylene carbonate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/ethylene-carbonate-ec.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "EC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "96-49-1"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid above 35°C; crystalline solid at room temperature."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/sodium-hexafluorophosphate-napf-6.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 39,
+          "name": "Sodium difluoro oxalate borate (NaODFB)",
+          "url": "https://www.winigenmaterials.com/products/sodium-difluoro-oxalate-borate-naodfb.html",
           "item": {
-            "@type": "Product",
-            "name": "Dimethyl carbonate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/dimethyl-carbonate-dmc.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "DMC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "616-38-6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/sodium-difluoro-oxalate-borate-naodfb.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 40,
+          "name": "Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI)2)",
+          "url": "https://www.winigenmaterials.com/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html",
           "item": {
-            "@type": "Product",
-            "name": "Diethyl carbonate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/diethyl-carbonate-dec.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "DEC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "105-58-8"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 41,
+          "name": "Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI)",
+          "url": "https://www.winigenmaterials.com/products/potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html",
           "item": {
-            "@type": "Product",
-            "name": "Ethyl methyl carbonate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/ethyl-methyl-carbonate-emc.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "EMC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "623-53-0"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 42,
+          "name": "Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI)",
+          "url": "https://www.winigenmaterials.com/products/sodium-bis-trifluoromethanesulfonyl-imide-natfsi.html",
           "item": {
-            "@type": "Product",
-            "name": "Propylene carbonate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/propylene-carbonate-pc.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "PC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "108-32-7"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/sodium-bis-trifluoromethanesulfonyl-imide-natfsi.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 43,
+          "name": "Potassium hexafluorophosphate (KPF6)",
+          "url": "https://www.winigenmaterials.com/products/potassium-hexafluorophosphate-kpf-6.html",
           "item": {
-            "@type": "Product",
-            "name": "Acetonitrile",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/acetonitrile-an.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "AN"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "75-05-8"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/potassium-hexafluorophosphate-kpf-6.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 44,
+          "name": "Potassium bis(fluorosulfonyl)imide (KFSI)",
+          "url": "https://www.winigenmaterials.com/products/potassium-bis-fluorosulfonyl-imide-kfsi.html",
           "item": {
-            "@type": "Product",
-            "name": "Ethyl acetate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/ethyl-acetate-ea.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "EA"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "141-78-6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/potassium-bis-fluorosulfonyl-imide-kfsi.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 45,
+          "name": "Magnesium borohydride (Mg(BH4)2)",
+          "url": "https://www.winigenmaterials.com/products/magnesium-borohydride-mg-bh-4-2.html",
           "item": {
-            "@type": "Product",
-            "name": "2,2-Difluoroethyl acetate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/2-2-difluoroethyl-acetate-dfea.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "DFEA"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "1550-44-3"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/magnesium-borohydride-mg-bh-4-2.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 46,
+          "name": "LATP powder, D50 0.30 µm",
+          "url": "https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html",
           "item": {
-            "@type": "Product",
-            "name": "1,2-Dimethoxyethane",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-2-dimethoxyethane-dme.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "DME"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "110-71-4"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 47,
+          "name": "LATP powder, D50 0.40 µm",
+          "url": "https://www.winigenmaterials.com/products/latp-d-50-0-4-um.html",
           "item": {
-            "@type": "Product",
-            "name": "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "TTE"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "16627-68-2"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/latp-d-50-0-4-um.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 48,
+          "name": "LATP powder, D50 0.65 µm",
+          "url": "https://www.winigenmaterials.com/products/latp-d-50-0-65-um.html",
           "item": {
-            "@type": "Product",
-            "name": "Methyl 2,2,2-trifluoroethyl carbonate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "FEMC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "156783-95-8"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/latp-d-50-0-65-um.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 49,
+          "name": "LLZTO powder",
+          "url": "https://www.winigenmaterials.com/products/llzto-powder.html",
           "item": {
-            "@type": "Product",
-            "name": "Bis(2,2,2-trifluoroethyl) carbonate",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "TFEC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "1513-87-7"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/llzto-powder.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 50,
+          "name": "LATP slurry",
+          "url": "https://www.winigenmaterials.com/products/latp-slurry.html",
           "item": {
-            "@type": "Product",
-            "name": "Hexafluoroisopropylmethyl ether",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/hexafluoroisopropylmethyl-ether.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "13171-18-1"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/latp-slurry.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 51,
+          "name": "Li5.5PS4.5Cl1.5, D50 0.925 µm",
+          "url": "https://www.winigenmaterials.com/products/gsh04.html",
           "item": {
-            "@type": "Product",
-            "name": "Sulfolane",
-            "category": "Solvent",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/sulfolane.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "Sulfolane"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "126-33-0"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "< 100ppm water"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsh04.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 52,
+          "name": "Li5.5PS4.5Cl1.5, D50 2.168 µm",
+          "url": "https://www.winigenmaterials.com/products/gsh03.html",
           "item": {
-            "@type": "Product",
-            "name": "Vinylene carbonate",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/vinylene-carbonate-vc.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "VC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "872-36-6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid at room temperature; crystalline at lower temperature."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsh03.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 53,
+          "name": "Li5.5PS4.5Cl1.5, D50 4.5 ± 1.5 µm",
+          "url": "https://www.winigenmaterials.com/products/gsh02.html",
           "item": {
-            "@type": "Product",
-            "name": "Vinyl ethylene carbonate",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/vinyl-ethylene-carbonate-vec.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "VEC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "4427-96-7"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsh02.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 54,
+          "name": "Li5.5PS4.5Cl1.5, D50 >10 µm",
+          "url": "https://www.winigenmaterials.com/products/gsh01.html",
           "item": {
-            "@type": "Product",
-            "name": "1,3-Propanediol cyclic sulfate",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-3-propanediol-cyclic-sulfate-ts.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "TS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "1073-05-8"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsh01.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 55,
+          "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 µm",
+          "url": "https://www.winigenmaterials.com/products/gsb04.html",
           "item": {
-            "@type": "Product",
-            "name": "1,3,2-Dioxathiolane 2,2-dioxide",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "DTD"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "1072-53-3"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsb04.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 56,
+          "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 µm",
+          "url": "https://www.winigenmaterials.com/products/gsb03.html",
           "item": {
-            "@type": "Product",
-            "name": "Prop-1-ene-1,3-sultone",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/prop-1-ene-1-3-sultone-pst.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "PST"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "21806-61-1"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsb03.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 57,
+          "name": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 ± 1.5 µm",
+          "url": "https://www.winigenmaterials.com/products/gsb02.html",
           "item": {
-            "@type": "Product",
-            "name": "4-Fluoro-1,3-dioxolan-2-one",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/4-fluoro-1-3-dioxolan-2-one-fec.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "FEC"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "114435-02-8"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid at room temperature; crystalline at lower temperature."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsb02.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 58,
+          "name": "Li5.5PS4.5ClxBr1.5-x, D50 >10 µm",
+          "url": "https://www.winigenmaterials.com/products/gsb01.html",
           "item": {
-            "@type": "Product",
-            "name": "Succinonitrile",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/succinonitrile-sn.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "SN"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "110-61-2"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Solid at room temperature."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsb01.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 59,
+          "name": "Li6PS5Cl, D50 0.734 µm",
+          "url": "https://www.winigenmaterials.com/products/gsl04.html",
           "item": {
-            "@type": "Product",
-            "name": "Adiponitrile",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/adiponitrile-adn.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "ADN"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "111-69-3"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless transparent liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsl04.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 60,
+          "name": "Li6PS5Cl, D50 2.123 µm",
+          "url": "https://www.winigenmaterials.com/products/gsl03.html",
           "item": {
-            "@type": "Product",
-            "name": "1,2-Bis(2-cyanoethoxy)ethane",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-2-bis-2-cyanoethoxy-ethane-dene.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "DENE"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "3386-87-6"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsl03.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 61,
+          "name": "Li6PS5Cl, D50 4.5 ± 1.5 µm",
+          "url": "https://www.winigenmaterials.com/products/gsl02.html",
           "item": {
-            "@type": "Product",
-            "name": "1,3,6-Hexanetricarbonitrile",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-3-6-hexanetricarbonitrile-htcn.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "HTCN"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "1772-25-4"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsl02.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 62,
+          "name": "Li6PS5Cl, D50 >10 µm",
+          "url": "https://www.winigenmaterials.com/products/gsl01.html",
           "item": {
-            "@type": "Product",
-            "name": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "MMDS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "99591-74-9"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Solid powder."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/gsl01.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 63,
+          "name": "Li3InCl6 powder, D50 0.9 µm",
+          "url": "https://www.winigenmaterials.com/products/li-3-incl-6-d-50-0-9-um.html",
           "item": {
-            "@type": "Product",
-            "name": "Tris(trimethylsilyl)borate",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/tris-trimethylsilyl-borate-tmsb.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "TMSB"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "4325-85-3"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/li-3-incl-6-d-50-0-9-um.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 64,
+          "name": "Lithium iron phosphate (LFP) - energy grade",
+          "url": "https://www.winigenmaterials.com/products/lithium-iron-phosphate-lfp-energy-grade.html",
           "item": {
-            "@type": "Product",
-            "name": "Tris-(trimethylsilyl)-phosphate",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/tris-trimethylsilyl-phosphate-tmsp.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "TMSP"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "10497-05-9"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-iron-phosphate-lfp-energy-grade.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 65,
+          "name": "Lithium iron phosphate (LFP) - power grade",
+          "url": "https://www.winigenmaterials.com/products/lithium-iron-phosphate-lfp-power-grade.html",
           "item": {
-            "@type": "Product",
-            "name": "1,3-Propanesultone",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/1-3-propanesultone-ps.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "PS"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "1120-71-4"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Physical",
-                "value": "Colorless liquid."
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-iron-phosphate-lfp-power-grade.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 66,
+          "name": "Lithium nickel cobalt aluminum oxide (NCA622)",
+          "url": "https://www.winigenmaterials.com/products/lithium-nickel-cobalt-aluminum-oxide-nca622.html",
           "item": {
-            "@type": "Product",
-            "name": "Tetraethylammonium tetrafluoroborate",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/tetraethylammonium-tetrafluoroborate-teabf-4.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "TEABF4"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "429-06-1"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-nickel-cobalt-aluminum-oxide-nca622.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 67,
+          "name": "Lithium nickel cobalt aluminum oxide (NCA811)",
+          "url": "https://www.winigenmaterials.com/products/lithium-nickel-cobalt-aluminum-oxide-nca811.html",
           "item": {
-            "@type": "Product",
-            "name": "Trimethylsilyl phosphite",
-            "category": "Additive",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/trimethylsilyl-phosphite-ttpi.html",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Abbreviation",
-                "value": "TTPi"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "CAS Number",
-                "value": "1795-31-9"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Property",
-                "value": "Battery material grade"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-nickel-cobalt-aluminum-oxide-nca811.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 68,
+          "name": "Lithium cobalt oxide (LCO)",
+          "url": "https://www.winigenmaterials.com/products/lithium-cobalt-oxide-lco.html",
           "item": {
-            "@type": "Product",
-            "name": "Low-Temperature Electrolytes",
-            "category": "Formulation",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products.html#formulations",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-cobalt-oxide-lco.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 69,
+          "name": "Lithium nickel manganese cobalt oxide (NMC622)",
+          "url": "https://www.winigenmaterials.com/products/lithium-nickel-manganese-cobalt-oxide-nmc622.html",
           "item": {
-            "@type": "Product",
-            "name": "High-Ni Si/Graphite Systems",
-            "category": "Formulation",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products.html#formulations",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-nickel-manganese-cobalt-oxide-nmc622.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 70,
+          "name": "Lithium nickel manganese cobalt oxide (NMC811)",
+          "url": "https://www.winigenmaterials.com/products/lithium-nickel-manganese-cobalt-oxide-nmc811.html",
           "item": {
-            "@type": "Product",
-            "name": "Sodium-Ion High-Rate Cycling",
-            "category": "Formulation",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products.html#formulations",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-nickel-manganese-cobalt-oxide-nmc811.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 71,
+          "name": "Lithium manganese iron phosphate (LMFP) - energy grade",
+          "url": "https://www.winigenmaterials.com/products/lithium-manganese-iron-phosphate-lmfp-energy-grade.html",
           "item": {
-            "@type": "Product",
-            "name": "High-Rate Lithium-Ion Electrolytes",
-            "category": "Formulation",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products.html#formulations",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-manganese-iron-phosphate-lmfp-energy-grade.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 72,
+          "name": "Lithium manganese iron phosphate (LMFP) - power grade",
+          "url": "https://www.winigenmaterials.com/products/lithium-manganese-iron-phosphate-lmfp-power-grade.html",
           "item": {
-            "@type": "Product",
-            "name": "Custom Formulations",
-            "category": "Formulation",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products.html#formulations",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-manganese-iron-phosphate-lmfp-power-grade.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 73,
+          "name": "Lithium manganese oxide (LMO)",
+          "url": "https://www.winigenmaterials.com/products/lithium-manganese-oxide-lmo.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium nickel manganese oxide (LNMO)",
-            "category": "Cathode Active Material",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-nickel-manganese-oxide-lnmo.html",
-            "description": "High-voltage spinel LNMO cathode powder for advanced lithium-ion cathode screening and electrolyte compatibility studies.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Typical specification",
-                "value": "D50 typically 5-15 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Typical specification",
-                "value": "Specific capacity typically 125-140 mAh/g"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Typical specification",
-                "value": "High-voltage spinel, ~4.7 V vs Li/Li+"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-manganese-oxide-lmo.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 74,
+          "name": "Lithium nickel manganese oxide (LNMO)",
+          "url": "https://www.winigenmaterials.com/products/lithium-nickel-manganese-oxide-lnmo.html",
           "item": {
-            "@type": "Product",
-            "name": "Lithium metal foil on copper current collector",
-            "category": "Anode Active Material",
-            "brand": {
-              "@id": "https://www.winigenmaterials.com/#organization"
-            },
-            "url": "https://www.winigenmaterials.com/products/lithium-metal-foil-on-copper-current-collector.html",
-            "description": "Lithium metal foil on copper current collector, specified as 50 um lithium on 10 um copper, for lithium-metal and anode-free cell studies.",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "Availability",
-                "value": "RFQ"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Lithium thickness",
-                "value": "50 um"
-              },
-              {
-                "@type": "PropertyValue",
-                "name": "Copper thickness",
-                "value": "10 um"
-              }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.winigenmaterials.com/contact.html",
-              "description": "Pricing available by request for quote."
-            }
+            "@id": "https://www.winigenmaterials.com/products/lithium-nickel-manganese-oxide-lnmo.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 75,
+          "name": "Graphite anode material - standard grade",
+          "url": "https://www.winigenmaterials.com/products/graphite-anode-material-standard-grade.html",
           "item": {
-            "@type": "Product",
-            "name": "WBM-P07 Fine Boehmite Powder",
-            "category": "Battery Ceramic & Functional Coating Materials",
-            "url": "https://www.winigenmaterials.com/products/wbm-p07-boehmite-powder.html",
-            "description": "Fine boehmite powder for local ceramic coating slurry preparation, separator coating, and electrode coating process development."
+            "@id": "https://www.winigenmaterials.com/products/graphite-anode-material-standard-grade.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 76,
+          "name": "Graphite anode material - high-power grade",
+          "url": "https://www.winigenmaterials.com/products/graphite-anode-material-high-power-grade.html",
           "item": {
-            "@type": "Product",
-            "name": "WAL-P05 Fine Alumina Coating Powder",
-            "category": "Battery Ceramic & Functional Coating Materials",
-            "url": "https://www.winigenmaterials.com/products/wal-p05-alumina-coating-powder.html",
-            "description": "High-purity fine alumina powder for separator and electrode coating and local ceramic slurry preparation."
+            "@id": "https://www.winigenmaterials.com/products/graphite-anode-material-high-power-grade.html#product"
           }
         },
         {
           "@type": "ListItem",
           "position": 77,
+          "name": "Graphite anode material - ultra-high-power grade",
+          "url": "https://www.winigenmaterials.com/products/graphite-anode-material-ultra-high-power-grade.html",
           "item": {
-            "@type": "Product",
-            "name": "WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation",
-            "category": "Battery Ceramic & Functional Coating Materials",
-            "url": "https://www.winigenmaterials.com/products/wal-a07-alumina-cathode-additive.html",
-            "description": "High-purity alumina powder for cathode additive screening and battery-material interface studies."
+            "@id": "https://www.winigenmaterials.com/products/graphite-anode-material-ultra-high-power-grade.html#product"
           }
         },
         {
-          "@type": "ListItem", "position": 78,
-          "item": {"@type":"Product","name":"WAL-M300 Mesoporous Alumina Powder","category":"Battery Ceramic & Functional Coating Materials","url":"https://www.winigenmaterials.com/products/wal-m300-mesoporous-alumina.html","description":"High-surface-area mesoporous alumina with 150-300 m2/g BET for adsorption, interface, and functional filler evaluation."}
+          "@type": "ListItem",
+          "position": 78,
+          "name": "Lithium titanate (LTO)",
+          "url": "https://www.winigenmaterials.com/products/lithium-titanate-lto.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/lithium-titanate-lto.html#product"
+          }
         },
         {
-          "@type": "ListItem", "position": 79,
-          "item": {"@type":"Product","name":"WAL-M400 Mesoporous Alumina Powder","category":"Battery Ceramic & Functional Coating Materials","url":"https://www.winigenmaterials.com/products/wal-m400-mesoporous-alumina.html","description":"Very-high-surface-area mesoporous alumina with 250-400 m2/g BET for application-specific adsorption and interface studies."}
+          "@type": "ListItem",
+          "position": 79,
+          "name": "Lithium metal foil on copper current collector",
+          "url": "https://www.winigenmaterials.com/products/lithium-metal-foil-on-copper-current-collector.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/lithium-metal-foil-on-copper-current-collector.html#product"
+          }
         },
         {
-          "@type": "ListItem", "position": 80,
-          "item": {"@type":"Product","name":"WAL-M07 Fine Mesoporous Alumina Powder","category":"Battery Ceramic & Functional Coating Materials","url":"https://www.winigenmaterials.com/products/wal-m07-mesoporous-alumina.html","description":"Fine mesoporous alumina with submicron D50 and 20-50 m2/g BET for coating, dispersion, and interface evaluation."}
+          "@type": "ListItem",
+          "position": 80,
+          "name": "Hard carbon anode material",
+          "url": "https://www.winigenmaterials.com/products/hard-carbon-anode-material.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/hard-carbon-anode-material.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 81,
+          "name": "Silicon anode powder",
+          "url": "https://www.winigenmaterials.com/products/silicon-anode-powder.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/silicon-anode-powder.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 82,
+          "name": "SiOx / silicon-carbon composite anode material",
+          "url": "https://www.winigenmaterials.com/products/siox-silicon-carbon-composite-anode-material.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/siox-silicon-carbon-composite-anode-material.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 83,
+          "name": "WBM-P07 Fine Boehmite Powder",
+          "url": "https://www.winigenmaterials.com/products/wbm-p07-boehmite-powder.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/wbm-p07-boehmite-powder.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 84,
+          "name": "WAL-P05 Fine Alumina Coating Powder",
+          "url": "https://www.winigenmaterials.com/products/wal-p05-alumina-coating-powder.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/wal-p05-alumina-coating-powder.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 85,
+          "name": "WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation",
+          "url": "https://www.winigenmaterials.com/products/wal-a07-alumina-cathode-additive.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/wal-a07-alumina-cathode-additive.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 86,
+          "name": "WAL-M300 Mesoporous Alumina",
+          "url": "https://www.winigenmaterials.com/products/wal-m300-mesoporous-alumina.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/wal-m300-mesoporous-alumina.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 87,
+          "name": "WAL-M400 Mesoporous Alumina",
+          "url": "https://www.winigenmaterials.com/products/wal-m400-mesoporous-alumina.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/wal-m400-mesoporous-alumina.html#product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 88,
+          "name": "WAL-M07 Fine Mesoporous Alumina",
+          "url": "https://www.winigenmaterials.com/products/wal-m07-mesoporous-alumina.html",
+          "item": {
+            "@id": "https://www.winigenmaterials.com/products/wal-m07-mesoporous-alumina.html#product"
+          }
         }
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "@id": "https://www.winigenmaterials.com/products.html#breadcrumb",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.winigenmaterials.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Products",
-        "item": "https://www.winigenmaterials.com/products.html"
-      }
-    ]
-  }
-]</script>
+  ]
+}
+</script>
+<meta property="og:title" content="Battery Materials &amp; Electrochemical Components | Winigen Materials">
+<meta property="og:description" content="Browse battery electrolyte salts, solvents, additives, solid-state electrolytes, active materials, functional coatings, and formulation support from Winigen Materials.">
+<meta property="og:url" content="https://www.winigenmaterials.com/products.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Winigen Materials">
+<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/winigen-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json" data-seo-generated="true">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/products.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.winigenmaterials.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Products",
+      "item": "https://www.winigenmaterials.com/products.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="header">
@@ -3955,20 +981,9 @@
   <section class="section">
     <div class="container">
       <div class="catalog-tools">
-        <div class="tabs"><a class="tab" href="#functional-coatings">Functional Coatings</a><a class="tab" href="#solid-state">Solid-State</a><a class="tab" href="#active-materials">Battery Active Materials</a><a class="tab" href="#next-gen">Next-Gen</a><a class="tab" href="#salts">Salts</a><a class="tab" href="#solvents">Solvents</a><a class="tab" href="#additives">Additives</a><a class="tab" href="#formulations">Formulations</a></div>
-        <div class="catalog-search-wrap"><input class="catalog-search" id="catalog-search" type="search" placeholder="Try: LiPF6, 21324-40-3, silicon anode, LATP D50, LCO, low-temperature electrolyte" aria-label="Search product catalog"></div>
+        <div class="catalog-search-wrap"><label class="catalog-search-label" for="catalog-search">Product search</label><p class="catalog-search-help">Search by material, formula, CAS number, specification, or application</p><input class="catalog-search" id="catalog-search" type="search" placeholder="LiPF6, 21324-40-3, LATP D50, silicon anode..." aria-label="Search product catalog"></div>
       </div>
-      <div class="family-hub-grid" id="product-family-hubs" aria-label="Product family overview pages">
-        <a class="family-hub-card" href="products/battery-ceramic-functional-coating-materials.html"><strong>Battery Ceramic &amp; Functional Coating Materials</strong><span>Boehmite and alumina powders, specialty morphologies, and material packages for local formulation and pilot-line evaluation.</span></a>
-        <a class="family-hub-card" href="products/alumina-functional-coating-materials.html"><strong>Alumina Coating &amp; Additive Materials</strong><span>WAL coating and cathode-additive grades, plus inquiry-based mesoporous and specialty alumina families.</span></a>
-        <a class="family-hub-card" href="products/solid-state-electrolytes.html"><strong>Solid-State Electrolytes</strong><span>Sulfide, oxide, and halide electrolyte materials for particle-size-controlled conductivity screening and solid-state battery research.</span></a>
-      <a class="family-hub-card" href="products/battery-active-materials.html"><strong>Battery Active Materials</strong><span>LFP, NMC, NCA, LCO, LMFP, LMO, LNMO, lithium metal foil, graphite, LTO, hard carbon, silicon, and SiOx/Si-C materials.</span></a>
-      <a class="family-hub-card" href="products/next-generation-salts.html"><strong>Next-Generation Salts</strong><span>Sodium, magnesium, potassium, and alternative-cation salts for sodium-ion, magnesium-ion, potassium-ion, and advanced electrolyte systems.</span></a>
-        <a class="family-hub-card" href="products/lithium-salts.html"><strong>Lithium Salts</strong><span>LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB, and related lithium salts for electrolyte formulation and interphase engineering.</span></a>
-        <a class="family-hub-card" href="products/battery-solvents.html"><strong>Battery Solvents</strong><span>Low-moisture carbonate, ether, nitrile, ester, fluorinated, and specialty solvents for electrolyte blending.</span></a>
-        <a class="family-hub-card" href="products/electrolyte-additives.html"><strong>Electrolyte Additives</strong><span>Additives for SEI/CEI formation, silicon-anode stability, high-voltage cycling, fast charge, and low-temperature formulations.</span></a>
-        <a class="family-hub-card" href="products/custom-electrolyte-formulations.html"><strong>Custom Formulations</strong><span>Application-specific electrolyte formulation support for lithium-metal, silicon-anode, sodium-ion, fast-charge, and low-temperature screening programs.</span></a>
-      </div>
+      <nav class="catalog-filter-bar" aria-label="Product families"><div class="tabs"><a class="tab" href="#salts">Lithium Salts</a><a class="tab" href="#solvents">Battery Solvents</a><a class="tab" href="#additives">Electrolyte Additives</a><a class="tab" href="#next-gen">Next-Gen Salts</a><a class="tab" href="#solid-state">Solid-State Electrolytes</a><a class="tab tab--rfq-start" href="#formulations">Custom Formulations</a><a class="tab" href="#active-materials">Active Materials</a><a class="tab" href="#functional-coatings">Functional Coatings</a></div></nav>
       <div class="no-results" id="no-results"><h3>No matching materials found</h3><p>Try searching by chemical name, abbreviation, CAS number, formula, or category.</p></div>
       
     <section id="functional-coatings" class="product-section" data-product-section>
@@ -4011,7 +1026,7 @@
           <h2>Solid-State Materials</h2>
           <p>Solid-state electrolyte powders and slurries including LATP, LLZTO, sulfide, and Li3InCl6 materials. Product pages include translated specification tables and characterization data where available.</p>
         </div>
-        <span class="section-count">22 materials</span>
+        <span class="section-count">18 materials</span>
       </div>
       <div class="product-card-grid">    <article class="product-card" data-product-card data-section="solid-state" data-search="solid-state oxide latp powder, d50 0.30 um li1.3al0.3ti1.7(po4)3 particle size: d50 0.30 +/- 0.05 um water: &lt;= 500 ppm magnetic impurities: &lt;= 500 ppb ionic conductivity: &gt;= 0.55 ms/cm at 25 degc, pressed pellet">
       <div class="product-card__media">
@@ -4129,148 +1144,29 @@
         </form>
       </div>
     </article>
-    <article class="product-card" data-product-card data-section="solid-state" data-search="solid-state oxide slurry latp oil-based slurry, d50 0.30 um li1.3al0.3ti1.7(po4)3 particle size: d50 0.30 +/- 0.05 um solid content: target +/- process range water: &lt;= 500 ppm ph: 8-12">
+    <article class="product-card product-card--configurable-rfq" data-product-card data-section="solid-state" data-search="solid-state oxide slurry latp slurry d50 0.15 0.30 0.65 um water-based oil-based carrier solvent coating composite electrolyte">
       <div class="product-card__media">
-        <a class="product-media-link" href="products/latp-oil-based-slurry-d-50-0-30-um.html" aria-label="View details for LATP oil-based slurry, D50 0.30 um">
-          <img class="product-photo" src="assets/images/solid-state/latp-oil-slurry-photo.jpg" alt="LATP oil-based slurry, D50 0.30 um product image" loading="lazy">
+        <a class="product-media-link" href="products/latp-slurry.html" aria-label="View details for LATP slurry">
+          <img class="product-photo" src="assets/images/solid-state/latp-water-slurry-photo.jpg" alt="LATP slurry product image" loading="lazy">
         </a>
       </div>
       <div class="product-card__body">
-        <div class="product-card__topline">
-          <span class="product-card__category">Solid-State Oxide Slurry</span>
-          <span class="product-card__abbr">RFQ grade</span>
-        </div>
-        <h3><a class="product-detail-link" href="products/latp-oil-based-slurry-d-50-0-30-um.html"><span class="formula-text">LATP oil-based slurry, D<sub>50</sub> 0.30 um</span></a></h3>
+        <div class="product-card__topline"><span class="product-card__category">Solid-State Oxide Slurry</span><span class="product-card__abbr">RFQ grade</span></div>
+        <h3><a class="product-detail-link" href="products/latp-slurry.html"><span class="formula-text">LATP slurry</span></a></h3>
         <dl class="product-card__facts"><div><dt>Available</dt><dd>RFQ</dd></div></dl>
-        <ul class="product-card__properties"><li class="property-highlight"><strong>Particle size:</strong> D50 0.30 +/- 0.05 um</li><li><strong>Solid content:</strong> target +/- process range</li><li><strong>Water:</strong> &lt;= 500 ppm</li><li><strong>pH:</strong> 8-12</li></ul>
-        <form class="product-card__rfq" action="contact.html" method="get">
+        <ul class="product-card__properties"><li><strong>D50 options:</strong> 0.15, 0.30, or 0.65 um</li><li><strong>Carrier solvent:</strong> water-based or oil-based</li><li><strong>Solid content:</strong> selected process window</li></ul>
+        <form class="product-card__rfq product-card__rfq--configured" action="contact.html" method="get">
           <input type="hidden" name="inquiry_type" value="Request for Quote">
-          <input type="hidden" name="product_interest" value="LATP oil-based slurry, D50 0.30 um">
+          <input type="hidden" name="product_interest" value="LATP slurry">
           <input type="hidden" name="category" value="Solid-State Oxide Slurry">
-          <input type="hidden" name="message" value="I would like to request a quote for LATP oil-based slurry, D50 0.30 um. Product category: Solid-State Oxide Slurry.">
-          <label class="rfq-label" for="qty-latp-oil-based-slurry-d-50-0-30-um">RFQ Quantity</label>
-          <div class="product-card__controls">
-            <select id="qty-latp-oil-based-slurry-d-50-0-30-um" name="quantity">
-              <option value="100 g">100 g</option><option value="1 kg">1 kg</option><option value="5 kg">5 kg</option><option value=">5 kg">&gt;5 kg</option>
-            </select>
-            <button class="btn" type="submit">Request Quote</button>
+          <input type="hidden" name="message" value="I would like to request a quote for a configured LATP slurry.">
+          <div class="product-card__option-grid">
+            <label>D<sub>50</sub><select name="d50" aria-label="Select LATP slurry D50"><option value="0.15 µm">0.15 µm</option><option value="0.30 µm" selected>0.30 µm</option><option value="0.65 µm">0.65 µm</option></select></label>
+            <label>Carrier solvent<select name="carrier_solvent" aria-label="Select LATP slurry carrier solvent"><option value="Water-based">Water-based</option><option value="Oil-based">Oil-based</option></select></label>
           </div>
-        </form>
-      </div>
-    </article>
-    <article class="product-card" data-product-card data-section="solid-state" data-search="solid-state oxide slurry latp oil-based slurry, d50 0.65 um li1.3al0.3ti1.7(po4)3 particle size: d50 0.65 +/- 0.15 um solid content: target +/- process range water: &lt;= 500 ppm ph: 8-12">
-      <div class="product-card__media">
-        <a class="product-media-link" href="products/latp-oil-based-slurry-d-50-0-65-um.html" aria-label="View details for LATP oil-based slurry, D50 0.65 um">
-          <img class="product-photo" src="assets/images/solid-state/latp-oil-slurry-photo.jpg" alt="LATP oil-based slurry, D50 0.65 um product image" loading="lazy">
-        </a>
-      </div>
-      <div class="product-card__body">
-        <div class="product-card__topline">
-          <span class="product-card__category">Solid-State Oxide Slurry</span>
-          <span class="product-card__abbr">RFQ grade</span>
-        </div>
-        <h3><a class="product-detail-link" href="products/latp-oil-based-slurry-d-50-0-65-um.html"><span class="formula-text">LATP oil-based slurry, D<sub>50</sub> 0.65 um</span></a></h3>
-        <dl class="product-card__facts"><div><dt>Available</dt><dd>RFQ</dd></div></dl>
-        <ul class="product-card__properties"><li class="property-highlight"><strong>Particle size:</strong> D50 0.65 +/- 0.15 um</li><li><strong>Solid content:</strong> target +/- process range</li><li><strong>Water:</strong> &lt;= 500 ppm</li><li><strong>pH:</strong> 8-12</li></ul>
-        <form class="product-card__rfq" action="contact.html" method="get">
-          <input type="hidden" name="inquiry_type" value="Request for Quote">
-          <input type="hidden" name="product_interest" value="LATP oil-based slurry, D50 0.65 um">
-          <input type="hidden" name="category" value="Solid-State Oxide Slurry">
-          <input type="hidden" name="message" value="I would like to request a quote for LATP oil-based slurry, D50 0.65 um. Product category: Solid-State Oxide Slurry.">
-          <label class="rfq-label" for="qty-latp-oil-based-slurry-d-50-0-65-um">RFQ Quantity</label>
-          <div class="product-card__controls">
-            <select id="qty-latp-oil-based-slurry-d-50-0-65-um" name="quantity">
-              <option value="100 g">100 g</option><option value="1 kg">1 kg</option><option value="5 kg">5 kg</option><option value=">5 kg">&gt;5 kg</option>
-            </select>
-            <button class="btn" type="submit">Request Quote</button>
-          </div>
-        </form>
-      </div>
-    </article>
-    <article class="product-card" data-product-card data-section="solid-state" data-search="solid-state oxide slurry latp water-based slurry, d50 0.15 um li1.3al0.3ti1.7(po4)3 particle size: d50 0.15 +/- 0.05 um solid content: target +/- process range viscosity: &lt;= 80 mpa.s ph: 5-9">
-      <div class="product-card__media">
-        <a class="product-media-link" href="products/latp-water-based-slurry-d-50-0-15-um.html" aria-label="View details for LATP water-based slurry, D50 0.15 um">
-          <img class="product-photo" src="assets/images/solid-state/latp-water-slurry-photo.jpg" alt="LATP water-based slurry, D50 0.15 um product image" loading="lazy">
-        </a>
-      </div>
-      <div class="product-card__body">
-        <div class="product-card__topline">
-          <span class="product-card__category">Solid-State Oxide Slurry</span>
-          <span class="product-card__abbr">RFQ grade</span>
-        </div>
-        <h3><a class="product-detail-link" href="products/latp-water-based-slurry-d-50-0-15-um.html"><span class="formula-text">LATP water-based slurry, D<sub>50</sub> 0.15 um</span></a></h3>
-        <dl class="product-card__facts"><div><dt>Available</dt><dd>RFQ</dd></div></dl>
-        <ul class="product-card__properties"><li class="property-highlight"><strong>Particle size:</strong> D50 0.15 +/- 0.05 um</li><li><strong>Solid content:</strong> target +/- process range</li><li><strong>Viscosity:</strong> &lt;= 80 mPa.s</li><li><strong>pH:</strong> 5-9</li></ul>
-        <form class="product-card__rfq" action="contact.html" method="get">
-          <input type="hidden" name="inquiry_type" value="Request for Quote">
-          <input type="hidden" name="product_interest" value="LATP water-based slurry, D50 0.15 um">
-          <input type="hidden" name="category" value="Solid-State Oxide Slurry">
-          <input type="hidden" name="message" value="I would like to request a quote for LATP water-based slurry, D50 0.15 um. Product category: Solid-State Oxide Slurry.">
-          <label class="rfq-label" for="qty-latp-water-based-slurry-d-50-0-15-um">RFQ Quantity</label>
-          <div class="product-card__controls">
-            <select id="qty-latp-water-based-slurry-d-50-0-15-um" name="quantity">
-              <option value="100 g">100 g</option><option value="1 kg">1 kg</option><option value="5 kg">5 kg</option><option value=">5 kg">&gt;5 kg</option>
-            </select>
-            <button class="btn" type="submit">Request Quote</button>
-          </div>
-        </form>
-      </div>
-    </article>
-    <article class="product-card" data-product-card data-section="solid-state" data-search="solid-state oxide slurry latp water-based slurry, d50 0.30 um li1.3al0.3ti1.7(po4)3 particle size: d50 0.30 +/- 0.05 um solid content: target +/- process range viscosity: &lt;= 80 mpa.s ph: 5-9">
-      <div class="product-card__media">
-        <a class="product-media-link" href="products/latp-water-based-slurry-d-50-0-30-um.html" aria-label="View details for LATP water-based slurry, D50 0.30 um">
-          <img class="product-photo" src="assets/images/solid-state/latp-water-slurry-photo.jpg" alt="LATP water-based slurry, D50 0.30 um product image" loading="lazy">
-        </a>
-      </div>
-      <div class="product-card__body">
-        <div class="product-card__topline">
-          <span class="product-card__category">Solid-State Oxide Slurry</span>
-          <span class="product-card__abbr">RFQ grade</span>
-        </div>
-        <h3><a class="product-detail-link" href="products/latp-water-based-slurry-d-50-0-30-um.html"><span class="formula-text">LATP water-based slurry, D<sub>50</sub> 0.30 um</span></a></h3>
-        <dl class="product-card__facts"><div><dt>Available</dt><dd>RFQ</dd></div></dl>
-        <ul class="product-card__properties"><li class="property-highlight"><strong>Particle size:</strong> D50 0.30 +/- 0.05 um</li><li><strong>Solid content:</strong> target +/- process range</li><li><strong>Viscosity:</strong> &lt;= 80 mPa.s</li><li><strong>pH:</strong> 5-9</li></ul>
-        <form class="product-card__rfq" action="contact.html" method="get">
-          <input type="hidden" name="inquiry_type" value="Request for Quote">
-          <input type="hidden" name="product_interest" value="LATP water-based slurry, D50 0.30 um">
-          <input type="hidden" name="category" value="Solid-State Oxide Slurry">
-          <input type="hidden" name="message" value="I would like to request a quote for LATP water-based slurry, D50 0.30 um. Product category: Solid-State Oxide Slurry.">
-          <label class="rfq-label" for="qty-latp-water-based-slurry-d-50-0-30-um">RFQ Quantity</label>
-          <div class="product-card__controls">
-            <select id="qty-latp-water-based-slurry-d-50-0-30-um" name="quantity">
-              <option value="100 g">100 g</option><option value="1 kg">1 kg</option><option value="5 kg">5 kg</option><option value=">5 kg">&gt;5 kg</option>
-            </select>
-            <button class="btn" type="submit">Request Quote</button>
-          </div>
-        </form>
-      </div>
-    </article>
-    <article class="product-card" data-product-card data-section="solid-state" data-search="solid-state oxide slurry latp water-based slurry, d50 0.65 um li1.3al0.3ti1.7(po4)3 particle size: d50 0.65 +/- 0.15 um solid content: target +/- process range viscosity: &lt;= 80 mpa.s ph: 5-9">
-      <div class="product-card__media">
-        <a class="product-media-link" href="products/latp-water-based-slurry-d-50-0-65-um.html" aria-label="View details for LATP water-based slurry, D50 0.65 um">
-          <img class="product-photo" src="assets/images/solid-state/latp-water-slurry-photo.jpg" alt="LATP water-based slurry, D50 0.65 um product image" loading="lazy">
-        </a>
-      </div>
-      <div class="product-card__body">
-        <div class="product-card__topline">
-          <span class="product-card__category">Solid-State Oxide Slurry</span>
-          <span class="product-card__abbr">RFQ grade</span>
-        </div>
-        <h3><a class="product-detail-link" href="products/latp-water-based-slurry-d-50-0-65-um.html"><span class="formula-text">LATP water-based slurry, D<sub>50</sub> 0.65 um</span></a></h3>
-        <dl class="product-card__facts"><div><dt>Available</dt><dd>RFQ</dd></div></dl>
-        <ul class="product-card__properties"><li class="property-highlight"><strong>Particle size:</strong> D50 0.65 +/- 0.15 um</li><li><strong>Solid content:</strong> target +/- process range</li><li><strong>Viscosity:</strong> &lt;= 80 mPa.s</li><li><strong>pH:</strong> 5-9</li></ul>
-        <form class="product-card__rfq" action="contact.html" method="get">
-          <input type="hidden" name="inquiry_type" value="Request for Quote">
-          <input type="hidden" name="product_interest" value="LATP water-based slurry, D50 0.65 um">
-          <input type="hidden" name="category" value="Solid-State Oxide Slurry">
-          <input type="hidden" name="message" value="I would like to request a quote for LATP water-based slurry, D50 0.65 um. Product category: Solid-State Oxide Slurry.">
-          <label class="rfq-label" for="qty-latp-water-based-slurry-d-50-0-65-um">RFQ Quantity</label>
-          <div class="product-card__controls">
-            <select id="qty-latp-water-based-slurry-d-50-0-65-um" name="quantity">
-              <option value="100 g">100 g</option><option value="1 kg">1 kg</option><option value="5 kg">5 kg</option><option value=">5 kg">&gt;5 kg</option>
-            </select>
-            <button class="btn" type="submit">Request Quote</button>
-          </div>
+          <label class="rfq-label" data-rfq-quantity-label for="qty-latp-slurry">Quantity / project scale</label>
+          <div class="product-card__controls"><select id="qty-latp-slurry" name="quantity_scale"><option value="100 g">100 g</option><option value="1 kg">1 kg</option><option value="5 kg">5 kg</option><option value=">5 kg">&gt;5 kg</option></select><button class="btn" type="submit">Request Quote</button></div>
+          <div class="product-card__links"><a href="products/latp-slurry.html">View details</a></div>
         </form>
       </div>
     </article>
@@ -7266,25 +4162,33 @@
   </section>
 </main>
 <footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
-<script src="assets/js/main.js?v=20260813c"></script>
+<script src="assets/js/main.js?v=2026-08-launch-pricing-v1"></script>
 <script>
 (function () {
   const searchInput = document.getElementById('catalog-search');
   const cards = Array.from(document.querySelectorAll('[data-product-card]'));
   const sections = Array.from(document.querySelectorAll('[data-product-section]'));
-  const tabs = Array.from(document.querySelectorAll('.catalog-tools .tab'));
+  const tabs = Array.from(document.querySelectorAll('.catalog-filter-bar .tab'));
   const noResults = document.getElementById('no-results');
   if (!searchInput || !cards.length) return;
 
   const sectionLabels = {
-    'solid-state': 'Solid-State',
-    'active-materials': 'Battery Active Materials',
-    'next-gen': 'Next-Gen',
-    salts: 'Salts',
-    solvents: 'Solvents',
-    additives: 'Additives',
-    formulations: 'Formulations'
+    salts: 'Lithium Salts',
+    solvents: 'Battery Solvents',
+    additives: 'Electrolyte Additives',
+    'next-gen': 'Next-Gen Salts',
+    'solid-state': 'Solid-State Electrolytes',
+    formulations: 'Custom Formulations',
+    'active-materials': 'Active Materials',
+    'functional-coatings': 'Functional Coatings'
   };
+
+  const sectionOrder = ['salts', 'solvents', 'additives', 'next-gen', 'solid-state', 'formulations', 'active-materials', 'functional-coatings'];
+  const sectionParent = sections[0]?.parentElement;
+  if (sectionParent) sectionOrder.forEach(id => {
+    const section = document.getElementById(id);
+    if (section) sectionParent.appendChild(section);
+  });
 
   const aliases = {
     silicon: ['silicon anode', 'siox', 'si-c', 'fec', 'vc', 'additive', 'formulation'],
@@ -7485,12 +4389,25 @@
   tabs.forEach(tab => {
     tab.dataset.label = tab.textContent.trim();
     tab.addEventListener('click', event => {
+      tabs.forEach(item => item.classList.toggle('active', item === tab));
       if (!searchInput.value.trim()) return;
       event.preventDefault();
       const target = document.querySelector(tab.getAttribute('href'));
       if (target && !target.hidden) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  tabs[0]?.classList.add('active');
+  if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting && !entry.target.hidden)
+        .sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
+      if (!visible.length) return;
+      const currentId = visible[0].target.id;
+      tabs.forEach(tab => tab.classList.toggle('active', tab.getAttribute('href') === `#${currentId}`));
+    }, { rootMargin: '-180px 0px -62% 0px', threshold: 0 });
+    sections.forEach(section => sectionObserver.observe(section));
+  }
 
   searchInput.addEventListener('input', applyCatalogSearch);
   applyCatalogSearch();

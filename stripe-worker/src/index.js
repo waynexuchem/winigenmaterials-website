@@ -53,7 +53,7 @@ function createCartFingerprint(items, destinationCountry) {
   return `${destinationCountry}|${items.map(item => `${item.variant.key}:${item.quantity}`).sort().join('|')}`;
 }
 
-function resolveCart(cart) {
+export function resolveCart(cart) {
   if (!Array.isArray(cart) || cart.length === 0 || cart.length > 25) {
     throw new Error('A cart must contain between 1 and 25 items.');
   }
@@ -78,7 +78,7 @@ function resolveCart(cart) {
       ? item.variant.product.shippingClass
       : current
   ), 'STANDARD_RD');
-  const merchandiseSubtotal = items.reduce((total, item) => total + Math.round(item.variant.approvedRetailPriceUsd * 100) * item.quantity, 0);
+  const merchandiseSubtotal = items.reduce((total, item) => total + item.variant.unitAmount * item.quantity, 0);
   return { items, shippingClass, merchandiseSubtotal };
 }
 
@@ -94,7 +94,7 @@ function createReviewPayload(resolvedCart, action, destinationCountry = null) {
       grade: variant.product.grade,
       packageLabel: variant.label,
       quantity,
-      unitAmount: Math.round(variant.approvedRetailPriceUsd * 100)
+      unitAmount: variant.unitAmount
     }))
   };
 }
@@ -143,45 +143,7 @@ async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null) {
   `).bind(attemptId).first();
 }
 
-async function createCheckoutSession(order, attemptId, env) {
-  const params = new URLSearchParams({
-    mode: 'payment',
-    success_url: `${env.SITE_ORIGIN}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${env.SITE_ORIGIN}/checkout-cancel.html`,
-    customer_creation: 'always',
-    'line_items[0][price]': env.STRIPE_TEST_PRICE_ID,
-    'line_items[0][quantity]': '1',
-    'payment_method_types[0]': 'card',
-    'metadata[winigen_order_id]': order.winigen_order_id,
-    'metadata[checkout_attempt_id]': attemptId,
-    'payment_intent_data[metadata][winigen_order_id]': order.winigen_order_id
-  });
-
-  const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`,
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Idempotency-Key': `winigen-checkout-${attemptId}`
-    },
-    body: params.toString()
-  });
-
-  const payload = await response.json();
-  if (!response.ok) {
-    console.error('Stripe Checkout Session creation failed', {
-      orderId: order.winigen_order_id,
-      status: response.status,
-      code: payload.error?.code,
-      type: payload.error?.type
-    });
-    throw new Error('Unable to create the test Checkout Session.');
-  }
-
-  return payload;
-}
-
-async function createCartCheckoutSession(order, attemptId, resolvedCart, shippingDestination, env) {
+export async function createCartCheckoutSession(order, attemptId, resolvedCart, shippingDestination, env) {
   const params = new URLSearchParams({
     mode: 'payment',
     success_url: `${env.SITE_ORIGIN}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
@@ -196,7 +158,10 @@ async function createCartCheckoutSession(order, attemptId, resolvedCart, shippin
   });
   params.set('shipping_address_collection[allowed_countries][0]', shippingDestination.country);
   resolvedCart.items.forEach(({ variant, quantity }, index) => {
-    params.set(`line_items[${index}][price]`, variant.stripeTestPriceId);
+    params.set(`line_items[${index}][price_data][currency]`, variant.currency);
+    params.set(`line_items[${index}][price_data][unit_amount]`, String(variant.unitAmount));
+    params.set(`line_items[${index}][price_data][product_data][name]`, `${variant.product.name} — ${variant.label}`);
+    params.set(`line_items[${index}][price_data][product_data][description]`, `${variant.product.grade}; ${variant.sku}`);
     params.set(`line_items[${index}][quantity]`, String(quantity));
   });
   if (resolvedCart.shippingClass === 'STANDARD_RD') {
@@ -304,7 +269,7 @@ async function handleCreateCheckoutSession(request, env) {
       const lineStatements = resolvedCart.items.map(({ variant, quantity }, index) => env.ORDERS_DB.prepare(`
         INSERT INTO test_order_lines (winigen_order_id, sku, product_slug, product_name, grade, package_label, package_unit, package_quantity, unit_amount, currency, quantity, stripe_price_id, catalog_version, line_subtotal, shipping_amount, order_total)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'usd', ?, ?, ?, ?, ?, ?)
-      `).bind(order.winigen_order_id, variant.sku, variant.product.slug, variant.product.name, variant.product.grade, variant.label, variant.unit, variant.quantity, Math.round(variant.approvedRetailPriceUsd * 100), quantity, variant.stripeTestPriceId, CATALOG_VERSION, Math.round(variant.approvedRetailPriceUsd * 100) * quantity, index === 0 && resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0, resolvedCart.merchandiseSubtotal + (resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0)));
+      `).bind(order.winigen_order_id, variant.sku, variant.product.slug, variant.product.name, variant.product.grade, variant.label, variant.unit, variant.quantity, variant.unitAmount, quantity, 'INLINE_PRICE_DATA', CATALOG_VERSION, variant.unitAmount * quantity, index === 0 && resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0, resolvedCart.merchandiseSubtotal + (resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0)));
       await env.ORDERS_DB.batch([
         env.ORDERS_DB.prepare(`UPDATE test_orders SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?, shipping_amount = ?, shipping_class = ?, catalog_version = ?, updated_at = CURRENT_TIMESTAMP WHERE winigen_order_id = ?`).bind(session.id, session.url, resolvedCart.merchandiseSubtotal, resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0, resolvedCart.shippingClass, CATALOG_VERSION, order.winigen_order_id),
         ...lineStatements
@@ -316,24 +281,7 @@ async function handleCreateCheckoutSession(request, env) {
     }
   }
 
-  try {
-    const order = await getOrCreateAttempt(body.attemptId, env);
-    if (order.stripe_checkout_session_id && order.checkout_url) {
-      return jsonResponse({ url: order.checkout_url }, 200, origin);
-    }
-
-    const session = await createCheckoutSession(order, body.attemptId, env);
-    await env.ORDERS_DB.prepare(`
-      UPDATE test_orders
-      SET stripe_checkout_session_id = ?, checkout_url = ?, updated_at = CURRENT_TIMESTAMP
-      WHERE winigen_order_id = ?
-    `).bind(session.id, session.url, order.winigen_order_id).run();
-
-    return jsonResponse({ url: session.url }, 200, origin);
-  } catch (error) {
-    console.error('Checkout attempt failed', { message: error.message });
-    return jsonResponse({ error: 'Unable to start test checkout.' }, 500, origin);
-  }
+  return jsonResponse({ error: 'A validated catalog cart is required.' }, 400, origin);
 }
 
 function parseStripeSignature(header) {

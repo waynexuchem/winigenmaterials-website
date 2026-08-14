@@ -19,17 +19,15 @@
     .stripe-test-note { font-size: 14px; }
   </style>
 </head>
-<body data-checkout-api="https://winigen-stripe-test.winigen.workers.dev/api/create-checkout-session">
+<body>
   <main class="stripe-test-main">
     <section class="card stripe-test-panel" aria-labelledby="stripe-test-title">
       <div class="eyebrow">Development Only</div>
-      <h1 id="stripe-test-title">Winigen Test Checkout</h1>
-      <p>One-time $10.00 USD test payment. No product release, ordering, shipment, or fulfillment is triggered.</p>
-      <button class="btn" type="button" data-stripe-test-checkout>Test Checkout</button>
-      <p class="stripe-test-status" data-stripe-test-status aria-live="polite"></p>
-      <p class="stripe-test-note">Use Stripe test mode only.</p>
+      <h1 id="stripe-test-title">Catalog Checkout Testing</h1>
+      <p>The standalone development item has been retired. Stripe sandbox testing now uses server-validated products and package prices from the Winigen catalog.</p>
+      <a class="btn" href="products.html">Open Product Catalog</a>
+      <p class="stripe-test-note">Development environment only. Orders remain pending fulfillment review.</p>
     </section>
   </main>
-  <script src="assets/js/stripe-test.js"></script>
 </body>
 </html>

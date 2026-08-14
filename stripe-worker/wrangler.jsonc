@@ -17,7 +17,6 @@
 	},
 	"vars": {
 		"SITE_ORIGIN": "https://www.winigenmaterials.com",
-		"STRIPE_TEST_PRICE_ID": "price_1U36KK8Hut8EXxjZ1DEstFtu",
 		"EMAIL_MODE": "test",
 		"EMAIL_PROVIDER": "resend",
 		"TEST_ORDER_EMAIL_FROM": "orders@notify.winigenmaterials.com",
