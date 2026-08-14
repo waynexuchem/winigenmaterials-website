@@ -1,6 +1,9 @@
 outputs/
 tmp/
 scripts/
+!stripe-worker/
+!stripe-worker/scripts/
+!stripe-worker/scripts/build-catalog.mjs
 .codex_deps/
 literature/
 _data.py
@@ -10,3 +13,4 @@ __pycache__/
 knowledge/references/
 stripe-worker/.dev.vars
 stripe-worker/.wrangler/
+stripe-worker/node_modules/

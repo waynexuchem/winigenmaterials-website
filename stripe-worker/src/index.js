@@ -1,7 +1,9 @@
 import { CATALOG_VERSION, VARIANTS_BY_KEY } from './catalog.js';
 import { createOrderNotificationRecords, deliverOrderNotification } from './email/notifications.js';
+import { resolveTestShippingDestination } from './shipping.js';
 
 const checkoutPath = '/api/create-checkout-session';
+const shippingQuotePath = '/api/shipping-quote';
 const webhookPath = '/api/stripe-webhook';
 const webhookToleranceSeconds = 300;
 const testCheckoutOrigins = new Set([
@@ -15,7 +17,6 @@ const shippingPrecedence = {
   SHIPPING_REVIEW: 3,
   RFQ_SHIPPING: 4
 };
-const standardShippingAmount = 8900;
 
 function jsonResponse(body, status = 200, origin) {
   const headers = new Headers({
@@ -47,8 +48,8 @@ function isValidQuantity(value) {
   return Number.isInteger(value) && value >= 1 && value <= 25;
 }
 
-function createCartFingerprint(items) {
-  return items.map(item => `${item.variant.key}:${item.quantity}`).sort().join('|');
+function createCartFingerprint(items, destinationCountry) {
+  return `${destinationCountry}|${items.map(item => `${item.variant.key}:${item.quantity}`).sort().join('|')}`;
 }
 
 function resolveCart(cart) {
@@ -80,9 +81,10 @@ function resolveCart(cart) {
   return { items, shippingClass, merchandiseSubtotal };
 }
 
-function createReviewPayload(resolvedCart, action) {
+function createReviewPayload(resolvedCart, action, destinationCountry = null) {
   return {
     action,
+    destinationCountry,
     catalogVersion: CATALOG_VERSION,
     merchandiseSubtotal: resolvedCart.merchandiseSubtotal,
     items: resolvedCart.items.map(({ variant, quantity }) => ({
@@ -178,27 +180,28 @@ async function createCheckoutSession(order, attemptId, env) {
   return payload;
 }
 
-async function createCartCheckoutSession(order, attemptId, resolvedCart, env) {
+async function createCartCheckoutSession(order, attemptId, resolvedCart, shippingDestination, env) {
   const params = new URLSearchParams({
     mode: 'payment',
     success_url: `${env.SITE_ORIGIN}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${env.SITE_ORIGIN}/checkout-cancel.html`,
     customer_creation: 'always',
     'payment_method_types[0]': 'card',
-    'shipping_address_collection[allowed_countries][0]': 'US',
     'metadata[winigen_order_id]': order.winigen_order_id,
     'metadata[checkout_attempt_id]': attemptId,
     'metadata[catalog_version]': CATALOG_VERSION,
+    'metadata[shipping_destination_country]': shippingDestination.country,
     'payment_intent_data[metadata][winigen_order_id]': order.winigen_order_id
   });
+  params.set('shipping_address_collection[allowed_countries][0]', shippingDestination.country);
   resolvedCart.items.forEach(({ variant, quantity }, index) => {
     params.set(`line_items[${index}][price]`, variant.stripeTestPriceId);
     params.set(`line_items[${index}][quantity]`, String(quantity));
   });
   if (resolvedCart.shippingClass === 'STANDARD_RD') {
     params.set('shipping_options[0][shipping_rate_data][type]', 'fixed_amount');
-    params.set('shipping_options[0][shipping_rate_data][display_name]', 'U.S. research materials shipping and handling');
-    params.set('shipping_options[0][shipping_rate_data][fixed_amount][amount]', String(standardShippingAmount));
+    params.set('shipping_options[0][shipping_rate_data][display_name]', 'Shipping & Handling');
+    params.set('shipping_options[0][shipping_rate_data][fixed_amount][amount]', String(shippingDestination.amount));
     params.set('shipping_options[0][shipping_rate_data][fixed_amount][currency]', 'usd');
   }
 
@@ -210,6 +213,30 @@ async function createCartCheckoutSession(order, attemptId, resolvedCart, env) {
   const payload = await response.json();
   if (!response.ok) throw new Error('Unable to create the test Checkout Session.');
   return payload;
+}
+
+async function handleShippingQuote(request, env) {
+  const origin = request.headers.get('Origin');
+  if (!isAllowedOrigin(request)) return jsonResponse({ error: 'Origin not allowed.' }, 403);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return jsonResponse({ error: 'Expected a JSON request body.' }, 400, origin);
+  }
+
+  const shippingDestination = resolveTestShippingDestination(body.destinationCountry);
+  if (!shippingDestination) {
+    return jsonResponse({ action: 'shipping_review', error: 'Shipping to this destination requires review.' }, 200, origin);
+  }
+
+  return jsonResponse({
+    action: 'quote',
+    destinationCountry: shippingDestination.country,
+    shippingAmount: shippingDestination.amount,
+    currency: shippingDestination.currency
+  }, 200, origin);
 }
 
 async function handleCreateCheckoutSession(request, env) {
@@ -232,18 +259,25 @@ async function handleCreateCheckoutSession(request, env) {
   if (Array.isArray(body.cart)) {
     try {
       const resolvedCart = resolveCart(body.cart);
-      if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq'), 200, origin);
-      if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review'), 200, origin);
-      const cartHash = createCartFingerprint(resolvedCart.items);
+      const shippingDestination = resolveTestShippingDestination(body.destinationCountry);
+      if (!shippingDestination) {
+        return jsonResponse({
+          ...createReviewPayload(resolvedCart, 'shipping_review'),
+          error: 'Shipping to this destination requires review.'
+        }, 200, origin);
+      }
+      if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq', shippingDestination.country), 200, origin);
+      if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country), 200, origin);
+      const cartHash = createCartFingerprint(resolvedCart.items, shippingDestination.country);
       const order = await getOrCreateAttempt(body.attemptId, env, cartHash);
       if (order.stripe_checkout_session_id && order.checkout_url) return jsonResponse({ action: 'checkout', url: order.checkout_url, orderId: order.winigen_order_id }, 200, origin);
-      const session = await createCartCheckoutSession(order, body.attemptId, resolvedCart, env);
+      const session = await createCartCheckoutSession(order, body.attemptId, resolvedCart, shippingDestination, env);
       const lineStatements = resolvedCart.items.map(({ variant, quantity }, index) => env.ORDERS_DB.prepare(`
         INSERT INTO test_order_lines (winigen_order_id, sku, product_slug, product_name, grade, package_label, package_unit, package_quantity, unit_amount, currency, quantity, stripe_price_id, catalog_version, line_subtotal, shipping_amount, order_total)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'usd', ?, ?, ?, ?, ?, ?)
-      `).bind(order.winigen_order_id, variant.sku, variant.product.slug, variant.product.name, variant.product.grade, variant.label, variant.unit, variant.quantity, Math.round(variant.approvedRetailPriceUsd * 100), quantity, variant.stripeTestPriceId, CATALOG_VERSION, Math.round(variant.approvedRetailPriceUsd * 100) * quantity, index === 0 && resolvedCart.shippingClass === 'STANDARD_RD' ? standardShippingAmount : 0, resolvedCart.merchandiseSubtotal + (resolvedCart.shippingClass === 'STANDARD_RD' ? standardShippingAmount : 0)));
+      `).bind(order.winigen_order_id, variant.sku, variant.product.slug, variant.product.name, variant.product.grade, variant.label, variant.unit, variant.quantity, Math.round(variant.approvedRetailPriceUsd * 100), quantity, variant.stripeTestPriceId, CATALOG_VERSION, Math.round(variant.approvedRetailPriceUsd * 100) * quantity, index === 0 && resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0, resolvedCart.merchandiseSubtotal + (resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0)));
       await env.ORDERS_DB.batch([
-        env.ORDERS_DB.prepare(`UPDATE test_orders SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?, shipping_amount = ?, shipping_class = ?, catalog_version = ?, updated_at = CURRENT_TIMESTAMP WHERE winigen_order_id = ?`).bind(session.id, session.url, resolvedCart.merchandiseSubtotal, resolvedCart.shippingClass === 'STANDARD_RD' ? standardShippingAmount : 0, resolvedCart.shippingClass, CATALOG_VERSION, order.winigen_order_id),
+        env.ORDERS_DB.prepare(`UPDATE test_orders SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?, shipping_amount = ?, shipping_class = ?, catalog_version = ?, updated_at = CURRENT_TIMESTAMP WHERE winigen_order_id = ?`).bind(session.id, session.url, resolvedCart.merchandiseSubtotal, resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0, resolvedCart.shippingClass, CATALOG_VERSION, order.winigen_order_id),
         ...lineStatements
       ]);
       return jsonResponse({ action: 'checkout', url: session.url, orderId: order.winigen_order_id }, 200, origin);
@@ -426,7 +460,7 @@ export default {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin');
 
-    if (request.method === 'OPTIONS' && url.pathname === checkoutPath && origin && isAllowedOrigin(request)) {
+    if (request.method === 'OPTIONS' && [checkoutPath, shippingQuotePath].includes(url.pathname) && origin && isAllowedOrigin(request)) {
       return new Response(null, {
         status: 204,
         headers: {
@@ -441,6 +475,10 @@ export default {
 
     if (request.method === 'POST' && url.pathname === checkoutPath) {
       return handleCreateCheckoutSession(request, env);
+    }
+
+    if (request.method === 'POST' && url.pathname === shippingQuotePath) {
+      return handleShippingQuote(request, env);
     }
 
     if (request.method === 'POST' && url.pathname === webhookPath) {

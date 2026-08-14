@@ -1,6 +1,7 @@
 (function () {
   const storageKey = 'winigen-ecommerce-cart-v1';
   const reviewKey = 'winigen-ecommerce-review-v1';
+  const destinationKey = 'winigen-shipping-destination-v1';
 
   function readCart() {
     try {
@@ -51,6 +52,14 @@
     try { return JSON.parse(localStorage.getItem(reviewKey) || 'null'); } catch { return null; }
   }
 
+  function getShippingDestination() {
+    return localStorage.getItem(destinationKey) || 'US';
+  }
+
+  function setShippingDestination(country) {
+    localStorage.setItem(destinationKey, country);
+  }
+
   function hydrateContactReview() {
     const params = new URLSearchParams(window.location.search);
     if (!params.has('cart_review')) return;
@@ -59,7 +68,8 @@
     if (!review || !form) return;
     const type = review.action === 'rfq' ? 'Request for Quote' : 'Shipping Review';
     const details = review.items.map(item => `${item.sku}: ${item.name} | ${item.grade} | ${item.packageLabel} x ${item.quantity} | $${(item.unitAmount * item.quantity / 100).toFixed(2)}`).join('\n');
-    const message = `Cart review request\n${details}\nPublished merchandise subtotal: $${(review.merchandiseSubtotal / 100).toFixed(2)}\nShipping requires confirmation. Cart remains saved.`;
+    const destination = review.destinationCountry ? `\nShipping destination: ${review.destinationCountry}` : '';
+    const message = `Cart review request\n${details}\nPublished merchandise subtotal: $${(review.merchandiseSubtotal / 100).toFixed(2)}${destination}\nShipping requires confirmation. Cart remains saved.`;
     const setField = (name, value) => {
       const field = form.querySelector(`[name="${name}"]`);
       if (field) field.value = value;
@@ -69,7 +79,7 @@
     setField('message', message);
   }
 
-  window.WinigenCart = { readCart, writeCart, itemCount, add, update, remove, saveReview, getReview };
+  window.WinigenCart = { readCart, writeCart, itemCount, add, update, remove, saveReview, getReview, getShippingDestination, setShippingDestination };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hydrateContactReview);
   else hydrateContactReview();
 }());
