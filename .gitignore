@@ -1,6 +1,12 @@
 outputs/
 tmp/
+.DS_Store
+.wrangler/
+seo/audit.csv
 scripts/
+!scripts/
+scripts/*
+!scripts/build-knowledge-index.mjs
 !stripe-worker/
 !stripe-worker/scripts/
 !stripe-worker/scripts/build-catalog.mjs

@@ -13,6 +13,10 @@ window.winigenKnowledgeArticles = [
   },
   {
     title: "Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure",
+    featured: true,
+    featuredRank: 2,
+    featuredRole: "recent",
+    featuredUntil: "2026-10-15",
     stage: "Cell Development",
     stages: ["Cell Development", "Materials", "Electrolytes & Interfaces"],
     category: "Formation and Cathode Structure",
@@ -85,6 +89,9 @@ window.winigenKnowledgeArticles = [
   },
   {
     title: "LiPF6 vs LiFSI vs LiTFSI: How to Choose Lithium Electrolyte Salts for Battery Development",
+    featured: true,
+    featuredRank: 6,
+    featuredRole: "evergreen",
     stage: "Materials",
     category: "Lithium Salts",
     tags: ["LiPF6", "LiFSI", "LiTFSI", "lithium salts", "electrolyte salt", "battery electrolyte"],
@@ -95,15 +102,19 @@ window.winigenKnowledgeArticles = [
     url: "knowledge/lipf6-vs-lifsi-vs-litfsi.html"
   },
   {
-    title: "Low-Temperature Electrolyte Design for Battery Research and Extreme Environments",
+    title: "Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability",
+    featured: true,
+    featuredRank: 1,
+    featuredRole: "strategic",
+    featuredUntil: "2026-09-15",
     stage: "Electrolytes & Interfaces",
     stages: ["Electrolytes & Interfaces", "Cell Development"],
     category: "Low-Temperature Electrolytes",
-    tags: ["low temperature", "cold charge", "cold discharge", "electrolyte", "lithium plating", "solvent viscosity"],
-    keywords: ["subzero", "desolvation", "ionic conductivity", "rate capability", "cold climate", "aerospace", "low viscosity solvent", "SEI resistance"],
+    tags: ["ultra-low temperature", "cold energy", "cold power", "cold recharge", "electrolyte", "graphite", "lithium plating", "thermal management"],
+    keywords: ["below −20°C", "subzero", "desolvation", "ionic conductivity", "electrode loading", "porosity", "tortuosity", "N/P ratio", "E/C ratio", "cell hardware", "cold climate", "aerospace", "SEI resistance", "preheating"],
     related_products: ["LiFSI", "low-moisture solvents", "fluorinated solvents", "custom formulations"],
-    summary: "Low-temperature electrolyte design considerations for viscosity, ionic conductivity, desolvation, plating risk, and cold recovery.",
-    excerpt: "Cold performance depends on solvent viscosity, salt dissociation, ion transport, charge-transfer resistance, interphase chemistry, and lithium plating risk.",
+    summary: "A technical systems framework for ultra-low-temperature cell energy, power, and rechargeability below −20°C, including operation below −60°C.",
+    excerpt: "Below −20°C, electrolyte optimization must be matched to graphite kinetics, electrode architecture, lithium-receiving margin, cell hardware, thermal state, and test protocol.",
     url: "knowledge/low-temperature-electrolytes.html"
   },
   {
@@ -167,6 +178,10 @@ window.winigenKnowledgeArticles = [
   },
   {
     title: "How to Compare Solid-State Electrolyte Powders: Conductivity, Particle Size, Density, and Interface Testing",
+    featured: true,
+    featuredRank: 3,
+    featuredRole: "evergreen",
+    featuredUntil: "2026-12-31",
     stage: "Cell Development",
     stages: ["Cell Development", "Materials"],
     category: "Testing Methods",
@@ -174,7 +189,7 @@ window.winigenKnowledgeArticles = [
     keywords: ["D10", "D90", "XRD", "SEM", "moisture", "electronic conductivity", "EIS", "pressing pressure", "lithium symmetric cell"],
     related_products: ["solid-state electrolytes", "LATP", "LLZTO", "Li6PS5Cl", "Li3InCl6"],
     summary: "How to compare solid-state electrolyte powders using conductivity, particle-size distribution, pellet density, moisture, XRD, SEM, and interfaces.",
-    excerpt: "Solid-state electrolyte powders should be compared as practical battery materials, not just chemical names or headline conductivity values.",
+    excerpt: "Solid-state electrolyte powders should be compared as practical battery materials rather than chemical names or headline conductivity values.",
     url: "knowledge/compare-solid-state-electrolyte-powders.html"
   },
   {
@@ -224,6 +239,9 @@ window.winigenKnowledgeArticles = [
   },
   {
     title: "Fast Charge and All-Weather EV Batteries",
+    featured: true,
+    featuredRank: 4,
+    featuredRole: "strategic",
     stage: "Electrolytes & Interfaces",
     stages: ["Electrolytes & Interfaces", "Cell Development"],
     category: "Fast Charge and Temperature",

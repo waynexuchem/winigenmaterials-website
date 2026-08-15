@@ -8,16 +8,18 @@
     "lithium-salts": {
       "name": "Lithium Salts",
       "title": "Battery-Grade Lithium Salts | LiPF6, LiFSI & LiTFSI | Winigen Materials",
-      "description": "Battery-grade lithium electrolyte salts including LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB, and LiODFB for lithium-ion and lithium-metal battery development.",
+      "description": "Browse battery-grade LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB, LiDFOB, and related lithium electrolyte salts with research-scale online ordering and bulk RFQ support.",
+      "visibleIntro": "Winigen Materials supplies battery-grade lithium electrolyte salts including LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB, LiDFOB, and LiPO2F2 for lithium-ion and advanced battery research. Selected research-scale packages are available for online ordering, with larger quantities available by quotation.",
       "entities": ["lithium electrolyte salt", "battery-grade lithium salt", "LiPF6", "LiFSI", "LiTFSI", "LiBF4", "LiBOB", "LiODFB"],
       "commercialIntents": ["lithium electrolyte salt supplier", "battery-grade LiPF6 supplier", "battery-grade LiFSI supplier"],
       "engineeringQuestions": ["how should battery electrolyte salts be selected", "how do LiPF6 LiFSI and LiTFSI differ"],
-      "relatedKnowledge": ["electrolyte-additives-sei-cei.html", "low-temperature-electrolytes.html", "sodium-ion-electrolyte-materials.html"]
+      "relatedKnowledge": ["lipf6-vs-lifsi-vs-litfsi.html", "electrolyte-additives-sei-cei.html", "low-temperature-electrolytes.html"]
     },
     "battery-solvents": {
       "name": "Battery Solvents",
       "title": "Battery Electrolyte Solvents | Low-Moisture Materials | Winigen Materials",
-      "description": "Battery-grade carbonate, ether, nitrile, ester, fluorinated, and specialty electrolyte solvents for lithium-ion, sodium-ion, and advanced battery R&D.",
+      "description": "Browse battery-grade carbonate, ether, nitrile, ester, fluorinated, and specialty electrolyte solvents with research-package online ordering and bulk RFQ support.",
+      "visibleIntro": "Winigen Materials supplies low-moisture carbonate, ether, nitrile, ester, fluorinated, and specialty solvents for lithium-ion, sodium-ion, and advanced electrolyte research. Selected research packages are available for online ordering, with bulk and custom quantities available by quotation.",
       "entities": ["battery electrolyte solvent", "battery-grade solvent", "low-moisture solvent", "EC", "DMC", "DEC", "EMC", "PC", "DME", "fluorinated electrolyte solvent"],
       "commercialIntents": ["battery electrolyte solvent supplier", "where to buy battery electrolyte solvents"],
       "engineeringQuestions": ["how should electrolyte solvents be selected", "how does solvent chemistry affect battery performance"],
@@ -25,8 +27,9 @@
     },
     "electrolyte-additives": {
       "name": "Electrolyte Additives",
-      "title": "Battery Electrolyte Additives | FEC, VC, VEC & More | Winigen Materials",
-      "description": "Battery electrolyte additives for SEI and CEI formation, silicon-anode stabilization, high-voltage cycling, fast charge, and low-temperature development.",
+      "title": "Battery Electrolyte Additives | FEC, VC, DTD, PST & More | Winigen Materials",
+      "description": "Browse battery electrolyte additives including FEC, VC, VEC, DTD, PST, and silyl additives for SEI/CEI control, with research-package online ordering and bulk RFQ support.",
+      "visibleIntro": "Winigen Materials supplies battery electrolyte additives for SEI and CEI formation, silicon-anode stabilization, high-voltage cycling, fast-charge, and low-temperature research. Selected research packages are available for online ordering, with larger and custom quantities available by quotation.",
       "entities": ["battery electrolyte additive", "FEC", "VC", "VEC", "DTD", "TMSB", "TMSP", "MMDS", "silicon-anode electrolyte additive", "high-voltage electrolyte additive"],
       "commercialIntents": ["electrolyte additive supplier", "battery-grade FEC supplier", "where to buy electrolyte additives"],
       "engineeringQuestions": ["why is FEC used for silicon anodes", "which additives stabilize the battery interphase"],
@@ -35,7 +38,8 @@
     "next-generation-salts": {
       "name": "Next-Gen Salts",
       "title": "Sodium, Potassium & Magnesium Electrolyte Salts | Winigen Materials",
-      "description": "Electrolyte salts for sodium-ion, potassium-ion, magnesium, and alternative-cation battery research, including NaPF6, NaTFSI, KFSI, KPF6, and Mg(TFSI)2.",
+      "description": "Browse NaPF6, NaTFSI, KFSI, KPF6, Mg(TFSI)2, and other alternative-cation electrolyte salts with research-package online ordering and bulk RFQ support.",
+      "visibleIntro": "Winigen Materials supplies sodium, potassium, and magnesium electrolyte salts for alternative-cation battery research, formulation screening, and compatibility studies. Selected research-scale packages are available for online ordering, with larger quantities available by quotation.",
       "entities": ["sodium electrolyte salt", "potassium electrolyte salt", "magnesium electrolyte salt", "NaPF6", "NaTFSI", "KFSI", "KPF6", "Mg(TFSI)2"],
       "commercialIntents": ["sodium-ion electrolyte salt supplier", "where to buy sodium battery salts"],
       "engineeringQuestions": ["what electrolyte salt is used in sodium-ion batteries", "how do sodium electrolyte salts differ"],
@@ -43,17 +47,19 @@
     },
     "solid-state-electrolytes": {
       "name": "Solid-State Electrolytes",
-      "title": "Solid-State Electrolyte Powders | Oxide, Sulfide & Halide | Winigen Materials",
-      "description": "Research and pilot-scale oxide, sulfide, and halide solid-state electrolyte powders, including LATP, LLZTO, Li6PS5Cl, and Li3InCl6 materials.",
+      "title": "Solid-State Electrolytes | LATP, LLZTO, Li6PS5Cl & Halide Materials | Winigen Materials",
+      "description": "Browse oxide, sulfide, and halide solid-state electrolyte materials including LATP, LLZTO, Li6PS5Cl, argyrodite, and Li3InCl6 for battery R&D.",
+      "visibleIntro": "Winigen Materials supplies oxide, sulfide, and halide solid-state electrolyte materials for conductivity screening, composite-electrode development, coating studies, and advanced battery R&D. Selected research packages are available for online ordering, with bulk quantities and custom requirements handled by quotation.",
       "entities": ["solid-state electrolyte", "solid electrolyte powder", "oxide solid electrolyte", "sulfide solid electrolyte", "halide solid electrolyte", "LATP", "LLZTO", "Li6PS5Cl", "argyrodite electrolyte", "Li3InCl6"],
       "commercialIntents": ["solid-state electrolyte supplier", "where to buy solid-state electrolyte", "where to buy sulfide electrolyte", "research-grade sulfide electrolyte"],
       "engineeringQuestions": ["what solid electrolyte should I use", "why does solid-state battery resistance increase", "what causes solid-state electrolyte failure"],
-      "relatedKnowledge": ["solid-state-electrolyte-materials.html", "sulfide-vs-oxide-vs-halide-solid-electrolytes.html", "compare-solid-state-electrolyte-powders.html"]
+      "relatedKnowledge": ["solid-state-electrolyte-materials.html", "sulfide-vs-oxide-vs-halide-solid-electrolytes.html", "compare-solid-state-electrolyte-powders.html", "mechanics-solid-state-electrolyte-lithium-dendrites.html"]
     },
     "custom-formulations": {
       "name": "Custom Formulations",
       "title": "Custom Battery Electrolyte Formulation & Development | Winigen Materials",
       "description": "Custom electrolyte formulation and screening support for lithium-ion, lithium-metal, silicon-anode, sodium-ion, fast-charge, and low-temperature battery development.",
+      "visibleIntro": "Winigen Materials provides RFQ-based custom electrolyte formulation and screening programs for lithium-ion, lithium-metal, silicon-anode, sodium-ion, fast-charge, and low-temperature battery development. Program scope, quantity, documentation, and pilot-scale requirements are defined through technical review.",
       "entities": ["custom battery electrolyte", "electrolyte formulation service", "custom lithium-ion electrolyte", "custom sodium-ion electrolyte", "silicon-anode electrolyte formulation", "lithium-metal electrolyte formulation"],
       "commercialIntents": ["custom electrolyte formulation service", "battery electrolyte development support"],
       "engineeringQuestions": ["how should a battery electrolyte be formulated", "how can electrolyte screening move from research to pilot scale"],
@@ -63,15 +69,17 @@
       "name": "Active Materials",
       "title": "Battery Cathode & Anode Active Materials | Winigen Materials",
       "description": "Research-grade cathode and anode materials including LFP, NMC, LCO, silicon, graphite, hard carbon, lithium metal, and related battery materials.",
+      "visibleIntro": "Winigen Materials supplies cathode and anode active materials for electrode formulation, cell screening, and material down-selection. Grades, research quantities, bulk supply, documentation, and application requirements are confirmed by quotation.",
       "entities": ["cathode material", "anode material", "LFP", "NMC", "LCO", "silicon anode", "graphite anode", "hard carbon anode"],
       "commercialIntents": ["battery active material supplier", "research-grade cathode material", "research-grade anode material"],
       "engineeringQuestions": ["how should cathode and anode materials be screened", "why do silicon anodes lose capacity"],
-      "relatedKnowledge": ["np-ratio-lithium-ion-battery-design.html", "coin-cell-to-pouch-cell-battery-material-validation.html", "sodium-ion-electrolyte-materials.html"]
+      "relatedKnowledge": ["np-ratio-lithium-ion-battery-design.html", "coin-cell-to-pouch-cell-battery-material-validation.html"]
     },
     "functional-coatings": {
       "name": "Functional Coatings",
       "title": "Battery Ceramic & Functional Coating Materials | Winigen Materials",
       "description": "Boehmite and alumina powders for battery separator coatings, electrode coatings, ceramic slurry development, and functional battery-material applications.",
+      "visibleIntro": "Winigen Materials supplies boehmite, alumina, and specialty ceramic materials for separator coating, electrode coating, edge insulation, slurry development, and pilot-line evaluation. Product grade, quantity, morphology, and process requirements are confirmed by quotation.",
       "entities": ["boehmite battery coating", "alumina battery coating", "ceramic coating material", "battery separator coating", "electrode-edge coating"],
       "commercialIntents": ["battery-grade boehmite supplier", "battery-grade alumina supplier", "ceramic coating slurry materials"],
       "engineeringQuestions": ["how should ceramic battery coatings be formulated", "how do boehmite and alumina coatings differ"],

@@ -44,23 +44,29 @@
       }
     });
 
-    if (!actionHost || actionHost.querySelector('[data-ecommerce-panel]')) return;
-    const panel = document.createElement('section');
-    panel.className = 'ecommerce-panel';
-    panel.dataset.ecommercePanel = 'true';
-    panel.innerHTML = `<header class="ecommerce-panel__header"><p class="detail-kicker">Available to Order</p><p class="ecommerce-panel__product">${product.name}<span>${product.grade}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" aria-label="Select package"></select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price"></p><p class="ecommerce-status"></p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="../contact.html?inquiry_type=Request%20for%20Quote">Need a larger quantity? Request a quote.</a></div><p class="ecommerce-panel__note">Shipping is calculated separately for the selected destination.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>`;
+    let panel = document.querySelector('[data-ecommerce-panel="true"]');
+    if (!panel) {
+      panel = document.createElement('section');
+      panel.className = 'ecommerce-panel';
+      panel.dataset.ecommercePanel = 'true';
+      panel.innerHTML = `<header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${product.name}<span>${product.grade}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package"></select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price"></p><p class="ecommerce-status"></p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="../contact.html?inquiry_type=Request%20for%20Quote">Need a larger quantity? Request a quote.</a></div><p class="ecommerce-panel__note">Shipping is calculated separately for the selected destination.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>`;
+      actionHost.insertAdjacentElement('beforebegin', panel);
+    }
+    if (panel.dataset.interactiveReady === 'true') return;
     const select = panel.querySelector('.ecommerce-package');
     const price = panel.querySelector('.ecommerce-price');
     const status = panel.querySelector('.ecommerce-status');
-    activeVariants.forEach(variant => {
-      const option = document.createElement('option');
-      option.value = variant.key;
-      option.textContent = `${variant.label} — ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(variant.unitAmount / 100)}`;
-      select.appendChild(option);
-    });
+    if (!select.options.length) {
+      activeVariants.forEach(variant => {
+        const option = document.createElement('option');
+        option.value = variant.key;
+        option.textContent = `${variant.label} — ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(variant.unitAmount / 100)}`;
+        select.appendChild(option);
+      });
+    }
     const update = () => {
       const variant = activeVariants.find(entry => entry.key === select.value);
-      price.textContent = `${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(variant.unitAmount / 100)} USD`;
+      price.textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(variant.unitAmount / 100);
       status.textContent = 'Lead time and fulfillment eligibility are confirmed during order review.';
     };
     const quantityInput = panel.querySelector('.ecommerce-quantity');
@@ -76,7 +82,7 @@
     });
     update();
     actionHost.hidden = true;
-    actionHost.insertAdjacentElement('beforebegin', panel);
+    panel.dataset.interactiveReady = 'true';
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render);

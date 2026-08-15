@@ -99,7 +99,7 @@
     const title = card.querySelector('h3')?.innerHTML || product.name;
     const options = variants.map(variant => `<option value="${variant.key}">${variant.label} — ${formatPrice(variant.unitAmount)}</option>`).join('');
     const bulkQuote = quoteHref(product, subpage);
-    body.innerHTML = `<div class="product-card__topline"><span class="product-card__category">${category}</span><span class="product-card__mode">Online ordering</span></div><h3><a class="product-detail-link" href="${detailHref}">${title}</a></h3><p class="product-card__commercial"><span data-listing-from-price></span></p><ul class="product-card__properties product-card__properties--compact">${specs}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package aria-label="Select package">${options}</select></label><label>Qty${quantityStepper()}</label></div><p class="product-card__price" data-listing-price></p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${detailHref}">View details</a><a href="${bulkQuote}">Bulk / custom quantity</a></div></div>`;
+    body.innerHTML = `<div class="product-card__topline"><span class="product-card__category">${category}</span><span class="product-card__mode">Online ordering</span></div><h3><a class="product-detail-link" href="${detailHref}">${title}</a></h3><p class="product-card__commercial"><span data-listing-from-price></span></p><ul class="product-card__properties product-card__properties--compact">${specs}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package aria-label="Select package">${options}</select></label><label>Qty${quantityStepper()}</label></div><p class="product-card__price" data-listing-price></p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${detailHref}">View details</a><a href="${bulkQuote}">Request Bulk Quote</a></div></div>`;
     const select = body.querySelector('[data-listing-package]');
     const quantity = body.querySelector('.listing-quantity input');
     const price = body.querySelector('[data-listing-price]');
@@ -107,7 +107,7 @@
     const setQuantity = value => { quantity.value = String(Math.max(1, Math.min(25, Number(value) || 1))); };
     const update = () => {
       const variant = variants.find(entry => entry.key === select.value);
-      price.textContent = `${formatPrice(variant.unitAmount)} USD`;
+      price.textContent = formatPrice(variant.unitAmount);
     };
     fromPrice.textContent = `From ${formatPrice(Math.min(...variants.map(variant => variant.unitAmount)), true)} · Multiple package sizes`;
     select.addEventListener('change', update);

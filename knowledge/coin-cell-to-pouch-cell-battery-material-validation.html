@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#12305d">
-<title>From Coin Cell to Pouch Cell, Part 1: Battery Material Validation Before Scale-Up | Winigen Materials</title>
+<title>From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials</title>
 <meta name="description" content="A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up.">
 <link rel="canonical" href="https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -20,7 +20,7 @@
 
 <link rel="author" href="https://www.winigenmaterials.com/about.html">
 <meta property="og:site_name" content="Winigen Materials">
-<meta property="og:title" content="From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up">
+<meta property="og:title" content="From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials">
 <meta property="og:description" content="A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up.">
 <meta property="og:url" content="https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">
 <meta property="og:image" content="https://www.winigenmaterials.com/assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation.png?v=20260806-1">
@@ -43,80 +43,165 @@
 .article-hero-visual{margin:0 0 30px;border-radius:18px;overflow:hidden;background:#071222;box-shadow:0 14px 34px rgba(6,18,38,.2)}.article-hero-visual img{display:block;width:100%;height:auto;object-fit:cover}
 .article-hero{padding:78px 0}.article-hero .section-title{max-width:1080px}.article-hero h1{font-size:clamp(42px,5.35vw,72px)}.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:34px;align-items:start}.article-main,.article-side{min-width:0;background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}.article-main p{line-height:1.78}.article-main a{color:var(--blue);font-weight:800}.article-block{margin-top:30px;padding-top:26px;border-top:1px solid rgba(18,32,51,.1)}.article-callout{margin:24px 0;padding:22px 24px;border-left:4px solid var(--blue);border-radius:0 14px 14px 0;background:#eef5ff}.article-callout strong{color:var(--navy)}.article-figure{margin:26px 0;border:1px solid rgba(18,32,51,.1);border-radius:18px;overflow:hidden;background:#fff}.article-figure img{display:block;width:100%;height:auto;object-fit:contain;background:#f4f7fb}.article-figure figcaption{padding:14px 16px;color:#53627c;font-size:.92rem;line-height:1.58;border-top:1px solid rgba(18,32,51,.08)}.article-table-wrap{overflow-x:auto;margin:20px 0 22px;border:1px solid rgba(18,32,51,.1);border-radius:16px;background:#fff}.article-table{width:100%;border-collapse:collapse;min-width:720px}.article-table th{background:#14213d;color:#fff;text-align:left;padding:13px 15px;font-size:13px}.article-table td{padding:13px 15px;border-top:1px solid rgba(18,32,51,.1);color:#2b3950;vertical-align:top;line-height:1.48}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}.metric-card{padding:18px;border:1px solid rgba(18,32,51,.1);border-radius:14px;background:#fff}.metric-card strong{display:block;margin-bottom:8px;color:var(--navy)}.metric-card span{color:#53627c;line-height:1.55}.reference-list{display:grid;gap:12px;padding-left:22px;margin:18px 0 0}.reference-list li{color:#40516f;line-height:1.58;padding-left:4px}.reference-list a{color:var(--blue);font-weight:850;text-decoration:none}.reference-list a:hover{text-decoration:underline}.related-link-list{display:grid;gap:10px;margin-top:16px}.related-link-list a{display:block;padding:12px 14px;border:1px solid rgba(18,32,51,.1);border-radius:12px;background:#f8fbff;color:var(--navy);font-weight:850;text-decoration:none}.related-link-list a:hover{color:var(--blue);border-color:rgba(42,102,217,.28)}.faq-list{display:grid;gap:12px;max-width:920px;margin:0 auto}.faq-list details{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.9);box-shadow:0 10px 26px rgba(15,31,77,.06);padding:18px 20px}.faq-list summary{cursor:pointer;color:var(--navy);font-weight:900}.faq-list p{margin:12px 0 0}.cta-panel{margin-top:30px;padding:28px;border:1px solid rgba(42,102,217,.22);border-radius:18px;background:#eaf2ff}.cta-panel .btn{margin-top:8px;color:#fff}.cta-panel .btn:hover{color:#fff}@media(max-width:900px){.article-layout{grid-template-columns:1fr}.article-main,.article-side{padding:24px}.metric-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.metric-grid{grid-template-columns:1fr}.article-hero{padding:56px 0}.article-main,.article-side{padding:20px}.article-table{min-width:640px}}
 </style>
-<script type="application/ld+json">{
-    "@context":  "https://schema.org",
-    "@type":  "TechArticle",
-    "@id":  "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html#article",
-    "headline":  "From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up",
-    "description":  "A practical framework for validating liquid electrolytes, additives, lithium salts, silicon anodes, lithium metal, and solid-state or hybrid systems through wetting, formation, pressure, swelling, gas, impedance, and quality control.",
-    "url":  "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html",
-    "datePublished":  "2026-06-14",
-    "dateModified":  "2026-08-06",
-    "author":  {
-                   "@type":  "Organization",
-                   "name":  "Winigen Materials",
-                   "url":  "https://www.winigenmaterials.com/"
-               },
-    "publisher":  {
-                      "@type":  "Organization",
-                      "name":  "Winigen Materials",
-                      "url":  "https://www.winigenmaterials.com/",
-                      "logo":  {
-                                   "@type":  "ImageObject",
-                                   "url":  "https://www.winigenmaterials.com/assets/images/winigen-logo.png"
-                               }
-                  },
-    "image":  [
-                  "https://www.winigenmaterials.com/assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation.png?v=20260806-1",
-                  "https://www.winigenmaterials.com/assets/images/knowledge/campaign/coin-to-pouch-validation-hero-v3-single-layer.png?v=20260806-1",
-                  "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-to-pouch-validation-ladder.png",
-                  "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-pouch-cell-architecture-voltage-cc-by.jpg",
-                  "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/pouch-cell-process-control-map.png",
-                  "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg",
-                  "https://www.winigenmaterials.com/assets/images/knowledge/coin-to-pouch-validation/battery-scale-up-qc-evidence-chain.png"
-              ],
-    "about":  [
-                  "Pouch-cell validation",
-                  "Battery material scale-up",
-                  "Electrolyte wetting and filling",
-                  "Battery formation",
-                  "Gas and swelling",
-                  "Lithium-metal pressure",
-                  "Battery quality control"
-              ],
-    "citation":  [
-                     "Son et al., Analysis of Differences in Electrochemical Performance Between Coin and Pouch Cells for Lithium-Ion Battery Applications, Energy \u0026 Environmental Materials, 2023.",
-                     "Smith et al., Potential and Limitations of Research Battery Cell Types for Electrochemical Data Acquisition, Batteries \u0026 Supercaps, 2023.",
-                     "Dai and Cai, Best practices in lithium battery cell preparation and evaluation, Communications Materials, 2022.",
-                     "Lautenschlaeger et al., Understanding Electrolyte Filling of Lithium-Ion Battery Electrodes on the Pore Scale Using the Lattice Boltzmann Method, Batteries \u0026 Supercaps, 2022.",
-                     "Aalund et al., How Gas Generates in Pouch Cells and Affects Consumer Products, Frontiers in Chemical Engineering, 2022.",
-                     "Kang et al., External-pressure-induced performance enhancement of high-energy-density Li-metal-pouch cells, 2023.",
-                     "Weng et al., Modeling Battery Formation: Boosted SEI Growth, Multi-Species Reactions, and Irreversible Expansion, Journal of The Electrochemical Society, 2023.",
-                     "Cao et al., Bridging the academic and industrial metrics for next-generation practical batteries, Nature Nanotechnology, 2019."
-                 ],
-    "mainEntityOfPage":  "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html"
-}</script>
-<script type="application/ld+json">{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "@id":"https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html#faq",
-  "mainEntity":[
-    {"@type":"Question","name":"Why can coin-cell and pouch-cell results differ when the materials are the same?","acceptedAnswer":{"@type":"Answer","text":"Cell geometry, current-collection pathways, contact resistance, electrode area, electrolyte excess, pressure, wetting, and gas accommodation can change impedance and effective operating conditions. Format therefore affects how a chemistry is measured, even when the electrode materials and nominal protocol are matched."}},
-    {"@type":"Question","name":"When should a battery program move from coin cells to pouch cells?","acceptedAnswer":{"@type":"Answer","text":"Move after the material and electrode pair show repeatable promise in controlled coin-cell tests, but before the formulation is treated as scale-ready. Single-layer pouch cells are especially useful for exposing wetting, gas, swelling, pressure, tab, sealing, and formation problems while material demand is still manageable."}},
-    {"@type":"Question","name":"Which pouch-cell measurements are most important before scale-up?","acceptedAnswer":{"@type":"Answer","text":"At minimum, track formation efficiency, voltage and dQ/dV behavior, EIS or DCIR, capacity retention, coulombic efficiency, thickness or swelling, gas or degassing response, self-discharge, temperature performance, and replicate-cell variability."}},
-    {"@type":"Question","name":"Why are pressure and gas particularly important for silicon, lithium metal, and solid-state batteries?","acceptedAnswer":{"@type":"Answer","text":"Silicon changes volume, lithium metal plates and strips across a large area, and solid-state systems rely on maintained solid-solid contact. Nonuniform pressure, voids, cracking, and gas can therefore create local current concentration, contact loss, and accelerated failure."}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html#article",
+  "headline": "From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up",
+  "description": "A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up.",
+  "url": "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html",
+  "datePublished": "2026-06-14",
+  "dateModified": "2026-08-06",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://www.winigenmaterials.com/#organization",
+    "name": "Winigen Materials",
+    "url": "https://www.winigenmaterials.com/",
+    "logo": "https://www.winigenmaterials.com/assets/images/winigen-logo.png",
+    "email": "contact@winigenmaterials.com",
+    "description": "Winigen Materials supplies battery materials, electrolyte salts, solvents, additives, solid-state electrolytes, active materials, functional coatings, and custom electrolyte formulation support for energy-storage research and development.",
+    "sameAs": [
+      "https://www.linkedin.com/company/118914606/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "New Jersey",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "contact@winigenmaterials.com",
+      "availableLanguage": [
+        "English"
+      ]
+    },
+    "knowsAbout": [
+      "Battery materials",
+      "Battery electrolytes",
+      "Lithium-ion batteries",
+      "Sodium-ion batteries",
+      "Solid-state batteries",
+      "Electrolyte formulation"
+    ]
+  },
+  "publisher": {
+    "@id": "https://www.winigenmaterials.com/#organization"
+  },
+  "image": "https://www.winigenmaterials.com/assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation.png?v=20260806-1",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "silicon anode"
+    },
+    {
+      "@type": "Thing",
+      "name": "SEI growth"
+    },
+    {
+      "@type": "Thing",
+      "name": "volume expansion"
+    },
+    {
+      "@type": "Thing",
+      "name": "lithium inventory loss"
+    },
+    {
+      "@type": "Thing",
+      "name": "particle fracture"
+    }
+  ],
+  "citation": [
+    "Son et al., Analysis of Differences in Electrochemical Performance Between Coin and Pouch Cells for Lithium-Ion Battery Applications, Energy & Environmental Materials, 2023.",
+    "Smith et al., Potential and Limitations of Research Battery Cell Types for Electrochemical Data Acquisition, Batteries & Supercaps, 2023.",
+    "Dai and Cai, Best practices in lithium battery cell preparation and evaluation, Communications Materials, 2022.",
+    "Lautenschlaeger et al., Understanding Electrolyte Filling of Lithium-Ion Battery Electrodes on the Pore Scale Using the Lattice Boltzmann Method, Batteries & Supercaps, 2022.",
+    "Aalund et al., How Gas Generates in Pouch Cells and Affects Consumer Products, Frontiers in Chemical Engineering, 2022.",
+    "Kang et al., External-pressure-induced performance enhancement of high-energy-density Li-metal-pouch cells, 2023.",
+    "Weng et al., Modeling Battery Formation: Boosted SEI Growth, Multi-Species Reactions, and Irreversible Expansion, Journal of The Electrochemical Society, 2023.",
+    "Cao et al., Bridging the academic and industrial metrics for next-generation practical batteries, Nature Nanotechnology, 2019."
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html"
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "@id": "https://www.winigenmaterials.com/knowledge.html#collection",
+    "name": "Winigen Materials Knowledge Center"
+  },
+  "keywords": "silicon-anodes, silicon anode, SEI growth, volume expansion, lithium inventory loss, particle fracture"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why can coin-cell and pouch-cell results differ when the materials are the same?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cell geometry, current-collection pathways, contact resistance, electrode area, electrolyte excess, pressure, wetting, and gas accommodation can change impedance and effective operating conditions. Format therefore affects how a chemistry is measured, even when the electrode materials and nominal protocol are matched."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should a battery program move from coin cells to pouch cells?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Move after the material and electrode pair show repeatable promise in controlled coin-cell tests, but before the formulation is treated as scale-ready. Single-layer pouch cells are especially useful for exposing wetting, gas, swelling, pressure, tab, sealing, and formation problems while material demand is still manageable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which pouch-cell measurements are most important before scale-up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At minimum, track formation efficiency, voltage and dQ/dV behavior, EIS or DCIR, capacity retention, coulombic efficiency, thickness or swelling, gas or degassing response, self-discharge, temperature performance, and replicate-cell variability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are pressure and gas particularly important for silicon, lithium metal, and solid-state batteries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Silicon changes volume, lithium metal plates and strips across a large area, and solid-state systems rely on maintained solid-solid contact. Nonuniform pressure, voids, cracking, and gas can therefore create local current concentration, contact loss, and accelerated failure."
+      }
+    }
   ]
-}</script>
-<script type="application/ld+json">{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "@id":"https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html#breadcrumb",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.winigenmaterials.com/"},
-    {"@type":"ListItem","position":2,"name":"Knowledge","item":"https://www.winigenmaterials.com/knowledge.html"},
-    {"@type":"ListItem","position":3,"name":"Coin Cell to Pouch Cell Part 1","item":"https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.winigenmaterials.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Knowledge",
+      "item": "https://www.winigenmaterials.com/knowledge.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up",
+      "item": "https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html"
+    }
   ]
-}</script>
+}
+</script>
 </head>
 <body>
 <header class="header">
@@ -340,8 +425,9 @@
       </div>
     </div>
   </section>
+<section class="section seo-related-resources" data-seo-generated="related-resources"><div class="container"><p class="eyebrow">Explore Further</p><h2>Relevant Winigen Materials</h2><div class="seo-related-resources__links"><a href="../products/electrolyte-additives.html">Electrolyte Additives</a><a href="../products/lithium-salts.html">Lithium Salts</a><a href="../products/custom-electrolyte-formulations.html">Custom Formulations</a><a href="../products/battery-active-materials.html">Active Materials</a></div></div></section>
 </main>
 <footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
-<script src="../assets/js/main.js?v=20260615"></script>
+<script src="../assets/js/main.js?v=2026-08-launch-pricing-v1-seo-static-v2"></script>
 </body>
 </html>

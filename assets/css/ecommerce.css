@@ -180,3 +180,6 @@
   .checkout-result h1 { font-size: 38px; }
   .checkout-result__actions .btn { text-align: center; width: 100%; }
 }
+.product-detail-layout > * {
+  min-width: 0;
+}

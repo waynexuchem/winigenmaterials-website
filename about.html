@@ -18,23 +18,27 @@
 .about-lead { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(320px,.9fr); gap: 34px; align-items: stretch; }
 .about-panel { display: flex; flex-direction: column; justify-content: center; }
 .about-panel h2 { font-size: clamp(30px,3.2vw,48px); }
-.about-image { min-height: 430px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); background: url('assets/images/raw-chemicals.jpg') center/cover; }
+.about-explore { margin: 6px 0 0; color: #64728b; font-size: 14px; }
+.about-explore a { color: #40516f; font-weight: 750; text-underline-offset: 3px; }
+.about-explore a:hover { color: var(--blue); }
+.about-glance { display: flex; flex-direction: column; justify-content: center; background: linear-gradient(145deg,#fff 0%,#f3f7fc 100%); }
+.about-glance h2 { font-size: clamp(28px,3vw,42px); }
+.about-glance dl { margin: 8px 0 0; }
+.about-glance__fact { display: grid; grid-template-columns: minmax(110px,.65fr) minmax(0,1.35fr); gap: 18px; padding: 18px 0; border-top: 1px solid rgba(18,32,51,.1); }
+.about-glance__fact dt { color: #52627d; font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.about-glance__fact dd { margin: 0; color: var(--navy); font-weight: 750; line-height: 1.5; }
 .about-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px; }
 .about-card ul { margin: 0; padding-left: 20px; color: #40516f; line-height: 1.68; }
-.about-facts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-.about-fact { padding: 22px; }
-.about-fact dt { color: var(--blue); font-size: 13px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-.about-fact dd { margin: 8px 0 0; color: var(--navy); font-weight: 750; line-height: 1.55; }
+.about-supply-section { padding-top: 64px; padding-bottom: 64px; }
 .approach-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px; align-items: stretch; }
 .approach-card { background: #fff; }
 .mission-band { background: linear-gradient(135deg,#e8f1fb 0%,#f7fbff 100%); }
 .cta-panel { text-align: center; max-width: 920px; margin: 0 auto; }
 .cta-panel .hero-actions { justify-content: center; }
-@media(max-width:900px) { .about-lead, .about-grid, .approach-grid, .about-facts { grid-template-columns: 1fr; } .about-image { min-height: 280px; } }
+@media(max-width:900px) { .about-lead, .about-grid, .approach-grid { grid-template-columns: 1fr; } .about-glance__fact { grid-template-columns: 1fr; gap: 5px; } .about-supply-section { padding-top: 48px; padding-bottom: 48px; } }
 </style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://www.winigenmaterials.com/#organization",
   "name": "Winigen Materials",
@@ -73,7 +77,7 @@
 <meta property="og:url" content="https://www.winigenmaterials.com/about.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Winigen Materials">
-<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/raw-chemicals.jpg">
+<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/winigen-logo.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -100,32 +104,26 @@
       <div class="card about-panel">
         <p class="eyebrow">Our Focus</p>
         <h2>Material access with practical electrochemical understanding</h2>
-        <p>Our focus is simple: help battery developers access the right materials, compare them properly, and move more efficiently from laboratory screening toward practical cell validation.</p>
-        <p>Battery development is often slowed by fragmented material sourcing, incomplete product data, and unclear screening strategy. A material may look attractive on paper, but real cell performance depends on purity, moisture content, particle size, formulation compatibility, interphase chemistry, and processing conditions.</p>
-        <p>Selected research-scale materials are available for online ordering, while bulk quantities, custom materials, active materials, coatings, and formulation programs are handled through quotation. Our <a href="services.html">technical services</a> and <a href="knowledge.html">Knowledge Center</a> help customers connect material selection with practical development decisions.</p>
-        <p>Winigen Materials was built to close that gap.</p>
+        <p>Winigen helps battery developers source the right materials, compare them effectively, and move more efficiently from laboratory screening toward practical cell validation.</p>
+        <p>Real cell performance depends on material quality and specification, including purity, moisture content, particle size, formulation compatibility, interphase chemistry, and processing conditions.</p>
+        <p>Selected research-scale packages are available for online ordering, while bulk quantities, custom materials, active materials, coatings, and formulation programs are available by quotation.</p>
+        <p class="about-explore">Explore: <a href="services.html">Technical Services</a> &middot; <a href="knowledge.html">Knowledge Center</a></p>
       </div>
-      <div class="about-image" role="img" aria-label="Battery electrolyte materials and laboratory bottles"></div>
-    </div>
-  </section>
-
-  <section class="section ecosystem">
-    <div class="container">
-      <div class="section-title">
+      <aside class="card about-glance" aria-labelledby="about-glance-title">
         <p class="eyebrow">Company Profile</p>
-        <h2>Winigen Materials at a Glance</h2>
-      </div>
-      <dl class="about-facts">
-        <div class="card about-fact"><dt>Location</dt><dd>New Jersey, USA</dd></div>
-        <div class="card about-fact"><dt>Focus</dt><dd>Battery materials and electrochemical components</dd></div>
-        <div class="card about-fact"><dt>Commercial model</dt><dd>Selected research-scale materials available for online ordering</dd></div>
-        <div class="card about-fact"><dt>Bulk &amp; custom supply</dt><dd>Available by quotation</dd></div>
-        <div class="card about-fact"><dt>Technical support</dt><dd>Material selection, electrolyte formulation, and application-specific sourcing support</dd></div>
-      </dl>
+        <h2 id="about-glance-title">Winigen at a Glance</h2>
+        <dl>
+          <div class="about-glance__fact"><dt>Location</dt><dd>New Jersey, USA</dd></div>
+          <div class="about-glance__fact"><dt>Focus</dt><dd>Battery materials and electrochemical components</dd></div>
+          <div class="about-glance__fact"><dt>Online ordering</dt><dd>Selected research-scale packages</dd></div>
+          <div class="about-glance__fact"><dt>Bulk &amp; custom supply</dt><dd>Available by quotation</dd></div>
+          <div class="about-glance__fact"><dt>Technical support</dt><dd>Material selection, electrolyte formulation, and application-specific sourcing</dd></div>
+        </dl>
+      </aside>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section about-supply-section">
     <div class="container">
       <div class="section-title">
         <p class="eyebrow">What We Supply</p>
@@ -189,7 +187,7 @@
   <section class="section mission-band">
     <div class="container cta-panel">
       <p class="eyebrow">Mission</p>
-      <h2>Improve access to critical battery materials and help developers move faster from concept to practical validation.</h2>
+      <h2>Improve access to critical battery materials and accelerate practical validation.</h2>
       <p>Whether you are screening a new electrolyte, sourcing solid-state electrolyte powders, evaluating sodium-ion materials, or preparing for pilot-scale development, Winigen Materials can help identify materials and screening strategies aligned with your application.</p>
       <div class="hero-actions">
         <a class="btn" href="products.html">Explore Products</a>

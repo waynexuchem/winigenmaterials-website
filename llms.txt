@@ -55,7 +55,7 @@ Use this framework to understand how Winigen connects chemical supply, interface
 - Solid-state electrolyte screening from R&D to pilot line: https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html
 - Mechanics and lithium dendrite penetration in garnet electrolytes: https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html
 - Electrolyte additive screening for silicon anodes and high-voltage cathodes: https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html
-- Low-temperature electrolyte design: https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html
+- Ultra-low-temperature lithium-ion cell design: electrolyte kinetics, electrode architecture, and rechargeability: https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html
 - Solid-liquid hybrid vs all-solid-state battery architectures: https://www.winigenmaterials.com/knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html
 - Solid-state sodium batteries: https://www.winigenmaterials.com/knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html
 - Solid-state lithium-sulfur batteries: https://www.winigenmaterials.com/knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html
@@ -63,16 +63,18 @@ Use this framework to understand how Winigen connects chemical supply, interface
 
 ## Product Categories
 
-- Solid-state materials: sulfide, oxide, and halide solid electrolyte materials with particle size, electronic conductivity, and ionic conductivity values.
-- Next-generation salts: sodium, potassium, and magnesium electrolyte salts for next-generation battery chemistries.
-- Lithium salts: lithium electrolyte salts including LiPF6, LiFSI, LiTFSI, LiBOB, LiODFB, and related materials.
-- Solvents: battery-grade carbonate, ether, nitrile, ester, and fluorinated solvents with low-water specifications.
-- Additives: electrolyte additives for lithium-ion and advanced battery research.
-- Formulations: custom electrolyte formulations for low-temperature, high-rate, high-nickel Si/graphite, sodium-ion, and pilot-scale evaluation workflows.
+- Lithium Salts: lithium electrolyte salt, battery-grade lithium salt, LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB. https://www.winigenmaterials.com/products/lithium-salts.html
+- Battery Solvents: battery electrolyte solvent, battery-grade solvent, low-moisture solvent, EC, DMC, DEC, EMC. https://www.winigenmaterials.com/products/battery-solvents.html
+- Electrolyte Additives: battery electrolyte additive, FEC, VC, VEC, DTD, TMSB, TMSP. https://www.winigenmaterials.com/products/electrolyte-additives.html
+- Next-Gen Salts: sodium electrolyte salt, potassium electrolyte salt, magnesium electrolyte salt, NaPF6, NaTFSI, KFSI, KPF6. https://www.winigenmaterials.com/products/next-generation-salts.html
+- Solid-State Electrolytes: solid-state electrolyte, solid electrolyte powder, oxide solid electrolyte, sulfide solid electrolyte, halide solid electrolyte, LATP, LLZTO. https://www.winigenmaterials.com/products/solid-state-electrolytes.html
+- Custom Formulations: custom battery electrolyte, electrolyte formulation service, custom lithium-ion electrolyte, custom sodium-ion electrolyte, silicon-anode electrolyte formulation, lithium-metal electrolyte formulation. https://www.winigenmaterials.com/products/custom-electrolyte-formulations.html
+- Active Materials: cathode material, anode material, LFP, NMC, LCO, silicon anode, graphite anode. https://www.winigenmaterials.com/products/battery-active-materials.html
+- Functional Coatings: boehmite battery coating, alumina battery coating, ceramic coating material, battery separator coating, electrode-edge coating. https://www.winigenmaterials.com/products/battery-ceramic-functional-coating-materials.html
 
 ## Product Data Fields
 
-The product catalog may include chemical name, abbreviation, CAS number, formula, availability, purity, water content, particle size, electronic conductivity, ionic conductivity, and RFQ quantity options. Pricing is intentionally not published; customers should request a quote through the contact page.
+The catalog identifies which research-scale materials support online ordering and which require quotation. Direct-order products publish approved package sizes and public USD pricing; bulk quantities, custom formulations, active materials, and functional coatings remain available through RFQ. Checkout pricing is validated by Winigen server-side systems.
 
 ## Preferred Citations
 

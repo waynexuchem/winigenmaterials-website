@@ -7,11 +7,15 @@
   const results = root.querySelector('[data-search-results]');
   const count = root.querySelector('[data-search-count]');
   const empty = root.querySelector('[data-search-empty]');
+  const emptyMessage = root.querySelector('[data-search-empty-message]');
+  const clearButton = root.querySelector('[data-search-clear]');
   const chips = Array.from(root.querySelectorAll('[data-stage-filter]'));
   const topicFilters = Array.from(document.querySelectorAll('[data-topic-filter]'));
+  const primaryTopicFilters = Array.from(root.querySelectorAll('.stage-filter-row [data-topic-filter]'));
   const roadmapLinks = Array.from(document.querySelectorAll('[data-roadmap-stage]'));
   let activeStage = 'All';
   const stageLabels = new Map(chips.map((chip) => [chip.dataset.stageFilter, chip.textContent.trim()]));
+  const topicLabels = new Map(primaryTopicFilters.map((filter) => [filter.dataset.topicFilter, filter.textContent.trim()]));
 
   const weights = {
     title: 5,
@@ -127,11 +131,11 @@
   const render = () => {
     const query = input.value.trim();
     const hasQuery = Boolean(query);
-    const ranked = articles
+    const matches = articles
       .map((article) => ({ article, score: scoreArticle(article, query, !hasQuery) }))
       .filter((entry) => entry.score > 0)
-      .sort((a, b) => b.score - a.score || a.article.title.localeCompare(b.article.title))
-      .slice(0, 8);
+      .sort((a, b) => b.score - a.score || a.article.title.localeCompare(b.article.title));
+    const ranked = matches.slice(0, 8);
 
     const stageCounts = new Map();
     const sourceForCounts = hasQuery
@@ -156,15 +160,33 @@
       chip.classList.toggle('has-matches', hasQuery && stageCount > 0);
       chip.classList.toggle('no-matches', hasQuery && stage !== 'All' && stageCount === 0);
       chip.classList.toggle('active', !hasQuery && stage === activeStage);
+      chip.setAttribute('aria-pressed', String(!hasQuery && stage === activeStage));
+    });
+
+    primaryTopicFilters.forEach((filter) => {
+      const topic = filter.dataset.topicFilter;
+      const label = topicLabels.get(topic) || topic;
+      const topicCount = sourceForCounts.filter(({ article }) => scoreArticle(article, topic, false) > 0).length;
+      filter.innerHTML = `${label}<span class="stage-filter-count">${topicCount}</span>`;
+      filter.classList.toggle('has-matches', hasQuery && topicCount > 0);
+      filter.classList.toggle('no-matches', hasQuery && topicCount === 0);
+    });
+
+    topicFilters.forEach((filter) => {
+      filter.setAttribute('aria-pressed', String(filter.classList.contains('active')));
     });
 
     const hasSearch = hasQuery || activeStage !== 'All';
     results.innerHTML = ranked.map((entry) => resultTemplate(entry.article, entry.score)).join('');
     results.hidden = !hasSearch || ranked.length === 0;
     empty.hidden = !hasSearch || ranked.length > 0;
+    count.hidden = !hasSearch;
     count.textContent = hasSearch
-      ? `${ranked.length} matching article${ranked.length === 1 ? '' : 's'}`
-      : 'Search across titles, tags, summaries, keywords, and related product families.';
+      ? `${matches.length} matching article${matches.length === 1 ? '' : 's'}`
+      : '';
+    if (emptyMessage && hasQuery) {
+      emptyMessage.textContent = `No articles found for “${query}”. Try a broader topic such as electrolyte additives, solid-state electrolytes, silicon anodes, sodium-ion, fast charge, or cell development.`;
+    }
   };
 
   const setActiveStage = (stage) => {
@@ -211,6 +233,14 @@
       render();
       root.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  });
+
+  clearButton?.addEventListener('click', () => {
+    input.value = '';
+    clearTopicFilters();
+    setActiveStage('All');
+    render();
+    input.focus();
   });
 
   render();

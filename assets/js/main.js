@@ -344,6 +344,15 @@ document.addEventListener('DOMContentLoaded', () => {
   setValue('inquiry_type', inquiryAliases[requestedInquiry] || requestedInquiry);
   setValue('product_interest', params.get('product_interest'));
   setValue('quantity_scale', params.get('quantity_scale') || params.get('quantity'));
+
+  const inquiryType = contactForm.querySelector('[name="inquiry_type"]')?.value;
+  const productInterest = contactForm.querySelector('[name="product_interest"]')?.value;
+  const prefillNotice = document.createElement('div');
+  prefillNotice.className = 'contact-prefill';
+  prefillNotice.setAttribute('role', 'status');
+  prefillNotice.textContent = `Inquiry details loaded: ${inquiryType}${productInterest ? ` · ${productInterest}` : ''}`;
+  contactForm.prepend(prefillNotice);
+
   const configuration = [
     params.get('d50') && `D50: ${params.get('d50')}`,
     params.get('carrier_solvent') && `Carrier solvent: ${params.get('carrier_solvent')}`,

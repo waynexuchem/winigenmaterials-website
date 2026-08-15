@@ -1,6 +1,6 @@
 import { access, readFile, readdir } from 'node:fs/promises';
 import { dirname, extname, relative, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
@@ -12,6 +12,25 @@ const errors = [];
 const warnings = [];
 const indexedCanonicals = new Map();
 const schemasByPath = new Map();
+const indexedTitles = new Map();
+const indexedDescriptions = new Map();
+const crawlStats = {
+  htmlPages: 0,
+  indexedPages: 0,
+  noindexPages: 0,
+  titles: 0,
+  descriptions: 0,
+  canonicals: 0,
+  openGraph: 0,
+  productSchema: 0,
+  offerSchema: 0,
+  breadcrumbSchema: 0,
+  faqSchema: 0,
+  duplicateTitles: 0,
+  duplicateDescriptions: 0,
+  invalidCanonicalTargets: 0,
+  brokenInternalLinks: 0
+};
 
 function canonicalOf(html) {
   return html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1] || '';
@@ -20,6 +39,33 @@ function canonicalOf(html) {
 function metaContent(html, name, property = false) {
   const attribute = property ? 'property' : 'name';
   return html.match(new RegExp(`<meta[^>]+${attribute}=["']${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["'][^>]+content=["']([^"']*)["']`, 'i'))?.[1] || '';
+}
+
+function titleOf(html) {
+  return html.match(/<title>([\s\S]*?)<\/title>/i)?.[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim() || '';
+}
+
+function formatUsd(unitAmount) {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(unitAmount / 100);
+}
+
+function activeVariants(product) {
+  const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  if (!commerce) return [];
+  return (commerce.packages || ecommerceSource.packageTemplates[commerce.packageTemplate] || []).map(template => {
+    const id = template.id || template.key;
+    const override = commerce.variantOverrides?.[id] || {};
+    return {
+      ...template,
+      ...override,
+      id,
+      key: `${commerce.skuBase}-${id}`,
+      label: override.label || template.label,
+      unitAmount: override.unitAmount ?? template.unitAmount,
+      approvalStatus: override.approvalStatus || template.approvalStatus,
+      pricingStatus: override.pricingStatus || template.pricingStatus
+    };
+  }).filter(variant => variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL' && Number.isInteger(variant.unitAmount) && variant.unitAmount > 0);
 }
 
 function containsType(value, type) {
@@ -68,6 +114,7 @@ function localTarget(pagePath, href) {
 }
 
 const htmlFiles = await listHtml(siteRoot);
+crawlStats.htmlPages = htmlFiles.length;
 for (const pagePath of htmlFiles) {
   const html = await readFile(resolve(siteRoot, pagePath), 'utf8');
   const schemas = [];
@@ -76,6 +123,10 @@ for (const pagePath of htmlFiles) {
     catch (error) { errors.push(`${pagePath}: invalid JSON-LD block ${index + 1}: ${error.message}`); }
   }
   schemasByPath.set(pagePath, schemas);
+  if (schemas.some(schema => containsType(schema, 'Product'))) crawlStats.productSchema += 1;
+  if (schemas.some(schema => containsType(schema, 'Offer'))) crawlStats.offerSchema += 1;
+  if (schemas.some(schema => containsType(schema, 'BreadcrumbList'))) crawlStats.breadcrumbSchema += 1;
+  if (schemas.some(schema => containsType(schema, 'FAQPage'))) crawlStats.faqSchema += 1;
   if (schemas.some(schema => containsType(schema, 'SearchAction'))) errors.push(`${pagePath}: unsupported SearchAction.`);
   for (const schema of schemas) {
     for (const org of collectType(schema, 'Organization')) {
@@ -89,11 +140,43 @@ for (const pagePath of htmlFiles) {
     errors.push(`${pagePath}: private provider or database identifier leaked into HTML.`);
   }
   const noindex = /<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html);
+  if (noindex) crawlStats.noindexPages += 1;
+  else crawlStats.indexedPages += 1;
   const canonical = canonicalOf(html);
+  const title = titleOf(html);
+  const description = metaContent(html, 'description');
+  if (title) crawlStats.titles += 1;
+  if (description) crawlStats.descriptions += 1;
+  if (canonical) crawlStats.canonicals += 1;
+  if (metaContent(html, 'og:title', true) && metaContent(html, 'og:description', true)) crawlStats.openGraph += 1;
   if (!noindex) {
     if (!canonical) errors.push(`${pagePath}: indexable page has no canonical.`);
     else if (indexedCanonicals.has(canonical)) errors.push(`${pagePath}: indexed canonical duplicates ${indexedCanonicals.get(canonical)}.`);
     else indexedCanonicals.set(canonical, pagePath);
+    if (title) {
+      if (indexedTitles.has(title)) {
+        crawlStats.duplicateTitles += 1;
+        errors.push(`${pagePath}: title duplicates ${indexedTitles.get(title)}.`);
+      }
+      else indexedTitles.set(title, pagePath);
+    }
+    if (description) {
+      if (indexedDescriptions.has(description)) {
+        crawlStats.duplicateDescriptions += 1;
+        warnings.push(`${pagePath}: meta description duplicates ${indexedDescriptions.get(description)}.`);
+      }
+      else indexedDescriptions.set(description, pagePath);
+    }
+  }
+  if (canonical) {
+    const target = localTarget(pagePath, canonical);
+    if (target) {
+      try { await access(target); }
+      catch {
+        crawlStats.invalidCanonicalTargets += 1;
+        errors.push(`${pagePath}: canonical target does not exist: ${canonical}.`);
+      }
+    }
   }
   if (!noindex && !metaContent(html, 'description')) warnings.push(`${pagePath}: missing meta description.`);
   if (!noindex && !metaContent(html, 'og:title', true)) warnings.push(`${pagePath}: missing Open Graph title.`);
@@ -101,7 +184,10 @@ for (const pagePath of htmlFiles) {
     const target = localTarget(pagePath, match[1]);
     if (!target) continue;
     try { await access(target); }
-    catch { errors.push(`${pagePath}: broken internal link ${match[1]}.`); }
+    catch {
+      crawlStats.brokenInternalLinks += 1;
+      errors.push(`${pagePath}: broken internal link ${match[1]}.`);
+    }
   }
 }
 
@@ -121,10 +207,55 @@ for (const product of productSource.products) {
       if (offer.availability) errors.push(`${pagePath}: Offer invents stock availability ${offer.availability}.`);
     }
     if (/available by RFQ/i.test(metaContent(productHtml, 'description'))) errors.push(`${pagePath}: direct product meta description still claims RFQ-only availability.`);
+    if (!/Online ordering/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks static online-ordering status.`);
+    if (!/data-static-commerce="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static commerce panel.`);
+    if (!/>Add to Cart</i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static Add to Cart control.`);
+    if (/\b<dt>Availability<\/dt><dd>RFQ<\/dd>/i.test(productHtml)) errors.push(`${pagePath}: direct product still displays RFQ availability.`);
+    if (/Available by RFQ/i.test(productHtml)) errors.push(`${pagePath}: direct product contains contradictory RFQ-only wording.`);
+    for (const variant of expectedOffers) {
+      if (!productHtml.includes(variant.label)) errors.push(`${pagePath}: static HTML lacks package ${variant.label}.`);
+      if (!productHtml.includes(formatUsd(variant.unitAmount))) errors.push(`${pagePath}: static HTML lacks price ${formatUsd(variant.unitAmount)}.`);
+    }
+  } else {
+    if (!/Request Quote/i.test(productHtml)) errors.push(`${pagePath}: RFQ product lacks a Request Quote action.`);
+    if (/data-static-commerce="true"/i.test(productHtml)) errors.push(`${pagePath}: RFQ product contains a direct-commerce panel.`);
+    if (!/Available by RFQ/i.test(productHtml)) errors.push(`${pagePath}: RFQ product lacks an explicit Available by RFQ status.`);
+    if (/Online ordering|Add to Cart/i.test(productHtml)) errors.push(`${pagePath}: RFQ product contains direct-purchase wording or controls.`);
+  }
+  const faqEntities = schemas.flatMap(schema => collectType(schema, 'FAQPage'));
+  const faqText = faqEntities.flatMap(entity => entity.mainEntity || []).map(question => `${question.name || ''} ${question.acceptedAnswer?.text || ''}`).join(' ');
+  if (product.commerceStatus === 'active_checkout' && /available (?:only )?by RFQ/i.test(faqText)) {
+    errors.push(`${pagePath}: direct-product FAQ contradicts online checkout availability.`);
+  }
+  if (product.commerceStatus === 'rfq' && /online ordering|Add to Cart|buy online/i.test(faqText)) {
+    errors.push(`${pagePath}: RFQ-product FAQ contradicts RFQ availability.`);
   }
   const canonical = canonicalOf(productHtml);
   if (canonical !== `${siteUrl}${product.url}`) errors.push(`${pagePath}: canonical does not match semantic source.`);
 }
+
+const productsHtml = await readFile(resolve(siteRoot, 'products.html'), 'utf8');
+const productArticles = [...productsHtml.matchAll(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi)].map(match => match[0]);
+for (const product of productSource.products.filter(entry => entry.commerceStatus === 'active_checkout')) {
+  const article = productArticles.find(markup => markup.includes(`${product.slug}.html`));
+  if (!article) errors.push(`products.html: missing card for ${product.slug}.`);
+  else if (!/Online ordering/i.test(article) || !/>Add to Cart</i.test(article) || !/data-static-commerce="true"/i.test(article)) {
+    errors.push(`products.html: ${product.slug} lacks static direct-commerce content.`);
+  }
+}
+for (const product of productSource.products.filter(entry => entry.commerceStatus === 'rfq')) {
+  const article = productArticles.find(markup => markup.includes(`${product.slug}.html`));
+  if (!article) errors.push(`products.html: missing RFQ card for ${product.slug}.`);
+  else {
+    if (!/Available by RFQ/i.test(article) || !/Request Quote/i.test(article)) errors.push(`products.html: ${product.slug} lacks explicit RFQ status or CTA.`);
+    if (/data-static-commerce="true"|Online ordering|Add to Cart/i.test(article)) errors.push(`products.html: ${product.slug} exposes contradictory direct-commerce content.`);
+  }
+}
+
+const homeSchemas = schemasByPath.get('index.html') || [];
+const homeOrganizations = homeSchemas.flatMap(schema => collectType(schema, 'Organization'))
+  .filter(entity => entity['@id'] === `${siteUrl}/#organization`);
+if (homeOrganizations.length !== 1) errors.push(`index.html: expected one canonical Organization entity, found ${homeOrganizations.length}.`);
 
 const collectionExpectations = new Map([['products.html', productSource.products.length]]);
 for (const family of productSource.families) {
@@ -150,9 +281,52 @@ for (const url of sitemapUrls) {
   if (/checkout-(?:success|cancel)|stripe-test/.test(url)) errors.push(`sitemap.xml: test/checkout URL included: ${url}.`);
 }
 
-const browserCatalog = await readFile(resolve(siteRoot, 'assets/js/ecommerce-catalog.js'), 'utf8');
-if (/stripeTestPriceId|price_[A-Za-z0-9]+|stripeProductId/.test(browserCatalog)) {
+const browserCatalogSource = await readFile(resolve(siteRoot, 'assets/js/ecommerce-catalog.js'), 'utf8');
+if (/stripeTestPriceId|price_[A-Za-z0-9]+|stripeProductId/.test(browserCatalogSource)) {
   errors.push('assets/js/ecommerce-catalog.js: Stripe identifiers leaked into the browser projection.');
+}
+const browserCatalogMatch = browserCatalogSource.match(/window\.WINIGEN_ECOMMERCE_CATALOG\s*=\s*([\s\S]*);\s*$/);
+if (!browserCatalogMatch) errors.push('assets/js/ecommerce-catalog.js: generated catalog payload is unreadable.');
+const browserCatalog = browserCatalogMatch ? JSON.parse(browserCatalogMatch[1]) : { products: [] };
+const workerCatalogUrl = `${pathToFileURL(resolve(siteRoot, 'stripe-worker/src/catalog.js')).href}?validation=${Date.now()}`;
+const workerCatalog = await import(workerCatalogUrl);
+const semanticDirect = productSource.products.filter(product => product.commerceStatus === 'active_checkout');
+const semanticRfqSlugs = new Set(productSource.products.filter(product => product.commerceStatus === 'rfq').map(product => product.slug));
+const sourceDirectSlugs = new Set(ecommerceSource.products.filter(product => product.commercialStatus === 'ONLINE_CHECKOUT').map(product => product.slug));
+const browserBySlug = new Map(browserCatalog.products.map(product => [product.slug, product]));
+const workerBySlug = new Map(workerCatalog.PRODUCTS.map(product => [product.slug, product]));
+const expectedVariantCount = semanticDirect.reduce((total, product) => total + activeVariants(product).length, 0);
+const browserVariantCount = browserCatalog.products.reduce((total, product) => total + product.variants.length, 0);
+const workerVariantCount = workerCatalog.PRODUCTS.reduce((total, product) => total + product.variants.length, 0);
+if (browserVariantCount !== expectedVariantCount) errors.push(`Browser catalog variant count ${browserVariantCount} does not match canonical active count ${expectedVariantCount}.`);
+if (workerVariantCount !== expectedVariantCount) errors.push(`Worker catalog variant count ${workerVariantCount} does not match canonical active count ${expectedVariantCount}.`);
+if (browserCatalog.catalogVersion !== ecommerceSource.catalogVersion) errors.push('Browser catalog version does not match the canonical ecommerce source.');
+if (workerCatalog.CATALOG_VERSION !== ecommerceSource.catalogVersion) errors.push('Worker catalog version does not match the canonical ecommerce source.');
+if (semanticDirect.length !== sourceDirectSlugs.size) errors.push(`Canonical semantic/ecommerce direct-product counts disagree: ${semanticDirect.length}/${sourceDirectSlugs.size}.`);
+if (browserBySlug.size !== sourceDirectSlugs.size) errors.push(`Browser catalog product count ${browserBySlug.size} does not match canonical direct count ${sourceDirectSlugs.size}.`);
+if (workerBySlug.size !== sourceDirectSlugs.size) errors.push(`Worker catalog product count ${workerBySlug.size} does not match canonical direct count ${sourceDirectSlugs.size}.`);
+for (const product of semanticDirect) {
+  if (!sourceDirectSlugs.has(product.ecommerceSlug || product.slug)) errors.push(`${product.slug}: semantic source says direct but ecommerce source does not.`);
+  const expectedVariants = activeVariants(product);
+  const browserProduct = browserBySlug.get(product.ecommerceSlug || product.slug);
+  const workerProduct = workerBySlug.get(product.ecommerceSlug || product.slug);
+  if (!browserProduct || !workerProduct) {
+    errors.push(`${product.slug}: missing from ${!browserProduct ? 'browser' : 'Worker'} catalog projection.`);
+    continue;
+  }
+  if (browserProduct.commercialStatus !== 'ONLINE_CHECKOUT' || workerProduct.commercialStatus !== 'ONLINE_CHECKOUT') errors.push(`${product.slug}: generated catalog status is not ONLINE_CHECKOUT.`);
+  for (const expected of expectedVariants) {
+    const browserVariant = browserProduct.variants.find(variant => variant.key === expected.key);
+    const workerVariant = workerProduct.variants.find(variant => variant.key === expected.key);
+    if (!browserVariant || !workerVariant) errors.push(`${product.slug}/${expected.key}: missing generated package projection.`);
+    else if (browserVariant.label !== expected.label || workerVariant.label !== expected.label || browserVariant.unitAmount !== expected.unitAmount || workerVariant.unitAmount !== expected.unitAmount) {
+      errors.push(`${product.slug}/${expected.key}: package label or price drifts across canonical, browser, and Worker catalogs.`);
+    }
+  }
+  if (browserProduct.variants.length !== expectedVariants.length || workerProduct.variants.length !== expectedVariants.length) errors.push(`${product.slug}: generated variant count does not match canonical active variants.`);
+}
+for (const slug of semanticRfqSlugs) {
+  if (sourceDirectSlugs.has(slug) || browserBySlug.has(slug) || workerBySlug.has(slug)) errors.push(`${slug}: RFQ product leaked into a direct-checkout catalog.`);
 }
 
 if (warnings.length) console.log(`SEO validation warnings (${warnings.length}):\n${warnings.slice(0, 40).map(item => `- ${item}`).join('\n')}`);
@@ -161,3 +335,15 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`SEO validation passed for ${htmlFiles.length} HTML files, ${productSource.products.length} canonical products, and ${sitemapUrls.length} sitemap URLs.`);
+console.log(`Crawl summary: ${JSON.stringify({
+  ...crawlStats,
+  canonicalProducts: productSource.products.length,
+  directProducts: productSource.products.filter(product => product.commerceStatus === 'active_checkout').length,
+  rfqProducts: productSource.products.filter(product => product.commerceStatus === 'rfq').length,
+  familyPages: productSource.families.length,
+  browserCatalogProducts: browserBySlug.size,
+  workerCatalogProducts: workerBySlug.size,
+  authoritativeVariants: workerVariantCount,
+  sitemapUrls: sitemapUrls.length,
+  brokenInternalLinks: crawlStats.brokenInternalLinks
+})}`);

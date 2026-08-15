@@ -10,6 +10,7 @@ const siteUrl = 'https://www.winigenmaterials.com';
 const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const commerceAssetVersion = ecommerceSource.catalogVersion.replace(/[^A-Za-z0-9.-]/g, '');
+const generatedAssetVersion = `${commerceAssetVersion}-seo-static-v2`;
 const intents = JSON.parse(await readFile(resolve(siteRoot, 'seo/search-intents.json'), 'utf8'));
 const pageMetadata = JSON.parse(await readFile(resolve(siteRoot, 'seo/page-metadata.json'), 'utf8'));
 const execFile = promisify(execFileCallback);
@@ -22,11 +23,11 @@ async function writePreservingEol(path, content, original = '') {
   if (path.endsWith('.html')) {
     content = content.replace(
       /(assets\/js\/(?:main|ecommerce-catalog|ecommerce-listing|ecommerce-product-page)\.js)(?:\?v=[^"']+)?/g,
-      `$1?v=${commerceAssetVersion}`
+      `$1?v=${generatedAssetVersion}`
     );
   }
   const eol = original.includes('\r\n') ? '\r\n' : '\n';
-  const normalized = content.replace(/\r?\n/g, '\n');
+  const normalized = content.replace(/\r?\n/g, '\n').replace(/[ \t]+(?=\n)/g, '');
   await writeFile(path, eol === '\n' ? normalized : normalized.replace(/\n/g, '\r\n'));
 }
 
@@ -72,6 +73,140 @@ function plainText(value = '') {
 
 function escapeHtml(value = '') {
   return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function formatUsd(unitAmount, compact = false) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: compact ? 0 : 2,
+    maximumFractionDigits: compact ? 0 : 2
+  }).format(unitAmount / 100);
+}
+
+function activeVariants(product) {
+  const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  if (!commerce || commerce.commercialStatus !== 'ONLINE_CHECKOUT') return [];
+  return (commerce.packages || ecommerceSource.packageTemplates[commerce.packageTemplate] || []).map(template => {
+    const id = template.id || template.key;
+    const override = commerce.variantOverrides?.[id] || {};
+    return {
+      ...template,
+      ...override,
+      id,
+      key: `${commerce.skuBase}-${id}`,
+      label: override.label || template.label,
+      unitAmount: override.unitAmount ?? template.unitAmount,
+      approvalStatus: override.approvalStatus || template.approvalStatus,
+      pricingStatus: override.pricingStatus || template.pricingStatus
+    };
+  }).filter(variant => variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL' && Number.isInteger(variant.unitAmount) && variant.unitAmount > 0);
+}
+
+function ensureStylesheet(html, href) {
+  const baseHref = href.split('?')[0];
+  if (html.includes(baseHref)) {
+    return html.replace(new RegExp(`${baseHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?v=[^"']+)?`, 'g'), href);
+  }
+  return html.replace(/<\/head>/i, `<link rel="stylesheet" href="${href}">\n</head>`);
+}
+
+function propertyLabel(name, value = '') {
+  if (name && !/^(property|spec|typical specification|physical)$/i.test(name)) return name;
+  const normalized = value.toLowerCase();
+  if (normalized.includes('water') || normalized.includes('moisture')) return 'Water';
+  if (normalized.includes('purity')) return 'Purity';
+  if (normalized.includes('battery grade') || normalized.includes('material grade')) return 'Grade';
+  if (normalized.includes('tap density')) return 'Tap density';
+  if (normalized.includes('capacity')) return 'Capacity';
+  if (normalized.includes('d50') || normalized.includes('particle size')) return 'Particle size';
+  if (normalized.includes('electronic')) return 'Electronic conductivity';
+  if (normalized.includes('ionic')) return 'Ionic conductivity';
+  return name || 'Specification';
+}
+
+function listingProperties(product) {
+  const excluded = new Set(['abbreviation', 'cas number', 'formula', 'availability', 'commercial availability']);
+  const priorities = product.family === 'lithium-salts' || product.family === 'next-generation-salts'
+    ? ['grade', 'purity', 'water']
+    : product.family === 'battery-solvents'
+      ? ['grade', 'water', 'physical form']
+      : product.family === 'solid-state-electrolytes'
+        ? ['particle size', 'ionic conductivity', 'water']
+        : ['grade', 'purity', 'water'];
+  return product.additionalProperty
+    .filter(property => !excluded.has(property.name.toLowerCase()))
+    .map(property => ({ ...property, label: propertyLabel(property.name, property.value) }))
+    .sort((a, b) => {
+      const aRank = priorities.findIndex(term => `${a.label} ${a.value}`.toLowerCase().includes(term));
+      const bRank = priorities.findIndex(term => `${b.label} ${b.value}`.toLowerCase().includes(term));
+      return (aRank < 0 ? priorities.length : aRank) - (bRank < 0 ? priorities.length : bRank);
+    })
+    .slice(0, 3);
+}
+
+function renderStaticCommerceCards(html, pagePath) {
+  const contactPrefix = pagePath.startsWith('products/') ? '../' : '';
+  return html.replace(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi, article => {
+    const detailHref = article.match(/class="product-detail-link"[^>]+href="([^"]+)"/i)?.[1];
+    if (!detailHref) return article;
+    const slug = detailHref.split('/').pop().replace(/\.html(?:[?#].*)?$/, '');
+    const product = productSource.products.find(entry => entry.slug === slug);
+    if (!product) return article;
+    if (product.commerceStatus === 'rfq') {
+      return article
+        .replace(/<dt>Available<\/dt>\s*<dd>RFQ<\/dd>/gi, '<dt>Commercial status</dt><dd>Available by RFQ</dd>')
+        .replace(/<dt>Availability<\/dt>\s*<dd>RFQ<\/dd>/gi, '<dt>Commercial status</dt><dd>Available by RFQ</dd>');
+    }
+    if (product.commerceStatus !== 'active_checkout') return article;
+    const variants = activeVariants(product);
+    if (!variants.length) return article;
+    const bodyStart = article.indexOf('<div class="product-card__body">');
+    if (bodyStart < 0) return article;
+    const category = plainText(article.match(/class="product-card__category"[^>]*>([\s\S]*?)<\/span>/i)?.[1] || product.category);
+    const properties = listingProperties(product).map(property => `<li><strong>${escapeHtml(property.label)}:</strong> ${escapeHtml(property.value)}</li>`).join('');
+    const options = variants.map(variant => `<option value="${escapeHtml(variant.key)}">${escapeHtml(variant.label)} — ${formatUsd(variant.unitAmount)}</option>`).join('');
+    const minimum = Math.min(...variants.map(variant => variant.unitAmount));
+    const quoteHref = `${contactPrefix}contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
+    const body = `<div class="product-card__body" data-static-commerce="true"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">Online ordering</span></div><h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><p class="product-card__commercial starting-price"><span data-listing-from-price>From ${formatUsd(minimum, true)} · Multiple package sizes</span></p><ul class="product-card__properties product-card__properties--compact">${properties}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package name="package" aria-label="Select package">${options}</select></label><label>Qty<div class="listing-quantity quantity-stepper"><button type="button" data-listing-decrease aria-label="Decrease quantity">−</button><input type="number" value="1" min="1" max="25" inputmode="numeric" aria-label="Quantity"><button type="button" data-listing-increase aria-label="Increase quantity">+</button></div></label></div><p class="product-card__price" data-listing-price>${formatUsd(variants[0].unitAmount)}</p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a><a href="${quoteHref}">Request Bulk Quote</a></div></div></div>`;
+    return `${article.slice(0, bodyStart)}${body}\n    </article>`;
+  });
+}
+
+function commercePanel(product) {
+  const variants = activeVariants(product);
+  if (!variants.length) return '';
+  const options = variants.map(variant => `<option value="${escapeHtml(variant.key)}">${escapeHtml(variant.label)} — ${formatUsd(variant.unitAmount)}</option>`).join('');
+  const quoteHref = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
+  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(variants[0].unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div><p class="ecommerce-panel__note">Shipping is calculated separately for the selected destination.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p></section>`;
+}
+
+function renderStaticProductCommerce(html, product) {
+  if (product.commerceStatus !== 'active_checkout' || !activeVariants(product).length) return html;
+  let next = html.replace(/<section class="ecommerce-panel"[^>]*data-ecommerce-panel="true"[\s\S]*?<\/section>/i, '');
+  next = next.replace(/(<dt>Availability<\/dt><dd>)[\s\S]*?(<\/dd>)/i, '$1Online ordering$2');
+  next = next.replace(/(<section class="section dark product-detail-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i,
+    `$1<p>${escapeHtml(productDescription(product))}</p>`);
+  next = next.replace(/<div class="detail-actions"(?:[^>]*)>/i, `${commercePanel(product)}\n        <div class="detail-actions" hidden data-ecommerce-fallback-actions="true">`);
+  next = next
+    .replace(/Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions\./gi, 'Selected research packages are available for online ordering, with bulk supply and related materials-development requirements handled by quotation.')
+    .replace(/Final specifications, documentation, and available quantity can be confirmed during RFQ\./gi, 'Final specifications, documentation, and fulfillment eligibility are confirmed during order review or through a bulk RFQ.')
+    .replace(/This material is available by RFQ for programs where/gi, 'Selected research packages are available for online ordering, while bulk and custom requirements are handled by quotation for programs where');
+  const commercialFaq = {
+    'lithium-bis-fluorosulfonyl-imide-lifsi': '<details><summary>Can I order battery-grade LiFSI online?</summary><p>Yes. Selected LiFSI research packages are available for online ordering in 100 g, 500 g, and 1 kg sizes. Larger quantities and custom supply requirements are handled by quotation.</p></details>',
+    'latp-d-50-0-3-um': '<details><summary>Can I order LATP powder in research quantities?</summary><p>Yes. This LATP D50 0.30 µm grade is available in selected research-scale package sizes, with larger quantities and custom requirements available by quotation.</p></details>'
+  }[product.slug];
+  if (commercialFaq && !next.includes(commercialFaq.match(/<summary>(.*?)<\/summary>/)?.[1] || '')) {
+    next = next.replace(/(<div class="faq-list">)/i, `$1\n        ${commercialFaq}`);
+  }
+  return next;
+}
+
+function renderStaticRfqState(html, product) {
+  if (product.commerceStatus !== 'rfq') return html;
+  return html
+    .replace(/(<dt>Availability<\/dt>\s*<dd>)RFQ(<\/dd>)/gi, '$1Available by RFQ$2')
+    .replace(/(<dt>Available<\/dt>\s*<dd>)RFQ(<\/dd>)/gi, '<dt>Commercial status</dt><dd>Available by RFQ</dd>');
 }
 
 function absoluteUrl(value, pagePath = '') {
@@ -203,22 +338,28 @@ function replaceTypedSchema(html, type, schema) {
 function productTitle(product) {
   const family = familiesBySlug.get(product.family);
   if (product.commerceStatus === 'sample_only') return `${product.name} | Research-Grade Battery Material | Winigen Materials`;
+  if (product.commerceStatus === 'active_checkout' && product.family === 'lithium-salts' && product.aliases[0]) {
+    const formalName = product.name.replace(/\s*\([^)]*\)\s*$/, '');
+    return `Battery-Grade ${product.aliases[0]} | ${formalName} | Winigen Materials`;
+  }
   return `${product.name} | ${family?.name || 'Battery Material'} | Winigen Materials`;
 }
 
 function productDescription(product) {
-  const base = product.description.replace(/\s+/g, ' ').trim();
+  const base = product.description.replace(/\s+/g, ' ').trim().replace(/[\s.;:,]+$/, '');
   if (product.commerceStatus === 'active_checkout') {
     const directBase = base.replace(/available by RFQ from Winigen Materials/gi, 'available from Winigen Materials');
-    return `${directBase.replace(/[.]?$/, '.')} Available to order in approved research package sizes; lead time and fulfillment eligibility are confirmed during order review.`;
+    const labels = activeVariants(product).map(variant => variant.label);
+    const packageCopy = labels.length ? ` Available in ${labels.join(', ')} research packages` : ' Available in approved research package sizes';
+    return `${directBase}.${packageCopy}, with bulk quantities available by quotation.`;
   }
   if (product.commerceStatus === 'sample_only') {
-    return `${base.replace(/[.]?$/, '.')} Research package options are in test-mode validation; contact Winigen for commercial availability.`;
+    return `${base}. Research package options are in test-mode validation; contact Winigen for commercial availability.`;
   }
   if (product.commerceStatus === 'rfq' && !/\bRFQ\b|request/i.test(base)) {
-    return `${base.replace(/[.]?$/, '.')} Available by RFQ for research and pilot-scale requirements.`;
+    return `${base}. Available by RFQ for research and pilot-scale requirements.`;
   }
-  return base;
+  return `${base}.`;
 }
 
 function approvedOffers(product) {
@@ -266,7 +407,9 @@ function productSchema(product) {
     ...(familyIntent?.entities?.length ? { material: familyIntent.entities.slice(0, 6).join(', ') } : {}),
     additionalProperty: [
       { '@type': 'PropertyValue', name: 'Commercial availability', value: product.commerceStatus === 'rfq' ? 'Available by RFQ' : product.commerceStatus === 'sample_only' ? 'Research package validation; confirm commercial availability' : 'Online checkout' },
-      ...product.additionalProperty.map(property => ({ '@type': 'PropertyValue', ...property }))
+      ...product.additionalProperty
+        .filter(property => !/^availability$/i.test(property.name))
+        .map(property => ({ '@type': 'PropertyValue', ...property }))
     ],
     ...(offers.length ? { offers: offers.length === 1 ? offers[0] : offers } : {})
   };
@@ -431,6 +574,9 @@ async function updateProductPage(pagePath, product) {
     { name: family.name, url: `${siteUrl}${family.url}` },
     { name: product.name, url: canonical }
   ]));
+  html = renderStaticProductCommerce(html, product);
+  html = renderStaticRfqState(html, product);
+  html = ensureStylesheet(html, '../assets/css/ecommerce.css?v=' + generatedAssetVersion);
   html = ensureRelatedModule(html, relatedModule('product', [], intents.families[product.family]?.relatedKnowledge || []), 'product');
   await writePreservingEol(fullPath, html, original);
   auditRows.push({
@@ -468,6 +614,20 @@ async function updateFamilyPage(pagePath, familySlug = null) {
     ? breadcrumbSchema(canonical, [{ name: 'Home', url: `${siteUrl}/` }, { name: 'Products', url: `${siteUrl}/products.html` }, { name: family.name, url: canonical }])
     : breadcrumbSchema(canonical, [{ name: 'Home', url: `${siteUrl}/` }, { name: 'Products', url: canonical }]);
   html = replaceTypedSchema(html, 'BreadcrumbList', breadcrumb);
+  html = renderStaticCommerceCards(html, pagePath);
+  html = ensureStylesheet(html, `${pagePath.includes('/') ? '../' : ''}assets/css/ecommerce.css?v=${generatedAssetVersion}`);
+  if (intent?.visibleIntro) {
+    html = html.replace(/(<section class="section dark family-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i, `$1<p>${escapeHtml(intent.visibleIntro)}</p>`);
+  }
+  if (['active-materials', 'functional-coatings'].includes(familySlug)) {
+    html = html.replace('<h2>Available Products</h2>', '<h2>Available Materials</h2>');
+  }
+  if (familySlug === 'solid-state-electrolytes' && !html.includes('Where can I order solid-state electrolyte materials for battery research?')) {
+    html = html.replace(/(<div class="faq-list">)/i, '$1<details><summary>Where can I order solid-state electrolyte materials for battery research?</summary><p>Winigen Materials supplies oxide, sulfide, and halide solid-state electrolyte materials in selected research-scale package sizes, with larger quantities and custom requirements available by quotation.</p></details>');
+  }
+  if (!familySlug && pageMetadata['products.html']?.hero) {
+    html = html.replace(/(<section class="section dark catalog-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i, `$1<p>${escapeHtml(pageMetadata['products.html'].hero)}</p>`);
+  }
   if (intent) html = ensureRelatedModule(html, relatedModule('product', [], intent.relatedKnowledge || []), 'family');
   await writePreservingEol(fullPath, html, original);
 }
@@ -599,8 +759,33 @@ for (const pagePath of allHtml) await normalizeOtherPage(pagePath);
 const indexPath = resolve(siteRoot, 'index.html');
 let indexHtml = await readFile(indexPath, 'utf8');
 const originalIndexHtml = indexHtml;
-indexHtml = replaceJsonLd(indexHtml, value => normalizeSharedEntities(value));
-if (!indexHtml.includes(`${siteUrl}/#website`)) indexHtml = injectJsonLd(indexHtml, { '@context': 'https://schema.org', '@graph': [organization, website] });
+const commercialSummary = 'Winigen Materials supplies battery-grade electrolyte salts, solvents, additives, and solid-state electrolyte materials in research-scale packages, with online ordering available for selected products and RFQ support for bulk quantities, custom materials, and formulation programs.';
+if (!indexHtml.includes(commercialSummary)) {
+  indexHtml = indexHtml.replace(/(<section class="hero[^>]*>[\s\S]*?<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>)/i, `$1<p>${commercialSummary}</p>`);
+}
+indexHtml = indexHtml
+  .replace('products.html#lithium-ion', 'products/custom-electrolyte-formulations.html')
+  .replace('products.html#raw-materials', 'products.html#salts');
+indexHtml = replaceJsonLd(indexHtml, value => (
+  containsType(value, 'Organization') || containsType(value, 'WebSite') || containsType(value, 'WebPage') ? null : value
+));
+indexHtml = injectJsonLd(indexHtml, {
+  '@context': 'https://schema.org',
+  '@graph': [
+    organization,
+    website,
+    {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/#webpage`,
+      url: `${siteUrl}/`,
+      name: pageMetadata['index.html'].title,
+      description: pageMetadata['index.html'].description,
+      isPartOf: { '@id': `${siteUrl}/#website` },
+      about: { '@id': `${siteUrl}/#organization` },
+      primaryImageOfPage: { '@type': 'ImageObject', url: `${siteUrl}/assets/images/winigen-logo.png` }
+    }
+  ]
+});
 await writePreservingEol(indexPath, indexHtml, originalIndexHtml);
 
 const sitemapExclusions = new Set(['checkout-success.html', 'checkout-cancel.html', 'stripe-test.html']);
@@ -626,7 +811,7 @@ const familyLines = productSource.familyOrder.map(slug => {
 }).join('\n');
 const generatedFamilies = `## Product Categories\n\n${familyLines}\n\n## Product Data Fields`;
 llms = llms.replace(/## Product Categories[\s\S]*?## Product Data Fields/, generatedFamilies);
-llms = llms.replace(/The product catalog may include[\s\S]*?(?=\r?\n\r?\n## Preferred Citations)/, 'The product catalog may include chemical name, abbreviation, aliases, CAS number, formula, availability, purity, water content, particle size, electronic conductivity, ionic conductivity, and RFQ quantity options. Only explicitly approved public retail pricing is eligible for commerce schema. Current LATP package prices are Stripe sandbox validation data and are not published as production Offer schema.');
+llms = llms.replace(/The product catalog may include[\s\S]*?(?=\r?\n\r?\n## Preferred Citations)/, 'The catalog identifies which research-scale materials support online ordering and which require quotation. Direct-order products publish approved package sizes and public USD pricing; bulk quantities, custom formulations, active materials, and functional coatings remain available through RFQ. Checkout pricing is validated by Winigen server-side systems.');
 await writePreservingEol(llmsPath, llms, originalLlms);
 
 function csv(value) {

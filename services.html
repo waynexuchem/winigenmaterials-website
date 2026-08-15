@@ -21,6 +21,11 @@
 .service-module ul { margin: 4px 0 0; padding-left: 20px; color: #40516f; line-height: 1.66; }
 .service-module__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 22px; }
 .service-module__links .btn { padding: 11px 15px; font-size: 14px; }
+.service-related { margin: 18px 0 0; color: #64728b; font-size: 14px; line-height: 1.5; }
+.service-related a { color: #40516f; font-weight: 700; text-underline-offset: 3px; }
+.service-related a:hover { color: var(--blue); }
+.service-module--no-guide .service-module__links { padding-bottom: 39px; }
+.service-scope-note { color: #64728b; font-size: 14px; }
 .service-link { display: inline-flex; border: 1px solid rgba(18,32,51,.12); border-radius: 999px; background: #f8fbff; padding: 9px 13px; color: var(--navy); font-weight: 850; text-decoration: none; }
 .service-link:hover { color: var(--blue); border-color: rgba(42,102,217,.3); }
 .workflow-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 18px; align-items: stretch; }
@@ -78,34 +83,32 @@
     <div class="container section-title">
       <p class="eyebrow">Services</p>
       <h1>Technical Services for Battery Materials and Electrolyte Development</h1>
-      <p>Winigen Materials supports battery developers from early material selection through formulation screening and pilot-scale validation. Our services combine battery material sourcing, electrolyte formulation guidance, additive screening strategy, solid-state electrolyte evaluation, and application-specific material matching.</p>
-      <p>Our scope focuses on material selection, formulation development, screening strategy, interpretation of available data, and R&amp;D-to-pilot decision support. It is not presented as a general-purpose contract-testing laboratory service.</p>
+      <p>Winigen Materials supports battery developers from material selection through formulation screening and pilot-scale validation, with a focus on sourcing, formulation guidance, screening strategy, data interpretation, and application-specific material matching.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container service-modules">
-      <article class="card service-module">
+      <article class="card service-module service-module--no-guide">
         <p class="eyebrow">Service 01</p>
         <h2>Material Selection and Sourcing</h2>
         <p>For customers who need reliable access to battery-grade materials for screening and development.</p>
         <ul>
-          <li>Lithium salts: LiPF6, LiFSI, LiTFSI, LiBOB, LiDFOB, LiBF4</li>
-          <li>Sodium, potassium, and magnesium salts</li>
+          <li>Lithium, sodium, potassium, and magnesium salts</li>
           <li>Low-moisture solvents and electrolyte additives</li>
-          <li>Solid-state electrolytes: sulfide, oxide, and halide</li>
+          <li>Sulfide, oxide, and halide solid electrolytes</li>
           <li>Cathode and anode active materials</li>
-          <li>Boehmite, alumina, and ceramic coating materials</li>
+          <li>Ceramic coating materials</li>
         </ul>
         <div class="service-module__links">
           <a class="btn" href="products.html">Browse Products</a>
-          <a class="btn secondary" href="contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=Bulk%20or%20custom%20battery%20materials">Request Bulk / Custom Quote</a>
+          <a class="btn secondary" href="contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=Bulk%20or%20custom%20battery%20materials">Request Bulk Quote</a>
         </div>
       </article>
 
-      <article class="card service-module">
+      <article class="card service-module service-module--no-guide">
         <p class="eyebrow">Coating Process Support</p>
-        <h2>Coating Material Selection &amp; Process-Input Support</h2>
+        <h2>Coating Material &amp; Process Support</h2>
         <p>For R&amp;D, FAT, and pilot-line teams choosing between shipment-stable ceramic powders and pre-dispersed coating slurries.</p>
         <ul>
           <li>Powder vs. slurry route selection</li>
@@ -113,10 +116,9 @@
           <li>Separator, electrode, and edge-insulation coating materials</li>
           <li>Local NMP/PVDF slurry preparation packages</li>
           <li>Storage, redispersion, handling, and documentation support</li>
-          <li>Material-selection and trial-preparation discussion under NDA</li>
         </ul>
         <div class="service-module__links">
-          <a class="btn" href="products/battery-ceramic-functional-coating-materials.html">Functional Coating Materials</a>
+          <a class="btn" href="products/battery-ceramic-functional-coating-materials.html">View Coating Materials</a>
           <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Functional%20coating%20materials">Discuss Coating Requirements</a>
         </div>
       </article>
@@ -130,14 +132,13 @@
           <li>Solvent blend selection</li>
           <li>SEI/CEI additive strategy</li>
           <li>Low-temperature and fast-charge screening</li>
-          <li>High-voltage cathode compatibility</li>
-          <li>Water and impurity control</li>
+          <li>High-voltage compatibility and impurity control</li>
         </ul>
-        <p>Technical reference: <a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">compare LiPF6, LiFSI, and LiTFSI</a>.</p>
         <div class="service-module__links">
-          <a class="btn" href="products/custom-electrolyte-formulations.html">Custom Formulations</a>
+          <a class="btn" href="products/custom-electrolyte-formulations.html">View Custom Formulations</a>
           <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Electrolyte%20formulation">Discuss Formulation</a>
         </div>
+        <p class="service-related">Related guide &rarr; <a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 vs LiFSI vs LiTFSI</a></p>
       </article>
 
       <article class="card service-module">
@@ -146,52 +147,49 @@
         <p>For teams that need structured comparison rather than random material testing.</p>
         <ul>
           <li>Baseline electrolyte definition</li>
-          <li>Single-additive formulations</li>
-          <li>Multi-additive packages</li>
+          <li>Single- and multi-additive packages</li>
           <li>Salt comparison and solvent variation</li>
           <li>Formation protocol variation</li>
           <li>Screening-program design for EIS, retention, gas, and rate tracking</li>
         </ul>
-        <p>Technical reference: <a href="knowledge/electrolyte-additives-sei-cei.html">electrolyte additive and SEI/CEI guide</a>.</p>
         <div class="service-module__links">
-          <a class="btn" href="products/electrolyte-additives.html">Electrolyte Additives</a>
+          <a class="btn" href="products/electrolyte-additives.html">View Electrolyte Additives</a>
           <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Additive%20and%20salt%20screening">Discuss Screening</a>
         </div>
+        <p class="service-related">Related guide &rarr; <a href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte additives and SEI/CEI</a></p>
       </article>
 
       <article class="card service-module">
         <p class="eyebrow">Service 04</p>
-        <h2>Solid-State Electrolyte Material Evaluation</h2>
+        <h2>Solid-State Electrolyte Selection &amp; Evaluation</h2>
         <p>For researchers comparing sulfide, oxide, halide, and hybrid solid-state electrolyte systems.</p>
         <ul>
           <li>Particle-size-controlled material selection</li>
           <li>Ionic/electronic conductivity comparison</li>
-          <li>Moisture and impurity review</li>
-          <li>Interpretation of available XRD, SEM, and particle-size data</li>
+          <li>Moisture, impurity, XRD, SEM, and particle-size data review</li>
           <li>Cathode composite compatibility</li>
           <li>Lithium-metal interface screening strategy</li>
         </ul>
-        <p>Technical reference: <a href="knowledge/compare-solid-state-electrolyte-powders.html">solid-state electrolyte powder comparison</a>.</p>
         <div class="service-module__links">
-          <a class="btn" href="products/solid-state-electrolytes.html">Solid-State Electrolytes</a>
+          <a class="btn" href="products/solid-state-electrolytes.html">View Solid-State Electrolytes</a>
           <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Solid-state%20electrolyte%20selection">Discuss Material Selection</a>
         </div>
+        <p class="service-related">Related guide &rarr; <a href="knowledge/compare-solid-state-electrolyte-powders.html">Solid-state electrolyte powder comparison</a></p>
       </article>
 
-      <article class="card service-module">
+      <article class="card service-module service-module--no-guide">
         <p class="eyebrow">Service 05</p>
         <h2>R&amp;D-to-Pilot Translation</h2>
         <p>For teams moving from coin cells or material screening into pouch cells, multilayer cells, or pilot-scale development.</p>
         <ul>
           <li>Material readiness review</li>
           <li>Scale-up risk assessment</li>
-          <li>Pilot-line material selection</li>
-          <li>Process flow recommendations</li>
+          <li>Pilot-line material selection and process-flow recommendations</li>
           <li>Wetting, drying, pressure, gas, and formation considerations</li>
           <li>Supplier and material qualification support</li>
         </ul>
         <div class="service-module__links">
-          <a class="btn" href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">R&amp;D to Pilot Guide</a>
+          <a class="btn" href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">Read R&amp;D-to-Pilot Guide</a>
           <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=R%26D-to-pilot%20translation">Discuss Scale-Up</a>
         </div>
       </article>
@@ -204,6 +202,7 @@
         <p class="eyebrow">Development Workflow</p>
         <h2>From problem definition to repeatable validation</h2>
         <p>A practical, iterative process for narrowing materials, formulations, test conditions, and process risks.</p>
+        <p class="service-scope-note">Support centers on material selection, formulation strategy, interpretation of available data, and R&amp;D-to-pilot decisions rather than general-purpose contract testing.</p>
       </div>
       <div class="workflow-grid">
         <div class="card workflow-step"><div class="num">01</div><h3>Identify</h3><p>Define the cell chemistry, performance target, failure mode, and screening constraints.</p></div>

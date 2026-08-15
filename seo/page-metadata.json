@@ -1,11 +1,12 @@
 {
   "index.html": {
     "title": "Winigen Materials | Battery Materials & Electrolyte Components",
-    "description": "Battery materials, electrolyte salts, solvents, additives, solid-state electrolytes, active materials, and custom formulation support for energy-storage R&D."
+    "description": "Winigen Materials supplies battery-grade electrolyte salts, solvents, additives, solid-state electrolytes, and active materials for energy-storage R&D, with selected research packages available online."
   },
   "products.html": {
-    "title": "Battery Materials & Electrochemical Components | Winigen Materials",
-    "description": "Browse battery electrolyte salts, solvents, additives, solid-state electrolytes, active materials, functional coatings, and formulation support from Winigen Materials."
+    "title": "Battery Materials, Electrolyte Salts & Solid-State Electrolytes | Winigen Materials",
+    "description": "Shop battery-grade electrolyte salts, solvents, additives, and solid-state electrolyte materials in research quantities, with bulk and custom RFQ support from Winigen Materials.",
+    "hero": "Browse battery-grade lithium salts, low-moisture solvents, electrolyte additives, solid-state electrolytes, active materials, and functional materials for battery R&D and pilot-line evaluation. Selected research-scale products are available for online ordering, with bulk and custom quantities available by quotation."
   },
   "applications.html": {
     "title": "Battery Electrolytes & Materials by Application | Winigen Materials",
