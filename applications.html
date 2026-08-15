@@ -25,10 +25,13 @@
 .mini-panel h4 { font-size: 15px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; color: var(--blue); }
 .mini-panel ul { margin: 0; padding-left: 19px; color: #40516f; line-height: 1.62; }
 .link-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.application-links { display: grid; gap: 14px; }
+.application-link-group { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 14px; align-items: start; }
+.application-link-group h3 { margin: 9px 0 0; color: #52627d; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
 .text-link-pill { display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(18,32,51,.12); border-radius: 999px; background: #fff; padding: 10px 14px; color: var(--navy); font-weight: 850; text-decoration: none; }
 .text-link-pill:hover { color: var(--blue); border-color: rgba(42,102,217,.3); }
 .routing-band { background: linear-gradient(135deg,#e8f1fb 0%,#f7fbff 100%); }
-@media(max-width:900px) { .application-card { grid-template-columns: 1fr; } .application-card img { min-height: 230px; height: 230px; } .application-detail-grid { grid-template-columns: 1fr; } }
+@media(max-width:900px) { .application-card { grid-template-columns: 1fr; } .application-card img { min-height: 230px; height: 230px; } .application-detail-grid { grid-template-columns: 1fr; } .application-link-group { grid-template-columns: 1fr; gap: 6px; } .application-link-group h3 { margin-top: 0; } }
 </style>
 <script type="application/ld+json">
 {
@@ -42,12 +45,12 @@
     "@id": "https://www.winigenmaterials.com/#organization"
   },
   "about": [
-    "Electric vehicle batteries",
-    "Energy storage systems",
-    "Low-temperature electrolytes",
-    "Solid-state batteries",
-    "Sodium-ion batteries",
-    "Pilot-scale battery development"
+    { "@type": "Thing", "name": "Electric vehicle batteries" },
+    { "@type": "Thing", "name": "Energy storage systems" },
+    { "@type": "Thing", "name": "Low-temperature batteries" },
+    { "@type": "Thing", "name": "Solid-state batteries" },
+    { "@type": "Thing", "name": "Sodium-ion batteries" },
+    { "@type": "Thing", "name": "Pilot-scale battery development" }
   ]
 }
 </script>
@@ -56,7 +59,7 @@
 <meta property="og:url" content="https://www.winigenmaterials.com/applications.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Winigen Materials">
-<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/winigen-logo.png">
+<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/ev-application.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -75,6 +78,7 @@
       <p class="eyebrow">Applications</p>
       <h1>Battery Materials for Demanding Energy Storage Applications</h1>
       <p>Winigen Materials supports battery developers working on lithium-ion, lithium-metal, silicon-anode, sodium-ion, solid-state, fast-charge, low-temperature, and pilot-scale energy storage platforms. We supply battery-grade salts, solvents, additives, solid-state electrolytes, active materials, and formulation support for research, development, and early-stage validation.</p>
+      <p>Selected research-scale materials can be ordered directly online, while bulk quantities, custom formulations, active materials, coatings, and application-specific supply are handled by quotation.</p>
     </div>
   </section>
 
@@ -108,11 +112,10 @@
               </ul>
             </div>
           </div>
-          <div class="link-row">
-            <a class="text-link-pill" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Lithium salt comparison</a>
-            <a class="text-link-pill" href="knowledge/electrolyte-additives-sei-cei.html">SEI/CEI additives</a>
-            <a class="text-link-pill" href="knowledge/low-temperature-electrolytes.html">Low-temperature guide</a>
-            <a class="text-link-pill" href="products/custom-electrolyte-formulations.html">Custom formulations</a>
+          <div class="application-links">
+            <div class="application-link-group"><h3>Relevant materials</h3><div class="link-row"><a class="text-link-pill" href="products/lithium-salts.html">Lithium salts</a><a class="text-link-pill" href="products/battery-solvents.html">Battery solvents</a><a class="text-link-pill" href="products/electrolyte-additives.html">Electrolyte additives</a><a class="text-link-pill" href="products/battery-active-materials.html">Active materials</a></div></div>
+            <div class="application-link-group"><h3>Technical resources</h3><div class="link-row"><a class="text-link-pill" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Lithium salt comparison</a><a class="text-link-pill" href="knowledge/electrolyte-additives-sei-cei.html">SEI/CEI additives</a><a class="text-link-pill" href="knowledge/low-temperature-electrolytes.html">Low-temperature guide</a></div></div>
+            <div class="application-link-group"><h3>Technical support</h3><div class="link-row"><a class="text-link-pill" href="products/custom-electrolyte-formulations.html">Custom formulations</a></div></div>
           </div>
         </div>
       </article>
@@ -145,11 +148,10 @@
               </ul>
             </div>
           </div>
-          <div class="link-row">
-            <a class="text-link-pill" href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-ion materials</a>
-            <a class="text-link-pill" href="products/next-generation-salts.html">Next-generation salts</a>
-            <a class="text-link-pill" href="products/battery-solvents.html">Battery solvents</a>
-            <a class="text-link-pill" href="services.html">Development services</a>
+          <div class="application-links">
+            <div class="application-link-group"><h3>Relevant materials</h3><div class="link-row"><a class="text-link-pill" href="products/next-generation-salts.html">Next-generation salts</a><a class="text-link-pill" href="products/battery-solvents.html">Battery solvents</a><a class="text-link-pill" href="products/battery-active-materials.html">Active materials</a></div></div>
+            <div class="application-link-group"><h3>Technical resources</h3><div class="link-row"><a class="text-link-pill" href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-ion materials</a></div></div>
+            <div class="application-link-group"><h3>Technical support</h3><div class="link-row"><a class="text-link-pill" href="services.html">Development services</a></div></div>
           </div>
         </div>
       </article>
@@ -182,11 +184,10 @@
               </ul>
             </div>
           </div>
-          <div class="link-row">
-            <a class="text-link-pill" href="knowledge/low-temperature-electrolytes.html">Low-temperature electrolytes</a>
-            <a class="text-link-pill" href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI guide</a>
-            <a class="text-link-pill" href="products/lithium-salts.html">Lithium salts</a>
-            <a class="text-link-pill" href="products/electrolyte-additives.html">Electrolyte additives</a>
+          <div class="application-links">
+            <div class="application-link-group"><h3>Relevant materials</h3><div class="link-row"><a class="text-link-pill" href="products/lithium-salts.html">Lithium salts</a><a class="text-link-pill" href="products/battery-solvents.html">Battery solvents</a><a class="text-link-pill" href="products/electrolyte-additives.html">Electrolyte additives</a></div></div>
+            <div class="application-link-group"><h3>Technical resources</h3><div class="link-row"><a class="text-link-pill" href="knowledge/low-temperature-electrolytes.html">Low-temperature electrolytes</a><a class="text-link-pill" href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI guide</a></div></div>
+            <div class="application-link-group"><h3>Technical support</h3><div class="link-row"><a class="text-link-pill" href="products/custom-electrolyte-formulations.html">Custom formulations</a></div></div>
           </div>
         </div>
       </article>
@@ -219,11 +220,10 @@
               </ul>
             </div>
           </div>
-          <div class="link-row">
-            <a class="text-link-pill" href="knowledge/electrolyte-additives-sei-cei.html">Additive strategy</a>
-            <a class="text-link-pill" href="products/battery-active-materials.html">Active materials</a>
-            <a class="text-link-pill" href="products/custom-electrolyte-formulations.html">Custom formulations</a>
-            <a class="text-link-pill" href="contact.html">Discuss screening</a>
+          <div class="application-links">
+            <div class="application-link-group"><h3>Relevant materials</h3><div class="link-row"><a class="text-link-pill" href="products/electrolyte-additives.html">Electrolyte additives</a><a class="text-link-pill" href="products/battery-active-materials.html">Active materials</a></div></div>
+            <div class="application-link-group"><h3>Technical resources</h3><div class="link-row"><a class="text-link-pill" href="knowledge/electrolyte-additives-sei-cei.html">Additive strategy</a></div></div>
+            <div class="application-link-group"><h3>Technical support</h3><div class="link-row"><a class="text-link-pill" href="products/custom-electrolyte-formulations.html">Custom formulations</a><a class="text-link-pill" href="contact.html?inquiry_type=Technical%20Discussion">Discuss screening</a></div></div>
           </div>
         </div>
       </article>
@@ -256,11 +256,10 @@
               </ul>
             </div>
           </div>
-          <div class="link-row">
-            <a class="text-link-pill" href="products/next-generation-salts.html">Next-generation salts</a>
-            <a class="text-link-pill" href="products/solid-state-electrolytes.html">Solid-state electrolytes</a>
-            <a class="text-link-pill" href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">SSE family comparison</a>
-            <a class="text-link-pill" href="knowledge/compare-solid-state-electrolyte-powders.html">Powder comparison</a>
+          <div class="application-links">
+            <div class="application-link-group"><h3>Relevant materials</h3><div class="link-row"><a class="text-link-pill" href="products/next-generation-salts.html">Next-generation salts</a><a class="text-link-pill" href="products/solid-state-electrolytes.html">Solid-state electrolytes</a><a class="text-link-pill" href="products/battery-active-materials.html">Active materials</a></div></div>
+            <div class="application-link-group"><h3>Technical resources</h3><div class="link-row"><a class="text-link-pill" href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">SSE family comparison</a><a class="text-link-pill" href="knowledge/compare-solid-state-electrolyte-powders.html">Powder comparison</a></div></div>
+            <div class="application-link-group"><h3>Technical support</h3><div class="link-row"><a class="text-link-pill" href="products/custom-electrolyte-formulations.html">Custom formulations</a></div></div>
           </div>
         </div>
       </article>
@@ -293,11 +292,10 @@
               </ul>
             </div>
           </div>
-          <div class="link-row">
-            <a class="text-link-pill" href="services.html">Services</a>
-            <a class="text-link-pill" href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">R&D to pilot-line guide</a>
-            <a class="text-link-pill" href="products.html">Product catalog</a>
-            <a class="text-link-pill" href="contact.html">Request support</a>
+          <div class="application-links">
+            <div class="application-link-group"><h3>Relevant materials</h3><div class="link-row"><a class="text-link-pill" href="products.html">Product catalog</a><a class="text-link-pill" href="products/solid-state-electrolytes.html">Solid-state electrolytes</a><a class="text-link-pill" href="products/battery-active-materials.html">Active materials</a></div></div>
+            <div class="application-link-group"><h3>Technical resources</h3><div class="link-row"><a class="text-link-pill" href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">R&amp;D to pilot-line guide</a></div></div>
+            <div class="application-link-group"><h3>Technical support</h3><div class="link-row"><a class="text-link-pill" href="services.html">Development services</a><a class="text-link-pill" href="contact.html?inquiry_type=Technical%20Discussion">Request support</a></div></div>
           </div>
         </div>
       </article>
@@ -308,7 +306,7 @@
     <div class="container section-title">
       <p class="eyebrow">Start Here</p>
       <h2>Find materials by application, chemistry, or failure mode</h2>
-      <p>Use the product catalog for available salts, solvents, additives, solid-state electrolytes, active materials, and custom formulations, or contact Winigen Materials to discuss a screening matrix for your target cell system.</p>
+      <p>Browse approved research packages in the product catalog for direct online ordering. For bulk quantities, custom formulations, active materials, coatings, or application-specific requirements, contact Winigen Materials for a quotation or technical discussion.</p>
       <div class="hero-actions" style="justify-content:center">
         <a class="btn" href="products.html">Explore Products</a>
         <a class="btn secondary" href="contact.html">Request Support</a>
@@ -324,6 +322,6 @@
     <div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=2026-08-launch-pricing-v1"></script>
+<script src="assets/js/main.js?v=2026-08-launch-pricing-v1-seo-static-v2"></script>
 </body>
 </html>

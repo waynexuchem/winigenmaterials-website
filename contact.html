@@ -46,11 +46,21 @@
   opacity: 0.65;
   cursor: not-allowed;
 }
+.contact-intro { display: grid; gap: 20px; align-content: start; }
+.contact-paths { display: grid; gap: 12px; margin-top: 8px; }
+.contact-path { padding: 18px; border: 1px solid rgba(255,255,255,.2); border-radius: 8px; background: rgba(255,255,255,.08); }
+.contact-path h2 { color: #fff; font-size: 20px; margin-bottom: 7px; }
+.contact-path p { font-size: 15px; margin-bottom: 14px; }
+.contact-path a:not(.btn) { color: #fff; font-weight: 750; }
+.contact-path .btn { padding: 11px 15px; font-size: 14px; }
+.form-card label { color: var(--navy); }
+@media(max-width:700px) { .contact-path { padding: 16px; } }
 </style>
 
 
 <script type="application/ld+json">
 {
+  "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://www.winigenmaterials.com/#organization",
   "name": "Winigen Materials",
@@ -99,7 +109,7 @@
     <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
   </div>
   <div class="mobile-menu"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a class="active" href="contact.html">Contact</a></div>
-</header><main><section class="section dark"><div class="container split"><div><h1>Start Your Innovation</h1><p>Tell us what materials you are looking for. We typically respond within 24 hours.</p><div class="pill-row"><span class="pill">Request for Quote</span><span class="pill">Technical Discussion</span><span class="pill">Partnership</span></div></div><div class="form-card"><form class="js-formspree-form" action="https://formspree.io/f/mlgzldpy" method="POST" data-form-name="Contact Page Request">
+</header><main><section class="section dark"><div class="container split"><div class="contact-intro"><div><p class="eyebrow">Contact Winigen</p><h1>Start Your Innovation</h1><p>Choose the path that fits your requirement. We aim to respond promptly to technical and commercial inquiries.</p></div><div class="contact-paths"><div class="contact-path"><h2>Standard Research Packages</h2><p>Browse approved package sizes and public pricing for materials currently available for direct online ordering.</p><a class="btn" href="products.html">Browse Products</a></div><div class="contact-path"><h2>Bulk, Custom &amp; Technical Requirements</h2><p>Use the inquiry form for bulk quantities, custom formulations, shipping questions, or application-specific support. Review our <a href="quality.html">quality documentation</a> before requesting a COA or SDS.</p><a class="btn secondary" href="#inquiry-form">Use Inquiry Form</a></div></div></div><div class="form-card"><form id="inquiry-form" class="js-formspree-form" action="https://formspree.io/f/mlgzldpy" method="POST" data-form-name="Contact Page Request">
   <input type="hidden" name="_subject" value="New contact page request from Winigen Materials website">
   <input type="hidden" name="source_page" value="contact.html">
   <input type="hidden" name="form_location" value="Contact page request form">
@@ -117,8 +127,10 @@
   <label>Inquiry Type</label>
   <select name="inquiry_type">
     <option>Request for Quote</option>
-    <option>General Inquiry</option>
+    <option>Order / Shipping Question</option>
+    <option>Documentation / COA / SDS Request</option>
     <option>Technical Discussion</option>
+    <option>General Inquiry</option>
     <option>Partnership / Collaboration</option>
   </select>
 
@@ -127,14 +139,15 @@
 
   <label>Quantity / Scale</label>
   <select name="quantity_scale">
-    <option>Lab scale (&lt;1000 g)</option>
+    <option>Research scale (&lt;1 kg)</option>
     <option>Pilot scale (1&ndash;10 kg)</option>
-    <option>Production scale (&gt;10 kg)</option>
+    <option>Bulk / production scale (&gt;10 kg)</option>
+    <option>Not sure / custom</option>
   </select>
 
   <label>Message</label>
   <textarea name="message" placeholder="Tell us what you are looking for..." required></textarea>
 
   <div class="form-status" aria-live="polite"></div>
-  <button class="btn" type="submit">Request a Quote</button>
-</form></div></div></section></main><footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer><script src="assets/js/main.js?v=2026-08-launch-pricing-v1"></script></body></html>
+  <button class="btn" type="submit">Send Inquiry</button>
+</form></div></div></section></main><footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer><script src="assets/js/main.js?v=2026-08-launch-pricing-v1-seo-static-v2"></script></body></html>

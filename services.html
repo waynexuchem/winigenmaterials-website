@@ -20,6 +20,7 @@
 .service-module h2 { font-size: clamp(27px,3vw,38px); }
 .service-module ul { margin: 4px 0 0; padding-left: 20px; color: #40516f; line-height: 1.66; }
 .service-module__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 22px; }
+.service-module__links .btn { padding: 11px 15px; font-size: 14px; }
 .service-link { display: inline-flex; border: 1px solid rgba(18,32,51,.12); border-radius: 999px; background: #f8fbff; padding: 9px 13px; color: var(--navy); font-weight: 850; text-decoration: none; }
 .service-link:hover { color: var(--blue); border-color: rgba(42,102,217,.3); }
 .workflow-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 18px; align-items: stretch; }
@@ -42,7 +43,6 @@
   "provider": {
     "@id": "https://www.winigenmaterials.com/#organization"
   },
-  "areaServed": "United States",
   "serviceType": [
     "Battery material sourcing",
     "Electrolyte formulation support",
@@ -60,7 +60,7 @@
 <meta property="og:url" content="https://www.winigenmaterials.com/services.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Winigen Materials">
-<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/winigen-logo.png">
+<meta property="og:image" content="https://www.winigenmaterials.com/assets/images/lab-equipment.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -79,6 +79,7 @@
       <p class="eyebrow">Services</p>
       <h1>Technical Services for Battery Materials and Electrolyte Development</h1>
       <p>Winigen Materials supports battery developers from early material selection through formulation screening and pilot-scale validation. Our services combine battery material sourcing, electrolyte formulation guidance, additive screening strategy, solid-state electrolyte evaluation, and application-specific material matching.</p>
+      <p>Our scope focuses on material selection, formulation development, screening strategy, interpretation of available data, and R&amp;D-to-pilot decision support. It is not presented as a general-purpose contract-testing laboratory service.</p>
     </div>
   </section>
 
@@ -97,10 +98,8 @@
           <li>Boehmite, alumina, and ceramic coating materials</li>
         </ul>
         <div class="service-module__links">
-          <a class="service-link" href="products.html">Product catalog</a>
-          <a class="service-link" href="products/lithium-salts.html">Lithium salts</a>
-          <a class="service-link" href="products/battery-active-materials.html">Active materials</a>
-          <a class="service-link" href="products/battery-ceramic-functional-coating-materials.html">Functional coatings</a>
+          <a class="btn" href="products.html">Browse Products</a>
+          <a class="btn secondary" href="contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=Bulk%20or%20custom%20battery%20materials">Request Bulk / Custom Quote</a>
         </div>
       </article>
 
@@ -117,9 +116,8 @@
           <li>Material-selection and trial-preparation discussion under NDA</li>
         </ul>
         <div class="service-module__links">
-          <a class="service-link" href="products/battery-ceramic-functional-coating-materials.html">Coating materials</a>
-          <a class="service-link" href="products/wbm-p07-boehmite-powder.html">WBM-P07 powder</a>
-          <a class="service-link" href="products/alumina-functional-coating-materials.html">Alumina family</a>
+          <a class="btn" href="products/battery-ceramic-functional-coating-materials.html">Functional Coating Materials</a>
+          <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Functional%20coating%20materials">Discuss Coating Requirements</a>
         </div>
       </article>
 
@@ -135,10 +133,10 @@
           <li>High-voltage cathode compatibility</li>
           <li>Water and impurity control</li>
         </ul>
+        <p>Technical reference: <a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">compare LiPF6, LiFSI, and LiTFSI</a>.</p>
         <div class="service-module__links">
-          <a class="service-link" href="products/custom-electrolyte-formulations.html">Custom formulations</a>
-          <a class="service-link" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Salt comparison</a>
-          <a class="service-link" href="knowledge/low-temperature-electrolytes.html">Low-temperature guide</a>
+          <a class="btn" href="products/custom-electrolyte-formulations.html">Custom Formulations</a>
+          <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Electrolyte%20formulation">Discuss Formulation</a>
         </div>
       </article>
 
@@ -152,12 +150,12 @@
           <li>Multi-additive packages</li>
           <li>Salt comparison and solvent variation</li>
           <li>Formation protocol variation</li>
-          <li>EIS, retention, gas, and rate tracking</li>
+          <li>Screening-program design for EIS, retention, gas, and rate tracking</li>
         </ul>
+        <p>Technical reference: <a href="knowledge/electrolyte-additives-sei-cei.html">electrolyte additive and SEI/CEI guide</a>.</p>
         <div class="service-module__links">
-          <a class="service-link" href="knowledge/electrolyte-additives-sei-cei.html">Additive guide</a>
-          <a class="service-link" href="products/electrolyte-additives.html">Additive products</a>
-          <a class="service-link" href="contact.html">Design a matrix</a>
+          <a class="btn" href="products/electrolyte-additives.html">Electrolyte Additives</a>
+          <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Additive%20and%20salt%20screening">Discuss Screening</a>
         </div>
       </article>
 
@@ -169,14 +167,14 @@
           <li>Particle-size-controlled material selection</li>
           <li>Ionic/electronic conductivity comparison</li>
           <li>Moisture and impurity review</li>
-          <li>XRD/SEM/PSD data interpretation</li>
+          <li>Interpretation of available XRD, SEM, and particle-size data</li>
           <li>Cathode composite compatibility</li>
           <li>Lithium-metal interface screening strategy</li>
         </ul>
+        <p>Technical reference: <a href="knowledge/compare-solid-state-electrolyte-powders.html">solid-state electrolyte powder comparison</a>.</p>
         <div class="service-module__links">
-          <a class="service-link" href="products/solid-state-electrolytes.html">Solid-state products</a>
-          <a class="service-link" href="knowledge/compare-solid-state-electrolyte-powders.html">Powder comparison</a>
-          <a class="service-link" href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Family comparison</a>
+          <a class="btn" href="products/solid-state-electrolytes.html">Solid-State Electrolytes</a>
+          <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Solid-state%20electrolyte%20selection">Discuss Material Selection</a>
         </div>
       </article>
 
@@ -193,9 +191,8 @@
           <li>Supplier and material qualification support</li>
         </ul>
         <div class="service-module__links">
-          <a class="service-link" href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">R&D to pilot-line guide</a>
-          <a class="service-link" href="applications.html#pilot-scale-support">Pilot applications</a>
-          <a class="service-link" href="contact.html">Discuss scale-up</a>
+          <a class="btn" href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">R&amp;D to Pilot Guide</a>
+          <a class="btn secondary" href="contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=R%26D-to-pilot%20translation">Discuss Scale-Up</a>
         </div>
       </article>
     </div>
@@ -224,8 +221,8 @@
       <h2>Need help selecting materials or designing a screening matrix?</h2>
       <p>Contact Winigen Materials to discuss your battery chemistry, target application, and development stage.</p>
       <div class="hero-actions">
-        <a class="btn" href="contact.html">Contact Winigen Materials</a>
-        <a class="btn secondary" href="products.html">Explore Products</a>
+        <a class="btn" href="contact.html?inquiry_type=Technical%20Discussion">Discuss Technical Requirements</a>
+        <a class="btn secondary" href="products.html">Browse Products</a>
       </div>
     </div>
   </section>
@@ -238,6 +235,6 @@
     <div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=2026-08-launch-pricing-v1"></script>
+<script src="assets/js/main.js?v=2026-08-launch-pricing-v1-seo-static-v2"></script>
 </body>
 </html>

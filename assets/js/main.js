@@ -17,15 +17,17 @@ function loadSharedScript(path) {
 
 async function initializeEcommerce() {
   try {
-    const styles = document.createElement('link');
-    styles.rel = 'stylesheet';
-    styles.href = '/assets/css/ecommerce.css?v=20260815f';
-    document.head.appendChild(styles);
+    if (!document.querySelector('link[href*="assets/css/ecommerce.css"]')) {
+      const styles = document.createElement('link');
+      styles.rel = 'stylesheet';
+      styles.href = '/assets/css/ecommerce.css?v=20260815f';
+      document.head.appendChild(styles);
+    }
     await loadSharedScript('/assets/js/ecommerce-catalog.js?v=20260813');
     await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
     await loadSharedScript('/assets/js/cart.js?v=20260815d');
-    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260814c');
-    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260815f');
+    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260814e');
+    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260815g');
     initializeCartNavigation();
     initializeCartPage();
   } catch (error) {
@@ -317,7 +319,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const contactForm = document.querySelector('form.js-formspree-form');
 
-  if (!contactForm || !params.has('product_interest')) return;
+  const supportedParams = ['inquiry_type', 'product_interest', 'quantity_scale', 'quantity', 'message', 'topic', 'd50', 'carrier_solvent'];
+  if (!contactForm || !supportedParams.some(name => params.has(name))) return;
+
+  const inquiryAliases = {
+    'Shipping Review': 'Order / Shipping Question',
+    'Quality Documentation': 'Documentation / COA / SDS Request'
+  };
 
   const setValue = (name, value) => {
     if (!value) return;
@@ -332,7 +340,8 @@ document.addEventListener('DOMContentLoaded', () => {
     field.value = value;
   };
 
-  setValue('inquiry_type', params.get('inquiry_type') || 'Request for Quote');
+  const requestedInquiry = params.get('inquiry_type') || params.get('topic') || 'Request for Quote';
+  setValue('inquiry_type', inquiryAliases[requestedInquiry] || requestedInquiry);
   setValue('product_interest', params.get('product_interest'));
   setValue('quantity_scale', params.get('quantity_scale') || params.get('quantity'));
   const configuration = [
