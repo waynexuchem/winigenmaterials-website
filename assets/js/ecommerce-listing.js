@@ -92,14 +92,23 @@
     }).format(unitAmount / 100);
   }
 
+  function cardCasNumber(card) {
+    return card.dataset.search?.match(/\b[1-9]\d{1,6}-\d{2}-\d\b/)?.[0] || '';
+  }
+
+  function casMarkup(card) {
+    const casNumber = cardCasNumber(card);
+    return `<p class="product-card__cas"><span>CAS:</span> ${casNumber || 'Not assigned'}</p>`;
+  }
+
   function renderOnlineCard(card, product, variants, detailHref, subpage) {
     const body = card.querySelector('.product-card__body');
     const category = card.querySelector('.product-card__category')?.textContent.trim() || product.category;
     const specs = selectedSpecs(card, product).map(spec => `<li>${spec}</li>`).join('');
-    const title = card.querySelector('h3')?.innerHTML || product.name;
+    const title = card.querySelector('h3 .product-detail-link')?.innerHTML || card.querySelector('h3')?.innerHTML || product.name;
     const options = variants.map(variant => `<option value="${variant.key}">${variant.label} — ${formatPrice(variant.unitAmount)}</option>`).join('');
     const bulkQuote = quoteHref(product, subpage);
-    body.innerHTML = `<div class="product-card__topline"><span class="product-card__category">${category}</span><span class="product-card__mode">Online ordering</span></div><h3><a class="product-detail-link" href="${detailHref}">${title}</a></h3><p class="product-card__commercial"><span data-listing-from-price></span></p><ul class="product-card__properties product-card__properties--compact">${specs}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package aria-label="Select package">${options}</select></label><label>Qty${quantityStepper()}</label></div><p class="product-card__price" data-listing-price></p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${detailHref}">View details</a><a href="${bulkQuote}">Request Bulk Quote</a></div></div>`;
+    body.innerHTML = `<div class="product-card__topline"><span class="product-card__category">${category}</span><span class="product-card__mode">Online ordering</span></div><h3><a class="product-detail-link" href="${detailHref}">${title}</a></h3>${casMarkup(card)}<p class="product-card__commercial"><span data-listing-from-price></span></p><ul class="product-card__properties product-card__properties--compact">${specs}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package aria-label="Select package">${options}</select></label><label>Qty${quantityStepper()}</label></div><p class="product-card__price" data-listing-price></p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${detailHref}">View details</a><a href="${bulkQuote}">Request Bulk Quote</a></div></div>`;
     const select = body.querySelector('[data-listing-package]');
     const quantity = body.querySelector('.listing-quantity input');
     const price = body.querySelector('[data-listing-price]');
@@ -123,7 +132,9 @@
     const facts = card.querySelector('.product-card__facts');
     const form = card.querySelector('.product-card__rfq');
     const detailHref = card.querySelector('.product-detail-link')?.getAttribute('href');
+    const title = card.querySelector('h3');
     if (badge) badge.textContent = 'Request Quote';
+    if (title && !card.querySelector('.product-card__cas')) title.insertAdjacentHTML('afterend', casMarkup(card));
     if (facts) facts.remove();
     const properties = selectedSpecs(card, product);
     const list = card.querySelector('.product-card__properties');
