@@ -20,14 +20,14 @@ async function initializeEcommerce() {
     if (!document.querySelector('link[href*="assets/css/ecommerce.css"]')) {
       const styles = document.createElement('link');
       styles.rel = 'stylesheet';
-      styles.href = '/assets/css/ecommerce.css?v=20260815f';
+      styles.href = '/assets/css/ecommerce.css?v=20260820-final-pricing-v1';
       document.head.appendChild(styles);
     }
     await loadSharedScript('/assets/js/ecommerce-catalog.js?v=20260813');
     await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
-    await loadSharedScript('/assets/js/cart.js?v=20260815d');
-    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260814e');
-    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260815g');
+    await loadSharedScript('/assets/js/cart.js?v=20260820-final-pricing-v1');
+    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260820-final-pricing-v1');
+    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260820-final-pricing-v1');
     initializeCartNavigation();
     initializeCartPage();
   } catch (error) {
@@ -163,7 +163,7 @@ function initializeCartPage() {
     fetch('https://winigen-stripe-test.winigen.workers.dev/api/shipping-quote', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ destinationCountry })
+      body: JSON.stringify({ destinationCountry, cart: cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity })) })
     }).then(async response => {
       const payload = await response.json();
       if (root.querySelector('#shipping-destination')?.value !== destinationCountry) return;

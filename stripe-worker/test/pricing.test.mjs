@@ -5,18 +5,18 @@ import { createCartCheckoutSession, resolveCart } from '../src/index.js';
 import { createCustomerTestOrderEmail } from '../src/email/templates.js';
 
 const representativePrices = {
-  'WM-LS-LIPF6-100G': 15900,
-  'WM-LS-LIBOB-25G': 14900,
-  'WM-LS-LIFSI-500G': 44900,
-  'WM-SOL-DMC-5KG': 89900,
-  'WM-SOL-DFEA-500G': 64900,
+  'WM-LS-LIPF6-200G': 38995,
+  'WM-LS-LIBOB-200G': 55995,
+  'WM-LS-LIFSI-500G': 56995,
+  'WM-SOL-DMC-500G': 40995,
+  'WM-SOL-DFEA-500G': 75995,
   'WM-SOL-TFEC-25G': 14900,
-  'WM-ADD-VC-100G': 12900,
-  'WM-ADD-FEC-500G': 38900,
-  'WM-ADD-MMDS-20G': 11900,
+  'WM-ADD-VC-200G': 37995,
+  'WM-ADD-FEC-500G': 41995,
+  'WM-ADD-MMDS-200G': 44995,
   'WM-ADD-TTPI-500G': 169900,
-  'WM-NGS-NAPF6-100G': 16900,
-  'WM-NGS-NAODFB-50G': 24900,
+  'WM-NGS-NAPF6-200G': 38995,
+  'WM-NGS-NAODFB-200G': 67995,
   'WM-NGS-KFSI-1KG': 219900,
   'WM-NGS-MGBH42-10G': 19900,
   'WM-SSE-LATP-030-10G': 7900,
@@ -41,8 +41,8 @@ test('representative launch prices resolve from the Worker catalog', () => {
 
 test('client price fields are ignored and a nonexistent package is rejected', () => {
   const resolved = resolveCart([{ variantKey: 'WM-LS-LIFSI-500G', quantity: 2, price: 1, unitAmount: 1 }]);
-  assert.equal(resolved.merchandiseSubtotal, 89800);
-  assert.equal(resolved.items[0].variant.unitAmount, 44900);
+  assert.equal(resolved.merchandiseSubtotal, 113990);
+  assert.equal(resolved.items[0].variant.unitAmount, 56995);
   assert.throws(() => resolveCart([{ variantKey: 'WM-LS-LIFSI-10G', quantity: 1 }]), /not available for online ordering/);
 });
 
@@ -66,7 +66,7 @@ test('Stripe Checkout receives server-owned inline price_data', async () => {
       { country: 'US', amount: 8900, currency: 'usd' },
       { SITE_ORIGIN: 'https://www.winigenmaterials.com', STRIPE_SECRET_KEY: 'test-key-not-sent' }
     );
-    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '44900');
+    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '56995');
     assert.equal(submitted.get('line_items[0][price_data][currency]'), 'usd');
     assert.equal(submitted.get('line_items[0][quantity]'), '2');
     assert.equal(submitted.get('line_items[0][price]'), null);

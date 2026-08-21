@@ -84,11 +84,12 @@
   }
 
   function formatPrice(unitAmount, compact = false) {
+    const fractionDigits = compact && unitAmount % 100 === 0 ? 0 : 2;
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      minimumFractionDigits: compact ? 0 : 2,
-      maximumFractionDigits: compact ? 0 : 2
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
     }).format(unitAmount / 100);
   }
 
@@ -106,7 +107,8 @@
     const category = card.querySelector('.product-card__category')?.textContent.trim() || product.category;
     const specs = selectedSpecs(card, product).map(spec => `<li>${spec}</li>`).join('');
     const title = card.querySelector('h3 .product-detail-link')?.innerHTML || card.querySelector('h3')?.innerHTML || product.name;
-    const options = variants.map(variant => `<option value="${variant.key}">${variant.label} — ${formatPrice(variant.unitAmount)}</option>`).join('');
+    const defaultVariant = variants.find(variant => variant.id === product.defaultPackageId) || variants[0];
+    const options = variants.map(variant => `<option value="${variant.key}"${variant.key === defaultVariant.key ? ' selected' : ''}>${variant.label} — ${formatPrice(variant.unitAmount)}</option>`).join('');
     const bulkQuote = quoteHref(product, subpage);
     body.innerHTML = `<div class="product-card__topline"><span class="product-card__category">${category}</span><span class="product-card__mode">Online ordering</span></div><h3><a class="product-detail-link" href="${detailHref}">${title}</a></h3>${casMarkup(card)}<p class="product-card__commercial"><span data-listing-from-price></span></p><ul class="product-card__properties product-card__properties--compact">${specs}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package aria-label="Select package">${options}</select></label><label>Qty${quantityStepper()}</label></div><p class="product-card__price" data-listing-price></p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${detailHref}">View details</a><a href="${bulkQuote}">Request Bulk Quote</a></div></div>`;
     const select = body.querySelector('[data-listing-package]');
@@ -118,12 +120,13 @@
       const variant = variants.find(entry => entry.key === select.value);
       price.textContent = formatPrice(variant.unitAmount);
     };
-    fromPrice.textContent = `From ${formatPrice(Math.min(...variants.map(variant => variant.unitAmount)), true)} · Multiple package sizes`;
+    fromPrice.textContent = `From ${formatPrice(defaultVariant.unitAmount, true)} · Multiple package sizes`;
     select.addEventListener('change', update);
     quantity.addEventListener('change', () => setQuantity(quantity.value));
     body.querySelector('[data-listing-decrease]').addEventListener('click', () => setQuantity(Number(quantity.value) - 1));
     body.querySelector('[data-listing-increase]').addEventListener('click', () => setQuantity(Number(quantity.value) + 1));
-    body.querySelector('[data-listing-add]').addEventListener('click', () => window.WinigenCart.add(select.value, Number(quantity.value)));
+    const addButton = body.querySelector('[data-listing-add]');
+    addButton.addEventListener('click', () => window.WinigenCart.add(select.value, Number(quantity.value), addButton));
     update();
   }
 

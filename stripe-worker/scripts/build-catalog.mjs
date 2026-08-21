@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..', '..');
 const sourcePath = resolve(siteRoot, 'ecommerce/catalog.source.json');
+const approvedPricingPath = resolve(siteRoot, 'ecommerce/approved-pricing.source.json');
 const shippingSourcePath = resolve(siteRoot, 'ecommerce/shipping-countries.source.json');
 const browserOutputPath = resolve(siteRoot, 'assets/js/ecommerce-catalog.js');
 const workerOutputPath = resolve(siteRoot, 'stripe-worker/src/catalog.js');
@@ -48,6 +49,9 @@ function resolveVariants(product, templates) {
       packageBasis: override.packageBasis || 'PROPOSED_TEMPLATE',
       packageBasisConfirmationStatus: override.packageBasisConfirmationStatus || 'PROPOSED',
       approvalStatus: override.approvalStatus || templateVariant.approvalStatus,
+      netWeightGrams: override.netWeightGrams ?? templateVariant.netWeightGrams ?? null,
+      shippingWeightGrams: override.shippingWeightGrams ?? templateVariant.shippingWeightGrams ?? null,
+      shippingWeightBasis: override.shippingWeightBasis || templateVariant.shippingWeightBasis || null,
       unitAmount: override.unitAmount ?? templateVariant.unitAmount ?? null,
       currency: String(override.currency || templateVariant.currency || product.currency || 'usd').toLowerCase(),
       pricingStatus: override.pricingStatus || templateVariant.pricingStatus || 'PROPOSED'
@@ -78,6 +82,9 @@ function validateProduct(product, templates, slugs, skus) {
     if (!validApprovalStates.has(variant.approvalStatus)) fail(`${variant.sku} has an invalid approval status.`);
     if (!validApprovalStates.has(variant.packageBasisConfirmationStatus)) fail(`${variant.sku} has an invalid package-basis confirmation status.`);
     if (!variant.label || !variant.unit || !Number.isFinite(variant.quantity)) fail(`${variant.sku} has an invalid package.`);
+    if (variant.approvalStatus === 'ACTIVE' && (!Number.isFinite(variant.shippingWeightGrams) || variant.shippingWeightGrams <= 0)) {
+      fail(`${variant.sku} is ACTIVE without a positive server-owned shipping weight.`);
+    }
     if (variant.approvalStatus === 'ACTIVE') {
       if (product.commercialStatus !== 'ONLINE_CHECKOUT') fail(`${variant.sku} cannot be ACTIVE unless ONLINE_CHECKOUT.`);
       if (!Number.isInteger(variant.unitAmount) || variant.unitAmount <= 0) {
@@ -91,6 +98,13 @@ function validateProduct(product, templates, slugs, skus) {
   }
   if (product.commercialStatus === 'ONLINE_CHECKOUT' && !variants.some(variant => variant.approvalStatus === 'ACTIVE')) {
     fail(`${product.skuBase} is ONLINE_CHECKOUT without an ACTIVE package.`);
+  }
+  if (product.commercialStatus === 'ONLINE_CHECKOUT' && !variants.some(variant => variant.id === product.defaultPackageId && variant.approvalStatus === 'ACTIVE')) {
+    fail(`${product.skuBase} does not identify an ACTIVE default package.`);
+  }
+  const activeVariants = variants.filter(variant => variant.approvalStatus === 'ACTIVE');
+  if (product.commercialStatus === 'ONLINE_CHECKOUT' && activeVariants[0]?.id !== product.defaultPackageId) {
+    fail(`${product.skuBase} must list its default package first among ACTIVE packages.`);
   }
 
   return { ...product, name: normalizeVisibleNotation(product.name), variants };
@@ -129,6 +143,8 @@ function validateShippingCountries(shippingSource) {
 
   const regionDefaults = shippingSource.shippingRatesUsd?.regionDefaults;
   const countryOverrides = shippingSource.shippingRatesUsd?.countryOverrides;
+  const unitedStatesWeightTiers = shippingSource.shippingRatesUsd?.unitedStatesWeightTiers;
+  const maximumOnlineShippingWeightGrams = shippingSource.shippingRatesUsd?.maximumOnlineShippingWeightGrams;
   if (!regionDefaults || !countryOverrides || typeof countryOverrides !== 'object') {
     fail('Shipping rates require regionDefaults and countryOverrides objects.');
   }
@@ -142,15 +158,58 @@ function validateShippingCountries(shippingSource) {
     if (!Number.isFinite(amount) || amount <= 0) fail(`Shipping override ${code} requires a positive USD amount.`);
   }
 
-  return { codes, allEntries, regionDefaults, countryOverrides };
+  if (!Array.isArray(unitedStatesWeightTiers) || unitedStatesWeightTiers.length === 0) fail('United States shipping weight tiers are required.');
+  let previousMaximum = 0;
+  for (const tier of unitedStatesWeightTiers) {
+    if (!Number.isFinite(tier.maximumGrams) || tier.maximumGrams <= previousMaximum || !Number.isFinite(tier.amount) || tier.amount <= 0) {
+      fail('United States shipping weight tiers must have increasing positive limits and rates.');
+    }
+    previousMaximum = tier.maximumGrams;
+  }
+  if (!Number.isFinite(maximumOnlineShippingWeightGrams) || maximumOnlineShippingWeightGrams !== previousMaximum) {
+    fail('The maximum online shipping weight must equal the final United States tier limit.');
+  }
+
+  return { codes, allEntries, regionDefaults, countryOverrides, unitedStatesWeightTiers, maximumOnlineShippingWeightGrams };
+}
+
+function validateApprovedPricing(source, approvedPricing) {
+  const expectedGovernance = {
+    workbookScope: 'The approved pricing workbook governs only products and package schedules explicitly represented in it.',
+    productsAbsentFromWorkbook: 'Products absent from the workbook retain their separately approved commercial schedules; workbook absence does not revoke or replace those schedules.'
+  };
+  for (const [field, expected] of Object.entries(expectedGovernance)) {
+    if (approvedPricing.governance?.[field] !== expected) fail(`Approved pricing governance field ${field} is missing or changed.`);
+  }
+  const productsBySlug = new Map(source.products.map(product => [product.slug, product]));
+  if (productsBySlug.has('n-methyl-2-pyrrolidone-nmp')) {
+    fail('NMP must not exist in the ecommerce catalog.');
+  }
+  for (const schedule of approvedPricing.schedules) {
+    const product = productsBySlug.get(schedule.slug);
+    if (!product) fail(`${schedule.slug} is missing from the ecommerce catalog.`);
+    if (product.skuBase !== schedule.skuBase) fail(`${schedule.slug} does not match the approved SKU.`);
+    if (product.defaultPackageId !== schedule.defaultPackageId) fail(`${schedule.slug} has the wrong default package.`);
+    const variants = resolveVariants(product, source.packageTemplates).filter(variant => variant.approvalStatus === 'ACTIVE');
+    if (variants.length !== schedule.packages.length) fail(`${schedule.slug} has an unapproved package count.`);
+    for (const [index, expected] of schedule.packages.entries()) {
+      const actual = variants[index];
+      for (const field of ['id', 'label', 'unit', 'quantity', 'netWeightGrams', 'unitAmount']) {
+        if (actual?.[field] !== expected[field]) fail(`${schedule.slug} ${expected.id} differs from approved pricing at ${field}.`);
+      }
+      if (actual.pricingStatus !== 'APPROVED_RETAIL') fail(`${actual.sku} is not approved retail pricing.`);
+    }
+  }
 }
 
 const source = JSON.parse(await readFile(sourcePath, 'utf8'));
+const approvedPricing = JSON.parse(await readFile(approvedPricingPath, 'utf8'));
 const shippingSource = JSON.parse(await readFile(shippingSourcePath, 'utf8'));
+validateApprovedPricing(source, approvedPricing);
 const slugs = new Set();
 const skus = new Set();
 const products = source.products.map(product => validateProduct(product, source.packageTemplates, slugs, skus));
-const { allEntries: shippingEntries, regionDefaults, countryOverrides } = validateShippingCountries(shippingSource);
+const { allEntries: shippingEntries, regionDefaults, countryOverrides, unitedStatesWeightTiers, maximumOnlineShippingWeightGrams } = validateShippingCountries(shippingSource);
 
 // Keep checkout-only mappings in the Worker projection. Variant overrides can
 // contain Stripe Price IDs, so they are intentionally omitted from the browser.
@@ -185,7 +244,7 @@ const browserShippingSource = `/* Generated by npm run build:catalog. Do not edi
   }))
 }, null, 2)};\n`;
 const amountInCents = amount => Math.round(amount * 100);
-const workerShippingSource = `// Generated by npm run build:catalog. Do not edit directly.\nexport const SUPPORTED_SHIPPING_COUNTRIES = ${JSON.stringify(shippingEntries.map(({ code }) => code), null, 2)};\nexport const SHIPPING_REGION_BY_COUNTRY = new Map(${JSON.stringify(shippingEntries.map(({ code, shippingRegion }) => [code, shippingRegion]), null, 2)});\nexport const SHIPPING_REGION_DEFAULTS = ${JSON.stringify(Object.fromEntries(Object.entries(regionDefaults).map(([region, amount]) => [region, amountInCents(amount)])), null, 2)};\nexport const COUNTRY_SHIPPING_OVERRIDES = ${JSON.stringify(Object.fromEntries(Object.entries(countryOverrides).map(([code, amount]) => [code, amountInCents(amount)])), null, 2)};\n`;
+const workerShippingSource = `// Generated by npm run build:catalog. Do not edit directly.\nexport const SUPPORTED_SHIPPING_COUNTRIES = ${JSON.stringify(shippingEntries.map(({ code }) => code), null, 2)};\nexport const SHIPPING_REGION_BY_COUNTRY = new Map(${JSON.stringify(shippingEntries.map(({ code, shippingRegion }) => [code, shippingRegion]), null, 2)});\nexport const SHIPPING_REGION_DEFAULTS = ${JSON.stringify(Object.fromEntries(Object.entries(regionDefaults).map(([region, amount]) => [region, amountInCents(amount)])), null, 2)};\nexport const COUNTRY_SHIPPING_OVERRIDES = ${JSON.stringify(Object.fromEntries(Object.entries(countryOverrides).map(([code, amount]) => [code, amountInCents(amount)])), null, 2)};\nexport const UNITED_STATES_WEIGHT_TIERS = ${JSON.stringify(unitedStatesWeightTiers.map(tier => ({ maximumGrams: tier.maximumGrams, amount: amountInCents(tier.amount) })), null, 2)};\nexport const MAXIMUM_ONLINE_SHIPPING_WEIGHT_GRAMS = ${JSON.stringify(maximumOnlineShippingWeightGrams)};\n`;
 
 await mkdir(dirname(browserOutputPath), { recursive: true });
 await mkdir(dirname(workerOutputPath), { recursive: true });

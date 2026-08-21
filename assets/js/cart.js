@@ -21,13 +21,82 @@
     return readCart().items.reduce((sum, item) => sum + item.quantity, 0);
   }
 
-  function add(variantKey, quantity) {
+  function add(variantKey, quantity, sourceButton = null) {
     const cart = readCart();
     const safeQuantity = Math.max(1, Math.min(25, Number.parseInt(quantity, 10) || 1));
     const existing = cart.items.find(item => item.variantKey === variantKey);
     if (existing) existing.quantity = Math.min(25, existing.quantity + safeQuantity);
     else cart.items.push({ variantKey, quantity: safeQuantity });
     writeCart(cart);
+    window.dispatchEvent(new CustomEvent('winigen:cart-added', {
+      detail: { variantKey, quantity: safeQuantity, sourceButton }
+    }));
+    return true;
+  }
+
+  function initializeAddFeedback() {
+    const buttonTimers = new WeakMap();
+    let toastTimer;
+    let toast;
+
+    const variantDetails = variantKey => {
+      const products = window.WINIGEN_ECOMMERCE_CATALOG?.products || [];
+      for (const product of products) {
+        const variant = product.variants.find(entry => entry.key === variantKey);
+        if (variant) return { product, variant };
+      }
+      return null;
+    };
+
+    const cartHref = () => window.location.pathname.includes('/products/') ? '../cart.html' : 'cart.html';
+
+    const ensureToast = () => {
+      if (toast?.isConnected) return toast;
+      toast = document.createElement('div');
+      toast.className = 'cart-add-toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      toast.setAttribute('aria-atomic', 'true');
+      toast.innerHTML = '<span class="cart-add-toast__message"></span><a class="cart-add-toast__link">View Cart</a>';
+      document.body.appendChild(toast);
+      return toast;
+    };
+
+    const acknowledgeButton = button => {
+      if (!(button instanceof HTMLElement)) return;
+      const originalLabel = button.dataset.cartOriginalLabel || button.textContent.trim();
+      button.dataset.cartOriginalLabel = originalLabel;
+      button.textContent = '✓ Added to Cart';
+      button.classList.add('is-cart-added');
+      window.clearTimeout(buttonTimers.get(button));
+      buttonTimers.set(button, window.setTimeout(() => {
+        button.textContent = originalLabel;
+        button.classList.remove('is-cart-added');
+        buttonTimers.delete(button);
+      }, 1300));
+    };
+
+    const pulseCart = () => {
+      document.querySelectorAll('.nav-cart').forEach(link => {
+        link.classList.remove('nav-cart--pulse');
+        window.requestAnimationFrame(() => link.classList.add('nav-cart--pulse'));
+        window.setTimeout(() => link.classList.remove('nav-cart--pulse'), 650);
+      });
+    };
+
+    window.addEventListener('winigen:cart-added', event => {
+      const details = variantDetails(event.detail?.variantKey);
+      if (!details) return;
+      acknowledgeButton(event.detail?.sourceButton);
+      pulseCart();
+
+      const activeToast = ensureToast();
+      activeToast.querySelector('.cart-add-toast__message').textContent = `${details.product.name} · ${details.variant.label} added to cart`;
+      activeToast.querySelector('.cart-add-toast__link').href = cartHref();
+      window.clearTimeout(toastTimer);
+      activeToast.classList.add('is-visible');
+      toastTimer = window.setTimeout(() => activeToast.classList.remove('is-visible'), 2600);
+    });
   }
 
   function update(variantKey, quantity) {
@@ -80,6 +149,7 @@
   }
 
   window.WinigenCart = { readCart, writeCart, itemCount, add, update, remove, saveReview, getReview, getShippingDestination, setShippingDestination };
+  initializeAddFeedback();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hydrateContactReview);
   else hydrateContactReview();
 }());

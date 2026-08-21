@@ -10,7 +10,7 @@ const siteUrl = 'https://www.winigenmaterials.com';
 const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const commerceAssetVersion = ecommerceSource.catalogVersion.replace(/[^A-Za-z0-9.-]/g, '');
-const generatedAssetVersion = `${commerceAssetVersion}-seo-static-v2`;
+const generatedAssetVersion = `${commerceAssetVersion}-storefront-feedback-v1`;
 const intents = JSON.parse(await readFile(resolve(siteRoot, 'seo/search-intents.json'), 'utf8'));
 const pageMetadata = JSON.parse(await readFile(resolve(siteRoot, 'seo/page-metadata.json'), 'utf8'));
 const execFile = promisify(execFileCallback);
@@ -18,11 +18,12 @@ const productsByPath = new Map(productSource.products.map(product => [product.ur
 const ecommerceBySlug = new Map(ecommerceSource.products.map(product => [product.slug, product]));
 const familiesBySlug = new Map(productSource.families.map(family => [family.slug, family]));
 const auditRows = [];
+const buildScope = process.env.SEO_SCOPE || 'all';
 
 async function writePreservingEol(path, content, original = '') {
   if (path.endsWith('.html')) {
     content = content.replace(
-      /(assets\/js\/(?:main|ecommerce-catalog|ecommerce-listing|ecommerce-product-page)\.js)(?:\?v=[^"']+)?/g,
+      /(assets\/js\/(?:main|cart|ecommerce-catalog|ecommerce-listing|ecommerce-product-page)\.js)(?:\?v=[^"']+)?/g,
       `$1?v=${generatedAssetVersion}`
     );
   }
@@ -76,11 +77,12 @@ function escapeHtml(value = '') {
 }
 
 function formatUsd(unitAmount, compact = false) {
+  const fractionDigits = compact && unitAmount % 100 === 0 ? 0 : 2;
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-    minimumFractionDigits: compact ? 0 : 2,
-    maximumFractionDigits: compact ? 0 : 2
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits
   }).format(unitAmount / 100);
 }
 
@@ -101,6 +103,11 @@ function activeVariants(product) {
       pricingStatus: override.pricingStatus || template.pricingStatus
     };
   }).filter(variant => variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL' && Number.isInteger(variant.unitAmount) && variant.unitAmount > 0);
+}
+
+function defaultActiveVariant(product, variants = activeVariants(product)) {
+  const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  return variants.find(variant => variant.id === commerce?.defaultPackageId) || variants[0];
 }
 
 function ensureStylesheet(html, href) {
@@ -161,14 +168,14 @@ function renderStaticCommerceCards(html, pagePath) {
     if (product.commerceStatus !== 'active_checkout') return article;
     const variants = activeVariants(product);
     if (!variants.length) return article;
-    const bodyStart = article.indexOf('<div class="product-card__body">');
+    const bodyStart = article.match(/<div class="product-card__body"(?:\s[^>]*)?>/i)?.index ?? -1;
     if (bodyStart < 0) return article;
     const category = plainText(article.match(/class="product-card__category"[^>]*>([\s\S]*?)<\/span>/i)?.[1] || product.category);
     const properties = listingProperties(product).map(property => `<li><strong>${escapeHtml(property.label)}:</strong> ${escapeHtml(property.value)}</li>`).join('');
-    const options = variants.map(variant => `<option value="${escapeHtml(variant.key)}">${escapeHtml(variant.label)} — ${formatUsd(variant.unitAmount)}</option>`).join('');
-    const minimum = Math.min(...variants.map(variant => variant.unitAmount));
+    const defaultVariant = defaultActiveVariant(product, variants);
+    const options = variants.map(variant => `<option value="${escapeHtml(variant.key)}"${variant.key === defaultVariant.key ? ' selected' : ''}>${escapeHtml(variant.label)} — ${formatUsd(variant.unitAmount)}</option>`).join('');
     const quoteHref = `${contactPrefix}contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
-    const body = `<div class="product-card__body" data-static-commerce="true"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">Online ordering</span></div><h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><p class="product-card__commercial starting-price"><span data-listing-from-price>From ${formatUsd(minimum, true)} · Multiple package sizes</span></p><ul class="product-card__properties product-card__properties--compact">${properties}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package name="package" aria-label="Select package">${options}</select></label><label>Qty<div class="listing-quantity quantity-stepper"><button type="button" data-listing-decrease aria-label="Decrease quantity">−</button><input type="number" value="1" min="1" max="25" inputmode="numeric" aria-label="Quantity"><button type="button" data-listing-increase aria-label="Increase quantity">+</button></div></label></div><p class="product-card__price" data-listing-price>${formatUsd(variants[0].unitAmount)}</p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a><a href="${quoteHref}">Request Bulk Quote</a></div></div></div>`;
+    const body = `<div class="product-card__body" data-static-commerce="true"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">Online ordering</span></div><h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><p class="product-card__commercial starting-price"><span data-listing-from-price>From ${formatUsd(defaultVariant.unitAmount, true)} · Multiple package sizes</span></p><ul class="product-card__properties product-card__properties--compact">${properties}</ul><div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package name="package" aria-label="Select package">${options}</select></label><label>Qty<div class="listing-quantity quantity-stepper"><button type="button" data-listing-decrease aria-label="Decrease quantity">−</button><input type="number" value="1" min="1" max="25" inputmode="numeric" aria-label="Quantity"><button type="button" data-listing-increase aria-label="Increase quantity">+</button></div></label></div><p class="product-card__price" data-listing-price>${formatUsd(defaultVariant.unitAmount)}</p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a><a href="${quoteHref}">Request Bulk Quote</a></div></div></div>`;
     return `${article.slice(0, bodyStart)}${body}\n    </article>`;
   });
 }
@@ -176,9 +183,10 @@ function renderStaticCommerceCards(html, pagePath) {
 function commercePanel(product) {
   const variants = activeVariants(product);
   if (!variants.length) return '';
-  const options = variants.map(variant => `<option value="${escapeHtml(variant.key)}">${escapeHtml(variant.label)} — ${formatUsd(variant.unitAmount)}</option>`).join('');
+  const defaultVariant = defaultActiveVariant(product, variants);
+  const options = variants.map(variant => `<option value="${escapeHtml(variant.key)}"${variant.key === defaultVariant.key ? ' selected' : ''}>${escapeHtml(variant.label)} — ${formatUsd(variant.unitAmount)}</option>`).join('');
   const quoteHref = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
-  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(variants[0].unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div><p class="ecommerce-panel__note">Shipping is calculated separately for the selected destination.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p></section>`;
+  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div><p class="ecommerce-panel__note">Shipping is calculated separately for the selected destination.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p></section>`;
 }
 
 function renderStaticProductCommerce(html, product) {
@@ -750,43 +758,36 @@ for (const family of productSource.families) {
   if (pagePath) await updateFamilyPage(pagePath, family.slug);
 }
 
-const knowledgeFiles = (await readdir(resolve(siteRoot, 'knowledge'))).filter(file => file.endsWith('.html')).sort();
-for (const file of knowledgeFiles) await updateKnowledgePage(`knowledge/${file}`);
-
 const allHtml = await listHtml(siteRoot);
-for (const pagePath of allHtml) await normalizeOtherPage(pagePath);
+if (buildScope === 'all') {
+  const knowledgeFiles = (await readdir(resolve(siteRoot, 'knowledge'))).filter(file => file.endsWith('.html')).sort();
+  for (const file of knowledgeFiles) await updateKnowledgePage(`knowledge/${file}`);
+  for (const pagePath of allHtml) await normalizeOtherPage(pagePath);
 
-const indexPath = resolve(siteRoot, 'index.html');
-let indexHtml = await readFile(indexPath, 'utf8');
-const originalIndexHtml = indexHtml;
-const commercialSummary = 'Winigen Materials supplies battery-grade electrolyte salts, solvents, additives, and solid-state electrolyte materials in research-scale packages, with online ordering available for selected products and RFQ support for bulk quantities, custom materials, and formulation programs.';
-if (!indexHtml.includes(commercialSummary)) {
-  indexHtml = indexHtml.replace(/(<section class="hero[^>]*>[\s\S]*?<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>)/i, `$1<p>${commercialSummary}</p>`);
-}
-indexHtml = indexHtml
-  .replace('products.html#lithium-ion', 'products/custom-electrolyte-formulations.html')
-  .replace('products.html#raw-materials', 'products.html#salts');
-indexHtml = replaceJsonLd(indexHtml, value => (
-  containsType(value, 'Organization') || containsType(value, 'WebSite') || containsType(value, 'WebPage') ? null : value
-));
-indexHtml = injectJsonLd(indexHtml, {
-  '@context': 'https://schema.org',
-  '@graph': [
-    organization,
-    website,
-    {
-      '@type': 'WebPage',
-      '@id': `${siteUrl}/#webpage`,
-      url: `${siteUrl}/`,
-      name: pageMetadata['index.html'].title,
-      description: pageMetadata['index.html'].description,
-      isPartOf: { '@id': `${siteUrl}/#website` },
-      about: { '@id': `${siteUrl}/#organization` },
+  const indexPath = resolve(siteRoot, 'index.html');
+  let indexHtml = await readFile(indexPath, 'utf8');
+  const originalIndexHtml = indexHtml;
+  const commercialSummary = 'Winigen Materials supplies battery-grade electrolyte salts, solvents, additives, and solid-state electrolyte materials in research-scale packages, with online ordering available for selected products and RFQ support for bulk quantities, custom materials, and formulation programs.';
+  if (!indexHtml.includes(commercialSummary)) {
+    indexHtml = indexHtml.replace(/(<section class="hero[^>]*>[\s\S]*?<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>)/i, `$1<p>${commercialSummary}</p>`);
+  }
+  indexHtml = indexHtml
+    .replace('products.html#lithium-ion', 'products/custom-electrolyte-formulations.html')
+    .replace('products.html#raw-materials', 'products.html#salts');
+  indexHtml = replaceJsonLd(indexHtml, value => (
+    containsType(value, 'Organization') || containsType(value, 'WebSite') || containsType(value, 'WebPage') ? null : value
+  ));
+  indexHtml = injectJsonLd(indexHtml, {
+    '@context': 'https://schema.org',
+    '@graph': [organization, website, {
+      '@type': 'WebPage', '@id': `${siteUrl}/#webpage`, url: `${siteUrl}/`,
+      name: pageMetadata['index.html'].title, description: pageMetadata['index.html'].description,
+      isPartOf: { '@id': `${siteUrl}/#website` }, about: { '@id': `${siteUrl}/#organization` },
       primaryImageOfPage: { '@type': 'ImageObject', url: `${siteUrl}/assets/images/winigen-logo.png` }
-    }
-  ]
-});
-await writePreservingEol(indexPath, indexHtml, originalIndexHtml);
+    }]
+  });
+  await writePreservingEol(indexPath, indexHtml, originalIndexHtml);
+}
 
 const sitemapExclusions = new Set(['checkout-success.html', 'checkout-cancel.html', 'stripe-test.html']);
 const sitemapUrls = new Set();

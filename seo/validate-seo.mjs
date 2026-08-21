@@ -293,18 +293,19 @@ const workerCatalog = await import(workerCatalogUrl);
 const semanticDirect = productSource.products.filter(product => product.commerceStatus === 'active_checkout');
 const semanticRfqSlugs = new Set(productSource.products.filter(product => product.commerceStatus === 'rfq').map(product => product.slug));
 const sourceDirectSlugs = new Set(ecommerceSource.products.filter(product => product.commercialStatus === 'ONLINE_CHECKOUT').map(product => product.slug));
+const sourceAllSlugs = new Set(ecommerceSource.products.map(product => product.slug));
 const browserBySlug = new Map(browserCatalog.products.map(product => [product.slug, product]));
 const workerBySlug = new Map(workerCatalog.PRODUCTS.map(product => [product.slug, product]));
-const expectedVariantCount = semanticDirect.reduce((total, product) => total + activeVariants(product).length, 0);
+const expectedVariantCount = ecommerceSource.products.reduce((total, product) => total + (product.packages || ecommerceSource.packageTemplates[product.packageTemplate] || []).length, 0);
 const browserVariantCount = browserCatalog.products.reduce((total, product) => total + product.variants.length, 0);
 const workerVariantCount = workerCatalog.PRODUCTS.reduce((total, product) => total + product.variants.length, 0);
-if (browserVariantCount !== expectedVariantCount) errors.push(`Browser catalog variant count ${browserVariantCount} does not match canonical active count ${expectedVariantCount}.`);
-if (workerVariantCount !== expectedVariantCount) errors.push(`Worker catalog variant count ${workerVariantCount} does not match canonical active count ${expectedVariantCount}.`);
+if (browserVariantCount !== expectedVariantCount) errors.push(`Browser catalog variant count ${browserVariantCount} does not match canonical full count ${expectedVariantCount}.`);
+if (workerVariantCount !== expectedVariantCount) errors.push(`Worker catalog variant count ${workerVariantCount} does not match canonical full count ${expectedVariantCount}.`);
 if (browserCatalog.catalogVersion !== ecommerceSource.catalogVersion) errors.push('Browser catalog version does not match the canonical ecommerce source.');
 if (workerCatalog.CATALOG_VERSION !== ecommerceSource.catalogVersion) errors.push('Worker catalog version does not match the canonical ecommerce source.');
 if (semanticDirect.length !== sourceDirectSlugs.size) errors.push(`Canonical semantic/ecommerce direct-product counts disagree: ${semanticDirect.length}/${sourceDirectSlugs.size}.`);
-if (browserBySlug.size !== sourceDirectSlugs.size) errors.push(`Browser catalog product count ${browserBySlug.size} does not match canonical direct count ${sourceDirectSlugs.size}.`);
-if (workerBySlug.size !== sourceDirectSlugs.size) errors.push(`Worker catalog product count ${workerBySlug.size} does not match canonical direct count ${sourceDirectSlugs.size}.`);
+if (browserBySlug.size !== sourceAllSlugs.size) errors.push(`Browser catalog product count ${browserBySlug.size} does not match canonical full count ${sourceAllSlugs.size}.`);
+if (workerBySlug.size !== sourceAllSlugs.size) errors.push(`Worker catalog product count ${workerBySlug.size} does not match canonical full count ${sourceAllSlugs.size}.`);
 for (const product of semanticDirect) {
   if (!sourceDirectSlugs.has(product.ecommerceSlug || product.slug)) errors.push(`${product.slug}: semantic source says direct but ecommerce source does not.`);
   const expectedVariants = activeVariants(product);
@@ -323,10 +324,19 @@ for (const product of semanticDirect) {
       errors.push(`${product.slug}/${expected.key}: package label or price drifts across canonical, browser, and Worker catalogs.`);
     }
   }
-  if (browserProduct.variants.length !== expectedVariants.length || workerProduct.variants.length !== expectedVariants.length) errors.push(`${product.slug}: generated variant count does not match canonical active variants.`);
+  const browserActive = browserProduct.variants.filter(variant => variant.approvalStatus === 'ACTIVE');
+  const workerActive = workerProduct.variants.filter(variant => variant.approvalStatus === 'ACTIVE');
+  if (browserActive.length !== expectedVariants.length || workerActive.length !== expectedVariants.length) errors.push(`${product.slug}: generated active-variant count does not match canonical active variants.`);
 }
 for (const slug of semanticRfqSlugs) {
-  if (sourceDirectSlugs.has(slug) || browserBySlug.has(slug) || workerBySlug.has(slug)) errors.push(`${slug}: RFQ product leaked into a direct-checkout catalog.`);
+  if (!sourceAllSlugs.has(slug)) continue;
+  const browserProduct = browserBySlug.get(slug);
+  const workerProduct = workerBySlug.get(slug);
+  if (sourceDirectSlugs.has(slug)) errors.push(`${slug}: RFQ product is marked direct checkout in the canonical ecommerce source.`);
+  if (!browserProduct || !workerProduct) errors.push(`${slug}: RFQ product is missing from a generated catalog projection.`);
+  else if (browserProduct.commercialStatus !== 'RFQ_ONLY' || workerProduct.commercialStatus !== 'RFQ_ONLY' || browserProduct.variants.some(variant => variant.approvalStatus === 'ACTIVE') || workerProduct.variants.some(variant => variant.approvalStatus === 'ACTIVE')) {
+    errors.push(`${slug}: RFQ product exposes an active checkout variant.`);
+  }
 }
 
 if (warnings.length) console.log(`SEO validation warnings (${warnings.length}):\n${warnings.slice(0, 40).map(item => `- ${item}`).join('\n')}`);

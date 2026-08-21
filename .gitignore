@@ -7,6 +7,10 @@ scripts/
 !scripts/
 scripts/*
 !scripts/build-knowledge-index.mjs
+!scripts/apply-approved-pricing.mjs
+!scripts/build-product-search-index.mjs
+!scripts/generate-public-product-pages.mjs
+!scripts/validate-approved-pricing.mjs
 !stripe-worker/
 !stripe-worker/scripts/
 !stripe-worker/scripts/build-catalog.mjs

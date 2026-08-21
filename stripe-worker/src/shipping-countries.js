@@ -283,3 +283,22 @@ export const SHIPPING_REGION_DEFAULTS = {
   "AFRICA_MIDDLE_EAST": 21900
 };
 export const COUNTRY_SHIPPING_OVERRIDES = {};
+export const UNITED_STATES_WEIGHT_TIERS = [
+  {
+    "maximumGrams": 1000,
+    "amount": 8900
+  },
+  {
+    "maximumGrams": 2000,
+    "amount": 10900
+  },
+  {
+    "maximumGrams": 5000,
+    "amount": 14900
+  },
+  {
+    "maximumGrams": 10000,
+    "amount": 19900
+  }
+];
+export const MAXIMUM_ONLINE_SHIPPING_WEIGHT_GRAMS = 10000;

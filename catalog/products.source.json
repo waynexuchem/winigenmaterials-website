@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-13",
-  "generatedFrom": "Canonical products listed on products.html; maintain this file as the semantic product source after initial seeding.",
+  "version": "2026-08-20-final-pricing-v3-identities",
+  "generatedFrom": "Canonical Winigen product catalog with approved public pricing from Winigen_Pricing_Balanced_2026-08-20.xlsx",
   "commerceStatusValues": [
     "active_checkout",
     "rfq",
@@ -95,7 +95,7 @@
         },
         {
           "name": "Availability",
-          "value": "RFQ"
+          "value": "Online ordering"
         },
         {
           "name": "Grade",
@@ -1862,19 +1862,19 @@
     {
       "slug": "sodium-difluoro-oxalate-borate-naodfb",
       "url": "/products/sodium-difluoro-oxalate-borate-naodfb.html",
-      "name": "Sodium difluoro oxalate borate (NaODFB)",
-      "description": "Sodium difluoro oxalate borate (NaODFB), CAS 2102517-30-4, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "name": "Sodium difluoro(oxalato)borate (NaDFOB)",
+      "description": "Sodium difluoro(oxalato)borate (NaDFOB), CAS 1016545-84-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAODFB",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/2102517-30-4/PNG",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1016545-84-8/PNG",
       "aliases": [
-        "NaODFB",
-        "NaDFOB"
+        "NaDFOB",
+        "NaODFB"
       ],
       "commercialIntents": [
-        "Sodium difluoro oxalate borate (NaODFB) supplier",
-        "where to buy Sodium difluoro oxalate borate (NaODFB)"
+        "Sodium difluoro(oxalato)borate (NaDFOB) supplier",
+        "where to buy Sodium difluoro(oxalato)borate (NaDFOB)"
       ],
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
@@ -1882,15 +1882,19 @@
       "additionalProperty": [
         {
           "name": "Abbreviation",
+          "value": "NaDFOB"
+        },
+        {
+          "name": "Alternate Abbreviation",
           "value": "NaODFB"
         },
         {
           "name": "CAS Number",
-          "value": "2102517-30-4"
+          "value": "1016545-84-8"
         },
         {
           "name": "Formula",
-          "value": "NaODFB"
+          "value": "C2BF2NaO4"
         },
         {
           "name": "Availability",
@@ -4012,6 +4016,663 @@
           "value": "0.02-0.2 cm3/g"
         }
       ]
+    },
+    {
+      "slug": "ethyl-propionate-ep",
+      "url": "/products/ethyl-propionate-ep.html",
+      "name": "Ethyl propionate (EP)",
+      "description": "Ethyl propionate (EP), CAS 105-37-3, available from Winigen Materials for battery and electrochemical research. Ethyl propionate is an ester co-solvent for electrolyte-solvent screening and formulation studies.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-EP",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-37-3/PNG",
+      "aliases": [
+        "EP"
+      ],
+      "commercialIntents": [
+        "Ethyl propionate (EP) supplier",
+        "where to buy Ethyl propionate (EP)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "ethyl-propionate-ep",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "EP"
+        },
+        {
+          "name": "CAS Number",
+          "value": "105-37-3"
+        },
+        {
+          "name": "Formula",
+          "value": "C5H10O2"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "propyl-propionate-pp",
+      "url": "/products/propyl-propionate-pp.html",
+      "name": "Propyl propionate (PP)",
+      "description": "Propyl propionate (PP), CAS 106-36-5, available from Winigen Materials for battery and electrochemical research. Propyl propionate is an ester co-solvent for battery-electrolyte formulation and transport studies.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-PP",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/106-36-5/PNG",
+      "aliases": [
+        "PP"
+      ],
+      "commercialIntents": [
+        "Propyl propionate (PP) supplier",
+        "where to buy Propyl propionate (PP)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "propyl-propionate-pp",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "PP"
+        },
+        {
+          "name": "CAS Number",
+          "value": "106-36-5"
+        },
+        {
+          "name": "Formula",
+          "value": "C6H12O2"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "triphenyl-phosphite-tppi",
+      "url": "/products/triphenyl-phosphite-tppi.html",
+      "name": "Triphenyl phosphite (TPPI)",
+      "description": "Triphenyl phosphite (TPPI), CAS 101-02-0, available from Winigen Materials for battery and electrochemical research. Triphenyl phosphite is screened as a phosphorus-containing electrolyte additive for interphase and high-voltage formulation studies.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TPPI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/101-02-0/PNG",
+      "aliases": [
+        "TPPI"
+      ],
+      "commercialIntents": [
+        "Triphenyl phosphite (TPPI) supplier",
+        "where to buy Triphenyl phosphite (TPPI)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "triphenyl-phosphite-tppi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TPPI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "101-02-0"
+        },
+        {
+          "name": "Formula",
+          "value": "C18H15O3P"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "biphenyl-bp",
+      "url": "/products/biphenyl-bp.html",
+      "name": "Biphenyl (BP)",
+      "description": "Biphenyl (BP), CAS 92-52-4, available from Winigen Materials for battery and electrochemical research. Biphenyl is an aromatic electrolyte additive used in overcharge-response and interphase-screening studies.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-BP",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/92-52-4/PNG",
+      "aliases": [
+        "BP"
+      ],
+      "commercialIntents": [
+        "Biphenyl (BP) supplier",
+        "where to buy Biphenyl (BP)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "biphenyl-bp",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "BP"
+        },
+        {
+          "name": "CAS Number",
+          "value": "92-52-4"
+        },
+        {
+          "name": "Formula",
+          "value": "C12H10"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "propyl-acetate-pa",
+      "url": "/products/propyl-acetate-pa.html",
+      "name": "Propyl acetate (PA)",
+      "description": "Propyl acetate (PA), CAS 109-60-4, available from Winigen Materials for battery and electrochemical research. Propyl acetate is an ester solvent for electrolyte-solvent screening and formulation development.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-PA",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/109-60-4/PNG",
+      "aliases": [
+        "PA"
+      ],
+      "commercialIntents": [
+        "Propyl acetate (PA) supplier",
+        "where to buy Propyl acetate (PA)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "propyl-acetate-pa",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "PA"
+        },
+        {
+          "name": "CAS Number",
+          "value": "109-60-4"
+        },
+        {
+          "name": "Formula",
+          "value": "C5H10O2"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "ethylene-sulfite-es",
+      "url": "/products/ethylene-sulfite-es.html",
+      "name": "Ethylene sulfite (ES)",
+      "description": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in supplier materials.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-ES",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3741-38-6/PNG",
+      "aliases": [
+        "ES",
+        "ESI",
+        "Glycol sulfite"
+      ],
+      "commercialIntents": [
+        "Ethylene sulfite (ES) supplier",
+        "where to buy Ethylene sulfite (ES)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "ethylene-sulfite-es",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "ES"
+        },
+        {
+          "name": "Alternate Abbreviation",
+          "value": "ESI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "3741-38-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C2H4O3S"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "hexamethyldisilazane-hmds",
+      "url": "/products/hexamethyldisilazane-hmds.html",
+      "name": "Hexamethyldisilazane (HMDS)",
+      "description": "Hexamethyldisilazane (HMDS), CAS 999-97-3, available from Winigen Materials for battery and electrochemical research. Hexamethyldisilazane is a silicon-containing reagent screened in electrolyte and interphase-chemistry studies.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-HMDS",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/999-97-3/PNG",
+      "aliases": [
+        "HMDS"
+      ],
+      "commercialIntents": [
+        "Hexamethyldisilazane (HMDS) supplier",
+        "where to buy Hexamethyldisilazane (HMDS)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "hexamethyldisilazane-hmds",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "HMDS"
+        },
+        {
+          "name": "CAS Number",
+          "value": "999-97-3"
+        },
+        {
+          "name": "Formula",
+          "value": "C6H19NSi2"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "fluorobenzene-fb",
+      "url": "/products/fluorobenzene-fb.html",
+      "name": "Fluorobenzene (FB)",
+      "description": "Fluorobenzene (FB), CAS 462-06-6, available from Winigen Materials for battery and electrochemical research. Fluorobenzene is a fluorinated aromatic component for electrolyte co-solvent and additive screening.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-FB",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/462-06-6/PNG",
+      "aliases": [
+        "FB"
+      ],
+      "commercialIntents": [
+        "Fluorobenzene (FB) supplier",
+        "where to buy Fluorobenzene (FB)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "fluorobenzene-fb",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "FB"
+        },
+        {
+          "name": "CAS Number",
+          "value": "462-06-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C6H5F"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
+      "url": "/products/sodium-bis-fluorosulfonyl-imide-nafsi.html",
+      "name": "Sodium bis(fluorosulfonyl)imide (NaFSI)",
+      "description": "Sodium bis(fluorosulfonyl)imide (NaFSI), CAS 100669-96-3, available from Winigen Materials for battery and electrochemical research. Sodium bis(fluorosulfonyl)imide is a conducting-salt candidate for sodium-ion electrolyte formulation.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-NAFSI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/100669-96-3/PNG",
+      "aliases": [
+        "NaFSI"
+      ],
+      "commercialIntents": [
+        "Sodium bis(fluorosulfonyl)imide (NaFSI) supplier",
+        "where to buy Sodium bis(fluorosulfonyl)imide (NaFSI)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "sodium-bis-fluorosulfonyl-imide-nafsi",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "NaFSI"
+        },
+        {
+          "name": "CAS Number",
+          "value": "100669-96-3"
+        },
+        {
+          "name": "Formula",
+          "value": "F2NNaO4S2"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "cyclohexylbenzene-chb",
+      "url": "/products/cyclohexylbenzene-chb.html",
+      "name": "Cyclohexylbenzene (CHB)",
+      "description": "Cyclohexylbenzene (CHB), CAS 827-52-1, available from Winigen Materials for battery and electrochemical research. Cyclohexylbenzene is an aromatic electrolyte additive for overcharge-response and high-voltage screening.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-CHB",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/827-52-1/PNG",
+      "aliases": [
+        "CHB"
+      ],
+      "commercialIntents": [
+        "Cyclohexylbenzene (CHB) supplier",
+        "where to buy Cyclohexylbenzene (CHB)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "cyclohexylbenzene-chb",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "CHB"
+        },
+        {
+          "name": "CAS Number",
+          "value": "827-52-1"
+        },
+        {
+          "name": "Formula",
+          "value": "C12H16"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "1-4-butane-sultone-bs",
+      "url": "/products/1-4-butane-sultone-bs.html",
+      "name": "1,4-Butane sultone (BS)",
+      "description": "1,4-Butane sultone (BS), CAS 1633-83-6, available from Winigen Materials for battery and electrochemical research. 1,4-Butane sultone is a cyclic sulfonate additive for SEI and interphase-formulation studies.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-BS",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1633-83-6/PNG",
+      "aliases": [
+        "BS"
+      ],
+      "commercialIntents": [
+        "1,4-Butane sultone (BS) supplier",
+        "where to buy 1,4-Butane sultone (BS)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-4-butane-sultone-bs",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "BS"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1633-83-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C4H8O3S"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "sodium-difluorophosphate-napo2f2",
+      "url": "/products/sodium-difluorophosphate-napo2f2.html",
+      "name": "Sodium difluorophosphate (NaPO2F2)",
+      "description": "Sodium difluorophosphate (NaPO2F2), CAS 15587-24-3, available from Winigen Materials for battery and electrochemical research. Sodium difluorophosphate is a sodium electrolyte component for salt and interphase-additive screening.",
+      "family": "next-generation-salts",
+      "category": "Next-Gen Salts",
+      "sku": "WM-NGS-NAPO2F2",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/15587-24-3/PNG",
+      "aliases": [
+        "NaPO2F2"
+      ],
+      "commercialIntents": [
+        "Sodium difluorophosphate (NaPO2F2) supplier",
+        "where to buy Sodium difluorophosphate (NaPO2F2)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "sodium-difluorophosphate-napo2f2",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "NaPO2F2"
+        },
+        {
+          "name": "CAS Number",
+          "value": "15587-24-3"
+        },
+        {
+          "name": "Formula",
+          "value": "F2NaO2P"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ]
+    },
+    {
+      "slug": "1-3-dioxolane-dol",
+      "url": "/products/1-3-dioxolane-dol.html",
+      "name": "1,3-Dioxolane (DOL)",
+      "description": "1,3-Dioxolane (DOL), CAS 646-06-0, available from Winigen Materials for battery and electrochemical research. 1,3-Dioxolane is an ether solvent used in lithium-metal and specialty electrolyte formulation studies.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-DOL",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/646-06-0/PNG",
+      "aliases": [
+        "DOL"
+      ],
+      "commercialIntents": [
+        "1,3-Dioxolane (DOL) supplier",
+        "where to buy 1,3-Dioxolane (DOL)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "DOL"
+        },
+        {
+          "name": "CAS Number",
+          "value": "646-06-0"
+        },
+        {
+          "name": "Formula",
+          "value": "C3H6O2"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ],
+      "ecommerceSlug": "1-3-dioxolane-dol"
+    },
+    {
+      "slug": "triallyl-phosphate-tap",
+      "url": "/products/triallyl-phosphate-tap.html",
+      "name": "Triallyl phosphate (TAP)",
+      "description": "Triallyl phosphate (TAP), CAS 1623-19-4, available from Winigen Materials for battery and electrochemical research. Triallyl phosphate is a phosphorus-containing additive for electrolyte safety and interphase screening.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TAP",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1623-19-4/PNG",
+      "aliases": [
+        "TAP"
+      ],
+      "commercialIntents": [
+        "Triallyl phosphate (TAP) supplier",
+        "where to buy Triallyl phosphate (TAP)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TAP"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1623-19-4"
+        },
+        {
+          "name": "Formula",
+          "value": "C9H15O4P"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ],
+      "ecommerceSlug": "triallyl-phosphate-tap"
+    },
+    {
+      "slug": "lithium-nitrate-lino3",
+      "url": "/products/lithium-nitrate-lino3.html",
+      "name": "Lithium nitrate (LiNO3)",
+      "description": "Lithium nitrate (LiNO3), CAS 7790-69-4, available from Winigen Materials for battery and electrochemical research. Lithium nitrate is an electrolyte additive used in lithium-metal interphase and polysulfide-management studies.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-ADD-LINO3",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/7790-69-4/PNG",
+      "aliases": [
+        "LiNO3"
+      ],
+      "commercialIntents": [
+        "Lithium nitrate (LiNO3) supplier",
+        "where to buy Lithium nitrate (LiNO3)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiNO3"
+        },
+        {
+          "name": "CAS Number",
+          "value": "7790-69-4"
+        },
+        {
+          "name": "Formula",
+          "value": "LiNO3"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ],
+      "ecommerceSlug": "lithium-nitrate-lino3"
+    },
+    {
+      "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+      "url": "/products/lithium-difluorobis-oxalato-phosphate-lidodfp.html",
+      "name": "Lithium difluorobis(oxalato)phosphate (LiDFBOP)",
+      "description": "Lithium difluorobis(oxalato)phosphate (LiDFBOP), CAS 678966-16-0, available from Winigen Materials for battery and electrochemical research. Lithium difluorobis(oxalato)phosphate is a lithium-containing electrolyte additive for interphase-forming studies.",
+      "family": "lithium-salts",
+      "category": "Lithium Salts",
+      "sku": "WM-ADD-LIDODFP",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/678966-16-0/PNG",
+      "aliases": [
+        "LiDFBOP",
+        "LiDODFP"
+      ],
+      "commercialIntents": [
+        "Lithium difluorobis(oxalato)phosphate (LiDFBOP) supplier",
+        "where to buy Lithium difluorobis(oxalato)phosphate (LiDFBOP)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiDFBOP"
+        },
+        {
+          "name": "Alternate Abbreviation",
+          "value": "LiDODFP"
+        },
+        {
+          "name": "CAS Number",
+          "value": "678966-16-0"
+        },
+        {
+          "name": "Formula",
+          "value": "C4F2LiO8P"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ],
+      "ecommerceSlug": "lithium-difluorobis-oxalato-phosphate-lidodfp"
+    },
+    {
+      "slug": "tetravinylsilane-tvsi",
+      "url": "/products/tetravinylsilane-tvsi.html",
+      "name": "Tetravinylsilane (TVSi)",
+      "description": "Tetravinylsilane (TVSi), CAS 1112-55-6, available from Winigen Materials for battery and electrochemical research. Tetravinylsilane is a silicon-containing electrolyte additive for polymerization and interphase-screening studies.",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-TVSI",
+      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1112-55-6/PNG",
+      "aliases": [
+        "TVSi"
+      ],
+      "commercialIntents": [
+        "Tetravinylsilane (TVSi) supplier",
+        "where to buy Tetravinylsilane (TVSi)"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TVSi"
+        },
+        {
+          "name": "CAS Number",
+          "value": "1112-55-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C8H12Si"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery research grade"
+        }
+      ],
+      "ecommerceSlug": "tetravinylsilane-tvsi"
     }
   ]
 }

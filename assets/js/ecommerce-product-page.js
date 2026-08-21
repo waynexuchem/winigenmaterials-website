@@ -56,6 +56,7 @@
     const select = panel.querySelector('.ecommerce-package');
     const price = panel.querySelector('.ecommerce-price');
     const status = panel.querySelector('.ecommerce-status');
+    const defaultVariant = activeVariants.find(variant => variant.id === product.defaultPackageId) || activeVariants[0];
     if (!select.options.length) {
       activeVariants.forEach(variant => {
         const option = document.createElement('option');
@@ -64,6 +65,7 @@
         select.appendChild(option);
       });
     }
+    select.value = defaultVariant.key;
     const update = () => {
       const variant = activeVariants.find(entry => entry.key === select.value);
       price.textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(variant.unitAmount / 100);
@@ -77,8 +79,9 @@
     quantityInput.addEventListener('change', () => setQuantity(quantityInput.value));
     panel.querySelector('[data-quantity-decrease]').addEventListener('click', () => setQuantity(Number(quantityInput.value) - 1));
     panel.querySelector('[data-quantity-increase]').addEventListener('click', () => setQuantity(Number(quantityInput.value) + 1));
-    panel.querySelector('[data-add-to-cart]').addEventListener('click', () => {
-      cart.add(select.value, Number(quantityInput.value));
+    const addButton = panel.querySelector('[data-add-to-cart]');
+    addButton.addEventListener('click', () => {
+      cart.add(select.value, Number(quantityInput.value), addButton);
     });
     update();
     actionHost.hidden = true;
