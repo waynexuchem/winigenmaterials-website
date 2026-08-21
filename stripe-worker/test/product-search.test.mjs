@@ -47,8 +47,23 @@ test('alternate alias is a direct lookup', () => {
   assert.deepEqual(slugs('LiDODFP'), ['lithium-difluorobis-oxalato-phosphate-lidodfp']);
 });
 
+test('shared aliases and formulas fall through to ranked results', () => {
+  const ambiguousRecords = [
+    searchApi.prepareRecord({ slug: 'alpha', name: 'Alpha material', aliases: ['SHARED'], formula: 'C2H6O', section: 'salts' }),
+    searchApi.prepareRecord({ slug: 'beta', name: 'Beta material', aliases: ['SHARED'], formula: 'C2H6O', section: 'solvents' })
+  ];
+  const aliasResult = searchApi.search(ambiguousRecords, 'SHARED');
+  const formulaResult = searchApi.search(ambiguousRecords, 'C2H6O');
+  assert.equal(aliasResult.matchType, 'broad');
+  assert.deepEqual(aliasResult.records.map(record => record.slug), ['alpha', 'beta']);
+  assert.equal(formulaResult.matchType, 'broad');
+  assert.deepEqual(formulaResult.records.map(record => record.slug), ['alpha', 'beta']);
+});
+
 test('exact formula uses the formula tier', () => {
-  assert.ok(slugs('C3H2O3').includes('vinylene-carbonate-vc'));
+  const result = searchApi.search(records, 'C3H2O3');
+  assert.equal(result.matchType, 'exact-4');
+  assert.deepEqual(result.records.map(record => record.slug), ['vinylene-carbonate-vc']);
 });
 
 test('broad keyword may return multiple relevant products', () => {
@@ -60,6 +75,27 @@ test('search and category filter combine', () => {
   const results = slugs('lithium', 'salts');
   assert.ok(results.length > 1);
   assert.ok(results.every(slug => records.find(record => record.slug === slug).section === 'salts'));
+});
+
+test('category counts remain based on the unscoped query result', () => {
+  const unscoped = searchApi.search(records, 'lithium').records;
+  const view = searchApi.searchView(records, 'lithium', 'salts');
+  assert.ok(view.visibleRecords.length > 0);
+  assert.ok(view.visibleRecords.every(record => record.section === 'salts'));
+  searchApi.SECTION_ORDER.forEach(section => {
+    assert.equal(view.sectionCounts[section], unscoped.filter(record => record.section === section).length);
+  });
+  assert.ok(Object.entries(view.sectionCounts).some(([section, count]) => section !== 'salts' && count > 0));
+});
+
+test('short chemistry terms do not match arbitrary substrings', () => {
+  const siliconResults = searchApi.search(records, 'SI').records;
+  assert.deepEqual(siliconResults.map(record => record.slug), [
+    'silicon-anode-powder',
+    'siox-silicon-carbon-composite-anode-material'
+  ]);
+  assert.deepEqual(slugs('EC'), ['ethylene-carbonate-ec']);
+  assert.deepEqual(slugs('VC'), ['vinylene-carbonate-vc']);
 });
 
 test('clear search restores the complete scoped catalog', () => {

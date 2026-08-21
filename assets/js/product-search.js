@@ -69,16 +69,25 @@
     const compactCas = normalizeCas(query);
     const numericQuery = /^[\d\s-]+$/.test(String(query).trim());
     const tiers = [
-      record => numericQuery && compactCas.length >= 4 && record.compactCas === compactCas,
-      record => record.normalizedName === normalized || record.baseName === normalized,
-      record => record.normalizedAliases.includes(normalized),
-      record => compactQuery.length > 1 && record.normalizedFormula === compactQuery
+      { test: record => numericQuery && compactCas.length >= 4 && record.compactCas === compactCas },
+      { test: record => record.normalizedName === normalized || record.baseName === normalized },
+      { test: record => record.normalizedAliases.includes(normalized), uniqueOnly: true },
+      { test: record => compactQuery.length > 1 && record.normalizedFormula === compactQuery, uniqueOnly: true }
     ];
     for (let index = 0; index < tiers.length; index += 1) {
-      const matches = records.filter(tiers[index]);
+      const matches = records.filter(tiers[index].test);
+      if (matches.length > 1 && tiers[index].uniqueOnly) return null;
       if (matches.length) return { matches, tier: index + 1 };
     }
     return null;
+  }
+
+  function containsSearchTerm(value, term) {
+    const haystack = normalize(value);
+    const needle = normalize(term);
+    if (!needle) return false;
+    if (needle.length > 2) return haystack.includes(needle);
+    return haystack.split(/[^a-z0-9]+/).includes(needle);
   }
 
   function broadScore(record, query) {
@@ -90,29 +99,44 @@
     const formula = record.normalizedFormula;
     const metadata = record.normalizedMetadata;
     const combined = `${name} ${aliases} ${formula} ${metadata}`;
+    const shortQuery = normalized.length <= 2;
+    const broadText = shortQuery ? `${name} ${aliases}` : combined;
     const expansions = BROAD_ALIASES[normalized] || [normalized];
-    const expandedMatch = expansions.some(term => combined.includes(normalize(term)));
-    const allTokensMatch = tokens.every(token => combined.includes(token));
-    if (!expandedMatch && !allTokensMatch) return 0;
+    const strongNameMatch = name.startsWith(normalized) || containsSearchTerm(name, normalized);
+    const expandedMatch = expansions.some(term => containsSearchTerm(broadText, term));
+    const allTokensMatch = tokens.every(token => containsSearchTerm(broadText, token));
+    if (!strongNameMatch && !expandedMatch && !allTokensMatch) return 0;
     if (name.startsWith(normalized)) return 600;
-    if (name.includes(normalized)) return 520;
-    if (record.normalizedAliases.some(alias => alias.startsWith(normalized))) return 470;
-    if (formula.includes(compact(query))) return 420;
-    if (metadata.includes(normalized)) return 320;
-    return 200 + tokens.filter(token => combined.includes(token)).length;
+    if (containsSearchTerm(name, normalized)) return 520;
+    if (record.normalizedAliases.some(alias => containsSearchTerm(alias, normalized))) return 470;
+    if (compact(query).length > 2 && formula.includes(compact(query))) return 420;
+    if (!shortQuery && containsSearchTerm(metadata, normalized)) return 320;
+    return 200 + tokens.filter(token => containsSearchTerm(broadText, token)).length;
   }
 
   function search(records, query, section = '') {
     const prepared = records.map(record => record.normalizedName ? record : prepareRecord(record));
-    const scoped = section ? prepared.filter(record => record.section === section) : prepared;
-    if (!String(query || '').trim()) return { records: scoped, matchType: 'all' };
-    const exact = exactMatches(scoped, query);
-    if (exact) return { records: exact.matches, matchType: `exact-${exact.tier}` };
-    const ranked = scoped
+    const applyScope = matches => section ? matches.filter(record => record.section === section) : matches;
+    if (!String(query || '').trim()) return { records: applyScope(prepared), matchType: 'all' };
+    const exact = exactMatches(prepared, query);
+    if (exact) return { records: applyScope(exact.matches), matchType: `exact-${exact.tier}` };
+    const ranked = prepared
       .map(record => ({ record, score: broadScore(record, query) }))
       .filter(entry => entry.score > 0)
       .sort((a, b) => b.score - a.score || a.record.normalizedName.localeCompare(b.record.normalizedName));
-    return { records: ranked.map(entry => entry.record), matchType: 'broad' };
+    return { records: applyScope(ranked.map(entry => entry.record)), matchType: 'broad' };
+  }
+
+  function searchView(records, query, selectedSection = '') {
+    const result = search(records, query);
+    const visibleRecords = selectedSection
+      ? result.records.filter(record => record.section === selectedSection)
+      : result.records;
+    const sectionCounts = Object.fromEntries(SECTION_ORDER.map(section => [
+      section,
+      result.records.filter(record => record.section === section).length
+    ]));
+    return { ...result, visibleRecords, sectionCounts };
   }
 
   function slugFromCard(card) {
@@ -120,9 +144,9 @@
     return href.split('/').pop().replace(/\.html(?:[?#].*)?$/, '');
   }
 
-  function fallbackRecord(card) {
+  function fallbackRecord(card, index) {
     return prepareRecord({
-      slug: slugFromCard(card) || `card-${Math.random()}`,
+      slug: slugFromCard(card) || `catalog-card-${index + 1}`,
       name: card.querySelector('h3')?.textContent || '',
       aliases: [],
       cas: card.dataset.search?.match(/\b\d{2,7}-\d{2}-\d\b/)?.[0] || '',
@@ -161,7 +185,7 @@
     if (tabParent) tabs.forEach(tab => tabParent.appendChild(tab));
 
     const sourceBySlug = new Map(source.map(record => [record.slug, prepareRecord(record)]));
-    const items = cards.map(card => ({ card, record: sourceBySlug.get(slugFromCard(card)) || fallbackRecord(card) }));
+    const items = cards.map((card, index) => ({ card, record: sourceBySlug.get(slugFromCard(card)) || fallbackRecord(card, index) }));
     let selectedSection = '';
     let scrollFrame = 0;
     let resultCount = document.getElementById('catalog-result-count');
@@ -180,7 +204,7 @@
       backToTop.className = 'catalog-back-to-top';
       backToTop.title = 'Back to top';
       backToTop.setAttribute('aria-label', 'Back to top');
-      backToTop.innerHTML = '<span aria-hidden="true">&#8593;</span>';
+      backToTop.innerHTML = '<span class="catalog-back-to-top__icon" aria-hidden="true">&#8593;</span><span>Back to top</span>';
       document.body.appendChild(backToTop);
     }
 
@@ -205,7 +229,7 @@
         });
         setActiveTab(currentSection);
       }
-      backToTop.hidden = window.scrollY < 700;
+      backToTop.hidden = window.scrollY < 360;
     }
 
     function requestScrollUpdate() {
@@ -238,10 +262,10 @@
       const query = searchInput.value.trim();
       if (!query) selectedSection = '';
       const records = items.map(item => item.record);
-      const result = search(records, query, selectedSection);
-      const matchingSlugs = new Set(result.records.map(record => record.slug));
+      const result = searchView(records, query, selectedSection);
+      const matchingSlugs = new Set(result.visibleRecords.map(record => record.slug));
       const visibleItems = items.filter(item => matchingSlugs.has(item.record.slug));
-      const order = new Map(result.records.map((record, index) => [record.slug, index]));
+      const order = new Map(result.visibleRecords.map((record, index) => [record.slug, index]));
 
       items.forEach(item => {
         const visible = matchingSlugs.has(item.record.slug);
@@ -257,7 +281,7 @@
       });
       tabs.forEach(tab => {
         const section = (tab.getAttribute('href') || '').replace(/^#/, '');
-        const count = visibleItems.filter(item => item.record.section === section).length;
+        const count = result.sectionCounts[section] || 0;
         tab.innerHTML = `${tab.dataset.label}<span class="tab-count">${count}</span>`;
         tab.classList.toggle('active', Boolean(query) && selectedSection === section);
         tab.classList.toggle('no-matches', Boolean(query) && count === 0);
@@ -275,5 +299,5 @@
     return { render, searchInput, getSelectedSection: () => selectedSection, sectionOrder: [...SECTION_ORDER] };
   }
 
-  return { normalize, compact, prepareRecord, exactMatches, broadScore, search, init, SECTION_ORDER: [...SECTION_ORDER] };
+  return { normalize, compact, prepareRecord, exactMatches, broadScore, search, searchView, init, SECTION_ORDER: [...SECTION_ORDER] };
 }));
