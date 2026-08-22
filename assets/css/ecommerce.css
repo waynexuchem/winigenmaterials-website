@@ -102,8 +102,13 @@
 /* Shared catalog treatment: compact scientific product cards, not consumer retail tiles. */
 .product-card-grid { gap: 18px !important; }
 .product-card { min-height: 0 !important; border-radius: 6px !important; grid-template-rows: auto 1fr !important; }
-.product-card__media { aspect-ratio: 16 / 9; min-height: 0 !important; padding: 14px !important; }
+.product-card__media { aspect-ratio: 16 / 9; min-height: 0 !important; overflow: hidden; padding: 14px !important; }
 .product-card__media img { max-height: 180px !important; width: min(240px, 88%) !important; }
+.product-card__media .product-media-link { overflow: hidden; }
+.product-card__media .chemical-structure { height: auto; max-height: 196px !important; width: min(276px, 100%) !important; transform: scale(1.18); transform-origin: center; }
+.product-card__media .chemical-structure--compact { transform: scale(1.28); }
+.product-card__media .chemical-structure--large { transform: scale(1.1); }
+.structure-panel .chemical-structure--detail { max-height: 370px !important; transform: scale(1.14); transform-origin: center; width: min(430px, 100%) !important; }
 .product-card__body { padding: 16px !important; }
 .product-card__topline { margin-bottom: 8px !important; min-height: 0 !important; }
 .product-card__category { color: #31546f !important; font-size: 11px !important; letter-spacing: .08em !important; }
@@ -211,6 +216,7 @@
 @media (max-width: 680px) {
   .product-card__media { aspect-ratio: 4 / 3; }
   .product-card__media img { max-height: 205px !important; }
+  .product-card__media .chemical-structure { max-height: 220px !important; width: min(300px, 100%) !important; }
   .product-card__selectors, .product-card__rfq .product-card__controls { grid-template-columns: 1fr; }
   .product-card__option-grid { grid-template-columns: 1fr; }
   .product-card h3 { min-height: 0 !important; }

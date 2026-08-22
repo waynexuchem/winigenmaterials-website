@@ -20,6 +20,11 @@ const familiesBySlug = new Map(productSource.families.map(family => [family.slug
 const auditRows = [];
 const buildScope = process.env.SEO_SCOPE || 'all';
 
+function absoluteSiteUrl(value = '') {
+  if (!value) return value;
+  return new URL(value, `${siteUrl}/`).href;
+}
+
 async function writePreservingEol(path, content, original = '') {
   if (path.endsWith('.html')) {
     content = content.replace(
@@ -590,7 +595,7 @@ function productSchema(product) {
     name: product.name,
     description: productDescription(product),
     ...(product.aliases.length ? { alternateName: product.aliases } : {}),
-    ...(product.image ? { image: product.image } : {}),
+    ...(product.image ? { image: absoluteSiteUrl(product.image) } : {}),
     ...(product.sku ? { sku: product.sku } : {}),
     category: family?.name || product.category,
     brand: { '@id': `${siteUrl}/#organization` },
@@ -758,7 +763,7 @@ async function updateProductPage(pagePath, product) {
   let html = replaceTitle(original, title);
   html = replaceMeta(html, 'description', description);
   html = ensureCanonical(html, canonical);
-  html = applyOpenGraph(html, { title, description, canonical, image: product.image, type: 'product' });
+  html = applyOpenGraph(html, { title, description, canonical, image: absoluteSiteUrl(product.image), type: 'product' });
   html = replaceTypedSchema(html, 'Product', productSchema(product));
   html = replaceTypedSchema(html, 'BreadcrumbList', breadcrumbSchema(canonical, [
     { name: 'Home', url: `${siteUrl}/` },

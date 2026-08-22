@@ -34,6 +34,22 @@ function normalizeRfqStatus(markup) {
   return markup.replace(/<span class="product-card__mode">Request Quote<\/span>/g, '<span class="product-card__mode">Available by RFQ</span>');
 }
 
+function synchronizeChemicalStructures(html) {
+  for (const product of catalog.products) {
+    if (!product.image?.startsWith('/assets/images/chemical-structures/')) continue;
+    const cas = property(product, 'CAS Number');
+    if (!cas) continue;
+    const remoteImage = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${cas}/PNG`;
+    html = html.split(remoteImage).join(product.image);
+    const escapedImage = product.image.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    html = html.replace(
+      new RegExp(`<img(?![^>]*\\bclass=)([^>]*\\bsrc=["']${escapedImage}["'])`, 'g'),
+      '<img class="chemical-structure chemical-structure--detail"$1'
+    );
+  }
+  return html.replace(/ chemical structure from PubChem/g, ' chemical structure');
+}
+
 function removeStaleCards(html) {
   return html.replace(/<article class="product-card"[\s\S]*?<\/article>/gi, article => {
     const href = article.match(/class="product-detail-link" href="(?:products\/)?([^"/]+)\.html"/i)?.[1];
@@ -69,7 +85,7 @@ function renderCard(product, subpage) {
   const quote = `${subpage ? '../' : ''}contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
   const media = product.presentation === 'standard-electrolyte-formulation'
     ? `<div class="product-card__media product-card__media--formulation"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><div class="formulation-visual" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div></a></div>`
-    : `<div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure from PubChem" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="structure-fallback"><span>${escapeHtml(formula || product.aliases[0] || product.name)}</span></div></a></div>`;
+    : `<div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="structure-fallback"><span>${escapeHtml(formula || product.aliases[0] || product.name)}</span></div></a></div>`;
   return `<article class="product-card" data-product-card data-section="${section}" data-search="${escapeHtml(search)}">
       ${media}
       <div class="product-card__body"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(product.category)}</span><span class="product-card__mode">${modeLabel(product)}</span></div><h3><a class="product-detail-link" href="${href}">${escapeHtml(product.name)}</a></h3><p class="product-card__cas"><span>CAS:</span> ${escapeHtml(cas || 'Not assigned')}</p><ul class="product-card__properties product-card__properties--compact"><li><strong>Grade:</strong> ${escapeHtml(grade)}</li></ul>${product.commerceStatus === 'active_checkout' ? '' : `<div class="product-card__rfq"><a class="btn" href="${quote}">Request Quote</a><div class="product-card__links"><a href="${href}">View details</a></div></div>`}</div>
@@ -135,7 +151,7 @@ function detailPage(product) {
   const composition = product.formulationComposition || [];
   const mediaMarkup = isFormulation
     ? `<div class="formulation-visual formulation-visual--detail" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div>`
-    : `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure from PubChem">`;
+    : `<img class="chemical-structure chemical-structure--detail" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure">`;
   const factsMarkup = isFormulation
     ? `<div class="detail-fact"><dt>Category</dt><dd>${escapeHtml(product.category)}</dd></div><div class="detail-fact"><dt>Positioning</dt><dd>${escapeHtml(product.positioning)}</dd></div><div class="detail-fact"><dt>Product type</dt><dd>Ready-to-use electrolyte formulation</dd></div><div class="detail-fact"><dt>Availability</dt><dd>Online ordering</dd></div>`
     : `<div class="detail-fact"><dt>Category</dt><dd>${escapeHtml(product.category)}</dd></div><div class="detail-fact"><dt>Abbreviation</dt><dd>${escapeHtml(abbreviation)}</dd></div><div class="detail-fact"><dt>CAS Number</dt><dd>${escapeHtml(cas)}</dd></div><div class="detail-fact"><dt>Availability</dt><dd>${product.commerceStatus === 'active_checkout' ? 'Online ordering' : 'Available by RFQ'}</dd></div>`;
@@ -165,7 +181,7 @@ function detailPage(product) {
 <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(product.description)}"><link rel="canonical" href="https://www.winigenmaterials.com${product.url}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/ecommerce.css">
-<style>.product-detail-hero{padding:78px 0}.product-detail-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:start}.structure-panel,.detail-panel{background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.structure-panel{display:grid;place-items:center;min-height:420px;padding:34px;background:linear-gradient(135deg,#fff,#eef7fc)}.structure-panel img{width:min(390px,96%);max-height:340px;object-fit:contain;mix-blend-mode:multiply}.detail-panel{padding:30px}.detail-kicker{color:var(--blue);font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.detail-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}.detail-fact{padding:15px;border:1px solid rgba(18,32,51,.1);border-radius:8px;background:#f8fbff}.detail-fact dt{color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase}.detail-fact dd{margin:5px 0 0;font-weight:800}.detail-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.breadcrumb{margin-bottom:18px;color:rgba(255,255,255,.74);font-weight:800}.breadcrumb a{color:#fff}.product-technical-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.faq-list{display:grid;gap:12px;max-width:920px;margin:auto}.faq-list details{border:1px solid var(--border);border-radius:8px;background:#fff;padding:18px 20px}@media(max-width:900px){.product-detail-layout,.product-technical-grid{grid-template-columns:1fr}.structure-panel{min-height:300px}.detail-facts{grid-template-columns:1fr}}</style>
+<style>.product-detail-hero{padding:78px 0}.product-detail-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:start}.structure-panel,.detail-panel{background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.structure-panel{display:grid;place-items:center;min-height:420px;padding:34px;overflow:hidden;background:linear-gradient(135deg,#fff,#eef7fc)}.structure-panel img{width:min(390px,96%);max-height:340px;object-fit:contain;mix-blend-mode:multiply}.detail-panel{padding:30px}.detail-kicker{color:var(--blue);font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.detail-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}.detail-fact{padding:15px;border:1px solid rgba(18,32,51,.1);border-radius:8px;background:#f8fbff}.detail-fact dt{color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase}.detail-fact dd{margin:5px 0 0;font-weight:800}.detail-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.breadcrumb{margin-bottom:18px;color:rgba(255,255,255,.74);font-weight:800}.breadcrumb a{color:#fff}.product-technical-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.faq-list{display:grid;gap:12px;max-width:920px;margin:auto}.faq-list details{border:1px solid var(--border);border-radius:8px;background:#fff;padding:18px 20px}@media(max-width:900px){.product-detail-layout,.product-technical-grid{grid-template-columns:1fr}.structure-panel{min-height:300px}.detail-facts{grid-template-columns:1fr}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":${JSON.stringify(product.name)},"url":${JSON.stringify(`https://www.winigenmaterials.com${product.url}`)}}</script>
 </head>
 <body><header class="header"><div class="container nav"><a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a><nav class="nav-links"><a href="../">Home</a><a class="active" href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav><button class="mobile-toggle" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu"><a href="../">Home</a><a class="active" href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div></header>
@@ -186,7 +202,12 @@ for (const product of catalog.products) {
     identityPagesRegenerated += 1;
     continue;
   }
-  try { await access(path); } catch {
+  try {
+    await access(path);
+    const current = await readFile(path, 'utf8');
+    const synchronized = synchronizeChemicalStructures(current);
+    if (synchronized !== current) await writeFile(path, synchronized);
+  } catch {
     await writeFile(path, detailPage(product));
     missing.push(product);
   }
@@ -194,7 +215,7 @@ for (const product of catalog.products) {
 
 {
   const productsPath = resolve(root, 'products.html');
-  let productsHtml = removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(productsPath, 'utf8'))));
+  let productsHtml = synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(productsPath, 'utf8')))));
   for (const [family, sectionId] of Object.entries(sectionIds)) {
     const cards = catalog.products.filter(product => product.family === family && !hasProductCard(productsHtml, product.slug, false)).map(product => renderCard(product, false));
     productsHtml = insertIntoSection(productsHtml, sectionId, cards);
@@ -205,7 +226,7 @@ for (const product of catalog.products) {
   for (const [familySlug, family] of families) {
     if (!sectionIds[familySlug]) continue;
     const path = resolve(root, family.url.replace(/^\//, ''));
-    let html = removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(path, 'utf8'))), familySlug);
+    let html = synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(path, 'utf8'))), familySlug));
     const cards = catalog.products.filter(product => product.family === familySlug && !hasProductCard(html, product.slug, true)).map(product => renderCard(product, true));
     html = insertIntoFamilyGrid(html, cards);
     await writeFile(path, html);

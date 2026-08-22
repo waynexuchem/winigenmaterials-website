@@ -4,7 +4,7 @@ const protectedHosts = [
 ];
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
-const ecommerceAssetVersion = '2ffd943353ac';
+const ecommerceAssetVersion = '3c47831db5bf';
 
 function loadSharedScript(path) {
   return new Promise((resolve, reject) => {

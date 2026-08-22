@@ -69,7 +69,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIPF6",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-40-3/PNG",
+      "image": "/assets/images/chemical-structures/lithium-hexafluorophosphate-lipf6.png",
       "aliases": [
         "LiPF6"
       ],
@@ -119,7 +119,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIPO2F2",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/24389-25-1/PNG",
+      "image": "/assets/images/chemical-structures/lithium-difluorophosphate-lipo-2-f-2.png",
       "aliases": [
         "LiPO2F2",
         "LiDFP"
@@ -170,7 +170,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIBOB",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/244761-29-3/PNG",
+      "image": "/assets/images/chemical-structures/lithium-bis-oxalato-borate-libob.png",
       "aliases": [
         "LiBOB"
       ],
@@ -220,7 +220,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIODFB",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/409071-16-5/PNG",
+      "image": "/assets/images/chemical-structures/lithium-difluoro-oxalate-borate-liodfb.png",
       "aliases": [
         "LiODFB",
         "LiDFOB"
@@ -307,7 +307,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LITFSI",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/90076-65-6/PNG",
+      "image": "/assets/images/chemical-structures/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.png",
       "aliases": [
         "LiTFSI"
       ],
@@ -357,7 +357,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIFSI",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/171611-11-3/PNG",
+      "image": "/assets/images/chemical-structures/lithium-bis-fluorosulfonyl-imide-lifsi.png",
       "aliases": [
         "LiFSI"
       ],
@@ -407,7 +407,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIBF4",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/14283-07-9/PNG",
+      "image": "/assets/images/chemical-structures/lithium-tetrafluoroborate-libf-4.png",
       "aliases": [
         "LiBF4"
       ],
@@ -481,7 +481,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/96-49-1/PNG",
+      "image": "/assets/images/chemical-structures/ethylene-carbonate-ec.png",
       "aliases": [
         "EC"
       ],
@@ -531,7 +531,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DMC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/616-38-6/PNG",
+      "image": "/assets/images/chemical-structures/dimethyl-carbonate-dmc.png",
       "aliases": [
         "DMC"
       ],
@@ -581,7 +581,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DEC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-58-8/PNG",
+      "image": "/assets/images/chemical-structures/diethyl-carbonate-dec.png",
       "aliases": [
         "DEC"
       ],
@@ -631,7 +631,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EMC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/623-53-0/PNG",
+      "image": "/assets/images/chemical-structures/ethyl-methyl-carbonate-emc.png",
       "aliases": [
         "EMC"
       ],
@@ -681,7 +681,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-PC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/108-32-7/PNG",
+      "image": "/assets/images/chemical-structures/propylene-carbonate-pc.png",
       "aliases": [
         "PC"
       ],
@@ -731,7 +731,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EA",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/141-78-6/PNG",
+      "image": "/assets/images/chemical-structures/ethyl-acetate-ea.png",
       "aliases": [
         "EA"
       ],
@@ -781,7 +781,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DFEA",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1550-44-3/PNG",
+      "image": "/assets/images/chemical-structures/2-2-difluoroethyl-acetate-dfea.png",
       "aliases": [
         "DFEA",
         "2"
@@ -832,7 +832,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DME",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-71-4/PNG",
+      "image": "/assets/images/chemical-structures/1-2-dimethoxyethane-dme.png",
       "aliases": [
         "DME",
         "1"
@@ -883,7 +883,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-TTE",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16627-68-2/PNG",
+      "image": "/assets/images/chemical-structures/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.png",
       "aliases": [
         "TTE",
         "1"
@@ -934,7 +934,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-FEMC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/156783-95-8/PNG",
+      "image": "/assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png",
       "aliases": [
         "FEMC",
         "Methyl 2"
@@ -985,7 +985,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-TFEC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1513-87-7/PNG",
+      "image": "/assets/images/chemical-structures/bis-2-2-2-trifluoroethyl-carbonate-tfec.png",
       "aliases": [
         "TFEC",
         "Bis(2"
@@ -1032,7 +1032,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-HFIPME",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13171-18-1/PNG",
+      "image": "/assets/images/chemical-structures/hexafluoroisopropylmethyl-ether.png",
       "aliases": [
         "HFPM",
         "HFIPME"
@@ -1074,7 +1074,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-SULFOLANE",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/126-33-0/PNG",
+      "image": "/assets/images/chemical-structures/sulfolane.png",
       "aliases": [
         "Sulfolane"
       ],
@@ -1119,7 +1119,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-VC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/872-36-6/PNG",
+      "image": "/assets/images/chemical-structures/vinylene-carbonate-vc.png",
       "aliases": [
         "VC"
       ],
@@ -1165,7 +1165,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-VEC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4427-96-7/PNG",
+      "image": "/assets/images/chemical-structures/vinyl-ethylene-carbonate-vec.png",
       "aliases": [
         "VEC"
       ],
@@ -1207,7 +1207,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TS",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1073-05-8/PNG",
+      "image": "/assets/images/chemical-structures/1-3-propanediol-cyclic-sulfate-ts.png",
       "aliases": [
         "TS",
         "1"
@@ -1249,7 +1249,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-DTD",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1072-53-3/PNG",
+      "image": "/assets/images/chemical-structures/1-3-2-dioxathiolane-2-2-dioxide-dtd.png",
       "aliases": [
         "DTD",
         "1"
@@ -1292,7 +1292,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-PST",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21806-61-1/PNG",
+      "image": "/assets/images/chemical-structures/prop-1-ene-1-3-sultone-pst.png",
       "aliases": [
         "PST",
         "Prop-1-ene-1"
@@ -1335,7 +1335,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-FEC",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/114435-02-8/PNG",
+      "image": "/assets/images/chemical-structures/4-fluoro-1-3-dioxolan-2-one-fec.png",
       "aliases": [
         "FEC",
         "4-Fluoro-1",
@@ -1383,7 +1383,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-SN",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-61-2/PNG",
+      "image": "/assets/images/chemical-structures/succinonitrile-sn.png",
       "aliases": [
         "SN"
       ],
@@ -1429,7 +1429,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-ADN",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/111-69-3/PNG",
+      "image": "/assets/images/chemical-structures/adiponitrile-adn.png",
       "aliases": [
         "ADN"
       ],
@@ -1475,7 +1475,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-DENE",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3386-87-6/PNG",
+      "image": "/assets/images/chemical-structures/1-2-bis-2-cyanoethoxy-ethane-dene.png",
       "aliases": [
         "DENE",
         "1"
@@ -1518,7 +1518,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-HTCN",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1772-25-4/PNG",
+      "image": "/assets/images/chemical-structures/1-3-6-hexanetricarbonitrile-htcn.png",
       "aliases": [
         "HTCN",
         "1"
@@ -1561,7 +1561,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-MMDS",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/99591-74-9/PNG",
+      "image": "/assets/images/chemical-structures/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.png",
       "aliases": [
         "MMDS",
         "1"
@@ -1608,7 +1608,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TMSB",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4325-85-3/PNG",
+      "image": "/assets/images/chemical-structures/tris-trimethylsilyl-borate-tmsb.png",
       "aliases": [
         "TMSB"
       ],
@@ -1650,7 +1650,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TMSP",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/PNG",
+      "image": "/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png",
       "aliases": [
         "TMSP"
       ],
@@ -1696,7 +1696,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-PS",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1120-71-4/PNG",
+      "image": "/assets/images/chemical-structures/1-3-propanesultone-ps.png",
       "aliases": [
         "PS",
         "1"
@@ -1743,7 +1743,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TEABF4",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/429-06-1/PNG",
+      "image": "/assets/images/chemical-structures/tetraethylammonium-tetrafluoroborate-teabf-4.png",
       "aliases": [
         "TEABF4"
       ],
@@ -1784,7 +1784,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TTPI",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1795-31-9/PNG",
+      "image": "/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png",
       "aliases": [
         "TTPi",
         "TMSPi"
@@ -1826,7 +1826,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAPF6",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-39-0/PNG",
+      "image": "/assets/images/chemical-structures/sodium-hexafluorophosphate-napf-6.png",
       "aliases": [
         "NaPF6"
       ],
@@ -1876,7 +1876,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAODFB",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1016545-84-8/PNG",
+      "image": "/assets/images/chemical-structures/sodium-difluoro-oxalate-borate-naodfb.png",
       "aliases": [
         "NaDFOB",
         "NaODFB"
@@ -1931,7 +1931,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-KPF6",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/17084-13-8/PNG",
+      "image": "/assets/images/chemical-structures/potassium-hexafluorophosphate-kpf-6.png",
       "aliases": [
         "KPF6"
       ],
@@ -3725,7 +3725,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EP",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-37-3/PNG",
+      "image": "/assets/images/chemical-structures/ethyl-propionate-ep.png",
       "aliases": [
         "EP"
       ],
@@ -3763,7 +3763,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-PP",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/106-36-5/PNG",
+      "image": "/assets/images/chemical-structures/propyl-propionate-pp.png",
       "aliases": [
         "PP"
       ],
@@ -3801,7 +3801,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TPPI",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/101-02-0/PNG",
+      "image": "/assets/images/chemical-structures/triphenyl-phosphite-tppi.png",
       "aliases": [
         "TPPI"
       ],
@@ -3839,7 +3839,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-BP",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/92-52-4/PNG",
+      "image": "/assets/images/chemical-structures/biphenyl-bp.png",
       "aliases": [
         "BP"
       ],
@@ -3877,7 +3877,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-PA",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/109-60-4/PNG",
+      "image": "/assets/images/chemical-structures/propyl-acetate-pa.png",
       "aliases": [
         "PA"
       ],
@@ -3915,7 +3915,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-ES",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3741-38-6/PNG",
+      "image": "/assets/images/chemical-structures/ethylene-sulfite-es.png",
       "aliases": [
         "ES",
         "ESI",
@@ -3959,7 +3959,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-HMDS",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/999-97-3/PNG",
+      "image": "/assets/images/chemical-structures/hexamethyldisilazane-hmds.png",
       "aliases": [
         "HMDS"
       ],
@@ -3997,7 +3997,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-FB",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/462-06-6/PNG",
+      "image": "/assets/images/chemical-structures/fluorobenzene-fb.png",
       "aliases": [
         "FB"
       ],
@@ -4035,7 +4035,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAFSI",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/100669-96-3/PNG",
+      "image": "/assets/images/chemical-structures/sodium-bis-fluorosulfonyl-imide-nafsi.png",
       "aliases": [
         "NaFSI"
       ],
@@ -4073,7 +4073,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-CHB",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/827-52-1/PNG",
+      "image": "/assets/images/chemical-structures/cyclohexylbenzene-chb.png",
       "aliases": [
         "CHB"
       ],
@@ -4111,7 +4111,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-BS",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1633-83-6/PNG",
+      "image": "/assets/images/chemical-structures/1-4-butane-sultone-bs.png",
       "aliases": [
         "BS"
       ],
@@ -4149,7 +4149,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAPO2F2",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/15587-24-3/PNG",
+      "image": "/assets/images/chemical-structures/sodium-difluorophosphate-napo2f2.png",
       "aliases": [
         "NaPO2F2"
       ],
@@ -4187,7 +4187,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DOL",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/646-06-0/PNG",
+      "image": "/assets/images/chemical-structures/1-3-dioxolane-dol.png",
       "aliases": [
         "DOL"
       ],
@@ -4225,7 +4225,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TAP",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1623-19-4/PNG",
+      "image": "/assets/images/chemical-structures/triallyl-phosphate-tap.png",
       "aliases": [
         "TAP"
       ],
@@ -4263,7 +4263,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-ADD-LINO3",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/7790-69-4/PNG",
+      "image": "/assets/images/chemical-structures/lithium-nitrate-lino3.png",
       "aliases": [
         "LiNO3"
       ],
@@ -4301,7 +4301,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-ADD-LIDODFP",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/678966-16-0/PNG",
+      "image": "/assets/images/chemical-structures/lithium-difluorobis-oxalato-phosphate-lidodfp.png",
       "aliases": [
         "LiDFBOP",
         "LiDODFP"
@@ -4424,7 +4424,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TVSI",
-      "image": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1112-55-6/PNG",
+      "image": "/assets/images/chemical-structures/tetravinylsilane-tvsi.png",
       "aliases": [
         "TVSi"
       ],
