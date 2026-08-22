@@ -1,12 +1,19 @@
 import { CATALOG_VERSION, VARIANTS_BY_KEY } from './catalog.js';
 import { createOrderNotificationRecords, deliverOrderNotification } from './email/notifications.js';
-import { resolveTestShippingDestination } from './shipping.js';
+import { resolveShippingDestination } from './shipping.js';
 
 const checkoutPath = '/api/create-checkout-session';
 const shippingQuotePath = '/api/shipping-quote';
 const orderStatusPath = '/api/order-status';
 const webhookPath = '/api/stripe-webhook';
+const internalCheckoutPath = '/api/internal/cost-compensation-checkout';
 const webhookToleranceSeconds = 300;
+const internalProduct = Object.freeze({
+  sku: 'WM-INTERNAL-COST-COMP',
+  name: 'Cost Compensation',
+  unitAmount: 100,
+  currency: 'usd'
+});
 const testCheckoutOrigins = new Set([
   'http://127.0.0.1:5500',
   'http://localhost:5500',
@@ -35,6 +42,21 @@ function jsonResponse(body, status = 200, origin) {
 
 function isAllowedOrigin(request) {
   return testCheckoutOrigins.has(request.headers.get('Origin'));
+}
+
+function isLiveMode(env) {
+  return env.STRIPE_MODE === 'live';
+}
+
+export function validateRuntimeConfiguration(env) {
+  const mode = env.STRIPE_MODE || 'test';
+  if (!['test', 'live'].includes(mode)) throw new Error('STRIPE_MODE must be test or live.');
+  const expectedPrefix = mode === 'live' ? 'sk_live_' : 'sk_test_';
+  if (typeof env.STRIPE_SECRET_KEY !== 'string' || !env.STRIPE_SECRET_KEY.startsWith(expectedPrefix)) {
+    throw new Error(`Stripe secret key does not match ${mode} mode.`);
+  }
+  if (!env.STRIPE_WEBHOOK_SECRET?.startsWith('whsec_')) throw new Error('Stripe webhook secret is not configured.');
+  return mode;
 }
 
 function createOrderDate(now = new Date()) {
@@ -79,7 +101,9 @@ export function resolveCart(cart) {
       : current
   ), 'STANDARD_RD');
   const merchandiseSubtotal = items.reduce((total, item) => total + item.variant.unitAmount * item.quantity, 0);
-  return { items, shippingClass, merchandiseSubtotal };
+  const totalShippingWeightGrams = items.reduce((total, item) => total + item.variant.shippingWeightGrams * item.quantity, 0);
+  if (!Number.isFinite(totalShippingWeightGrams) || totalShippingWeightGrams <= 0) throw new Error('Cart shipping weight is unavailable.');
+  return { items, shippingClass, merchandiseSubtotal, totalShippingWeightGrams };
 }
 
 function createReviewPayload(resolvedCart, action, destinationCountry = null) {
@@ -88,6 +112,7 @@ function createReviewPayload(resolvedCart, action, destinationCountry = null) {
     destinationCountry,
     catalogVersion: CATALOG_VERSION,
     merchandiseSubtotal: resolvedCart.merchandiseSubtotal,
+    totalShippingWeightGrams: resolvedCart.totalShippingWeightGrams,
     items: resolvedCart.items.map(({ variant, quantity }) => ({
       sku: variant.sku,
       name: variant.product.name,
@@ -99,7 +124,7 @@ function createReviewPayload(resolvedCart, action, destinationCountry = null) {
   };
 }
 
-async function nextOrderId(db) {
+async function nextOrderId(db, env) {
   const orderDate = createOrderDate();
   const result = await db.prepare(`
     INSERT INTO order_sequences (order_date, last_number)
@@ -108,7 +133,8 @@ async function nextOrderId(db) {
     RETURNING last_number
   `).bind(orderDate).first();
 
-  return `WM-T-${orderDate}-${String(result.last_number).padStart(4, '0')}`;
+  const prefix = isLiveMode(env) ? 'WM' : 'WM-T';
+  return `${prefix}-${orderDate}-${String(result.last_number).padStart(4, '0')}`;
 }
 
 async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null) {
@@ -125,7 +151,7 @@ async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null) {
     return existing;
   }
 
-  const proposedOrderId = await nextOrderId(env.ORDERS_DB);
+  const proposedOrderId = await nextOrderId(env.ORDERS_DB, env);
   await env.ORDERS_DB.prepare(`
     INSERT OR IGNORE INTO test_orders (
       winigen_order_id,
@@ -153,6 +179,7 @@ export async function createCartCheckoutSession(order, attemptId, resolvedCart, 
     'metadata[winigen_order_id]': order.winigen_order_id,
     'metadata[checkout_attempt_id]': attemptId,
     'metadata[catalog_version]': CATALOG_VERSION,
+    'metadata[stripe_mode]': env.STRIPE_MODE || 'test',
     'metadata[shipping_destination_country]': shippingDestination.country,
     'payment_intent_data[metadata][winigen_order_id]': order.winigen_order_id
   });
@@ -164,20 +191,17 @@ export async function createCartCheckoutSession(order, attemptId, resolvedCart, 
     params.set(`line_items[${index}][price_data][product_data][description]`, `${variant.product.grade}; ${variant.sku}`);
     params.set(`line_items[${index}][quantity]`, String(quantity));
   });
-  if (resolvedCart.shippingClass === 'STANDARD_RD') {
-    params.set('shipping_options[0][shipping_rate_data][type]', 'fixed_amount');
-    params.set('shipping_options[0][shipping_rate_data][display_name]', 'Estimated Shipping & Handling');
-    params.set('shipping_options[0][shipping_rate_data][fixed_amount][amount]', String(shippingDestination.amount));
-    params.set('shipping_options[0][shipping_rate_data][fixed_amount][currency]', 'usd');
-  }
-
   const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
     method: 'POST',
     headers: { Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`, 'Content-Type': 'application/x-www-form-urlencoded', 'Idempotency-Key': `winigen-checkout-${attemptId}` },
     body: params.toString()
   });
   const payload = await response.json();
-  if (!response.ok) throw new Error('Unable to create the test Checkout Session.');
+  if (!response.ok) throw new Error('Unable to create the Checkout Session.');
+  const expectedSessionPrefix = isLiveMode(env) ? 'cs_live_' : 'cs_test_';
+  if (typeof payload.id !== 'string' || !payload.id.startsWith(expectedSessionPrefix)) {
+    throw new Error('Stripe returned a Checkout Session from the wrong mode.');
+  }
   return payload;
 }
 
@@ -192,18 +216,30 @@ async function handleShippingQuote(request, env) {
     return jsonResponse({ error: 'Expected a JSON request body.' }, 400, origin);
   }
 
-  const shippingDestination = resolveTestShippingDestination(body.destinationCountry);
+  let resolvedCart;
+  try {
+    resolvedCart = resolveCart(body.cart);
+  } catch (error) {
+    return jsonResponse({ error: error.message || 'Unable to validate this destination.' }, 400, origin);
+  }
+
+  const shippingDestination = resolveShippingDestination(body.destinationCountry, resolvedCart.totalShippingWeightGrams);
   if (!shippingDestination) {
     return jsonResponse({
       action: 'shipping_review',
-      error: 'Shipping to this destination is not currently available through online checkout. Please contact Winigen Materials for shipping assistance.'
+      error: 'This destination is not currently eligible for online checkout. Please contact Winigen Materials for assistance.'
     }, 400, origin);
+  }
+  if (shippingDestination.requiresReview) {
+    return jsonResponse({
+      ...createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country),
+      error: 'Orders above 10 kg require fulfillment review. Your cart remains saved.'
+    }, 200, origin);
   }
 
   return jsonResponse({
-    action: 'quote',
+    action: 'eligible',
     destinationCountry: shippingDestination.country,
-    shippingAmount: shippingDestination.amount,
     currency: shippingDestination.currency
   }, 200, origin);
 }
@@ -213,7 +249,8 @@ async function handleOrderStatus(request, env) {
   if (!isAllowedOrigin(request)) return jsonResponse({ error: 'Origin not allowed.' }, 403);
 
   const sessionId = new URL(request.url).searchParams.get('session_id') || '';
-  if (!/^cs_test_[A-Za-z0-9]{20,255}$/.test(sessionId)) {
+  const expectedPrefix = isLiveMode(env) ? 'cs_live_' : 'cs_test_';
+  if (!new RegExp(`^${expectedPrefix}[A-Za-z0-9]{20,255}$`).test(sessionId)) {
     return jsonResponse({ error: 'Order status is unavailable.' }, 400, origin);
   }
 
@@ -231,6 +268,69 @@ async function handleOrderStatus(request, env) {
     paymentStatus: order.payment_status,
     fulfillmentStatus: order.fulfillment_status
   }, 200, origin);
+}
+
+function hasValidInternalAuthorization(request, env) {
+  const authorization = request.headers.get('Authorization') || '';
+  const candidate = authorization.startsWith('Bearer ') ? authorization.slice(7) : '';
+  return Boolean(env.INTERNAL_CHECKOUT_TOKEN && candidate && timingSafeEqual(candidate, env.INTERNAL_CHECKOUT_TOKEN));
+}
+
+async function handleInternalCheckout(request, env) {
+  if (!isLiveMode(env)) return new Response('Not found.', { status: 404 });
+  if (!hasValidInternalAuthorization(request, env)) return jsonResponse({ error: 'Unauthorized.' }, 401);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return jsonResponse({ error: 'Expected a JSON request body.' }, 400);
+  }
+  if (!isValidAttemptId(body.attemptId)) return jsonResponse({ error: 'Invalid checkout attempt.' }, 400);
+
+  try {
+    const cartHash = `INTERNAL|${internalProduct.sku}|1`;
+    const order = await getOrCreateAttempt(body.attemptId, env, cartHash);
+    if (order.stripe_checkout_session_id && order.checkout_url) {
+      return jsonResponse({ url: order.checkout_url, orderId: order.winigen_order_id });
+    }
+    const params = new URLSearchParams({
+      mode: 'payment',
+      success_url: `${env.SITE_ORIGIN}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${env.SITE_ORIGIN}/checkout-cancel.html`,
+      customer_creation: 'always',
+      'payment_method_types[0]': 'card',
+      'metadata[winigen_order_id]': order.winigen_order_id,
+      'metadata[checkout_attempt_id]': body.attemptId,
+      'metadata[stripe_mode]': 'live',
+      'metadata[internal_test_order]': 'true',
+      'payment_intent_data[metadata][winigen_order_id]': order.winigen_order_id,
+      'line_items[0][price_data][currency]': internalProduct.currency,
+      'line_items[0][price_data][unit_amount]': String(internalProduct.unitAmount),
+      'line_items[0][price_data][product_data][name]': internalProduct.name,
+      'line_items[0][price_data][product_data][description]': internalProduct.sku,
+      'line_items[0][quantity]': '1'
+    });
+    const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Idempotency-Key': `winigen-internal-${body.attemptId}`
+      },
+      body: params.toString()
+    });
+    const session = await response.json();
+    if (!response.ok || !session.id?.startsWith('cs_live_')) throw new Error('Unable to create the live internal Checkout Session.');
+    await env.ORDERS_DB.batch([
+      env.ORDERS_DB.prepare(`UPDATE test_orders SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?, shipping_amount = 0, shipping_class = 'INTERNAL_TEST', catalog_version = ?, updated_at = CURRENT_TIMESTAMP WHERE winigen_order_id = ?`).bind(session.id, session.url, internalProduct.unitAmount, CATALOG_VERSION, order.winigen_order_id),
+      env.ORDERS_DB.prepare(`INSERT INTO test_order_lines (winigen_order_id, sku, product_slug, product_name, grade, package_label, package_unit, package_quantity, unit_amount, currency, quantity, stripe_price_id, catalog_version, line_subtotal, shipping_amount, order_total) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'INLINE_PRIVATE_PRICE_DATA', ?, ?, 0, ?)`).bind(order.winigen_order_id, internalProduct.sku, 'internal-cost-compensation', internalProduct.name, 'Internal production validation', '1 test unit', 'unit', 1, internalProduct.unitAmount, internalProduct.currency, CATALOG_VERSION, internalProduct.unitAmount, internalProduct.unitAmount)
+    ]);
+    return jsonResponse({ url: session.url, orderId: order.winigen_order_id });
+  } catch (error) {
+    console.error('Internal checkout creation failed', { message: error.message });
+    return jsonResponse({ error: 'Unable to create internal checkout.' }, 500);
+  }
 }
 
 async function handleCreateCheckoutSession(request, env) {
@@ -253,12 +353,18 @@ async function handleCreateCheckoutSession(request, env) {
   if (Array.isArray(body.cart)) {
     try {
       const resolvedCart = resolveCart(body.cart);
-      const shippingDestination = resolveTestShippingDestination(body.destinationCountry);
+      const shippingDestination = resolveShippingDestination(body.destinationCountry, resolvedCart.totalShippingWeightGrams);
       if (!shippingDestination) {
         return jsonResponse({
           ...createReviewPayload(resolvedCart, 'shipping_review'),
-          error: 'Shipping to this destination is not currently available through online checkout. Please contact Winigen Materials for shipping assistance.'
+          error: 'This destination is not currently eligible for online checkout. Please contact Winigen Materials for assistance.'
         }, 400, origin);
+      }
+      if (shippingDestination.requiresReview) {
+        return jsonResponse({
+          ...createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country),
+          error: 'Orders above 10 kg require fulfillment review. Your cart remains saved.'
+        }, 200, origin);
       }
       if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq', shippingDestination.country), 200, origin);
       if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country), 200, origin);
@@ -266,12 +372,12 @@ async function handleCreateCheckoutSession(request, env) {
       const order = await getOrCreateAttempt(body.attemptId, env, cartHash);
       if (order.stripe_checkout_session_id && order.checkout_url) return jsonResponse({ action: 'checkout', url: order.checkout_url, orderId: order.winigen_order_id }, 200, origin);
       const session = await createCartCheckoutSession(order, body.attemptId, resolvedCart, shippingDestination, env);
-      const lineStatements = resolvedCart.items.map(({ variant, quantity }, index) => env.ORDERS_DB.prepare(`
+      const lineStatements = resolvedCart.items.map(({ variant, quantity }) => env.ORDERS_DB.prepare(`
         INSERT INTO test_order_lines (winigen_order_id, sku, product_slug, product_name, grade, package_label, package_unit, package_quantity, unit_amount, currency, quantity, stripe_price_id, catalog_version, line_subtotal, shipping_amount, order_total)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'usd', ?, ?, ?, ?, ?, ?)
-      `).bind(order.winigen_order_id, variant.sku, variant.product.slug, variant.product.name, variant.product.grade, variant.label, variant.unit, variant.quantity, variant.unitAmount, quantity, 'INLINE_PRICE_DATA', CATALOG_VERSION, variant.unitAmount * quantity, index === 0 && resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0, resolvedCart.merchandiseSubtotal + (resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0)));
+      `).bind(order.winigen_order_id, variant.sku, variant.product.slug, variant.product.name, variant.product.grade, variant.label, variant.unit, variant.quantity, variant.unitAmount, quantity, 'INLINE_PRICE_DATA', CATALOG_VERSION, variant.unitAmount * quantity, 0, resolvedCart.merchandiseSubtotal));
       await env.ORDERS_DB.batch([
-        env.ORDERS_DB.prepare(`UPDATE test_orders SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?, shipping_amount = ?, shipping_class = ?, catalog_version = ?, updated_at = CURRENT_TIMESTAMP WHERE winigen_order_id = ?`).bind(session.id, session.url, resolvedCart.merchandiseSubtotal, resolvedCart.shippingClass === 'STANDARD_RD' ? shippingDestination.amount : 0, resolvedCart.shippingClass, CATALOG_VERSION, order.winigen_order_id),
+        env.ORDERS_DB.prepare(`UPDATE test_orders SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?, shipping_amount = 0, shipping_class = ?, destination_country = ?, catalog_version = ?, updated_at = CURRENT_TIMESTAMP WHERE winigen_order_id = ?`).bind(session.id, session.url, resolvedCart.merchandiseSubtotal, resolvedCart.shippingClass, shippingDestination.country, CATALOG_VERSION, order.winigen_order_id),
         ...lineStatements
       ]);
       return jsonResponse({ action: 'checkout', url: session.url, orderId: order.winigen_order_id }, 200, origin);
@@ -349,12 +455,15 @@ async function handleCompletedCheckout(event, env) {
   const session = event.data.object;
   const paymentStatus = session.payment_status === 'paid' ? 'PAID' : session.payment_status.toUpperCase();
   const fulfillmentStatus = paymentStatus === 'PAID' ? 'NOT_RELEASED' : 'NOT_APPLICABLE';
+  const shippingDetails = session.collected_information?.shipping_details || session.shipping_details;
 
   await env.ORDERS_DB.prepare(`
     UPDATE test_orders
     SET stripe_payment_intent_id = ?,
         stripe_event_id = ?,
+        customer_name = ?,
         customer_email = ?,
+        destination_country = COALESCE(?, destination_country),
         amount = ?,
         currency = ?,
         payment_status = ?,
@@ -364,7 +473,9 @@ async function handleCompletedCheckout(event, env) {
   `).bind(
     session.payment_intent || null,
     event.id,
+    session.customer_details?.name || shippingDetails?.name || null,
     session.customer_details?.email || null,
+    shippingDetails?.address?.country || session.customer_details?.address?.country || null,
     session.amount_total ?? null,
     session.currency || null,
     paymentStatus,
@@ -372,7 +483,7 @@ async function handleCompletedCheckout(event, env) {
     session.id
   ).run();
 
-  console.log('Stripe test checkout recorded', {
+  console.log('Stripe checkout recorded', {
     eventId: event.id,
     checkoutSessionId: session.id,
     paymentStatus,
@@ -405,6 +516,15 @@ async function handleWebhook(request, env, ctx) {
   }
 
   try {
+    if (event.livemode !== isLiveMode(env)) {
+      console.warn('Stripe webhook mode mismatch', { eventId: event.id, eventLivemode: event.livemode });
+      return new Response('Stripe mode mismatch.', { status: 400 });
+    }
+    const eventMode = event.data?.object?.metadata?.stripe_mode;
+    if (eventMode && eventMode !== (isLiveMode(env) ? 'live' : 'test')) {
+      console.warn('Stripe checkout metadata mode mismatch', { eventId: event.id, eventMode });
+      return new Response('Stripe mode mismatch.', { status: 400 });
+    }
     const isNewEvent = await recordWebhookEvent(event, env);
     if (!isNewEvent) return new Response('Already processed.', { status: 200 });
 
@@ -437,6 +557,13 @@ export default {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin');
 
+    try {
+      validateRuntimeConfiguration(env);
+    } catch (error) {
+      console.error('Worker runtime configuration rejected', { message: error.message });
+      return new Response('Service configuration unavailable.', { status: 503 });
+    }
+
     if (request.method === 'OPTIONS' && [checkoutPath, shippingQuotePath].includes(url.pathname) && origin && isAllowedOrigin(request)) {
       return new Response(null, {
         status: 204,
@@ -464,6 +591,10 @@ export default {
 
     if (request.method === 'POST' && url.pathname === webhookPath) {
       return handleWebhook(request, env, ctx);
+    }
+
+    if (request.method === 'POST' && url.pathname === internalCheckoutPath) {
+      return handleInternalCheckout(request, env);
     }
 
     return new Response('Not found.', { status: 404 });

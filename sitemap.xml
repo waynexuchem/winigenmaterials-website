@@ -15,15 +15,19 @@
   <url><loc>https://www.winigenmaterials.com/knowledge/commercialization.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/compare-solid-state-electrolyte-powders.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/electrolyte-design-silicon-anodes.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/electrolytes-interfaces.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/fast-charge-all-weather-ev-battery-electrolytes.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/fast-formation-lithium-rich-cathodes.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/lifsi-lithium-metal-batteries.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/lipf6-vs-lifsi-vs-litfsi.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/manufacturing-uniformity-vs-reaction-uniformity.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/materials.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/si-c-vs-siox-vs-amorphous-silicon.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/silicon-anode-degradation-mechanisms.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/sodium-ion-electrolyte-materials.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html</loc></url>
@@ -43,9 +47,9 @@
   <url><loc>https://www.winigenmaterials.com/products/1-3-propanesultone-ps.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/1-4-butane-sultone-bs.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/products/1m-lipf6-ec-emc-3-7-1-vc-electrolyte.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/2-2-difluoroethyl-acetate-dfea.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/4-fluoro-1-3-dioxolan-2-one-fec.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/products/acetonitrile-an.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/adiponitrile-adn.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/alumina-functional-coating-materials.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/battery-active-materials.html</loc></url>
@@ -111,12 +115,8 @@
   <url><loc>https://www.winigenmaterials.com/products/lithium-tetrafluoroborate-libf-4.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/lithium-titanate-lto.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/llzto-powder.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/products/magnesium-borohydride-mg-bh-4-2.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/next-generation-salts.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/products/potassium-bis-fluorosulfonyl-imide-kfsi.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/products/potassium-bis-trifluoromethanesulfonyl-imide-ktfsi.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/potassium-hexafluorophosphate-kpf-6.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/prop-1-ene-1-3-sultone-pst.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/propyl-acetate-pa.html</loc></url>
@@ -125,7 +125,6 @@
   <url><loc>https://www.winigenmaterials.com/products/silicon-anode-powder.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/siox-silicon-carbon-composite-anode-material.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/sodium-bis-fluorosulfonyl-imide-nafsi.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/products/sodium-bis-trifluoromethanesulfonyl-imide-natfsi.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/sodium-difluoro-oxalate-borate-naodfb.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/sodium-difluorophosphate-napo2f2.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/sodium-hexafluorophosphate-napf-6.html</loc></url>

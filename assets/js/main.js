@@ -20,14 +20,14 @@ async function initializeEcommerce() {
     if (!document.querySelector('link[href*="assets/css/ecommerce.css"]')) {
       const styles = document.createElement('link');
       styles.rel = 'stylesheet';
-      styles.href = '/assets/css/ecommerce.css?v=20260820-final-pricing-v1';
+      styles.href = '/assets/css/ecommerce.css?v=2026-08-21-sulfide-sse-v1';
       document.head.appendChild(styles);
     }
-    await loadSharedScript('/assets/js/ecommerce-catalog.js?v=20260813');
+    await loadSharedScript('/assets/js/ecommerce-catalog.js?v=2026-08-21-sulfide-sse-v1');
     await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
-    await loadSharedScript('/assets/js/cart.js?v=20260820-final-pricing-v1');
-    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=20260820-final-pricing-v1');
-    await loadSharedScript('/assets/js/ecommerce-listing.js?v=20260820-final-pricing-v1');
+    await loadSharedScript('/assets/js/cart.js?v=2026-08-21-sulfide-sse-v1');
+    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=2026-08-21-sulfide-sse-v1');
+    await loadSharedScript('/assets/js/ecommerce-listing.js?v=2026-08-21-sulfide-sse-v1');
     initializeCartNavigation();
     initializeCartPage();
   } catch (error) {
@@ -110,19 +110,20 @@ function initializeCartPage() {
   ].join('');
   const formatMoney = cents => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cents / 100);
   const rows = cartItems.map(item => `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="25" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity">+</button></div></td><td class="cart-price-cell">${item.variant.unitAmount ? formatMoney(item.variant.unitAmount) : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.unitAmount ? formatMoney(item.variant.unitAmount * item.quantity) : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`).join('');
-  const shippingMessage = blockedItems.length > 0
+  const fulfillmentMessage = blockedItems.length > 0
     ? 'Some cart packages are still being confirmed and cannot proceed.'
     : cartShippingClass === 'RFQ_SHIPPING'
-      ? 'This cart requires an RFQ shipping review. Your cart will be retained.'
+      ? 'This cart requires an RFQ and fulfillment review. Your cart will be retained.'
       : cartShippingClass === 'SHIPPING_REVIEW'
-        ? 'Material prices are fixed. Shipping requires confirmation before payment; your cart will be retained.'
+        ? 'Material prices are shown above. Specialized sulfide logistics are quoted separately by destination, and multiple sulfide grades may be consolidated into one shipment where feasible. Your cart will be retained during review.'
         : cartShippingClass === 'FIXED_SPECIAL_HANDLING'
-          ? 'A fixed special-handling rate applies to this order.'
-          : 'Test shipping rate shown for sandbox validation.';
-  const canQuoteShipping = !blockedItems.length && cartShippingClass === 'STANDARD_RD';
-  const shippingTotal = canQuoteShipping ? 'Calculating…' : shippingMessage;
-  const orderTotal = canQuoteShipping ? 'Calculating…' : 'Pending review';
-  root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" name="shippingCountry" aria-describedby="shipping-destination-note shipping-destination-help">${destinationOptions}</select><small id="shipping-destination-note">Shipping is estimated based on destination and order contents.</small><small id="shipping-destination-help" class="cart-destination__help">Don't see your country? <a href="contact.html?inquiry_type=Shipping%20Review&amp;product_interest=Shipping%20availability">Contact us for shipping availability.</a></small></div><p><span>Merchandise subtotal</span><strong>${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><p><span>Estimated Shipping &amp; Handling</span><strong id="cart-shipping-amount">${shippingTotal}</strong></p><p class="cart-note" id="cart-shipping-note">${shippingMessage}</p><p class="cart-summary__total"><span>Order total</span><strong id="cart-order-total">${orderTotal}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${canQuoteShipping || blockedItems.length ? ' disabled' : ''}>Proceed to Secure Checkout</button><p class="cart-trust"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Secure payment processed by Stripe</span></p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button"><span>Need a custom order?</span> Request Quote</button></div></aside></div>`;
+          ? 'Special-handling eligibility will be confirmed during order review.'
+          : 'Shipping and handling are included in listed prices for eligible destinations.';
+  const requiresShippingReview = cartShippingClass === 'SHIPPING_REVIEW';
+  const totalLabel = requiresShippingReview ? 'Material total (excluding logistics)' : 'Order total';
+  const proceedLabel = requiresShippingReview ? 'Request Shipping Review' : 'Proceed to Secure Checkout';
+  const trustLabel = requiresShippingReview ? 'Specialized logistics are confirmed before payment.' : 'Secure payment processed by Stripe';
+  root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" name="shippingCountry" aria-describedby="shipping-destination-note shipping-destination-help">${destinationOptions}</select><small id="shipping-destination-note">Used to confirm destination and fulfillment eligibility.</small><small id="shipping-destination-help" class="cart-destination__help">Don't see your country? <a href="contact.html?inquiry_type=Shipping%20Review&amp;product_interest=Shipping%20availability">Contact us for destination availability.</a></small></div><p><span>Product subtotal</span><strong>${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><p class="cart-note">${fulfillmentMessage}</p><p class="cart-summary__total"><span>${totalLabel}</span><strong id="cart-order-total">${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${blockedItems.length ? ' disabled' : ''}>${proceedLabel}</button><p class="cart-trust"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>${trustLabel}</span></p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button"><span>Need a custom order?</span> Request Quote</button></div></aside></div>`;
   root.querySelectorAll('[data-cart-quantity]').forEach(input => input.addEventListener('change', () => window.WinigenCart.update(input.dataset.cartQuantity, Number(input.value))));
   root.querySelectorAll('[data-cart-decrease]').forEach(button => button.addEventListener('click', () => {
     const item = cartItems.find(entry => entry.variant.key === button.dataset.cartDecrease);
@@ -159,34 +160,6 @@ function initializeCartPage() {
       alert(error.message);
     }
   });
-  if (canQuoteShipping) {
-    fetch('https://winigen-stripe-test.winigen.workers.dev/api/shipping-quote', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ destinationCountry, cart: cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity })) })
-    }).then(async response => {
-      const payload = await response.json();
-      if (root.querySelector('#shipping-destination')?.value !== destinationCountry) return;
-      if (!response.ok) throw new Error(payload.error || 'Unable to calculate shipping.');
-      if (payload.action !== 'quote') {
-        root.querySelector('#cart-shipping-amount').textContent = 'Review required';
-        root.querySelector('#cart-order-total').textContent = 'Pending review';
-        root.querySelector('#cart-shipping-note').textContent = payload.error || 'Shipping to this destination requires review.';
-        return;
-      }
-      if (payload.destinationCountry !== destinationCountry || !Number.isInteger(payload.shippingAmount) || payload.shippingAmount < 0) {
-        throw new Error('The shipping quote response was invalid.');
-      }
-      root.querySelector('#cart-shipping-amount').textContent = formatMoney(payload.shippingAmount);
-      root.querySelector('#cart-order-total').textContent = formatMoney(subtotal + payload.shippingAmount);
-      root.querySelector('#cart-proceed').disabled = false;
-    }).catch(error => {
-      if (root.querySelector('#shipping-destination')?.value !== destinationCountry) return;
-      root.querySelector('#cart-shipping-amount').textContent = 'Unavailable';
-      root.querySelector('#cart-order-total').textContent = 'Pending review';
-      root.querySelector('#cart-shipping-note').textContent = error.message;
-    });
-  }
 }
 
 initializeEcommerce();
@@ -319,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const contactForm = document.querySelector('form.js-formspree-form');
 
-  const supportedParams = ['inquiry_type', 'product_interest', 'quantity_scale', 'quantity', 'message', 'topic', 'd50', 'carrier_solvent'];
+  const supportedParams = ['inquiry_type', 'product_interest', 'quantity_scale', 'quantity', 'message', 'topic', 'd50', 'carrier_solvent', 'target_solids_loading', 'coating_process'];
   if (!contactForm || !supportedParams.some(name => params.has(name))) return;
 
   const inquiryAliases = {
@@ -356,12 +329,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const configuration = [
     params.get('d50') && `D50: ${params.get('d50')}`,
     params.get('carrier_solvent') && `Carrier solvent: ${params.get('carrier_solvent')}`,
+    params.get('target_solids_loading') && `Target solids loading: ${params.get('target_solids_loading')}`,
+    params.get('coating_process') && `Application / coating process: ${params.get('coating_process')}`,
     (params.get('quantity_scale') || params.get('quantity')) && `Quantity / project scale: ${params.get('quantity_scale') || params.get('quantity')}`
   ].filter(Boolean);
   const baseMessage = params.get('message') || '';
   setValue('message', configuration.length ? `${baseMessage}${baseMessage ? '\n\n' : ''}Selected configuration: ${configuration.join('; ')}.` : baseMessage);
 
-  [['selected_d50', params.get('d50')], ['carrier_solvent', params.get('carrier_solvent')]].forEach(([name, value]) => {
+  [['selected_d50', params.get('d50')], ['carrier_solvent', params.get('carrier_solvent')], ['target_solids_loading', params.get('target_solids_loading')], ['coating_process', params.get('coating_process')]].forEach(([name, value]) => {
     if (!value) return;
     let field = contactForm.querySelector(`[name="${name}"]`);
     if (!field) {

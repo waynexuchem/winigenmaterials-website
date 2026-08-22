@@ -37,10 +37,10 @@
     },
     "next-generation-salts": {
       "name": "Next-Gen Salts",
-      "title": "Sodium, Potassium & Magnesium Electrolyte Salts | Winigen Materials",
-      "description": "Browse NaPF6, NaTFSI, KFSI, KPF6, Mg(TFSI)2, and other alternative-cation electrolyte salts with research-package online ordering and bulk RFQ support.",
-      "visibleIntro": "Winigen Materials supplies sodium, potassium, and magnesium electrolyte salts for alternative-cation battery research, formulation screening, and compatibility studies. Selected research-scale packages are available for online ordering, with larger quantities available by quotation.",
-      "entities": ["sodium electrolyte salt", "potassium electrolyte salt", "magnesium electrolyte salt", "NaPF6", "NaTFSI", "KFSI", "KPF6", "Mg(TFSI)2"],
+      "title": "Sodium & Potassium Electrolyte Salts | Winigen Materials",
+      "description": "Browse NaPF6, KPF6, and other alternative-cation electrolyte salts with research-package online ordering and bulk RFQ support.",
+      "visibleIntro": "Winigen Materials supplies sodium and potassium electrolyte salts for alternative-cation battery research, formulation screening, and compatibility studies. Selected research-scale packages are available for online ordering, with larger quantities available by quotation.",
+      "entities": ["sodium electrolyte salt", "potassium electrolyte salt", "NaPF6", "KPF6"],
       "commercialIntents": ["sodium-ion electrolyte salt supplier", "where to buy sodium battery salts"],
       "engineeringQuestions": ["what electrolyte salt is used in sodium-ion batteries", "how do sodium electrolyte salts differ"],
       "relatedKnowledge": ["sodium-ion-electrolyte-materials.html", "solid-state-sodium-batteries-halide-composite-electrolytes.html", "sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html"]
@@ -57,11 +57,11 @@
     },
     "custom-formulations": {
       "name": "Custom Formulations",
-      "title": "Custom Battery Electrolyte Formulation & Development | Winigen Materials",
-      "description": "Custom electrolyte formulation and screening support for lithium-ion, lithium-metal, silicon-anode, sodium-ion, fast-charge, and low-temperature battery development.",
-      "visibleIntro": "Winigen Materials provides RFQ-based custom electrolyte formulation and screening programs for lithium-ion, lithium-metal, silicon-anode, sodium-ion, fast-charge, and low-temperature battery development. Program scope, quantity, documentation, and pilot-scale requirements are defined through technical review.",
-      "entities": ["custom battery electrolyte", "electrolyte formulation service", "custom lithium-ion electrolyte", "custom sodium-ion electrolyte", "silicon-anode electrolyte formulation", "lithium-metal electrolyte formulation"],
-      "commercialIntents": ["custom electrolyte formulation service", "battery electrolyte development support"],
+      "title": "Standard & Custom Battery Electrolyte Formulations | Winigen Materials",
+      "description": "Ready-to-use standard battery electrolyte formulations for online ordering, plus custom electrolyte formulation and screening support by quotation.",
+      "visibleIntro": "Winigen Materials offers selected ready-to-use standard electrolyte formulations for online ordering alongside RFQ-based custom formulation and screening programs. Standard packages show approved public pricing; custom chemistry, bulk quantity, documentation, and pilot-scale requirements are defined through technical review.",
+      "entities": ["standard lithium-ion electrolyte", "ready-to-use battery electrolyte", "custom battery electrolyte", "electrolyte formulation service", "custom lithium-ion electrolyte", "custom sodium-ion electrolyte", "silicon-anode electrolyte formulation", "lithium-metal electrolyte formulation"],
+      "commercialIntents": ["buy standard lithium-ion electrolyte", "custom electrolyte formulation service", "battery electrolyte development support"],
       "engineeringQuestions": ["how should a battery electrolyte be formulated", "how can electrolyte screening move from research to pilot scale"],
       "relatedKnowledge": ["electrolyte-additives-sei-cei.html", "lifsi-lithium-metal-batteries.html", "low-temperature-electrolytes.html"]
     },

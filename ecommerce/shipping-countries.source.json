@@ -1,24 +1,6 @@
 {
   "version": "2026-08-14",
-  "shippingRatesUsd": {
-    "unitedStatesWeightTiers": [
-      { "maximumGrams": 1000, "amount": 89 },
-      { "maximumGrams": 2000, "amount": 109 },
-      { "maximumGrams": 5000, "amount": 149 },
-      { "maximumGrams": 10000, "amount": 199 }
-    ],
-    "maximumOnlineShippingWeightGrams": 10000,
-    "regionDefaults": {
-      "UNITED_STATES": 89,
-      "CANADA_MEXICO": 129,
-      "EUROPE": 159,
-      "ASIA": 169,
-      "OCEANIA": 189,
-      "SOUTH_AMERICA": 199,
-      "AFRICA_MIDDLE_EAST": 219
-    },
-    "countryOverrides": {}
-  },
+  "maximumOnlineOrderWeightGrams": 10000,
   "pinned": [
     { "code": "US", "name": "United States", "shippingRegion": "UNITED_STATES" }
   ],

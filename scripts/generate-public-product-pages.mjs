@@ -13,12 +13,17 @@ const identityCorrectionSlugs = new Set([
   'lithium-nitrate-lino3',
   'lithium-difluorobis-oxalato-phosphate-lidodfp'
 ]);
+const sourceGeneratedSlugs = new Set([
+  ...identityCorrectionSlugs,
+  '1m-lipf6-ec-emc-3-7-1-vc-electrolyte'
+]);
 const sectionIds = {
   'lithium-salts': 'salts',
   'battery-solvents': 'solvents',
   'electrolyte-additives': 'additives',
   'next-generation-salts': 'next-gen',
-  'solid-state-electrolytes': 'solid-state'
+  'solid-state-electrolytes': 'solid-state',
+  'custom-formulations': 'formulations'
 };
 
 const escapeHtml = value => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -62,8 +67,11 @@ function renderCard(product, subpage) {
   const section = sectionIds[product.family];
   const search = [product.category, product.name, ...product.aliases, cas, formula, section].join(' ').toLowerCase();
   const quote = `${subpage ? '../' : ''}contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
+  const media = product.presentation === 'standard-electrolyte-formulation'
+    ? `<div class="product-card__media product-card__media--formulation"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><div class="formulation-visual" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div></a></div>`
+    : `<div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure from PubChem" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="structure-fallback"><span>${escapeHtml(formula || product.aliases[0] || product.name)}</span></div></a></div>`;
   return `<article class="product-card" data-product-card data-section="${section}" data-search="${escapeHtml(search)}">
-      <div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure from PubChem" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="structure-fallback"><span>${escapeHtml(formula || product.aliases[0] || product.name)}</span></div></a></div>
+      ${media}
       <div class="product-card__body"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(product.category)}</span><span class="product-card__mode">${modeLabel(product)}</span></div><h3><a class="product-detail-link" href="${href}">${escapeHtml(product.name)}</a></h3><p class="product-card__cas"><span>CAS:</span> ${escapeHtml(cas || 'Not assigned')}</p><ul class="product-card__properties product-card__properties--compact"><li><strong>Grade:</strong> ${escapeHtml(grade)}</li></ul>${product.commerceStatus === 'active_checkout' ? '' : `<div class="product-card__rfq"><a class="btn" href="${quote}">Request Quote</a><div class="product-card__links"><a href="${href}">View details</a></div></div>`}</div>
     </article>`;
 }
@@ -92,6 +100,16 @@ function insertIntoSection(html, sectionId, cards) {
   return `${html.slice(0, start + gridEnd)}\n${cards.join('\n')}\n    ${html.slice(start + gridEnd)}`;
 }
 
+function synchronizeFormulationCount(html) {
+  const start = html.indexOf('<section id="formulations"');
+  const end = start >= 0 ? html.indexOf('</section>', start) : -1;
+  if (start < 0 || end < 0) return html;
+  const section = html.slice(start, end);
+  const count = (section.match(/<article\b/g) || []).length;
+  const updated = section.replace(/<span class="section-count">[^<]*<\/span>/, `<span class="section-count">${count} items</span>`);
+  return `${html.slice(0, start)}${updated}${html.slice(end)}`;
+}
+
 function insertIntoFamilyGrid(html, cards) {
   if (!cards.length) return html;
   const start = html.indexOf('<div class="product-card-grid">');
@@ -110,6 +128,32 @@ function detailPage(product) {
   const grade = property(product, 'Grade') || 'Battery research grade';
   const title = `${product.name} | Winigen Materials`;
   const quote = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
+  const isFormulation = product.presentation === 'standard-electrolyte-formulation';
+  const composition = product.formulationComposition || [];
+  const mediaMarkup = isFormulation
+    ? `<div class="formulation-visual formulation-visual--detail" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div>`
+    : `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure from PubChem">`;
+  const factsMarkup = isFormulation
+    ? `<div class="detail-fact"><dt>Category</dt><dd>${escapeHtml(product.category)}</dd></div><div class="detail-fact"><dt>Positioning</dt><dd>${escapeHtml(product.positioning)}</dd></div><div class="detail-fact"><dt>Product type</dt><dd>Ready-to-use electrolyte formulation</dd></div><div class="detail-fact"><dt>Availability</dt><dd>Online ordering</dd></div>`
+    : `<div class="detail-fact"><dt>Category</dt><dd>${escapeHtml(product.category)}</dd></div><div class="detail-fact"><dt>Abbreviation</dt><dd>${escapeHtml(abbreviation)}</dd></div><div class="detail-fact"><dt>CAS Number</dt><dd>${escapeHtml(cas)}</dd></div><div class="detail-fact"><dt>Availability</dt><dd>${product.commerceStatus === 'active_checkout' ? 'Online ordering' : 'Available by RFQ'}</dd></div>`;
+  const specificationMarkup = isFormulation
+    ? `<h3>Formulation</h3><ul class="spec-list">${composition.map(item => `<li><strong>${escapeHtml(item.name)}:</strong> ${escapeHtml(item.value)}</li>`).join('')}</ul>`
+    : `<h3>Typical Specification</h3><ul class="spec-list"><li><strong>Grade:</strong> ${escapeHtml(grade)}</li><li><strong>Formula:</strong> ${escapeHtml(formula)}</li></ul>`;
+  const usesMarkup = isFormulation
+    ? `<p>This ready-to-use formulation supports controlled electrolyte baselines without implying performance or impurity specifications beyond the approved composition.</p><ul class="spec-list">${product.typicalUses.map(use => `<li>${escapeHtml(use)}</li>`).join('')}</ul>`
+    : `<p>${escapeHtml(product.description)}</p><p>Final specifications, documentation, package availability, and fulfillment eligibility are confirmed during order review or quotation.</p>`;
+  const relatedProducts = (product.relatedProductSlugs || []).map(slug => catalog.products.find(item => item.slug === slug)).filter(Boolean);
+  const knowledgeLabels = new Map([
+    ['/knowledge/electrolyte-additives-sei-cei.html', 'Electrolyte additive screening guide'],
+    ['/knowledge/low-temperature-electrolytes.html', 'Low-temperature electrolyte guide'],
+    ['/knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html', 'Coin-cell to pouch-cell electrolyte guide']
+  ]);
+  const relatedMarkup = isFormulation
+    ? `<p>Review the constituent products and related electrolyte-development guidance.</p><div class="detail-actions">${relatedProducts.map(item => `<a class="btn secondary" href="${item.url.split('/').pop()}">${escapeHtml(item.name)}</a>`).join('')}${(product.relatedKnowledge || []).map(path => `<a class="btn secondary" href="..${path}">${escapeHtml(knowledgeLabels.get(path) || 'Technical resource')}</a>`).join('')}</div>`
+    : `<p>Compare this material with other products in the ${escapeHtml(family.name)} catalog.</p><div class="detail-actions"><a class="btn secondary" href="${family.url.split('/').pop()}">View ${escapeHtml(family.name)}</a><a class="btn secondary" href="../products.html">Full catalog</a></div>`;
+  const faqMarkup = isFormulation
+    ? `<details><summary>What is this standard electrolyte formulation?</summary><p>It is a ready-to-use formulation containing 1.0 M LiPF6 in EC:EMC at a 3:7 volume ratio with 1% VC.</p></details><details><summary>What package sizes are available online?</summary><p>Approved online packages range from 500 g through 10 kg. Quantities above 10 kg are handled by bulk quotation.</p></details><details><summary>What development work is it intended for?</summary><p>Typical uses include lithium-ion R&amp;D, baseline and reference testing, additive screening, and coin-cell and pouch-cell development.</p></details>`
+    : `<details><summary>What is ${escapeHtml(product.name)} used for?</summary><p>${escapeHtml(product.description)}</p></details><details><summary>What is the CAS number?</summary><p>The CAS number shown for ${escapeHtml(product.name)} is ${escapeHtml(cas)}.</p></details><details><summary>Can I request documentation or a bulk quote?</summary><p>Yes. Use the request quote link to ask about current specifications, documentation, packaging, bulk quantities, and shipping.</p></details>`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -123,9 +167,9 @@ function detailPage(product) {
 </head>
 <body><header class="header"><div class="container nav"><a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a><nav class="nav-links"><a href="../">Home</a><a class="active" href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav><button class="mobile-toggle" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu"><a href="../">Home</a><a class="active" href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div></header>
 <main><section class="section dark product-detail-hero"><div class="container section-title"><div class="breadcrumb"><a href="../products.html">Products</a> / <a href="${family.url.split('/').pop()}">${escapeHtml(family.name)}</a> / ${escapeHtml(abbreviation || product.name)}</div><p class="eyebrow">${escapeHtml(product.category)}</p><h1>${escapeHtml(product.name)}</h1><p>${escapeHtml(product.description)}</p></div></section>
-<section class="section"><div class="container product-detail-layout"><aside class="structure-panel"><img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure from PubChem"></aside><article class="detail-panel"><p class="detail-kicker">Product Details</p><h2>${escapeHtml(product.name.replace(/\s*\([^)]*\)$/, ''))}</h2><p>${escapeHtml(product.description)}</p><dl class="detail-facts"><div class="detail-fact"><dt>Category</dt><dd>${escapeHtml(product.category)}</dd></div><div class="detail-fact"><dt>Abbreviation</dt><dd>${escapeHtml(abbreviation)}</dd></div><div class="detail-fact"><dt>CAS Number</dt><dd>${escapeHtml(cas)}</dd></div><div class="detail-fact"><dt>Availability</dt><dd>${product.commerceStatus === 'active_checkout' ? 'Online ordering' : 'Available by RFQ'}</dd></div></dl><h3>Typical Specification</h3><ul class="spec-list"><li><strong>Grade:</strong> ${escapeHtml(grade)}</li><li><strong>Formula:</strong> ${escapeHtml(formula)}</li></ul><div class="detail-actions"><a class="btn" href="${quote}">Request Quote</a><a class="btn secondary" href="${family.url.split('/').pop()}">Back to ${escapeHtml(family.name)}</a></div><p class="related-note"><strong>Need documentation?</strong> Request current COA, SDS, packaging, and lot information with your inquiry.</p></article></div></section>
-<section class="section"><div class="container product-technical-grid"><article class="detail-panel"><p class="detail-kicker">Technical Profile</p><h2>Battery and electrochemical applications</h2><p>${escapeHtml(product.description)}</p><p>Final specifications, documentation, package availability, and fulfillment eligibility are confirmed during order review or quotation.</p></article><aside class="detail-panel"><p class="detail-kicker">Related Materials</p><h2>Explore the product family</h2><p>Compare this material with other products in the ${escapeHtml(family.name)} catalog.</p><div class="detail-actions"><a class="btn secondary" href="${family.url.split('/').pop()}">View ${escapeHtml(family.name)}</a><a class="btn secondary" href="../products.html">Full catalog</a></div></aside></div></section>
-<section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Product FAQ</p><h2>Common Questions</h2></div><div class="faq-list"><details><summary>What is ${escapeHtml(product.name)} used for?</summary><p>${escapeHtml(product.description)}</p></details><details><summary>What is the CAS number?</summary><p>The CAS number shown for ${escapeHtml(product.name)} is ${escapeHtml(cas)}.</p></details><details><summary>Can I request documentation or a bulk quote?</summary><p>Yes. Use the request quote link to ask about current specifications, documentation, packaging, bulk quantities, and shipping.</p></details></div></div></section></main>
+<section class="section"><div class="container product-detail-layout"><aside class="structure-panel">${mediaMarkup}</aside><article class="detail-panel"><p class="detail-kicker">Product Details</p><h2>${escapeHtml(product.name.replace(/\s*\([^)]*\)$/, ''))}</h2><p>${escapeHtml(product.description)}</p><dl class="detail-facts">${factsMarkup}</dl>${specificationMarkup}<div class="detail-actions"><a class="btn" href="${quote}">Request Quote</a><a class="btn secondary" href="${family.url.split('/').pop()}">Back to ${escapeHtml(family.name)}</a></div><p class="related-note"><strong>Need documentation?</strong> Request current documentation, packaging, and lot information with your inquiry.</p></article></div></section>
+<section class="section"><div class="container product-technical-grid"><article class="detail-panel"><p class="detail-kicker">Typical Uses</p><h2>${isFormulation ? 'Standard lithium-ion electrolyte development' : 'Battery and electrochemical applications'}</h2>${usesMarkup}</article><aside class="detail-panel"><p class="detail-kicker">Related Materials &amp; Resources</p><h2>${isFormulation ? 'Explore the formulation components' : 'Explore the product family'}</h2>${relatedMarkup}</aside></div></section>
+<section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Product FAQ</p><h2>Common Questions</h2></div><div class="faq-list">${faqMarkup}</div></div></section></main>
 <footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
 <script src="../assets/js/ecommerce-catalog.js"></script><script src="../assets/js/cart.js"></script><script src="../assets/js/ecommerce-product-page.js"></script><script src="../assets/js/main.js"></script></body></html>\n`;
 }
@@ -134,7 +178,7 @@ const missing = [];
 let identityPagesRegenerated = 0;
 for (const product of catalog.products) {
   const path = resolve(root, product.url.replace(/^\//, ''));
-  if (identityCorrectionSlugs.has(product.slug)) {
+  if (sourceGeneratedSlugs.has(product.slug)) {
     await writeFile(path, detailPage(product));
     identityPagesRegenerated += 1;
     continue;
@@ -152,6 +196,7 @@ for (const product of catalog.products) {
     const cards = catalog.products.filter(product => product.family === family && !hasProductCard(productsHtml, product.slug, false)).map(product => renderCard(product, false));
     productsHtml = insertIntoSection(productsHtml, sectionId, cards);
   }
+  productsHtml = synchronizeFormulationCount(productsHtml);
   await writeFile(productsPath, productsHtml);
 
   for (const [familySlug, family] of families) {

@@ -47,6 +47,14 @@ test('alternate alias is a direct lookup', () => {
   assert.deepEqual(slugs('LiDODFP'), ['lithium-difluorobis-oxalato-phosphate-lidodfp']);
 });
 
+test('standard electrolyte formulation name and approved aliases are direct lookups', () => {
+  const expected = ['1m-lipf6-ec-emc-3-7-1-vc-electrolyte'];
+  assert.deepEqual(slugs('1 M LiPF6 in EC:EMC (3:7) + 1% VC Electrolyte'), expected);
+  assert.deepEqual(slugs('1M LiPF6 EC EMC 3:7 1% VC'), expected);
+  assert.deepEqual(slugs('LiPF6 EC EMC electrolyte'), expected);
+  assert.deepEqual(slugs('standard lithium ion electrolyte'), expected);
+});
+
 test('shared aliases and formulas fall through to ranked results', () => {
   const ambiguousRecords = [
     searchApi.prepareRecord({ slug: 'alpha', name: 'Alpha material', aliases: ['SHARED'], formula: 'C2H6O', section: 'salts' }),

@@ -3,9 +3,17 @@ import { createCustomerTestOrderEmail, createInternalOrderEmail } from './templa
 
 const notificationTypes = ['INTERNAL', 'CUSTOMER_TEST'];
 
+function isTestMode(env) {
+  return env.EMAIL_MODE === 'test';
+}
+
+function internalRecipients(env) {
+  return String(env.ORDER_NOTIFICATION_RECIPIENTS || '').split(',').map(value => value.trim()).filter(Boolean);
+}
+
 async function loadOrderForNotification(orderId, env) {
   const order = await env.ORDERS_DB.prepare(`
-    SELECT winigen_order_id, stripe_checkout_session_id, customer_email, merchandise_amount,
+    SELECT winigen_order_id, stripe_checkout_session_id, customer_name, customer_email, destination_country, merchandise_amount,
       shipping_amount, amount, currency, payment_status, fulfillment_status, updated_at
     FROM test_orders WHERE winigen_order_id = ?
   `).bind(orderId).first();
@@ -18,24 +26,32 @@ async function loadOrderForNotification(orderId, env) {
 }
 
 export async function createOrderNotificationRecords(eventId, orderId, env) {
-  if (env.EMAIL_MODE !== 'test' || !env.TEST_ORDER_EMAIL_RECIPIENT) {
-    console.warn('Test order email notifications were not created because test email configuration is incomplete.', { eventId, orderId });
+  const testMode = isTestMode(env);
+  if (testMode ? !env.TEST_ORDER_EMAIL_RECIPIENT : internalRecipients(env).length === 0) {
+    console.warn('Order email notifications were not created because email configuration is incomplete.', { eventId, orderId });
     return [];
   }
 
   const { order } = await loadOrderForNotification(orderId, env);
   if (!order || order.payment_status !== 'PAID' || order.fulfillment_status !== 'NOT_RELEASED') {
-    console.warn('Test order email notifications were not created because payment state is not eligible.', { eventId, orderId });
+    console.warn('Order email notifications were not created because payment state is not eligible.', { eventId, orderId });
     return [];
   }
 
-  const inserts = notificationTypes.map(type => env.ORDERS_DB.prepare(`
+  const eligibleTypes = notificationTypes.filter(type => type === 'INTERNAL' || testMode || order.customer_email);
+  const inserts = eligibleTypes.map(type => env.ORDERS_DB.prepare(`
     INSERT OR IGNORE INTO test_order_notifications (
       stripe_event_id, winigen_order_id, notification_type, intended_customer_email, actual_recipient, status
     ) VALUES (?, ?, ?, ?, ?, 'PENDING')
-  `).bind(eventId, orderId, type, type === 'CUSTOMER_TEST' ? order.customer_email : null, env.TEST_ORDER_EMAIL_RECIPIENT));
+  `).bind(
+    eventId,
+    orderId,
+    type,
+    type === 'CUSTOMER_TEST' ? order.customer_email : null,
+    testMode ? env.TEST_ORDER_EMAIL_RECIPIENT : (type === 'INTERNAL' ? internalRecipients(env).join(',') : order.customer_email)
+  ));
   const results = await env.ORDERS_DB.batch(inserts);
-  return results.flatMap((result, index) => result.meta.changes === 1 ? [notificationTypes[index]] : []);
+  return results.flatMap((result, index) => result.meta.changes === 1 ? [eligibleTypes[index]] : []);
 }
 
 async function claimNotification(eventId, type, env) {
@@ -61,13 +77,13 @@ export async function deliverOrderNotification(eventId, orderId, type, env) {
       SET status = 'SENT', provider_message_id = ?, sent_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP
       WHERE stripe_event_id = ? AND notification_type = ?
     `).bind(delivery.providerMessageId, eventId, type).run();
-    console.log('Test order email accepted by provider', { eventId, orderId, type, providerMessageId: delivery.providerMessageId });
+    console.log('Order email accepted by provider', { eventId, orderId, type, providerMessageId: delivery.providerMessageId });
   } catch (error) {
     await env.ORDERS_DB.prepare(`
       UPDATE test_order_notifications
       SET status = 'FAILED', error_metadata = ?, updated_at = CURRENT_TIMESTAMP
       WHERE stripe_event_id = ? AND notification_type = ?
     `).bind(error.message.slice(0, 500), eventId, type).run();
-    console.error('Test order email delivery failed', { eventId, orderId, type, message: error.message });
+    console.error('Order email delivery failed', { eventId, orderId, type, message: error.message });
   }
 }

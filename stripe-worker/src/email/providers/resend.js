@@ -9,7 +9,7 @@ export async function sendWithResend(message, env) {
     },
     body: JSON.stringify({
       from: message.from,
-      to: [message.to],
+      to: Array.isArray(message.to) ? message.to : [message.to],
       reply_to: message.replyTo,
       subject: message.subject,
       html: message.html,

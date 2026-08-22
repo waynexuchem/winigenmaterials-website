@@ -1,6 +1,6 @@
 /* Generated from catalog/products.source.json. Do not edit directly. */
 window.WINIGEN_PRODUCT_SEARCH_INDEX = {
-  "version": "2026-08-20-final-pricing-v3-identities",
+  "version": "2026-08-21-sulfide-sse-v1",
   "records": [
     {
       "slug": "lithium-hexafluorophosphate-lipf6",
@@ -147,18 +147,6 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "solvents",
       "category": "Battery Solvents",
       "metadata": "Propylene carbonate (PC), CAS 108-32-7, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid.. PC supplier where to buy PC Abbreviation PC CAS Number 108-32-7 Formula C4H6O3 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid."
-    },
-    {
-      "slug": "acetonitrile-an",
-      "name": "Acetonitrile (AN)",
-      "aliases": [
-        "AN"
-      ],
-      "cas": "75-05-8",
-      "formula": "CH3CN",
-      "section": "solvents",
-      "category": "Battery Solvents",
-      "metadata": "Acetonitrile (AN), CAS 75-05-8, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade. AN supplier where to buy AN Abbreviation AN CAS Number 75-05-8 Formula CH3CN Availability RFQ Water < 100 ppm Grade Battery material grade"
     },
     {
       "slug": "ethyl-acetate-ea",
@@ -490,42 +478,6 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "metadata": "Sodium difluoro(oxalato)borate (NaDFOB), CAS 1016545-84-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Sodium difluoro(oxalato)borate (NaDFOB) supplier where to buy Sodium difluoro(oxalato)borate (NaDFOB) Abbreviation NaDFOB Alternate Abbreviation NaODFB CAS Number 1016545-84-8 Formula C2BF2NaO4 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
     },
     {
-      "slug": "magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2",
-      "name": "Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI)2)",
-      "aliases": [
-        "TFSI"
-      ],
-      "cas": "133395-16-1",
-      "formula": "Mg(TFSI)2",
-      "section": "next-gen",
-      "category": "Next-Gen Salts",
-      "metadata": "Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI)2), CAS 133395-16-1, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. TFSI supplier where to buy TFSI Abbreviation Mg(TFSI)2 CAS Number 133395-16-1 Formula Mg(TFSI)2 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
-    },
-    {
-      "slug": "potassium-bis-trifluoromethanesulfonyl-imide-ktfsi",
-      "name": "Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI)",
-      "aliases": [
-        "KTFSI"
-      ],
-      "cas": "90076-67-8",
-      "formula": "KTFSI",
-      "section": "next-gen",
-      "category": "Next-Gen Salts",
-      "metadata": "Potassium bis-(trifluoromethanesulfonyl)-imide (KTFSI), CAS 90076-67-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. KTFSI supplier where to buy KTFSI Abbreviation KTFSI CAS Number 90076-67-8 Formula KTFSI Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
-    },
-    {
-      "slug": "sodium-bis-trifluoromethanesulfonyl-imide-natfsi",
-      "name": "Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI)",
-      "aliases": [
-        "NaTFSI"
-      ],
-      "cas": "91742-21-1",
-      "formula": "NaTFSI",
-      "section": "next-gen",
-      "category": "Next-Gen Salts",
-      "metadata": "Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI), CAS 91742-21-1, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI) supplier where to buy Sodium bis-(trifluoromethanesulfonyl)-imide (NaTFSI) Abbreviation NaTFSI CAS Number 91742-21-1 Formula NaTFSI Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
-    },
-    {
       "slug": "potassium-hexafluorophosphate-kpf-6",
       "name": "Potassium hexafluorophosphate (KPF6)",
       "aliases": [
@@ -536,30 +488,6 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "next-gen",
       "category": "Next-Gen Salts",
       "metadata": "Potassium hexafluorophosphate (KPF6), CAS 17084-13-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. KPF6 supplier where to buy KPF6 Abbreviation KPF6 CAS Number 17084-13-8 Formula KPF6 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
-    },
-    {
-      "slug": "potassium-bis-fluorosulfonyl-imide-kfsi",
-      "name": "Potassium bis(fluorosulfonyl)imide (KFSI)",
-      "aliases": [
-        "KFSI"
-      ],
-      "cas": "14984-76-0",
-      "formula": "KFSI",
-      "section": "next-gen",
-      "category": "Next-Gen Salts",
-      "metadata": "Potassium bis(fluorosulfonyl)imide (KFSI), CAS 14984-76-0, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. KFSI supplier where to buy KFSI Abbreviation KFSI CAS Number 14984-76-0 Formula KFSI Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
-    },
-    {
-      "slug": "magnesium-borohydride-mg-bh-4-2",
-      "name": "Magnesium borohydride (Mg(BH4)2)",
-      "aliases": [
-        "BH4"
-      ],
-      "cas": "16903-37-0",
-      "formula": "Mg(BH 4) 2",
-      "section": "next-gen",
-      "category": "Next-Gen Salts",
-      "metadata": "Magnesium borohydride (Mg(BH 4) 2), CAS 16903-37-0, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. BH4 supplier where to buy BH4 Abbreviation Mg(BH 4) 2 CAS Number 16903-37-0 Formula Mg(BH 4) 2 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
     },
     {
       "slug": "latp-d-50-0-3-um",
@@ -622,7 +550,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "",
       "section": "solid-state",
       "category": "Solid-State Electrolytes",
-      "metadata": "Configurable LATP oxide-electrolyte slurry with selectable D50 particle size and water-based or oil-based carrier for coating development. LATP slurry supplier where to buy LATP slurry Appearance White slurry, uniform color D50 options 0.15 µm, 0.30 µm, or 0.65 µm Solid content Target value -0.5% to +1.5%; typical range 20-40% Carrier solvent Water-based or oil-based carrier Magnetic impurities ≤ 500 ppb Use case Coating, separator-layer, and composite-electrolyte development"
+      "metadata": "Configurable LATP oxide-electrolyte slurry available by RFQ with selectable D50 particle size and water-based or oil-based carrier for coating development. LATP slurry supplier where to buy LATP slurry Appearance White slurry, uniform color D50 options 0.15 µm, 0.30 µm, or 0.65 µm Solid content Target value -0.5% to +1.5%; typical range 20-40% Carrier solvent Water-based or oil-based carrier Magnetic impurities ≤ 500 ppb Use case Coating, separator-layer, and composite-electrolyte development"
     },
     {
       "slug": "gsh04",
@@ -1252,6 +1180,22 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "salts",
       "category": "Lithium Salts",
       "metadata": "Lithium difluorobis(oxalato)phosphate (LiDFBOP), CAS 678966-16-0, available from Winigen Materials for battery and electrochemical research. Lithium difluorobis(oxalato)phosphate is a lithium-containing electrolyte additive for interphase-forming studies. Lithium difluorobis(oxalato)phosphate (LiDFBOP) supplier where to buy Lithium difluorobis(oxalato)phosphate (LiDFBOP) Abbreviation LiDFBOP Alternate Abbreviation LiDODFP CAS Number 678966-16-0 Formula C4F2LiO8P Grade Battery research grade"
+    },
+    {
+      "slug": "1m-lipf6-ec-emc-3-7-1-vc-electrolyte",
+      "name": "1 M LiPF6 in EC:EMC (3:7) + 1% VC Electrolyte",
+      "aliases": [
+        "1M LiPF6 EC EMC 3:7 1% VC",
+        "LiPF6 EC EMC electrolyte",
+        "EC EMC 3:7 electrolyte",
+        "1% VC electrolyte",
+        "standard lithium ion electrolyte"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "formulations",
+      "category": "Standard Electrolyte Formulation",
+      "metadata": "Ready-to-use standard lithium-ion battery electrolyte formulated with 1.0 M LiPF6 in EC:EMC (3:7 by volume) and 1% VC for lithium-ion R&D, baseline and reference testing, additive screening, and coin-cell and pouch-cell development. 1 M LiPF6 in EC EMC electrolyte supplier ready-to-use standard lithium-ion electrolyte where to buy EC EMC 3:7 electrolyte with 1% VC Product type Ready-to-use electrolyte formulation LiPF6 concentration 1.0 M EC:EMC ratio 3:7 by volume VC content 1% Availability Online ordering"
     },
     {
       "slug": "tetravinylsilane-tvsi",

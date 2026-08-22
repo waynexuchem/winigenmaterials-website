@@ -66,9 +66,9 @@ Use this framework to understand how Winigen connects chemical supply, interface
 - Lithium Salts: lithium electrolyte salt, battery-grade lithium salt, LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB. https://www.winigenmaterials.com/products/lithium-salts.html
 - Battery Solvents: battery electrolyte solvent, battery-grade solvent, low-moisture solvent, EC, DMC, DEC, EMC. https://www.winigenmaterials.com/products/battery-solvents.html
 - Electrolyte Additives: battery electrolyte additive, FEC, VC, VEC, DTD, TMSB, TMSP. https://www.winigenmaterials.com/products/electrolyte-additives.html
-- Next-Gen Salts: sodium electrolyte salt, potassium electrolyte salt, magnesium electrolyte salt, NaPF6, NaTFSI, KFSI, KPF6. https://www.winigenmaterials.com/products/next-generation-salts.html
+- Next-Gen Salts: sodium electrolyte salt, potassium electrolyte salt, NaPF6, KPF6. https://www.winigenmaterials.com/products/next-generation-salts.html
 - Solid-State Electrolytes: solid-state electrolyte, solid electrolyte powder, oxide solid electrolyte, sulfide solid electrolyte, halide solid electrolyte, LATP, LLZTO. https://www.winigenmaterials.com/products/solid-state-electrolytes.html
-- Custom Formulations: custom battery electrolyte, electrolyte formulation service, custom lithium-ion electrolyte, custom sodium-ion electrolyte, silicon-anode electrolyte formulation, lithium-metal electrolyte formulation. https://www.winigenmaterials.com/products/custom-electrolyte-formulations.html
+- Custom Formulations: standard lithium-ion electrolyte, ready-to-use battery electrolyte, custom battery electrolyte, electrolyte formulation service, custom lithium-ion electrolyte, custom sodium-ion electrolyte, silicon-anode electrolyte formulation. https://www.winigenmaterials.com/products/custom-electrolyte-formulations.html
 - Active Materials: cathode material, anode material, LFP, NMC, LCO, silicon anode, graphite anode. https://www.winigenmaterials.com/products/battery-active-materials.html
 - Functional Coatings: boehmite battery coating, alumina battery coating, ceramic coating material, battery separator coating, electrode-edge coating. https://www.winigenmaterials.com/products/battery-ceramic-functional-coating-materials.html
 

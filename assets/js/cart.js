@@ -138,7 +138,10 @@
     const type = review.action === 'rfq' ? 'Request for Quote' : 'Shipping Review';
     const details = review.items.map(item => `${item.sku}: ${item.name} | ${item.grade} | ${item.packageLabel} x ${item.quantity} | $${(item.unitAmount * item.quantity / 100).toFixed(2)}`).join('\n');
     const destination = review.destinationCountry ? `\nShipping destination: ${review.destinationCountry}` : '';
-    const message = `Cart review request\n${details}\nPublished merchandise subtotal: $${(review.merchandiseSubtotal / 100).toFixed(2)}${destination}\nShipping requires confirmation. Cart remains saved.`;
+    const reviewNote = review.action === 'shipping_review'
+      ? 'Specialized sulfide logistics require destination review and are quoted separately from the published material subtotal. Multiple sulfide grades may be consolidated into one shipment where feasible. Cart remains saved.'
+      : 'Destination and fulfillment eligibility require confirmation. Cart remains saved.';
+    const message = `Cart review request\n${details}\nPublished product subtotal: $${(review.merchandiseSubtotal / 100).toFixed(2)}${destination}\n${reviewNote}`;
     const setField = (name, value) => {
       const field = form.querySelector(`[name="${name}"]`);
       if (field) field.value = value;

@@ -17,6 +17,7 @@
 	},
 	"vars": {
 		"SITE_ORIGIN": "https://www.winigenmaterials.com",
+		"STRIPE_MODE": "test",
 		"EMAIL_MODE": "test",
 		"EMAIL_PROVIDER": "resend",
 		"TEST_ORDER_EMAIL_FROM": "orders@notify.winigenmaterials.com",
