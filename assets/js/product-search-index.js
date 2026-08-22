@@ -1,6 +1,6 @@
 /* Generated from catalog/products.source.json. Do not edit directly. */
 window.WINIGEN_PRODUCT_SEARCH_INDEX = {
-  "version": "2026-08-21-sulfide-sse-v1",
+  "version": "2026-08-21-li3incl6-removal-v1",
   "records": [
     {
       "slug": "lithium-hexafluorophosphate-lipf6",
@@ -699,18 +699,6 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "solid-state",
       "category": "Solid-State Electrolytes",
       "metadata": "Li6PS5Cl, D50 >10 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li6PS5Cl supplier where to buy Li6PS5Cl Appearance Gray-white powder, uniform color, no visible agglomeration Particle size D50 >10 µm Water Lot-dependent; confirm by COA/TDS Ionic conductivity >4 mS/cm, cold press Electronic conductivity ≤ 10^-6 mS/cm"
-    },
-    {
-      "slug": "li-3-incl-6-d-50-0-9-um",
-      "name": "Li3InCl6 powder, D50 0.9 µm",
-      "aliases": [
-        "Li3InCl6 powder"
-      ],
-      "cas": "",
-      "formula": "",
-      "section": "solid-state",
-      "category": "Solid-State Electrolytes",
-      "metadata": "Li3InCl6 halide solid electrolyte powder for high-purity phase screening, EIS conductivity testing, and solid-state battery research. Li3InCl6 powder supplier where to buy Li3InCl6 powder Appearance White powder D10 particle size 0.5 ± 0.05 µm D50 particle size 0.9 ± 0.3 µm D90 particle size 20 ± 0.2 µm D99 particle size 31 ± 0.3 µm Water ≤ 500 ppm Ionic conductivity ≥ 1.5 mS/cm; measured value 1.85 mS/cm at 25 degC after 40 min hold Elemental impurities Ca ≤50 ppm; Cr ≤50 ppm; Cu ≤50 ppm; Fe ≤500 ppm; K ≤500 ppm; Mg ≤50 ppm; Na ≤500 ppm; Zn ≤50 ppm; Zr ≤50 ppm Phase Main phase 04-009-9027"
     },
     {
       "slug": "lithium-iron-phosphate-lfp-energy-grade",

@@ -1,5 +1,5 @@
 {
-  "catalogVersion": "2026-08-21-solid-state-95-v1",
+  "catalogVersion": "2026-08-21-li3incl6-removal-v1",
   "packageTemplates": {
     "P1": [
       {
@@ -5540,62 +5540,6 @@
           "unitAmount": 1499995,
           "netWeightGrams": 10000,
           "shippingWeightGrams": 10000,
-          "shippingWeightBasis": "NET_CONTENT_PROXY"
-        }
-      ],
-      "defaultPackageId": "10G"
-    },
-    {
-      "skuBase": "WM-SSE-LI3INCL6-090",
-      "slug": "li-3-incl-6-d-50-0-9-um",
-      "name": "Li3InCl6 powder, D50 0.9 um",
-      "category": "Solid-State Electrolyte Powder",
-      "grade": "Defined halide grade",
-      "commercialStatus": "ONLINE_CHECKOUT",
-      "shippingClass": "STANDARD_RD",
-      "currency": "usd",
-      "launchPhase": "LAUNCH",
-      "packages": [
-        {
-          "id": "10G",
-          "label": "10 g",
-          "unit": "g",
-          "quantity": 10,
-          "approvalStatus": "ACTIVE",
-          "packageBasis": "APPROVED_LAUNCH_PACKAGE",
-          "packageBasisConfirmationStatus": "ACTIVE",
-          "pricingStatus": "APPROVED_RETAIL",
-          "unitAmount": 32995,
-          "netWeightGrams": 10,
-          "shippingWeightGrams": 10,
-          "shippingWeightBasis": "NET_CONTENT_PROXY"
-        },
-        {
-          "id": "50G",
-          "label": "50 g",
-          "unit": "g",
-          "quantity": 50,
-          "approvalStatus": "ACTIVE",
-          "packageBasis": "APPROVED_LAUNCH_PACKAGE",
-          "packageBasisConfirmationStatus": "ACTIVE",
-          "pricingStatus": "APPROVED_RETAIL",
-          "unitAmount": 129995,
-          "netWeightGrams": 50,
-          "shippingWeightGrams": 50,
-          "shippingWeightBasis": "NET_CONTENT_PROXY"
-        },
-        {
-          "id": "100G",
-          "label": "100 g",
-          "unit": "g",
-          "quantity": 100,
-          "approvalStatus": "ACTIVE",
-          "packageBasis": "APPROVED_LAUNCH_PACKAGE",
-          "packageBasisConfirmationStatus": "ACTIVE",
-          "pricingStatus": "APPROVED_RETAIL",
-          "unitAmount": 229995,
-          "netWeightGrams": 100,
-          "shippingWeightGrams": 100,
           "shippingWeightBasis": "NET_CONTENT_PROXY"
         }
       ],

@@ -67,7 +67,7 @@ Use this framework to understand how Winigen connects chemical supply, interface
 - Battery Solvents: battery electrolyte solvent, battery-grade solvent, low-moisture solvent, EC, DMC, DEC, EMC. https://www.winigenmaterials.com/products/battery-solvents.html
 - Electrolyte Additives: battery electrolyte additive, FEC, VC, VEC, DTD, TMSB, TMSP. https://www.winigenmaterials.com/products/electrolyte-additives.html
 - Next-Gen Salts: sodium electrolyte salt, potassium electrolyte salt, NaPF6, KPF6. https://www.winigenmaterials.com/products/next-generation-salts.html
-- Solid-State Electrolytes: solid-state electrolyte, solid electrolyte powder, oxide solid electrolyte, sulfide solid electrolyte, halide solid electrolyte, LATP, LLZTO. https://www.winigenmaterials.com/products/solid-state-electrolytes.html
+- Solid-State Electrolytes: solid-state electrolyte, solid electrolyte powder, oxide solid electrolyte, sulfide solid electrolyte, LATP, LLZTO, Li6PS5Cl. https://www.winigenmaterials.com/products/solid-state-electrolytes.html
 - Custom Formulations: standard lithium-ion electrolyte, ready-to-use battery electrolyte, custom battery electrolyte, electrolyte formulation service, custom lithium-ion electrolyte, custom sodium-ion electrolyte, silicon-anode electrolyte formulation. https://www.winigenmaterials.com/products/custom-electrolyte-formulations.html
 - Active Materials: cathode material, anode material, LFP, NMC, LCO, silicon anode, graphite anode. https://www.winigenmaterials.com/products/battery-active-materials.html
 - Functional Coatings: boehmite battery coating, alumina battery coating, ceramic coating material, battery separator coating, electrode-edge coating. https://www.winigenmaterials.com/products/battery-ceramic-functional-coating-materials.html
@@ -94,7 +94,6 @@ Product-specific pages are available under `/products/` for chemical materials i
 - Li 6 PS 5 Cl: https://www.winigenmaterials.com/products/gsl01.html
 - Li 5.5 PS 4.5 Cl x Br y: https://www.winigenmaterials.com/products/gsb01.html
 - LATP: https://www.winigenmaterials.com/products/latp-d-50-0-3-um.html
-- Li 3 InCl 6: https://www.winigenmaterials.com/products/li-3-incl-6-d-50-0-9-um.html
 - Sodium hexafluorophosphate (NaPF 6): https://www.winigenmaterials.com/products/sodium-hexafluorophosphate-napf-6.html
 - Sodium difluoro oxalate borate (NaODFB): https://www.winigenmaterials.com/products/sodium-difluoro-oxalate-borate-naodfb.html
 - Magnesium bis-(trifluoromethylsulfonyl)-imide (Mg(TFSI) 2): https://www.winigenmaterials.com/products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html

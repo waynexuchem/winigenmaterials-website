@@ -47,10 +47,10 @@
     },
     "solid-state-electrolytes": {
       "name": "Solid-State Electrolytes",
-      "title": "Solid-State Electrolytes | LATP, LLZTO, Li6PS5Cl & Halide Materials | Winigen Materials",
-      "description": "Browse oxide, sulfide, and halide solid-state electrolyte materials including LATP, LLZTO, Li6PS5Cl, argyrodite, and Li3InCl6 for battery R&D.",
+      "title": "Solid-State Electrolytes | LATP, LLZTO & Li6PS5Cl Materials | Winigen Materials",
+      "description": "Browse oxide and sulfide solid-state electrolyte materials including LATP, LLZTO, Li6PS5Cl, and argyrodite grades for battery R&D.",
       "visibleIntro": "Winigen Materials supplies oxide, sulfide, and halide solid-state electrolyte materials for conductivity screening, composite-electrode development, coating studies, and advanced battery R&D. Selected research packages are available for online ordering, with bulk quantities and custom requirements handled by quotation.",
-      "entities": ["solid-state electrolyte", "solid electrolyte powder", "oxide solid electrolyte", "sulfide solid electrolyte", "halide solid electrolyte", "LATP", "LLZTO", "Li6PS5Cl", "argyrodite electrolyte", "Li3InCl6"],
+      "entities": ["solid-state electrolyte", "solid electrolyte powder", "oxide solid electrolyte", "sulfide solid electrolyte", "LATP", "LLZTO", "Li6PS5Cl", "argyrodite electrolyte"],
       "commercialIntents": ["solid-state electrolyte supplier", "where to buy solid-state electrolyte", "where to buy sulfide electrolyte", "research-grade sulfide electrolyte"],
       "engineeringQuestions": ["what solid electrolyte should I use", "why does solid-state battery resistance increase", "what causes solid-state electrolyte failure"],
       "relatedKnowledge": ["solid-state-electrolyte-materials.html", "sulfide-vs-oxide-vs-halide-solid-electrolytes.html", "compare-solid-state-electrolyte-powders.html", "mechanics-solid-state-electrolyte-lithium-dendrites.html"]

@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "winigen-stripe-production",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true
+    }
+  },
+  "vars": {
+    "SITE_ORIGIN": "https://www.winigenmaterials.com",
+    "STRIPE_MODE": "live",
+    "EMAIL_MODE": "live",
+    "EMAIL_PROVIDER": "resend",
+    "TEST_ORDER_EMAIL_FROM": "orders@notify.winigenmaterials.com",
+    "ORDER_EMAIL_REPLY_TO": "orders@winigenmaterials.com",
+    "ORDER_NOTIFICATION_RECIPIENTS": "orders@winigenmaterials.com,catherinew@winigenmaterials.com"
+  },
+  "secrets": {
+    "required": [
+      "STRIPE_SECRET_KEY",
+      "STRIPE_WEBHOOK_SECRET",
+      "RESEND_API_KEY",
+      "INTERNAL_CHECKOUT_TOKEN"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "ORDERS_DB",
+      "database_name": "REPLACE_WITH_PRODUCTION_D1_NAME",
+      "database_id": "REPLACE_WITH_PRODUCTION_D1_ID",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
