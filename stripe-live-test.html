@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#12305d">
+  <title>Live Checkout Smoke Test | Winigen Materials</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css?v=c605a723f01a">
+  <style>
+    .live-test-main { min-height: 100vh; display: grid; place-items: center; padding: 56px 0; }
+    .live-test-panel { width: min(680px, 92vw); border-top: 4px solid var(--gold); text-align: left; }
+    .live-test-panel h1 { font-size: clamp(34px, 5vw, 52px); letter-spacing: 0; }
+    .live-test-price { color: var(--navy); font-family: Manrope, Inter, sans-serif; font-size: 30px; font-weight: 850; }
+    .live-test-details { border-block: 1px solid var(--border); display: grid; gap: 10px; margin: 24px 0; padding: 20px 0; }
+    .live-test-row { display: flex; justify-content: space-between; gap: 24px; }
+    .live-test-row strong { color: var(--navy); }
+    .live-test-panel .btn { min-height: 50px; }
+    .live-test-status { min-height: 1.5em; margin-top: 16px; font-weight: 700; }
+    .live-test-status.is-error { color: #a13220; }
+    .live-test-note { font-size: 14px; }
+    @media (max-width: 520px) { .live-test-row { align-items: flex-start; flex-direction: column; gap: 3px; } .live-test-panel .btn { width: 100%; } }
+  </style>
+</head>
+<body>
+  <main class="live-test-main">
+    <form class="card live-test-panel" data-live-smoke-test data-checkout-api="https://winigen-stripe-production.winigen.workers.dev/api/create-checkout-session" aria-labelledby="live-test-title">
+      <div class="eyebrow">Controlled Production Test</div>
+      <h1 id="live-test-title">Winigen Checkout Test — $1.00</h1>
+      <p>This isolated item validates the production Stripe Checkout, webhook, order-storage, and confirmation flow. It is not a material purchase and cannot be combined with catalog products.</p>
+      <div class="live-test-details" aria-label="Test checkout details">
+        <div class="live-test-row"><strong>Test SKU</strong><span>WM-LIVE-TEST-1USD</span></div>
+        <div class="live-test-row"><strong>Quantity</strong><span>1 (fixed)</span></div>
+        <div class="live-test-row"><strong>Total</strong><span class="live-test-price">$1.00 USD</span></div>
+      </div>
+      <button class="btn" type="submit">Start $1.00 Checkout Test</button>
+      <p class="live-test-status" data-live-smoke-status role="status" aria-live="polite"></p>
+      <p class="live-test-note">The server defines the charge amount. This utility remains disabled until explicitly enabled for the production smoke test.</p>
+    </form>
+  </main>
+  <script src="assets/js/stripe-live-test.js?v=806eed84fa82"></script>
+</body>
+</html>

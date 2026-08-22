@@ -21,11 +21,47 @@
     return readCart().items.reduce((sum, item) => sum + item.quantity, 0);
   }
 
+  function variantDetails(variantKey) {
+    const products = window.WINIGEN_ECOMMERCE_CATALOG?.products || [];
+    for (const product of products) {
+      const variant = product.variants.find(entry => entry.key === variantKey);
+      if (variant) return { product, variant };
+    }
+    return null;
+  }
+
+  function maximumQuantity(variantKey, cart = readCart()) {
+    const details = variantDetails(variantKey);
+    if (!details) return 0;
+    const { product, variant } = details;
+    const group = product.directOrderCeilingGroup;
+    const ceiling = product.directOrderCeilingGrams;
+    if (!group || !Number.isFinite(ceiling) || !Number.isFinite(variant.netWeightGrams)) return 0;
+    const otherMass = cart.items.reduce((total, item) => {
+      if (item.variantKey === variantKey) return total;
+      const other = variantDetails(item.variantKey);
+      if (!other || other.product.directOrderCeilingGroup !== group) return total;
+      return total + other.variant.netWeightGrams * item.quantity;
+    }, 0);
+    return Math.max(0, Math.min(25, Math.floor((ceiling - otherMass) / variant.netWeightGrams)));
+  }
+
+  function notifyLimit(details) {
+    window.dispatchEvent(new CustomEvent('winigen:cart-limit', { detail: details }));
+  }
+
   function add(variantKey, quantity, sourceButton = null) {
     const cart = readCart();
     const safeQuantity = Math.max(1, Math.min(25, Number.parseInt(quantity, 10) || 1));
     const existing = cart.items.find(item => item.variantKey === variantKey);
-    if (existing) existing.quantity = Math.min(25, existing.quantity + safeQuantity);
+    const proposedQuantity = (existing?.quantity || 0) + safeQuantity;
+    const allowedQuantity = maximumQuantity(variantKey, cart);
+    if (proposedQuantity > allowedQuantity) {
+      const details = variantDetails(variantKey);
+      notifyLimit({ ...details, sourceButton });
+      return false;
+    }
+    if (existing) existing.quantity = proposedQuantity;
     else cart.items.push({ variantKey, quantity: safeQuantity });
     writeCart(cart);
     window.dispatchEvent(new CustomEvent('winigen:cart-added', {
@@ -38,15 +74,6 @@
     const buttonTimers = new WeakMap();
     let toastTimer;
     let toast;
-
-    const variantDetails = variantKey => {
-      const products = window.WINIGEN_ECOMMERCE_CATALOG?.products || [];
-      for (const product of products) {
-        const variant = product.variants.find(entry => entry.key === variantKey);
-        if (variant) return { product, variant };
-      }
-      return null;
-    };
 
     const cartHref = () => window.location.pathname.includes('/products/') ? '../cart.html' : 'cart.html';
 
@@ -92,19 +119,42 @@
 
       const activeToast = ensureToast();
       activeToast.querySelector('.cart-add-toast__message').textContent = `${details.product.name} · ${details.variant.label} added to cart`;
+      activeToast.querySelector('.cart-add-toast__link').textContent = 'View Cart';
       activeToast.querySelector('.cart-add-toast__link').href = cartHref();
       window.clearTimeout(toastTimer);
       activeToast.classList.add('is-visible');
       toastTimer = window.setTimeout(() => activeToast.classList.remove('is-visible'), 2600);
+    });
+
+    window.addEventListener('winigen:cart-limit', event => {
+      const details = event.detail;
+      if (!details?.product) return;
+      const activeToast = ensureToast();
+      activeToast.querySelector('.cart-add-toast__message').textContent = `${details.product.name} exceeds its online quantity limit.`;
+      const link = activeToast.querySelector('.cart-add-toast__link');
+      link.textContent = 'Request Bulk Quote';
+      link.href = `${window.location.pathname.includes('/products/') ? '../' : ''}contact.html?inquiry_type=Request%20for%20Quote&product_interest=${encodeURIComponent(details.product.name)}`;
+      window.clearTimeout(toastTimer);
+      activeToast.classList.add('is-visible');
+      toastTimer = window.setTimeout(() => {
+        activeToast.classList.remove('is-visible');
+        link.textContent = 'View Cart';
+      }, 3200);
     });
   }
 
   function update(variantKey, quantity) {
     const cart = readCart();
     const item = cart.items.find(entry => entry.variantKey === variantKey);
-    if (item) item.quantity = Math.max(0, Math.min(25, Number.parseInt(quantity, 10) || 0));
+    const requestedQuantity = Math.max(0, Math.min(25, Number.parseInt(quantity, 10) || 0));
+    if (item && requestedQuantity > maximumQuantity(variantKey, cart)) {
+      notifyLimit(variantDetails(variantKey));
+      return false;
+    }
+    if (item) item.quantity = requestedQuantity;
     cart.items = cart.items.filter(entry => entry.quantity > 0);
     writeCart(cart);
+    return true;
   }
 
   function remove(variantKey) {
@@ -151,7 +201,7 @@
     setField('message', message);
   }
 
-  window.WinigenCart = { readCart, writeCart, itemCount, add, update, remove, saveReview, getReview, getShippingDestination, setShippingDestination };
+  window.WinigenCart = { readCart, writeCart, itemCount, add, update, remove, maximumQuantity, saveReview, getReview, getShippingDestination, setShippingDestination };
   initializeAddFeedback();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hydrateContactReview);
   else hydrateContactReview();

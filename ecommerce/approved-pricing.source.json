@@ -1061,7 +1061,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 40995
+          "unitAmount": 39995
         },
         {
           "id": "500G",
@@ -1069,7 +1069,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 63995
+          "unitAmount": 59995
         },
         {
           "id": "1KG",
@@ -1077,7 +1077,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 89995
+          "unitAmount": 84995
         },
         {
           "id": "2KG",
@@ -1085,7 +1085,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 102995
+          "unitAmount": 99995
         },
         {
           "id": "5KG",
@@ -1093,7 +1093,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 145995
+          "unitAmount": 139995
         },
         {
           "id": "10KG",
@@ -1101,7 +1101,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 197995
+          "unitAmount": 189995
         }
       ]
     },
@@ -1769,7 +1769,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 55995
+          "unitAmount": 47995
         },
         {
           "id": "500G",
@@ -1777,7 +1777,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 89995
+          "unitAmount": 77995
         },
         {
           "id": "1KG",
@@ -1785,7 +1785,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 127995
+          "unitAmount": 109995
         },
         {
           "id": "2KG",
@@ -1793,7 +1793,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 146995
+          "unitAmount": 129995
         },
         {
           "id": "5KG",
@@ -1801,7 +1801,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 154995
+          "unitAmount": 149995
         },
         {
           "id": "10KG",
@@ -1809,7 +1809,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 209995
+          "unitAmount": 199995
         }
       ]
     },
@@ -1887,7 +1887,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 55995
+          "unitAmount": 47995
         },
         {
           "id": "500G",
@@ -1895,7 +1895,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 86995
+          "unitAmount": 74995
         },
         {
           "id": "1KG",
@@ -1903,7 +1903,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 122995
+          "unitAmount": 104995
         },
         {
           "id": "2KG",
@@ -1911,7 +1911,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 140995
+          "unitAmount": 124995
         },
         {
           "id": "5KG",
@@ -1919,7 +1919,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 155995
+          "unitAmount": 144995
         },
         {
           "id": "10KG",
@@ -1927,7 +1927,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 210995
+          "unitAmount": 194995
         }
       ]
     },
@@ -2005,7 +2005,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 58995
+          "unitAmount": 49995
         },
         {
           "id": "500G",
@@ -2013,7 +2013,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 93995
+          "unitAmount": 79995
         },
         {
           "id": "1KG",
@@ -2021,7 +2021,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 132995
+          "unitAmount": 112995
         },
         {
           "id": "2KG",
@@ -2029,7 +2029,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 152995
+          "unitAmount": 134995
         },
         {
           "id": "5KG",
@@ -2037,7 +2037,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 174995
+          "unitAmount": 159995
         },
         {
           "id": "10KG",
@@ -2045,7 +2045,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 210995
+          "unitAmount": 199995
         }
       ]
     },
@@ -2064,7 +2064,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 64995
+          "unitAmount": 54995
         },
         {
           "id": "1KG",
@@ -2072,7 +2072,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 92995
+          "unitAmount": 74995
         },
         {
           "id": "2KG",
@@ -2080,7 +2080,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 108995
+          "unitAmount": 94995
         },
         {
           "id": "5KG",
@@ -2088,7 +2088,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 161995
+          "unitAmount": 149995
         },
         {
           "id": "10KG",
@@ -2096,7 +2096,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 218995
+          "unitAmount": 199995
         }
       ]
     },
@@ -2233,7 +2233,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 60995
+          "unitAmount": 44995
         },
         {
           "id": "500G",
@@ -2241,7 +2241,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 93995
+          "unitAmount": 69995
         },
         {
           "id": "1KG",
@@ -2249,7 +2249,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 133995
+          "unitAmount": 99995
         },
         {
           "id": "2KG",
@@ -2257,7 +2257,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 156995
+          "unitAmount": 129995
         },
         {
           "id": "5KG",
@@ -2265,7 +2265,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 163995
+          "unitAmount": 159995
         },
         {
           "id": "10KG",
@@ -2273,7 +2273,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 221995
+          "unitAmount": 219995
         }
       ]
     },
@@ -2295,7 +2295,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 67995
+          "unitAmount": 55995
         },
         {
           "id": "500G",
@@ -2303,7 +2303,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 108995
+          "unitAmount": 79995
         },
         {
           "id": "1KG",
@@ -2311,7 +2311,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 155995
+          "unitAmount": 109995
         },
         {
           "id": "2KG",
@@ -2319,7 +2319,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 182995
+          "unitAmount": 129995
         },
         {
           "id": "5KG",
@@ -2327,7 +2327,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 204995
+          "unitAmount": 179995
         },
         {
           "id": "10KG",
@@ -2335,7 +2335,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 221995
+          "unitAmount": 209995
         }
       ]
     },
@@ -2354,7 +2354,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 74995
+          "unitAmount": 59995
         },
         {
           "id": "500G",
@@ -2362,7 +2362,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 119995
+          "unitAmount": 84995
         },
         {
           "id": "1KG",
@@ -2370,7 +2370,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 172995
+          "unitAmount": 119995
         },
         {
           "id": "2KG",
@@ -2378,7 +2378,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 201995
+          "unitAmount": 139995
         },
         {
           "id": "5KG",
@@ -2386,7 +2386,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 225995
+          "unitAmount": 199995
         },
         {
           "id": "10KG",
@@ -2394,7 +2394,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 230995
+          "unitAmount": 229995
         }
       ]
     },
@@ -2472,7 +2472,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 53995
+          "unitAmount": 51995
         },
         {
           "id": "500G",
@@ -2480,7 +2480,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 80995
+          "unitAmount": 77995
         },
         {
           "id": "1KG",
@@ -2488,7 +2488,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 115995
+          "unitAmount": 109995
         },
         {
           "id": "2KG",
@@ -2496,7 +2496,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 135995
+          "unitAmount": 129995
         },
         {
           "id": "5KG",
@@ -2504,7 +2504,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 161995
+          "unitAmount": 154995
         },
         {
           "id": "10KG",
@@ -2512,7 +2512,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 218995
+          "unitAmount": 209995
         }
       ]
     },
@@ -2590,7 +2590,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 83995
+          "unitAmount": 39995
         },
         {
           "id": "500G",
@@ -2598,7 +2598,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 125995
+          "unitAmount": 54995
         },
         {
           "id": "1KG",
@@ -2606,7 +2606,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 179995
+          "unitAmount": 74995
         },
         {
           "id": "2KG",
@@ -2614,7 +2614,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 210995
+          "unitAmount": 99995
         },
         {
           "id": "5KG",
@@ -2622,7 +2622,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 340995
+          "unitAmount": 149995
         },
         {
           "id": "10KG",
@@ -2630,7 +2630,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 631995
+          "unitAmount": 239995
         }
       ]
     },
@@ -2653,7 +2653,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 88995
+          "unitAmount": 44995
         },
         {
           "id": "500G",
@@ -2661,7 +2661,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 132995
+          "unitAmount": 62995
         },
         {
           "id": "1KG",
@@ -2669,7 +2669,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 189995
+          "unitAmount": 84995
         },
         {
           "id": "2KG",
@@ -2677,7 +2677,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 221995
+          "unitAmount": 109995
         },
         {
           "id": "5KG",
@@ -2685,7 +2685,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 351995
+          "unitAmount": 169995
         },
         {
           "id": "10KG",
@@ -2693,7 +2693,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 652995
+          "unitAmount": 269995
         }
       ]
     },
@@ -2771,7 +2771,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 50995
+          "unitAmount": 34995
         },
         {
           "id": "500G",
@@ -2779,7 +2779,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 75995
+          "unitAmount": 54995
         },
         {
           "id": "1KG",
@@ -2787,7 +2787,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 108995
+          "unitAmount": 74995
         },
         {
           "id": "2KG",
@@ -2795,7 +2795,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 127995
+          "unitAmount": 99995
         },
         {
           "id": "5KG",
@@ -2803,7 +2803,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 213995
+          "unitAmount": 194995
         },
         {
           "id": "10KG",
@@ -2811,7 +2811,7 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 397995
+          "unitAmount": 394995
         }
       ]
     }

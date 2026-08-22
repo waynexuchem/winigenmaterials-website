@@ -210,6 +210,55 @@ for (const product of productSource.products) {
     if (!/Online ordering/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks static online-ordering status.`);
     if (!/data-static-commerce="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static commerce panel.`);
     if (!/>Add to Cart</i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static Add to Cart control.`);
+    const commercePanelCount = (productHtml.match(/data-ecommerce-panel="true"/gi) || []).length;
+    const packageSelectorCount = (productHtml.match(/class="ecommerce-package"/gi) || []).length;
+    const addToCartCount = (productHtml.match(/data-add-to-cart/gi) || []).length;
+    if (commercePanelCount !== 1) errors.push(`${pagePath}: expected one commerce panel, found ${commercePanelCount}.`);
+    if (packageSelectorCount !== 1) errors.push(`${pagePath}: expected one package selector, found ${packageSelectorCount}.`);
+    if (addToCartCount !== 1) errors.push(`${pagePath}: expected one Add to Cart control, found ${addToCartCount}.`);
+    if (!/data-product-detail-ux="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks the generated key-specification summary.`);
+    if (!/data-product-detail-nav="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks shared section navigation.`);
+    if (!productHtml.includes(`Winigen product code</span><strong>${product.sku}</strong>`)) errors.push(`${pagePath}: direct product lacks its canonical customer-facing product code.`);
+    const representativeCoa = product.qualityDocumentation?.representativeCoa;
+    if (representativeCoa) {
+      const documentPath = resolve(siteRoot, representativeCoa.path.replace(/^\//, ''));
+      try { await access(documentPath); }
+      catch { errors.push(`${pagePath}: representative COA file does not exist: ${representativeCoa.path}.`); }
+      const expectedHref = `..${representativeCoa.path}`;
+      if (!productHtml.includes(`href="${expectedHref}"`)) errors.push(`${pagePath}: representative COA link is missing or incorrect.`);
+      if (!/View Representative COA \(PDF\)/i.test(productHtml)) errors.push(`${pagePath}: representative COA action is missing.`);
+      if (!/Request Current Lot COA/i.test(productHtml)) errors.push(`${pagePath}: current-lot COA request action is missing.`);
+      if (!/representative production-lot data/i.test(productHtml) || !/lot-specific certificate of analysis/i.test(productHtml)) {
+        errors.push(`${pagePath}: representative-lot disclaimer is incomplete.`);
+      }
+      const excluded = /^(?:abbreviation|cas number|formula|availability|commercial availability)$/i;
+      const acceptanceSpecifications = (product.additionalProperty || []).filter(item => item?.name && item?.value && !excluded.test(item.name));
+      const schemaProperties = products[0]?.additionalProperty || [];
+      for (const specification of acceptanceSpecifications) {
+        if (!productHtml.includes(specification.name) || !productHtml.includes(specification.value)) {
+          errors.push(`${pagePath}: visible acceptance specification is missing ${specification.name}: ${specification.value}.`);
+        }
+        if (!schemaProperties.some(item => item.name === specification.name && item.value === specification.value)) {
+          errors.push(`${pagePath}: Product schema contradicts or omits ${specification.name}: ${specification.value}.`);
+        }
+      }
+      if (/purity(?:%20|\s)*(?:&gt;|>|%3E)(?:%20|\s)*99\.9%|water(?:%20|\s)*(?:&lt;|<|%3C)(?:=|%3D)?(?:%20|\s)*50\s*ppm/i.test(productHtml)) {
+        errors.push(`${pagePath}: stale generic purity or water specification remains.`);
+      }
+      const forbiddenLotResults = product.slug === 'lithium-tetrafluoroborate-libf-4'
+        ? ['99.758', '15.6 ppm']
+        : product.slug === 'lithium-difluoro-oxalate-borate-liodfb'
+          ? ['99.917', '238.1 ppm']
+          : [];
+      for (const measuredValue of forbiddenLotResults) {
+        if (productHtml.includes(measuredValue)) errors.push(`${pagePath}: representative-lot result ${measuredValue} leaked into product copy.`);
+      }
+    } else if (!/Request COA \/ SDS/i.test(productHtml)) {
+      errors.push(`${pagePath}: direct product lacks a truthful documentation request action.`);
+    }
+    if (!/id="technical-guides"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks related technical guides.`);
+    const packageSummaryItems = (productHtml.match(/class="ecommerce-package-summary__item(?: is-selected)?"/g) || []).length;
+    if (packageSummaryItems !== expectedOffers.length) errors.push(`${pagePath}: package summary count ${packageSummaryItems} does not match ${expectedOffers.length} approved packages.`);
     if (/\b<dt>Availability<\/dt><dd>RFQ<\/dd>/i.test(productHtml)) errors.push(`${pagePath}: direct product still displays RFQ availability.`);
     if (/Available by RFQ/i.test(productHtml)) errors.push(`${pagePath}: direct product contains contradictory RFQ-only wording.`);
     for (const variant of expectedOffers) {
@@ -278,7 +327,7 @@ for (const canonical of indexedCanonicals.keys()) {
   if (!sitemapUrls.includes(canonical.split('#')[0])) warnings.push(`sitemap.xml: missing ${canonical}.`);
 }
 for (const url of sitemapUrls) {
-  if (/checkout-(?:success|cancel)|stripe-test/.test(url)) errors.push(`sitemap.xml: test/checkout URL included: ${url}.`);
+  if (/checkout-(?:success|cancel)|stripe(?:-live)?-test/.test(url)) errors.push(`sitemap.xml: test/checkout URL included: ${url}.`);
 }
 
 const browserCatalogSource = await readFile(resolve(siteRoot, 'assets/js/ecommerce-catalog.js'), 'utf8');

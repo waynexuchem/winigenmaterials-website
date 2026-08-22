@@ -1,6 +1,6 @@
 /* Generated from catalog/products.source.json. Do not edit directly. */
 window.WINIGEN_PRODUCT_SEARCH_INDEX = {
-  "version": "2026-08-21-li3incl6-removal-v1",
+  "version": "2026-08-22-supplier-rfq-quarantine-v1",
   "records": [
     {
       "slug": "lithium-hexafluorophosphate-lipf6",
@@ -50,7 +50,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C2BF2LiO4",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium difluoro oxalate borate (LiODFB), CAS 409071-16-5, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Lithium difluoro oxalate borate (LiODFB) supplier where to buy Lithium difluoro oxalate borate (LiODFB) Abbreviation LiODFB CAS Number 409071-16-5 Formula C2BF2LiO4 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
+      "metadata": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a battery-grade lithium salt available from Winigen Materials. Commercial acceptance specifications include purity ≥99.8 wt%, moisture ≤500 ppm, and acidity (as HF) ≤200 ppm. Lithium difluoro oxalate borate (LiODFB) supplier where to buy Lithium difluoro oxalate borate (LiODFB) Abbreviation LiODFB CAS Number 409071-16-5 Formula C2BF2LiO4 Availability RFQ Grade Battery grade Purity ≥99.8 wt% Moisture ≤500 ppm Acidity (as HF) ≤200 ppm Trace metals Generally ≤5 ppm by ICP-OES; Na ≤1 ppm Chloride ≤10 ppm Sulfate ≤10 ppm Residual carbonate solvents ≤500 ppm Residual non-carbonate solvents ≤50 ppm Insolubles ≤1000 ppm"
     },
     {
       "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
@@ -86,7 +86,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "LiBF4",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Lithium tetrafluoroborate (LiBF4) supplier where to buy Lithium tetrafluoroborate (LiBF4) Abbreviation LiBF4 CAS Number 14283-07-9 Formula LiBF4 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
+      "metadata": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium salt available from Winigen Materials. Commercial acceptance specifications include purity ≥99.7 wt%, moisture ≤100 ppm, and acidity (as HF) ≤100 ppm. Lithium tetrafluoroborate (LiBF4) supplier where to buy Lithium tetrafluoroborate (LiBF4) Abbreviation LiBF4 CAS Number 14283-07-9 Formula LiBF4 Availability RFQ Grade Battery grade Purity ≥99.7 wt% Moisture ≤100 ppm Acidity (as HF) ≤100 ppm Trace metals Individual ICP-OES limits ≤10 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "ethylene-carbonate-ec",

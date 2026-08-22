@@ -8,6 +8,28 @@ const orderStatusPath = '/api/order-status';
 const webhookPath = '/api/stripe-webhook';
 const internalCheckoutPath = '/api/internal/cost-compensation-checkout';
 const webhookToleranceSeconds = 300;
+export const LIVE_SMOKE_TEST_PURPOSE = 'live_checkout_smoke_test';
+export const LIVE_SMOKE_TEST_SKU = 'WM-LIVE-TEST-1USD';
+const liveSmokeTestProduct = Object.freeze({
+  slug: 'live-checkout-smoke-test',
+  name: 'Winigen Checkout Test',
+  grade: 'Production checkout validation',
+  commercialStatus: 'ONLINE_CHECKOUT',
+  shippingClass: 'STANDARD_RD'
+});
+const liveSmokeTestVariant = Object.freeze({
+  key: LIVE_SMOKE_TEST_SKU,
+  sku: LIVE_SMOKE_TEST_SKU,
+  label: 'Fixed quantity 1',
+  unit: 'unit',
+  quantity: 1,
+  netWeightGrams: 1,
+  shippingWeightGrams: 1,
+  unitAmount: 100,
+  currency: 'usd',
+  approvalStatus: 'ACTIVE',
+  product: liveSmokeTestProduct
+});
 const internalProduct = Object.freeze({
   sku: 'WM-INTERNAL-COST-COMP',
   name: 'Cost Compensation',
@@ -95,6 +117,20 @@ export function resolveCart(cart) {
 
   const items = Array.from(normalized.values());
   if (items.some(item => item.quantity > 25)) throw new Error('A package quantity exceeds the online ordering limit.');
+  const commercialMassByGroup = new Map();
+  for (const item of items) {
+    const group = item.variant.product.directOrderCeilingGroup;
+    const ceiling = item.variant.product.directOrderCeilingGrams;
+    const current = commercialMassByGroup.get(group) || { grams: 0, ceiling, name: item.variant.product.name };
+    if (current.ceiling !== ceiling) throw new Error('Catalog contains inconsistent direct-order commercial ceilings.');
+    current.grams += item.variant.netWeightGrams * item.quantity;
+    commercialMassByGroup.set(group, current);
+  }
+  for (const entry of commercialMassByGroup.values()) {
+    if (entry.grams > entry.ceiling) {
+      throw new Error(`${entry.name} exceeds its approved direct-order quantity. Please request a bulk quote.`);
+    }
+  }
   const shippingClass = items.reduce((current, item) => (
     shippingPrecedence[item.variant.product.shippingClass] > shippingPrecedence[current]
       ? item.variant.product.shippingClass
@@ -104,6 +140,22 @@ export function resolveCart(cart) {
   const totalShippingWeightGrams = items.reduce((total, item) => total + item.variant.shippingWeightGrams * item.quantity, 0);
   if (!Number.isFinite(totalShippingWeightGrams) || totalShippingWeightGrams <= 0) throw new Error('Cart shipping weight is unavailable.');
   return { items, shippingClass, merchandiseSubtotal, totalShippingWeightGrams };
+}
+
+export function resolveLiveSmokeTestCart(cart) {
+  if (!Array.isArray(cart)
+    || cart.length !== 1
+    || cart[0]?.variantKey !== LIVE_SMOKE_TEST_SKU
+    || cart[0]?.quantity !== 1) {
+    throw new Error('The live Checkout smoke test requires its isolated fixed-quantity test item.');
+  }
+  return {
+    items: [{ variant: liveSmokeTestVariant, quantity: 1 }],
+    shippingClass: 'STANDARD_RD',
+    merchandiseSubtotal: liveSmokeTestVariant.unitAmount,
+    totalShippingWeightGrams: liveSmokeTestVariant.shippingWeightGrams,
+    purpose: LIVE_SMOKE_TEST_PURPOSE
+  };
 }
 
 function createReviewPayload(resolvedCart, action, destinationCountry = null) {
@@ -137,9 +189,9 @@ async function nextOrderId(db, env) {
   return `${prefix}-${orderDate}-${String(result.last_number).padStart(4, '0')}`;
 }
 
-async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null) {
+async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null, purpose = null) {
   const existing = await env.ORDERS_DB.prepare(`
-    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url, checkout_cart_hash
+    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url, checkout_cart_hash, purpose
     FROM test_orders
     WHERE checkout_attempt_id = ?
   `).bind(attemptId).first();
@@ -148,6 +200,7 @@ async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null) {
     if (checkoutCartHash && existing.checkout_cart_hash && existing.checkout_cart_hash !== checkoutCartHash) {
       throw new Error('Checkout attempt does not match the current cart.');
     }
+    if ((existing.purpose || null) !== purpose) throw new Error('Checkout attempt purpose does not match.');
     return existing;
   }
 
@@ -157,13 +210,14 @@ async function getOrCreateAttempt(attemptId, env, checkoutCartHash = null) {
       winigen_order_id,
       checkout_attempt_id,
       checkout_cart_hash,
+      purpose,
       payment_status,
       fulfillment_status
-    ) VALUES (?, ?, ?, 'PENDING', 'NOT_APPLICABLE')
-  `).bind(proposedOrderId, attemptId, checkoutCartHash).run();
+    ) VALUES (?, ?, ?, ?, 'PENDING', 'NOT_APPLICABLE')
+  `).bind(proposedOrderId, attemptId, checkoutCartHash, purpose).run();
 
   return env.ORDERS_DB.prepare(`
-    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url, checkout_cart_hash
+    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url, checkout_cart_hash, purpose
     FROM test_orders
     WHERE checkout_attempt_id = ?
   `).bind(attemptId).first();
@@ -183,6 +237,10 @@ export async function createCartCheckoutSession(order, attemptId, resolvedCart, 
     'metadata[shipping_destination_country]': shippingDestination.country,
     'payment_intent_data[metadata][winigen_order_id]': order.winigen_order_id
   });
+  if (resolvedCart.purpose) {
+    params.set('metadata[purpose]', resolvedCart.purpose);
+    params.set('payment_intent_data[metadata][purpose]', resolvedCart.purpose);
+  }
   params.set('shipping_address_collection[allowed_countries][0]', shippingDestination.country);
   resolvedCart.items.forEach(({ variant, quantity }, index) => {
     params.set(`line_items[${index}][price_data][currency]`, variant.currency);
@@ -352,7 +410,15 @@ async function handleCreateCheckoutSession(request, env) {
 
   if (Array.isArray(body.cart)) {
     try {
-      const resolvedCart = resolveCart(body.cart);
+      const containsLiveSmokeSku = body.cart.some(item => item?.variantKey === LIVE_SMOKE_TEST_SKU);
+      const requestsLiveSmokeTest = body.purpose === LIVE_SMOKE_TEST_PURPOSE || containsLiveSmokeSku;
+      if (requestsLiveSmokeTest && (!isLiveMode(env) || env.LIVE_SMOKE_TEST_ENABLED !== 'true')) {
+        return jsonResponse({ error: 'The live Checkout smoke test is not enabled.' }, 404, origin);
+      }
+      const resolvedCart = requestsLiveSmokeTest ? resolveLiveSmokeTestCart(body.cart) : resolveCart(body.cart);
+      if (requestsLiveSmokeTest && body.purpose !== LIVE_SMOKE_TEST_PURPOSE) {
+        throw new Error('The live Checkout smoke-test purpose is required.');
+      }
       const shippingDestination = resolveShippingDestination(body.destinationCountry, resolvedCart.totalShippingWeightGrams);
       if (!shippingDestination) {
         return jsonResponse({
@@ -369,7 +435,7 @@ async function handleCreateCheckoutSession(request, env) {
       if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq', shippingDestination.country), 200, origin);
       if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country), 200, origin);
       const cartHash = createCartFingerprint(resolvedCart.items, shippingDestination.country);
-      const order = await getOrCreateAttempt(body.attemptId, env, cartHash);
+      const order = await getOrCreateAttempt(body.attemptId, env, cartHash, resolvedCart.purpose || null);
       if (order.stripe_checkout_session_id && order.checkout_url) return jsonResponse({ action: 'checkout', url: order.checkout_url, orderId: order.winigen_order_id }, 200, origin);
       const session = await createCartCheckoutSession(order, body.attemptId, resolvedCart, shippingDestination, env);
       const lineStatements = resolvedCart.items.map(({ variant, quantity }) => env.ORDERS_DB.prepare(`

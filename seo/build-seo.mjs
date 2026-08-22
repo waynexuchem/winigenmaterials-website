@@ -10,7 +10,7 @@ const siteUrl = 'https://www.winigenmaterials.com';
 const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const commerceAssetVersion = ecommerceSource.catalogVersion.replace(/[^A-Za-z0-9.-]/g, '');
-const generatedAssetVersion = `${commerceAssetVersion}-storefront-feedback-v1`;
+const generatedAssetVersion = `${commerceAssetVersion}-storefront-feedback-v1-product-detail-ux-v1`;
 const intents = JSON.parse(await readFile(resolve(siteRoot, 'seo/search-intents.json'), 'utf8'));
 const pageMetadata = JSON.parse(await readFile(resolve(siteRoot, 'seo/page-metadata.json'), 'utf8'));
 const execFile = promisify(execFileCallback);
@@ -108,6 +108,97 @@ function activeVariants(product) {
 function defaultActiveVariant(product, variants = activeVariants(product)) {
   const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
   return variants.find(variant => variant.id === commerce?.defaultPackageId) || variants[0];
+}
+
+function productKeySpecifications(product) {
+  const excluded = /^(?:availability|commercial availability)$/i;
+  const isSse = product.family === 'solid-state-electrolytes';
+  const priorities = isSse
+    ? [/cas/i, /d50|particle size/i, /ionic conductivity/i, /electronic conductivity/i, /appearance|physical/i, /water|moisture/i, /composition/i, /grade|purity/i, /storage|handling/i, /formula/i]
+    : [/cas/i, /grade/i, /purity/i, /water|moisture/i, /free acid|\bhf\b/i, /appearance|physical/i, /storage|handling/i, /formula/i, /concentration|ratio|content|product type/i];
+  const labelFor = name => /^physical$/i.test(name) ? 'Appearance' : name;
+  return (product.additionalProperty || [])
+    .filter(item => item?.name && item?.value && !excluded.test(item.name))
+    .map((item, sourceIndex) => {
+      const text = `${item.name} ${item.value}`;
+      const rank = priorities.findIndex(pattern => pattern.test(text));
+      return { ...item, name: labelFor(item.name), rank: rank < 0 ? priorities.length : rank, sourceIndex };
+    })
+    .sort((a, b) => a.rank - b.rank || a.sourceIndex - b.sourceIndex)
+    .slice(0, 6);
+}
+
+function packagePricingSummary(product, variants = activeVariants(product)) {
+  if (!variants.length) return '';
+  const defaultVariant = defaultActiveVariant(product, variants);
+  const items = variants.map(variant => `<div class="ecommerce-package-summary__item${variant.key === defaultVariant.key ? ' is-selected' : ''}" data-package-key="${escapeHtml(variant.key)}"><span>${escapeHtml(variant.label)}</span><strong>${formatUsd(variant.unitAmount)}</strong></div>`).join('');
+  return `<section class="ecommerce-package-summary" id="packages" aria-labelledby="package-pricing-title"><div class="ecommerce-package-summary__heading"><h3 id="package-pricing-title">Package pricing</h3><p>Select a package below to add it to your cart.</p></div><div class="ecommerce-package-summary__grid">${items}</div></section>`;
+}
+
+function productDocumentation(product, documentationHref) {
+  const representativeCoa = product.qualityDocumentation?.representativeCoa;
+  if (!representativeCoa) {
+    return `<section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Quality and handling documents</h3><p>Request the current lot-specific COA, SDS, specification information, and available handling guidance.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${documentationHref}">Request COA / SDS</a><a href="../quality.html">Quality documentation</a></div></section>`;
+  }
+
+  const excluded = /^(?:abbreviation|cas number|formula|availability|commercial availability)$/i;
+  const acceptanceSpecifications = (product.additionalProperty || [])
+    .filter(item => item?.name && item?.value && !excluded.test(item.name));
+  const acceptanceMarkup = acceptanceSpecifications
+    .map(item => `<div class="product-documentation__spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`)
+    .join('');
+  const documentHref = representativeCoa.path.startsWith('/')
+    ? `..${representativeCoa.path}`
+    : representativeCoa.path;
+
+  return `<section class="product-documentation product-documentation--representative" id="documentation" aria-labelledby="product-documentation-title"><div class="product-documentation__content"><p class="detail-kicker">Quality Documentation</p><h3 id="product-documentation-title">${escapeHtml(representativeCoa.title)}</h3><p>${escapeHtml(representativeCoa.description)}</p><div class="product-documentation__acceptance"><h4>Commercial acceptance specifications</h4><dl class="product-documentation__specifications">${acceptanceMarkup}</dl></div><p class="product-documentation__notice">${escapeHtml(representativeCoa.disclaimer)}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(documentHref)}" target="_blank" rel="noopener">View Representative COA (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section>`;
+}
+
+function synchronizeRepresentativeCoaCopy(html, product) {
+  if (!product.qualityDocumentation?.representativeCoa) return html;
+  const excluded = /^(?:abbreviation|cas number|formula|availability|commercial availability)$/i;
+  const specifications = (product.additionalProperty || [])
+    .filter(item => item?.name && item?.value && !excluded.test(item.name));
+  const summary = `The commercial acceptance specifications shown are ${specifications.map(item => `${item.name.toLowerCase()} ${item.value}`).join(', ')}. Request the current lot-specific COA for the material that will ship.`;
+  const cleanQuoteHref = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
+  let next = html
+    .replace(/"text":\s*"The target specifications currently shown are[^"\r\n]*"/gi, `"text": ${JSON.stringify(summary)}`)
+    .replace(/<details><summary>What specifications are shown for [\s\S]*?<\/summary><p>[\s\S]*?<\/p><\/details>/i, `<details><summary>What specifications are shown for ${escapeHtml(product.name)}?</summary><p>${escapeHtml(summary)}</p></details>`)
+    .replace(/href="\.\.\/contact\.html\?inquiry_type=Request%20for%20Quote&amp;product_interest=[^"]*?&amp;(?:quantity_scale|message)=[^"]*"/gi, `href="${cleanQuoteHref}"`)
+    .replace(/<p class="related-note"><strong>Need COA\?<\/strong>[\s\S]*?<\/p>/i, '');
+  return next;
+}
+
+function renderProductDetailExperience(html, product) {
+  if (product.commerceStatus !== 'active_checkout') return html;
+  const variants = activeVariants(product);
+  if (!variants.length) return html;
+  const family = familiesBySlug.get(product.family);
+  const quoteHref = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
+  const documentationHref = `../contact.html?inquiry_type=${encodeURIComponent('Documentation / COA / SDS Request')}&amp;product_interest=${encodeURIComponent(product.name)}`;
+  const technicalHref = `../contact.html?inquiry_type=${encodeURIComponent('Technical Discussion')}&amp;product_interest=${encodeURIComponent(product.name)}`;
+  const specs = productKeySpecifications(product);
+  const specificationMarkup = specs.map(item => `<div class="product-key-spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('');
+  const documentation = productDocumentation(product, documentationHref);
+  const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div><span class="product-detail-summary__status">Online ordering</span></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><p class="detail-kicker">Commercial summary</p><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${documentation}</div>`;
+  const navigation = `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#documentation">Documentation</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a></div></nav>`;
+  const support = `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
+
+  let next = html
+    .replace(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"[\s\S]*?<\/nav>/gi, '')
+    .replace(/<div class="product-detail-summary"[^>]*data-product-detail-ux="true"[\s\S]*?<\/section><\/div>/gi, '')
+    .replace(/<section class="section product-support-routing"[^>]*data-product-support-routing="true"[\s\S]*?<\/section>/gi, '')
+    .replace(/<dl class="detail-facts">[\s\S]*?<\/dl>/i, '')
+    .replace(/<h3>Typical Specification<\/h3>\s*<ul class="spec-list">[\s\S]*?<\/ul>/i, '')
+    .replace(/(<section class="section dark product-detail-hero">[\s\S]*?<\/section>)/i, `$1${navigation}`)
+    .replace(/<section class="section"><div class="container product-detail-layout">/i, '<section class="section product-detail-overview" id="overview"><div class="container product-detail-layout">')
+    .replace(/(<article class="detail-panel">[\s\S]*?<p>[^<]*<\/p>)/i, `$1${summary}`)
+    .replace(/<section class="section"><div class="container product-technical-grid">/i, '<section class="section" id="applications"><div class="container product-technical-grid">');
+  if (family && !next.includes('data-product-support-routing="true"')) {
+    const faqStart = next.search(/<section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Product FAQ/i);
+    next = faqStart >= 0 ? `${next.slice(0, faqStart)}${support}${next.slice(faqStart)}` : next.replace(/<\/main>/i, `${support}</main>`);
+  }
+  return next;
 }
 
 function ensureStylesheet(html, href) {
@@ -240,12 +331,44 @@ function commercePanel(product) {
   const shippingCopy = sulfideGradeCode(product)
     ? '<div class="ecommerce-panel__shipping-note"><strong>Specialized shipping required</strong><p>Sulfide solid electrolytes are air- and moisture-sensitive and require specialized packaging and transportation. Shipping is quoted separately by destination, and multiple sulfide grades may be consolidated in one shipment where feasible.</p></div>'
     : '<p class="ecommerce-panel__note">Shipping and handling are included in listed prices for eligible destinations.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>';
-  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div>${shippingCopy}</section>`;
+  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div>${shippingCopy}</section>`;
+}
+
+function removeCommercePanels(html) {
+  let next = html;
+  const openingPattern = /<section\b[^>]*data-ecommerce-panel="true"[^>]*>/i;
+
+  while (true) {
+    const opening = openingPattern.exec(next);
+    if (!opening) return next;
+
+    const start = opening.index;
+    const sectionPattern = /<\/?section\b[^>]*>/gi;
+    sectionPattern.lastIndex = start + opening[0].length;
+    let depth = 1;
+    let token;
+
+    while ((token = sectionPattern.exec(next))) {
+      depth += token[0].startsWith('</') ? -1 : 1;
+      if (depth === 0) {
+        next = `${next.slice(0, start)}${next.slice(sectionPattern.lastIndex)}`;
+        break;
+      }
+    }
+
+    if (depth !== 0) {
+      throw new Error('Unable to find the closing tag for a generated ecommerce panel.');
+    }
+  }
+}
+
+function removeOrphanedCommercePanelBodies(html) {
+  return html.replace(/\s*<div class="ecommerce-panel__fields">[\s\S]*?<\/section>\s*/gi, '\n');
 }
 
 function renderStaticProductCommerce(html, product) {
   if (product.commerceStatus !== 'active_checkout' || !activeVariants(product).length) return html;
-  let next = html.replace(/<section class="ecommerce-panel"[^>]*data-ecommerce-panel="true"[\s\S]*?<\/section>/i, '');
+  let next = removeOrphanedCommercePanelBodies(removeCommercePanels(html));
   next = next.replace(/(<dt>Availability<\/dt><dd>)[\s\S]*?(<\/dd>)/i, '$1Online ordering$2');
   next = next.replace(/(<section class="section dark product-detail-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i,
     `$1<p>${escapeHtml(productDescription(product))}</p>`);
@@ -266,10 +389,13 @@ function renderStaticProductCommerce(html, product) {
 
 function renderStaticRfqState(html, product) {
   if (product.commerceStatus !== 'rfq') return html;
-  let next = html.replace(/<section class="ecommerce-panel"[^>]*data-ecommerce-panel="true"[\s\S]*?<\/section>/gi, '');
+  let next = removeOrphanedCommercePanelBodies(removeCommercePanels(html));
   next = next
+    .replace(/<div class="detail-actions" hidden data-ecommerce-fallback-actions="true">/gi, '<div class="detail-actions">')
     .replace(/(<dt>Availability<\/dt>\s*<dd>)[\s\S]*?(<\/dd>)/gi, '$1Available by RFQ$2')
     .replace(/(<dt>Available<\/dt>\s*<dd>)[\s\S]*?(<\/dd>)/gi, '<dt>Commercial status</dt><dd>Available by RFQ</dd>')
+    .replace(/Selected research packages are available for online ordering, with bulk supply and related materials-development requirements handled by quotation\./gi,
+      'This material is available by RFQ while supplier availability, grade, package sizes, and commercial terms are confirmed.')
     .replace(/(<section class="section dark product-detail-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i,
       `$1<p>${escapeHtml(productDescription(product))}</p>`);
   return next;
@@ -571,20 +697,20 @@ function articleSchema(existing, pagePath, html) {
 function relatedModule(kind, relatedFamilies, relatedKnowledge = []) {
   const familyLinks = relatedFamilies.map(slug => familiesBySlug.get(slug)).filter(Boolean)
     .map(family => `<a href="../${family.url.replace(/^\//, '')}">${escapeHtml(family.name)}</a>`);
-  const knowledgeLinks = relatedKnowledge
+  const knowledgeLinks = relatedKnowledge.slice(0, 4)
     .map(file => `<a href="../knowledge/${file}">${escapeHtml(file.replace(/\.html$/, '').split('-').map(word => ['sei', 'cei', 'latp', 'llzo', 'lifsi', 'lipf6', 'litfsi', 'np'].includes(word) ? word.toUpperCase() : word.charAt(0).toUpperCase() + word.slice(1)).join(' '))}</a>`);
   const links = kind === 'knowledge' ? familyLinks : knowledgeLinks;
   if (!links.length) return '';
-  const heading = kind === 'knowledge' ? 'Relevant Winigen Materials' : 'Related Technical Resources';
-  return `<section class="section seo-related-resources" data-seo-generated="related-resources"><div class="container"><p class="eyebrow">Explore Further</p><h2>${heading}</h2><div class="seo-related-resources__links">${links.join('')}</div></div></section>`;
+  const heading = kind === 'knowledge' ? 'Relevant Winigen Materials' : 'Related Technical Guides';
+  const id = kind === 'knowledge' ? '' : ' id="technical-guides"';
+  return `<section class="section seo-related-resources"${id} data-seo-generated="related-resources"><div class="container"><p class="eyebrow">Explore Further</p><h2>${heading}</h2><div class="seo-related-resources__links">${links.join('')}</div></div></section>`;
 }
 
 function ensureRelatedModule(html, module, kind) {
   if (!module) return html;
   if (html.includes('data-seo-generated="related-resources"')) {
-    return html.replace(/<section class="section seo-related-resources" data-seo-generated="related-resources">[\s\S]*?<\/section>/i, module);
+    return html.replace(/<section class="section seo-related-resources"[^>]*data-seo-generated="related-resources"[^>]*>[\s\S]*?<\/section>/i, module);
   }
-  if (kind === 'product' && /href=["']\.\.\/knowledge\//i.test(html)) return html;
   return html.replace(/<\/main>/i, `${module}\n</main>`);
 }
 
@@ -644,6 +770,8 @@ async function updateProductPage(pagePath, product) {
   html = renderStaticRfqState(html, product);
   html = ensureStylesheet(html, '../assets/css/ecommerce.css?v=' + generatedAssetVersion);
   html = ensureRelatedModule(html, relatedModule('product', [], intents.families[product.family]?.relatedKnowledge || []), 'product');
+  html = renderProductDetailExperience(html, product);
+  html = synchronizeRepresentativeCoaCopy(html, product);
   await writePreservingEol(fullPath, html, original);
   auditRows.push({
     url: canonical,
@@ -793,7 +921,7 @@ async function listHtml(directory) {
 }
 
 async function normalizeOtherPage(pagePath) {
-  const excluded = new Set(['checkout-success.html', 'checkout-cancel.html', 'stripe-test.html']);
+  const excluded = new Set(['checkout-success.html', 'checkout-cancel.html', 'stripe-test.html', 'stripe-live-test.html']);
   if (excluded.has(pagePath) || pagePath.startsWith('products/') || pagePath.startsWith('knowledge/')) return;
   const fullPath = resolve(siteRoot, pagePath);
   const original = await readFile(fullPath, 'utf8');
@@ -848,7 +976,7 @@ if (buildScope === 'all') {
   await writePreservingEol(indexPath, indexHtml, originalIndexHtml);
 }
 
-const sitemapExclusions = new Set(['checkout-success.html', 'checkout-cancel.html', 'stripe-test.html']);
+const sitemapExclusions = new Set(['checkout-success.html', 'checkout-cancel.html', 'stripe-test.html', 'stripe-live-test.html']);
 const sitemapUrls = new Set();
 for (const pagePath of allHtml) {
   if (sitemapExclusions.has(pagePath)) continue;

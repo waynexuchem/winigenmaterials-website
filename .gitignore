@@ -6,6 +6,7 @@ seo/audit.csv
 scripts/
 !scripts/
 scripts/*
+!scripts/sync-static-asset-versions.mjs
 !scripts/build-knowledge-index.mjs
 !scripts/apply-approved-pricing.mjs
 !scripts/build-product-search-index.mjs

@@ -100,14 +100,17 @@ function insertIntoSection(html, sectionId, cards) {
   return `${html.slice(0, start + gridEnd)}\n${cards.join('\n')}\n    ${html.slice(start + gridEnd)}`;
 }
 
-function synchronizeFormulationCount(html) {
-  const start = html.indexOf('<section id="formulations"');
-  const end = start >= 0 ? html.indexOf('</section>', start) : -1;
-  if (start < 0 || end < 0) return html;
-  const section = html.slice(start, end);
-  const count = (section.match(/<article\b/g) || []).length;
-  const updated = section.replace(/<span class="section-count">[^<]*<\/span>/, `<span class="section-count">${count} items</span>`);
-  return `${html.slice(0, start)}${updated}${html.slice(end)}`;
+function synchronizeSectionCounts(html) {
+  for (const sectionId of Object.values(sectionIds)) {
+    const start = html.indexOf(`<section id="${sectionId}"`);
+    const end = start >= 0 ? html.indexOf('</section>', start) : -1;
+    if (start < 0 || end < 0) continue;
+    const section = html.slice(start, end);
+    const count = (section.match(/<article\b/g) || []).length;
+    const updated = section.replace(/<span class="section-count">[^<]*<\/span>/, `<span class="section-count">${count} materials</span>`);
+    html = `${html.slice(0, start)}${updated}${html.slice(end)}`;
+  }
+  return html;
 }
 
 function insertIntoFamilyGrid(html, cards) {
@@ -196,7 +199,7 @@ for (const product of catalog.products) {
     const cards = catalog.products.filter(product => product.family === family && !hasProductCard(productsHtml, product.slug, false)).map(product => renderCard(product, false));
     productsHtml = insertIntoSection(productsHtml, sectionId, cards);
   }
-  productsHtml = synchronizeFormulationCount(productsHtml);
+  productsHtml = synchronizeSectionCounts(productsHtml);
   await writeFile(productsPath, productsHtml);
 
   for (const [familySlug, family] of families) {

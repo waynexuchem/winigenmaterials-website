@@ -22,7 +22,7 @@
     "EMAIL_PROVIDER": "resend",
     "TEST_ORDER_EMAIL_FROM": "orders@notify.winigenmaterials.com",
     "ORDER_EMAIL_REPLY_TO": "orders@winigenmaterials.com",
-    "ORDER_NOTIFICATION_RECIPIENTS": "orders@winigenmaterials.com,catherinew@winigenmaterials.com"
+    "ORDER_NOTIFICATION_RECIPIENTS": "wayne@winigenmaterials.com,catherinew@winigenmaterials.com"
   },
   "secrets": {
     "required": [

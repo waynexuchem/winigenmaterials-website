@@ -4,6 +4,15 @@
     return filename.replace(/\.html$/, '');
   }
 
+  function formatMoney(unitAmount) {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(unitAmount / 100);
+  }
+
+  function packageSummary(product, variants) {
+    const defaultVariant = variants.find(variant => variant.id === product.defaultPackageId) || variants[0];
+    return `<section class="ecommerce-package-summary" id="packages" aria-labelledby="package-pricing-title"><div class="ecommerce-package-summary__heading"><h3 id="package-pricing-title">Package pricing</h3><p>Select a package below to add it to your cart.</p></div><div class="ecommerce-package-summary__grid">${variants.map(variant => `<div class="ecommerce-package-summary__item${variant.key === defaultVariant.key ? ' is-selected' : ''}" data-package-key="${variant.key}"><span>${variant.label}</span><strong>${formatMoney(variant.unitAmount)}</strong></div>`).join('')}</div></section>`;
+  }
+
   function renderRfqPanel(actionHost) {
     if (!actionHost || actionHost.dataset.commercialPanelReady === 'true') return;
     const quoteLink = actionHost.querySelector('a[href*="contact.html"]');
@@ -55,7 +64,7 @@
       panel = document.createElement('section');
       panel.className = 'ecommerce-panel';
       panel.dataset.ecommercePanel = 'true';
-      panel.innerHTML = `<header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${product.name}<span>${product.grade}</span></p></header><div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package"></select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price"></p><p class="ecommerce-status"></p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div>${shippingCopy}`;
+      panel.innerHTML = `<header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${product.name}<span>${product.grade}</span></p></header>${packageSummary(product, activeVariants)}<div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package"></select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price"></p><p class="ecommerce-status"></p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div>${shippingCopy}`;
       actionHost.insertAdjacentElement('beforebegin', panel);
     }
     if (panel.dataset.interactiveReady === 'true') return;
@@ -74,7 +83,13 @@
     select.value = defaultVariant.key;
     const update = () => {
       const variant = activeVariants.find(entry => entry.key === select.value);
-      price.textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(variant.unitAmount / 100);
+      price.textContent = formatMoney(variant.unitAmount);
+      panel.querySelectorAll('[data-package-key]').forEach(item => {
+        const selected = item.dataset.packageKey === variant.key;
+        item.classList.toggle('is-selected', selected);
+        if (selected) item.setAttribute('aria-current', 'true');
+        else item.removeAttribute('aria-current');
+      });
       status.textContent = product.shippingClass === 'SHIPPING_REVIEW'
         ? 'Material price shown. Specialized logistics require destination review before payment.'
         : 'Lead time and fulfillment eligibility are confirmed during order review.';

@@ -4,6 +4,7 @@ const protectedHosts = [
 ];
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
+const ecommerceAssetVersion = '2ffd943353ac';
 
 function loadSharedScript(path) {
   return new Promise((resolve, reject) => {
@@ -20,14 +21,14 @@ async function initializeEcommerce() {
     if (!document.querySelector('link[href*="assets/css/ecommerce.css"]')) {
       const styles = document.createElement('link');
       styles.rel = 'stylesheet';
-      styles.href = '/assets/css/ecommerce.css?v=2026-08-21-sulfide-sse-v1';
+      styles.href = `/assets/css/ecommerce.css?v=${ecommerceAssetVersion}`;
       document.head.appendChild(styles);
     }
-    await loadSharedScript('/assets/js/ecommerce-catalog.js?v=2026-08-21-sulfide-sse-v1');
+    await loadSharedScript(`/assets/js/ecommerce-catalog.js?v=${ecommerceAssetVersion}`);
     await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
-    await loadSharedScript('/assets/js/cart.js?v=2026-08-21-sulfide-sse-v1');
-    await loadSharedScript('/assets/js/ecommerce-product-page.js?v=2026-08-21-sulfide-sse-v1');
-    await loadSharedScript('/assets/js/ecommerce-listing.js?v=2026-08-21-sulfide-sse-v1');
+    await loadSharedScript(`/assets/js/cart.js?v=${ecommerceAssetVersion}`);
+    await loadSharedScript(`/assets/js/ecommerce-product-page.js?v=${ecommerceAssetVersion}`);
+    await loadSharedScript(`/assets/js/ecommerce-listing.js?v=${ecommerceAssetVersion}`);
     initializeCartNavigation();
     initializeCartPage();
   } catch (error) {
@@ -109,7 +110,10 @@ function initializeCartPage() {
     ...shippingCountries.groups.map(group => `<optgroup label="${group.label}">${group.countries.map(createDestinationOption).join('')}</optgroup>`)
   ].join('');
   const formatMoney = cents => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cents / 100);
-  const rows = cartItems.map(item => `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="25" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity">+</button></div></td><td class="cart-price-cell">${item.variant.unitAmount ? formatMoney(item.variant.unitAmount) : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.unitAmount ? formatMoney(item.variant.unitAmount * item.quantity) : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`).join('');
+  const rows = cartItems.map(item => {
+    const maximumQuantity = window.WinigenCart.maximumQuantity(item.variant.key);
+    return `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="${maximumQuantity}" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity"${item.quantity >= maximumQuantity ? ' disabled' : ''}>+</button></div></td><td class="cart-price-cell">${item.variant.unitAmount ? formatMoney(item.variant.unitAmount) : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.unitAmount ? formatMoney(item.variant.unitAmount * item.quantity) : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`;
+  }).join('');
   const fulfillmentMessage = blockedItems.length > 0
     ? 'Some cart packages are still being confirmed and cannot proceed.'
     : cartShippingClass === 'RFQ_SHIPPING'
