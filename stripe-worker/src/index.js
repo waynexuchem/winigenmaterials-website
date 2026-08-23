@@ -1,10 +1,19 @@
-import { CATALOG_VERSION, VARIANTS_BY_KEY } from './catalog.js';
+import {
+  CATALOG_PRODUCT_COUNT,
+  CATALOG_VARIANT_COUNT,
+  CATALOG_VERSION,
+  COMMERCE_RELEASE,
+  REQUIRED_D1_MIGRATION,
+  REQUIRED_D1_SCHEMA_VERSION,
+  VARIANTS_BY_KEY
+} from './catalog.js';
 import { createOrderNotificationRecords, deliverOrderNotification } from './email/notifications.js';
 import { resolveShippingDestination } from './shipping.js';
 
 const checkoutPath = '/api/create-checkout-session';
 const shippingQuotePath = '/api/shipping-quote';
 const orderStatusPath = '/api/order-status';
+const commerceStatusPath = '/api/commerce-status';
 const webhookPath = '/api/stripe-webhook';
 const internalCheckoutPath = '/api/internal/cost-compensation-checkout';
 const webhookToleranceSeconds = 300;
@@ -79,6 +88,44 @@ export function validateRuntimeConfiguration(env) {
   }
   if (!env.STRIPE_WEBHOOK_SECRET?.startsWith('whsec_')) throw new Error('Stripe webhook secret is not configured.');
   return mode;
+}
+
+export async function readD1SchemaStatus(db) {
+  if (!db?.prepare) return { currentVersion: 0, ready: false };
+  try {
+    const row = await db.prepare(`
+      SELECT COALESCE(MAX(id), 0) AS current_version,
+             MAX(CASE WHEN name = ? THEN 1 ELSE 0 END) AS required_migration_applied
+      FROM d1_migrations
+    `).bind(REQUIRED_D1_MIGRATION).first();
+    const currentVersion = Number(row?.current_version || 0);
+    return {
+      currentVersion,
+      ready: currentVersion >= REQUIRED_D1_SCHEMA_VERSION && Number(row?.required_migration_applied || 0) === 1
+    };
+  } catch {
+    return { currentVersion: 0, ready: false };
+  }
+}
+
+async function handleCommerceStatus(env) {
+  const d1 = await readD1SchemaStatus(env.ORDERS_DB);
+  let runtimeReady = true;
+  try {
+    validateRuntimeConfiguration(env);
+  } catch {
+    runtimeReady = false;
+  }
+  return jsonResponse({
+    ok: runtimeReady && d1.ready,
+    stripeMode: env.STRIPE_MODE || 'test',
+    commerceRelease: COMMERCE_RELEASE,
+    catalogProductCount: CATALOG_PRODUCT_COUNT,
+    catalogVariantCount: CATALOG_VARIANT_COUNT,
+    requiredD1SchemaVersion: REQUIRED_D1_SCHEMA_VERSION,
+    appliedD1SchemaVersion: d1.currentVersion,
+    workerVersion: env.CF_VERSION_METADATA?.id || null
+  }, runtimeReady && d1.ready ? 200 : 503);
 }
 
 function createOrderDate(now = new Date()) {
@@ -413,11 +460,27 @@ async function handleCreateCheckoutSession(request, env) {
       const containsLiveSmokeSku = body.cart.some(item => item?.variantKey === LIVE_SMOKE_TEST_SKU);
       const requestsLiveSmokeTest = body.purpose === LIVE_SMOKE_TEST_PURPOSE || containsLiveSmokeSku;
       if (requestsLiveSmokeTest && (!isLiveMode(env) || env.LIVE_SMOKE_TEST_ENABLED !== 'true')) {
-        return jsonResponse({ error: 'The live Checkout smoke test is not enabled.' }, 404, origin);
+        return jsonResponse({
+          code: 'LIVE_SMOKE_TEST_DISABLED',
+          error: 'Live checkout verification is currently disabled. It will be enabled after production Stripe migration.'
+        }, 404, origin);
+      }
+      if (!requestsLiveSmokeTest && body.commerceRelease !== COMMERCE_RELEASE) {
+        return jsonResponse({
+          code: 'STOREFRONT_VERSION_MISMATCH',
+          error: 'The store was recently updated. Please refresh the page before checkout.'
+        }, 409, origin);
       }
       const resolvedCart = requestsLiveSmokeTest ? resolveLiveSmokeTestCart(body.cart) : resolveCart(body.cart);
       if (requestsLiveSmokeTest && body.purpose !== LIVE_SMOKE_TEST_PURPOSE) {
         throw new Error('The live Checkout smoke-test purpose is required.');
+      }
+      const d1Schema = await readD1SchemaStatus(env.ORDERS_DB);
+      if (!d1Schema.ready) {
+        return jsonResponse({
+          code: 'D1_SCHEMA_OUTDATED',
+          error: 'Checkout is temporarily unavailable while the store is updated.'
+        }, 503, origin);
       }
       const shippingDestination = resolveShippingDestination(body.destinationCountry, resolvedCart.totalShippingWeightGrams);
       if (!shippingDestination) {
@@ -623,11 +686,8 @@ export default {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin');
 
-    try {
-      validateRuntimeConfiguration(env);
-    } catch (error) {
-      console.error('Worker runtime configuration rejected', { message: error.message });
-      return new Response('Service configuration unavailable.', { status: 503 });
+    if (request.method === 'GET' && url.pathname === commerceStatusPath) {
+      return handleCommerceStatus(env);
     }
 
     if (request.method === 'OPTIONS' && [checkoutPath, shippingQuotePath].includes(url.pathname) && origin && isAllowedOrigin(request)) {
@@ -641,6 +701,17 @@ export default {
           Vary: 'Origin'
         }
       });
+    }
+
+    try {
+      validateRuntimeConfiguration(env);
+    } catch (error) {
+      console.error('Worker runtime configuration rejected', { message: error.message });
+      return jsonResponse(
+        { error: 'Service configuration unavailable.' },
+        503,
+        origin && isAllowedOrigin(request) ? origin : undefined
+      );
     }
 
     if (request.method === 'POST' && url.pathname === checkoutPath) {

@@ -4,7 +4,7 @@ const protectedHosts = [
 ];
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
-const ecommerceAssetVersion = '3c47831db5bf';
+const ecommerceAssetVersion = '66340d2ff005';
 
 function loadSharedScript(path) {
   return new Promise((resolve, reject) => {
@@ -154,7 +154,7 @@ function initializeCartPage() {
     const button = root.querySelector('#cart-proceed');
     button.disabled = true;
     try {
-      const response = await fetch('https://winigen-stripe-test.winigen.workers.dev/api/create-checkout-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ attemptId: crypto.randomUUID().replaceAll('-', ''), destinationCountry, cart: cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity })) }) });
+      const response = await fetch('https://winigen-stripe-test.winigen.workers.dev/api/create-checkout-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ attemptId: crypto.randomUUID().replaceAll('-', ''), commerceRelease: window.WINIGEN_ECOMMERCE_CATALOG?.commerceRelease, destinationCountry, cart: cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity })) }) });
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || 'Unable to process the cart.');
       if (payload.action === 'checkout') window.location.assign(payload.url);

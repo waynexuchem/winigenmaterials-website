@@ -1,15 +1,25 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
-import { VARIANTS_BY_KEY } from '../src/catalog.js';
 import {
+  CATALOG_PRODUCT_COUNT,
+  CATALOG_VARIANT_COUNT,
+  COMMERCE_RELEASE,
+  PRODUCTS,
+  REQUIRED_D1_SCHEMA_VERSION,
+  VARIANTS_BY_KEY
+} from '../src/catalog.js';
+import worker, {
   createCartCheckoutSession,
   LIVE_SMOKE_TEST_PURPOSE,
   LIVE_SMOKE_TEST_SKU,
   resolveCart,
   resolveLiveSmokeTestCart,
+  readD1SchemaStatus,
   validateRuntimeConfiguration
 } from '../src/index.js';
 import { createCustomerTestOrderEmail, createInternalOrderEmail } from '../src/email/templates.js';
+import { sendEmail } from '../src/email/provider.js';
 import { resolveShippingDestination } from '../src/shipping.js';
 
 const representativePrices = {
@@ -43,6 +53,30 @@ test('representative launch prices resolve from the Worker catalog', () => {
     assert.equal(variant.approvalStatus, 'ACTIVE');
     assert.equal(variant.product.commercialStatus, 'ONLINE_CHECKOUT');
   }
+});
+
+test('browser and Worker catalogs share one release and identical commercial variants', async () => {
+  const source = await readFile(new URL('../../assets/js/ecommerce-catalog.js', import.meta.url), 'utf8');
+  const browser = JSON.parse(source.match(/window\.WINIGEN_ECOMMERCE_CATALOG\s*=\s*([\s\S]*);\s*$/)[1]);
+  const browserVariants = new Map(browser.products.flatMap(product => product.variants.map(variant => [variant.key, { ...variant, product }])));
+  assert.equal(browser.commerceRelease, COMMERCE_RELEASE);
+  assert.equal(browser.catalogProductCount, CATALOG_PRODUCT_COUNT);
+  assert.equal(browser.catalogVariantCount, CATALOG_VARIANT_COUNT);
+  assert.equal(browser.requiredD1SchemaVersion, REQUIRED_D1_SCHEMA_VERSION);
+  assert.equal(browser.products.length, PRODUCTS.length);
+  assert.equal(browserVariants.size, VARIANTS_BY_KEY.size);
+  for (const [key, workerVariant] of VARIANTS_BY_KEY) {
+    const browserVariant = browserVariants.get(key);
+    assert.ok(browserVariant, `${key} should exist in the browser catalog`);
+    assert.equal(browserVariant.unitAmount, workerVariant.unitAmount, `${key} price should match`);
+    assert.equal(browserVariant.approvalStatus, workerVariant.approvalStatus, `${key} status should match`);
+    assert.equal(browserVariant.product.shippingClass, workerVariant.product.shippingClass, `${key} shipping class should match`);
+    assert.equal(browserVariant.product.directOrderCeilingGrams, workerVariant.product.directOrderCeilingGrams, `${key} ceiling should match`);
+  }
+});
+
+test('DME 500 g retains its current Worker-owned price', () => {
+  assert.equal(VARIANTS_BY_KEY.get('WM-SOL-DME-500G')?.unitAmount, 42995);
 });
 
 test('direct-order lithium salts use the complete owner-approved package ladders', () => {
@@ -299,6 +333,154 @@ test('live Checkout smoke item is server-priced, fixed-quantity, and isolated', 
   assert.equal(VARIANTS_BY_KEY.has(LIVE_SMOKE_TEST_SKU), false);
 });
 
+test('live Checkout smoke endpoint fails closed with a CORS-readable disabled response in test mode', async () => {
+  const origin = 'https://www.winigenmaterials.com';
+  const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+    method: 'POST',
+    headers: { Origin: origin, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      attemptId: 'disabledsmoketest2026',
+      destinationCountry: 'US',
+      purpose: LIVE_SMOKE_TEST_PURPOSE,
+      cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 1 }]
+    })
+  }), {
+    STRIPE_MODE: 'test',
+    STRIPE_SECRET_KEY: 'sk_test_example',
+    STRIPE_WEBHOOK_SECRET: 'whsec_example'
+  }, {});
+  const payload = await response.json();
+
+  assert.equal(response.status, 404);
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'), origin);
+  assert.equal(payload.code, 'LIVE_SMOKE_TEST_DISABLED');
+  assert.equal(payload.error, 'Live checkout verification is currently disabled. It will be enabled after production Stripe migration.');
+});
+
+test('checkout preflight succeeds before Stripe runtime secrets are configured', async () => {
+  const origin = 'https://www.winigenmaterials.com';
+  const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+    method: 'OPTIONS',
+    headers: {
+      Origin: origin,
+      'Access-Control-Request-Method': 'POST',
+      'Access-Control-Request-Headers': 'content-type'
+    }
+  }), {}, {});
+
+  assert.equal(response.status, 204);
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'), origin);
+  assert.equal(response.headers.get('Access-Control-Allow-Methods'), 'POST, OPTIONS');
+  assert.equal(response.headers.get('Access-Control-Allow-Headers'), 'Content-Type');
+});
+
+test('stale storefront releases fail before D1 or Stripe access', async () => {
+  const origin = 'https://www.winigenmaterials.com';
+  const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+    method: 'POST',
+    headers: { Origin: origin, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      attemptId: 'stalestorefront20260822',
+      commerceRelease: 'commerce-sha256-stale',
+      destinationCountry: 'US',
+      cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }]
+    })
+  }), {
+    STRIPE_MODE: 'test',
+    STRIPE_SECRET_KEY: 'sk_test_example',
+    STRIPE_WEBHOOK_SECRET: 'whsec_example'
+  }, {});
+  const payload = await response.json();
+  assert.equal(response.status, 409);
+  assert.equal(payload.code, 'STOREFRONT_VERSION_MISMATCH');
+  assert.equal(payload.error, 'The store was recently updated. Please refresh the page before checkout.');
+});
+
+test('outdated D1 schema fails before Stripe session creation', async () => {
+  const origin = 'https://www.winigenmaterials.com';
+  let stripeCalled = false;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    stripeCalled = true;
+    throw new Error('Stripe must not be called.');
+  };
+  const db = {
+    prepare() {
+      return {
+        bind() {
+          return { first: async () => ({ current_version: 5, required_migration_applied: 0 }) };
+        }
+      };
+    }
+  };
+  try {
+    const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+      method: 'POST',
+      headers: { Origin: origin, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        attemptId: 'outdatedschema20260822',
+        commerceRelease: COMMERCE_RELEASE,
+        destinationCountry: 'US',
+        cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }]
+      })
+    }), {
+      STRIPE_MODE: 'test',
+      STRIPE_SECRET_KEY: 'sk_test_example',
+      STRIPE_WEBHOOK_SECRET: 'whsec_example',
+      ORDERS_DB: db
+    }, {});
+    const payload = await response.json();
+    assert.equal(response.status, 503);
+    assert.equal(payload.code, 'D1_SCHEMA_OUTDATED');
+    assert.equal(stripeCalled, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('D1 migration ledger recognizes the required schema version', async () => {
+  const ready = await readD1SchemaStatus({
+    prepare() {
+      return {
+        bind() {
+          return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+        }
+      };
+    }
+  });
+  assert.deepEqual(ready, { currentVersion: 6, ready: true });
+});
+
+test('commerce status reports release, counts, test mode, D1 readiness, and Worker version', async () => {
+  const response = await worker.fetch(new Request('https://worker.example/api/commerce-status'), {
+    STRIPE_MODE: 'test',
+    STRIPE_SECRET_KEY: 'sk_test_example',
+    STRIPE_WEBHOOK_SECRET: 'whsec_example',
+    CF_VERSION_METADATA: { id: 'worker-build-test' },
+    ORDERS_DB: {
+      prepare() {
+        return {
+          bind() {
+            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+          }
+        };
+      }
+    }
+  }, {});
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.deepEqual(payload, {
+    ok: true,
+    stripeMode: 'test',
+    commerceRelease: COMMERCE_RELEASE,
+    catalogProductCount: CATALOG_PRODUCT_COUNT,
+    catalogVariantCount: CATALOG_VARIANT_COUNT,
+    requiredD1SchemaVersion: 6,
+    appliedD1SchemaVersion: 6,
+    workerVersion: 'worker-build-test'
+  });
+});
+
 test('live Checkout smoke metadata and amount are sent through the normal session builder', async () => {
   const originalFetch = globalThis.fetch;
   let submitted;
@@ -381,4 +563,32 @@ test('live internal notification preserves both operations recipients', () => {
   });
   assert.deepEqual(message.to, ['wayne@winigenmaterials.com', 'catherinew@winigenmaterials.com']);
   assert.doesNotMatch(message.subject, /^TEST/);
+});
+
+test('test email delivery overrides every message recipient with the configured test recipient', async () => {
+  const originalFetch = globalThis.fetch;
+  let submitted;
+  globalThis.fetch = async (_url, options) => {
+    submitted = JSON.parse(options.body);
+    return new Response(JSON.stringify({ id: 'resend-test-id' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  };
+  try {
+    await sendEmail({
+      from: 'Winigen Orders <orders@notify.winigenmaterials.com>',
+      to: ['customer@example.com', 'operations@example.com'],
+      replyTo: 'orders@winigenmaterials.com',
+      subject: 'Test', html: '<p>Test</p>', text: 'Test'
+    }, {
+      EMAIL_MODE: 'test',
+      EMAIL_PROVIDER: 'resend',
+      RESEND_API_KEY: 'not-a-real-key',
+      TEST_ORDER_EMAIL_RECIPIENT: 'checkout-test@winigenmaterials.com'
+    });
+    assert.deepEqual(submitted.to, ['checkout-test@winigenmaterials.com']);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });

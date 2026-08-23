@@ -6,6 +6,7 @@
   const status = form.querySelector('[data-live-smoke-status]');
   const endpoint = form.dataset.checkoutApi;
   const attemptStorageKey = 'winigen-live-smoke-test-attempt-v1';
+  const disabledMessage = 'Live checkout verification is currently disabled. It will be enabled after production Stripe migration.';
 
   function attemptId() {
     const existing = sessionStorage.getItem(attemptStorageKey);
@@ -33,13 +34,23 @@
           cart: [{ variantKey: 'WM-LIVE-TEST-1USD', quantity: 1 }]
         })
       });
-      const payload = await response.json();
+      let payload;
+      try {
+        payload = await response.json();
+      } catch {
+        throw new TypeError('Checkout endpoint did not return JSON.');
+      }
       if (!response.ok || payload.action !== 'checkout' || !payload.url) {
-        throw new Error(payload.error || 'Checkout is unavailable.');
+        const message = payload.code === 'LIVE_SMOKE_TEST_DISABLED'
+          ? disabledMessage
+          : payload.error || 'Checkout is unavailable.';
+        throw new Error(message);
       }
       window.location.assign(payload.url);
     } catch (error) {
-      status.textContent = error.message || 'Checkout is unavailable.';
+      status.textContent = error instanceof TypeError
+        ? disabledMessage
+        : error.message || disabledMessage;
       status.classList.add('is-error');
       button.disabled = false;
       button.textContent = 'Start $1.00 Checkout Test';

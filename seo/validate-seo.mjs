@@ -1,12 +1,15 @@
 import { access, readFile, readdir } from 'node:fs/promises';
 import { dirname, extname, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { createCommerceRelease } from '../scripts/commerce-release.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
 const siteUrl = 'https://www.winigenmaterials.com';
 const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
+const shippingSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/shipping-countries.source.json'), 'utf8'));
+const expectedCommerceRelease = createCommerceRelease(ecommerceSource, shippingSource);
 const ecommerceBySlug = new Map(ecommerceSource.products.map(product => [product.slug, product]));
 const errors = [];
 const warnings = [];
@@ -350,8 +353,8 @@ const browserVariantCount = browserCatalog.products.reduce((total, product) => t
 const workerVariantCount = workerCatalog.PRODUCTS.reduce((total, product) => total + product.variants.length, 0);
 if (browserVariantCount !== expectedVariantCount) errors.push(`Browser catalog variant count ${browserVariantCount} does not match canonical full count ${expectedVariantCount}.`);
 if (workerVariantCount !== expectedVariantCount) errors.push(`Worker catalog variant count ${workerVariantCount} does not match canonical full count ${expectedVariantCount}.`);
-if (browserCatalog.catalogVersion !== ecommerceSource.catalogVersion) errors.push('Browser catalog version does not match the canonical ecommerce source.');
-if (workerCatalog.CATALOG_VERSION !== ecommerceSource.catalogVersion) errors.push('Worker catalog version does not match the canonical ecommerce source.');
+if (browserCatalog.commerceRelease !== expectedCommerceRelease) errors.push('Browser commerce release does not match the canonical commerce inputs.');
+if (workerCatalog.COMMERCE_RELEASE !== expectedCommerceRelease) errors.push('Worker commerce release does not match the canonical commerce inputs.');
 if (semanticDirect.length !== sourceDirectSlugs.size) errors.push(`Canonical semantic/ecommerce direct-product counts disagree: ${semanticDirect.length}/${sourceDirectSlugs.size}.`);
 if (browserBySlug.size !== sourceAllSlugs.size) errors.push(`Browser catalog product count ${browserBySlug.size} does not match canonical full count ${sourceAllSlugs.size}.`);
 if (workerBySlug.size !== sourceAllSlugs.size) errors.push(`Worker catalog product count ${workerBySlug.size} does not match canonical full count ${sourceAllSlugs.size}.`);
