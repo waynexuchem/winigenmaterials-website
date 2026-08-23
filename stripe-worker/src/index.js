@@ -89,6 +89,14 @@ function isCommerceEnabled(env) {
   return env.COMMERCE_ENABLED === 'true';
 }
 
+export function isExactLiveSmokeTestRequest(body) {
+  return body?.purpose === LIVE_SMOKE_TEST_PURPOSE
+    && Array.isArray(body.cart)
+    && body.cart.length === 1
+    && body.cart[0]?.variantKey === LIVE_SMOKE_TEST_SKU
+    && body.cart[0]?.quantity === 1;
+}
+
 function commerceDisabledResponse(request) {
   const origin = request.headers.get('Origin');
   return jsonResponse({
@@ -774,7 +782,21 @@ export default {
       });
     }
 
-    if (request.method === 'POST' && [checkoutPath, internalCheckoutPath].includes(url.pathname) && !isCommerceEnabled(env)) {
+    let liveSmokeGateBypassAllowed = false;
+    if (request.method === 'POST' && url.pathname === checkoutPath && !isCommerceEnabled(env)) {
+      try {
+        liveSmokeGateBypassAllowed = isLiveMode(env)
+          && env.LIVE_SMOKE_TEST_ENABLED === 'true'
+          && isExactLiveSmokeTestRequest(await request.clone().json());
+      } catch {
+        liveSmokeGateBypassAllowed = false;
+      }
+    }
+
+    if (request.method === 'POST'
+      && [checkoutPath, internalCheckoutPath].includes(url.pathname)
+      && !isCommerceEnabled(env)
+      && !liveSmokeGateBypassAllowed) {
       return commerceDisabledResponse(request);
     }
 

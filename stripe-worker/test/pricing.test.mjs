@@ -13,6 +13,7 @@ import {
 import worker, {
   ORDER_REVIEW_MESSAGE,
   createCartCheckoutSession,
+  isExactLiveSmokeTestRequest,
   LIVE_SMOKE_TEST_PURPOSE,
   LIVE_SMOKE_TEST_SKU,
   resolveCart,
@@ -513,6 +514,95 @@ test('live Checkout smoke item is server-priced, fixed-quantity, and isolated', 
     /isolated fixed-quantity test item/
   );
   assert.equal(VARIANTS_BY_KEY.has(LIVE_SMOKE_TEST_SKU), false);
+});
+
+test('live smoke gate recognizes only the exact canonical request shape', () => {
+  const exact = {
+    purpose: LIVE_SMOKE_TEST_PURPOSE,
+    cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 1 }]
+  };
+  assert.equal(isExactLiveSmokeTestRequest(exact), true);
+  assert.equal(isExactLiveSmokeTestRequest({ ...exact, smoke: true }), true);
+  assert.equal(isExactLiveSmokeTestRequest({ smoke: true, cart: exact.cart }), false);
+  assert.equal(isExactLiveSmokeTestRequest({ ...exact, cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 2 }] }), false);
+  assert.equal(isExactLiveSmokeTestRequest({ ...exact, cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }] }), false);
+  assert.equal(isExactLiveSmokeTestRequest({ ...exact, cart: [...exact.cart, { variantKey: 'WM-SOL-DME-500G', quantity: 1 }] }), false);
+});
+
+test('commerce and live-smoke gates enforce the four-state fail-closed matrix', async () => {
+  const origin = 'https://www.winigenmaterials.com';
+  const ordinaryBody = {
+    attemptId: 'ordinarygatematrix2026',
+    commerceRelease: 'commerce-sha256-stale',
+    destinationCountry: 'US',
+    cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }]
+  };
+  const smokeBody = {
+    attemptId: 'smokegatematrix2026',
+    destinationCountry: 'US',
+    purpose: LIVE_SMOKE_TEST_PURPOSE,
+    amount: 999999,
+    cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 1, amount: 999999 }]
+  };
+  const request = body => new Request('https://worker.example/api/create-checkout-session', {
+    method: 'POST',
+    headers: { Origin: origin, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  const baseEnv = {
+    STRIPE_MODE: 'live',
+    STRIPE_SECRET_KEY: 'sk_live_fake_for_unit_test',
+    STRIPE_WEBHOOK_SECRET: 'whsec_fake_for_unit_test'
+  };
+
+  const expectations = [
+    { commerce: 'false', smoke: 'false', ordinary: [503, 'COMMERCE_DISABLED'], smokeResult: [503, 'COMMERCE_DISABLED'] },
+    { commerce: 'false', smoke: 'true', ordinary: [503, 'COMMERCE_DISABLED'], smokeResult: [503, 'D1_SCHEMA_OUTDATED'] },
+    { commerce: 'true', smoke: 'false', ordinary: [409, 'STOREFRONT_VERSION_MISMATCH'], smokeResult: [404, 'LIVE_SMOKE_TEST_DISABLED'] },
+    { commerce: 'true', smoke: 'true', ordinary: [409, 'STOREFRONT_VERSION_MISMATCH'], smokeResult: [503, 'D1_SCHEMA_OUTDATED'] }
+  ];
+
+  for (const state of expectations) {
+    const env = { ...baseEnv, COMMERCE_ENABLED: state.commerce, LIVE_SMOKE_TEST_ENABLED: state.smoke };
+    const ordinaryResponse = await worker.fetch(request(ordinaryBody), env, {});
+    assert.equal(ordinaryResponse.status, state.ordinary[0]);
+    assert.equal((await ordinaryResponse.json()).code, state.ordinary[1]);
+
+    const smokeResponse = await worker.fetch(request(smokeBody), env, {});
+    assert.equal(smokeResponse.status, state.smokeResult[0]);
+    assert.equal((await smokeResponse.json()).code, state.smokeResult[1]);
+  }
+
+  const resolved = resolveLiveSmokeTestCart(smokeBody.cart);
+  assert.equal(resolved.merchandiseSubtotal, 100);
+  assert.equal(resolved.items[0].variant.unitAmount, 100);
+});
+
+test('fake or modified smoke identities cannot bypass disabled ordinary commerce', async () => {
+  const origin = 'https://www.winigenmaterials.com';
+  const env = {
+    COMMERCE_ENABLED: 'false',
+    LIVE_SMOKE_TEST_ENABLED: 'true',
+    STRIPE_MODE: 'live',
+    STRIPE_SECRET_KEY: 'sk_live_fake_for_unit_test',
+    STRIPE_WEBHOOK_SECRET: 'whsec_fake_for_unit_test'
+  };
+  const cases = [
+    { purpose: LIVE_SMOKE_TEST_PURPOSE, cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }] },
+    { purpose: LIVE_SMOKE_TEST_PURPOSE, cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 2 }] },
+    { smoke: true, cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 1 }] },
+    { purpose: LIVE_SMOKE_TEST_PURPOSE, cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 1 }, { variantKey: 'WM-SOL-DME-500G', quantity: 1 }] }
+  ];
+
+  for (const [index, body] of cases.entries()) {
+    const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+      method: 'POST',
+      headers: { Origin: origin, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ attemptId: `fakesmokegate2026${index}`, destinationCountry: 'US', ...body })
+    }), env, {});
+    assert.equal(response.status, 503);
+    assert.equal((await response.json()).code, 'COMMERCE_DISABLED');
+  }
 });
 
 test('commerce master gate fails closed before any Checkout Session creation', async () => {
