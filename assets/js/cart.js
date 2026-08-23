@@ -17,10 +17,6 @@
     window.dispatchEvent(new CustomEvent('winigen:cart-change'));
   }
 
-  function itemCount() {
-    return readCart().items.reduce((sum, item) => sum + item.quantity, 0);
-  }
-
   function variantDetails(variantKey) {
     const products = window.WINIGEN_ECOMMERCE_CATALOG?.products || [];
     for (const product of products) {
@@ -28,6 +24,22 @@
       if (variant) return { product, variant };
     }
     return null;
+  }
+
+  function getValidItems(cart = readCart()) {
+    return cart.items.filter(item => {
+      const details = typeof item?.variantKey === 'string' ? variantDetails(item.variantKey) : null;
+      return Number.isInteger(item?.quantity)
+        && item.quantity > 0
+        && details?.product.commercialStatus === 'ONLINE_CHECKOUT'
+        && details.variant.approvalStatus === 'ACTIVE'
+        && Number.isInteger(details.variant.unitAmount)
+        && details.variant.unitAmount > 0;
+    });
+  }
+
+  function itemCount() {
+    return getValidItems().reduce((sum, item) => sum + item.quantity, 0);
   }
 
   function maximumQuantity(variantKey, cart = readCart()) {
@@ -203,7 +215,10 @@
     setField('message', message);
   }
 
-  window.WinigenCart = { readCart, writeCart, itemCount, add, update, remove, maximumQuantity, saveReview, getReview, getShippingDestination, setShippingDestination };
+  window.WinigenCart = { readCart, writeCart, getValidItems, itemCount, add, update, remove, maximumQuantity, saveReview, getReview, getShippingDestination, setShippingDestination };
+  window.addEventListener('storage', event => {
+    if (event.key === storageKey) window.dispatchEvent(new CustomEvent('winigen:cart-change'));
+  });
   initializeAddFeedback();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hydrateContactReview);
   else hydrateContactReview();

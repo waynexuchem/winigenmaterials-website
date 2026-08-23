@@ -4,7 +4,7 @@ const protectedHosts = [
 ];
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
-const ecommerceAssetVersion = 'd4696664dd70';
+const ecommerceAssetVersion = 'ee705c69bb07';
 
 function loadSharedScript(path) {
   return new Promise((resolve, reject) => {
@@ -90,7 +90,7 @@ function initializeCartPage() {
     window.addEventListener('winigen:cart-change', initializeCartPage);
   }
   const variants = new Map(catalog.products.flatMap(product => product.variants.map(variant => [variant.key, { ...variant, product }])));
-  const cartItems = window.WinigenCart.readCart().items.map(item => ({ ...item, variant: variants.get(item.variantKey) })).filter(item => item.variant);
+  const cartItems = window.WinigenCart.getValidItems().map(item => ({ ...item, variant: variants.get(item.variantKey) }));
   if (cartItems.length === 0) {
     root.innerHTML = '<section class="cart-empty"><h2>Your cart is currently empty.</h2><p>Browse battery materials and select a package when you are ready to order.</p><div class="cart-actions"><a class="btn" href="products.html">Browse Products</a></div></section>';
     return;
