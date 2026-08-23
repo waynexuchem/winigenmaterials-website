@@ -4,7 +4,7 @@ const protectedHosts = [
 ];
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
-const ecommerceAssetVersion = 'ee705c69bb07';
+const ecommerceAssetVersion = 'f143bd416a60';
 const commerceConfigVersion = '83bf682edfba';
 
 function loadSharedScript(path) {
@@ -108,6 +108,12 @@ function initializeCartPage() {
   ), 0);
   const reviewThresholdUnavailable = !Number.isInteger(aggregateOrderReviewThresholdGrams)
     || aggregateOrderReviewThresholdGrams <= 0;
+  const commerceStateRank = { DIRECT_CHECKOUT: 1, DIRECT_CHECKOUT_REVIEW: 2, RFQ_ONLY: 3 };
+  const cartCommerceState = cartItems.reduce((highest, item) => (
+    commerceStateRank[item.variant.product.commerceState] > commerceStateRank[highest]
+      ? item.variant.product.commerceState
+      : highest
+  ), 'DIRECT_CHECKOUT');
   const shippingRank = { STANDARD_RD: 1, FIXED_SPECIAL_HANDLING: 2, SHIPPING_REVIEW: 3, RFQ_SHIPPING: 4 };
   const cartShippingClass = cartItems.reduce((highest, item) => shippingRank[item.variant.product.shippingClass] > shippingRank[highest] ? item.variant.product.shippingClass : highest, 'STANDARD_RD');
   const shippingCountries = window.WINIGEN_SHIPPING_COUNTRIES;
@@ -126,34 +132,42 @@ function initializeCartPage() {
     const maximumQuantity = window.WinigenCart.maximumQuantity(item.variant.key);
     return `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="${maximumQuantity}" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity"${item.quantity >= maximumQuantity ? ' disabled' : ''}>+</button></div></td><td class="cart-price-cell">${item.variant.unitAmount ? formatMoney(item.variant.unitAmount) : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.unitAmount ? formatMoney(item.variant.unitAmount * item.quantity) : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`;
   }).join('');
-  const requiresShippingReview = cartShippingClass === 'SHIPPING_REVIEW';
+  const requiresShippingReview = cartCommerceState === 'RFQ_ONLY' && cartShippingClass === 'SHIPPING_REVIEW';
+  const requiresRfq = cartCommerceState === 'RFQ_ONLY' && !requiresShippingReview;
+  const requiresDirectReview = cartCommerceState === 'DIRECT_CHECKOUT_REVIEW';
   const requiresOrderReview = !requiresShippingReview
-    && cartShippingClass !== 'RFQ_SHIPPING'
+    && !requiresRfq
     && !reviewThresholdUnavailable
     && totalCartMassGrams > aggregateOrderReviewThresholdGrams;
   const fulfillmentMessage = blockedItems.length > 0
       ? 'Some cart packages are still being confirmed and cannot proceed.'
-    : cartShippingClass === 'RFQ_SHIPPING'
-      ? 'This cart requires an RFQ and fulfillment review. Your cart will be retained.'
-      : cartShippingClass === 'SHIPPING_REVIEW'
+    : requiresRfq
+      ? 'This cart requires a quote before payment. Your cart will be retained.'
+      : requiresShippingReview
         ? 'Material prices are shown above. Specialized sulfide logistics are quoted separately by destination, and multiple sulfide grades may be consolidated into one shipment where feasible. Your cart will be retained during review.'
         : requiresOrderReview
           ? '<strong class="cart-note__title">Order review required</strong><span>This order exceeds 10 kg total. We’ll confirm fulfillment and shipping details before payment. Your cart will be retained during review.</span>'
-        : cartShippingClass === 'FIXED_SPECIAL_HANDLING'
-          ? 'Special-handling eligibility will be confirmed during order review.'
+        : requiresDirectReview
+          ? 'Payment can be completed online. This order will be reviewed for shipping and fulfillment before release.'
           : 'Shipping and handling are included in listed prices for eligible destinations.';
   const totalLabel = requiresShippingReview
     ? 'Material total (excluding logistics)'
+    : requiresRfq
+      ? 'Material subtotal (pending quote)'
     : requiresOrderReview
       ? 'Material subtotal (pending review)'
       : 'Order total';
   const proceedLabel = requiresShippingReview
     ? 'Request Shipping Review'
+    : requiresRfq
+      ? 'Request Quote'
     : requiresOrderReview
       ? 'Request Order Review'
       : 'Proceed to Secure Checkout';
   const trustLabel = requiresShippingReview
     ? 'Specialized logistics are confirmed before payment.'
+    : requiresRfq
+      ? 'Payment is requested after quote approval.'
     : requiresOrderReview
       ? 'Payment is requested after fulfillment and shipping are confirmed.'
       : 'Secure payment processed by Stripe';

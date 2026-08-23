@@ -95,7 +95,7 @@ function formatUsd(unitAmount, compact = false) {
 
 function activeVariants(product) {
   const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
-  if (!commerce || commerce.commercialStatus !== 'ONLINE_CHECKOUT') return [];
+  if (!commerce || !['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(commerce.commercialStatus)) return [];
   return (commerce.packages || ecommerceSource.packageTemplates[commerce.packageTemplate] || []).map(template => {
     const id = template.id || template.key;
     const override = commerce.variantOverrides?.[id] || {};
@@ -110,6 +110,14 @@ function activeVariants(product) {
       pricingStatus: override.pricingStatus || template.pricingStatus
     };
   }).filter(variant => variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL' && Number.isInteger(variant.unitAmount) && variant.unitAmount > 0);
+}
+
+function requiresPrepaymentShippingReview(product) {
+  return ecommerceBySlug.get(product.ecommerceSlug || product.slug)?.commercialStatus === 'PRICE_SHIPPING_REVIEW';
+}
+
+function commerceModeLabel(product) {
+  return requiresPrepaymentShippingReview(product) ? 'Shipping review required' : 'Online ordering';
 }
 
 function defaultActiveVariant(product, variants = activeVariants(product)) {
@@ -187,7 +195,7 @@ function renderProductDetailExperience(html, product) {
   const specs = productKeySpecifications(product);
   const specificationMarkup = specs.map(item => `<div class="product-key-spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('');
   const documentation = productDocumentation(product, documentationHref);
-  const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div><span class="product-detail-summary__status">Online ordering</span></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><p class="detail-kicker">Commercial summary</p><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${documentation}</div>`;
+  const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div><span class="product-detail-summary__status">${commerceModeLabel(product)}</span></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><p class="detail-kicker">Commercial summary</p><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${documentation}</div>`;
   const navigation = `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#documentation">Documentation</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a></div></nav>`;
   const support = `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
 
@@ -296,7 +304,7 @@ function renderStaticCommerceCards(html, pagePath) {
     const gradeCode = sulfideGradeCode(product);
     const gradeBadge = gradeCode ? `<p class="product-card__grade-code">${gradeCode}</p>` : '';
     const shippingNote = gradeCode ? '<p class="product-card__shipping-note">Specialized sulfide logistics quoted separately</p>' : '';
-    const body = `<div class="product-card__body" data-static-commerce="true"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">Online ordering</span></div>${gradeBadge}<h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><p class="product-card__commercial starting-price"><span data-listing-from-price>From ${formatUsd(defaultVariant.unitAmount, true)} · Multiple package sizes</span></p><ul class="product-card__properties product-card__properties--compact">${properties}</ul>${shippingNote}<div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package name="package" aria-label="Select package">${options}</select></label><label>Qty<div class="listing-quantity quantity-stepper"><button type="button" data-listing-decrease aria-label="Decrease quantity">−</button><input type="number" value="1" min="1" max="25" inputmode="numeric" aria-label="Quantity"><button type="button" data-listing-increase aria-label="Increase quantity">+</button></div></label></div><p class="product-card__price" data-listing-price>${formatUsd(defaultVariant.unitAmount)}</p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a><a href="${quoteHref}">Request Bulk Quote</a></div></div></div>`;
+    const body = `<div class="product-card__body" data-static-commerce="true"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">${commerceModeLabel(product)}</span></div>${gradeBadge}<h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><p class="product-card__commercial starting-price"><span data-listing-from-price>From ${formatUsd(defaultVariant.unitAmount, true)} · Multiple package sizes</span></p><ul class="product-card__properties product-card__properties--compact">${properties}</ul>${shippingNote}<div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package name="package" aria-label="Select package">${options}</select></label><label>Qty<div class="listing-quantity quantity-stepper"><button type="button" data-listing-decrease aria-label="Decrease quantity">−</button><input type="number" value="1" min="1" max="25" inputmode="numeric" aria-label="Quantity"><button type="button" data-listing-increase aria-label="Increase quantity">+</button></div></label></div><p class="product-card__price" data-listing-price>${formatUsd(defaultVariant.unitAmount)}</p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a><a href="${quoteHref}">Request Bulk Quote</a></div></div></div>`;
     return `${article.slice(0, bodyStart)}${body}\n    </article>`;
   });
 }
@@ -338,7 +346,7 @@ function commercePanel(product) {
   const shippingCopy = sulfideGradeCode(product)
     ? '<div class="ecommerce-panel__shipping-note"><strong>Specialized shipping required</strong><p>Sulfide solid electrolytes are air- and moisture-sensitive and require specialized packaging and transportation. Shipping is quoted separately by destination, and multiple sulfide grades may be consolidated in one shipment where feasible.</p></div>'
     : '<p class="ecommerce-panel__note">Shipping and handling are included in listed prices for eligible destinations.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>';
-  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">Online ordering</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div>${shippingCopy}</section>`;
+  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">${commerceModeLabel(product)}</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div>${shippingCopy}</section>`;
 }
 
 function removeCommercePanels(html) {
@@ -376,7 +384,7 @@ function removeOrphanedCommercePanelBodies(html) {
 function renderStaticProductCommerce(html, product) {
   if (product.commerceStatus !== 'active_checkout' || !activeVariants(product).length) return html;
   let next = removeOrphanedCommercePanelBodies(removeCommercePanels(html));
-  next = next.replace(/(<dt>Availability<\/dt><dd>)[\s\S]*?(<\/dd>)/i, '$1Online ordering$2');
+  next = next.replace(/(<dt>Availability<\/dt><dd>)[\s\S]*?(<\/dd>)/i, `$1${commerceModeLabel(product)}$2`);
   next = next.replace(/(<section class="section dark product-detail-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i,
     `$1<p>${escapeHtml(productDescription(product))}</p>`);
   next = next.replace(/<div class="detail-actions"(?:[^>]*)>/i, `${commercePanel(product)}\n        <div class="detail-actions" hidden data-ecommerce-fallback-actions="true">`);
@@ -550,7 +558,10 @@ function productDescription(product) {
     const directBase = base.replace(/available by RFQ from Winigen Materials/gi, 'available from Winigen Materials');
     const labels = activeVariants(product).map(variant => variant.label);
     const packageCopy = labels.length ? ` Available in ${labels.join(', ')} research packages` : ' Available in approved research package sizes';
-    return `${directBase}.${packageCopy}, with bulk quantities available by quotation.`;
+    const checkoutCopy = requiresPrepaymentShippingReview(product)
+      ? ' Specialized logistics are reviewed before payment.'
+      : '';
+    return `${directBase}.${packageCopy}, with bulk quantities available by quotation.${checkoutCopy}`;
   }
   if (product.commerceStatus === 'sample_only') {
     return `${base}. Research package options are in test-mode validation; contact Winigen for commercial availability.`;
@@ -605,7 +616,7 @@ function productSchema(product) {
     audience: { '@type': 'Audience', audienceType: 'Battery researchers, engineers, and product-development teams' },
     ...(familyIntent?.entities?.length ? { material: familyIntent.entities.slice(0, 6).join(', ') } : {}),
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Commercial availability', value: product.commerceStatus === 'rfq' ? 'Available by RFQ' : product.commerceStatus === 'sample_only' ? 'Research package validation; confirm commercial availability' : 'Online checkout' },
+      { '@type': 'PropertyValue', name: 'Commercial availability', value: product.commerceStatus === 'rfq' ? 'Available by RFQ' : product.commerceStatus === 'sample_only' ? 'Research package validation; confirm commercial availability' : requiresPrepaymentShippingReview(product) ? 'Public package pricing; shipping review required before payment' : 'Online checkout' },
       ...product.additionalProperty
         .filter(property => !/^availability$/i.test(property.name))
         .map(property => ({ '@type': 'PropertyValue', ...property }))

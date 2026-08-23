@@ -31,7 +31,7 @@
       const details = typeof item?.variantKey === 'string' ? variantDetails(item.variantKey) : null;
       return Number.isInteger(item?.quantity)
         && item.quantity > 0
-        && details?.product.commercialStatus === 'ONLINE_CHECKOUT'
+        && ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(details?.product.commercialStatus)
         && details.variant.approvalStatus === 'ACTIVE'
         && Number.isInteger(details.variant.unitAmount)
         && details.variant.unitAmount > 0;

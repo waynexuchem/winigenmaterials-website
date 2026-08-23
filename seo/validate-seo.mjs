@@ -201,6 +201,10 @@ for (const product of productSource.products) {
   const products = schemas.flatMap(schema => collectType(schema, 'Product'));
   if (products.length !== 1) errors.push(`${pagePath}: expected one Product entity, found ${products.length}.`);
   const offers = products.flatMap(schema => collectType(schema, 'Offer'));
+  const ecommerceProduct = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  const expectedCommerceLabel = ecommerceProduct?.commercialStatus === 'PRICE_SHIPPING_REVIEW'
+    ? 'Shipping review required'
+    : 'Online ordering';
   if (!product.schemaOfferEligible && offers.length) errors.push(`${pagePath}: non-sellable product emitted Offer schema.`);
   if (product.schemaOfferEligible) {
     const expectedOffers = (ecommerceBySlug.get(product.ecommerceSlug)?.packages || [])
@@ -210,7 +214,7 @@ for (const product of productSource.products) {
       if (offer.availability) errors.push(`${pagePath}: Offer invents stock availability ${offer.availability}.`);
     }
     if (/available by RFQ/i.test(metaContent(productHtml, 'description'))) errors.push(`${pagePath}: direct product meta description still claims RFQ-only availability.`);
-    if (!/Online ordering/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks static online-ordering status.`);
+    if (!productHtml.includes(expectedCommerceLabel)) errors.push(`${pagePath}: commercial status does not match ${expectedCommerceLabel}.`);
     if (!/data-static-commerce="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static commerce panel.`);
     if (!/>Add to Cart</i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static Add to Cart control.`);
     const commercePanelCount = (productHtml.match(/data-ecommerce-panel="true"/gi) || []).length;
@@ -290,8 +294,12 @@ const productsHtml = await readFile(resolve(siteRoot, 'products.html'), 'utf8');
 const productArticles = [...productsHtml.matchAll(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi)].map(match => match[0]);
 for (const product of productSource.products.filter(entry => entry.commerceStatus === 'active_checkout')) {
   const article = productArticles.find(markup => markup.includes(`${product.slug}.html`));
+  const ecommerceProduct = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  const expectedCommerceLabel = ecommerceProduct?.commercialStatus === 'PRICE_SHIPPING_REVIEW'
+    ? 'Shipping review required'
+    : 'Online ordering';
   if (!article) errors.push(`products.html: missing card for ${product.slug}.`);
-  else if (!/Online ordering/i.test(article) || !/>Add to Cart</i.test(article) || !/data-static-commerce="true"/i.test(article)) {
+  else if (!article.includes(expectedCommerceLabel) || !/>Add to Cart</i.test(article) || !/data-static-commerce="true"/i.test(article)) {
     errors.push(`products.html: ${product.slug} lacks static direct-commerce content.`);
   }
 }
@@ -344,7 +352,7 @@ const workerCatalogUrl = `${pathToFileURL(resolve(siteRoot, 'stripe-worker/src/c
 const workerCatalog = await import(workerCatalogUrl);
 const semanticDirect = productSource.products.filter(product => product.commerceStatus === 'active_checkout');
 const semanticRfqSlugs = new Set(productSource.products.filter(product => product.commerceStatus === 'rfq').map(product => product.slug));
-const sourceDirectSlugs = new Set(ecommerceSource.products.filter(product => product.commercialStatus === 'ONLINE_CHECKOUT').map(product => product.slug));
+const sourceCartableSlugs = new Set(ecommerceSource.products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus)).map(product => product.slug));
 const sourceAllSlugs = new Set(ecommerceSource.products.map(product => product.slug));
 const browserBySlug = new Map(browserCatalog.products.map(product => [product.slug, product]));
 const workerBySlug = new Map(workerCatalog.PRODUCTS.map(product => [product.slug, product]));
@@ -355,11 +363,11 @@ if (browserVariantCount !== expectedVariantCount) errors.push(`Browser catalog v
 if (workerVariantCount !== expectedVariantCount) errors.push(`Worker catalog variant count ${workerVariantCount} does not match canonical full count ${expectedVariantCount}.`);
 if (browserCatalog.commerceRelease !== expectedCommerceRelease) errors.push('Browser commerce release does not match the canonical commerce inputs.');
 if (workerCatalog.COMMERCE_RELEASE !== expectedCommerceRelease) errors.push('Worker commerce release does not match the canonical commerce inputs.');
-if (semanticDirect.length !== sourceDirectSlugs.size) errors.push(`Canonical semantic/ecommerce direct-product counts disagree: ${semanticDirect.length}/${sourceDirectSlugs.size}.`);
+if (semanticDirect.length !== sourceCartableSlugs.size) errors.push(`Canonical semantic/ecommerce cartable-product counts disagree: ${semanticDirect.length}/${sourceCartableSlugs.size}.`);
 if (browserBySlug.size !== sourceAllSlugs.size) errors.push(`Browser catalog product count ${browserBySlug.size} does not match canonical full count ${sourceAllSlugs.size}.`);
 if (workerBySlug.size !== sourceAllSlugs.size) errors.push(`Worker catalog product count ${workerBySlug.size} does not match canonical full count ${sourceAllSlugs.size}.`);
 for (const product of semanticDirect) {
-  if (!sourceDirectSlugs.has(product.ecommerceSlug || product.slug)) errors.push(`${product.slug}: semantic source says direct but ecommerce source does not.`);
+  if (!sourceCartableSlugs.has(product.ecommerceSlug || product.slug)) errors.push(`${product.slug}: semantic source says commercially active but ecommerce source is not cartable.`);
   const expectedVariants = activeVariants(product);
   const browserProduct = browserBySlug.get(product.ecommerceSlug || product.slug);
   const workerProduct = workerBySlug.get(product.ecommerceSlug || product.slug);
@@ -367,7 +375,8 @@ for (const product of semanticDirect) {
     errors.push(`${product.slug}: missing from ${!browserProduct ? 'browser' : 'Worker'} catalog projection.`);
     continue;
   }
-  if (browserProduct.commercialStatus !== 'ONLINE_CHECKOUT' || workerProduct.commercialStatus !== 'ONLINE_CHECKOUT') errors.push(`${product.slug}: generated catalog status is not ONLINE_CHECKOUT.`);
+  const expectedStatus = ecommerceSource.products.find(entry => entry.slug === (product.ecommerceSlug || product.slug))?.commercialStatus;
+  if (browserProduct.commercialStatus !== expectedStatus || workerProduct.commercialStatus !== expectedStatus) errors.push(`${product.slug}: generated catalog status differs from the canonical ecommerce source.`);
   for (const expected of expectedVariants) {
     const browserVariant = browserProduct.variants.find(variant => variant.key === expected.key);
     const workerVariant = workerProduct.variants.find(variant => variant.key === expected.key);
@@ -384,7 +393,7 @@ for (const slug of semanticRfqSlugs) {
   if (!sourceAllSlugs.has(slug)) continue;
   const browserProduct = browserBySlug.get(slug);
   const workerProduct = workerBySlug.get(slug);
-  if (sourceDirectSlugs.has(slug)) errors.push(`${slug}: RFQ product is marked direct checkout in the canonical ecommerce source.`);
+  if (sourceCartableSlugs.has(slug)) errors.push(`${slug}: RFQ product is marked cartable in the canonical ecommerce source.`);
   if (!browserProduct || !workerProduct) errors.push(`${slug}: RFQ product is missing from a generated catalog projection.`);
   else if (browserProduct.commercialStatus !== 'RFQ_ONLY' || workerProduct.commercialStatus !== 'RFQ_ONLY' || browserProduct.variants.some(variant => variant.approvalStatus === 'ACTIVE') || workerProduct.variants.some(variant => variant.approvalStatus === 'ACTIVE')) {
     errors.push(`${slug}: RFQ product exposes an active checkout variant.`);

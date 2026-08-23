@@ -3708,10 +3708,10 @@
       "name": "Li5.5PS4.5Cl1.5, D50 0.925 um (GSH04)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSH04",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -3807,10 +3807,10 @@
       "name": "Li5.5PS4.5Cl1.5, D50 2.168 um (GSH03)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSH03",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -3906,10 +3906,10 @@
       "name": "Li5.5PS4.5Cl1.5, D50 4.5 +/- 1.5 um (GSH02)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSH02",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4005,10 +4005,10 @@
       "name": "Li5.5PS4.5Cl1.5, D50 >10 um (GSH01)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSH01",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4104,10 +4104,10 @@
       "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 um (GSB04)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSB04",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4203,10 +4203,10 @@
       "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 um (GSB03)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSB03",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4302,10 +4302,10 @@
       "name": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 +/- 1.5 um (GSB02)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSB02",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4401,10 +4401,10 @@
       "name": "Li5.5PS4.5ClxBr1.5-x, D50 >10 um (GSB01)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSB01",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4500,10 +4500,10 @@
       "name": "Li6PS5Cl, D50 0.734 um (GSL04)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSL04",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4599,10 +4599,10 @@
       "name": "Li6PS5Cl, D50 2.123 um (GSL03)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSL03",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4698,10 +4698,10 @@
       "name": "Li6PS5Cl, D50 4.5 +/- 1.5 um (GSL02)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSL02",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -4797,10 +4797,10 @@
       "name": "Li6PS5Cl, D50 >10 um (GSL01)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSL01",
-      "commercialStatus": "ONLINE_CHECKOUT",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
       "currency": "usd",
-      "launchPhase": "LAUNCH",
+      "launchPhase": "SPECIALIZED_LOGISTICS_REVIEW_20260823",
       "packages": [
         {
           "id": "10G",
@@ -6031,8 +6031,8 @@
       "category": "Battery Solvent",
       "grade": "Battery research grade",
       "commercialStatus": "ONLINE_CHECKOUT",
-      "shippingClass": "RFQ_SHIPPING",
-      "launchPhase": "RFQ",
+      "shippingClass": "FIXED_SPECIAL_HANDLING",
+      "launchPhase": "DIRECT_CHECKOUT_REVIEW_20260823",
       "currency": "usd",
       "defaultPackageId": "500G",
       "packages": [
@@ -6115,8 +6115,8 @@
       "category": "Electrolyte Additive",
       "grade": "Battery research grade",
       "commercialStatus": "ONLINE_CHECKOUT",
-      "shippingClass": "RFQ_SHIPPING",
-      "launchPhase": "RFQ",
+      "shippingClass": "FIXED_SPECIAL_HANDLING",
+      "launchPhase": "DIRECT_CHECKOUT_REVIEW_20260823",
       "currency": "usd",
       "defaultPackageId": "200G",
       "packages": [
@@ -6213,8 +6213,8 @@
       "category": "Lithium Salt",
       "grade": "Battery research grade",
       "commercialStatus": "ONLINE_CHECKOUT",
-      "shippingClass": "RFQ_SHIPPING",
-      "launchPhase": "RFQ",
+      "shippingClass": "FIXED_SPECIAL_HANDLING",
+      "launchPhase": "DIRECT_CHECKOUT_REVIEW_20260823",
       "currency": "usd",
       "defaultPackageId": "200G",
       "packages": [
@@ -6311,8 +6311,8 @@
       "category": "Lithium Salt",
       "grade": "Battery research grade",
       "commercialStatus": "ONLINE_CHECKOUT",
-      "shippingClass": "RFQ_SHIPPING",
-      "launchPhase": "RFQ",
+      "shippingClass": "FIXED_SPECIAL_HANDLING",
+      "launchPhase": "DIRECT_CHECKOUT_REVIEW_20260823",
       "currency": "usd",
       "defaultPackageId": "200G",
       "packages": [
@@ -6515,8 +6515,8 @@
       "category": "Electrolyte Additive",
       "grade": "Battery research grade",
       "commercialStatus": "ONLINE_CHECKOUT",
-      "shippingClass": "RFQ_SHIPPING",
-      "launchPhase": "RFQ",
+      "shippingClass": "FIXED_SPECIAL_HANDLING",
+      "launchPhase": "DIRECT_CHECKOUT_REVIEW_20260823",
       "currency": "usd",
       "defaultPackageId": "200G",
       "packages": [

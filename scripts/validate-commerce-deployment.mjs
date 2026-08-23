@@ -6,6 +6,7 @@ import {
   REQUIRED_D1_MIGRATION,
   REQUIRED_D1_SCHEMA_VERSION
 } from './commerce-release.mjs';
+import { runCommerceClassificationAudit } from '../stripe-worker/scripts/audit-commerce-classification.mjs';
 
 const siteRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
@@ -50,12 +51,15 @@ for (const [slug, canonical] of canonicalProducts) {
     errors.push(`${slug} is missing from ${!browserProduct ? 'browser' : 'Worker'} catalog.`);
     continue;
   }
-  for (const field of ['commercialStatus', 'shippingClass', 'directOrderCeilingGroup', 'directOrderCeilingGrams']) {
+  for (const field of ['commercialStatus', 'shippingClass', 'commerceState', 'directOrderCeilingGroup', 'directOrderCeilingGrams']) {
     const expected = field === 'directOrderCeilingGroup' ? (canonical[field] || canonical.slug) : canonical[field];
     if (browserProduct[field] !== workerProduct[field]) errors.push(`${slug} differs between browser and Worker at ${field}.`);
     if (expected !== undefined && workerProduct[field] !== expected) errors.push(`${slug} differs from canonical source at ${field}.`);
   }
 }
+
+const classificationAudit = await runCommerceClassificationAudit();
+for (const issue of classificationAudit.issues) errors.push(`Commerce classification: ${issue}`);
 
 const allKeys = new Set([...browserVariants.keys(), ...workerVariants.keys()]);
 for (const key of allKeys) {

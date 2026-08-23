@@ -54,7 +54,8 @@ test('representative launch prices resolve from the Worker catalog', () => {
     assert.equal(variant.unitAmount, expected);
     assert.equal(variant.currency, 'usd');
     assert.equal(variant.approvalStatus, 'ACTIVE');
-    assert.equal(variant.product.commercialStatus, 'ONLINE_CHECKOUT');
+    assert.ok(['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(variant.product.commercialStatus));
+    assert.ok(['DIRECT_CHECKOUT', 'DIRECT_CHECKOUT_REVIEW', 'RFQ_ONLY'].includes(variant.product.commerceState));
   }
 });
 

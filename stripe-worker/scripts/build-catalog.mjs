@@ -6,6 +6,7 @@ import {
   REQUIRED_D1_MIGRATION,
   REQUIRED_D1_SCHEMA_VERSION
 } from '../../scripts/commerce-release.mjs';
+import { resolveProductCommerceState } from '../../ecommerce/commerce-classification.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..', '..');
@@ -72,9 +73,16 @@ function validateProduct(product, templates, slugs, skus) {
   slugs.add(product.slug);
   if (!validCommercialStates.has(product.commercialStatus)) fail(`${product.skuBase} has an invalid commercial status.`);
   if (!validShippingClasses.has(product.shippingClass)) fail(`${product.skuBase} has an invalid shipping class.`);
+  let commerceState;
+  try {
+    commerceState = resolveProductCommerceState(product);
+  } catch (error) {
+    fail(error.message);
+  }
 
   const variants = resolveVariants(product, templates);
-  if (product.commercialStatus === 'ONLINE_CHECKOUT' && variants.length === 0) {
+  const supportsActivePackages = ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus);
+  if (supportsActivePackages && variants.length === 0) {
     fail(`${product.skuBase} is ONLINE_CHECKOUT without packages.`);
   }
   const packageIds = new Set();
@@ -94,7 +102,7 @@ function validateProduct(product, templates, slugs, skus) {
       fail(`${variant.sku} is ACTIVE without a positive net weight for commercial-limit enforcement.`);
     }
     if (variant.approvalStatus === 'ACTIVE') {
-      if (product.commercialStatus !== 'ONLINE_CHECKOUT') fail(`${variant.sku} cannot be ACTIVE unless ONLINE_CHECKOUT.`);
+      if (!supportsActivePackages) fail(`${variant.sku} cannot be ACTIVE unless the product is commercially cartable.`);
       if (!Number.isInteger(variant.unitAmount) || variant.unitAmount <= 0) {
         fail(`${variant.sku} is ACTIVE without an approved retail price.`);
       }
@@ -104,29 +112,30 @@ function validateProduct(product, templates, slugs, skus) {
       fail(`${variant.sku} contains a zero-dollar placeholder price.`);
     }
   }
-  if (product.commercialStatus === 'ONLINE_CHECKOUT' && !variants.some(variant => variant.approvalStatus === 'ACTIVE')) {
-    fail(`${product.skuBase} is ONLINE_CHECKOUT without an ACTIVE package.`);
+  if (supportsActivePackages && !variants.some(variant => variant.approvalStatus === 'ACTIVE')) {
+    fail(`${product.skuBase} is commercially cartable without an ACTIVE package.`);
   }
-  if (product.commercialStatus === 'ONLINE_CHECKOUT' && !variants.some(variant => variant.id === product.defaultPackageId && variant.approvalStatus === 'ACTIVE')) {
+  if (supportsActivePackages && !variants.some(variant => variant.id === product.defaultPackageId && variant.approvalStatus === 'ACTIVE')) {
     fail(`${product.skuBase} does not identify an ACTIVE default package.`);
   }
   const activeVariants = variants.filter(variant => variant.approvalStatus === 'ACTIVE');
-  if (product.commercialStatus === 'ONLINE_CHECKOUT' && activeVariants[0]?.id !== product.defaultPackageId) {
+  if (supportsActivePackages && activeVariants[0]?.id !== product.defaultPackageId) {
     fail(`${product.skuBase} must list its default package first among ACTIVE packages.`);
   }
 
   const derivedCeilingGrams = activeVariants.reduce((maximum, variant) => Math.max(maximum, variant.netWeightGrams || 0), 0);
   const directOrderCeilingGrams = product.directOrderCeilingGrams ?? derivedCeilingGrams;
-  if (product.commercialStatus === 'ONLINE_CHECKOUT' && (!Number.isFinite(directOrderCeilingGrams) || directOrderCeilingGrams <= 0)) {
+  if (supportsActivePackages && (!Number.isFinite(directOrderCeilingGrams) || directOrderCeilingGrams <= 0)) {
     fail(`${product.skuBase} requires a positive direct-order commercial ceiling.`);
   }
-  if (product.commercialStatus === 'ONLINE_CHECKOUT' && directOrderCeilingGrams < derivedCeilingGrams) {
+  if (supportsActivePackages && directOrderCeilingGrams < derivedCeilingGrams) {
     fail(`${product.skuBase} has an approved package larger than its direct-order commercial ceiling.`);
   }
 
   return {
     ...product,
     name: normalizeVisibleNotation(product.name),
+    commerceState,
     directOrderCeilingGroup: product.directOrderCeilingGroup || product.slug,
     directOrderCeilingGrams,
     variants
@@ -213,7 +222,7 @@ const slugs = new Set();
 const skus = new Set();
 const products = source.products.map(product => validateProduct(product, source.packageTemplates, slugs, skus));
 const ceilingsByGroup = new Map();
-for (const product of products.filter(product => product.commercialStatus === 'ONLINE_CHECKOUT')) {
+for (const product of products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus))) {
   const existing = ceilingsByGroup.get(product.directOrderCeilingGroup);
   if (existing !== undefined && existing !== product.directOrderCeilingGrams) {
     fail(`${product.directOrderCeilingGroup} has inconsistent direct-order commercial ceilings.`);
