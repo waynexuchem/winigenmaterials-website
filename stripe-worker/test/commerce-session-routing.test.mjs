@@ -75,10 +75,11 @@ test('pending or mismatched smoke return preserves smoke and ordinary cart state
   assert.equal(localStorage.getItem(ordinaryCartKey), ordinaryCart);
 });
 
-test('normal storefront runtime remains configured for sandbox checkout', async () => {
+test('normal storefront runtime is generated for production checkout', async () => {
   const runtime = JSON.parse(await readFile(new URL('../../ecommerce/runtime-config.source.json', import.meta.url), 'utf8'));
   const generated = await readFile(new URL('../../assets/js/commerce-config.js', import.meta.url), 'utf8');
   assert.equal(runtime.environments.test.apiOrigin, 'https://winigen-stripe-test.winigen.workers.dev');
-  assert.match(generated, /"environment": "test"/);
-  assert.match(generated, /"apiOrigin": "https:\/\/winigen-stripe-test\.winigen\.workers\.dev"/);
+  assert.equal(runtime.environments.production.apiOrigin, 'https://winigen-stripe-production.winigen.workers.dev');
+  assert.match(generated, /"environment": "production"/);
+  assert.match(generated, /"apiOrigin": "https:\/\/winigen-stripe-production\.winigen\.workers\.dev"/);
 });
