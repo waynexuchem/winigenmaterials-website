@@ -9,20 +9,24 @@ async function read(relativePath) {
 }
 
 test('frontend runtime contract centralizes sandbox and production Worker origins', async () => {
-  const [runtime, main, success, smoke] = await Promise.all([
+  const [runtime, main, success, smoke, routing] = await Promise.all([
     read('ecommerce/runtime-config.source.json'),
     read('assets/js/main.js'),
     read('checkout-success.html'),
-    read('assets/js/stripe-live-test.js')
+    read('assets/js/stripe-live-test.js'),
+    read('assets/js/commerce-session-routing.js')
   ]);
   const contract = JSON.parse(runtime);
   assert.equal(contract.siteOrigin, 'https://www.winigenmaterials.com');
   assert.equal(contract.environments.test.apiOrigin, 'https://winigen-stripe-test.winigen.workers.dev');
   assert.equal(contract.environments.production.apiOrigin, 'https://winigen-stripe-production.winigen.workers.dev');
-  for (const source of [main, success, smoke]) {
-    assert.match(source, /WINIGEN_COMMERCE_CONFIG/);
+  assert.match(main, /WINIGEN_COMMERCE_CONFIG/);
+  for (const source of [success, smoke]) {
+    assert.match(source, /WinigenCommerceRouting/);
     assert.doesNotMatch(source, /https:\/\/winigen-stripe-(?:test|production)\.winigen\.workers\.dev/);
   }
+  assert.match(routing, /winigen-stripe-test\.winigen\.workers\.dev/);
+  assert.match(routing, /winigen-stripe-production\.winigen\.workers\.dev/);
 });
 
 test('success page and live smoke utility derive environment presentation from commerce status', async () => {

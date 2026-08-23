@@ -21,6 +21,7 @@
         <p class="checkout-result__mode" id="checkout-mode" hidden>Test Mode</p>
         <h1 id="checkout-success-title">Payment received</h1>
         <p class="checkout-result__status">Your order has been received and is pending fulfillment review.</p>
+        <p id="checkout-lookup-error" hidden>We’re unable to display the order details. Please contact Winigen Materials if you need assistance.</p>
         <div class="checkout-result__order" id="checkout-order" hidden><span>Order number</span><strong id="checkout-order-number"></strong></div>
         <p>We’ll email you when your order is approved for processing or if additional information is needed.</p>
         <div class="checkout-result__actions"><a class="btn" href="/products.html">Return to Products</a><a class="btn secondary" href="/contact.html">Contact Winigen</a></div>
@@ -28,7 +29,7 @@
     </div>
   </main>
   <footer class="footer" data-global-footer></footer>
-  <script src="assets/js/commerce-config.js?v=019ce6f4dd60"></script>
+  <script src="assets/js/commerce-session-routing.js?v=7ddba972b1ab"></script>
   <script>
     const successSessionStorageKey = 'winigen-checkout-success-session-v1';
     const sessionPattern = /^cs_(?:test|live)_[A-Za-z0-9]{20,255}$/;
@@ -42,7 +43,9 @@
     const order = document.querySelector('#checkout-order');
     const orderNumber = document.querySelector('#checkout-order-number');
     const modeMarker = document.querySelector('#checkout-mode');
-    const commerceApiOrigin = window.WINIGEN_COMMERCE_CONFIG?.apiOrigin;
+    const lookupError = document.querySelector('#checkout-lookup-error');
+    const routing = window.WinigenCommerceRouting;
+    const commerceApiOrigin = routing?.resolveOrderStatusOrigin(sessionId);
     window.history.replaceState({}, '', '/checkout-success.html');
 
     const waitForCheckoutState = async () => {
@@ -57,7 +60,10 @@
     };
 
     const loadOrderStatus = async () => {
-      if (!commerceApiOrigin || !sessionPattern.test(sessionId) || !order || !orderNumber) return;
+      if (!commerceApiOrigin || !sessionPattern.test(sessionId) || !order || !orderNumber) {
+        if (lookupError) lookupError.hidden = false;
+        return;
+      }
 
       try {
         const statusResponse = await fetch(`${commerceApiOrigin}/api/commerce-status`, { cache: 'no-store' });
@@ -75,7 +81,11 @@
             orderNumber.textContent = payload.orderId;
           }
           if (payload.paymentStatus === 'PAID') {
-            if (await waitForCheckoutState()) {
+            const smokeResult = routing?.reconcilePaidSmokeCheckout({
+              orderId: payload.orderId,
+              paymentStatus: payload.paymentStatus
+            }, sessionStorage);
+            if (!smokeResult?.reconciled && await waitForCheckoutState()) {
               window.WinigenCheckoutState.reconcilePaidOrder({
                 orderId: payload.orderId,
                 paymentStatus: payload.paymentStatus,

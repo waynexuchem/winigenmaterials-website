@@ -4,17 +4,16 @@
 
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('[data-live-smoke-status]');
-  const commerceApiOrigin = window.WINIGEN_COMMERCE_CONFIG?.apiOrigin;
+  const routing = window.WinigenCommerceRouting;
+  const commerceApiOrigin = routing?.apiOrigins?.production;
   const endpoint = commerceApiOrigin ? `${commerceApiOrigin}/api/create-checkout-session` : null;
-  const attemptStorageKey = 'winigen-live-smoke-test-attempt-v1';
   const disabledMessage = 'Live checkout verification is currently disabled. It will be enabled after production Stripe migration.';
 
   function attemptId() {
-    const existing = sessionStorage.getItem(attemptStorageKey);
-    if (existing) return existing;
-    const created = crypto.randomUUID().replaceAll('-', '');
-    sessionStorage.setItem(attemptStorageKey, created);
-    return created;
+    return routing.getOrCreateSmokeAttempt(
+      () => crypto.randomUUID().replaceAll('-', ''),
+      sessionStorage
+    );
   }
 
   let smokeTestReady = false;
@@ -49,11 +48,12 @@
     status.textContent = '';
 
     try {
+      const checkoutAttemptId = attemptId();
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          attemptId: attemptId(),
+          attemptId: checkoutAttemptId,
           destinationCountry: 'US',
           purpose: 'live_checkout_smoke_test',
           cart: [{ variantKey: 'WM-LIVE-TEST-1USD', quantity: 1 }]
@@ -70,6 +70,9 @@
           ? disabledMessage
           : payload.error || 'Checkout is unavailable.';
         throw new Error(message);
+      }
+      if (!routing.recordSmokeCheckout({ attemptId: checkoutAttemptId, orderId: payload.orderId }, sessionStorage)) {
+        throw new Error('Unable to preserve the smoke-test checkout state.');
       }
       window.location.assign(payload.url);
     } catch (error) {
