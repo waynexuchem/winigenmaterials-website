@@ -134,9 +134,10 @@ export async function readD1SchemaStatus(db) {
   }
 }
 
-async function handleCommerceStatus(env) {
+async function handleCommerceStatus(request, env) {
   const d1 = await readD1SchemaStatus(env.ORDERS_DB);
   const commerceEnabled = isCommerceEnabled(env);
+  const origin = request.headers.get('Origin');
   let stripeRuntimeReady = true;
   try {
     validateRuntimeConfiguration(env);
@@ -157,7 +158,7 @@ async function handleCommerceStatus(env) {
     requiredD1SchemaVersion: REQUIRED_D1_SCHEMA_VERSION,
     appliedD1SchemaVersion: d1.currentVersion,
     workerVersion: env.CF_VERSION_METADATA?.id || null
-  }, runtimeReady && d1.ready ? 200 : 503);
+  }, runtimeReady && d1.ready ? 200 : 503, origin && isAllowedOrigin(request) ? origin : undefined);
 }
 
 function createOrderDate(now = new Date()) {
@@ -766,7 +767,7 @@ export default {
     const origin = request.headers.get('Origin');
 
     if (request.method === 'GET' && url.pathname === commerceStatusPath) {
-      return handleCommerceStatus(env);
+      return handleCommerceStatus(request, env);
     }
 
     if (request.method === 'OPTIONS' && [checkoutPath, shippingQuotePath].includes(url.pathname) && origin && isAllowedOrigin(request)) {

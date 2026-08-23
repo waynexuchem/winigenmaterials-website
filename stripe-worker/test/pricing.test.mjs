@@ -920,6 +920,70 @@ test('commerce status is healthy with ready D1 when commerce is disabled and Str
   assert.equal(payload.workerVersion, 'worker-build-production-disabled');
 });
 
+test('commerce status permits the trusted public site origin without broadening CORS', async () => {
+  const response = await worker.fetch(new Request('https://worker.example/api/commerce-status', {
+    headers: { Origin: 'https://www.winigenmaterials.com' }
+  }), {
+    COMMERCE_ENABLED: 'false',
+    STRIPE_MODE: 'live',
+    EMAIL_MODE: 'live',
+    LIVE_SMOKE_TEST_ENABLED: 'false',
+    ORDERS_DB: {
+      prepare() {
+        return {
+          bind() {
+            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+          }
+        };
+      }
+    }
+  }, {});
+
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'), 'https://www.winigenmaterials.com');
+  assert.equal(response.headers.get('Vary'), 'Origin');
+  assert.equal(response.headers.get('Cache-Control'), 'no-store');
+  assert.deepEqual(Object.keys(payload).sort(), [
+    'appliedD1SchemaVersion',
+    'catalogProductCount',
+    'catalogVariantCount',
+    'commerceEnabled',
+    'commerceRelease',
+    'databaseConfigured',
+    'emailMode',
+    'ok',
+    'requiredD1SchemaVersion',
+    'smokeTestEnabled',
+    'stripeMode',
+    'workerVersion'
+  ]);
+});
+
+test('commerce status does not grant CORS access to an untrusted origin', async () => {
+  const response = await worker.fetch(new Request('https://worker.example/api/commerce-status', {
+    headers: { Origin: 'https://untrusted.example' }
+  }), {
+    COMMERCE_ENABLED: 'false',
+    STRIPE_MODE: 'live',
+    EMAIL_MODE: 'live',
+    LIVE_SMOKE_TEST_ENABLED: 'false',
+    ORDERS_DB: {
+      prepare() {
+        return {
+          bind() {
+            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+          }
+        };
+      }
+    }
+  }, {});
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'), null);
+  assert.equal(response.headers.get('Vary'), null);
+});
+
 test('order-status exposes trusted paid and pending states without Stripe identifiers', async () => {
   const rows = new Map([
     ['cs_test_paidcheckoutsession000001', { winigen_order_id: 'WM-T-20260823-0101', payment_status: 'PAID', fulfillment_status: 'NOT_RELEASED' }],
