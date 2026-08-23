@@ -40,8 +40,8 @@ add(browser.catalogProductCount !== browserProducts.size && 'Browser embedded pr
 add(worker.CATALOG_PRODUCT_COUNT !== workerProducts.size && 'Worker embedded product count is stale.');
 add(browser.catalogVariantCount !== activeBrowserVariants.length && 'Browser embedded active-variant count is stale.');
 add(worker.CATALOG_VARIANT_COUNT !== activeWorkerVariants.length && 'Worker embedded active-variant count is stale.');
-add(browser.maximumDirectOrderCartMassGrams !== catalogSource.maximumDirectOrderCartMassGrams && 'Browser direct-order cart mass ceiling differs from canonical input.');
-add(worker.MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS !== catalogSource.maximumDirectOrderCartMassGrams && 'Worker direct-order cart mass ceiling differs from canonical input.');
+add(browser.aggregateOrderReviewThresholdGrams !== catalogSource.aggregateOrderReviewThresholdGrams && 'Browser aggregate order-review threshold differs from canonical input.');
+add(worker.AGGREGATE_ORDER_REVIEW_THRESHOLD_GRAMS !== catalogSource.aggregateOrderReviewThresholdGrams && 'Worker aggregate order-review threshold differs from canonical input.');
 
 for (const [slug, canonical] of canonicalProducts) {
   const browserProduct = browserProducts.get(slug);

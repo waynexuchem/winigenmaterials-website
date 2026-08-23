@@ -185,11 +185,13 @@
     const review = getReview();
     const form = document.querySelector('form.js-formspree-form');
     if (!review || !form) return;
-    const type = review.action === 'rfq' ? 'Request for Quote' : 'Shipping Review';
+    const type = review.action === 'rfq' ? 'Request for Quote' : 'Order / Shipping Question';
     const details = review.items.map(item => `${item.sku}: ${item.name} | ${item.grade} | ${item.packageLabel} x ${item.quantity} | $${(item.unitAmount * item.quantity / 100).toFixed(2)}`).join('\n');
     const destination = review.destinationCountry ? `\nShipping destination: ${review.destinationCountry}` : '';
     const reviewNote = review.action === 'shipping_review'
       ? 'Specialized sulfide logistics require destination review and are quoted separately from the published material subtotal. Multiple sulfide grades may be consolidated into one shipment where feasible. Cart remains saved.'
+      : review.action === 'order_review'
+        ? 'This order exceeds 10 kg total. Fulfillment and shipping details will be confirmed before payment. Cart remains saved.'
       : 'Destination and fulfillment eligibility require confirmation. Cart remains saved.';
     const message = `Cart review request\n${details}\nPublished product subtotal: $${(review.merchandiseSubtotal / 100).toFixed(2)}${destination}\n${reviewNote}`;
     const setField = (name, value) => {

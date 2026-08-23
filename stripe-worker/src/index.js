@@ -3,7 +3,7 @@ import {
   CATALOG_VARIANT_COUNT,
   CATALOG_VERSION,
   COMMERCE_RELEASE,
-  MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS,
+  AGGREGATE_ORDER_REVIEW_THRESHOLD_GRAMS,
   REQUIRED_D1_MIGRATION,
   REQUIRED_D1_SCHEMA_VERSION,
   VARIANTS_BY_KEY
@@ -57,7 +57,7 @@ const shippingPrecedence = {
   SHIPPING_REVIEW: 3,
   RFQ_SHIPPING: 4
 };
-export const CART_MASS_LIMIT_MESSAGE = 'Online checkout is limited to 20 kg total per order. Please request a quote for larger or mixed bulk orders.';
+export const ORDER_REVIEW_MESSAGE = 'This order exceeds 10 kg total. We’ll confirm fulfillment and shipping details before payment. Your cart will be retained during review.';
 
 function jsonResponse(body, status = 200, origin) {
   const headers = new Headers({
@@ -186,9 +186,7 @@ export function resolveCart(cart) {
     }
     return total + item.variant.netWeightGrams * item.quantity;
   }, 0);
-  if (totalCartMassGrams > MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS) {
-    throw new Error(CART_MASS_LIMIT_MESSAGE);
-  }
+  const requiresOrderReview = totalCartMassGrams > AGGREGATE_ORDER_REVIEW_THRESHOLD_GRAMS;
   const shippingClass = items.reduce((current, item) => (
     shippingPrecedence[item.variant.product.shippingClass] > shippingPrecedence[current]
       ? item.variant.product.shippingClass
@@ -197,7 +195,7 @@ export function resolveCart(cart) {
   const merchandiseSubtotal = items.reduce((total, item) => total + item.variant.unitAmount * item.quantity, 0);
   const totalShippingWeightGrams = items.reduce((total, item) => total + item.variant.shippingWeightGrams * item.quantity, 0);
   if (!Number.isFinite(totalShippingWeightGrams) || totalShippingWeightGrams <= 0) throw new Error('Cart shipping weight is unavailable.');
-  return { items, shippingClass, merchandiseSubtotal, totalCartMassGrams, totalShippingWeightGrams };
+  return { items, shippingClass, merchandiseSubtotal, totalCartMassGrams, totalShippingWeightGrams, requiresOrderReview };
 }
 
 export function resolveLiveSmokeTestCart(cart) {
@@ -222,6 +220,7 @@ function createReviewPayload(resolvedCart, action, destinationCountry = null) {
     destinationCountry,
     catalogVersion: CATALOG_VERSION,
     merchandiseSubtotal: resolvedCart.merchandiseSubtotal,
+    totalCartMassGrams: resolvedCart.totalCartMassGrams,
     totalShippingWeightGrams: resolvedCart.totalShippingWeightGrams,
     items: resolvedCart.items.map(({ variant, quantity }) => ({
       sku: variant.sku,
@@ -345,6 +344,18 @@ async function handleShippingQuote(request, env) {
       action: 'shipping_review',
       error: 'This destination is not currently eligible for online checkout. Please contact Winigen Materials for assistance.'
     }, 400, origin);
+  }
+  if (resolvedCart.shippingClass === 'RFQ_SHIPPING') {
+    return jsonResponse(createReviewPayload(resolvedCart, 'rfq', shippingDestination.country), 200, origin);
+  }
+  if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') {
+    return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country), 200, origin);
+  }
+  if (resolvedCart.requiresOrderReview) {
+    return jsonResponse({
+      ...createReviewPayload(resolvedCart, 'order_review', shippingDestination.country),
+      message: ORDER_REVIEW_MESSAGE
+    }, 200, origin);
   }
   if (shippingDestination.requiresReview) {
     return jsonResponse({
@@ -500,14 +511,20 @@ async function handleCreateCheckoutSession(request, env) {
           error: 'This destination is not currently eligible for online checkout. Please contact Winigen Materials for assistance.'
         }, 400, origin);
       }
+      if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq', shippingDestination.country), 200, origin);
+      if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country), 200, origin);
+      if (resolvedCart.requiresOrderReview) {
+        return jsonResponse({
+          ...createReviewPayload(resolvedCart, 'order_review', shippingDestination.country),
+          message: ORDER_REVIEW_MESSAGE
+        }, 200, origin);
+      }
       if (shippingDestination.requiresReview) {
         return jsonResponse({
           ...createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country),
           error: 'Orders above 10 kg require fulfillment review. Your cart remains saved.'
         }, 200, origin);
       }
-      if (resolvedCart.shippingClass === 'RFQ_SHIPPING') return jsonResponse(createReviewPayload(resolvedCart, 'rfq', shippingDestination.country), 200, origin);
-      if (resolvedCart.shippingClass === 'SHIPPING_REVIEW') return jsonResponse(createReviewPayload(resolvedCart, 'shipping_review', shippingDestination.country), 200, origin);
       const cartHash = createCartFingerprint(resolvedCart.items, shippingDestination.country);
       const order = await getOrCreateAttempt(body.attemptId, env, cartHash, resolvedCart.purpose || null);
       if (order.stripe_checkout_session_id && order.checkout_url) return jsonResponse({ action: 'checkout', url: order.checkout_url, orderId: order.winigen_order_id }, 200, origin);

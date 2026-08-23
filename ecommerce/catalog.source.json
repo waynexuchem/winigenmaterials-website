@@ -1,6 +1,6 @@
 {
-  "catalogVersion": "2026-08-23-global-cart-mass-ceiling-v1",
-  "maximumDirectOrderCartMassGrams": 20000,
+  "catalogVersion": "2026-08-23-aggregate-order-review-threshold-v1",
+  "aggregateOrderReviewThresholdGrams": 10000,
   "packageTemplates": {
     "P1": [
       {

@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="assets/css/style.css?v=c605a723f01a">
-  <link rel="stylesheet" href="assets/css/ecommerce.css?v=5d7deb57ab47">
+  <link rel="stylesheet" href="assets/css/ecommerce.css?v=fa3bc69c9cc4">
 </head>
 <body>
   <header class="header"><div class="container nav"><a class="logo" href="/"><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"></a><nav class="nav-links"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></nav><button class="mobile-toggle" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></div></header>
@@ -29,24 +29,53 @@
   </main>
   <footer class="footer" data-global-footer></footer>
   <script>
-    const sessionId = new URLSearchParams(window.location.search).get('session_id');
+    const successSessionStorageKey = 'winigen-checkout-success-session-v1';
+    const sessionPattern = /^cs_(?:test|live)_[A-Za-z0-9]{20,255}$/;
+    const querySessionId = new URLSearchParams(window.location.search).get('session_id');
+    if (sessionPattern.test(querySessionId || '')) {
+      try { sessionStorage.setItem(successSessionStorageKey, querySessionId); } catch { /* Retry remains available during this page load. */ }
+    }
+    let storedSessionId = '';
+    try { storedSessionId = sessionStorage.getItem(successSessionStorageKey) || ''; } catch { /* Session storage may be unavailable. */ }
+    const sessionId = sessionPattern.test(querySessionId || '') ? querySessionId : storedSessionId;
     const order = document.querySelector('#checkout-order');
     const orderNumber = document.querySelector('#checkout-order-number');
     window.history.replaceState({}, '', '/checkout-success.html');
 
+    const waitForCheckoutState = async () => {
+      if (window.WinigenCheckoutState && window.WinigenCart) return true;
+      return new Promise(resolve => {
+        const timeout = window.setTimeout(() => resolve(false), 5000);
+        window.addEventListener('winigen:ecommerce-ready', () => {
+          window.clearTimeout(timeout);
+          resolve(Boolean(window.WinigenCheckoutState && window.WinigenCart));
+        }, { once: true });
+      });
+    };
+
     const loadOrderStatus = async () => {
-      if (!sessionId || !/^cs_test_[A-Za-z0-9]{20,255}$/.test(sessionId) || !order || !orderNumber) return;
+      if (!sessionPattern.test(sessionId) || !order || !orderNumber) return;
 
       for (let attempt = 0; attempt < 5; attempt += 1) {
         try {
           const response = await fetch(`https://winigen-stripe-test.winigen.workers.dev/api/order-status?session_id=${encodeURIComponent(sessionId)}`, { cache: 'no-store' });
           const payload = await response.json();
           if (!response.ok) return;
-          if (/^WM-T-\d{8}-\d{4}$/.test(payload.orderId)) {
+          if (/^WM(?:-T)?-\d{8}-\d{4}$/.test(payload.orderId)) {
             order.hidden = false;
             orderNumber.textContent = payload.orderId;
           }
-          if (payload.paymentStatus === 'PAID') return;
+          if (payload.paymentStatus === 'PAID') {
+            if (await waitForCheckoutState()) {
+              window.WinigenCheckoutState.reconcilePaidOrder({
+                orderId: payload.orderId,
+                paymentStatus: payload.paymentStatus,
+                cartApi: window.WinigenCart
+              });
+              try { sessionStorage.removeItem(successSessionStorageKey); } catch { /* The paid order is already reconciled. */ }
+            }
+            return;
+          }
         } catch {
           return;
         }
@@ -56,6 +85,6 @@
 
     loadOrderStatus();
   </script>
-  <script src="assets/js/main.js?v=bc928a2f5665"></script>
+  <script src="assets/js/main.js?v=71009d7f4a75"></script>
 </body>
 </html>

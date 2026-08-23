@@ -12,7 +12,8 @@ const ecommerceBundleAssets = [
   'assets/js/ecommerce-catalog.js',
   'assets/js/ecommerce-listing.js',
   'assets/js/ecommerce-product-page.js',
-  'assets/js/cart.js'
+  'assets/js/cart.js',
+  'assets/js/checkout-state.js'
 ];
 
 function fingerprint(content) {

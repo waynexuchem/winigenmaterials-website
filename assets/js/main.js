@@ -4,7 +4,7 @@ const protectedHosts = [
 ];
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
-const ecommerceAssetVersion = '6a843cf20ca6';
+const ecommerceAssetVersion = 'd4696664dd70';
 
 function loadSharedScript(path) {
   return new Promise((resolve, reject) => {
@@ -26,11 +26,13 @@ async function initializeEcommerce() {
     }
     await loadSharedScript(`/assets/js/ecommerce-catalog.js?v=${ecommerceAssetVersion}`);
     await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
+    await import(`/assets/js/checkout-state.js?v=${ecommerceAssetVersion}`);
     await loadSharedScript(`/assets/js/cart.js?v=${ecommerceAssetVersion}`);
     await loadSharedScript(`/assets/js/ecommerce-product-page.js?v=${ecommerceAssetVersion}`);
     await loadSharedScript(`/assets/js/ecommerce-listing.js?v=${ecommerceAssetVersion}`);
     initializeCartNavigation();
     initializeCartPage();
+    window.dispatchEvent(new CustomEvent('winigen:ecommerce-ready'));
   } catch (error) {
     console.warn('Ecommerce support was unavailable.', error);
   }
@@ -96,14 +98,12 @@ function initializeCartPage() {
   const subtotal = cartItems.reduce((total, item) => total + (item.variant.unitAmount || 0) * item.quantity, 0);
   const activeItems = cartItems.filter(item => item.variant.approvalStatus === 'ACTIVE' && Number.isInteger(item.variant.unitAmount) && item.variant.unitAmount > 0);
   const blockedItems = cartItems.filter(item => !activeItems.includes(item));
-  const maximumDirectOrderCartMassGrams = catalog.maximumDirectOrderCartMassGrams;
-  const cartMassLimitMessage = 'Online checkout is limited to 20 kg total per order. Please request a quote for larger or mixed bulk orders.';
+  const aggregateOrderReviewThresholdGrams = catalog.aggregateOrderReviewThresholdGrams;
   const totalCartMassGrams = cartItems.reduce((total, item) => (
     total + (Number.isFinite(item.variant.netWeightGrams) ? item.variant.netWeightGrams * item.quantity : Number.POSITIVE_INFINITY)
   ), 0);
-  const aggregateMassExceeded = !Number.isInteger(maximumDirectOrderCartMassGrams)
-    || maximumDirectOrderCartMassGrams <= 0
-    || totalCartMassGrams > maximumDirectOrderCartMassGrams;
+  const reviewThresholdUnavailable = !Number.isInteger(aggregateOrderReviewThresholdGrams)
+    || aggregateOrderReviewThresholdGrams <= 0;
   const shippingRank = { STANDARD_RD: 1, FIXED_SPECIAL_HANDLING: 2, SHIPPING_REVIEW: 3, RFQ_SHIPPING: 4 };
   const cartShippingClass = cartItems.reduce((highest, item) => shippingRank[item.variant.product.shippingClass] > shippingRank[highest] ? item.variant.product.shippingClass : highest, 'STANDARD_RD');
   const shippingCountries = window.WINIGEN_SHIPPING_COUNTRIES;
@@ -122,22 +122,38 @@ function initializeCartPage() {
     const maximumQuantity = window.WinigenCart.maximumQuantity(item.variant.key);
     return `<tr><td class="cart-item"><strong>${item.variant.product.name}</strong><small>${item.variant.product.grade}</small><span class="cart-item__package">${item.variant.label}</span></td><td class="cart-quantity-cell"><div class="quantity-stepper quantity-stepper--cart"><button type="button" data-cart-decrease="${item.variant.key}" aria-label="Decrease ${item.variant.product.name} quantity">−</button><input data-cart-quantity="${item.variant.key}" type="number" min="1" max="${maximumQuantity}" value="${item.quantity}" aria-label="Quantity for ${item.variant.product.name}"><button type="button" data-cart-increase="${item.variant.key}" aria-label="Increase ${item.variant.product.name} quantity"${item.quantity >= maximumQuantity ? ' disabled' : ''}>+</button></div></td><td class="cart-price-cell">${item.variant.unitAmount ? formatMoney(item.variant.unitAmount) : 'Pending approval'}</td><td class="cart-total-cell"><strong>${item.variant.unitAmount ? formatMoney(item.variant.unitAmount * item.quantity) : 'Pending approval'}</strong></td><td class="cart-remove-cell"><button class="cart-remove" data-cart-remove="${item.variant.key}" type="button">Remove<span class="visually-hidden"> ${item.variant.product.name}</span></button></td></tr>`;
   }).join('');
-  const fulfillmentMessage = aggregateMassExceeded
-    ? cartMassLimitMessage
-    : blockedItems.length > 0
+  const requiresShippingReview = cartShippingClass === 'SHIPPING_REVIEW';
+  const requiresOrderReview = !requiresShippingReview
+    && cartShippingClass !== 'RFQ_SHIPPING'
+    && !reviewThresholdUnavailable
+    && totalCartMassGrams > aggregateOrderReviewThresholdGrams;
+  const fulfillmentMessage = blockedItems.length > 0
       ? 'Some cart packages are still being confirmed and cannot proceed.'
     : cartShippingClass === 'RFQ_SHIPPING'
       ? 'This cart requires an RFQ and fulfillment review. Your cart will be retained.'
       : cartShippingClass === 'SHIPPING_REVIEW'
         ? 'Material prices are shown above. Specialized sulfide logistics are quoted separately by destination, and multiple sulfide grades may be consolidated into one shipment where feasible. Your cart will be retained during review.'
+        : requiresOrderReview
+          ? '<strong class="cart-note__title">Order review required</strong><span>This order exceeds 10 kg total. We’ll confirm fulfillment and shipping details before payment. Your cart will be retained during review.</span>'
         : cartShippingClass === 'FIXED_SPECIAL_HANDLING'
           ? 'Special-handling eligibility will be confirmed during order review.'
           : 'Shipping and handling are included in listed prices for eligible destinations.';
-  const requiresShippingReview = cartShippingClass === 'SHIPPING_REVIEW';
-  const totalLabel = requiresShippingReview ? 'Material total (excluding logistics)' : 'Order total';
-  const proceedLabel = requiresShippingReview ? 'Request Shipping Review' : 'Proceed to Secure Checkout';
-  const trustLabel = requiresShippingReview ? 'Specialized logistics are confirmed before payment.' : 'Secure payment processed by Stripe';
-  const checkoutBlocked = blockedItems.length > 0 || aggregateMassExceeded;
+  const totalLabel = requiresShippingReview
+    ? 'Material total (excluding logistics)'
+    : requiresOrderReview
+      ? 'Material subtotal (pending review)'
+      : 'Order total';
+  const proceedLabel = requiresShippingReview
+    ? 'Request Shipping Review'
+    : requiresOrderReview
+      ? 'Request Order Review'
+      : 'Proceed to Secure Checkout';
+  const trustLabel = requiresShippingReview
+    ? 'Specialized logistics are confirmed before payment.'
+    : requiresOrderReview
+      ? 'Payment is requested after fulfillment and shipping are confirmed.'
+      : 'Secure payment processed by Stripe';
+  const checkoutBlocked = blockedItems.length > 0 || reviewThresholdUnavailable;
   root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" name="shippingCountry" aria-describedby="shipping-destination-note shipping-destination-help">${destinationOptions}</select><small id="shipping-destination-note">Used to confirm destination and fulfillment eligibility.</small><small id="shipping-destination-help" class="cart-destination__help">Don't see your country? <a href="contact.html?inquiry_type=Shipping%20Review&amp;product_interest=Shipping%20availability">Contact us for destination availability.</a></small></div><p><span>Product subtotal</span><strong>${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><p class="cart-note">${fulfillmentMessage}</p><p class="cart-summary__total"><span>${totalLabel}</span><strong id="cart-order-total">${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${checkoutBlocked ? ' disabled' : ''}>${proceedLabel}</button><p class="cart-trust"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>${trustLabel}</span></p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button"><span>Need a custom order?</span> Request Quote</button></div></aside></div>`;
   root.querySelectorAll('[data-cart-quantity]').forEach(input => input.addEventListener('change', () => window.WinigenCart.update(input.dataset.cartQuantity, Number(input.value))));
   root.querySelectorAll('[data-cart-decrease]').forEach(button => button.addEventListener('click', () => {
@@ -162,15 +178,25 @@ function initializeCartPage() {
     goToReview('rfq', { items, merchandiseSubtotal: subtotal, destinationCountry });
   });
   root.querySelector('#cart-proceed')?.addEventListener('click', async () => {
-    if (aggregateMassExceeded) return;
     const button = root.querySelector('#cart-proceed');
     button.disabled = true;
     try {
-      const response = await fetch('https://winigen-stripe-test.winigen.workers.dev/api/create-checkout-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ attemptId: crypto.randomUUID().replaceAll('-', ''), commerceRelease: window.WINIGEN_ECOMMERCE_CATALOG?.commerceRelease, destinationCountry, cart: cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity })) }) });
+      const attemptId = crypto.randomUUID().replaceAll('-', '');
+      const commerceRelease = window.WINIGEN_ECOMMERCE_CATALOG?.commerceRelease;
+      const checkoutItems = cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity }));
+      const response = await fetch('https://winigen-stripe-test.winigen.workers.dev/api/create-checkout-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ attemptId, commerceRelease, destinationCountry, cart: checkoutItems }) });
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || 'Unable to process the cart.');
-      if (payload.action === 'checkout') window.location.assign(payload.url);
-      else goToReview(payload.action, payload);
+      if (payload.action === 'checkout') {
+        const snapshotSaved = window.WinigenCheckoutState?.saveCheckoutSnapshot({
+          orderId: payload.orderId,
+          items: checkoutItems,
+          commerceRelease,
+          attemptId
+        });
+        if (!snapshotSaved) throw new Error('Checkout could not preserve the cart reconciliation record. Please try again.');
+        window.location.assign(payload.url);
+      } else goToReview(payload.action, payload);
     } catch (error) {
       button.disabled = false;
       alert(error.message);

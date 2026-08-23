@@ -17,6 +17,8 @@
     "preflight:production": "node ../scripts/preflight-commerce-deploy.mjs --target=production",
     "build:site": "node scripts/build-catalog.mjs && node ../seo/build-seo.mjs && node ../scripts/sync-static-asset-versions.mjs && node ../seo/validate-seo.mjs",
     "build:store": "node scripts/build-catalog.mjs && node ../scripts/build-product-search-index.mjs && node ../scripts/generate-public-product-pages.mjs && SEO_SCOPE=products node ../seo/build-seo.mjs && node ../scripts/sync-static-asset-versions.mjs && node ../seo/validate-seo.mjs && node ../scripts/validate-approved-pricing.mjs && node scripts/build-catalog.mjs --check && node ../scripts/validate-commerce-deployment.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:cart": "node --test test/cart-reconciliation.test.mjs",
     "test:pricing": "node --test test/pricing.test.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
