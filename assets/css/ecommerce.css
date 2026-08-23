@@ -51,7 +51,7 @@
 .cart-item strong, .cart-item small, .cart-item span { display: block; }
 .cart-item strong { color: #172e4a; line-height: 1.35; }
 .cart-item small { color: #64758a; margin-top: 4px; }
-.cart-item .cart-item__package { color: #1c6f99; font-size: 13px; font-weight: 800; margin-top: 7px; }
+.cart-item .cart-item__package { color: #1c6f99; font-size: 16px; font-weight: 800; line-height: 1.35; margin-top: 7px; }
 .cart-quantity-cell { width: 144px; }
 .cart-price-cell, .cart-total-cell { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
 .cart-table th:nth-child(3), .cart-table th:nth-child(4) { text-align: right; }
