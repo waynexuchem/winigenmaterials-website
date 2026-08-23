@@ -26,7 +26,7 @@ export const LIVE_SMOKE_TEST_PURPOSE = 'live_checkout_smoke_test';
 export const LIVE_SMOKE_TEST_SKU = 'WM-LIVE-TEST-1USD';
 const liveSmokeTestProduct = Object.freeze({
   slug: 'live-checkout-smoke-test',
-  name: 'Winigen Checkout Test',
+  name: 'Winigen Materials Checkout',
   grade: 'Production checkout validation',
   commercialStatus: 'ONLINE_CHECKOUT',
   shippingClass: 'STANDARD_RD'

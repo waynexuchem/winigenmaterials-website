@@ -1041,6 +1041,14 @@ test('live Checkout smoke metadata and amount are sent through the normal sessio
     );
     assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '100');
     assert.equal(submitted.get('line_items[0][quantity]'), '1');
+    assert.equal(
+      submitted.get('line_items[0][price_data][product_data][name]'),
+      'Winigen Materials Checkout — Fixed quantity 1'
+    );
+    assert.doesNotMatch(
+      submitted.get('line_items[0][price_data][product_data][name]'),
+      /Checkout Test|TEST|Test Mode|Sandbox/i
+    );
     assert.equal(submitted.get('metadata[purpose]'), LIVE_SMOKE_TEST_PURPOSE);
     assert.equal(submitted.get('payment_intent_data[metadata][purpose]'), LIVE_SMOKE_TEST_PURPOSE);
   } finally {
