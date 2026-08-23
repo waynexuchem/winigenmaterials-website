@@ -1,5 +1,6 @@
 {
-  "catalogVersion": "2026-08-22-sse-2kg-commercial-ladders-v1",
+  "catalogVersion": "2026-08-23-global-cart-mass-ceiling-v1",
+  "maximumDirectOrderCartMassGrams": 20000,
   "packageTemplates": {
     "P1": [
       {

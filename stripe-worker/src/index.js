@@ -3,6 +3,7 @@ import {
   CATALOG_VARIANT_COUNT,
   CATALOG_VERSION,
   COMMERCE_RELEASE,
+  MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS,
   REQUIRED_D1_MIGRATION,
   REQUIRED_D1_SCHEMA_VERSION,
   VARIANTS_BY_KEY
@@ -56,6 +57,7 @@ const shippingPrecedence = {
   SHIPPING_REVIEW: 3,
   RFQ_SHIPPING: 4
 };
+export const CART_MASS_LIMIT_MESSAGE = 'Online checkout is limited to 20 kg total per order. Please request a quote for larger or mixed bulk orders.';
 
 function jsonResponse(body, status = 200, origin) {
   const headers = new Headers({
@@ -178,6 +180,15 @@ export function resolveCart(cart) {
       throw new Error(`${entry.name} exceeds its approved direct-order quantity. Please request a bulk quote.`);
     }
   }
+  const totalCartMassGrams = items.reduce((total, item) => {
+    if (!Number.isFinite(item.variant.netWeightGrams) || item.variant.netWeightGrams <= 0) {
+      throw new Error('Cart package mass is unavailable.');
+    }
+    return total + item.variant.netWeightGrams * item.quantity;
+  }, 0);
+  if (totalCartMassGrams > MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS) {
+    throw new Error(CART_MASS_LIMIT_MESSAGE);
+  }
   const shippingClass = items.reduce((current, item) => (
     shippingPrecedence[item.variant.product.shippingClass] > shippingPrecedence[current]
       ? item.variant.product.shippingClass
@@ -186,7 +197,7 @@ export function resolveCart(cart) {
   const merchandiseSubtotal = items.reduce((total, item) => total + item.variant.unitAmount * item.quantity, 0);
   const totalShippingWeightGrams = items.reduce((total, item) => total + item.variant.shippingWeightGrams * item.quantity, 0);
   if (!Number.isFinite(totalShippingWeightGrams) || totalShippingWeightGrams <= 0) throw new Error('Cart shipping weight is unavailable.');
-  return { items, shippingClass, merchandiseSubtotal, totalShippingWeightGrams };
+  return { items, shippingClass, merchandiseSubtotal, totalCartMassGrams, totalShippingWeightGrams };
 }
 
 export function resolveLiveSmokeTestCart(cart) {

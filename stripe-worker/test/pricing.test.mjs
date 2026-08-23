@@ -5,11 +5,13 @@ import {
   CATALOG_PRODUCT_COUNT,
   CATALOG_VARIANT_COUNT,
   COMMERCE_RELEASE,
+  MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS,
   PRODUCTS,
   REQUIRED_D1_SCHEMA_VERSION,
   VARIANTS_BY_KEY
 } from '../src/catalog.js';
 import worker, {
+  CART_MASS_LIMIT_MESSAGE,
   createCartCheckoutSession,
   LIVE_SMOKE_TEST_PURPOSE,
   LIVE_SMOKE_TEST_SKU,
@@ -63,6 +65,7 @@ test('browser and Worker catalogs share one release and identical commercial var
   assert.equal(browser.catalogProductCount, CATALOG_PRODUCT_COUNT);
   assert.equal(browser.catalogVariantCount, CATALOG_VARIANT_COUNT);
   assert.equal(browser.requiredD1SchemaVersion, REQUIRED_D1_SCHEMA_VERSION);
+  assert.equal(browser.maximumDirectOrderCartMassGrams, MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS);
   assert.equal(browser.products.length, PRODUCTS.length);
   assert.equal(browserVariants.size, VARIANTS_BY_KEY.size);
   for (const [key, workerVariant] of VARIANTS_BY_KEY) {
@@ -73,6 +76,14 @@ test('browser and Worker catalogs share one release and identical commercial var
     assert.equal(browserVariant.product.shippingClass, workerVariant.product.shippingClass, `${key} shipping class should match`);
     assert.equal(browserVariant.product.directOrderCeilingGrams, workerVariant.product.directOrderCeilingGrams, `${key} ceiling should match`);
   }
+});
+
+test('browser cart blocks checkout above the canonical aggregate mass ceiling', async () => {
+  const source = await readFile(new URL('../../assets/js/main.js', import.meta.url), 'utf8');
+  assert.match(source, /totalCartMassGrams > maximumDirectOrderCartMassGrams/);
+  assert.match(source, /checkoutBlocked = blockedItems\.length > 0 \|\| aggregateMassExceeded/);
+  assert.match(source, /if \(aggregateMassExceeded\) return;/);
+  assert.ok(source.includes(CART_MASS_LIMIT_MESSAGE));
 });
 
 test('DME 500 g retains its current Worker-owned price', () => {
@@ -275,12 +286,75 @@ test('direct-order ceilings are enforced by aggregate product mass across packag
   );
 });
 
+test('global direct-order cart mass ceiling allows exactly 20 kg across products', () => {
+  const resolved = resolveCart([
+    { variantKey: 'WM-LS-LIPF6-10KG', quantity: 1 },
+    { variantKey: 'WM-LS-LIBOB-10KG', quantity: 1 }
+  ]);
+  assert.equal(MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS, 20000);
+  assert.equal(resolved.totalCartMassGrams, MAXIMUM_DIRECT_ORDER_CART_MASS_GRAMS);
+});
+
+test('global direct-order cart mass ceiling blocks more than 20 kg across products', () => {
+  assert.throws(
+    () => resolveCart([
+      { variantKey: 'WM-LS-LIPF6-10KG', quantity: 1 },
+      { variantKey: 'WM-LS-LIBOB-10KG', quantity: 1 },
+      { variantKey: 'WM-SOL-DME-500G', quantity: 1 }
+    ]),
+    error => error.message === CART_MASS_LIMIT_MESSAGE
+  );
+});
+
+test('checkout endpoint rejects an oversized mixed cart before D1 or Stripe access', async () => {
+  let stripeCalled = false;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    stripeCalled = true;
+    throw new Error('Stripe must not be called.');
+  };
+  try {
+    const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+      method: 'POST',
+      headers: { Origin: 'https://www.winigenmaterials.com', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        attemptId: 'oversizedmixedcart2026',
+        commerceRelease: COMMERCE_RELEASE,
+        destinationCountry: 'US',
+        cart: [
+          { variantKey: 'WM-LS-LIPF6-10KG', quantity: 1 },
+          { variantKey: 'WM-LS-LIBOB-10KG', quantity: 1 },
+          { variantKey: 'WM-SOL-DME-500G', quantity: 1 }
+        ]
+      })
+    }), {
+      STRIPE_MODE: 'test',
+      STRIPE_SECRET_KEY: 'sk_test_example',
+      STRIPE_WEBHOOK_SECRET: 'whsec_example'
+    }, {});
+    const payload = await response.json();
+    assert.equal(response.status, 400);
+    assert.equal(payload.error, CART_MASS_LIMIT_MESSAGE);
+    assert.equal(stripeCalled, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('one-product overage still fails its existing product ceiling before the cart ceiling', () => {
+  assert.throws(
+    () => resolveCart([{ variantKey: 'WM-LS-LIPF6-10KG', quantity: 3 }]),
+    /exceeds its approved direct-order quantity/
+  );
+});
+
 test('mixed sulfides within their product ceilings retain cart-level shipping review', () => {
   const resolved = resolveCart([
     { variantKey: 'WM-SSE-GSL03-50G', quantity: 5 },
     { variantKey: 'WM-SSE-GSH04-100G', quantity: 2 }
   ]);
   assert.equal(resolved.shippingClass, 'SHIPPING_REVIEW');
+  assert.equal(resolved.totalCartMassGrams, 450);
 });
 
 test('Stripe Checkout receives server-owned inline price_data', async () => {
