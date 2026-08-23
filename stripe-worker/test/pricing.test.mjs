@@ -370,6 +370,7 @@ test('checkout endpoint routes an aggregate over-10-kg cart to review without ca
         ]
       })
     }), {
+      COMMERCE_ENABLED: 'true',
       STRIPE_MODE: 'test',
       STRIPE_SECRET_KEY: 'sk_test_example',
       STRIPE_WEBHOOK_SECRET: 'whsec_example',
@@ -441,6 +442,7 @@ test('sulfide shipping review takes precedence over aggregate order review', asy
         cart
       })
     }), {
+      COMMERCE_ENABLED: 'true',
       STRIPE_MODE: 'test',
       STRIPE_SECRET_KEY: 'sk_test_example',
       STRIPE_WEBHOOK_SECRET: 'whsec_example',
@@ -513,6 +515,98 @@ test('live Checkout smoke item is server-priced, fixed-quantity, and isolated', 
   assert.equal(VARIANTS_BY_KEY.has(LIVE_SMOKE_TEST_SKU), false);
 });
 
+test('commerce master gate fails closed before any Checkout Session creation', async () => {
+  const origin = 'https://www.winigenmaterials.com';
+  const requestBody = JSON.stringify({
+    attemptId: 'commercegatecheck2026',
+    commerceRelease: COMMERCE_RELEASE,
+    destinationCountry: 'US',
+    cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }]
+  });
+  let stripeCalled = false;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    stripeCalled = true;
+    throw new Error('Stripe must not be called while commerce is disabled.');
+  };
+
+  try {
+    for (const flag of [undefined, 'false', '1', 'yes', 'TRUE']) {
+      const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+        method: 'POST',
+        headers: { Origin: origin, 'Content-Type': 'application/json' },
+        body: requestBody
+      }), { COMMERCE_ENABLED: flag }, {});
+      const payload = await response.json();
+      assert.equal(response.status, 503, `flag ${String(flag)} must disable checkout`);
+      assert.equal(response.headers.get('Access-Control-Allow-Origin'), origin);
+      assert.equal(payload.code, 'COMMERCE_DISABLED');
+    }
+
+    const internalResponse = await worker.fetch(new Request('https://worker.example/api/internal/cost-compensation-checkout', {
+      method: 'POST',
+      headers: { Authorization: 'Bearer fake', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ attemptId: 'internalcommercegate2026' })
+    }), { COMMERCE_ENABLED: 'false' }, {});
+    assert.equal(internalResponse.status, 503);
+    assert.equal((await internalResponse.json()).code, 'COMMERCE_DISABLED');
+    assert.equal(stripeCalled, false);
+
+    const enabledResponse = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+      method: 'POST',
+      headers: { Origin: origin, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...JSON.parse(requestBody), commerceRelease: 'commerce-sha256-stale' })
+    }), {
+      COMMERCE_ENABLED: 'true',
+      STRIPE_MODE: 'test',
+      STRIPE_SECRET_KEY: 'sk_test_example',
+      STRIPE_WEBHOOK_SECRET: 'whsec_example'
+    }, {});
+    assert.equal(enabledResponse.status, 409);
+    assert.equal((await enabledResponse.json()).code, 'STOREFRONT_VERSION_MISMATCH');
+    assert.equal(stripeCalled, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('commerce activation without required Stripe bindings fails closed before D1 or Stripe', async () => {
+  let stripeCalled = false;
+  let d1Called = false;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    stripeCalled = true;
+    throw new Error('Stripe must not be called without required bindings.');
+  };
+  try {
+    const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+      method: 'POST',
+      headers: { Origin: 'https://www.winigenmaterials.com', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        attemptId: 'missinglivebindings2026',
+        commerceRelease: COMMERCE_RELEASE,
+        destinationCountry: 'US',
+        cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }]
+      })
+    }), {
+      COMMERCE_ENABLED: 'true',
+      STRIPE_MODE: 'live',
+      ORDERS_DB: {
+        prepare() {
+          d1Called = true;
+          throw new Error('D1 must not be called without required bindings.');
+        }
+      }
+    }, {});
+    assert.equal(response.status, 503);
+    assert.deepEqual(await response.json(), { error: 'Service configuration unavailable.' });
+    assert.equal(d1Called, false);
+    assert.equal(stripeCalled, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test('live Checkout smoke endpoint fails closed with a CORS-readable disabled response in test mode', async () => {
   const origin = 'https://www.winigenmaterials.com';
   const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
@@ -525,6 +619,7 @@ test('live Checkout smoke endpoint fails closed with a CORS-readable disabled re
       cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 1 }]
     })
   }), {
+    COMMERCE_ENABLED: 'true',
     STRIPE_MODE: 'test',
     STRIPE_SECRET_KEY: 'sk_test_example',
     STRIPE_WEBHOOK_SECRET: 'whsec_example'
@@ -535,6 +630,44 @@ test('live Checkout smoke endpoint fails closed with a CORS-readable disabled re
   assert.equal(response.headers.get('Access-Control-Allow-Origin'), origin);
   assert.equal(payload.code, 'LIVE_SMOKE_TEST_DISABLED');
   assert.equal(payload.error, 'Live checkout verification is currently disabled. It will be enabled after production Stripe migration.');
+});
+
+test('live Checkout smoke endpoint requires the exact true flag and otherwise remains disabled', async () => {
+  const requestBody = JSON.stringify({
+    attemptId: 'productionflagcheck2026',
+    destinationCountry: 'US',
+    purpose: LIVE_SMOKE_TEST_PURPOSE,
+    cart: [{ variantKey: LIVE_SMOKE_TEST_SKU, quantity: 1 }]
+  });
+  for (const flag of [undefined, 'false', '1', 'yes', 'TRUE']) {
+    const response = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+      method: 'POST',
+      headers: { Origin: 'https://www.winigenmaterials.com', 'Content-Type': 'application/json' },
+      body: requestBody
+    }), {
+      COMMERCE_ENABLED: 'true',
+      STRIPE_MODE: 'live',
+      STRIPE_SECRET_KEY: 'sk_live_fake_for_unit_test',
+      STRIPE_WEBHOOK_SECRET: 'whsec_fake_for_unit_test',
+      LIVE_SMOKE_TEST_ENABLED: flag
+    }, {});
+    assert.equal(response.status, 404, `flag ${String(flag)} must remain disabled`);
+    assert.equal((await response.json()).code, 'LIVE_SMOKE_TEST_DISABLED');
+  }
+
+  const enabledResponse = await worker.fetch(new Request('https://worker.example/api/create-checkout-session', {
+    method: 'POST',
+    headers: { Origin: 'https://www.winigenmaterials.com', 'Content-Type': 'application/json' },
+    body: requestBody
+  }), {
+    COMMERCE_ENABLED: 'true',
+    STRIPE_MODE: 'live',
+    STRIPE_SECRET_KEY: 'sk_live_fake_for_unit_test',
+    STRIPE_WEBHOOK_SECRET: 'whsec_fake_for_unit_test',
+    LIVE_SMOKE_TEST_ENABLED: 'true'
+  }, {});
+  assert.equal(enabledResponse.status, 503);
+  assert.equal((await enabledResponse.json()).code, 'D1_SCHEMA_OUTDATED');
 });
 
 test('checkout preflight succeeds before Stripe runtime secrets are configured', async () => {
@@ -566,6 +699,7 @@ test('stale storefront releases fail before D1 or Stripe access', async () => {
       cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }]
     })
   }), {
+    COMMERCE_ENABLED: 'true',
     STRIPE_MODE: 'test',
     STRIPE_SECRET_KEY: 'sk_test_example',
     STRIPE_WEBHOOK_SECRET: 'whsec_example'
@@ -604,6 +738,7 @@ test('outdated D1 schema fails before Stripe session creation', async () => {
         cart: [{ variantKey: 'WM-SOL-DME-500G', quantity: 1 }]
       })
     }), {
+      COMMERCE_ENABLED: 'true',
       STRIPE_MODE: 'test',
       STRIPE_SECRET_KEY: 'sk_test_example',
       STRIPE_WEBHOOK_SECRET: 'whsec_example',
@@ -633,9 +768,11 @@ test('D1 migration ledger recognizes the required schema version', async () => {
 
 test('commerce status reports release, counts, test mode, D1 readiness, and Worker version', async () => {
   const response = await worker.fetch(new Request('https://worker.example/api/commerce-status'), {
+    COMMERCE_ENABLED: 'true',
     STRIPE_MODE: 'test',
     STRIPE_SECRET_KEY: 'sk_test_example',
     STRIPE_WEBHOOK_SECRET: 'whsec_example',
+    EMAIL_MODE: 'test',
     CF_VERSION_METADATA: { id: 'worker-build-test' },
     ORDERS_DB: {
       prepare() {
@@ -652,6 +789,10 @@ test('commerce status reports release, counts, test mode, D1 readiness, and Work
   assert.deepEqual(payload, {
     ok: true,
     stripeMode: 'test',
+    emailMode: 'test',
+    commerceEnabled: true,
+    smokeTestEnabled: false,
+    databaseConfigured: true,
     commerceRelease: COMMERCE_RELEASE,
     catalogProductCount: CATALOG_PRODUCT_COUNT,
     catalogVariantCount: CATALOG_VARIANT_COUNT,
@@ -659,6 +800,34 @@ test('commerce status reports release, counts, test mode, D1 readiness, and Work
     appliedD1SchemaVersion: 6,
     workerVersion: 'worker-build-test'
   });
+});
+
+test('commerce status is healthy with ready D1 when commerce is disabled and Stripe secrets are absent', async () => {
+  const response = await worker.fetch(new Request('https://worker.example/api/commerce-status'), {
+    COMMERCE_ENABLED: 'false',
+    STRIPE_MODE: 'live',
+    EMAIL_MODE: 'live',
+    LIVE_SMOKE_TEST_ENABLED: 'false',
+    CF_VERSION_METADATA: { id: 'worker-build-production-disabled' },
+    ORDERS_DB: {
+      prepare() {
+        return {
+          bind() {
+            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+          }
+        };
+      }
+    }
+  }, {});
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(payload.ok, true);
+  assert.equal(payload.stripeMode, 'live');
+  assert.equal(payload.commerceEnabled, false);
+  assert.equal(payload.smokeTestEnabled, false);
+  assert.equal(payload.databaseConfigured, true);
+  assert.equal(payload.appliedD1SchemaVersion, 6);
+  assert.equal(payload.workerVersion, 'worker-build-production-disabled');
 });
 
 test('order-status exposes trusted paid and pending states without Stripe identifiers', async () => {
@@ -768,16 +937,30 @@ test('Stripe mode configuration fails closed when a key belongs to the wrong mod
 });
 
 test('live internal notification preserves both operations recipients', () => {
-  const message = createInternalOrderEmail({
+  const order = {
     winigen_order_id: 'WM-20260816-0001', customer_email: 'customer@example.com', merchandise_amount: 100,
     shipping_amount: 0, amount: 100, currency: 'usd', payment_status: 'PAID', fulfillment_status: 'NOT_RELEASED'
-  }, [], {
+  };
+  const lineItems = [{
+    product_name: 'Catalog item', grade: 'Battery grade', package_label: '1 unit',
+    unit_amount: 100, line_subtotal: 100, currency: 'usd', quantity: 1
+  }];
+  const env = {
     EMAIL_MODE: 'live', TEST_ORDER_EMAIL_FROM: 'orders@notify.winigenmaterials.com',
     ORDER_EMAIL_REPLY_TO: 'orders@winigenmaterials.com',
     ORDER_NOTIFICATION_RECIPIENTS: 'wayne@winigenmaterials.com,catherinew@winigenmaterials.com'
-  });
+  };
+  const message = createInternalOrderEmail(order, lineItems, env);
   assert.deepEqual(message.to, ['wayne@winigenmaterials.com', 'catherinew@winigenmaterials.com']);
-  assert.doesNotMatch(message.subject, /^TEST/);
+  for (const value of [message.subject, message.html, message.text]) {
+    assert.doesNotMatch(value, /\b(?:TEST ORDER|TEST MODE|SANDBOX)\b/i);
+  }
+
+  const customerMessage = createCustomerTestOrderEmail(order, lineItems, env);
+  assert.equal(customerMessage.to, 'customer@example.com');
+  for (const value of [customerMessage.subject, customerMessage.html, customerMessage.text]) {
+    assert.doesNotMatch(value, /\b(?:TEST ORDER|TEST MODE|SANDBOX)\b/i);
+  }
 });
 
 test('test email delivery overrides every message recipient with the configured test recipient', async () => {

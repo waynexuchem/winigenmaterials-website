@@ -5,6 +5,7 @@ const protectedHosts = [
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
 const ecommerceAssetVersion = 'ee705c69bb07';
+const commerceConfigVersion = '019ce6f4dd60';
 
 function loadSharedScript(path) {
   return new Promise((resolve, reject) => {
@@ -23,6 +24,9 @@ async function initializeEcommerce() {
       styles.rel = 'stylesheet';
       styles.href = `/assets/css/ecommerce.css?v=${ecommerceAssetVersion}`;
       document.head.appendChild(styles);
+    }
+    if (!window.WINIGEN_COMMERCE_CONFIG) {
+      await loadSharedScript(`/assets/js/commerce-config.js?v=${commerceConfigVersion}`);
     }
     await loadSharedScript(`/assets/js/ecommerce-catalog.js?v=${ecommerceAssetVersion}`);
     await loadSharedScript('/assets/js/shipping-countries.js?v=20260813');
@@ -184,7 +188,9 @@ function initializeCartPage() {
       const attemptId = crypto.randomUUID().replaceAll('-', '');
       const commerceRelease = window.WINIGEN_ECOMMERCE_CATALOG?.commerceRelease;
       const checkoutItems = cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity }));
-      const response = await fetch('https://winigen-stripe-test.winigen.workers.dev/api/create-checkout-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ attemptId, commerceRelease, destinationCountry, cart: checkoutItems }) });
+      const commerceApiOrigin = window.WINIGEN_COMMERCE_CONFIG?.apiOrigin;
+      if (!commerceApiOrigin) throw new Error('Commerce service configuration is unavailable.');
+      const response = await fetch(`${commerceApiOrigin}/api/create-checkout-session`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ attemptId, commerceRelease, destinationCountry, cart: checkoutItems }) });
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || 'Unable to process the cart.');
       if (payload.action === 'checkout') {

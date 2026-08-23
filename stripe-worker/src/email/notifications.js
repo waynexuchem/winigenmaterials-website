@@ -54,6 +54,18 @@ export async function createOrderNotificationRecords(eventId, orderId, env) {
   return results.flatMap((result, index) => result.meta.changes === 1 ? [eligibleTypes[index]] : []);
 }
 
+export async function getPendingOrderNotificationTypes(eventId, orderId, env) {
+  const result = await env.ORDERS_DB.prepare(`
+    SELECT notification_type
+    FROM test_order_notifications
+    WHERE stripe_event_id = ? AND winigen_order_id = ? AND status = 'PENDING'
+    ORDER BY id
+  `).bind(eventId, orderId).all();
+  return (result.results || [])
+    .map(row => row.notification_type)
+    .filter(type => notificationTypes.includes(type));
+}
+
 async function claimNotification(eventId, type, env) {
   const result = await env.ORDERS_DB.prepare(`
     UPDATE test_order_notifications

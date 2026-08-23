@@ -26,7 +26,7 @@
 </head>
 <body>
   <main class="live-test-main">
-    <form class="card live-test-panel" data-live-smoke-test data-checkout-api="https://winigen-stripe-production.winigen.workers.dev/api/create-checkout-session" aria-labelledby="live-test-title">
+    <form class="card live-test-panel" data-live-smoke-test aria-labelledby="live-test-title">
       <div class="eyebrow">Controlled Production Test</div>
       <h1 id="live-test-title">Winigen Checkout Test — $1.00</h1>
       <p>This isolated item validates the production Stripe Checkout, webhook, order-storage, and confirmation flow. It is not a material purchase and cannot be combined with catalog products.</p>
@@ -35,11 +35,12 @@
         <div class="live-test-row"><strong>Quantity</strong><span>1 (fixed)</span></div>
         <div class="live-test-row"><strong>Total</strong><span class="live-test-price">$1.00 USD</span></div>
       </div>
-      <button class="btn" type="submit">Start $1.00 Checkout Test</button>
+      <button class="btn" type="submit" disabled>Start $1.00 Checkout Test</button>
       <p class="live-test-status" data-live-smoke-status role="status" aria-live="polite"></p>
       <p class="live-test-note">The server defines the charge amount. This utility remains disabled until explicitly enabled for the production smoke test.</p>
     </form>
   </main>
-  <script src="assets/js/stripe-live-test.js?v=236ab89f82b6"></script>
+  <script src="assets/js/commerce-config.js?v=019ce6f4dd60"></script>
+  <script src="assets/js/stripe-live-test.js?v=f6d14db8222f"></script>
 </body>
 </html>

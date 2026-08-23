@@ -5,6 +5,9 @@
   "compatibility_date": "2026-08-10",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
+  "version_metadata": {
+    "binding": "CF_VERSION_METADATA"
+  },
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1,
@@ -17,25 +20,19 @@
   },
   "vars": {
     "SITE_ORIGIN": "https://www.winigenmaterials.com",
+    "COMMERCE_ENABLED": "false",
     "STRIPE_MODE": "live",
     "EMAIL_MODE": "live",
     "EMAIL_PROVIDER": "resend",
     "TEST_ORDER_EMAIL_FROM": "orders@notify.winigenmaterials.com",
     "ORDER_EMAIL_REPLY_TO": "orders@winigenmaterials.com",
-    "ORDER_NOTIFICATION_RECIPIENTS": "wayne@winigenmaterials.com,catherinew@winigenmaterials.com"
-  },
-  "secrets": {
-    "required": [
-      "STRIPE_SECRET_KEY",
-      "STRIPE_WEBHOOK_SECRET",
-      "RESEND_API_KEY",
-      "INTERNAL_CHECKOUT_TOKEN"
-    ]
+    "ORDER_NOTIFICATION_RECIPIENTS": "wayne@winigenmaterials.com,catherinew@winigenmaterials.com",
+    "LIVE_SMOKE_TEST_ENABLED": "false"
   },
   "d1_databases": [
     {
       "binding": "ORDERS_DB",
-      "database_name": "REPLACE_WITH_PRODUCTION_D1_NAME",
+      "database_name": "winigen-stripe-production-orders",
       "database_id": "REPLACE_WITH_PRODUCTION_D1_ID",
       "migrations_dir": "migrations"
     }

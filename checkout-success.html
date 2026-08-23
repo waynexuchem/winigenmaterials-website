@@ -18,7 +18,7 @@
   <main class="checkout-result">
     <div class="container">
       <section class="checkout-result__panel" aria-labelledby="checkout-success-title">
-        <p class="checkout-result__mode">Test Mode</p>
+        <p class="checkout-result__mode" id="checkout-mode" hidden>Test Mode</p>
         <h1 id="checkout-success-title">Payment received</h1>
         <p class="checkout-result__status">Your order has been received and is pending fulfillment review.</p>
         <div class="checkout-result__order" id="checkout-order" hidden><span>Order number</span><strong id="checkout-order-number"></strong></div>
@@ -28,6 +28,7 @@
     </div>
   </main>
   <footer class="footer" data-global-footer></footer>
+  <script src="assets/js/commerce-config.js?v=019ce6f4dd60"></script>
   <script>
     const successSessionStorageKey = 'winigen-checkout-success-session-v1';
     const sessionPattern = /^cs_(?:test|live)_[A-Za-z0-9]{20,255}$/;
@@ -40,6 +41,8 @@
     const sessionId = sessionPattern.test(querySessionId || '') ? querySessionId : storedSessionId;
     const order = document.querySelector('#checkout-order');
     const orderNumber = document.querySelector('#checkout-order-number');
+    const modeMarker = document.querySelector('#checkout-mode');
+    const commerceApiOrigin = window.WINIGEN_COMMERCE_CONFIG?.apiOrigin;
     window.history.replaceState({}, '', '/checkout-success.html');
 
     const waitForCheckoutState = async () => {
@@ -54,11 +57,17 @@
     };
 
     const loadOrderStatus = async () => {
-      if (!sessionPattern.test(sessionId) || !order || !orderNumber) return;
+      if (!commerceApiOrigin || !sessionPattern.test(sessionId) || !order || !orderNumber) return;
+
+      try {
+        const statusResponse = await fetch(`${commerceApiOrigin}/api/commerce-status`, { cache: 'no-store' });
+        const statusPayload = await statusResponse.json();
+        if (statusResponse.ok && statusPayload.stripeMode === 'test' && modeMarker) modeMarker.hidden = false;
+      } catch { /* Environment presentation fails closed without test-only copy. */ }
 
       for (let attempt = 0; attempt < 5; attempt += 1) {
         try {
-          const response = await fetch(`https://winigen-stripe-test.winigen.workers.dev/api/order-status?session_id=${encodeURIComponent(sessionId)}`, { cache: 'no-store' });
+          const response = await fetch(`${commerceApiOrigin}/api/order-status?session_id=${encodeURIComponent(sessionId)}`, { cache: 'no-store' });
           const payload = await response.json();
           if (!response.ok) return;
           if (/^WM(?:-T)?-\d{8}-\d{4}$/.test(payload.orderId)) {
@@ -85,6 +94,6 @@
 
     loadOrderStatus();
   </script>
-  <script src="assets/js/main.js?v=71009d7f4a75"></script>
+  <script src="assets/js/main.js?v=1ee69a4d2a3f"></script>
 </body>
 </html>

@@ -12,6 +12,7 @@ scripts/*
 !scripts/build-product-search-index.mjs
 !scripts/generate-public-product-pages.mjs
 !scripts/validate-approved-pricing.mjs
+!scripts/build-commerce-runtime-config.mjs
 !stripe-worker/
 !stripe-worker/scripts/
 !stripe-worker/scripts/build-catalog.mjs
@@ -25,3 +26,4 @@ knowledge/references/
 stripe-worker/.dev.vars
 stripe-worker/.wrangler/
 stripe-worker/node_modules/
+stripe-worker/wrangler.production.jsonc

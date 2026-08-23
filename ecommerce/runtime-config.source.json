@@ -1,0 +1,11 @@
+{
+  "siteOrigin": "https://www.winigenmaterials.com",
+  "environments": {
+    "test": {
+      "apiOrigin": "https://winigen-stripe-test.winigen.workers.dev"
+    },
+    "production": {
+      "apiOrigin": "https://winigen-stripe-production.winigen.workers.dev"
+    }
+  }
+}

@@ -20,6 +20,7 @@
 	},
 	"vars": {
 		"SITE_ORIGIN": "https://www.winigenmaterials.com",
+		"COMMERCE_ENABLED": "true",
 		"STRIPE_MODE": "test",
 		"EMAIL_MODE": "test",
 		"EMAIL_PROVIDER": "resend",

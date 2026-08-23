@@ -8,7 +8,11 @@ import {
   REQUIRED_D1_SCHEMA_VERSION,
   VARIANTS_BY_KEY
 } from './catalog.js';
-import { createOrderNotificationRecords, deliverOrderNotification } from './email/notifications.js';
+import {
+  createOrderNotificationRecords,
+  deliverOrderNotification,
+  getPendingOrderNotificationTypes
+} from './email/notifications.js';
 import { resolveShippingDestination } from './shipping.js';
 
 const checkoutPath = '/api/create-checkout-session';
@@ -81,6 +85,18 @@ function isLiveMode(env) {
   return env.STRIPE_MODE === 'live';
 }
 
+function isCommerceEnabled(env) {
+  return env.COMMERCE_ENABLED === 'true';
+}
+
+function commerceDisabledResponse(request) {
+  const origin = request.headers.get('Origin');
+  return jsonResponse({
+    code: 'COMMERCE_DISABLED',
+    error: 'Online checkout is currently disabled. Please contact Winigen Materials for assistance.'
+  }, 503, origin && isAllowedOrigin(request) ? origin : undefined);
+}
+
 export function validateRuntimeConfiguration(env) {
   const mode = env.STRIPE_MODE || 'test';
   if (!['test', 'live'].includes(mode)) throw new Error('STRIPE_MODE must be test or live.');
@@ -112,15 +128,21 @@ export async function readD1SchemaStatus(db) {
 
 async function handleCommerceStatus(env) {
   const d1 = await readD1SchemaStatus(env.ORDERS_DB);
-  let runtimeReady = true;
+  const commerceEnabled = isCommerceEnabled(env);
+  let stripeRuntimeReady = true;
   try {
     validateRuntimeConfiguration(env);
   } catch {
-    runtimeReady = false;
+    stripeRuntimeReady = false;
   }
+  const runtimeReady = !commerceEnabled || stripeRuntimeReady;
   return jsonResponse({
     ok: runtimeReady && d1.ready,
     stripeMode: env.STRIPE_MODE || 'test',
+    emailMode: env.EMAIL_MODE || null,
+    commerceEnabled,
+    smokeTestEnabled: env.LIVE_SMOKE_TEST_ENABLED === 'true',
+    databaseConfigured: Boolean(env.ORDERS_DB?.prepare),
     commerceRelease: COMMERCE_RELEASE,
     catalogProductCount: CATALOG_PRODUCT_COUNT,
     catalogVariantCount: CATALOG_VARIANT_COUNT,
@@ -599,7 +621,17 @@ async function verifyStripeSignature(rawBodyBytes, signatureHeader, endpointSecr
   return { valid, reason: valid ? null : 'signature_mismatch' };
 }
 
-async function recordWebhookEvent(event, env) {
+async function hasCompletedWebhookEvent(eventId, env) {
+  const row = await env.ORDERS_DB.prepare(`
+    SELECT stripe_event_id
+    FROM stripe_webhook_events
+    WHERE stripe_event_id = ?
+    LIMIT 1
+  `).bind(eventId).first();
+  return Boolean(row);
+}
+
+async function markWebhookEventCompleted(event, env) {
   const inserted = await env.ORDERS_DB.prepare(`
     INSERT OR IGNORE INTO stripe_webhook_events (stripe_event_id, event_type)
     VALUES (?, ?)
@@ -614,7 +646,7 @@ async function handleCompletedCheckout(event, env) {
   const fulfillmentStatus = paymentStatus === 'PAID' ? 'NOT_RELEASED' : 'NOT_APPLICABLE';
   const shippingDetails = session.collected_information?.shipping_details || session.shipping_details;
 
-  await env.ORDERS_DB.prepare(`
+  const updated = await env.ORDERS_DB.prepare(`
     UPDATE test_orders
     SET stripe_payment_intent_id = ?,
         stripe_event_id = ?,
@@ -639,6 +671,9 @@ async function handleCompletedCheckout(event, env) {
     fulfillmentStatus,
     session.id
   ).run();
+  if (updated.meta.changes !== 1) {
+    throw new Error('No matching Winigen order exists for this Checkout Session.');
+  }
 
   console.log('Stripe checkout recorded', {
     eventId: event.id,
@@ -654,7 +689,7 @@ async function handleCompletedCheckout(event, env) {
   return order;
 }
 
-async function handleWebhook(request, env, ctx) {
+export async function handleWebhook(request, env, ctx) {
   const rawBodyBytes = new Uint8Array(await request.arrayBuffer());
   const signature = request.headers.get('Stripe-Signature');
   const verification = await verifyStripeSignature(rawBodyBytes, signature, env.STRIPE_WEBHOOK_SECRET);
@@ -682,19 +717,27 @@ async function handleWebhook(request, env, ctx) {
       console.warn('Stripe checkout metadata mode mismatch', { eventId: event.id, eventMode });
       return new Response('Stripe mode mismatch.', { status: 400 });
     }
-    const isNewEvent = await recordWebhookEvent(event, env);
-    if (!isNewEvent) return new Response('Already processed.', { status: 200 });
+    if (await hasCompletedWebhookEvent(event.id, env)) {
+      return new Response('Already processed.', { status: 200 });
+    }
 
+    let pendingNotifications = [];
+    let notificationOrderId = null;
     if (event.type === 'checkout.session.completed') {
       const order = await handleCompletedCheckout(event, env);
       if (order?.payment_status === 'PAID' && order.fulfillment_status === 'NOT_RELEASED') {
-        const notificationTypes = await createOrderNotificationRecords(event.id, order.winigen_order_id, env);
-        if (notificationTypes.length > 0) {
-          ctx.waitUntil(Promise.all(notificationTypes.map(type => (
-            deliverOrderNotification(event.id, order.winigen_order_id, type, env)
-          ))));
-        }
+        notificationOrderId = order.winigen_order_id;
+        await createOrderNotificationRecords(event.id, order.winigen_order_id, env);
+        pendingNotifications = await getPendingOrderNotificationTypes(event.id, order.winigen_order_id, env);
       }
+    }
+
+    const completedNow = await markWebhookEventCompleted(event, env);
+    if (!completedNow) return new Response('Already processed.', { status: 200 });
+    if (notificationOrderId && pendingNotifications.length > 0) {
+      ctx.waitUntil(Promise.all(pendingNotifications.map(type => (
+        deliverOrderNotification(event.id, notificationOrderId, type, env)
+      ))));
     }
 
     console.log('Stripe webhook processed', { eventId: event.id, eventType: event.type });
@@ -729,6 +772,10 @@ export default {
           Vary: 'Origin'
         }
       });
+    }
+
+    if (request.method === 'POST' && [checkoutPath, internalCheckoutPath].includes(url.pathname) && !isCommerceEnabled(env)) {
+      return commerceDisabledResponse(request);
     }
 
     try {

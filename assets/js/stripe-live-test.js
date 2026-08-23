@@ -4,7 +4,8 @@
 
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('[data-live-smoke-status]');
-  const endpoint = form.dataset.checkoutApi;
+  const commerceApiOrigin = window.WINIGEN_COMMERCE_CONFIG?.apiOrigin;
+  const endpoint = commerceApiOrigin ? `${commerceApiOrigin}/api/create-checkout-session` : null;
   const attemptStorageKey = 'winigen-live-smoke-test-attempt-v1';
   const disabledMessage = 'Live checkout verification is currently disabled. It will be enabled after production Stripe migration.';
 
@@ -16,8 +17,32 @@
     return created;
   }
 
+  let smokeTestReady = false;
+
+  async function loadSmokeTestStatus() {
+    button.disabled = true;
+    try {
+      if (!commerceApiOrigin) throw new Error(disabledMessage);
+      const response = await fetch(`${commerceApiOrigin}/api/commerce-status`, { cache: 'no-store' });
+      const payload = await response.json();
+      smokeTestReady = response.ok && payload.stripeMode === 'live' && payload.smokeTestEnabled === true;
+    } catch {
+      smokeTestReady = false;
+    }
+    button.disabled = !smokeTestReady;
+    if (!smokeTestReady) {
+      status.textContent = disabledMessage;
+      status.classList.add('is-error');
+    }
+  }
+
   form.addEventListener('submit', async event => {
     event.preventDefault();
+    if (!smokeTestReady || !endpoint) {
+      status.textContent = disabledMessage;
+      status.classList.add('is-error');
+      return;
+    }
     button.disabled = true;
     button.textContent = 'Opening secure Checkout...';
     status.classList.remove('is-error');
@@ -56,4 +81,6 @@
       button.textContent = 'Start $1.00 Checkout Test';
     }
   });
+
+  loadSmokeTestStatus();
 }());
