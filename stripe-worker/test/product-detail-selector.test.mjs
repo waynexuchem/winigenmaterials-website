@@ -1,11 +1,29 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { promisify } from 'node:util';
 
 const siteRoot = resolve(import.meta.dirname, '../..');
+const execFileAsync = promisify(execFile);
 const source = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const directProducts = source.products.filter(product => product.packages.some(variant => variant.approvalStatus === 'ACTIVE'));
+
+async function directProductPages() {
+  return new Map(await Promise.all(directProducts.map(async product => [
+    product.slug,
+    await readFile(resolve(siteRoot, 'products', `${product.slug}.html`), 'utf8')
+  ])));
+}
+
+function relevantProductDetailStructure(html) {
+  return {
+    contextAndNavigation: html.match(/<div class="product-detail-context">[\s\S]*?<\/nav>/i)?.[0] || '',
+    aboutCopy: html.match(/<div class="product-detail-information"><p class="detail-kicker">About this product<\/p>\s*<p>[\s\S]*?<\/p>/i)?.[0] || '',
+    purchasePanel: html.match(/<section class="ecommerce-panel"[\s\S]*?<\/section>(?=\s*<div class="detail-actions")/i)?.[0] || ''
+  };
+}
 
 test('every direct product page uses package cards without a package dropdown', async () => {
   for (const product of directProducts) {
@@ -24,7 +42,8 @@ test('every direct product page uses the tightened single-title purchase layout'
     const html = await readFile(resolve(siteRoot, 'products', `${product.slug}.html`), 'utf8');
     const headings = html.match(/<h1\b/gi) || [];
     assert.equal(headings.length, 1, `${product.slug}: exactly one primary title`);
-    assert.match(html, /<div class="product-detail-context">/i, `${product.slug}: shallow context strip`);
+    assert.equal((html.match(/<div class="product-detail-context">/gi) || []).length, 1, `${product.slug}: one shallow context strip`);
+    assert.equal((html.match(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"/gi) || []).length, 1, `${product.slug}: one section navigation bar`);
     assert.doesNotMatch(html, /<section class="section dark product-detail-hero">/i, `${product.slug}: legacy hero removed`);
     assert.match(html, /<h1 class="ecommerce-panel__product">/i, `${product.slug}: purchase-panel title`);
     assert.match(html, /<div class="product-detail-information"><p class="detail-kicker">About this product<\/p>\s*<p>/i, `${product.slug}: compact about copy`);
@@ -32,6 +51,21 @@ test('every direct product page uses the tightened single-title purchase layout'
     assert.doesNotMatch(html, /ecommerce-panel__step|>Step [12]</i, `${product.slug}: no wizard labels`);
     assert.match(html, /class="ecommerce-panel__quantity-label">Quantity/i, `${product.slug}: compact quantity row`);
   }
+});
+
+test('product detail generation is idempotent across two consecutive passes', async () => {
+  const generator = resolve(siteRoot, 'seo/build-seo.mjs');
+  const env = { ...process.env, SEO_SCOPE: 'products' };
+  await execFileAsync(process.execPath, [generator], { cwd: siteRoot, env });
+  const firstPass = new Map([...await directProductPages()].map(([slug, html]) => [slug, relevantProductDetailStructure(html)]));
+  await execFileAsync(process.execPath, [generator], { cwd: siteRoot, env });
+  const secondPass = new Map([...await directProductPages()].map(([slug, html]) => [slug, relevantProductDetailStructure(html)]));
+  for (const [slug, structure] of firstPass) {
+    assert.ok(structure.contextAndNavigation, `${slug}: context and navigation generated`);
+    assert.ok(structure.aboutCopy, `${slug}: compact about copy generated`);
+    assert.ok(structure.purchasePanel, `${slug}: purchase panel generated`);
+  }
+  assert.deepEqual(secondPass, firstPass);
 });
 
 test('shared product-page script uses the selected card key for cart updates', async () => {

@@ -211,10 +211,13 @@ function renderProductDetailExperience(html, product) {
     .replace(/<section class="section(?: product-detail-overview)?"(?: id="overview")?>\s*<div class="container product-detail-layout(?: product-detail-layout--commerce)?">/i, '<section class="section product-detail-overview" id="overview"><div class="container product-detail-layout product-detail-layout--commerce">')
     .replace(/<article class="detail-panel(?: product-detail-commerce-content)?">/i, '<article class="detail-panel product-detail-commerce-content">')
     .replace(/(<article class="detail-panel product-detail-commerce-content">\s*)<p class="detail-kicker">Product Details<\/p>/i, '$1<p class="detail-kicker">About this product</p>')
-    .replace(/(<div class="product-detail-information">\s*<p class="detail-kicker">[\s\S]*?<\/p>\s*)<h2>[\s\S]*?<\/h2>\s*/i, '$1')
     .replace(/(<article class="detail-panel product-detail-commerce-content">)\s*(<p class="detail-kicker">[\s\S]*?<\/p>\s*(?:<h2>[\s\S]*?<\/h2>\s*)?<p>[\s\S]*?<\/p>)/i, '$1<div class="product-detail-information">$2</div>')
+    .replace(/(<div class="product-detail-information">\s*<p class="detail-kicker">[\s\S]*?<\/p>\s*)<h2>[\s\S]*?<\/h2>\s*/i, '$1')
     .replace(/(<div class="product-detail-information">\s*<p class="detail-kicker">[\s\S]*?<\/p>\s*(?:<h2>[\s\S]*?<\/h2>\s*)?<p>[\s\S]*?<\/p>)\s*<\/div>/i, `$1${summary}</div>`)
     .replace(/<section class="section"><div class="container product-technical-grid">/i, '<section class="section" id="applications"><div class="container product-technical-grid">');
+  if (!next.includes('data-product-detail-nav="true"')) {
+    next = next.replace(context, `${context}${navigation}`);
+  }
   if (family && !next.includes('data-product-support-routing="true"')) {
     const faqStart = next.search(/<section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Product FAQ/i);
     next = faqStart >= 0 ? `${next.slice(0, faqStart)}${support}${next.slice(faqStart)}` : next.replace(/<\/main>/i, `${support}</main>`);
