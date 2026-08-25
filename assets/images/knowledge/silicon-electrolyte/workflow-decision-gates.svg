@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Iterative decision gates for silicon electrolyte development</title>
+  <desc id="desc">A continuous narrowing pathway connects cell requirements, reference chemistries, controlled formulation matrices, mechanistic diagnosis, stress testing, and practical full-cell validation. Curved feedback arrows return failed candidates to the relevant earlier decision.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#edf3fb"/></linearGradient>
+    <linearGradient id="stream" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#d7e8ff"/><stop offset=".48" stop-color="#cfdcff"/><stop offset="1" stop-color="#d9d1ff"/></linearGradient>
+    <linearGradient id="decision" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#18325d"/><stop offset="1" stop-color="#263f76"/></linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#17335f" flood-opacity=".12"/></filter>
+    <marker id="arrowBlue" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" refX="10" refY="6" orient="auto"><path d="M0 0L12 6 0 12Z" fill="#2a66d9"/></marker>
+    <marker id="arrowViolet" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" refX="10" refY="6" orient="auto"><path d="M0 0L12 6 0 12Z" fill="#7557d8"/></marker>
+    <marker id="arrowOrange" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" refX="10" refY="6" orient="auto"><path d="M0 0L12 6 0 12Z" fill="#d9822b"/></marker>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.title{font-size:34px;font-weight:800}.sub{font-size:19px;fill:#52637f}.gate{font-size:20px;font-weight:800}.body{font-size:17px;fill:#52637f}.num{font-size:21px;font-weight:900;fill:#fff}.loop{font-size:17px;font-weight:800}.criterion{font-size:22px;font-weight:800;fill:#fff}.criterionSub{font-size:17px;fill:#dbe8fb}
+    </style>
+  </defs>
+  <rect width="1400" height="820" rx="30" fill="url(#bg)"/>
+  <text class="t title" x="54" y="60">Development proceeds through evidence gates—not a one-way recipe screen</text>
+  <text class="t sub" x="54" y="91">A candidate advances only when the mechanism, stress response, and intended full-cell boundary remain consistent.</text>
+
+  <path d="M74 214 Q310 152 548 193 T1324 236 L1324 326 Q1075 352 838 331 T74 360Z" fill="url(#stream)" stroke="#a8bddc" stroke-width="2"/>
+  <path d="M94 287 C420 248 700 287 1300 281" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".9"/>
+  <path d="M94 287 C420 248 700 287 1300 281" fill="none" stroke="#7189ad" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 10"/>
+
+  <!-- gate 1 -->
+  <g filter="url(#shadow)"><circle cx="130" cy="282" r="34" fill="#18325d"/></g><text class="t num" x="130" y="289" text-anchor="middle">1</text>
+  <text class="t gate" x="70" y="160">CELL REQUIREMENT</text>
+  <text class="t body" x="70" y="183">architecture • loading • cathode</text><text class="t body" x="70" y="202">N/P • E/C • pressure • life</text>
+  <path d="M130 210V244" stroke="#7189ad" stroke-width="2"/>
+
+  <!-- gate 2 -->
+  <g filter="url(#shadow)"><circle cx="360" cy="268" r="34" fill="#2a66d9"/></g><text class="t num" x="360" y="275" text-anchor="middle">2</text>
+  <text class="t gate" x="292" y="388">REFERENCE SET</text>
+  <text class="t body" x="276" y="411">carbonate • FEC • package</text><text class="t body" x="277" y="430">solvation-engineered control</text>
+  <path d="M360 304V368" stroke="#7189ad" stroke-width="2"/>
+
+  <!-- gate 3 -->
+  <g filter="url(#shadow)"><circle cx="590" cy="276" r="34" fill="#3f78dd"/></g><text class="t num" x="590" y="283" text-anchor="middle">3</text>
+  <text class="t gate" x="494" y="160">CONTROLLED MATRIX</text>
+  <text class="t body" x="500" y="183">one design dimension at a time</text><text class="t body" x="500" y="202">with single-component controls</text>
+  <path d="M590 210V242" stroke="#7189ad" stroke-width="2"/>
+
+  <!-- gate 4 -->
+  <g filter="url(#shadow)"><circle cx="820" cy="290" r="34" fill="#6268d8"/></g><text class="t num" x="820" y="297" text-anchor="middle">4</text>
+  <text class="t gate" x="730" y="401">MECHANISTIC DIAGNOSIS</text>
+  <text class="t body" x="733" y="424">Li loss • impedance • gas</text><text class="t body" x="733" y="443">depletion • morphology • cross-talk</text>
+  <path d="M820 326V381" stroke="#7189ad" stroke-width="2"/>
+
+  <!-- gate 5 -->
+  <g filter="url(#shadow)"><circle cx="1050" cy="288" r="34" fill="#7557d8"/></g><text class="t num" x="1050" y="295" text-anchor="middle">5</text>
+  <text class="t gate" x="980" y="160">STRESS TEST</text>
+  <text class="t body" x="958" y="183">storage • temperature • fast charge</text><text class="t body" x="958" y="202">voltage • lean electrolyte • pressure</text>
+  <path d="M1050 210V254" stroke="#7189ad" stroke-width="2"/>
+
+  <!-- gate 6 -->
+  <g filter="url(#shadow)"><circle cx="1270" cy="282" r="34" fill="#344b68"/></g><text class="t num" x="1270" y="289" text-anchor="middle">6</text>
+  <text class="t gate" x="1162" y="388">INTENDED FULL CELL</text>
+  <text class="t body" x="1160" y="411">loading • N/P • E/C • wetting</text><text class="t body" x="1160" y="430">pouch pressure • gas • statistics</text>
+  <path d="M1270 316V368" stroke="#7189ad" stroke-width="2"/>
+
+  <!-- feedback loops -->
+  <path d="M806 474 C760 552 654 552 606 466" fill="none" stroke="#2a66d9" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <text class="t loop" x="706" y="552" text-anchor="middle" fill="#2a66d9">diagnosis changes the formulation matrix</text>
+
+  <path d="M1048 468 C1018 615 678 628 596 473" fill="none" stroke="#7557d8" stroke-width="4" marker-end="url(#arrowViolet)"/>
+  <text class="t loop" x="825" y="620" text-anchor="middle" fill="#7557d8">stress failure returns the candidate to chemistry and formation</text>
+
+  <path d="M1270 457 C1200 700 286 718 142 454" fill="none" stroke="#d9822b" stroke-width="4" marker-end="url(#arrowOrange)"/>
+  <text class="t loop" x="710" y="700" text-anchor="middle" fill="#b96819">full-cell failure can invalidate the original requirement or architecture assumption</text>
+
+  <rect x="115" y="742" width="1170" height="55" rx="17" fill="url(#decision)"/>
+  <text class="t criterion" x="700" y="768" text-anchor="middle">Advance the formulation that minimizes cumulative chemical and mechanical damage.</text>
+  <text class="t criterionSub" x="700" y="789" text-anchor="middle">An attractive first-cycle spectrum is evidence about formation—not a lifetime selection criterion.</text>
+</svg>

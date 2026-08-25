@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">From one-time passivation to repeated interphase renewal</title>
+  <desc id="desc">Graphite forms a relatively persistent early SEI, while silicon expansion and contraction fracture the interphase, expose fresh surface, admit electrolyte, and cause repeated SEI growth and cumulative cell losses.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7faff"/><stop offset="1" stop-color="#eaf2ff"/></linearGradient>
+    <linearGradient id="si" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9788ef"/><stop offset="1" stop-color="#5948bd"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#18355d" flood-opacity=".10"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0l10 3-10 3z" fill="#5279ad"/></marker>
+    <marker id="redArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0l10 3-10 3z" fill="#d45d4d"/></marker>
+  </defs>
+  <rect width="1400" height="840" rx="30" fill="url(#bg)"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="54" y="58" fill="#142b4f" font-family="Manrope,Arial,sans-serif" font-size="30" font-weight="800">From one-time passivation to repeated interphase renewal</text>
+    <text x="54" y="88" fill="#536985" font-size="15">The critical difference is not simply how much SEI forms—it is whether cycling repeatedly creates unprotected interface.</text>
+
+    <g filter="url(#shadow)">
+      <rect x="45" y="120" width="350" height="550" rx="24" fill="#fff" stroke="#c5d4e8"/>
+      <rect x="420" y="120" width="935" height="550" rx="24" fill="#fff" stroke="#9ebce5"/>
+    </g>
+
+    <g>
+      <rect x="70" y="145" width="104" height="30" rx="15" fill="#eaf2ff"/>
+      <text x="122" y="166" text-anchor="middle" fill="#27548f" font-size="13" font-weight="800">GRAPHITE</text>
+      <text x="70" y="207" fill="#173254" font-size="20" font-weight="800">Formation concentrates</text>
+      <text x="70" y="232" fill="#173254" font-size="20" font-weight="800">the passivation burden</text>
+      <g transform="translate(89 275)">
+        <path d="M0 39q105-28 210 0" fill="none" stroke="#45a6a1" stroke-width="12" stroke-linecap="round"/>
+        <g fill="none" stroke="#344a67" stroke-width="12" stroke-linecap="round"><path d="M12 78h186"/><path d="M20 116h170"/><path d="M8 154h196"/><path d="M18 192h176"/></g>
+        <g fill="#72aef2"><circle cx="42" cy="18" r="7"/><circle cx="81" cy="10" r="7"/><circle cx="127" cy="8" r="7"/><circle cx="174" cy="17" r="7"/></g>
+        <path d="M45 18v-34M83 10V-24M128 8v-34M173 17v-34" stroke="#72aef2" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="105" y="229" text-anchor="middle" fill="#45847e" font-size="13" font-weight="700">thin, persistent SEI</text>
+      </g>
+      <g transform="translate(72 535)">
+        <rect width="296" height="104" rx="16" fill="#f3f8ff" stroke="#c4d7ee"/>
+        <text x="17" y="28" fill="#27548f" font-size="13" font-weight="800">AFTER FORMATION</text>
+        <text x="17" y="55" fill="#536985" font-size="13">small dimensional change</text>
+        <text x="17" y="79" fill="#536985" font-size="13">limited fresh-surface exposure</text>
+      </g>
+    </g>
+
+    <g>
+      <rect x="447" y="145" width="94" height="30" rx="15" fill="#f0edff"/>
+      <text x="494" y="166" text-anchor="middle" fill="#5a47b1" font-size="13" font-weight="800">SILICON</text>
+      <text x="447" y="207" fill="#173254" font-size="20" font-weight="800">Cycling can reopen the interface</text>
+      <text x="447" y="232" fill="#536985" font-size="14">Three stages of one renewal event</text>
+
+      <g transform="translate(460 275)">
+        <text x="95" y="0" text-anchor="middle" fill="#2c4361" font-size="14" font-weight="800">1  PASSIVATED Si</text>
+        <circle cx="95" cy="103" r="58" fill="url(#si)"/>
+        <circle cx="95" cy="103" r="68" fill="none" stroke="#45a6a1" stroke-width="10"/>
+        <text x="95" y="109" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">Si</text>
+        <text x="95" y="193" text-anchor="middle" fill="#4c637e" font-size="13">continuous SEI</text>
+      </g>
+      <path d="M642 376h82" fill="none" stroke="#5279ad" stroke-width="3" marker-end="url(#arrow)"/>
+      <text x="683" y="357" text-anchor="middle" fill="#5279ad" font-size="12" font-weight="800">LITHIATION</text>
+
+      <g transform="translate(735 260)">
+        <text x="105" y="15" text-anchor="middle" fill="#2c4361" font-size="14" font-weight="800">2  EXPANSION + STRESS</text>
+        <circle cx="105" cy="118" r="83" fill="url(#si)"/>
+        <path d="M34 76a94 94 0 0 1 51-46M126 28a94 94 0 0 1 53 48M193 111a94 94 0 0 1-14 61M141 202a94 94 0 0 1-71 0M36 171a94 94 0 0 1-18-57" fill="none" stroke="#45a6a1" stroke-width="11" stroke-linecap="round"/>
+        <path d="M69 56l17 23-12 22M160 66l-25 20 17 22M59 167l23-17 13 27" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+        <path d="M42 50l-24-27M176 55l27-25M186 171l31 20" stroke="#d45d4d" stroke-width="3"/>
+        <text x="105" y="230" text-anchor="middle" fill="#b7473b" font-size="13">SEI opens or detaches</text>
+      </g>
+      <path d="M930 376h76" fill="none" stroke="#5279ad" stroke-width="3" marker-end="url(#arrow)"/>
+      <text x="968" y="357" text-anchor="middle" fill="#5279ad" font-size="12" font-weight="800">DELITHIATION</text>
+
+      <g transform="translate(1018 273)">
+        <text x="143" y="2" text-anchor="middle" fill="#2c4361" font-size="14" font-weight="800">3  FRESH SURFACE + RENEWAL</text>
+        <path d="M77 54c34-32 104-26 129 10 23 34 15 95-22 120-38 26-99 14-123-23-21-33-12-81 16-107z" fill="url(#si)"/>
+        <path d="M63 45c34-45 126-48 160-2M231 73c12 34 5 76-21 106M180 202c-43 20-100 7-128-29" fill="none" stroke="#45a6a1" stroke-width="10" stroke-linecap="round"/>
+        <path d="M102 72l16 25-14 25M174 67l-22 27 19 21" fill="none" stroke="#fff" stroke-width="6"/>
+        <g fill="#e8a847"><circle cx="88" cy="38" r="8"/><circle cx="143" cy="27" r="8"/><circle cx="211" cy="44" r="8"/></g>
+        <g fill="#72aef2"><circle cx="65" cy="20" r="6"/><circle cx="111" cy="5" r="6"/><circle cx="180" cy="8" r="6"/><circle cx="235" cy="26" r="6"/></g>
+        <path d="M65 11V-13M111-4v-24M180-1v-24M235 17V-7" stroke="#72aef2" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="143" y="228" text-anchor="middle" fill="#b7473b" font-size="13">electrolyte reaches unprotected Si</text>
+      </g>
+
+      <path d="M1170 520c-15 53-95 70-150 74" fill="none" stroke="#d45d4d" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#redArrow)"/>
+      <text x="1115" y="560" text-anchor="middle" fill="#b7473b" font-size="12" font-weight="800">NEW REDUCTION PRODUCTS</text>
+      <g transform="translate(455 575)">
+        <rect width="862" height="64" rx="16" fill="#fff5f2" stroke="#efbdb4"/>
+        <text x="18" y="25" fill="#a73f34" font-size="12" font-weight="800">CUMULATIVE CONSEQUENCES</text>
+        <g font-size="12" font-weight="700">
+          <rect x="18" y="34" width="144" height="22" rx="11" fill="#fee5df"/><text x="90" y="49" text-anchor="middle" fill="#8f3b33">cyclable Li loss</text>
+          <rect x="174" y="34" width="150" height="22" rx="11" fill="#fee5df"/><text x="249" y="49" text-anchor="middle" fill="#8f3b33">electrolyte loss</text>
+          <rect x="336" y="34" width="174" height="22" rx="11" fill="#fee5df"/><text x="423" y="49" text-anchor="middle" fill="#8f3b33">heterogeneous SEI</text>
+          <rect x="522" y="34" width="150" height="22" rx="11" fill="#fee5df"/><text x="597" y="49" text-anchor="middle" fill="#8f3b33">higher resistance</text>
+          <rect x="684" y="34" width="160" height="22" rx="11" fill="#fee5df"/><text x="764" y="49" text-anchor="middle" fill="#8f3b33">isolated active Si</text>
+        </g>
+      </g>
+    </g>
+
+    <path d="M50 710h1300" stroke="#b9cbe1" stroke-width="2"/>
+    <rect x="165" y="738" width="1070" height="58" rx="29" fill="#173e75"/>
+    <text x="700" y="763" text-anchor="middle" fill="#80c8ff" font-size="12" font-weight="800" letter-spacing="1.2">DESIGN TARGET</text>
+    <text x="700" y="785" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">Passivation + Li-ion transport + strain accommodation + limited interphase regrowth</text>
+  </g>
+</svg>

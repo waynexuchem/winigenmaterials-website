@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Primary evidence that silicon formation effects are conditional</title>
+  <desc id="desc">Three evidence panels summarize fast versus slow Si-graphite pouch formation, particle-size-dependent lithiation cutoff behavior, and capacity-limited versus full lithiation of silicon nanoparticles.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#edf3fb"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#17335f" flood-opacity=".1"/></filter>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.title{font-size:34px;font-weight:800}.sub{font-size:17px;fill:#52637f}.panel{fill:#fff;stroke:#bdcce0;stroke-width:2}.letter{font-size:17px;font-weight:900;fill:#2a66d9}.pt{font-size:20px;font-weight:800}.body{font-size:14px;fill:#52637f}.strong{font-size:15px;font-weight:800}.tiny{font-size:12px;fill:#63728a}.good{fill:#159b81}.warn{fill:#df8b24}.violet{fill:#7557d8}.blue{fill:#2a66d9}.si{fill:#3f5d7c}.crack{fill:none;stroke:#eef5fc;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.foot{font-size:18px;font-weight:800;fill:#fff}.foot2{font-size:14px;fill:#dbe8fb}
+    </style>
+  </defs>
+  <rect width="1400" height="900" rx="30" fill="url(#bg)"/>
+  <text class="t title" x="52" y="58">Formation changes chemistry—but the response is system dependent</text>
+  <text class="t sub" x="52" y="88">Three primary studies show why protocol, utilization, and silicon size must be interpreted together.</text>
+
+  <g filter="url(#shadow)">
+    <rect class="panel" x="52" y="127" width="412" height="646" rx="21"/>
+    <rect class="panel" x="494" y="127" width="412" height="646" rx="21"/>
+    <rect class="panel" x="936" y="127" width="412" height="646" rx="21"/>
+  </g>
+
+  <!-- Panel A -->
+  <text class="t letter" x="78" y="164">A • DIRECT FORMATION COMPARISON [33]</text>
+  <text class="t pt" x="78" y="201">Fast versus slow pouch formation</text>
+  <text class="t body" x="78" y="230">Si–graphite || NMC532 small pouch cells</text>
+  <text class="t strong" x="78" y="279">FAST</text><rect x="135" y="258" width="32" height="28" rx="7" class="blue"/><text class="t strong" x="181" y="279">13.2 h</text>
+  <text class="t strong" x="78" y="334">SLOW</text><rect x="135" y="313" width="258" height="28" rx="7" class="violet"/><text class="t strong" x="135" y="368">186 h</text>
+  <text class="t tiny" x="78" y="397">schematic duration comparison</text>
+  <rect x="78" y="430" width="360" height="116" rx="16" fill="#edf8f5" stroke="#83cdbc"/>
+  <circle cx="111" cy="462" r="12" class="good"/><path d="M105 462l5 6 10-14" fill="none" stroke="#fff" stroke-width="3"/>
+  <text class="t strong" x="137" y="467">Similar performance characteristics</text>
+  <circle cx="111" cy="508" r="12" class="good"/><path d="M105 508l5 6 10-14" fill="none" stroke="#fff" stroke-width="3"/>
+  <text class="t strong" x="137" y="513">Stable, functionally analogous SEIs</text>
+  <rect x="78" y="566" width="360" height="84" rx="16" fill="#fff5e8" stroke="#e8b96d"/>
+  <text class="t strong" x="98" y="598">But measured SEI chemistry differed.</text>
+  <text class="t body" x="98" y="625">Composition change ≠ performance change.</text>
+  <text class="t body" x="78" y="696">Evidence boundary:</text><text class="t body" x="78" y="719">one pouch chemistry; no universal fast protocol</text>
+
+  <!-- Panel B -->
+  <text class="t letter" x="520" y="164">B • CUTOFF × PARTICLE SIZE [34]</text>
+  <text class="t pt" x="520" y="197">The same voltage means</text><text class="t pt" x="520" y="220">different Si use</text>
+  <text class="t body" x="520" y="244">Graphite/Si electrodes; potential versus Li⁺/Li</text>
+  <rect x="520" y="258" width="360" height="46" rx="10" fill="#14213d"/>
+  <text x="610" y="287" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">30–50 nm Si</text>
+  <text x="785" y="287" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">70–130 nm Si</text>
+  <text class="t strong" x="528" y="344">5 mV</text><circle cx="650" cy="339" r="11" class="violet"/><text class="t body" x="668" y="344">Li₁₅Si₄</text><circle cx="823" cy="339" r="11" class="violet"/><text class="t body" x="841" y="344">Li₁₅Si₄</text>
+  <path d="M520 365H880" stroke="#d8e1ee"/>
+  <text class="t strong" x="528" y="400">50 mV</text><circle cx="650" cy="395" r="11" class="good"/><text class="t body" x="668" y="400">not formed</text><circle cx="823" cy="395" r="11" class="violet"/><text class="t body" x="841" y="400">formed</text>
+  <path d="M520 421H880" stroke="#d8e1ee"/>
+  <text class="t strong" x="528" y="456">120 mV</text><circle cx="650" cy="451" r="11" class="good"/><text class="t body" x="668" y="456">stable Si</text><circle cx="823" cy="451" r="11" class="warn"/><text class="t body" x="841" y="449">little</text><text class="t body" x="841" y="466">capacity</text>
+  <rect x="520" y="497" width="360" height="132" rx="16" fill="#f2efff" stroke="#a99be5"/>
+  <text class="t strong" x="542" y="529">Larger particles at 5 or 50 mV:</text>
+  <text class="t body" x="542" y="555">• only ~70% of Si initially participated</text>
+  <text class="t body" x="542" y="579">• rapid performance fade was reported</text>
+  <text class="t body" x="542" y="606">Cutoff effects were size dependent.</text>
+  <text class="t body" x="520" y="681">Evidence boundary:</text><text class="t body" x="520" y="704">specific particles, electrode, and half-cell protocol</text>
+
+  <!-- Panel C -->
+  <text class="t letter" x="962" y="164">C • CONTROLLED LITHIATION DEPTH [35]</text>
+  <text class="t pt" x="962" y="201">Limited versus full Si utilization</text>
+  <text class="t body" x="962" y="230">Nanoparticle-Si film study</text>
+  <text class="t strong" x="1039" y="279" text-anchor="middle">≤2000 mAh g⁻¹</text>
+  <text class="t strong" x="1243" y="279" text-anchor="middle">FULL LITHIATION</text>
+  <circle cx="1039" cy="369" r="68" class="si"/>
+  <circle cx="1243" cy="369" r="83" class="si"/>
+  <path class="crack" d="M1218 299l17 49-29 25 30 18-17 52M1264 297l-3 42 31 25-24 25 23 37"/>
+  <path d="M978 304A86 86 0 0 1 1097 311" fill="none" stroke="#61a8f3" stroke-width="14" stroke-linecap="round"/>
+  <rect x="962" y="475" width="170" height="156" rx="15" fill="#edf8f5" stroke="#83cdbc"/>
+  <text class="t body" x="980" y="507">• mitigated film</text><text class="t body" x="990" y="526">fracture</text>
+  <text class="t body" x="980" y="555">• particulate</text><text class="t body" x="990" y="574">morphology</text>
+  <text class="t body" x="980" y="603">• LiF-dominated</text><text class="t body" x="990" y="622">outer SEI</text>
+  <rect x="1150" y="475" width="172" height="156" rx="15" fill="#fff2f2" stroke="#df8793"/>
+  <text class="t body" x="1168" y="507">• greater film</text><text class="t body" x="1178" y="526">fracture</text>
+  <text class="t body" x="1168" y="555">• flocculent</text><text class="t body" x="1178" y="574">morphology</text>
+  <text class="t body" x="1168" y="603">• mosaic-type</text><text class="t body" x="1178" y="622">SEI</text>
+  <text class="t body" x="962" y="681">Evidence boundary:</text><text class="t body" x="962" y="704">capacity limitation also reduces usable energy</text>
+
+  <rect x="52" y="806" width="1296" height="68" rx="18" fill="#14213d"/>
+  <text class="t foot" x="700" y="834" text-anchor="middle">There is no universal “slow, hot, or deep” formation rule.</text>
+  <text class="t foot2" x="700" y="858" text-anchor="middle">Formation must be optimized with the electrolyte, silicon architecture, utilization target, and full-cell balance held in view.</text>
+</svg>

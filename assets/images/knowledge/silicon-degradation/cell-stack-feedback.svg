@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Contact geometry can amplify nominal pressure into local separator pore closure</title>
+  <desc id="desc">Two interface schematics compare distributed contact with pressure localization. In the second panel a swollen silicon-rich domain contacts the separator over a small footprint, producing high local stress, collapsed pores, diverted ionic flux, and increased reaction at a nearby accessible silicon domain.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#6c7f96" flood-opacity=".14"/></filter>
+    <pattern id="graphite" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(25)"><rect width="8" height="8" fill="#788ba5"/><line x1="0" y1="1" x2="8" y2="1" stroke="#91a1b7" stroke-width="1.5"/></pattern>
+    <marker id="stressArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#ef665f"/></marker>
+    <marker id="fluxArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#25a8d8"/></marker>
+  </defs>
+  <rect width="1200" height="660" rx="28" fill="#f6f9fd"/>
+  <g font-family="Manrope,Arial,sans-serif">
+    <text x="600" y="46" text-anchor="middle" font-size="29" font-weight="800" fill="#14213d">Contact geometry can amplify nominal pressure into local separator pore closure</text>
+    <text x="600" y="75" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#52627c">Same nominal boundary load; different local contact geometry and transport response</text>
+
+    <!-- restrained visual key -->
+    <g transform="translate(318 93)" font-family="Inter,Arial,sans-serif" font-size="11.5" fill="#40516f">
+      <line x1="0" y1="8" x2="28" y2="8" stroke="#ef665f" stroke-width="4" marker-end="url(#stressArrow)"/><text x="40" y="12">mechanical load / stress</text>
+      <line x1="205" y1="8" x2="233" y2="8" stroke="#25a8d8" stroke-width="4" marker-end="url(#fluxArrow)"/><text x="245" y="12">ionic flux</text>
+      <circle cx="370" cy="8" r="8" fill="#409bdf" stroke="#237fc0" stroke-width="2"/><text x="386" y="12">Si-rich domain</text>
+      <rect x="487" y="0" width="20" height="16" rx="3" fill="#fff" stroke="#b7c7d7"/><text x="517" y="12">open pore</text>
+      <circle cx="625" cy="8" r="8" fill="url(#graphite)" stroke="#657994"/><text x="641" y="12">graphite / host</text>
+    </g>
+
+    <!-- panels -->
+    <g filter="url(#shadow)"><rect x="55" y="132" width="515" height="414" rx="22" fill="#fff" stroke="#cfdae6" stroke-width="2"/><rect x="630" y="132" width="515" height="414" rx="22" fill="#fff" stroke="#cfdae6" stroke-width="2"/></g>
+    <text x="82" y="165" font-size="19" font-weight="850" fill="#14213d">A  Distributed contact</text>
+    <text x="82" y="187" font-family="Inter,Arial,sans-serif" font-size="12.5" fill="#52627c">load and ionic pathways remain broadly distributed</text>
+    <text x="657" y="165" font-size="19" font-weight="850" fill="#14213d">B  Local pressure amplification</text>
+    <text x="657" y="187" font-family="Inter,Arial,sans-serif" font-size="12.5" fill="#52627c">a swollen Si-rich domain concentrates load at the interface</text>
+
+    <!-- A: pressure arrows and thin cathode -->
+    <g stroke="#ef665f" stroke-width="4" marker-end="url(#stressArrow)"><path d="M160 202V226"/><path d="M312 202V226"/><path d="M465 202V226"/></g>
+    <text x="312" y="215" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="800" fill="#b7424c">nominal stack pressure</text>
+    <rect x="83" y="230" width="459" height="34" rx="8" fill="#73869f"/><text x="312" y="252" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#fff">adjacent electrode</text>
+    <rect x="83" y="275" width="459" height="106" rx="10" fill="#dce9f3"/>
+    <text x="98" y="296" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="800" fill="#52627c">porous separator</text>
+    <!-- open, explicit separator pores -->
+    <g fill="#fff" stroke="#bdcedd" stroke-width="1.5"><rect x="111" y="311" width="33" height="51" rx="15"/><rect x="183" y="299" width="34" height="65" rx="16"/><rect x="262" y="309" width="34" height="54" rx="16"/><rect x="342" y="299" width="34" height="65" rx="16"/><rect x="421" y="309" width="34" height="54" rx="16"/><rect x="493" y="300" width="25" height="63" rx="12"/></g>
+    <rect x="83" y="392" width="459" height="121" rx="10" fill="#edf4f8"/>
+    <g fill="url(#graphite)" stroke="#657994" stroke-width="2"><circle cx="143" cy="440" r="31"/><circle cx="259" cy="467" r="32"/><circle cx="380" cy="434" r="34"/><circle cx="489" cy="467" r="28"/></g>
+    <g fill="#409bdf" stroke="#237fc0" stroke-width="2.5"><circle cx="202" cy="429" r="29"/><circle cx="318" cy="425" r="25"/><circle cx="440" cy="471" r="27"/></g>
+    <g fill="none" stroke="#25a8d8" stroke-width="4" marker-end="url(#fluxArrow)"><path d="M127 290V407"/><path d="M200 290V396"/><path d="M278 290V432"/><path d="M359 290V400"/><path d="M438 290V436"/><path d="M505 290V435"/></g>
+    <text x="312" y="533" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#40516f">open pores support distributed ionic flux</text>
+
+    <!-- B: same nominal pressure, localized interface -->
+    <g stroke="#ef665f" stroke-width="4" marker-end="url(#stressArrow)"><path d="M735 202V226"/><path d="M887 202V226"/><path d="M1040 202V226"/></g>
+    <text x="887" y="215" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="800" fill="#b7424c">same nominal stack pressure</text>
+    <rect x="658" y="230" width="459" height="34" rx="8" fill="#73869f"/>
+    <rect x="658" y="275" width="459" height="106" rx="10" fill="#dce9f3"/>
+    <text x="673" y="296" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="800" fill="#52627c">porous separator</text>
+    <!-- open pores away from contact; narrowed/collapsed at contact -->
+    <g fill="#fff" stroke="#bdcedd" stroke-width="1.5"><rect x="682" y="302" width="32" height="62" rx="15"/><rect x="745" y="311" width="32" height="52" rx="15"/><rect x="982" y="307" width="32" height="56" rx="15"/><rect x="1051" y="299" width="31" height="65" rx="15"/></g>
+    <g fill="#aeb9c4" stroke="#ef665f" stroke-width="2"><rect x="820" y="335" width="34" height="17" rx="8"/><rect x="868" y="340" width="31" height="10" rx="5"/><rect x="913" y="334" width="33" height="18" rx="8"/></g>
+    <rect x="658" y="392" width="459" height="121" rx="10" fill="#edf4f8"/>
+    <g fill="url(#graphite)" stroke="#657994" stroke-width="2"><circle cx="704" cy="458" r="29"/><circle cx="790" cy="474" r="30"/><circle cx="1011" cy="465" r="31"/><circle cx="1083" cy="443" r="25"/></g>
+    <g fill="#409bdf" stroke="#237fc0" stroke-width="2.5"><circle cx="750" cy="423" r="25"/><circle cx="951" cy="428" r="27"/></g>
+    <!-- swollen protruding Si domain -->
+    <path d="M824 477C818 449 819 413 830 382C840 354 857 346 881 346C905 346 923 355 933 382C945 414 944 451 937 477Z" fill="#409bdf" stroke="#237fc0" stroke-width="3"/>
+    <path d="M840 350C849 337 862 331 881 331C900 331 914 337 922 350" fill="none" stroke="#ef665f" stroke-width="6"/>
+    <!-- contact-stress arrows and footprint bracket -->
+    <g stroke="#ef665f" stroke-width="5" marker-end="url(#stressArrow)"><path d="M848 285V330"/><path d="M881 280V326"/><path d="M914 285V330"/></g>
+    <path d="M839 319V309M839 314H923M923 319V309" fill="none" stroke="#b7424c" stroke-width="2"/>
+    <text x="881" y="306" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="850" fill="#b7424c">small contact footprint</text>
+    <text x="996" y="329" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="800" fill="#b7424c">higher local stress</text>
+    <path d="M991 333L929 340" fill="none" stroke="#b7424c" stroke-width="1.7"/>
+    <text x="882" y="372" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" fill="#8c5053">collapsed pores</text>
+    <!-- flux diverted around closed zone -->
+    <g fill="none" stroke="#25a8d8" marker-end="url(#fluxArrow)"><path d="M699 290C700 348 720 375 744 395" stroke-width="4"/><path d="M766 290C767 349 760 372 755 394" stroke-width="5"/><path d="M997 290C997 348 979 374 959 397" stroke-width="7"/><path d="M1067 290C1060 353 1010 387 970 410" stroke-width="7"/></g>
+    <text x="1020" y="388" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" fill="#168fbf">diverted flux</text>
+    <!-- reaction halo at nearby Si -->
+    <circle cx="951" cy="428" r="38" fill="none" stroke="#f2a23b" stroke-width="5" stroke-dasharray="9 6"/>
+    <text x="951" y="499" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12.5" font-weight="850" fill="#a46118">increased local current density</text>
+  </g>
+  <line x1="145" y1="588" x2="1055" y2="588" stroke="#ccd8e4" stroke-width="2"/>
+  <text x="600" y="620" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#14213d">Local contact amplification can convert stack pressure into pore closure, flux redistribution, and reaction nonuniformity.</text>
+  <text x="600" y="643" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" fill="#687991">Representative interface geometry; dimensions and deformation are qualitative rather than to scale.</text>
+</svg>

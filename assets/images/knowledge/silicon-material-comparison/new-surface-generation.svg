@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="440" viewBox="0 0 1400 440" role="img" aria-labelledby="title desc">
+  <title id="title">Three routes to fresh electrolyte-accessible surface</title>
+  <desc id="desc">Paired-state schematics show barrier failure in silicon-carbon, matrix or domain exposure in silicon oxide, and morphological surface creation in elemental silicon without ranking their magnitudes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6f9fd"/><stop offset="1" stop-color="#eaf2fb"/></linearGradient>
+    <pattern id="carbon" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#243957"/><circle cx="4" cy="4" r="1.5" fill="#718bad"/><circle cx="11" cy="10" r="1.5" fill="#718bad"/></pattern>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z" fill="#6a84a6"/></marker>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.h{font:800 31px Manrope,Arial,sans-serif}.sub{font:600 15px Inter,Arial,sans-serif;fill:#586a84}.head{font:800 20px Manrope,Arial,sans-serif}.mechanism{font:750 16px Inter,Arial,sans-serif}.state{font:650 13px Inter,Arial,sans-serif;fill:#5a6c86}.divider{stroke:#cfdae8;stroke-width:1.5}.arrow{stroke:#6a84a6;stroke-width:3;fill:none;marker-end:url(#arrow)}.fresh{stroke:#ea714c;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}.access{stroke:#55a8df;stroke-width:7;fill:none;stroke-dasharray:8 6}.matrix{fill:#b8c9df}.silicon{fill:#78a6d7}.silicate{fill:#e4d391}.elemental{fill:#64bcbd}
+    </style>
+  </defs>
+  <rect width="1400" height="440" fill="url(#bg)"/>
+  <text x="700" y="46" text-anchor="middle" class="t h">Three Routes to Fresh Electrolyte-Accessible Surface</text>
+  <text x="700" y="75" text-anchor="middle" class="sub">Mechanisms are compared; the amount of new area is not ranked</text>
+  <g transform="translate(462 99)"><path d="M0 0h28" class="fresh"/><text x="38" y="5" class="sub">damage or access pathway</text><path d="M260 0h30" class="access"/><text x="302" y="5" class="sub">newly accessible boundary</text></g>
+  <line x1="467" y1="126" x2="467" y2="350" class="divider"/><line x1="933" y1="126" x2="933" y2="350" class="divider"/>
+
+  <g transform="translate(55 125)">
+    <text x="205" y="24" text-anchor="middle" class="t head">Si-C</text>
+    <g transform="translate(105 116)"><circle r="66" fill="url(#carbon)"/><circle r="34" class="silicon"/></g>
+    <path d="M185 116H235" class="arrow"/>
+    <g transform="translate(305 116)"><circle r="66" fill="url(#carbon)"/><circle r="34" class="silicon"/><path d="M-48-46L-20-16L-34 15L-12 42" class="fresh"/><path d="M-50-30C-35-17-24 2-19 28" class="access"/></g>
+    <text x="105" y="205" text-anchor="middle" class="state">intact confinement</text><text x="305" y="205" text-anchor="middle" class="state">connected pathway opens</text>
+    <text x="205" y="238" text-anchor="middle" class="t mechanism">Barrier failure → internal exposure</text>
+  </g>
+
+  <g transform="translate(495 125)">
+    <text x="205" y="24" text-anchor="middle" class="t head">SiO<tspan baseline-shift="sub" font-size="13">x</tspan></text>
+    <g transform="translate(105 116)"><circle r="66" class="matrix"/><circle cx="-24" cy="-18" r="21" class="silicon"/><circle cx="25" cy="-15" r="24" class="silicate"/><circle cx="5" cy="30" r="20" class="silicon"/></g>
+    <path d="M185 116H235" class="arrow"/>
+    <g transform="translate(305 116)"><circle r="66" class="matrix"/><circle cx="-24" cy="-18" r="21" class="silicon"/><circle cx="25" cy="-15" r="24" class="silicate"/><circle cx="5" cy="30" r="20" class="silicon"/><path d="M-55 43L-24 12L4 39L36 5" class="fresh"/><path d="M-57 35C-43 43-31 52-22 62" class="access"/></g>
+    <text x="105" y="196" text-anchor="middle" class="state">Li<tspan baseline-shift="sub" font-size="10">x</tspan>Si domains in</text><text x="105" y="214" text-anchor="middle" class="state">converted matrix</text><text x="305" y="196" text-anchor="middle" class="state">newly exposed</text><text x="305" y="214" text-anchor="middle" class="state">domain boundary</text>
+    <text x="205" y="238" text-anchor="middle" class="t mechanism">Matrix damage → renewed interface</text>
+  </g>
+
+  <g transform="translate(935 125)">
+    <text x="205" y="24" text-anchor="middle" class="t head">Elemental Si</text>
+    <g transform="translate(105 116)"><circle r="61" class="elemental"/></g>
+    <path d="M185 116H235" class="arrow"/>
+    <g transform="translate(305 116)"><path d="M-66-35C-38-70 33-69 66-31C91-2 75 50 34 61C-7 72-52 56-67 24C-77 3-77-18-66-35Z" class="elemental"/><ellipse cx="-25" cy="-12" rx="16" ry="23" fill="#f6f9fd"/><ellipse cx="29" cy="20" rx="21" ry="15" fill="#f6f9fd"/><path d="M-5-58L-14-20L8 8L-7 48M43-43L23-13L46 12" class="fresh"/><path d="M-73-34C-91-4-83 39-52 59M73-29C90 1 80 39 54 55" class="access"/></g>
+    <text x="105" y="205" text-anchor="middle" class="state">initial Si morphology</text><text x="305" y="205" text-anchor="middle" class="state">new pore walls and fragments</text>
+    <text x="205" y="238" text-anchor="middle" class="t mechanism">Flow, pores, fracture → renewed surface</text>
+  </g>
+
+  <rect x="55" y="380" width="1290" height="40" rx="12" fill="#e6effa"/>
+  <text x="700" y="406" text-anchor="middle" class="t mechanism">The mechanism differs; the amount of newly accessible area remains architecture- and history-dependent.</text>
+</svg>

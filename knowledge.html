@@ -123,6 +123,7 @@
 .knowledge-card img { width:100%; height:190px; object-fit:cover; display:block; flex:0 0 auto; }
 .knowledge-card-body { padding:28px; display:flex; flex-direction:column; flex:1; }
 .knowledge-card-category { margin:0 0 12px; color:#2867d8; font-size:.76rem; font-weight:900; letter-spacing:.08em; line-height:1.2; text-transform:uppercase; }
+.knowledge-draft-badge { display:inline-flex; margin-left:8px; padding:3px 7px; border:1px solid rgba(181,105,17,.25); border-radius:999px; background:#fff4d9; color:#9b5b0b; font-size:.68rem; font-weight:900; letter-spacing:.04em; vertical-align:middle; }
 .knowledge-card h2 { min-height:174px; display:flex; align-items:flex-start; margin-bottom:16px; font-size:25px; line-height:1.16; letter-spacing:0; }
 .knowledge-card h2 a { color:inherit; text-decoration:none; }
 .knowledge-card h2 a:hover { color:var(--blue); }
@@ -269,32 +270,32 @@
 <section class="section featured-section" aria-labelledby="featured-articles-title">
   <div class="container">
     <div class="article-index-header"><p class="eyebrow">Start Here</p><h2 id="featured-articles-title">Featured Articles</h2><p>Three practical guides spanning electrolyte design, silicon materials, and solid-state electrolyte evaluation.</p></div>
-    <div class="featured-grid">
+    <div class="featured-grid" data-featured-articles>
       <!-- GENERATED:FEATURED-ARTICLES:START -->
-      <article class="knowledge-card featured-card">
-      <img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway">
+      <article class="knowledge-card featured-card" data-article-slug="low-temperature-electrolytes">
+      <img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/low-temperature-electrolytes.html">Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability</a></h2>
-      <p>A systems framework connecting electrolyte solvation and transport with graphite kinetics, electrode loading, cell hardware, charging limits, and thermal strategy below −20°C, including operation below −60°C.</p>
+      <p>A technical systems framework for ultra-low-temperature cell energy, power, and rechargeability below −20°C, including operation below −60°C.</p>
       <div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
       </div>
     </article>
-      <article class="knowledge-card featured-card">
-      <img src="assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects.png?v=20260809-1" alt="The first charge writes the cathode's future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes" decoding="async">
+      <article class="knowledge-card featured-card" data-article-slug="fast-formation-lithium-rich-cathodes">
+      <img src="assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects.png?v=20260809-1" alt="The first charge writes the cathode&#39;s future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Cell Development</p>
       <h2><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure</a></h2>
-      <p>Review how first-charge rate changes reaction heterogeneity, high-voltage plateau access, residual lithium, structural evolution, and later cycling in lithium-rich cathodes.</p>
+      <p>A technical review of formation rate, reaction heterogeneity, residual lithium, plateau access, structural evolution, and later cycling in lithium-rich cathodes.</p>
       <div class="related-link-list"><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Read article</a></div>
       </div>
     </article>
-      <article class="knowledge-card featured-card">
-      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Solid-state electrolyte powder particle-size distribution">
+      <article class="knowledge-card featured-card" data-article-slug="compare-solid-state-electrolyte-powders">
+      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Solid-state electrolyte powder particle-size distribution" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/compare-solid-state-electrolyte-powders.html">How to Compare Solid-State Electrolyte Powders: Conductivity, Particle Size, Density, and Interface Testing</a></h2>
-      <p>Learn how to compare solid-state electrolyte powders using ionic/electronic conductivity, D10/D50/D90, pellet preparation, moisture, XRD, SEM, and interface testing.</p>
+      <p>How to compare solid-state electrolyte powders using conductivity, particle-size distribution, pellet density, moisture, XRD, SEM, and interfaces.</p>
       <div class="related-link-list"><a href="knowledge/compare-solid-state-electrolyte-powders.html">Read article</a></div>
       </div>
     </article>
@@ -302,205 +303,207 @@
     </div>
   </div>
 </section>
-<section class="section library-section"><div class="container"><div class="article-index-header"><p class="eyebrow">Complete Library</p><h2>All Technical Articles</h2><p>Browse the full collection of Winigen Materials guides across chemistry, materials, interfaces, testing, and scale-up.</p></div><div class="knowledge-grid">
-    <article class="knowledge-card">
+<section class="section library-section"><div class="container"><div class="article-index-header"><p class="eyebrow">Complete Library</p><h2>All Technical Articles</h2><p>Browse the full collection of Winigen Materials guides across chemistry, materials, interfaces, testing, and scale-up.</p></div><div class="knowledge-grid" data-article-library>
+      <!-- GENERATED:ARTICLE-LIBRARY:START -->
+      <article class="knowledge-card" data-article-slug="coin-cell-to-pouch-cell-battery-material-validation">
       <img src="assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation.png?v=20260806-1" alt="Strong coin-cell data is not scale-up proof: coin-to-pouch validation" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Cell Development</p>
       <h2><a href="knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up</a></h2>
-      <p>Connect material QC, electrolyte wetting, formation, gas, swelling, pressure, impedance, and post-mortem evidence across coin, single-layer pouch, and multilayer pouch cells.</p>
+      <p>How to validate battery materials across coin cells, full cells, pouch cells, formation, wetting, gas generation, swelling, pressure, and scale-up evidence.</p>
       <div class="related-link-list"><a href="knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
+    <article class="knowledge-card" data-article-slug="coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation">
       <img src="assets/images/knowledge/social/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.png?v=20260806-5" alt="Coin-cell winner, pouch-cell loser: wetting, formation, gas, pressure, and lean-electrolyte conditions can reorder material performance" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Cell Development</p>
       <h2><a href="knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">From Coin Cell to Pouch Cell, Part 2: Why Wetting, Gas, and Formation Change Battery Material Rankings</a></h2>
-      <p>Go deeper on E/C ratio, vacuum filling, wetting rest time, formation protocol, additive consumption, gas generation, pouch swelling, pressure, and ranking reversal.</p>
+      <p>Why coin-cell rankings can change in pouch cells through electrolyte starvation, local ionic pathways, E/C ratio, wetting, formation gas, pressure, impedance components, and high-loading electrode effects.</p>
       <div class="related-link-list"><a href="knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects.png?v=20260809-1" alt="The first charge writes the cathode's future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes" loading="lazy" decoding="async">
+    <article class="knowledge-card" data-article-slug="fast-formation-lithium-rich-cathodes">
+      <img src="assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects.png?v=20260809-1" alt="The first charge writes the cathode&#39;s future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Cell Development</p>
       <h2><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure</a></h2>
-      <p>Review how first-charge rate changes reaction heterogeneity, high-voltage plateau access, residual lithium, structural evolution, and later cycling in lithium-rich cathodes.</p>
+      <p>A technical review of formation rate, reaction heterogeneity, residual lithium, plateau access, structural evolution, and later cycling in lithium-rich cathodes.</p>
       <div class="related-link-list"><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
+    <article class="knowledge-card" data-article-slug="np-ratio-lithium-ion-battery-design">
       <img src="assets/images/knowledge/campaign/np-ratio-effective-margin-hero-v3-diffuse-access.png?v=20260809-1" alt="The ratio is fixed, but the margin is not: operating conditions reduce kinetically accessible anode receiving capacity" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Silicon</p>
-      <h2><a href="knowledge/np-ratio-lithium-ion-battery-design.html">N/P Ratio in Lithium-Ion Batteries: Plating Risk, Fast Charge, and Energy Density</a></h2>
-      <p>Calculate and validate practical electrode balance across graphite and silicon anodes, fast-charge conditions, effective N/P, energy-density tradeoffs, and pouch-cell geometry.</p>
+      <h2><a href="knowledge/np-ratio-lithium-ion-battery-design.html">N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density</a></h2>
+      <p>How to calculate and validate N/P ratio across graphite and silicon anodes, lithium-plating margin, fast-charge conditions, energy-density tradeoffs, and pouch-cell geometry.</p>
       <div class="related-link-list"><a href="knowledge/np-ratio-lithium-ion-battery-design.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
+    <article class="knowledge-card" data-article-slug="beyond-np-ratio-spatial-reaction-uniformity">
       <img src="assets/images/knowledge/campaign/beyond-np-spatial-reaction-uniformity-hero-v2-precise-subtitle.png?v=20260809-1" alt="Balanced on paper, uneven in reality: a localized lithium-plating hotspot in a spatially nonuniform pouch-cell reaction field" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Silicon</p>
       <h2><a href="knowledge/beyond-np-ratio-spatial-reaction-uniformity.html">Beyond N/P Ratio: Electrode Balancing Is Fundamentally a Problem of Spatial Reaction Uniformity</a></h2>
-      <p>Connect nominal electrode balance with local reaction heterogeneity, porosity, tortuosity, wetting, pressure, silicon expansion, aging, fast charge, and manufacturing precision.</p>
+      <p>A spatial framework that connects nominal N/P ratio with local charge- and rate-based lithium-acceptance margins, reaction heterogeneity, manufacturing, silicon expansion, aging, and fast charging.</p>
       <div class="related-link-list"><a href="knowledge/beyond-np-ratio-spatial-reaction-uniformity.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/lab-equipment.jpg" alt="Electrolyte additive screening for silicon anodes and high-voltage cathodes" loading="lazy">
+    <article class="knowledge-card" data-article-slug="electrolyte-additives-sei-cei">
+      <img src="assets/images/lab-equipment.jpg" alt="Electrolyte additive screening for silicon anodes and high-voltage cathodes" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Silicon</p>
       <h2><a href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes</a></h2>
-      <p>Screen FEC, VC, lithium phosphate, nitrile, sulfur, and phosphorus additives by interphase chemistry, gas, impedance, cross-talk, temperature, and full-cell failure mode.</p>
+      <p>A failure-mode approach to additive screening across silicon SEI, high-voltage CEI, gas, impedance, cross-talk, and post-mortem evidence.</p>
       <div class="related-link-list"><a href="knowledge/electrolyte-additives-sei-cei.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/electrolyte-design.jpg" alt="LiFSI electrolyte formulation and battery development" loading="lazy">
+    <article class="knowledge-card" data-article-slug="lifsi-lithium-metal-batteries">
+      <img src="assets/images/electrolyte-design.jpg" alt="LiFSI electrolyte formulation and battery development" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI for Lithium-Metal Batteries, Fast Charge, and Low-Temperature Electrolytes</a></h2>
-      <p>Learn why LiFSI is used in lithium-metal, fast-charge, low-temperature, and high-concentration battery electrolytes, including interphase formation, current-collector compatibility, and formulation strategy.</p>
+      <p>Why LiFSI is used in lithium-metal, fast-charge, low-temperature, and high-concentration electrolyte systems.</p>
       <div class="related-link-list"><a href="knowledge/lifsi-lithium-metal-batteries.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/raw-chemicals.jpg" alt="Lithium salts for electrolyte formulation" loading="lazy">
+    <article class="knowledge-card" data-article-slug="lipf6-vs-lifsi-vs-litfsi">
+      <img src="assets/images/raw-chemicals.jpg" alt="Lithium salts for electrolyte formulation" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 vs LiFSI vs LiTFSI: How to Choose Lithium Electrolyte Salts for Battery Development</a></h2>
-      <p>Compare LiPF6, LiFSI, and LiTFSI for lithium-ion, lithium-metal, fast-charge, low-temperature, polymer, and specialty electrolyte development.</p>
+      <p>Compare LiPF6, LiFSI, and LiTFSI by conductivity, interphase behavior, moisture sensitivity, aluminum corrosion, and application fit.</p>
       <div class="related-link-list"><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway" loading="lazy">
+    <article class="knowledge-card" data-article-slug="low-temperature-electrolytes">
+      <img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/low-temperature-electrolytes.html">Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability</a></h2>
-      <p>A systems framework connecting electrolyte solvation and transport with graphite kinetics, electrode loading, cell hardware, charging limits, and thermal strategy below −20°C, including operation below −60°C.</p>
+      <p>A technical systems framework for ultra-low-temperature cell energy, power, and rechargeability below −20°C, including operation below −60°C.</p>
       <div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/Sodium-Ion High-Rate Cycling.png" alt="Sodium-ion electrolyte high-rate cycling data" loading="lazy">
+    <article class="knowledge-card" data-article-slug="sodium-ion-electrolyte-materials">
+      <img src="assets/images/Sodium-Ion High-Rate Cycling.png" alt="Sodium-ion electrolyte high-rate cycling data" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Sodium-Ion</p>
       <h2><a href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Battery Electrolyte Materials: Sodium Salts, Solvents, Additives, and Water Control</a></h2>
-      <p>Learn how sodium salts such as NaPF6, NaTFSI, and NaODFB, along with solvents, additives, and water control, affect sodium-ion battery electrolyte performance.</p>
+      <p>How sodium salts, solvents, additives, and water control affect sodium-ion electrolyte performance.</p>
       <div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-materials.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-electrolyte-design-map.png" alt="Sodium-ion electrolyte design map for rate temperature lifetime gas and safety" loading="lazy">
+    <article class="knowledge-card" data-article-slug="sodium-ion-electrolyte-design-high-rate-wide-temperature-safety">
+      <img src="assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-electrolyte-design-map.png" alt="Sodium-ion electrolyte design map for rate temperature lifetime gas and safety" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Sodium-Ion</p>
       <h2><a href="knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html">Sodium-Ion Electrolyte Design for High Rate, Wide Temperature, Long Life, and Safety</a></h2>
-      <p>Connect sodium-ion transport, solvation, hard-carbon interphases, water control, gas suppression, temperature response, and complete-cell safety in one screening framework.</p>
+      <p>A coupled sodium-ion electrolyte framework for rate, temperature, cycle life, gas control, and complete-cell safety.</p>
       <div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powders films and discs" loading="lazy">
+    <article class="knowledge-card" data-article-slug="solid-state-electrolyte-materials">
+      <img src="assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powders films and discs" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-state-electrolyte-materials.html">Solid-State Electrolyte Materials: Sulfide, Oxide, Halide, and Polymer Electrolyte Screening</a></h2>
-      <p>Compare sulfide, oxide, halide, polymer, and hybrid solid-state electrolyte materials for battery development, including ionic conductivity, particle size, moisture sensitivity, and interface compatibility.</p>
+      <p>Compare solid-state electrolyte material families by conductivity, particle size, moisture sensitivity, morphology, and interface compatibility.</p>
       <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-materials.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/solid-state/li6ps5cl-d50-2um-dls.jpg" alt="Solid-state electrolyte particle-size screening data" loading="lazy">
+    <article class="knowledge-card" data-article-slug="solid-state-electrolyte-screening-rd-to-pilot-line">
+      <img src="assets/images/solid-state/li6ps5cl-d50-2um-dls.jpg" alt="Solid-state electrolyte particle-size screening data" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">From R&amp;D to Pilot Line: How to Screen Solid-State Electrolyte Materials</a></h2>
-      <p>Review a practical screening workflow that connects powder specifications, pellet conductivity, moisture control, composite-electrode compatibility, interface testing, and pilot-scale validation.</p>
+      <p>A staged screening workflow from powder specifications to pellet conductivity, composite compatibility, interface testing, and pilot validation.</p>
       <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-sem.jpg" alt="Sulfide solid electrolyte SEM morphology" loading="lazy">
+    <article class="knowledge-card" data-article-slug="sulfide-vs-oxide-vs-halide-solid-electrolytes">
+      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-sem.jpg" alt="Sulfide solid electrolyte SEM morphology" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Sulfide vs Oxide vs Halide Solid Electrolytes: Conductivity, Stability, and Processing Tradeoffs</a></h2>
-      <p>Compare sulfide, oxide, and halide solid electrolytes for battery development, including conductivity, moisture sensitivity, high-voltage compatibility, processing route, and interface behavior.</p>
+      <p>Compare sulfide, oxide, and halide solid electrolytes for conductivity, stability, processing, high-voltage compatibility, and interface behavior.</p>
       <div class="related-link-list"><a href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Solid-state electrolyte powder particle-size distribution" loading="lazy">
+    <article class="knowledge-card" data-article-slug="compare-solid-state-electrolyte-powders">
+      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Solid-state electrolyte powder particle-size distribution" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/compare-solid-state-electrolyte-powders.html">How to Compare Solid-State Electrolyte Powders: Conductivity, Particle Size, Density, and Interface Testing</a></h2>
-      <p>Learn how to compare solid-state electrolyte powders using ionic/electronic conductivity, D10/D50/D90, pellet preparation, moisture, XRD, SEM, and interface testing.</p>
+      <p>How to compare solid-state electrolyte powders using conductivity, particle-size distribution, pellet density, moisture, XRD, SEM, and interfaces.</p>
       <div class="related-link-list"><a href="knowledge/compare-solid-state-electrolyte-powders.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/mechanics-llzto-vickers-deflection.jpg" alt="Lithium dendrite deflection in LLZTO garnet electrolyte" loading="lazy">
+    <article class="knowledge-card" data-article-slug="mechanics-solid-state-electrolyte-lithium-dendrites">
+      <img src="assets/images/knowledge/mechanics-llzto-vickers-deflection.jpg" alt="Lithium dendrite deflection in LLZTO garnet electrolyte" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html">Why Mechanics Matter in Solid-State Electrolyte Screening</a></h2>
-      <p>Review what a 2026 Nature study on LLZTO reveals about hydrostatic stress, grain-boundary weakness, fracture paths, engineered defects, and lithium-metal interface testing.</p>
+      <p>Why solid-state electrolyte screening must consider fracture, grain boundaries, lithium penetration, pressure, and mechanical integrity.</p>
       <div class="related-link-list"><a href="knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/ev-battery-topics/liquid-vs-all-solid-state-cell-architecture-en.jpg" alt="Liquid electrolyte and all-solid-state cell architecture comparison" loading="lazy">
+    <article class="knowledge-card" data-article-slug="solid-liquid-hybrid-vs-all-solid-state-batteries">
+      <img src="assets/images/knowledge/ev-battery-topics/liquid-vs-all-solid-state-cell-architecture-en.jpg" alt="Liquid electrolyte and all-solid-state cell architecture comparison" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html">Solid-Liquid Hybrid vs All-Solid-State Batteries: Architecture, Performance, and Safety</a></h2>
-      <p>Compare transport, wetting, pressure, durability, thermal behavior, composite electrodes, interfaces, materials, and manufacturing across hybrid and all-solid-state architectures.</p>
+      <p>Compare hybrid and all-solid-state architectures by transport, wetting, pressure, durability, thermal behavior, and manufacturing questions.</p>
       <div class="related-link-list"><a href="knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/ev-battery-topics/solid-state-sodium-battery-targets-en.jpg" alt="Solid-state sodium battery electrolyte and cell targets" loading="lazy">
+    <article class="knowledge-card" data-article-slug="solid-state-sodium-batteries-halide-composite-electrolytes">
+      <img src="assets/images/knowledge/ev-battery-topics/solid-state-sodium-battery-targets-en.jpg" alt="Solid-state sodium battery electrolyte and cell targets" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Sodium-Ion</p>
       <h2><a href="knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html">Solid-State Sodium Batteries</a></h2>
-      <p>Review sodium solid electrolytes, halide and composite concepts, flexible films, interface stability, moisture control, and practical screening priorities.</p>
+      <p>Review sodium solid electrolytes, halide and composite concepts, flexible films, interface stability, and practical screening priorities.</p>
       <div class="related-link-list"><a href="knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/ev-battery-topics/solid-state-lithium-sulfur-performance-table-reconstructed-en.jpg" alt="Solid-state lithium-sulfur battery performance targets and tradeoffs" loading="lazy">
+    <article class="knowledge-card" data-article-slug="solid-state-lithium-sulfur-batteries-materials-challenges">
+      <img src="assets/images/knowledge/ev-battery-topics/solid-state-lithium-sulfur-performance-table-reconstructed-en.jpg" alt="Solid-state lithium-sulfur battery performance targets and tradeoffs" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html">Solid-State Lithium-Sulfur Batteries</a></h2>
-      <p>Explore sulfur loading, composite cathodes, lithium metal, solid-electrolyte selection, pressure, interface stability, and practical cell-level metrics.</p>
+      <p>Explore sulfur loading, composite cathodes, lithium metal, solid-electrolyte selection, pressure, interface stability, and practical cell metrics.</p>
       <div class="related-link-list"><a href="knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/ev-battery-topics/fast-charge-classification-and-module-targets-en.jpg" alt="Fast-charge and all-weather EV battery design targets" loading="lazy">
+    <article class="knowledge-card" data-article-slug="fast-charge-all-weather-ev-battery-electrolytes">
+      <img src="assets/images/knowledge/ev-battery-topics/fast-charge-classification-and-module-targets-en.jpg" alt="Fast-charge and all-weather EV battery design targets" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Materials</p>
       <h2><a href="knowledge/fast-charge-all-weather-ev-battery-electrolytes.html">Fast Charge and All-Weather EV Batteries</a></h2>
-      <p>Learn how electrolyte transport, lithium plating, low-temperature kinetics, internal heating, thermal management, and charging protocols interact.</p>
+      <p>How electrolyte kinetics, lithium plating, thermal management, internal heating, and charging protocols interact in fast-charge and cold-weather EV batteries.</p>
       <div class="related-link-list"><a href="knowledge/fast-charge-all-weather-ev-battery-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/battery-materials-optimization/materials-process-interface-validation-chain.png" alt="Battery materials optimization chain from material properties to cell validation" loading="lazy">
+    <article class="knowledge-card" data-article-slug="battery-materials-optimization-chemistry-cell-performance">
+      <img src="assets/images/knowledge/battery-materials-optimization/materials-process-interface-validation-chain.png" alt="Battery materials optimization chain from material properties to cell validation" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Commercialization</p>
       <h2><a href="knowledge/battery-materials-optimization-chemistry-cell-performance.html">Battery Materials Optimization: From Chemistry Choice to Validated Cell Performance</a></h2>
-      <p>Connect chemistry selection with material grade, electrode processing, electrolyte formulation, degradation modes, and reproducible validation.</p>
+      <p>Why chemistry choice must be connected with material grade, electrode processing, electrolyte formulation, degradation modes, and validation evidence.</p>
       <div class="related-link-list"><a href="knowledge/battery-materials-optimization-chemistry-cell-performance.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card">
-      <img src="assets/images/knowledge/ev-battery-topics/automotive-battery-material-roadmap-en.jpg" alt="Automotive battery materials roadmap" loading="lazy">
+    <article class="knowledge-card" data-article-slug="automotive-battery-materials-roadmap">
+      <img src="assets/images/knowledge/ev-battery-topics/automotive-battery-material-roadmap-en.jpg" alt="Automotive battery materials roadmap" loading="lazy" decoding="async">
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/automotive-battery-materials-roadmap.html">Automotive Battery Materials and Solid-State Commercialization Roadmap</a></h2>
-      <p>Follow the transition from liquid cells to hybrid and commercial solid-state batteries, including interfaces, mechanics, manufacturing, cost, pilot validation, sodium-ion, and lithium-sulfur.</p>
+      <p>Follow the transition from liquid lithium-ion cells to hybrid and commercial solid-state batteries, including interfaces, mechanics, manufacturing, cost, and validation.</p>
       <div class="related-link-list"><a href="knowledge/automotive-battery-materials-roadmap.html">Read article</a></div>
       </div>
     </article>
+      <!-- GENERATED:ARTICLE-LIBRARY:END -->
 </div></div></section>
 <section class="section framework-section" aria-labelledby="framework-title">
   <div class="container">
@@ -520,8 +523,17 @@
 </section>
 </main>
 <footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
-<script src="assets/js/knowledge-search-data.js?v=80b34cbacd46"></script>
-<script src="assets/js/knowledge-search.js?v=b9827d485593"></script>
+<script>
+(function () {
+  var host = window.location.hostname;
+  var isLocalDevelopment = host === 'localhost' || host === '127.0.0.1' || host === '::1' || host === '0.0.0.0' || host.endsWith('.localhost');
+  var dataSource = isLocalDevelopment
+    ? 'assets/js/knowledge-search-data.development.js'
+    : 'assets/js/knowledge-search-data.js';
+  document.write('<script src="' + dataSource + '?v=20260825-1"><\/script>');
+})();
+</script>
+<script src="assets/js/knowledge-search.js?v=20260825-1"></script>
 <script src="assets/js/main.js?v=28f79cb29fc3"></script>
 </body>
 </html>

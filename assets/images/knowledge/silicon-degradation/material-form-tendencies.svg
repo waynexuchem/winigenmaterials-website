@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Different silicon forms shift which failure pathway dominates</title>
+  <desc id="desc">Four qualitative material profiles compare crystalline silicon, amorphous silicon, silicon oxide, and silicon-carbon or silicon-graphite architectures. Each profile identifies a characteristic initiating process, failure tendency, and design priority. Cross-cutting variables can reorder the tendencies.</desc>
+  <defs>
+    <pattern id="carbon" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(28)"><rect width="8" height="8" fill="#7488a4"/><line y1="1" x2="8" y2="1" stroke="#94a4b8" stroke-width="1.5"/></pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#6a7b91" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1200" height="660" rx="28" fill="#f6f9fd"/>
+  <g font-family="Manrope,Arial,sans-serif">
+    <text x="600" y="48" text-anchor="middle" font-size="29" font-weight="800" fill="#14213d">Different silicon forms shift which failure pathway dominates</text>
+    <text x="600" y="78" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#52627c">Qualitative profiles—not performance rankings</text>
+    <line x1="300" y1="115" x2="300" y2="548" stroke="#d4dee8" stroke-width="2"/><line x1="600" y1="115" x2="600" y2="548" stroke="#d4dee8" stroke-width="2"/><line x1="900" y1="115" x2="900" y2="548" stroke="#d4dee8" stroke-width="2"/>
+
+    <!-- Crystalline Si -->
+    <g transform="translate(0 0)">
+      <circle cx="150" cy="171" r="54" fill="#e8f4ff" stroke="#74b9eb" stroke-width="2" filter="url(#shadow)"/>
+      <g fill="#2d73d5"><circle cx="128" cy="149" r="6"/><circle cx="150" cy="149" r="6"/><circle cx="172" cy="149" r="6"/><circle cx="128" cy="171" r="6"/><circle cx="150" cy="171" r="6"/><circle cx="172" cy="171" r="6"/><circle cx="128" cy="193" r="6"/><circle cx="150" cy="193" r="6"/><circle cx="172" cy="193" r="6"/></g>
+      <g stroke="#7aa4cf" stroke-width="1.5"><path d="M128 149H172M128 171H172M128 193H172M128 149V193M150 149V193M172 149V193"/></g>
+      <text x="150" y="249" text-anchor="middle" font-size="21" font-weight="850" fill="#14213d">Crystalline Si</text>
+      <text x="40" y="289" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#2d73d5">INITIATING PROCESS</text>
+      <text x="40" y="314" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">reaction-front amorphization</text>
+      <text x="40" y="356" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#2d73d5">FAILURE TENDENCY</text>
+      <text x="40" y="381" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">anisotropic stress • fracture</text>
+      <text x="40" y="423" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#2d73d5">DESIGN PRIORITY</text>
+      <text x="40" y="448" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">manage deep lithiation</text><text x="40" y="470" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">and preserve contact</text>
+    </g>
+
+    <!-- Amorphous Si -->
+    <g>
+      <circle cx="450" cy="171" r="54" fill="#eaf9f4" stroke="#6bc5a7" stroke-width="2" filter="url(#shadow)"/>
+      <g fill="#36a681"><circle cx="426" cy="148" r="7"/><circle cx="454" cy="142" r="5"/><circle cx="476" cy="158" r="8"/><circle cx="437" cy="174" r="6"/><circle cx="464" cy="181" r="7"/><circle cx="420" cy="196" r="5"/><circle cx="447" cy="202" r="8"/><circle cx="479" cy="195" r="5"/></g>
+      <g stroke="#8ccbb7" stroke-width="2"><path d="M426 148L454 142 476 158 464 181 479 195M426 148L437 174 420 196 447 202 464 181" fill="none"/></g>
+      <text x="450" y="249" text-anchor="middle" font-size="21" font-weight="850" fill="#14213d">Amorphous Si</text>
+      <text x="340" y="289" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#287d62">INITIATING PROCESS</text>
+      <text x="340" y="314" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">distributed alloying and reorganization</text>
+      <text x="340" y="356" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#287d62">FAILURE TENDENCY</text>
+      <text x="340" y="381" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">plastic flow • voiding • SEI burden</text>
+      <text x="340" y="423" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#287d62">DESIGN PRIORITY</text>
+      <text x="340" y="448" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">balance particle size, surface area,</text><text x="340" y="470" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">and composite architecture</text>
+    </g>
+
+    <!-- SiOx -->
+    <g>
+      <circle cx="750" cy="171" r="54" fill="#fff3e3" stroke="#e6b466" stroke-width="2" filter="url(#shadow)"/>
+      <circle cx="750" cy="171" r="39" fill="#f0b85d" opacity=".55"/><g fill="#409bdf" stroke="#237fc0" stroke-width="1.5"><circle cx="731" cy="154" r="10"/><circle cx="765" cy="150" r="8"/><circle cx="746" cy="180" r="12"/><circle cx="775" cy="188" r="7"/></g><g fill="#fff"><circle cx="752" cy="141" r="4"/><circle cx="722" cy="180" r="4"/><circle cx="766" cy="170" r="4"/></g>
+      <text x="750" y="249" text-anchor="middle" font-size="21" font-weight="850" fill="#14213d">SiO<tspan baseline-shift="sub" font-size="14">x</tspan></text>
+      <text x="640" y="289" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#b66c12">INITIATING PROCESS</text>
+      <text x="640" y="314" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">oxide/silicate conversion + Si alloying</text>
+      <text x="640" y="356" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#b66c12">FAILURE TENDENCY</text>
+      <text x="640" y="381" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">first-cycle Li loss • restructuring</text>
+      <text x="640" y="423" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#b66c12">DESIGN PRIORITY</text>
+      <text x="640" y="448" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">control oxygen content, conversion,</text><text x="640" y="470" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">and prelithiation</text>
+    </g>
+
+    <!-- composite architectures -->
+    <g>
+      <circle cx="1050" cy="171" r="54" fill="#f4effb" stroke="#b79bd5" stroke-width="2" filter="url(#shadow)"/>
+      <g fill="url(#carbon)" stroke="#657994" stroke-width="1.5"><circle cx="1028" cy="151" r="15"/><circle cx="1068" cy="150" r="13"/><circle cx="1047" cy="188" r="16"/></g><g fill="#409bdf" stroke="#237fc0" stroke-width="1.5"><circle cx="1050" cy="158" r="11"/><circle cx="1075" cy="183" r="9"/><circle cx="1022" cy="185" r="8"/></g><path d="M1018 164C1037 172 1053 168 1080 161M1025 196C1045 175 1065 177 1082 194" fill="none" stroke="#263c61" stroke-width="4" stroke-linecap="round"/>
+      <text x="1050" y="242" text-anchor="middle" font-size="18" font-weight="850" fill="#14213d">Composite architectures</text><text x="1050" y="263" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12.5" fill="#52627c">Si–C materials and Si–graphite blends</text>
+      <text x="940" y="289" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#7653a6">INITIATING PROCESS</text>
+      <text x="940" y="314" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">coupled activation across components</text>
+      <text x="940" y="356" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#7653a6">FAILURE TENDENCY</text>
+      <text x="940" y="381" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">internal SEI • redistribution • pressure</text>
+      <text x="940" y="423" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing=".8" fill="#7653a6">DESIGN PRIORITY</text>
+      <text x="940" y="448" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">design connectivity, void volume,</text><text x="940" y="470" font-family="Inter,Arial,sans-serif" font-size="14" fill="#40516f">and component capacity share</text>
+    </g>
+
+    <rect x="105" y="566" width="990" height="64" rx="18" fill="#fff" stroke="#ccd8e4" stroke-width="2"/>
+    <text x="600" y="590" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing="1" fill="#687991">CROSS-CUTTING VARIABLES CAN REORDER EVERY PROFILE</text>
+    <text x="600" y="614" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13.5" font-weight="750" fill="#40516f">particle size • architecture • surface area • oxygen content • capacity contribution • processing</text>
+  </g>
+</svg>

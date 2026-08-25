@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Nonuniform lithium silicon transformation couples phase evolution to mechanical damage</title>
+  <desc id="desc">Three qualitative cross-sections show reaction-front-mediated amorphization, deep lithiation under carbon-binder constraint, and delithiation with residual stress, cracks, voids, irregular interphase growth and a partially isolated fragment.</desc>
+  <defs>
+    <linearGradient id="panelA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf7ff"/><stop offset="1" stop-color="#dceeff"/></linearGradient>
+    <linearGradient id="panelB" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8e9"/><stop offset="1" stop-color="#f6e6c9"/></linearGradient>
+    <linearGradient id="panelC" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3f0ff"/><stop offset="1" stop-color="#e8def7"/></linearGradient>
+    <linearGradient id="lix" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8fd7ff"/><stop offset="1" stop-color="#2f83d2"/></linearGradient>
+    <marker id="blueArrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="12" viewBox="0 0 18 14" refX="17" refY="7" orient="auto"><path d="M1 1L17 7L1 13Z" fill="#2a66d9"/></marker>
+    <marker id="orangeArrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="12" viewBox="0 0 18 14" refX="17" refY="7" orient="auto"><path d="M1 1L17 7L1 13Z" fill="#d88324"/></marker>
+    <marker id="redArrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="12" viewBox="0 0 18 14" refX="17" refY="7" orient="auto"><path d="M1 1L17 7L1 13Z" fill="#cf5260"/></marker>
+    <marker id="flowArrow" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" viewBox="0 0 18 14" refX="17" refY="7" orient="auto"><path d="M1 1L17 7L1 13Z" fill="#d7f2ff"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#14213d" flood-opacity=".10"/></filter>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="#f5f8fc"/>
+  <text x="600" y="48" text-anchor="middle" font-family="Manrope,Inter,Arial,sans-serif" font-size="29" font-weight="800" fill="#14213d">Nonuniform Li–Si transformation couples phase evolution to mechanical damage</text>
+  <text x="600" y="78" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="15" fill="#53627c">Representative cross-sections; geometry, dimensions, phase distribution, and stress are qualitative rather than to scale.</text>
+
+  <!-- Panel A -->
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="24" y="105" width="368" height="520" rx="22" fill="url(#panelA)" stroke="#abd9f7" filter="url(#shadow)"/>
+    <rect x="24" y="105" width="368" height="72" rx="22" fill="#d7edfb"/>
+    <path d="M24 151H392V177H24Z" fill="#d7edfb"/>
+    <circle cx="58" cy="141" r="18" fill="#2a66d9"/><text x="58" y="147" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">A</text>
+    <text x="86" y="137" font-size="18" font-weight="800" fill="#14213d">Reaction-front-mediated</text>
+    <text x="86" y="159" font-size="18" font-weight="800" fill="#14213d">lithiation</text>
+
+    <path d="M106 263C126 219 181 199 238 211C299 224 327 270 315 327C307 379 263 413 204 407C149 402 108 375 97 329C89 299 96 279 106 263Z" fill="url(#lix)" stroke="#2f83d2" stroke-width="3"/>
+    <path d="M163 251C188 230 231 231 266 250C296 267 304 300 290 333C276 365 243 379 207 368C173 358 151 334 149 302C147 280 152 262 163 251Z" fill="#66768d" stroke="#f0a340" stroke-width="4" stroke-dasharray="8 6"/>
+    <path d="M106 252C125 215 184 192 246 207M315 276C325 314 314 354 286 381" fill="none" stroke="#43a987" stroke-width="3" stroke-linecap="round" stroke-dasharray="18 12"/>
+
+    <g fill="#2a66d9" stroke="#dff5ff" stroke-width="1.5"><circle cx="114" cy="286" r="8"/><circle cx="136" cy="292" r="6.5" fill-opacity=".78"/><circle cx="155" cy="298" r="5" fill-opacity=".55"/><circle cx="172" cy="303" r="3.5" fill-opacity=".32"/></g>
+    <text x="105" y="274" font-size="10" font-weight="700" fill="#2a66d9">high Li</text><text x="159" y="322" font-size="10" fill="#53627c">low Li</text>
+    <text x="80" y="449" font-size="13" font-weight="800" fill="#2a66d9">Li concentration gradient</text>
+    <path d="M175 436L170 318" stroke="#2a66d9" stroke-width="2" fill="none"/>
+
+    <text x="245" y="447" font-size="13" font-weight="800" fill="#a46118">moving reaction front</text>
+    <path d="M274 433L268 347" stroke="#d88324" stroke-width="2" fill="none"/>
+    <text x="72" y="198" font-size="12" fill="#2f7f6c">native surface layer / early SEI</text>
+    <path d="M178 202L154 219" stroke="#2f7f6c" stroke-width="2"/>
+
+    <path d="M94 316L63 316" stroke="#2a66d9" stroke-width="3" marker-end="url(#blueArrow)"/>
+    <path d="M316 316L347 316" stroke="#2a66d9" stroke-width="3" marker-end="url(#blueArrow)"/>
+    <rect x="40" y="530" width="336" height="66" rx="14" fill="#fff" fill-opacity=".86"/>
+    <text x="208" y="555" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="1" fill="#2a66d9">STRAIN ORIGIN</text>
+    <text x="208" y="579" text-anchor="middle" font-size="14" font-weight="700" fill="#14213d">phase-boundary mismatch → strain heterogeneity</text>
+  </g>
+
+  <!-- Panel B -->
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="416" y="105" width="368" height="520" rx="22" fill="url(#panelB)" stroke="#e6c786" filter="url(#shadow)"/>
+    <rect x="416" y="105" width="368" height="72" rx="22" fill="#f6e5c2"/>
+    <path d="M416 151H784V177H416Z" fill="#f6e5c2"/>
+    <circle cx="450" cy="141" r="18" fill="#b06b19"/><text x="450" y="147" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">B</text>
+    <text x="478" y="137" font-size="18" font-weight="800" fill="#14213d">Deep lithiation</text>
+    <text x="478" y="159" font-size="18" font-weight="800" fill="#14213d">under constraint</text>
+
+    <g stroke="#263b59" stroke-width="6" stroke-linecap="round" fill="#40516f">
+      <path d="M436 238C459 243 470 260 493 271M443 325C463 328 472 318 486 312M435 430C461 414 468 393 494 380" fill="none"/>
+      <circle cx="440" cy="239" r="12"/><circle cx="446" cy="326" r="10"/><circle cx="438" cy="430" r="13"/><circle cx="474" cy="268" r="7"/>
+      <path d="M765 225C740 237 730 252 708 269M759 337C739 331 728 321 715 312M772 430C744 418 733 397 710 381" fill="none"/>
+      <circle cx="765" cy="225" r="10"/><circle cx="760" cy="337" r="12"/><circle cx="772" cy="430" r="11"/><circle cx="733" cy="397" r="7"/>
+    </g>
+    <rect x="458" y="183" width="284" height="29" rx="14" fill="#fff" fill-opacity=".88"/>
+    <text x="600" y="202" text-anchor="middle" font-size="12" font-weight="700" fill="#40516f">heterogeneous composite-electrode constraint</text>
+
+    <path d="M493 253C514 211 575 195 633 207C694 218 727 263 716 328C707 385 667 421 606 427C547 432 498 405 482 356C469 318 476 280 493 253Z" fill="url(#lix)" stroke="#2f83d2" stroke-width="3"/>
+    <path d="M485 246C511 198 577 183 640 196C706 210 740 260 727 334C717 397 669 438 604 443C537 448 485 416 469 360C457 317 465 275 485 246Z" fill="none" stroke="#43a987" stroke-width="6" stroke-linecap="round" stroke-dasharray="25 10 10 8"/>
+
+    <path d="M520 274C548 250 578 250 605 267" fill="none" stroke="#d7f2ff" stroke-width="5" stroke-linecap="round" marker-end="url(#flowArrow)"/>
+    <path d="M690 252C671 275 646 283 621 278" fill="none" stroke="#d7f2ff" stroke-width="5" stroke-linecap="round" marker-end="url(#flowArrow)"/>
+    <path d="M510 335C539 309 569 309 595 329" fill="none" stroke="#d7f2ff" stroke-width="5" stroke-linecap="round" marker-end="url(#flowArrow)"/>
+    <path d="M693 344C665 368 638 371 616 354" fill="none" stroke="#d7f2ff" stroke-width="5" stroke-linecap="round" marker-end="url(#flowArrow)"/>
+    <path d="M535 391C562 373 589 375 614 394" fill="none" stroke="#d7f2ff" stroke-width="5" stroke-linecap="round" marker-end="url(#flowArrow)"/>
+    <circle cx="651" cy="303" r="31" fill="#a88bd2" fill-opacity=".72" stroke="#7653a6" stroke-width="3" stroke-dasharray="6 5"/>
+    <text x="653" y="299" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">Li₁₅Si₄</text><text x="653" y="314" text-anchor="middle" font-size="9" fill="#fff">conditional</text>
+
+    <path d="M446 302L494 302" stroke="#d88324" stroke-width="4" marker-end="url(#orangeArrow)"/>
+    <path d="M754 302L715 302" stroke="#d88324" stroke-width="4" marker-end="url(#orangeArrow)"/>
+    <text x="445" y="466" font-size="12" fill="#53627c">reduced pore space</text>
+    <path d="M487 454L481 410" stroke="#53627c" stroke-width="2"/>
+
+    <rect x="432" y="530" width="336" height="66" rx="14" fill="#fff" fill-opacity=".86"/>
+    <text x="600" y="555" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="1" fill="#a46118">MECHANICAL RESPONSE</text>
+    <text x="600" y="579" text-anchor="middle" font-size="14" font-weight="700" fill="#14213d">local constraint → compression + plastic flow</text>
+  </g>
+
+  <!-- Panel C -->
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="808" y="105" width="368" height="520" rx="22" fill="url(#panelC)" stroke="#c4addf" filter="url(#shadow)"/>
+    <rect x="808" y="105" width="368" height="72" rx="22" fill="#e4d7f3"/>
+    <path d="M808 151H1176V177H808Z" fill="#e4d7f3"/>
+    <circle cx="842" cy="141" r="18" fill="#7653a6"/><text x="842" y="147" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">C</text>
+    <text x="870" y="137" font-size="18" font-weight="800" fill="#14213d">Delithiation and</text>
+    <text x="870" y="159" font-size="18" font-weight="800" fill="#14213d">residual damage</text>
+
+    <path d="M871 256C893 219 944 204 995 216C1047 228 1073 267 1067 321C1061 369 1027 400 977 407C928 414 882 394 865 352C851 319 855 280 871 256Z" fill="#6f8ca8" stroke="#4e6984" stroke-width="3"/>
+    <path d="M861 246C889 202 947 188 1004 203C1062 218 1090 264 1080 329C1072 385 1032 419 977 426C919 434 867 408 849 358C835 319 842 275 861 246Z" fill="none" stroke="#43a987" stroke-width="9" stroke-linecap="round" stroke-dasharray="28 8 9 7"/>
+
+    <ellipse cx="924" cy="305" rx="25" ry="17" fill="#f5f8fc" stroke="#53627c" stroke-width="2"/>
+    <ellipse cx="988" cy="352" rx="20" ry="13" fill="#f5f8fc" stroke="#53627c" stroke-width="2"/>
+    <path d="M953 229L947 273L968 298L950 342L970 397M1024 229L1010 270L1036 302L1014 333L1047 370" fill="none" stroke="#f5f8fc" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M953 229L947 273L968 298L950 342L970 397M1024 229L1010 270L1036 302L1014 333L1047 370" fill="none" stroke="#cf5260" stroke-width="2" stroke-linecap="round"/>
+    <path d="M953 232L948 270L956 281M1013 269L1026 285" fill="none" stroke="#43a987" stroke-width="4" stroke-linecap="round"/>
+
+    <path d="M1076 351L1094 343L1115 351L1125 369L1117 391L1098 403L1078 393L1068 375Z" fill="#7897b3" stroke="#43a987" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M1076 351L1068 375L1078 393" fill="none" stroke="#f0a340" stroke-width="5" stroke-linecap="round"/>
+    <path d="M1154 329L1136 342M1126 349L1118 355" fill="none" stroke="#263b59" stroke-width="6" stroke-linecap="round"/>
+    <text x="1100" y="433" text-anchor="middle" font-size="11" fill="#a46118">new surface</text>
+    <text x="1100" y="450" text-anchor="middle" font-size="11" fill="#53627c">isolated fragment</text>
+
+    <path d="M867 316L826 316" stroke="#cf5260" stroke-width="4" marker-end="url(#redArrow)"/>
+    <path d="M1067 316L1110 316" stroke="#cf5260" stroke-width="4" marker-end="url(#redArrow)"/>
+    <text x="968" y="488" text-anchor="middle" font-size="13" font-weight="800" fill="#a33b43">tensile residual stress + incomplete contraction</text>
+    <text x="842" y="206" font-size="12" fill="#2f7f6c">thicker, irregular interphase</text>
+    <path d="M950 208L929 216" stroke="#2f7f6c" stroke-width="2"/>
+    <text x="835" y="442" font-size="12" fill="#53627c">opened cracks + voids</text>
+    <path d="M901 431L924 321" stroke="#53627c" stroke-width="2"/>
+
+    <rect x="824" y="530" width="336" height="66" rx="14" fill="#fff" fill-opacity=".86"/>
+    <text x="992" y="555" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="1" fill="#7653a6">RESIDUAL DAMAGE</text>
+    <text x="992" y="579" text-anchor="middle" font-size="14" font-weight="700" fill="#14213d">incomplete contraction → cracks + isolation</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-family="Inter,Arial,sans-serif" font-size="12" fill="#53627c">
+    <circle cx="144" cy="674" r="8" fill="#66768d"/><text x="158" y="679">crystalline Si</text>
+    <circle cx="279" cy="674" r="8" fill="#4c9fe0"/><text x="293" y="679">amorphous LiₓSi</text>
+    <circle cx="445" cy="674" r="8" fill="#a88bd2" stroke="#7653a6" stroke-dasharray="3 2"/><text x="459" y="679">conditional Li₁₅Si₄</text>
+    <line x1="613" y1="674" x2="637" y2="674" stroke="#43a987" stroke-width="7" stroke-dasharray="10 4"/><text x="646" y="679">interphase</text>
+    <line x1="744" y1="674" x2="768" y2="674" stroke="#cf5260" stroke-width="3"/><text x="777" y="679">crack / new surface</text>
+    <line x1="925" y1="674" x2="949" y2="674" stroke="#263b59" stroke-width="7" stroke-linecap="round"/><text x="958" y="679">carbon–binder constraint</text>
+  </g>
+</svg>

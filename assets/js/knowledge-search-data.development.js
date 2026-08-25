@@ -1,5 +1,5 @@
 window.winigenKnowledgeData = {
-  "environment": "production",
+  "environment": "development",
   "generatedFrom": "knowledge/articles.registry.json",
   "articles": [
     {
@@ -304,6 +304,199 @@ window.winigenKnowledgeData = {
       "order": 5,
       "filterTopics": [
         "Silicon"
+      ]
+    },
+    {
+      "slug": "manufacturing-uniformity-vs-reaction-uniformity",
+      "url": "knowledge/manufacturing-uniformity-vs-reaction-uniformity.html",
+      "title": "From Manufacturing Uniformity to Reaction Uniformity",
+      "description": "Why uniform battery electrodes can still react unevenly—and when controlled gradients in porosity, composition, particle size, or conductivity can improve utilization.",
+      "publicationDate": "2026-07-24",
+      "topics": [
+        "Materials",
+        "Cell Development",
+        "Commercialization"
+      ],
+      "searchTerms": [
+        "coating uniformity",
+        "calendering",
+        "particle size distribution",
+        "conductivity gradient",
+        "local current distribution",
+        "electrode design"
+      ],
+      "status": "draft",
+      "articleType": "article",
+      "stage": "Cell Development",
+      "category": "Manufacturing and Reaction Uniformity",
+      "cardCategory": "Cell Development",
+      "tags": [
+        "electrode uniformity",
+        "reaction uniformity",
+        "graded electrodes",
+        "porosity",
+        "tortuosity",
+        "manufacturing"
+      ],
+      "relatedProducts": [
+        "battery active materials",
+        "finished electrodes",
+        "conductive additives",
+        "custom development"
+      ],
+      "excerpt": "Why uniform battery electrodes can still react unevenly—and when controlled gradients in porosity, composition, particle size, or conductivity can improve utilization.",
+      "image": {
+        "src": "assets/images/knowledge/electrode-uniformity/three-uniformities.svg",
+        "alt": "Manufacturing, structural, and electrochemical uniformity in battery electrodes"
+      },
+      "order": 6,
+      "filterTopics": []
+    },
+    {
+      "slug": "silicon-anode-degradation-mechanisms",
+      "url": "knowledge/silicon-anode-degradation-mechanisms.html",
+      "title": "Silicon Anode Degradation Mechanisms: From Particle Fracture to Full-Cell Failure",
+      "description": "Mechanistic guide to silicon-anode degradation from Li–Si phase evolution and fracture to SEI growth, lithium trapping, Si–graphite crosstalk, separator compression, and full-cell diagnosis.",
+      "publicationDate": "2026-07-21",
+      "topics": [
+        "Materials",
+        "Electrolytes & Interfaces",
+        "Cell Development"
+      ],
+      "searchTerms": [
+        "Li-Si transformation",
+        "loss of lithium inventory",
+        "loss of active material",
+        "electrode swelling",
+        "reaction heterogeneity",
+        "silicon failure modes"
+      ],
+      "status": "draft",
+      "articleType": "article",
+      "stage": "Materials",
+      "category": "Silicon Degradation",
+      "cardCategory": "Silicon",
+      "tags": [
+        "silicon anode",
+        "particle fracture",
+        "SEI growth",
+        "lithium trapping",
+        "Si–graphite crosstalk",
+        "separator compression"
+      ],
+      "relatedProducts": [
+        "silicon anode powder",
+        "SiOx silicon carbon",
+        "graphite anode",
+        "electrolyte additives"
+      ],
+      "excerpt": "Mechanistic guide to silicon-anode degradation from Li–Si phase evolution and fracture to SEI growth, lithium trapping, Si–graphite crosstalk, separator compression, and full-cell diagnosis.",
+      "image": {
+        "src": "assets/images/knowledge/social/silicon-anode-degradation-mechanisms.png",
+        "alt": "Silicon anode degradation mechanisms across particle, electrode, and full-cell scales"
+      },
+      "order": 7,
+      "filterTopics": [
+        "Silicon"
+      ]
+    },
+    {
+      "slug": "si-c-vs-siox-vs-amorphous-silicon",
+      "url": "knowledge/si-c-vs-siox-vs-amorphous-silicon.html",
+      "title": "Si-C, SiOx, and Elemental Si: What the Electrolyte Actually Sees",
+      "description": "How starting surface chemistry, first-cycle lithium consumption, and cycling-induced surface renewal differ across Si-C, SiOx, and elemental silicon anodes.",
+      "publicationDate": "2026-07-21",
+      "topics": [
+        "Materials",
+        "Electrolytes & Interfaces",
+        "Cell Development"
+      ],
+      "searchTerms": [
+        "elemental silicon",
+        "silicon carbon composite",
+        "oxygen content",
+        "surface renewal",
+        "lithium consumption",
+        "SEI"
+      ],
+      "status": "draft",
+      "articleType": "article",
+      "stage": "Materials",
+      "category": "Silicon Material Comparison",
+      "cardCategory": "Silicon",
+      "tags": [
+        "Si-C",
+        "SiOx",
+        "amorphous silicon",
+        "silicon anode",
+        "first-cycle efficiency",
+        "surface chemistry"
+      ],
+      "relatedProducts": [
+        "silicon anode powder",
+        "SiOx silicon carbon",
+        "graphite anode",
+        "electrolyte additives"
+      ],
+      "excerpt": "How starting surface chemistry, first-cycle lithium consumption, and cycling-induced surface renewal differ across Si-C, SiOx, and elemental silicon anodes.",
+      "image": {
+        "src": "assets/images/knowledge/silicon-material-comparison/material-surface-map-v3.svg",
+        "alt": "Electrolyte-facing interfaces of Si-C, SiOx, and elemental silicon materials"
+      },
+      "order": 8,
+      "filterTopics": [
+        "Silicon"
+      ]
+    },
+    {
+      "slug": "electrolyte-design-silicon-anodes",
+      "url": "knowledge/electrolyte-design-silicon-anodes.html",
+      "title": "Electrolyte Design for Silicon Anodes: Beyond FEC Toward Dynamic Interphase Control",
+      "description": "Why repeated silicon surface renewal changes electrolyte requirements—and how additives, salts, solvents, solvation structures, and formation control lithium loss and cell life.",
+      "publicationDate": "2026-07-21",
+      "topics": [
+        "Electrolytes & Interfaces",
+        "Materials",
+        "Cell Development"
+      ],
+      "searchTerms": [
+        "dynamic interphase control",
+        "surface renewal",
+        "repassivation",
+        "lithium loss",
+        "electrolyte additives",
+        "salt solvent design"
+      ],
+      "status": "draft",
+      "articleType": "article",
+      "stage": "Electrolytes & Interfaces",
+      "category": "Silicon Electrolyte Design",
+      "cardCategory": "Silicon",
+      "tags": [
+        "silicon anode",
+        "electrolyte design",
+        "FEC",
+        "SEI",
+        "formation",
+        "solvation"
+      ],
+      "relatedProducts": [
+        "FEC",
+        "VC",
+        "LiFSI",
+        "LiPF6",
+        "electrolyte additives",
+        "custom formulations"
+      ],
+      "excerpt": "Why repeated silicon surface renewal changes electrolyte requirements—and how additives, salts, solvents, solvation structures, and formation control lithium loss and cell life.",
+      "image": {
+        "src": "assets/images/knowledge/silicon-electrolyte/dynamic-interphase-control.svg",
+        "alt": "Silicon surface renewal and electrolyte control pathways"
+      },
+      "order": 9,
+      "filterTopics": [
+        "Silicon",
+        "Electrolytes"
       ]
     },
     {

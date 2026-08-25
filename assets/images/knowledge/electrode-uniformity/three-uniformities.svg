@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">Uncontrolled variation, uniform construction, and designed grading</title>
+<desc id="desc">Three electrode cross sections compare random variation, a constant recipe with a nonuniform reaction field, and a controlled gradient producing a flatter reaction field.</desc>
+<defs>
+  <linearGradient id="navy" x1="0" x2="1"><stop stop-color="#14213d"/><stop offset="1" stop-color="#263d70"/></linearGradient>
+  <linearGradient id="grade" x1="0" x2="1"><stop stop-color="#dceaff"/><stop offset=".5" stop-color="#6da8f7"/><stop offset="1" stop-color="#204fa8"/></linearGradient>
+  <linearGradient id="hot" x1="0" x2="1"><stop stop-color="#f4ca55"/><stop offset=".6" stop-color="#f47b54"/><stop offset="1" stop-color="#c72f56"/></linearGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="5" fill="#2a66d9"/><circle cx="21" cy="19" r="3" fill="#14213d"/></pattern>
+  <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#14213d" flood-opacity=".12"/></filter>
+</defs>
+<rect width="1200" height="650" fill="#f5f8fc"/>
+<text x="60" y="67" font-family="Inter,Arial" font-size="34" font-weight="800" fill="#14213d">Three very different meanings of “nonuniform”</text>
+<text x="60" y="101" font-family="Inter,Arial" font-size="17" fill="#53627c">The objective is controlled electrochemical response—not variation for its own sake.</text>
+<g filter="url(#shadow)">
+  <rect x="55" y="140" width="335" height="440" rx="24" fill="#fff"/>
+  <rect x="432" y="140" width="335" height="440" rx="24" fill="#fff"/>
+  <rect x="810" y="140" width="335" height="440" rx="24" fill="#fff"/>
+</g>
+<g font-family="Inter,Arial">
+  <text x="83" y="183" font-size="20" font-weight="800" fill="#14213d">1 · Uncontrolled variation</text>
+  <text x="460" y="183" font-size="20" font-weight="800" fill="#14213d">2 · Uniform construction</text>
+  <text x="838" y="183" font-size="20" font-weight="800" fill="#14213d">3 · Designed spatial grading</text>
+  <text x="83" y="211" font-size="14" fill="#6b7890">Random defects and process drift</text>
+  <text x="460" y="211" font-size="14" fill="#6b7890">Constant recipe and structure</text>
+  <text x="838" y="211" font-size="14" fill="#6b7890">Controlled property profile</text>
+</g>
+<g>
+  <rect x="83" y="252" width="279" height="118" rx="12" fill="url(#dots)" stroke="#b9c8dc"/>
+  <path d="M102 282l35-15 24 28 45-12 18 42 41-27 52 15 26-39" fill="none" stroke="#f05b67" stroke-width="13" opacity=".82"/>
+  <rect x="460" y="252" width="279" height="118" rx="12" fill="url(#dots)" stroke="#b9c8dc"/>
+  <rect x="838" y="252" width="279" height="118" rx="12" fill="url(#grade)" stroke="#b9c8dc"/>
+  <g fill="#14213d"><rect x="70" y="244" width="13" height="134" rx="4"/><rect x="447" y="244" width="13" height="134" rx="4"/><rect x="825" y="244" width="13" height="134" rx="4"/></g>
+  <g fill="#d9e6f5"><rect x="362" y="244" width="13" height="134" rx="4"/><rect x="739" y="244" width="13" height="134" rx="4"/><rect x="1117" y="244" width="13" height="134" rx="4"/></g>
+  <g font-family="Inter,Arial" font-size="11" fill="#53627c"><text x="67" y="397">CC</text><text x="350" y="397">SEP</text><text x="444" y="397">CC</text><text x="727" y="397">SEP</text><text x="822" y="397">CC</text><text x="1105" y="397">SEP</text></g>
+</g>
+<g>
+  <rect x="83" y="427" width="279" height="22" rx="11" fill="#e9eef5"/><path d="M83 438c38-2 45-15 78-2s49 4 77 4 51 15 76-2 33 0 48 0" fill="none" stroke="#f05b67" stroke-width="10"/>
+  <rect x="460" y="427" width="279" height="22" rx="11" fill="url(#hot)"/>
+  <rect x="838" y="427" width="279" height="22" rx="11" fill="#e9eef5"/><path d="M838 438h279" stroke="#2a66d9" stroke-width="10"/>
+</g>
+<g font-family="Inter,Arial">
+  <text x="83" y="486" font-size="15" font-weight="700" fill="#c72f56">Unpredictable hot spots</text>
+  <text x="83" y="514" font-size="14" fill="#53627c">Poor reproducibility; usually harmful.</text>
+  <text x="460" y="486" font-size="15" font-weight="700" fill="#c25e27">Systematic reaction gradient</text>
+  <text x="460" y="514" font-size="14" fill="#53627c">Good process control does not guarantee</text><text x="460" y="535" font-size="14" fill="#53627c">equal utilization through thickness.</text>
+  <text x="838" y="486" font-size="15" font-weight="700" fill="#204fa8">Flatter reaction field</text>
+  <text x="838" y="514" font-size="14" fill="#53627c">A deliberate gradient compensates for</text><text x="838" y="535" font-size="14" fill="#53627c">transport asymmetry at the target condition.</text>
+</g>
+<text x="600" y="620" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#6b7890">Conceptual illustration · CC = current collector · SEP = separator</text>
+</svg>

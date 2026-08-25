@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="960" viewBox="0 0 1400 960" role="img" aria-labelledby="title desc">
+  <title id="title">How the electrolyte-accessible interface evolves</title>
+  <desc id="desc">A parallel comparison of initial electrolyte contact, first-lithiation transformation, and repeated-cycling surface renewal in silicon-carbon, silicon oxide, and elemental silicon anodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5f9ff"/><stop offset="1" stop-color="#e8f1fb"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#17365f" flood-opacity=".13"/></filter>
+    <pattern id="carbon" width="15" height="15" patternUnits="userSpaceOnUse"><rect width="15" height="15" fill="#243957"/><circle cx="4" cy="4" r="1.6" fill="#718bad"/><circle cx="12" cy="11" r="1.6" fill="#718bad"/></pattern>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.h{font:800 32px Manrope,Arial,sans-serif}.sub{font:600 15px Inter,Arial,sans-serif;fill:#566780}.head{font:800 22px Manrope,Arial,sans-serif;fill:#fff}.headnote{font:600 12px Inter,Arial,sans-serif;fill:#dcecff}.stage{font:850 12px Inter,Arial,sans-serif;letter-spacing:1.05px;fill:#3571c7}.main{font:750 16px Inter,Arial,sans-serif;fill:#14213d}.detail{font:600 14px Inter,Arial,sans-serif;fill:#5b6c85}.axis{font:850 12px Inter,Arial,sans-serif;letter-spacing:1.15px;fill:#52647e}.key{font:800 17px Inter,Arial,sans-serif;fill:#14213d}.divider{stroke:#d2deec;stroke-width:1.5}.sei{stroke:#55a8df;stroke-width:8;fill:none;stroke-dasharray:8 6}.fresh{stroke:#ea714c;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}.oxide{stroke:#b8c7d8;stroke-width:6;fill:none}
+    </style>
+  </defs>
+  <rect width="1400" height="960" fill="url(#bg)"/>
+  <text x="700" y="48" text-anchor="middle" class="t h">How the Electrolyte-Accessible Interface Evolves</text>
+  <text x="700" y="78" text-anchor="middle" class="sub">From the starting surface to the aged interface in representative silicon-anode architectures</text>
+  <g transform="translate(425 98)">
+    <rect x="0" y="-7" width="28" height="14" rx="5" fill="#86aede"/><text x="38" y="5" class="sub">material phase</text>
+    <path d="M190 0h30" class="sei"/><text x="232" y="5" class="sub">electrolyte-derived SEI</text>
+    <path d="M420 0h30" class="fresh"/><text x="462" y="5" class="sub">damage / newly opened access</text>
+  </g>
+
+  <g transform="translate(55 130)" filter="url(#shadow)">
+    <rect width="410" height="690" rx="22" fill="#fff"/>
+    <rect width="410" height="82" rx="22" fill="#193d6c"/><rect y="60" width="410" height="22" fill="#193d6c"/>
+    <text x="24" y="35" class="head">Si-C / Si-graphite</text>
+    <text x="24" y="59" class="headnote">Representative carbon-confined architecture</text>
+
+    <text x="24" y="113" class="stage">1 · INITIAL ELECTROLYTE CONTACT</text>
+    <g transform="translate(205 181) scale(.74)">
+      <path d="M-58-42C-32-68 34-64 58-35C80-8 67 43 29 58C-11 74-60 55-70 16C-77-8-72-26-58-42Z" fill="url(#carbon)"/>
+      <circle cx="-28" cy="-15" r="19" fill="#8eb4e4"/><circle cx="27" cy="-22" r="15" fill="#729ed5"/><circle cx="16" cy="27" r="22" fill="#9fc0e8"/>
+      <path d="M58-34l22-13M66-18l25-1" class="fresh"/>
+    </g>
+    <text x="24" y="244" class="main">Carbon-rich accessible surface</text>
+    <text x="24" y="266" class="detail">Si exposure depends on composite architecture</text>
+    <line x1="24" y1="286" x2="386" y2="286" class="divider"/>
+
+    <text x="24" y="317" class="stage">2 · AFTER FIRST LITHIATION / FORMATION</text>
+    <g transform="translate(205 383) scale(.78)">
+      <path d="M-58-42C-32-68 34-64 58-35C80-8 67 43 29 58C-11 74-60 55-70 16C-77-8-72-26-58-42Z" fill="url(#carbon)"/>
+      <ellipse cx="-24" cy="-10" rx="24" ry="21" fill="#82abe0"/><ellipse cx="23" cy="19" rx="27" ry="23" fill="#91b7e5"/>
+      <path d="M-72-32C-90-5-84 38-52 59M52-48C78-27 81 15 65 40" class="sei"/>
+    </g>
+    <text x="24" y="447" class="main">SEI biased toward accessible carbon and Si</text>
+    <text x="24" y="469" class="detail">Internal Si may remain partly shielded</text>
+    <line x1="24" y1="489" x2="386" y2="489" class="divider"/>
+
+    <text x="24" y="520" class="stage">3 · WITH REPEATED CYCLING</text>
+    <g transform="translate(205 586) scale(.75)">
+      <path d="M-58-42C-32-68 34-64 58-35C80-8 67 43 29 58C-11 74-60 55-70 16C-77-8-72-26-58-42Z" fill="url(#carbon)"/>
+      <path d="M-54-41L-24-9L-43 30M40-49L18-14L47 25" class="fresh"/>
+      <path d="M-46-21C-23-6-12 18-10 45M34-34C20-15 17 7 28 32" class="sei"/>
+    </g>
+    <text x="24" y="651" class="main">Shielding fails as defects connect</text>
+    <text x="24" y="673" class="detail">Cracking, pore opening, and debonding expose Si</text>
+  </g>
+
+  <g transform="translate(495 130)" filter="url(#shadow)">
+    <rect width="410" height="690" rx="22" fill="#fff"/>
+    <rect width="410" height="82" rx="22" fill="#387fb9"/><rect y="60" width="410" height="22" fill="#387fb9"/>
+    <text x="24" y="47" class="head">SiO<tspan baseline-shift="sub" font-size="14">x</tspan> / SiO<tspan baseline-shift="sub" font-size="14">x</tspan>-graphite</text>
+
+    <text x="24" y="113" class="stage">1 · INITIAL ELECTROLYTE CONTACT</text>
+    <g transform="translate(205 181) scale(.74)">
+      <circle r="62" fill="#b8c9df"/>
+      <circle cx="-29" cy="-24" r="21" fill="#628fc4"/><circle cx="28" cy="-20" r="25" fill="#dce7f4"/><circle cx="-4" cy="27" r="23" fill="#7da4d0"/><circle cx="38" cy="32" r="14" fill="#e9eff7"/>
+    </g>
+    <text x="24" y="244" class="main">Mixed Si-O / Si-OH / carbon / exposed Si</text>
+    <text x="24" y="266" class="detail">Exposure depends on oxygen and coatings</text>
+    <line x1="24" y1="286" x2="386" y2="286" class="divider"/>
+
+    <text x="24" y="317" class="stage">2 · AFTER FIRST LITHIATION / FORMATION</text>
+    <g transform="translate(205 383) scale(.78)">
+      <circle r="62" fill="#afc0d5"/>
+      <circle cx="-29" cy="-23" r="22" fill="#70a1d8"/><circle cx="28" cy="-20" r="25" fill="#e6d79a"/><circle cx="-4" cy="28" r="23" fill="#c9b86a"/><circle cx="39" cy="33" r="14" fill="#7da8d7"/>
+      <circle r="70" class="sei"/>
+    </g>
+    <text x="24" y="447" class="main">The substrate itself transforms</text>
+    <text x="24" y="469" class="detail">Li<tspan baseline-shift="sub" font-size="10">x</tspan>Si + Li<tspan baseline-shift="sub" font-size="10">2</tspan>O/silicates; external SEI forms</text>
+    <line x1="24" y1="489" x2="386" y2="489" class="divider"/>
+
+    <text x="24" y="520" class="stage">3 · WITH REPEATED CYCLING</text>
+    <g transform="translate(205 586) scale(.75)">
+      <circle r="62" fill="#afc0d5"/><circle cx="-29" cy="-23" r="21" fill="#70a1d8"/><circle cx="28" cy="-20" r="24" fill="#e6d79a"/><circle cx="-4" cy="28" r="22" fill="#c9b86a"/>
+      <path d="M-53 36L-19 3L10 34L41 5" class="fresh"/><circle r="74" class="sei"/>
+    </g>
+    <text x="24" y="651" class="main">External SEI thickens; percolation degrades</text>
+    <text x="24" y="673" class="detail">The converted matrix buffers but does not stop aging</text>
+  </g>
+
+  <g transform="translate(935 130)" filter="url(#shadow)">
+    <rect width="410" height="690" rx="22" fill="#fff"/>
+    <rect width="410" height="82" rx="22" fill="#17939a"/><rect y="60" width="410" height="22" fill="#17939a"/>
+    <text x="24" y="47" class="head">Elemental Si</text>
+
+    <text x="24" y="113" class="stage">1 · INITIAL ELECTROLYTE CONTACT</text>
+    <g transform="translate(205 181) scale(.74)"><circle r="57" fill="#5ab7ba"/><circle r="64" class="oxide"/></g>
+    <text x="24" y="244" class="main">Native-oxide-covered elemental Si</text>
+    <text x="24" y="266" class="detail">Oxide, termination, coating, and shape matter</text>
+    <line x1="24" y1="286" x2="386" y2="286" class="divider"/>
+
+    <text x="24" y="317" class="stage">2 · AFTER FIRST LITHIATION / FORMATION</text>
+    <g transform="translate(205 383) scale(.78)"><ellipse rx="77" ry="57" fill="#72c5c5"/><ellipse rx="85" ry="65" class="sei"/><path d="M-34-31L-6-2L-20 29" class="fresh"/></g>
+    <text x="24" y="447" class="main">Alloying restructures the original interface</text>
+    <text x="24" y="469" class="detail">Plastic flow and expansion accompany SEI formation</text>
+    <line x1="24" y1="489" x2="386" y2="489" class="divider"/>
+
+    <text x="24" y="520" class="stage">3 · WITH REPEATED CYCLING</text>
+    <g transform="translate(205 586) scale(.75)">
+      <path d="M-76-38C-43-78 35-76 75-33C103-2 84 56 37 68C-6 80-58 63-76 26C-87 4-88-19-76-38Z" fill="#69c0c0"/>
+      <ellipse cx="-31" cy="-16" rx="18" ry="25" fill="#f5f9ff"/><ellipse cx="34" cy="20" rx="24" ry="17" fill="#f5f9ff"/>
+      <path d="M-20-58L-29-20L-4 9L-20 48M48-47L25-13L53 14" class="fresh"/>
+      <path d="M-86-39C-107-3-98 46-61 71M86-34C104 2 92 46 61 68" class="sei"/>
+    </g>
+    <text x="24" y="651" class="main">Cycling creates internal interface</text>
+    <text x="24" y="673" class="detail">Pores, cracks, and fragments carry accumulated SEI</text>
+  </g>
+
+  <text x="700" y="853" text-anchor="middle" class="axis">DOMINANT INTERFACIAL DISTINCTION</text>
+  <g transform="translate(55 871)"><rect width="410" height="54" rx="16" fill="#e7f0fc"/><text x="205" y="34" text-anchor="middle" class="key">Degree of Si shielding</text></g>
+  <g transform="translate(495 871)"><rect width="410" height="54" rx="16" fill="#e7f0fc"/><text x="205" y="34" text-anchor="middle" class="key">Irreversible matrix conversion</text></g>
+  <g transform="translate(935 871)"><rect width="410" height="54" rx="16" fill="#e4f5f4"/><text x="205" y="34" text-anchor="middle" class="key">Rate of fresh-surface generation</text></g>
+</svg>

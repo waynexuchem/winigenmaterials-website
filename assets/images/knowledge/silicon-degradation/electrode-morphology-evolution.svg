@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Particle damage causes capacity loss when electronic or ionic access is interrupted</title>
+  <desc id="desc">Two porous-electrode cross-sections compare a connected silicon-graphite composite with an aged composite. The aged electrode shows a cracked but active silicon domain, an explicitly broken electronic contact, interrupted or poorly wetted pore space, interphase accumulation, network separation, coating delamination and reaction concentrated at the remaining accessible domain.</desc>
+  <defs>
+    <linearGradient id="wetPore" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff5ff"/><stop offset="1" stop-color="#f2fbff"/></linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a95e28"/><stop offset=".5" stop-color="#d58a45"/><stop offset="1" stop-color="#a95e28"/></linearGradient>
+    <pattern id="graphite" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="12" height="12" fill="#718198"/><path d="M0 3H12M0 9H12" stroke="#93a0b2" stroke-width="1" opacity=".55"/></pattern>
+    <pattern id="interphase" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#f2b35c"/><path d="M-2 7L7-2M2 11L11 2" stroke="#d67d26" stroke-width="1.8"/></pattern>
+    <pattern id="dry" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#eee9e2"/><circle cx="3" cy="3" r="1.2" fill="#c5b9aa"/><circle cx="8" cy="7" r="1" fill="#c5b9aa"/></pattern>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#14213d" flood-opacity=".09"/></filter>
+    <marker id="ionArrow" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" refX="10" refY="5.5" orient="auto"><path d="M0 0L11 5.5 0 11Z" fill="#26a8d8"/></marker>
+    <marker id="electronArrow" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" refX="10" refY="5.5" orient="auto"><path d="M0 0L11 5.5 0 11Z" fill="#263c61"/></marker>
+  </defs>
+  <rect width="1200" height="760" rx="28" fill="#f6f9fd"/>
+  <text x="600" y="45" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="28" font-weight="800" fill="#14213d">Particle damage causes capacity loss when electronic or ionic access is interrupted</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="600" y="82" text-anchor="middle" font-size="13" font-weight="800" letter-spacing="1.2" fill="#40516f">ACTIVE DOMAIN REQUIRES BOTH TRANSPORT PATHS</text>
+    <text x="562" y="106" text-anchor="end" font-size="12.5" font-weight="800" fill="#263c61">ELECTRONIC PATH TO Cu</text>
+    <text x="600" y="106" text-anchor="middle" font-size="12.5" font-weight="800" fill="#7b8ca5">+</text>
+    <text x="638" y="106" font-size="12.5" font-weight="800" fill="#168fbf">WETTED IONIC PATH</text>
+    <line x1="405" y1="113" x2="562" y2="113" stroke="#263c61" stroke-width="4"/><line x1="638" y1="113" x2="795" y2="113" stroke="#26a8d8" stroke-width="4" stroke-dasharray="8 6"/>
+
+    <!-- Connected electrode -->
+    <g filter="url(#shadow)"><rect x="45" y="126" width="530" height="472" rx="20" fill="#fff" stroke="#cfdbe7" stroke-width="2"/></g>
+    <text x="70" y="157" font-size="18" font-weight="850" fill="#14213d">A  Connected porous composite</text>
+    <text x="70" y="179" font-size="12.5" fill="#52627c">continuous pore phase and distributed electronic contacts</text>
+    <rect x="65" y="197" width="490" height="345" rx="14" fill="url(#wetPore)" stroke="#cfe6f1"/>
+    <text x="82" y="218" font-size="11.5" font-weight="750" fill="#168fbf">electrolyte-filled pore phase</text>
+    <rect x="65" y="512" width="490" height="30" fill="url(#copper)"/>
+    <text x="310" y="533" text-anchor="middle" font-size="11.5" font-weight="750" fill="#fff">Cu current collector</text>
+    <g fill="url(#graphite)" stroke="#5d6d85" stroke-width="2"><path d="M92 263C106 229 150 222 176 247C199 270 181 312 146 318C113 324 80 294 92 263Z"/><path d="M246 225C280 204 327 222 334 262C340 299 305 325 269 312C237 301 220 245 246 225Z"/><path d="M414 251C448 229 496 248 500 287C504 325 470 348 435 334C404 321 389 268 414 251Z"/><path d="M157 378C189 356 234 370 241 408C247 444 217 468 181 458C146 448 131 397 157 378Z"/><path d="M354 390C383 367 430 378 441 415C451 450 420 478 386 470C350 462 330 413 354 390Z"/></g>
+    <g fill="#409bdf" stroke="#237fc0" stroke-width="3"><path d="M190 283C207 263 239 268 249 294C258 318 236 339 213 332C189 325 176 301 190 283Z"/><path d="M332 329C351 308 386 313 395 340C403 365 380 386 355 378C330 370 317 347 332 329Z"/><path d="M463 400C482 380 516 387 523 414C529 439 507 458 482 451C458 444 447 418 463 400Z"/><path d="M88 432C106 411 139 416 149 442C158 467 136 489 111 482C86 475 73 450 88 432Z"/></g>
+    <!-- distributed web-like carbon-binder network -->
+    <g fill="none" stroke="#263c61" stroke-linecap="round" stroke-linejoin="round"><path d="M78 484C123 462 155 471 187 451C221 430 256 442 287 424C318 406 346 420 374 405C412 385 452 402 489 384C510 374 529 377 542 366" stroke-width="7"/><path d="M80 342C111 327 143 342 171 328C204 311 228 324 258 311C293 296 327 314 357 298C391 281 426 302 456 291C484 281 510 291 535 278" stroke-width="5"/><path d="M107 477L117 318M187 451L213 332M287 424L354 377M374 405L435 334M489 384L482 349" stroke-width="4.5"/></g>
+    <!-- continuous ionic routes -->
+    <g fill="none" stroke="#26a8d8" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 7" marker-end="url(#ionArrow)"><path d="M120 225C112 273 133 314 116 357C104 389 110 407 108 430"/><path d="M373 222C363 258 370 292 357 325"/></g>
+    <g fill="none" stroke="#263c61" stroke-width="3.5" marker-end="url(#electronArrow)"><path d="M213 334C210 377 199 414 188 447"/><path d="M356 378C345 396 326 409 292 421"/></g>
+    <text x="325" y="496" font-size="12" font-weight="750" fill="#40516f">distributed carbon–binder contacts</text><path d="M319 488L286 430" stroke="#40516f" stroke-width="1.5"/>
+
+    <!-- Aged electrode -->
+    <g filter="url(#shadow)"><rect x="625" y="126" width="530" height="472" rx="20" fill="#fff" stroke="#cfdbe7" stroke-width="2"/></g>
+    <text x="650" y="157" font-size="18" font-weight="850" fill="#14213d">B  Aged heterogeneous composite</text>
+    <text x="650" y="179" font-size="12.5" fill="#52627c">access is lost locally rather than uniformly</text>
+    <rect x="645" y="197" width="490" height="345" rx="14" fill="url(#wetPore)" stroke="#cfe6f1"/>
+    <rect x="645" y="512" width="490" height="30" fill="url(#copper)"/>
+    <g fill="url(#graphite)" stroke="#5d6d85" stroke-width="2"><path d="M672 263C686 229 730 222 756 247C779 270 761 312 726 318C693 324 660 294 672 263Z"/><path d="M826 225C860 204 907 222 914 262C920 299 885 325 849 312C817 301 800 245 826 225Z"/><path d="M994 251C1028 229 1076 248 1080 287C1084 325 1050 348 1015 334C984 321 969 268 994 251Z"/><path d="M737 378C769 356 814 370 821 408C827 444 797 468 761 458C726 448 711 397 737 378Z"/><path d="M934 390C963 367 1010 378 1021 415C1031 450 1000 478 966 470C930 462 910 413 934 390Z"/></g>
+    <!-- cracked active and isolated Si -->
+    <path d="M770 283C790 260 825 267 833 296C841 321 819 341 794 334C769 327 756 301 770 283Z" fill="#409bdf" stroke="#237fc0" stroke-width="3"/><path d="M803 269L796 291 810 307 798 331" fill="none" stroke="#fff" stroke-width="4"/>
+    <path d="M897 333C915 312 949 317 958 345C966 370 943 391 919 383C894 375 883 350 897 333Z" fill="#409bdf" stroke="#237fc0" stroke-width="3"/>
+    <path d="M1042 396C1061 376 1095 383 1103 411C1110 437 1087 458 1062 451C1037 444 1025 415 1042 396Z" fill="#409bdf" stroke="#ef665f" stroke-width="5" stroke-dasharray="10 7"/>
+    <!-- current concentration at surviving active domain -->
+    <g fill="none" stroke="#26a8d8" stroke-width="4.5" marker-end="url(#ionArrow)"><path d="M739 220C742 248 756 267 775 281"/><path d="M816 214C814 239 809 254 805 270"/><path d="M861 245C842 258 827 270 819 284"/></g>
+    <path d="M792 335C793 376 785 416 765 454" fill="none" stroke="#263c61" stroke-width="6" marker-end="url(#electronArrow)"/>
+    <!-- thinner broken carbon web -->
+    <g fill="none" stroke="#263c61" stroke-linecap="round"><path d="M658 484C705 462 737 471 768 453C800 435 827 442 853 427" stroke-width="7"/><path d="M918 420C955 401 991 409 1025 389" stroke-width="7"/><path d="M657 342C691 328 721 341 750 328C776 317 798 327 818 322" stroke-width="5"/><path d="M994 303C1034 282 1066 300 1120 278" stroke-width="5"/><path d="M688 477L697 318M768 453L795 335M1025 389L1016 336" stroke-width="4.5"/></g>
+    <!-- explicit broken contact gap -->
+    <path d="M1025 389L1040 398" stroke="#263c61" stroke-width="5" opacity=".28" stroke-dasharray="3 8"/><circle cx="1034" cy="394" r="11" fill="#f6f9fd" stroke="#ef665f" stroke-width="2.5"/>
+    <!-- ionic access loss: dry region plus interphase plug -->
+    <path d="M965 204C1015 196 1079 213 1134 249V333C1090 313 1049 306 1015 324C980 299 958 252 965 204Z" fill="url(#dry)" opacity=".96"/>
+    <path d="M862 360C878 345 894 348 906 361C917 373 912 393 897 399C879 406 849 378 862 360Z" fill="url(#interphase)" stroke="#d67d26" stroke-width="2"/>
+    <!-- coating/network separation -->
+    <circle cx="884" cy="429" r="15" fill="#f6f9fd" stroke="#ef665f" stroke-width="2.5" stroke-dasharray="5 5"/><path d="M866 435L900 421" stroke="#ef665f" stroke-width="2"/>
+    <path d="M872 506C914 490 957 494 1002 507L1002 518H872Z" fill="#fff" stroke="#ef665f" stroke-width="2"/>
+    <!-- four direct callouts -->
+    <g font-size="12.5" font-weight="800"><text x="668" y="230" fill="#2a66d9">cracked but active</text><path d="M757 232L785 276" stroke="#2a66d9" stroke-width="1.8"/><text x="1027" y="367" fill="#c24d58">electronic isolation</text><path d="M1050 371L1062 396" stroke="#c24d58" stroke-width="1.8"/><text x="1012" y="217" fill="#8b6a48">ionic access loss</text><path d="M1030 222L1022 260" stroke="#8b6a48" stroke-width="1.8"/><text x="840" y="478" fill="#c24d58">network / coating separation</text><path d="M916 472L895 438" stroke="#c24d58" stroke-width="1.8"/></g>
+
+    <!-- compact key and conclusion -->
+    <g font-size="12" fill="#40516f"><circle cx="250" cy="641" r="8" fill="#409bdf" stroke="#237fc0" stroke-width="2"/><text x="265" y="645">Si-containing domain</text><circle cx="405" cy="641" r="8" fill="url(#graphite)"/><text x="420" y="645">graphite</text><line x1="495" y1="641" x2="525" y2="641" stroke="#263c61" stroke-width="6" stroke-linecap="round"/><text x="537" y="645">carbon–binder network</text><line x1="711" y1="641" x2="741" y2="641" stroke="#26a8d8" stroke-width="4" stroke-dasharray="7 6"/><text x="753" y="645">wetted ionic path</text><rect x="885" y="632" width="20" height="17" rx="3" fill="url(#interphase)"/><text x="915" y="645">interphase accumulation</text></g>
+    <line x1="120" y1="689" x2="1080" y2="689" stroke="#cdd8e4" stroke-width="2"/>
+    <text x="600" y="720" text-anchor="middle" font-size="16" font-weight="800" fill="#14213d">Loss of either transport network redistributes reaction and accelerates local degradation</text>
+  </g>
+</svg>

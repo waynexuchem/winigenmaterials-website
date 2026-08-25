@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
+  <title id="title">First-cycle lithium allocation</title>
+  <desc id="desc">Equal-width qualitative channels show reversible storage, electrolyte-derived interphase products, and trapped or isolated lithium for three silicon-anode material classes. Silicon oxide has a fourth parallel oxide and silicate conversion destination.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6f9fd"/><stop offset="1" stop-color="#eaf2fb"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#17365e" flood-opacity=".12"/></filter>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.h{font:800 32px Manrope,Arial,sans-serif}.sub{font:600 15px Inter,Arial,sans-serif;fill:#586a84}.head{font:800 22px Manrope,Arial,sans-serif;fill:#fff}.label{font:750 14px Inter,Arial,sans-serif;fill:#14213d}.small{font:600 13px Inter,Arial,sans-serif;fill:#5a6c86}.note{font:750 15px Inter,Arial,sans-serif;fill:#14213d}.flow{stroke:#6a84a6;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.dot{fill:#6a84a6}.reversible{fill:#dce9f9}.interphase{fill:#f4d9c8}.trapped{fill:#e9dcf7}.oxide{fill:#eedb96}.accent{fill:#d49b20}
+    </style>
+  </defs>
+  <rect width="1400" height="520" fill="url(#bg)"/>
+  <text x="700" y="48" text-anchor="middle" class="t h">First-Cycle Lithium Allocation</text>
+  <text x="700" y="78" text-anchor="middle" class="sub">Pathways are qualitative; channel widths are not quantitative</text>
+
+  <g transform="translate(55 108)" filter="url(#sh)">
+    <rect width="410" height="380" rx="20" fill="#fff"/>
+    <rect width="410" height="66" rx="20" fill="#193d6c"/><rect y="45" width="410" height="21" fill="#193d6c"/>
+    <text x="24" y="42" class="head">Si-C / Si-graphite</text>
+    <text x="205" y="101" text-anchor="middle" class="t label">Lithium supplied</text>
+    <path d="M205 112V155M76 155H334M76 155V184M205 155V184M334 155V184" class="flow"/>
+    <circle cx="205" cy="155" r="5" class="dot"/>
+    <rect x="20" y="184" width="112" height="72" rx="10" class="reversible"/><text x="76" y="212" text-anchor="middle" class="t label">Reversible</text><text x="76" y="233" text-anchor="middle" class="t label">storage</text>
+    <rect x="149" y="184" width="112" height="72" rx="10" class="interphase"/><text x="205" y="212" text-anchor="middle" class="t label">Interphase</text><text x="205" y="233" text-anchor="middle" class="t label">products</text>
+    <rect x="278" y="184" width="112" height="72" rx="10" class="trapped"/><text x="334" y="212" text-anchor="middle" class="t label">Trapped /</text><text x="334" y="233" text-anchor="middle" class="t label">isolated Li</text>
+    <line x1="28" y1="294" x2="28" y2="344" stroke="#193d6c" stroke-width="5"/>
+    <text x="48" y="312" class="t note">Architecture controls exposure</text>
+    <text x="48" y="339" class="small">Carbon coverage and defects govern interphase demand.</text>
+  </g>
+
+  <g transform="translate(495 108)" filter="url(#sh)">
+    <rect width="410" height="380" rx="20" fill="#fff"/>
+    <rect width="410" height="66" rx="20" fill="#387fb9"/><rect y="45" width="410" height="21" fill="#387fb9"/>
+    <text x="24" y="42" class="head">SiO<tspan baseline-shift="sub" font-size="14">x</tspan> / SiO<tspan baseline-shift="sub" font-size="14">x</tspan>-graphite</text>
+    <text x="205" y="101" text-anchor="middle" class="t label">Lithium supplied</text>
+    <path d="M205 112V155M60 155H350M60 155V184M157 155V184M253 155V184M350 155V184" class="flow"/>
+    <circle cx="205" cy="155" r="5" class="dot"/>
+    <rect x="15" y="184" width="89" height="78" rx="10" class="reversible"/><text x="60" y="211" text-anchor="middle" class="t label">Reversible</text><text x="60" y="233" text-anchor="middle" class="t label">storage</text>
+    <rect x="112" y="184" width="89" height="78" rx="10" class="interphase"/><text x="157" y="211" text-anchor="middle" class="t label">Interphase</text><text x="157" y="233" text-anchor="middle" class="t label">products</text>
+    <rect x="209" y="184" width="89" height="78" rx="10" class="oxide"/><text x="253" y="205" text-anchor="middle" class="t label">Oxide /</text><text x="253" y="225" text-anchor="middle" class="t label">silicate</text><text x="253" y="245" text-anchor="middle" class="t label">conversion</text>
+    <rect x="306" y="184" width="89" height="78" rx="10" class="trapped"/><text x="350" y="211" text-anchor="middle" class="t label">Trapped /</text><text x="350" y="233" text-anchor="middle" class="t label">isolated Li</text>
+    <rect x="28" y="294" width="7" height="50" rx="3" class="accent"/>
+    <text x="48" y="312" class="t note">Conversion adds an intrinsic sink</text>
+    <text x="48" y="339" class="small">Li<tspan baseline-shift="sub" font-size="10">2</tspan>O/silicate formation consumes lithium beyond SEI loss.</text>
+  </g>
+
+  <g transform="translate(935 108)" filter="url(#sh)">
+    <rect width="410" height="380" rx="20" fill="#fff"/>
+    <rect width="410" height="66" rx="20" fill="#17939a"/><rect y="45" width="410" height="21" fill="#17939a"/>
+    <text x="24" y="42" class="head">Elemental Si</text>
+    <text x="205" y="101" text-anchor="middle" class="t label">Lithium supplied</text>
+    <path d="M205 112V155M76 155H334M76 155V184M205 155V184M334 155V184" class="flow"/>
+    <circle cx="205" cy="155" r="5" class="dot"/>
+    <rect x="20" y="184" width="112" height="72" rx="10" class="reversible"/><text x="76" y="212" text-anchor="middle" class="t label">Reversible</text><text x="76" y="233" text-anchor="middle" class="t label">storage</text>
+    <rect x="149" y="184" width="112" height="72" rx="10" class="interphase"/><text x="205" y="212" text-anchor="middle" class="t label">Interphase</text><text x="205" y="233" text-anchor="middle" class="t label">products</text>
+    <rect x="278" y="184" width="112" height="72" rx="10" class="trapped"/><text x="334" y="212" text-anchor="middle" class="t label">Trapped /</text><text x="334" y="233" text-anchor="middle" class="t label">isolated Li</text>
+    <line x1="28" y1="294" x2="28" y2="344" stroke="#17939a" stroke-width="5"/>
+    <text x="48" y="312" class="t note">Exposure controls the balance</text>
+    <text x="48" y="339" class="small">Area and utilization govern interphase and trapping losses.</text>
+  </g>
+</svg>

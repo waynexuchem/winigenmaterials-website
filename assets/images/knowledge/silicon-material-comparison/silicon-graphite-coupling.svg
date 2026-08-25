@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">Silicon and graphite share an electrode, not a state</title>
+  <desc id="desc">Conceptual trajectories show graphite and silicon lithiation states diverging through charge, discharge, and relaxation. A graphite-rich electrode cross-section shows electrochemical coupling, mechanical coupling, and shared electrolyte inventory.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6f9fd"/><stop offset="1" stop-color="#e9f2fb"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#17365e" flood-opacity=".11"/></filter>
+    <marker id="end" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z" fill="#6b84a5"/></marker>
+    <marker id="blue-end" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto-start-reverse"><path d="M0 0L7 3L0 6Z" fill="#3974c7"/></marker>
+    <marker id="orange-end" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto-start-reverse"><path d="M0 0L7 3L0 6Z" fill="#ea714c"/></marker>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.h{font:800 32px Manrope,Arial,sans-serif}.sub{font:600 15px Inter,Arial,sans-serif;fill:#586a84}.axis{font:700 13px Inter,Arial,sans-serif;fill:#536680}.phase{font:800 12px Inter,Arial,sans-serif;letter-spacing:.8px;fill:#49617e}.event{font:650 11px Inter,Arial,sans-serif;fill:#71829a}.label{font:750 15px Inter,Arial,sans-serif}.small{font:600 13px Inter,Arial,sans-serif;fill:#5a6c86}.key{font:800 16px Inter,Arial,sans-serif}.grid{stroke:#d4dfec;stroke-width:1.3}.boundary{stroke:#b9c8d9;stroke-width:1.4;stroke-dasharray:5 5}.graphite-line{stroke:#234d7d;stroke-width:7;fill:none;stroke-linecap:round}.silicon-line{stroke:#15939a;stroke-width:7;fill:none;stroke-linecap:round}.couple{stroke:#6b84a5;stroke-width:2.5;fill:none;marker-end:url(#end)}.electro{stroke:#3974c7;stroke-width:2.5;fill:none;marker-start:url(#blue-end);marker-end:url(#blue-end)}.mech{stroke:#ea714c;stroke-width:2.5;fill:none;marker-end:url(#orange-end)}
+    </style>
+  </defs>
+  <rect width="1400" height="720" fill="url(#bg)"/>
+  <text x="700" y="48" text-anchor="middle" class="t h">Silicon and Graphite Share an Electrode, Not a State</text>
+  <text x="700" y="78" text-anchor="middle" class="sub">Component lithiation, stress, and electrolyte demand can diverge even at the same measured anode potential</text>
+
+  <g transform="translate(86 112)" filter="url(#sh)">
+    <rect width="1228" height="310" rx="18" fill="#fff"/>
+    <text x="24" y="32" class="phase">CONCEPTUAL COMPONENT-RESOLVED TRAJECTORIES</text>
+    <rect x="88" y="50" width="400" height="220" fill="#f5f8fc"/><rect x="488" y="50" width="145" height="220" fill="#eef4fb"/><rect x="633" y="50" width="405" height="220" fill="#f5f8fc"/><rect x="1038" y="50" width="150" height="220" fill="#eef4fb"/>
+    <line x1="88" y1="50" x2="88" y2="270" class="grid"/><line x1="88" y1="270" x2="1188" y2="270" class="grid"/>
+    <line x1="88" y1="105" x2="1188" y2="105" class="grid"/><line x1="88" y1="160" x2="1188" y2="160" class="grid"/><line x1="88" y1="215" x2="1188" y2="215" class="grid"/>
+    <line x1="488" y1="50" x2="488" y2="270" class="boundary"/><line x1="633" y1="50" x2="633" y2="270" class="boundary"/><line x1="1038" y1="50" x2="1038" y2="270" class="boundary"/>
+    <path d="M488 50l-5-8h10Z" fill="#8da0b8"/><path d="M633 50l-5-8h10Z" fill="#8da0b8"/><path d="M1038 50l-5-8h10Z" fill="#8da0b8"/>
+    <text x="478" y="45" text-anchor="end" class="event">end of charge</text><text x="643" y="45" class="event">start of discharge</text><text x="1028" y="45" text-anchor="end" class="event">end of discharge</text><text x="1048" y="45" class="event">open-circuit relaxation</text>
+    <text x="288" y="292" text-anchor="middle" class="phase">CHARGE</text><text x="560" y="292" text-anchor="middle" class="phase">HIGH SOC</text><text x="835" y="292" text-anchor="middle" class="phase">DISCHARGE</text><text x="1113" y="292" text-anchor="middle" class="phase">RELAXATION</text>
+    <text x="31" y="160" text-anchor="middle" transform="rotate(-90 31 160)" class="axis">Relative component lithiation state</text>
+    <path d="M100 248C180 235 230 185 302 143C370 104 422 87 488 82C540 78 590 80 633 88C715 105 786 150 862 201C920 240 980 252 1038 254C1090 255 1140 255 1176 254" class="graphite-line"/>
+    <path d="M100 253C195 244 264 216 335 173C405 131 458 109 520 104C566 100 602 104 633 112C716 132 790 174 856 209C923 244 975 248 1038 235C1085 219 1129 205 1176 205" class="silicon-line"/>
+    <circle cx="1176" cy="254" r="6" fill="#234d7d"/><circle cx="1176" cy="205" r="6" fill="#15939a"/>
+    <text x="420" y="82" class="t label" fill="#234d7d">Graphite</text><text x="530" y="126" class="t label" fill="#15939a">Silicon</text>
+    <path d="M1189 207h18M1189 254h18M1200 207v47" stroke="#15939a" stroke-width="3" fill="none"/>
+    <text x="1135" y="185" text-anchor="end" class="small">retained Li in Si can persist</text><path d="M1142 188L1165 200" stroke="#15939a" stroke-width="2" fill="none"/>
+    <text x="1110" y="32" text-anchor="end" class="small">Schematic—not a universal voltage or SOC profile</text>
+  </g>
+
+  <g transform="translate(86 449)" filter="url(#sh)">
+    <rect width="1228" height="190" rx="18" fill="#fff"/>
+    <text x="24" y="31" class="phase">COUPLED GRAPHITE-RICH ELECTRODE</text>
+    <g transform="translate(24 49)">
+      <rect width="760" height="116" rx="14" fill="#e8f1fb" stroke="#c9d8e8" stroke-width="1.4"/>
+      <text x="742" y="104" text-anchor="end" class="small">shared pore electrolyte</text>
+      <ellipse cx="92" cy="57" rx="67" ry="36" fill="#263b59"/><ellipse cx="254" cy="43" rx="76" ry="31" fill="#304866"/><ellipse cx="430" cy="70" rx="72" ry="33" fill="#263b59"/><ellipse cx="626" cy="45" rx="78" ry="34" fill="#304866"/>
+      <circle cx="180" cy="84" r="25" fill="#61b9bb"/><circle cx="180" cy="84" r="34" fill="none" stroke="#ea714c" stroke-width="4" stroke-dasharray="7 5"/>
+      <circle cx="540" cy="82" r="21" fill="#61b9bb"/><circle cx="540" cy="82" r="30" fill="none" stroke="#ea714c" stroke-width="4" stroke-dasharray="7 5"/>
+      <path d="M151 72L163 78" class="electro"/><path d="M509 78L487 74" class="electro"/>
+      <path d="M132 84H146M228 84H214M500 82H509M580 82H571" class="mech"/>
+      <text x="92" y="62" text-anchor="middle" fill="#fff" class="label">graphite</text><text x="430" y="75" text-anchor="middle" fill="#fff" class="label">graphite</text>
+      <text x="180" y="89" text-anchor="middle" fill="#fff" class="label">Si</text><text x="540" y="87" text-anchor="middle" fill="#fff" class="label">Si</text>
+    </g>
+    <g transform="translate(832 50)">
+      <path d="M6 20H63" class="electro"/><text x="98" y="25" class="t key">Electrochemical coupling</text>
+      <path d="M0 59H25M68 59H43" class="mech"/><circle cx="34" cy="59" r="11" fill="none" stroke="#ea714c" stroke-width="3" stroke-dasharray="5 4"/><text x="98" y="64" class="t key">Mechanical coupling</text>
+      <rect x="0" y="88" width="68" height="20" rx="8" fill="#e8f1fb" stroke="#9fc8d4" stroke-width="1.5"/><text x="98" y="103" class="t key">Shared electrolyte inventory</text>
+    </g>
+  </g>
+
+  <text x="700" y="683" text-anchor="middle" class="t key">The practical object of electrolyte design is the coupled electrode—not either active material in isolation.</text>
+</svg>

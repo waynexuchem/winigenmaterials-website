@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">FEC controls reaction sequence but cannot eliminate interphase renewal</title>
+  <desc id="desc">Three mechanistic panels show FEC-influenced early interphase formation, localized repassivation of freshly exposed silicon and the balance between declining FEC capacity and growing surface demand, followed by controlled or uncontrolled late-life outcomes and cathode cross-interface effects.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7faff"/><stop offset="1" stop-color="#e9f2ff"/></linearGradient>
+    <linearGradient id="si" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9788ef"/><stop offset="1" stop-color="#5a49bd"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#18355d" flood-opacity=".10"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0l10 3-10 3z" fill="#547bad"/></marker>
+    <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0l10 3-10 3z" fill="#369a89"/></marker>
+    <marker id="redArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0l10 3-10 3z" fill="#d15b4b"/></marker>
+  </defs>
+  <rect width="1400" height="900" rx="30" fill="url(#bg)"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="52" y="58" fill="#142b4f" font-family="Manrope,Arial,sans-serif" font-size="30" font-weight="800">FEC controls reaction sequence but cannot eliminate interphase renewal</text>
+    <text x="52" y="88" fill="#536985" font-size="15">Formation chemistry, finite repassivation capacity, and formulation-dependent late-life divergence</text>
+
+    <g filter="url(#shadow)">
+      <rect x="42" y="118" width="412" height="680" rx="24" fill="#fff" stroke="#c2d4ea"/>
+      <rect x="474" y="118" width="452" height="680" rx="24" fill="#fff" stroke="#adbee9"/>
+      <rect x="946" y="118" width="412" height="680" rx="24" fill="#fff" stroke="#c2d4ea"/>
+    </g>
+
+    <!-- Panel A -->
+    <g>
+      <circle cx="77" cy="155" r="19" fill="#173e75"/><text x="77" y="161" text-anchor="middle" fill="#fff" font-size="15" font-weight="800">A</text>
+      <text x="108" y="162" fill="#173254" font-size="20" font-weight="800">Early formation</text>
+      <text x="70" y="194" fill="#536985" font-size="13">FEC alters the first interfacial reaction field</text>
+
+      <rect x="70" y="218" width="356" height="225" rx="18" fill="#f5f9ff" stroke="#d7e3f2"/>
+      <text x="88" y="243" fill="#526986" font-size="11" font-weight="800">CARBONATE ELECTROLYTE</text>
+      <g>
+        <circle cx="118" cy="285" r="15" fill="#5d96e8"/><text x="118" y="290" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">Li⁺</text>
+        <g fill="#dbe8f8" stroke="#91acd0"><circle cx="91" cy="269" r="10"/><circle cx="145" cy="267" r="10"/><circle cx="94" cy="304" r="10"/><circle cx="143" cy="306" r="10"/></g>
+        <g stroke="#91acd0" stroke-width="2"><path d="M108 280l-10-7M128 280l10-8M108 293l-9 8M128 293l10 8"/></g>
+      </g>
+      <g fill="#70aef3" stroke="#2f78c9" stroke-width="2">
+        <path d="M206 257l12-8 13 7 1 15-12 8-13-7z"/><path d="M301 291l12-8 13 7 1 15-12 8-13-7z"/><path d="M240 338l12-8 13 7 1 15-12 8-13-7z"/>
+      </g>
+      <g fill="#fff"><text x="220" y="267" text-anchor="middle" font-size="8" font-weight="800">FEC</text><text x="315" y="301" text-anchor="middle" font-size="8" font-weight="800">FEC</text><text x="254" y="348" text-anchor="middle" font-size="8" font-weight="800">FEC</text></g>
+      <g fill="#dce4ef" stroke="#9baec8"><circle cx="176" cy="327" r="11"/><circle cx="356" cy="258" r="11"/><circle cx="366" cy="347" r="11"/></g>
+      <g fill="#eca64b"><circle cx="164" cy="262" r="8"/><circle cx="352" cy="315" r="8"/></g>
+      <g fill="#536985" font-size="9"><text x="164" y="266" text-anchor="middle">A⁻</text><text x="352" y="319" text-anchor="middle">A⁻</text></g>
+      <path d="M220 282l31 92M315 316l-10 58M164 276l46 98" stroke="#547bad" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <text x="350" y="401" text-anchor="middle" fill="#2f78c9" font-size="11" font-weight="800">competitive early reduction</text>
+
+      <rect x="70" y="443" width="356" height="82" fill="#eef4fb"/>
+      <g>
+        <rect x="84" y="461" width="45" height="20" rx="8" fill="#97d5c9"/><rect x="135" y="485" width="62" height="22" rx="9" fill="#78b7a9"/>
+        <rect x="207" y="459" width="50" height="24" rx="9" fill="#77aef0"/><rect x="267" y="487" width="67" height="20" rx="8" fill="#b8a8ed"/>
+        <rect x="342" y="459" width="66" height="23" rx="9" fill="#e8b15b"/>
+      </g>
+      <text x="248" y="542" text-anchor="middle" fill="#173254" font-size="13" font-weight="800">mixed first interphase</text>
+      <rect x="70" y="555" width="356" height="95" rx="16" fill="#f8fbff" stroke="#d6e2f0"/>
+      <g font-size="12" fill="#4f6480"><text x="88" y="580">● LiF / inorganic domains</text><text x="88" y="604">● polymeric C–O products</text><text x="88" y="628">● fluorinated organics</text><text x="258" y="580">● salt-derived species</text><text x="258" y="604">● altered carbonate products</text></g>
+      <rect x="70" y="673" width="356" height="92" rx="16" fill="#edf6ff" stroke="#b8d5f1"/>
+      <text x="88" y="700" fill="#24558f" font-size="12" font-weight="800">MECHANISTIC MESSAGE</text>
+      <text x="88" y="726" fill="#4d6380" font-size="13">FEC changes which reactions occur first—</text>
+      <text x="88" y="748" fill="#4d6380" font-size="13">and therefore how the first SEI grows.</text>
+    </g>
+
+    <!-- Panel B -->
+    <g>
+      <circle cx="509" cy="155" r="19" fill="#5a47b2"/><text x="509" y="161" text-anchor="middle" fill="#fff" font-size="15" font-weight="800">B</text>
+      <text x="540" y="162" fill="#173254" font-size="20" font-weight="800">Cycling and fresh surface</text>
+      <text x="502" y="194" fill="#536985" font-size="13">Residual FEC can locally repassivate exposed Si</text>
+
+      <g transform="translate(510 220)">
+        <path d="M95 45c52-35 155-20 186 38 29 53 8 133-52 160-62 28-145-3-163-66-14-49-4-101 29-132z" fill="url(#si)"/>
+        <path d="M82 35c58-49 176-26 211 46M300 112c9 40-3 89-37 119M213 257c-54 13-113-8-144-50" fill="none" stroke="#45a6a1" stroke-width="11" stroke-linecap="round"/>
+        <path d="M139 72l24 35-22 35M229 65l-30 41 30 28M124 191l37-25 22 41" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+        <path d="M169 111l33 44-35 72" fill="none" stroke="#f3cf84" stroke-width="12" stroke-linecap="round"/>
+        <text x="190" y="291" text-anchor="middle" fill="#b7473b" font-size="12" font-weight="800">fresh Si / SiOₓ at crack wall</text>
+        <g fill="#70aef3" stroke="#2f78c9" stroke-width="1.5"><path d="M20 64l9-6 10 5 1 12-9 6-10-5z"/><path d="M28 135l9-6 10 5 1 12-9 6-10-5z"/><path d="M42 207l9-6 10 5 1 12-9 6-10-5z"/></g>
+        <g fill="#fff" font-size="6" font-weight="800"><text x="30" y="72" text-anchor="middle">FEC</text><text x="38" y="143" text-anchor="middle">FEC</text><text x="52" y="215" text-anchor="middle">FEC</text></g>
+        <path d="M49 72l101 75M57 143l96 26M70 211l89-17" fill="none" stroke="#2f78c9" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <rect x="150" y="151" width="36" height="69" rx="12" fill="#72b8aa" stroke="#fff" stroke-width="3"/>
+        <text x="168" y="178" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">NEW</text><text x="168" y="191" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">SEI</text>
+      </g>
+      <text x="700" y="527" text-anchor="middle" fill="#173254" font-size="13" font-weight="800">localized repassivation ≠ healing the old film</text>
+
+      <g transform="translate(510 555)">
+        <rect width="380" height="202" rx="16" fill="#f8fbff" stroke="#d3dfef"/>
+        <text x="18" y="27" fill="#173254" font-size="12" font-weight="800">CONCEPTUAL INVENTORY BALANCE</text>
+        <path d="M48 160V49M48 160h298" fill="none" stroke="#8699b1" stroke-width="2"/>
+        <path d="M58 61c72 7 159 34 274 91" fill="none" stroke="#d15b4b" stroke-width="4"/>
+        <path d="M58 150c78-11 168-48 274-91" fill="none" stroke="#2f78c9" stroke-width="4"/>
+        <circle cx="193" cy="109" r="7" fill="#173e75" stroke="#fff" stroke-width="3"/>
+        <path d="M193 109v44" stroke="#173e75" stroke-dasharray="5 4"/>
+        <text x="110" y="53" fill="#b7473b" font-size="10" font-weight="800">remaining FEC capacity</text>
+        <text x="274" y="82" fill="#2f78c9" font-size="10" font-weight="800">cumulative fresh-area demand</text>
+        <text x="193" y="181" text-anchor="middle" fill="#173254" font-size="11" font-weight="800">capacity–demand crossover</text>
+        <text x="195" y="197" text-anchor="middle" fill="#6b7c92" font-size="10">cycle progression →</text>
+      </g>
+    </g>
+
+    <!-- Panel C -->
+    <g>
+      <circle cx="981" cy="155" r="19" fill="#173e75"/><text x="981" y="161" text-anchor="middle" fill="#fff" font-size="15" font-weight="800">C</text>
+      <text x="1012" y="162" fill="#173254" font-size="20" font-weight="800">Late-life divergence</text>
+      <text x="974" y="194" fill="#536985" font-size="13">Two formulation-dependent limiting outcomes</text>
+
+      <rect x="974" y="219" width="356" height="215" rx="18" fill="#effaf7" stroke="#93d1c6"/>
+      <rect x="992" y="236" width="188" height="27" rx="13" fill="#d9f1ec"/>
+      <text x="1086" y="254" text-anchor="middle" fill="#26786f" font-size="12" font-weight="800">SELECTIVE REPASSIVATION</text>
+      <path d="M1027 347c36-47 111-53 155-13" fill="none" stroke="#5a49bd" stroke-width="63" stroke-linecap="round"/>
+      <path d="M1002 322c57-50 151-47 203 4" fill="none" stroke="#45a6a1" stroke-width="11" stroke-linecap="round"/>
+      <path d="M1103 319l18 29-18 35" fill="none" stroke="#f3cf84" stroke-width="12"/>
+      <rect x="1092" y="334" width="22" height="43" rx="8" fill="#72b8aa"/>
+      <g fill="#70aef3" stroke="#2f78c9"><path d="M1231 291l9-6 10 5 1 12-9 6-10-5z"/><path d="M1256 329l9-6 10 5 1 12-9 6-10-5z"/></g>
+      <path d="M1232 311l-91 40" fill="none" stroke="#2f78c9" stroke-width="2" marker-end="url(#greenArrow)"/>
+      <text x="1237" y="377" text-anchor="middle" fill="#26786f" font-size="11">localized new SEI</text>
+      <text x="1152" y="407" text-anchor="middle" fill="#4f677f" font-size="12">limited carbonate penetration • slower mass growth</text>
+
+      <rect x="974" y="451" width="356" height="230" rx="18" fill="#fff3f0" stroke="#edb3a9"/>
+      <rect x="992" y="468" width="221" height="27" rx="13" fill="#fee1db"/>
+      <text x="1102" y="486" text-anchor="middle" fill="#a94236" font-size="12" font-weight="800">INSUFFICIENT / OVER-REACTIVE</text>
+      <path d="M1016 591c43-52 118-58 168-19" fill="none" stroke="#5a49bd" stroke-width="63" stroke-linecap="round"/>
+      <path d="M993 562c61-49 157-48 216 6" fill="none" stroke="#45a6a1" stroke-width="11" stroke-linecap="round"/>
+      <path d="M1091 551l25 34-20 64" fill="none" stroke="#f3cf84" stroke-width="19"/>
+      <path d="M1240 524l-116 66M1271 557l-145 52" stroke="#d15b4b" stroke-width="2.5" marker-end="url(#redArrow)"/>
+      <g fill="#dce4ef" stroke="#9baec8"><circle cx="1242" cy="516" r="9"/><circle cx="1274" cy="548" r="9"/></g>
+      <g fill="#eca64b"><circle cx="1047" cy="522" r="11"/><circle cx="1075" cy="510" r="8"/><circle cx="1028" cy="536" r="7"/></g>
+      <text x="1055" y="512" text-anchor="middle" fill="#9a6517" font-size="10" font-weight="800">gas*</text>
+      <text x="1242" y="642" text-anchor="middle" fill="#a94236" font-size="11">carbonate access</text>
+      <text x="1152" y="662" text-anchor="middle" fill="#754c49" font-size="12">thick heterogeneous SEI • solvent/Li loss • impedance</text>
+
+      <rect x="974" y="701" width="356" height="65" rx="16" fill="#f1f5fb" stroke="#cedbea"/>
+      <text x="991" y="722" fill="#173254" font-size="11" font-weight="800">SHARED-ELECTROLYTE INSET</text>
+      <rect x="995" y="735" width="62" height="18" rx="7" fill="#5a49bd"/><rect x="1084" y="735" width="95" height="18" rx="7" fill="#dceafa"/><rect x="1206" y="735" width="96" height="18" rx="7" fill="#d56d4a"/>
+      <text x="1026" y="749" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">Si</text><text x="1131" y="749" text-anchor="middle" fill="#3978a8" font-size="8" font-weight="800">electrolyte</text><text x="1254" y="749" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">cathode</text>
+      <path d="M1060 744h20M1182 744h20" stroke="#7f92aa" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="1152" y="789" text-anchor="middle" fill="#536985" font-size="10">CEI / oxidation / PF₅–HF-linked cross-talk can shift the balance</text>
+    </g>
+
+    <path d="M52 829h1296" stroke="#b9cbe1" stroke-width="2"/>
+    <text x="700" y="858" text-anchor="middle" fill="#173254" font-size="15" font-weight="800">Repassivation capacity depends on remaining FEC; repassivation demand depends on fresh reactive area generated by cycling.</text>
+    <text x="700" y="880" text-anchor="middle" fill="#687a91" font-size="11">*Reported gas products and rates vary strongly with salt, water, surface chemistry, voltage, temperature, and cell configuration.</text>
+  </g>
+</svg>

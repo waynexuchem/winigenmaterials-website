@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Different silicon architectures create different electrolyte burdens</title>
+  <desc id="desc">A four-stage continuum compares low-silicon graphite blends, silicon-carbon composites, silicon oxide graphite, and high-silicon fracture-dominated electrodes, showing their material structures, dominant burdens, electrolyte responses, and validation needs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#edf3fb"/></linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#d8e8ff"/><stop offset=".5" stop-color="#e9e5ff"/><stop offset="1" stop-color="#ffe2d0"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#17335f" flood-opacity=".1"/></filter>
+    <marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#7189ad"/></marker>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.title{font-size:34px;font-weight:800}.sub{font-size:17px;fill:#52637f}.head{font-size:13px;font-weight:800;letter-spacing:1.3px;fill:#2a66d9}.arch{font-size:19px;font-weight:800}.body{font-size:13px;fill:#52637f}.label{font-size:14px;font-weight:800}.card{fill:#fff;stroke:#bdcce0;stroke-width:2}.graphite{stroke:#344b68;stroke-width:11;stroke-linecap:round}.si{fill:#df8b24}.oxide{fill:#6ea6d8}.matrix{fill:#3f5d7c}.crack{fill:none;stroke:#eff5fc;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.response{font-size:15px;font-weight:800;fill:#fff}.foot{font-size:15px;fill:#dbe8fb}.footStrong{font-size:18px;font-weight:800;fill:#fff}
+    </style>
+  </defs>
+  <rect width="1400" height="900" rx="30" fill="url(#bg)"/>
+  <text class="t title" x="52" y="58">Different architectures create different electrolyte burdens</text>
+  <text class="t sub" x="52" y="88">The dominant problem shifts from graphite compatibility to continuing fresh-surface generation.</text>
+
+  <text class="t head" x="52" y="133">MATERIAL ARCHITECTURE</text>
+  <path d="M265 125H1320" stroke="url(#band)" stroke-width="12" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <text class="t body" x="790" y="116" text-anchor="middle">greater silicon-side reaction burden—not a universal ranking of difficulty</text>
+
+  <g filter="url(#shadow)">
+    <rect class="card" x="52" y="157" width="302" height="475" rx="20"/>
+    <rect class="card" x="383" y="157" width="302" height="475" rx="20"/>
+    <rect class="card" x="714" y="157" width="302" height="475" rx="20"/>
+    <rect class="card" x="1045" y="157" width="303" height="475" rx="20"/>
+  </g>
+
+  <!-- low-Si graphite -->
+  <text class="t arch" x="78" y="195">LOW-Si / GRAPHITE</text>
+  <g transform="translate(203 290)">
+    <path class="graphite" d="M-90-58H-12M22-58H88M-102-20H-28M8-20H102M-88 18H-4M30 18H92M-100 56H-26M10 56H102"/>
+    <circle class="si" cx="-8" cy="-57" r="13"/><circle class="si" cx="14" cy="23" r="11"/><circle class="si" cx="-26" cy="57" r="9"/>
+  </g>
+  <text class="t label" x="78" y="388">Dominant burden</text><text class="t body" x="78" y="413">graphite compatibility, localized</text><text class="t body" x="78" y="434">Si reaction, and formation gas</text>
+  <text class="t label" x="78" y="476">Electrolyte response</text><text class="t body" x="78" y="501">restrained additive balance within</text><text class="t body" x="78" y="522">a graphite-compatible baseline</text>
+  <text class="t label" x="78" y="564">Proof that matters</text><text class="t body" x="78" y="589">graphite-dominant full cell</text><text class="t body" x="78" y="610">with gas and fast-charge data</text>
+
+  <!-- Si-C -->
+  <text class="t arch" x="409" y="195">Si–C COMPOSITE</text>
+  <g transform="translate(534 286)">
+    <rect x="-99" y="-68" width="198" height="136" rx="25" fill="#3f5d7c"/>
+    <circle class="si" cx="-51" cy="-31" r="24"/><circle class="si" cx="25" cy="-42" r="18"/><circle class="si" cx="47" cy="26" r="27"/><circle class="si" cx="-42" cy="35" r="16"/>
+    <path d="M-20-68l8 22 11-15 10 20" class="crack"/><path d="M99 3l-24 8 15 12-20 9" class="crack"/>
+    <circle cx="-6" cy="-57" r="7" fill="#61a8f3"/><circle cx="84" cy="18" r="7" fill="#61a8f3"/>
+  </g>
+  <text class="t label" x="409" y="388">Dominant burden</text><text class="t body" x="409" y="413">heterogeneous access and repeated</text><text class="t body" x="409" y="434">local repassivation at defects</text>
+  <text class="t label" x="409" y="476">Electrolyte response</text><text class="t body" x="409" y="501">accessible-area-dependent inventory</text><text class="t body" x="409" y="522">plus SEI–CEI balance</text>
+  <text class="t label" x="409" y="564">Proof that matters</text><text class="t body" x="409" y="589">matched half/full cells with</text><text class="t body" x="409" y="610">coating and porosity disclosed</text>
+
+  <!-- SiOx -->
+  <text class="t arch" x="740" y="195">SiOₓ / GRAPHITE</text>
+  <g transform="translate(865 286)">
+    <circle cx="0" cy="0" r="78" fill="#6ea6d8"/>
+    <circle cx="-28" cy="-23" r="22" fill="#df8b24"/><circle cx="32" cy="17" r="26" fill="#df8b24"/><circle cx="-28" cy="39" r="14" fill="#8eb9df"/>
+    <path d="M-83-66l23 18M-93-31l28 10M-92 11l27-5" stroke="#2a66d9" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="-119" y="-72" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#2a66d9">Li loss</text>
+    <text class="t body" x="-55" y="5">oxide-derived</text><text class="t body" x="-38" y="24">matrix</text>
+  </g>
+  <text class="t label" x="740" y="388">Dominant burden</text><text class="t body" x="740" y="413">irreversible lithium consumption</text><text class="t body" x="740" y="434">plus oxide-derived chemistry</text>
+  <text class="t label" x="740" y="476">Electrolyte response</text><text class="t body" x="740" y="501">initial-efficiency / prelithiation fit</text><text class="t body" x="740" y="522">and HF/oxide control</text>
+  <text class="t label" x="740" y="564">Proof that matters</text><text class="t body" x="740" y="589">lithium-balanced full cell with</text><text class="t body" x="740" y="610">storage and impedance tracking</text>
+
+  <!-- high-Si fracture -->
+  <text class="t arch" x="1071" y="195">HIGH-Si / FRACTURE</text>
+  <g transform="translate(1197 286)">
+    <circle cx="0" cy="0" r="82" fill="#3f5d7c"/>
+    <path class="crack" d="M-22-72l18 43-30 28 33 11-20 54M25-70l-2 35 32 20-30 28 29 49"/>
+    <path d="M-116-58l46 27M-124 0l53 2M-111 58l43-26" stroke="#61a8f3" stroke-width="5" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+    <circle cx="-40" cy="-30" r="8" fill="#61a8f3"/><circle cx="-48" cy="3" r="7" fill="#61a8f3"/><circle cx="-33" cy="34" r="6" fill="#61a8f3"/>
+  </g>
+  <text class="t label" x="1071" y="388">Dominant burden</text><text class="t body" x="1071" y="413">fresh surface, crack infiltration,</text><text class="t body" x="1071" y="434">and electrolyte starvation</text>
+  <text class="t label" x="1071" y="476">Electrolyte response</text><text class="t body" x="1071" y="501">solvation / penetration control</text><text class="t body" x="1071" y="522">with bounded repassivation</text>
+  <text class="t label" x="1071" y="564">Proof that matters</text><text class="t body" x="1071" y="589">lean-electrolyte pouch with</text><text class="t body" x="1071" y="610">swelling and pressure data</text>
+
+  <text class="t head" x="52" y="682">THE SAME ELECTROLYTE MUST ALSO PASS THE FULL-CELL FILTER</text>
+  <g filter="url(#shadow)">
+    <rect x="52" y="704" width="1296" height="86" rx="18" fill="#fff" stroke="#bdcce0" stroke-width="2"/>
+    <rect x="80" y="724" width="150" height="46" rx="12" fill="#3f5d7c"/><text class="t response" x="155" y="753" text-anchor="middle">Si architecture</text>
+    <path d="M246 747H300" stroke="#7189ad" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="318" y="724" width="180" height="46" rx="12" fill="#2a66d9"/><text class="t response" x="408" y="753" text-anchor="middle">shared electrolyte</text>
+    <path d="M514 747H568" stroke="#7189ad" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="586" y="724" width="150" height="46" rx="12" fill="#7557d8"/><text class="t response" x="661" y="753" text-anchor="middle">cathode / CEI</text>
+    <text class="t label" x="778" y="738">Finite-cell constraints:</text>
+    <text class="t body" x="778" y="762">Li inventory • gas • Al stability • wetting/filling • E/C • storage • temperature</text>
+  </g>
+  <rect x="52" y="821" width="1296" height="54" rx="16" fill="#14213d"/>
+  <text class="t footStrong" x="700" y="846" text-anchor="middle">One formulation can move failure between silicon, graphite, cathode, and cell hardware.</text>
+  <text class="t foot" x="700" y="868" text-anchor="middle">Architecture-specific claims require architecture-specific full-cell evidence.</text>
+</svg>

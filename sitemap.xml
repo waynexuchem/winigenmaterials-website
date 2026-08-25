@@ -5,37 +5,11 @@
   <url><loc>https://www.winigenmaterials.com/applications.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/contact.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/automotive-battery-materials-roadmap.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/battery-materials-optimization-chemistry-cell-performance.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/beyond-np-ratio-spatial-reaction-uniformity.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/cell-architecture.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/cell-development.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/commercialization.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/compare-solid-state-electrolyte-powders.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/electrolyte-design-silicon-anodes.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/electrolytes-interfaces.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/fast-charge-all-weather-ev-battery-electrolytes.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/fast-formation-lithium-rich-cathodes.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/lifsi-lithium-metal-batteries.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/lipf6-vs-lifsi-vs-litfsi.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/manufacturing-uniformity-vs-reaction-uniformity.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/knowledge/materials.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/si-c-vs-siox-vs-amorphous-silicon.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/silicon-anode-degradation-mechanisms.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/sodium-ion-electrolyte-materials.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-materials.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html</loc></url>
-  <url><loc>https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/products/1-2-bis-2-cyanoethoxy-ethane-dene.html</loc></url>
@@ -147,4 +121,26 @@
   <url><loc>https://www.winigenmaterials.com/products/wbm-p07-boehmite-powder.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/quality.html</loc></url>
   <url><loc>https://www.winigenmaterials.com/services.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/automotive-battery-materials-roadmap.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/battery-materials-optimization-chemistry-cell-performance.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/beyond-np-ratio-spatial-reaction-uniformity.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/compare-solid-state-electrolyte-powders.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/electrolyte-additives-sei-cei.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/fast-charge-all-weather-ev-battery-electrolytes.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/fast-formation-lithium-rich-cathodes.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/lifsi-lithium-metal-batteries.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/lipf6-vs-lifsi-vs-litfsi.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/low-temperature-electrolytes.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/np-ratio-lithium-ion-battery-design.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/sodium-ion-electrolyte-materials.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-materials.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html</loc></url>
+  <url><loc>https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html</loc></url>
 </urlset>

@@ -1,5 +1,6 @@
 (function () {
-  const articles = window.winigenKnowledgeArticles || [];
+  const knowledgeData = window.winigenKnowledgeData || { articles: [] };
+  const articles = knowledgeData.articles || [];
   const root = document.querySelector('[data-knowledge-search]');
   if (!root || !articles.length) return;
 
@@ -12,19 +13,30 @@
   const chips = Array.from(root.querySelectorAll('[data-stage-filter]'));
   const topicFilters = Array.from(document.querySelectorAll('[data-topic-filter]'));
   const primaryTopicFilters = Array.from(root.querySelectorAll('.stage-filter-row [data-topic-filter]'));
+  const secondaryTopicFilters = topicFilters.filter((filter) => !primaryTopicFilters.includes(filter));
   const roadmapLinks = Array.from(document.querySelectorAll('[data-roadmap-stage]'));
+  const articleLibrary = document.querySelector('[data-article-library]');
+  const featuredLibrary = document.querySelector('[data-featured-articles]');
   let activeStage = 'All';
+  let activeTopic = '';
   const stageLabels = new Map(chips.map((chip) => [chip.dataset.stageFilter, chip.textContent.trim()]));
   const topicLabels = new Map(primaryTopicFilters.map((filter) => [filter.dataset.topicFilter, filter.textContent.trim()]));
+  const strictTopicLabels = new Map([
+    ['electrolyte', 'Electrolytes'],
+    ['solid-state', 'Solid-State'],
+    ['silicon', 'Silicon'],
+    ['sodium', 'Sodium-Ion']
+  ]);
 
   const weights = {
     title: 5,
     tags: 4,
-    summary: 3,
+    description: 3,
     category: 3,
     stage: 2,
-    keywords: 2,
-    related_products: 2,
+    topics: 2,
+    searchTerms: 2,
+    relatedProducts: 2,
     excerpt: 1
   };
 
@@ -65,7 +77,44 @@
     return Array.isArray(value) ? value.join(' ') : value || '';
   };
 
-  const articleStages = (article) => article.stages || [article.stage];
+  const matchesStrictTopic = (article, topic) => (
+    article.filterTopics || []
+  ).includes(strictTopicLabels.get(topic));
+
+  const escapeHtml = (value) => String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+  const draftBadge = (article) => article.status === 'draft'
+    ? '<span class="knowledge-draft-badge">Draft</span>'
+    : '';
+
+  const cardTemplate = (article, featured = false) => {
+    const cardClass = featured ? 'knowledge-card featured-card' : 'knowledge-card';
+    const loading = featured ? '' : ' loading="lazy"';
+    return `<article class="${cardClass}" data-article-slug="${escapeHtml(article.slug)}">
+      <img src="${escapeHtml(article.image.src)}" alt="${escapeHtml(article.image.alt)}"${loading} decoding="async">
+      <div class="knowledge-card-body">
+        <p class="knowledge-card-category">${escapeHtml(article.cardCategory)}${draftBadge(article)}</p>
+        <h2><a href="${escapeHtml(article.url)}">${escapeHtml(article.title)}</a></h2>
+        <p>${escapeHtml(article.description)}</p>
+        <div class="related-link-list"><a href="${escapeHtml(article.url)}">Read article</a></div>
+      </div>
+    </article>`;
+  };
+
+  const renderArticleLibraries = () => {
+    const ordered = [...articles].sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
+    if (articleLibrary) articleLibrary.innerHTML = ordered.map((article) => cardTemplate(article)).join('');
+    const featured = ordered
+      .filter((article) => article.featured)
+      .sort((a, b) => (a.featuredRank ?? 999) - (b.featuredRank ?? 999) || a.title.localeCompare(b.title))
+      .slice(0, 3);
+    if (featuredLibrary) featuredLibrary.innerHTML = featured.map((article) => cardTemplate(article, true)).join('');
+  };
 
   const expandQuery = (query) => {
     const normalized = normalize(query);
@@ -94,10 +143,9 @@
     return focused.some((token) => text.includes(token));
   };
 
-  const scoreArticle = (article, query, useStageFilter = true) => {
+  const scoreArticle = (article, query) => {
     const { normalized, baseTokens, tokens } = expandQuery(query);
-    if (!normalized && activeStage === 'All') return 0;
-    if (useStageFilter && activeStage !== 'All' && !articleStages(article).includes(activeStage)) return 0;
+    if (!normalized) return 0;
     if (!matchesFocus(article, baseTokens)) return 0;
 
     let score = 0;
@@ -112,17 +160,15 @@
       });
     });
 
-    if (useStageFilter && activeStage !== 'All') score += 10;
-
     return score;
   };
 
   const resultTemplate = (article, score) => {
     const tags = article.tags.slice(0, 4).map((tag) => `<span>${tag}</span>`).join('');
     return `<article class="search-result-card">
-      <div class="search-result-meta"><span>${article.stage}</span><span>${article.category}</span></div>
+      <div class="search-result-meta"><span>${article.stage}</span><span>${article.category}</span>${draftBadge(article)}</div>
       <h3><a href="${article.url}">${article.title}</a></h3>
-      <p>${article.summary}</p>
+      <p>${article.description}</p>
       <div class="search-result-tags">${tags}</div>
       <a class="search-result-link" href="${article.url}">Read article</a>
     </article>`;
@@ -131,52 +177,53 @@
   const render = () => {
     const query = input.value.trim();
     const hasQuery = Boolean(query);
-    const matches = articles
-      .map((article) => ({ article, score: scoreArticle(article, query, !hasQuery) }))
-      .filter((entry) => entry.score > 0)
-      .sort((a, b) => b.score - a.score || a.article.title.localeCompare(b.article.title));
-    const ranked = matches.slice(0, 8);
+    const matches = hasQuery
+      ? articles
+        .map((article) => ({ article, score: scoreArticle(article, query) }))
+        .filter((entry) => entry.score > 0)
+        .sort((a, b) => b.score - a.score || a.article.title.localeCompare(b.article.title))
+      : articles
+        .filter((article) => (
+          activeTopic
+            ? matchesStrictTopic(article, activeTopic)
+            : activeStage !== 'All' && article.stage === activeStage
+        ))
+        .map((article) => ({ article, score: 1 }))
+        .sort((a, b) => a.article.order - b.article.order || a.article.title.localeCompare(b.article.title));
+    const ranked = hasQuery ? matches.slice(0, 8) : matches;
 
     const stageCounts = new Map();
-    const sourceForCounts = hasQuery
-      ? articles
-        .map((article) => ({ article, score: scoreArticle(article, query, false) }))
-        .filter((entry) => entry.score > 0)
-      : articles.map((article) => ({ article, score: 1 }));
-
-    sourceForCounts.forEach(({ article }) => {
-      articleStages(article).forEach((stage) => {
-        stageCounts.set(stage, (stageCounts.get(stage) || 0) + 1);
-      });
+    articles.forEach((article) => {
+      stageCounts.set(article.stage, (stageCounts.get(article.stage) || 0) + 1);
     });
 
     chips.forEach((chip) => {
       const stage = chip.dataset.stageFilter;
       const label = stageLabels.get(stage) || stage;
       const stageCount = stage === 'All'
-        ? sourceForCounts.length
+        ? articles.length
         : stageCounts.get(stage) || 0;
       chip.innerHTML = `${label}<span class="stage-filter-count">${stageCount}</span>`;
-      chip.classList.toggle('has-matches', hasQuery && stageCount > 0);
-      chip.classList.toggle('no-matches', hasQuery && stage !== 'All' && stageCount === 0);
-      chip.classList.toggle('active', !hasQuery && stage === activeStage);
-      chip.setAttribute('aria-pressed', String(!hasQuery && stage === activeStage));
+      chip.classList.remove('has-matches', 'no-matches');
+      const isActive = !hasQuery && !activeTopic && stage === activeStage;
+      chip.classList.toggle('active', isActive);
+      chip.setAttribute('aria-pressed', String(isActive));
     });
 
     primaryTopicFilters.forEach((filter) => {
       const topic = filter.dataset.topicFilter;
       const label = topicLabels.get(topic) || topic;
-      const topicCount = sourceForCounts.filter(({ article }) => scoreArticle(article, topic, false) > 0).length;
+      const topicCount = articles.filter((article) => matchesStrictTopic(article, topic)).length;
       filter.innerHTML = `${label}<span class="stage-filter-count">${topicCount}</span>`;
-      filter.classList.toggle('has-matches', hasQuery && topicCount > 0);
-      filter.classList.toggle('no-matches', hasQuery && topicCount === 0);
+      filter.classList.remove('has-matches', 'no-matches');
+      filter.classList.toggle('active', !hasQuery && activeTopic === topic);
     });
 
     topicFilters.forEach((filter) => {
       filter.setAttribute('aria-pressed', String(filter.classList.contains('active')));
     });
 
-    const hasSearch = hasQuery || activeStage !== 'All';
+    const hasSearch = hasQuery || activeStage !== 'All' || Boolean(activeTopic);
     results.innerHTML = ranked.map((entry) => resultTemplate(entry.article, entry.score)).join('');
     results.hidden = !hasSearch || ranked.length === 0;
     empty.hidden = !hasSearch || ranked.length > 0;
@@ -191,7 +238,6 @@
 
   const setActiveStage = (stage) => {
     activeStage = stage;
-    chips.forEach((item) => item.classList.toggle('active', item.dataset.stageFilter === stage));
   };
 
   const clearTopicFilters = () => {
@@ -200,23 +246,48 @@
 
   input.addEventListener('input', () => {
     clearTopicFilters();
+    activeTopic = '';
+    setActiveStage('All');
     render();
   });
 
   chips.forEach((chip) => {
     chip.addEventListener('click', () => {
-      if (input.value.trim()) return;
+      if (chip.dataset.stageFilter === 'All') {
+        input.value = '';
+        activeTopic = '';
+        setActiveStage('All');
+        clearTopicFilters();
+        render();
+        return;
+      }
+      input.value = '';
+      activeTopic = '';
       setActiveStage(chip.dataset.stageFilter);
       clearTopicFilters();
       render();
     });
   });
 
-  topicFilters.forEach((filter) => {
+  primaryTopicFilters.forEach((filter) => {
+    filter.addEventListener('click', () => {
+      const topic = filter.dataset.topicFilter;
+      const isActive = activeTopic === topic;
+      clearTopicFilters();
+      setActiveStage('All');
+      input.value = '';
+      activeTopic = isActive ? '' : topic;
+      render();
+      root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  secondaryTopicFilters.forEach((filter) => {
     filter.addEventListener('click', () => {
       const isActive = filter.classList.contains('active');
       clearTopicFilters();
       setActiveStage('All');
+      activeTopic = '';
       input.value = isActive ? '' : filter.dataset.topicFilter;
       filter.classList.toggle('active', !isActive);
       render();
@@ -229,6 +300,7 @@
       event.preventDefault();
       input.value = '';
       clearTopicFilters();
+      activeTopic = '';
       setActiveStage(link.dataset.roadmapStage);
       render();
       root.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -238,10 +310,12 @@
   clearButton?.addEventListener('click', () => {
     input.value = '';
     clearTopicFilters();
+    activeTopic = '';
     setActiveStage('All');
     render();
     input.focus();
   });
 
+  renderArticleLibraries();
   render();
 })();

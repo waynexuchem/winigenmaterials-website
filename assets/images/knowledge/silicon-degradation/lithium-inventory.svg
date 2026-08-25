@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+  <title id="title">Lithium retained at an endpoint can have different physical meanings</title>
+  <desc id="desc">A clean endpoint-accounting tree separates reversible return, retention in connected silicon with a continuum of recoverability, chemical immobilization as loss of lithium inventory, and lithium in an inaccessible silicon host that can couple negative-electrode active-material loss with effective lithium-inventory loss.</desc>
+  <defs>
+    <pattern id="sei" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#f1aa4b"/><path d="M-2 7L7-2M2 11L11 2" stroke="#d57d27" stroke-width="1.8"/></pattern>
+    <marker id="continuum" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#3eaa86"/></marker>
+  </defs>
+  <rect width="1200" height="740" rx="28" fill="#f7f9fc"/>
+  <text x="600" y="44" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="28" font-weight="800" fill="#14213d">Lithium retained at an endpoint can have different physical meanings</text>
+  <text x="600" y="72" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13.5" fill="#52627c">Accounting framework • endpoint- and protocol-dependent • not a chronological flow sequence</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <!-- root -->
+    <circle cx="600" cy="130" r="33" fill="#14213d"/>
+    <path d="M584 132C589 116 607 109 619 119M584 132L584 116M584 132L599 135" fill="none" stroke="#86d4f2" stroke-width="4" stroke-linecap="round"/>
+    <text x="650" y="123" font-size="19" font-weight="850" fill="#14213d">Finite cyclable lithium inventory</text>
+    <text x="650" y="146" font-size="12.5" fill="#52627c">supplied primarily by the positive electrode or deliberately added lithium</text>
+    <path d="M600 163V192M151 192H1050M151 192V216M445 192V216M750 192V216M1040 192V216" fill="none" stroke="#8fa1b7" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- vertical column dividers, no cards -->
+    <line x1="300" y1="220" x2="300" y2="590" stroke="#d7e0e9" stroke-width="2"/>
+    <line x1="610" y1="220" x2="610" y2="590" stroke="#d7e0e9" stroke-width="2"/>
+    <line x1="890" y1="220" x2="890" y2="590" stroke="#d7e0e9" stroke-width="2"/>
+
+    <!-- A reversible return -->
+    <circle cx="72" cy="241" r="15" fill="#2a66d9"/><text x="72" y="247" text-anchor="middle" font-size="16" font-weight="850" fill="#fff">A</text>
+    <text x="98" y="239" font-size="17" font-weight="850" fill="#14213d">Returned through circuit</text>
+    <text x="98" y="260" font-size="12.5" fill="#52627c">reversible at the selected endpoint</text>
+    <circle cx="151" cy="365" r="66" fill="none" stroke="#47a9e8" stroke-width="10"/>
+    <path d="M112 365C115 333 141 309 174 313C198 316 215 337 218 360" fill="none" stroke="#2a66d9" stroke-width="6"/>
+    <path d="M215 353L223 365 210 370" fill="#2a66d9"/>
+    <path d="M189 389C173 411 139 415 116 396" fill="none" stroke="#47a9e8" stroke-width="6"/>
+    <path d="M123 389L111 395 120 405" fill="#47a9e8"/>
+    <text x="151" y="466" text-anchor="middle" font-size="14.5" font-weight="800" fill="#14213d">Reversibly returned lithium</text>
+    <text x="151" y="488" text-anchor="middle" font-size="12.5" fill="#52627c">recovery may still be incomplete</text>
+    <text x="151" y="512" text-anchor="middle" font-size="11.5" fill="#176f9d">because endpoint and polarization matter</text>
+
+    <!-- B connected Si continuum -->
+    <circle cx="330" cy="241" r="15" fill="#319c78"/><text x="330" y="247" text-anchor="middle" font-size="16" font-weight="850" fill="#fff">B</text>
+    <text x="356" y="239" font-size="17" font-weight="850" fill="#14213d">Retained in connected Si</text>
+    <text x="356" y="260" font-size="12.5" fill="#52627c">host retains electronic and ionic access</text>
+    <circle cx="366" cy="326" r="11" fill="#48b993"/><path d="M361 326L365 330 372 321" fill="none" stroke="#fff" stroke-width="2.5"/>
+    <text x="390" y="324" font-size="14.5" font-weight="850" fill="#14213d">Kinetically recoverable</text>
+    <text x="390" y="348" font-size="12.5" fill="#52627c">rest • lower rate • longer hold</text>
+    <text x="390" y="369" font-size="12.5" fill="#52627c">modified voltage protocol</text>
+    <line x1="348" y1="387" x2="575" y2="387" stroke="#c8ddd5" stroke-width="2"/>
+    <circle cx="366" cy="426" r="11" fill="#80968e"/><path d="M360 426H372" stroke="#fff" stroke-width="2.5"/>
+    <text x="390" y="424" font-size="13.5" font-weight="850" fill="#14213d">Persistent in normal operation</text>
+    <text x="390" y="448" font-size="12.5" fill="#52627c">stress • phase state • hysteresis</text>
+    <text x="390" y="469" font-size="12.5" fill="#52627c">transport • interphase resistance</text>
+    <path d="M574 309V474" stroke="#3eaa86" stroke-width="3" marker-end="url(#continuum)"/>
+    <text x="568" y="392" text-anchor="middle" transform="rotate(-90 568 392)" font-size="11" font-weight="800" fill="#287d62">recoverability varies</text>
+    <text x="452" y="516" text-anchor="middle" font-size="12" font-weight="800" fill="#287d62">not automatically irreversible LLI</text>
+
+    <!-- C chemical immobilization -->
+    <circle cx="640" cy="241" r="15" fill="#d7862d"/><text x="640" y="247" text-anchor="middle" font-size="16" font-weight="850" fill="#fff">C</text>
+    <text x="666" y="239" font-size="17" font-weight="850" fill="#14213d">Chemically immobilized</text>
+    <text x="666" y="260" font-size="12.5" fill="#52627c">SEI and other inactive products</text>
+    <circle cx="750" cy="365" r="65" fill="#409bdf" stroke="#237fc0" stroke-width="3"/>
+    <circle cx="750" cy="365" r="88" fill="none" stroke="url(#sei)" stroke-width="23" stroke-dasharray="42 13"/>
+    <circle cx="720" cy="337" r="7" fill="#fff4dd"/><circle cx="779" cy="345" r="7" fill="#fff4dd"/><circle cx="735" cy="394" r="6" fill="#fff4dd"/><circle cx="785" cy="390" r="8" fill="#fff4dd"/>
+    <text x="750" y="489" text-anchor="middle" font-size="14.5" font-weight="800" fill="#14213d">Lithium incorporated into products</text>
+    <text x="750" y="513" text-anchor="middle" font-size="12.5" font-weight="800" fill="#b96922">direct contribution to LLI</text>
+
+    <!-- D inaccessible host -->
+    <circle cx="920" cy="241" r="15" fill="#ce5d68"/><text x="920" y="247" text-anchor="middle" font-size="16" font-weight="850" fill="#fff">D</text>
+    <text x="946" y="239" font-size="17" font-weight="850" fill="#14213d">Host becomes inaccessible</text>
+    <text x="946" y="260" font-size="12.5" fill="#52627c">isolated lithiated Si domain</text>
+    <circle cx="1040" cy="358" r="73" fill="#409bdf" stroke="#ef665f" stroke-width="6" stroke-dasharray="12 8"/>
+    <path d="M971 428C991 406 1007 400 1020 401" fill="none" stroke="#263c61" stroke-width="8" stroke-linecap="round"/><path d="M1060 401C1078 405 1094 416 1106 429" fill="none" stroke="#263c61" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="1040" cy="403" r="17" fill="#f7f9fc" stroke="#ef665f" stroke-width="3" stroke-dasharray="5 5"/>
+    <text x="1040" y="459" text-anchor="middle" font-size="13.5" font-weight="800" fill="#14213d">host and retained Li become<tspan x="1040" dy="17">inaccessible together</tspan></text>
+    <g><circle cx="1005" cy="518" r="38" fill="#ce5d68" opacity=".92"/><circle cx="1069" cy="518" r="38" fill="#e58b73" opacity=".92"/><text x="996" y="514" text-anchor="middle" font-size="11.5" font-weight="850" fill="#fff">negative-</text><text x="996" y="530" text-anchor="middle" font-size="11.5" font-weight="850" fill="#fff">electrode LAM</text><text x="1078" y="514" text-anchor="middle" font-size="11.5" font-weight="850" fill="#fff">effective</text><text x="1078" y="530" text-anchor="middle" font-size="11.5" font-weight="850" fill="#fff">LLI</text></g>
+    <text x="1040" y="570" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a23d47">diagnostic assignment can be coupled</text>
+
+    <!-- interpretation, no dark footer -->
+    <line x1="100" y1="612" x2="1100" y2="612" stroke="#ccd7e3" stroke-width="2"/>
+    <text x="600" y="642" text-anchor="middle" font-size="13.5" font-weight="750" fill="#40516f">Categories can overlap; different diagnostic frameworks may assign the same electrochemical loss differently.</text>
+    <text x="600" y="684" text-anchor="middle" font-size="11.5" font-weight="800" letter-spacing="1.2" fill="#687991">CLASSIFICATION DEPENDS ON</text>
+    <text x="600" y="708" text-anchor="middle" font-size="15" font-weight="750" fill="#14213d">reference state • host connectivity • rate / rest / voltage protocol • test endpoint</text>
+  </g>
+</svg>

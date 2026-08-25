@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Mechanism attribution requires converging, orthogonal evidence</title>
+  <desc id="desc">Four evidence streams converge on the diagnostic question of what caused inaccessible capacity. Electrochemical measurements indicate when charge becomes inaccessible, structural and mechanical methods show where pathways changed, chemical methods reveal what was consumed or formed, and controlled perturbations test causality. Matched states and preserved handling are prerequisites.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#687b93" flood-opacity=".13"/></filter>
+    <marker id="blueArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#2d73d5"/></marker>
+    <marker id="greenArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#36a681"/></marker>
+    <marker id="orangeArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#d88927"/></marker>
+    <marker id="purpleArrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#805db0"/></marker>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="#f6f9fd"/>
+  <g font-family="Manrope,Arial,sans-serif">
+    <text x="600" y="47" text-anchor="middle" font-size="29" font-weight="800" fill="#14213d">Mechanism attribution requires converging, orthogonal evidence</text>
+    <text x="600" y="76" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#52627c">Each evidence stream answers a different diagnostic question; none identifies the mechanism alone.</text>
+
+    <!-- four evidence domains -->
+    <g filter="url(#shadow)"><rect x="56" y="116" width="390" height="205" rx="20" fill="#eef7ff" stroke="#a9d3f2" stroke-width="2"/><rect x="754" y="116" width="390" height="205" rx="20" fill="#edfaf5" stroke="#a9ddca" stroke-width="2"/><rect x="56" y="365" width="390" height="205" rx="20" fill="#fff5e7" stroke="#edc989" stroke-width="2"/><rect x="754" y="365" width="390" height="205" rx="20" fill="#f6effd" stroke="#ccb3e5" stroke-width="2"/></g>
+
+    <!-- electrochemical -->
+    <circle cx="91" cy="151" r="18" fill="#2d73d5"/><path d="M80 154L87 147 94 155 103 142" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="120" y="153" font-size="20" font-weight="850" fill="#14213d">Electrochemical</text>
+    <text x="82" y="183" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#2566b8">WHEN DID CHARGE BECOME INACCESSIBLE?</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="13.5" fill="#40516f"><circle cx="87" cy="215" r="4" fill="#2d73d5"/><text x="101" y="220">high-precision CE and balance shift</text><circle cx="87" cy="246" r="4" fill="#2d73d5"/><text x="101" y="251">dQ/dV and electrode-resolved potential</text><circle cx="87" cy="277" r="4" fill="#2d73d5"/><text x="101" y="282">EIS / DRT and recovery tests</text></g>
+
+    <!-- structural/mechanical -->
+    <circle cx="789" cy="151" r="18" fill="#36a681"/><path d="M779 158V145L789 139 799 145V158M784 158V149H794V158" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+    <text x="818" y="153" font-size="20" font-weight="850" fill="#14213d">Structural and mechanical</text>
+    <text x="780" y="183" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#287d62">WHERE DID PATHWAYS OR GEOMETRY CHANGE?</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="13.5" fill="#40516f"><circle cx="785" cy="215" r="4" fill="#36a681"/><text x="799" y="220">cross-sections, tomography and adhesion</text><circle cx="785" cy="246" r="4" fill="#36a681"/><text x="799" y="251">thickness, force and separator morphology</text><circle cx="785" cy="277" r="4" fill="#36a681"/><text x="799" y="282">network continuity and preserved wetting</text></g>
+
+    <!-- chemical -->
+    <circle cx="91" cy="400" r="18" fill="#d88927"/><path d="M84 389V399L77 411C76 414 79 417 83 417H99C103 417 106 414 105 411L98 399V389M83 405H99" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>
+    <text x="120" y="402" font-size="20" font-weight="850" fill="#14213d">Chemical</text>
+    <text x="82" y="432" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#b66c12">WHAT WAS CONSUMED, FORMED OR DEPOSITED?</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="13.5" fill="#40516f"><circle cx="87" cy="464" r="4" fill="#d88927"/><text x="101" y="469">XPS, TOF-SIMS, NMR and XAS</text><circle cx="87" cy="495" r="4" fill="#d88927"/><text x="101" y="500">electrolyte, salt and additive depletion</text><circle cx="87" cy="526" r="4" fill="#d88927"/><text x="101" y="531">gas, lithium retention and contamination</text></g>
+
+    <!-- perturbations -->
+    <circle cx="789" cy="400" r="18" fill="#805db0"/><path d="M779 400H799M789 390V410M782 393L796 407M796 393L782 407" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="818" y="402" font-size="20" font-weight="850" fill="#14213d">Controlled perturbations</text>
+    <text x="780" y="426" font-family="Inter,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#6f4c9c">DOES THE PROPOSED CAUSE<tspan x="780" dy="17">RESPOND AS EXPECTED?</tspan></text>
+    <g font-family="Inter,Arial,sans-serif" font-size="13.5" fill="#40516f"><circle cx="785" cy="472" r="4" fill="#805db0"/><text x="799" y="477">rate, temperature and state of charge</text><circle cx="785" cy="503" r="4" fill="#805db0"/><text x="799" y="508">pressure, rest and voltage window</text><circle cx="785" cy="534" r="4" fill="#805db0"/><text x="799" y="539">electrolyte amount and protocol variation</text></g>
+
+    <!-- convergence arrows -->
+    <path d="M446 236C486 245 505 270 519 292" fill="none" stroke="#2d73d5" stroke-width="5" marker-end="url(#blueArrow)"/>
+    <path d="M754 236C714 245 695 270 681 292" fill="none" stroke="#36a681" stroke-width="5" marker-end="url(#greenArrow)"/>
+    <path d="M446 452C486 444 505 420 519 398" fill="none" stroke="#d88927" stroke-width="5" marker-end="url(#orangeArrow)"/>
+    <path d="M754 452C714 444 695 420 681 398" fill="none" stroke="#805db0" stroke-width="5" marker-end="url(#purpleArrow)"/>
+
+    <!-- central diagnostic question -->
+    <circle cx="600" cy="345" r="116" fill="#14213d" stroke="#7dc9ef" stroke-width="4"/>
+    <text x="600" y="300" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing="1.2" fill="#84d2f4">DIAGNOSTIC QUESTION</text>
+    <text x="600" y="329" text-anchor="middle" font-size="21" font-weight="850" fill="#fff">What caused</text>
+    <text x="600" y="354" text-anchor="middle" font-size="21" font-weight="850" fill="#fff">inaccessible</text>
+    <text x="600" y="379" text-anchor="middle" font-size="21" font-weight="850" fill="#fff">capacity?</text>
+    <line x1="550" y1="394" x2="650" y2="394" stroke="#8294ad" stroke-width="1.5"/>
+    <text x="600" y="414" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#d9e7f7">attribute only where</text>
+    <text x="600" y="430" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" fill="#84d2f4">independent evidence converges</text>
+
+    <!-- matched-state prerequisite -->
+    <rect x="155" y="607" width="890" height="58" rx="17" fill="#fff" stroke="#ccd8e4" stroke-width="2"/>
+    <text x="600" y="630" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="850" letter-spacing="1.2" fill="#687991">PREREQUISITE: MATCHED AND PRESERVED STATES</text>
+    <text x="600" y="651" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="750" fill="#40516f">state of charge • temperature • relaxation history • cycle protocol • teardown and transfer</text>
+  </g>
+</svg>

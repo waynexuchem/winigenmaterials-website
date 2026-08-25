@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="940" viewBox="0 0 1400 940" role="img" aria-labelledby="title desc">
+  <title id="title">Five coupled requirements for a durable silicon interphase</title>
+  <desc id="desc">A central silicon particle and heterogeneous interphase connect to electronic blocking, lithium-ion transport, chemical persistence, strain accommodation, and controlled interfacial coupling. Three lower trade-off panels show why stiffness, deformability, or adhesion alone is insufficient.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#edf3fb"/></linearGradient>
+    <radialGradient id="si" cx="38%" cy="30%" r="75%"><stop stop-color="#6487ad"/><stop offset="1" stop-color="#334f70"/></radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#17335f" flood-opacity=".11"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#7d94b5"/></marker>
+    <style>
+      .t{font-family:Inter,Arial,sans-serif;fill:#14213d}.title{font-size:34px;font-weight:800}.sub{font-size:17px;fill:#52637f}.kicker{font-size:13px;font-weight:800;letter-spacing:1.35px;fill:#2a66d9}.card{fill:#fff;stroke:#bdcce0;stroke-width:2}.ct{font-size:18px;font-weight:800}.cb{font-size:14px;fill:#52637f}.link{fill:none;stroke:#8ca2c1;stroke-width:2.5;marker-end:url(#arrow)}.trade{font-size:17px;font-weight:800}.tradebody{font-size:13px;fill:#52637f}.foot{font-size:18px;font-weight:800;fill:#fff}.foot2{font-size:14px;fill:#dbe8fb}.tiny{font-size:12px;fill:#52637f}
+    </style>
+  </defs>
+  <rect width="1400" height="940" rx="30" fill="url(#bg)"/>
+  <text class="t title" x="52" y="58">A durable silicon interphase must satisfy five coupled requirements</text>
+  <text class="t sub" x="52" y="89">Optimizing one property in isolation can move failure into transport, chemistry, fracture, or the interface.</text>
+  <text class="t kicker" x="52" y="132">FUNCTIONS THAT MUST COEXIST DURING SILICON MOTION</text>
+
+  <!-- connectors behind nodes -->
+  <path class="link" d="M375 212C465 212 485 258 535 286"/>
+  <path class="link" d="M1025 212C935 212 915 258 865 286"/>
+  <path class="link" d="M375 413C465 413 485 376 535 354"/>
+  <path class="link" d="M1025 413C935 413 915 376 865 354"/>
+  <path class="link" d="M700 536V454"/>
+
+  <g filter="url(#shadow)">
+    <rect class="card" x="52" y="164" width="323" height="102" rx="18"/>
+    <circle cx="82" cy="196" r="11" fill="#2a66d9"/><text class="t ct" x="105" y="202">Electronic blocking</text>
+    <text class="t cb" x="82" y="230">suppress electron leakage and</text><text class="t cb" x="82" y="251">continuing electrolyte reduction</text>
+
+    <rect class="card" x="1025" y="164" width="323" height="102" rx="18"/>
+    <circle cx="1055" cy="196" r="11" fill="#7557d8"/><text class="t ct" x="1078" y="202">Li⁺ transport</text>
+    <text class="t cb" x="1055" y="230">preserve charge transfer without</text><text class="t cb" x="1055" y="251">polarization or current focusing</text>
+
+    <rect class="card" x="52" y="365" width="323" height="102" rx="18"/>
+    <circle cx="82" cy="397" r="11" fill="#159b81"/><text class="t ct" x="105" y="403">Chemical persistence</text>
+    <text class="t cb" x="82" y="431">resist dissolution, conversion,</text><text class="t cb" x="82" y="452">hydrolysis, and cross-talk species</text>
+
+    <rect class="card" x="1025" y="365" width="323" height="102" rx="18"/>
+    <circle cx="1055" cy="397" r="11" fill="#df8b24"/><text class="t ct" x="1078" y="403">Strain accommodation</text>
+    <text class="t cb" x="1055" y="431">deform, yield, or redirect stress</text><text class="t cb" x="1055" y="452">without opening reactive pathways</text>
+
+    <rect class="card" x="510" y="500" width="380" height="86" rx="18"/>
+    <circle cx="540" cy="531" r="11" fill="#cf4f64"/><text class="t ct" x="563" y="537">Controlled interfacial coupling</text>
+    <text class="t cb" x="540" y="565">retain contact while avoiding delamination or excessive strain transfer</text>
+  </g>
+
+  <!-- central particle and heterogeneous SEI -->
+  <g filter="url(#shadow)">
+    <circle cx="700" cy="330" r="133" fill="#fff" stroke="#c3d0e2" stroke-width="2"/>
+    <circle cx="700" cy="330" r="86" fill="url(#si)"/>
+    <path d="M626 284A86 86 0 0 1 758 266" fill="none" stroke="#62a8f3" stroke-width="18" stroke-linecap="round"/>
+    <path d="M779 294A86 86 0 0 1 770 380" fill="none" stroke="#7557d8" stroke-width="18" stroke-linecap="round"/>
+    <path d="M747 399A86 86 0 0 1 650 398" fill="none" stroke="#159b81" stroke-width="18" stroke-linecap="round"/>
+    <path d="M624 376A86 86 0 0 1 613 320" fill="none" stroke="#df8b24" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="646" cy="267" r="8" fill="#fff"/><circle cx="776" cy="345" r="7" fill="#fff"/><circle cx="689" cy="412" r="8" fill="#fff"/>
+    <path d="M671 287l22 31-14 22 26 26" fill="none" stroke="#dce8f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="t ct" x="700" y="325" text-anchor="middle" style="fill:#fff">CYCLING</text><text x="700" y="350" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">SILICON</text>
+  </g>
+  <path d="M600 330H558" stroke="#2a66d9" stroke-width="3" marker-end="url(#arrow)"/><path d="M800 330H842" stroke="#2a66d9" stroke-width="3" marker-end="url(#arrow)"/>
+  <text class="t tiny" x="700" y="480" text-anchor="middle">heterogeneous, evolving, solvent-swollen interphase</text>
+
+  <text class="t kicker" x="52" y="636">WHY ONE-PROPERTY OPTIMIZATION FAILS</text>
+  <g filter="url(#shadow)">
+    <rect x="52" y="660" width="404" height="132" rx="18" fill="#fff" stroke="#d2a357" stroke-width="2"/>
+    <text class="t trade" x="78" y="697">High stiffness alone</text>
+    <text class="t tradebody" x="78" y="726">may resist deformation yet concentrate stress</text>
+    <text class="t tradebody" x="78" y="748">at defects or interfaces; modulus ≠ toughness</text>
+    <path d="M343 690l26 24-18 14 25 26" fill="none" stroke="#df8b24" stroke-width="7" stroke-linecap="round"/>
+
+    <rect x="498" y="660" width="404" height="132" rx="18" fill="#fff" stroke="#7d68d8" stroke-width="2"/>
+    <text class="t trade" x="524" y="697">High deformability alone</text>
+    <text class="t tradebody" x="524" y="726">may follow silicon motion yet remain permeable,</text>
+    <text class="t tradebody" x="524" y="748">electronically leaky, soluble, or ionically resistive</text>
+    <path d="M790 698q25-20 50 0t25 0" fill="none" stroke="#7557d8" stroke-width="7" stroke-linecap="round"/>
+
+    <rect x="944" y="660" width="404" height="132" rx="18" fill="#fff" stroke="#cf6372" stroke-width="2"/>
+    <text class="t trade" x="970" y="697">Maximum adhesion alone</text>
+    <text class="t tradebody" x="970" y="726">may preserve contact yet over-transfer strain;</text>
+    <text class="t tradebody" x="970" y="748">too little coupling produces ordinary delamination</text>
+    <path d="M1294 695v61M1309 695v61" stroke="#cf4f64" stroke-width="7"/><path d="M1294 717h15M1294 738h15" stroke="#14213d" stroke-width="3"/>
+  </g>
+
+  <rect x="52" y="827" width="1296" height="88" rx="20" fill="#14213d"/>
+  <text class="t foot" x="700" y="861" text-anchor="middle">Synthesis: distribute functions spatially—but treat the topology as a hypothesis.</text>
+  <text class="t foot2" x="700" y="889" text-anchor="middle">No universal graded or composite architecture is established across Si–C, SiOₓ, nanostructured Si, and micrometer Si.</text>
+</svg>
