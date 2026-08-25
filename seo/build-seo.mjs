@@ -12,7 +12,7 @@ const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/produ
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const shippingSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/shipping-countries.source.json'), 'utf8'));
 const commerceAssetVersion = shortCommerceRelease(createCommerceRelease(ecommerceSource, shippingSource));
-const generatedAssetVersion = `${commerceAssetVersion}-storefront-feedback-v1-product-detail-ux-v2`;
+const generatedAssetVersion = `${commerceAssetVersion}-storefront-feedback-v1-product-detail-ux-v3`;
 const intents = JSON.parse(await readFile(resolve(siteRoot, 'seo/search-intents.json'), 'utf8'));
 const pageMetadata = JSON.parse(await readFile(resolve(siteRoot, 'seo/page-metadata.json'), 'utf8'));
 const execFile = promisify(execFileCallback);
@@ -209,7 +209,8 @@ function renderProductDetailExperience(html, product) {
     .replace(/<section class="section(?: product-detail-overview)?"(?: id="overview")?>\s*<div class="container product-detail-layout(?: product-detail-layout--commerce)?">/i, '<section class="section product-detail-overview" id="overview"><div class="container product-detail-layout product-detail-layout--commerce">')
     .replace(/<article class="detail-panel(?: product-detail-commerce-content)?">/i, '<article class="detail-panel product-detail-commerce-content">')
     .replace(/(<article class="detail-panel product-detail-commerce-content">\s*)<p class="detail-kicker">Product Details<\/p>/i, '$1<p class="detail-kicker">About this product</p>')
-    .replace(/(<article class="detail-panel product-detail-commerce-content">)\s*(<p class="detail-kicker">[\s\S]*?<\/p>\s*<h2>[\s\S]*?<\/h2>\s*<p>[\s\S]*?<\/p>)/i, `$1<div class="product-detail-information">$2${summary}</div>`)
+    .replace(/(<article class="detail-panel product-detail-commerce-content">)\s*(<p class="detail-kicker">[\s\S]*?<\/p>\s*<h2>[\s\S]*?<\/h2>\s*<p>[\s\S]*?<\/p>)/i, '$1<div class="product-detail-information">$2</div>')
+    .replace(/(<div class="product-detail-information">\s*<p class="detail-kicker">[\s\S]*?<\/p>\s*<h2>[\s\S]*?<\/h2>\s*<p>[\s\S]*?<\/p>)\s*<\/div>/i, `$1${summary}</div>`)
     .replace(/<section class="section"><div class="container product-technical-grid">/i, '<section class="section" id="applications"><div class="container product-technical-grid">');
   if (family && !next.includes('data-product-support-routing="true"')) {
     const faqStart = next.search(/<section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Product FAQ/i);
