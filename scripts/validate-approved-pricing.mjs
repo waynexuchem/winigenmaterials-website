@@ -50,6 +50,58 @@ const expectedGovernance = {
   workbookScope: 'The approved pricing workbook governs only products and package schedules explicitly represented in it.',
   productsAbsentFromWorkbook: 'Products absent from the workbook retain their separately approved commercial schedules; workbook absence does not revoke or replace those schedules.'
 };
+
+const expectedPricingRelease = {
+  version: '2026-08-25',
+  sourceWorkbook: 'Winigen_Pricing_Strategy_v5_Final_Target_Margins_2026-08-25.xlsx',
+  sourceWorkbookSha256: '0dbd4f8d5fc5b2940b77d99da0a65134b9edd91ba05e209c9da607d12f554245',
+  sourceSheet: 'Package Economics',
+  modeledProductCount: 51,
+  modeledVariantCount: 294
+};
+for (const [field, expected] of Object.entries(expectedPricingRelease)) {
+  if (pricing[field] !== expected) errors.push(`approved pricing release: ${field} differs from the approved snapshot.`);
+}
+
+const expectedSpecialCaseSkuBases = [
+  'WM-SSE-LATP-030', 'WM-SSE-LATP-040', 'WM-SSE-LATP-065', 'WM-SSE-LLZTO',
+  'WM-SSE-GSL01', 'WM-SSE-GSL02', 'WM-SSE-GSL03', 'WM-SSE-GSL04',
+  'WM-SSE-GSH01', 'WM-SSE-GSH02', 'WM-SSE-GSH03', 'WM-SSE-GSH04',
+  'WM-SSE-GSB01', 'WM-SSE-GSB02', 'WM-SSE-GSB03', 'WM-SSE-GSB04',
+  'WM-FRM-LIPF6-ECEMC37-VC1'
+];
+if (JSON.stringify(pricing.excludedSpecialCaseSkuBases) !== JSON.stringify(expectedSpecialCaseSkuBases)) {
+  errors.push('approved pricing release: the 17-product special-case exclusion list differs.');
+}
+
+const scheduleSlugs = pricing.schedules.map(schedule => schedule.slug);
+const scheduleSkuBases = pricing.schedules.map(schedule => schedule.skuBase);
+if (new Set(scheduleSlugs).size !== scheduleSlugs.length) errors.push('approved pricing release: duplicate schedule slug.');
+if (new Set(scheduleSkuBases).size !== scheduleSkuBases.length) errors.push('approved pricing release: duplicate schedule SKU base.');
+if (pricing.schedules.length !== pricing.modeledProductCount) errors.push('approved pricing release: product count differs from the snapshot.');
+const modeledVariantCount = pricing.schedules.reduce((total, schedule) => total + schedule.packages.length, 0);
+if (modeledVariantCount !== pricing.modeledVariantCount) errors.push('approved pricing release: variant count differs from the snapshot.');
+if (!Array.isArray(pricing.unmappedRows) || pricing.unmappedRows.length !== 0) errors.push('approved pricing release: unmapped workbook rows remain.');
+for (const skuBase of expectedSpecialCaseSkuBases) {
+  if (scheduleSkuBases.includes(skuBase)) errors.push(`approved pricing release: excluded special case ${skuBase} is modeled.`);
+}
+
+for (const schedule of pricing.schedules) {
+  const packageIds = schedule.packages.map(packageOption => packageOption.id);
+  if (new Set(packageIds).size !== packageIds.length) errors.push(`${schedule.slug}: duplicate package ID in approved pricing.`);
+  for (let index = 0; index < schedule.packages.length; index += 1) {
+    const packageOption = schedule.packages[index];
+    if (!Number.isInteger(packageOption.unitAmount) || packageOption.unitAmount <= 0) errors.push(`${schedule.slug} ${packageOption.id}: invalid public price.`);
+    if (index > 0 && packageOption.unitAmount <= schedule.packages[index - 1].unitAmount) {
+      errors.push(`${schedule.slug}: approved price ladder is not strictly increasing.`);
+    }
+  }
+}
+
+const liPf6 = pricing.schedules.find(schedule => schedule.skuBase === 'WM-LS-LIPF6');
+if (JSON.stringify(liPf6?.packages.map(packageOption => packageOption.unitAmount)) !== JSON.stringify([36995, 40995, 51995, 72995, 108995, 152995])) {
+  errors.push('approved pricing release: LiPF6 ladder differs from the explicit release sentinel.');
+}
 for (const [field, expected] of Object.entries(expectedGovernance)) {
   if (pricing.governance?.[field] !== expected) errors.push(`approved pricing governance: ${field} is missing or changed.`);
 }
@@ -132,7 +184,8 @@ for (const schedule of pricing.schedules) {
   ]) {
     const active = variants.filter(variant => variant.approvalStatus === 'ACTIVE');
     if (active.length !== schedule.packages.length) errors.push(`${layer}: ${schedule.slug} package count differs from the workbook.`);
-    schedule.packages.forEach((expected, index) => compareVariant(layer, schedule.slug, expected, active[index]));
+    const activeById = new Map(active.map(variant => [variant.id, variant]));
+    schedule.packages.forEach(expected => compareVariant(layer, schedule.slug, expected, activeById.get(expected.id)));
   }
 
   const pagePath = resolve(siteRoot, semanticProduct.url.replace(/^\//, ''));

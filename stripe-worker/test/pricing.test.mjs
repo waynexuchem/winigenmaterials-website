@@ -26,18 +26,18 @@ import { sendEmail } from '../src/email/provider.js';
 import { resolveShippingDestination } from '../src/shipping.js';
 
 const representativePrices = {
-  'WM-LS-LIPF6-200G': 38995,
-  'WM-LS-LIBOB-200G': 47995,
-  'WM-LS-LIFSI-500G': 56995,
-  'WM-SOL-DMC-500G': 40995,
-  'WM-SOL-DFEA-500G': 54995,
-  'WM-SOL-TFEC-200G': 44995,
-  'WM-ADD-VC-200G': 37995,
-  'WM-ADD-FEC-500G': 41995,
-  'WM-ADD-MMDS-200G': 44995,
-  'WM-NGS-NAPF6-200G': 38995,
-  'WM-NGS-NAODFB-200G': 55995,
-  'WM-NGS-KPF6-1KG': 119995,
+  'WM-LS-LIPF6-200G': 36995,
+  'WM-LS-LIBOB-200G': 36995,
+  'WM-LS-LIFSI-500G': 41995,
+  'WM-SOL-DMC-500G': 39995,
+  'WM-SOL-DFEA-500G': 42995,
+  'WM-SOL-TFEC-200G': 41995,
+  'WM-ADD-VC-200G': 36995,
+  'WM-ADD-FEC-500G': 40995,
+  'WM-ADD-MMDS-200G': 36995,
+  'WM-NGS-NAPF6-200G': 36995,
+  'WM-NGS-NAODFB-200G': 37995,
+  'WM-NGS-KPF6-1KG': 51995,
   'WM-SSE-LATP-030-25G': 16995,
   'WM-SSE-LLZTO-25G': 17995,
   'WM-SSE-GSL01-10G': 19995,
@@ -46,6 +46,10 @@ const representativePrices = {
   'WM-SSE-GSB03-100G': 69995,
   'WM-FRM-LIPF6-ECEMC37-VC1-500G': 48995
 };
+
+const approvedPricing = JSON.parse(
+  await readFile(new URL('../../ecommerce/approved-pricing.source.json', import.meta.url), 'utf8')
+);
 
 test('representative launch prices resolve from the Worker catalog', () => {
   for (const [key, expected] of Object.entries(representativePrices)) {
@@ -91,90 +95,36 @@ test('browser cart presents the canonical aggregate order-review state without b
   assert.match(source, /destinationCountry/);
 });
 
-test('DME 500 g retains its current Worker-owned price', () => {
-  assert.equal(VARIANTS_BY_KEY.get('WM-SOL-DME-500G')?.unitAmount, 42995);
+test('DME 500 g uses its approved Worker-owned price', () => {
+  assert.equal(VARIANTS_BY_KEY.get('WM-SOL-DME-500G')?.unitAmount, 39995);
 });
 
-test('direct-order lithium salts use the complete owner-approved package ladders', () => {
-  const packageIds = ['200G', '500G', '1KG', '2KG', '5KG', '10KG'];
-  const schedules = {
-    'WM-LS-LIPF6': [38995, 56995, 79995, 91995, 99995, 135995],
-    'WM-LS-LIFSI': [38995, 56995, 79995, 91995, 105995, 143995],
-    'WM-LS-LIBF4': [39995, 59995, 84995, 99995, 139995, 189995],
-    'WM-LS-LITFSI': [51995, 77995, 109995, 129995, 154995, 209995],
-    'WM-LS-LIBOB': [47995, 74995, 104995, 124995, 144995, 194995],
-    'WM-LS-LIODFB': [47995, 77995, 109995, 129995, 149995, 199995],
-    'WM-LS-LIPO2F2': [49995, 79995, 112995, 134995, 159995, 199995],
-    'WM-ADD-LINO3': [39995, 54995, 74995, 99995, 149995, 239995],
-    'WM-ADD-LIDODFP': [44995, 62995, 84995, 109995, 169995, 269995]
-  };
+test('all approved workbook schedules resolve exactly from the Worker catalog', () => {
+  assert.equal(approvedPricing.modeledProductCount, 51);
+  assert.equal(approvedPricing.modeledVariantCount, 294);
+  assert.equal(approvedPricing.schedules.length, approvedPricing.modeledProductCount);
 
-  for (const [skuBase, amounts] of Object.entries(schedules)) {
-    const variants = packageIds.map(id => VARIANTS_BY_KEY.get(`${skuBase}-${id}`));
-    assert.deepEqual(variants.map(variant => variant?.unitAmount), amounts, `${skuBase} prices should match`);
-    assert.ok(variants.every(variant => variant?.product.defaultPackageId === '200G'));
-    assert.equal(VARIANTS_BY_KEY.has(`${skuBase}-20KG`), false);
-  }
-});
-
-test('selected battery solvents use the complete owner-approved package ladders', () => {
-  const schedules = {
-    'WM-SOL-DOL': {
-      packageIds: ['500G', '1KG', '2KG', '5KG', '10KG'],
-      amounts: [54995, 74995, 94995, 149995, 199995],
-      defaultPackageId: '500G'
-    },
-    'WM-SOL-DFEA': {
-      packageIds: ['200G', '500G', '1KG', '2KG', '5KG', '10KG'],
-      amounts: [34995, 54995, 74995, 99995, 194995, 394995],
-      defaultPackageId: '200G'
-    },
-    'WM-SOL-TTE': {
-      packageIds: ['200G', '500G', '1KG', '2KG', '5KG', '10KG'],
-      amounts: [44995, 69995, 99995, 129995, 159995, 219995],
-      defaultPackageId: '200G'
-    },
-    'WM-SOL-FEMC': {
-      packageIds: ['200G', '500G', '1KG', '2KG', '5KG', '10KG'],
-      amounts: [37995, 59995, 84995, 114995, 229995, 459995],
-      defaultPackageId: '200G'
-    },
-    'WM-SOL-TFEC': {
-      packageIds: ['200G', '500G', '1KG', '2KG', '5KG', '10KG'],
-      amounts: [44995, 69995, 99995, 139995, 269995, 539995],
-      defaultPackageId: '200G'
+  let variantCount = 0;
+  for (const schedule of approvedPricing.schedules) {
+    assert.ok(schedule.packages.length > 0, `${schedule.skuBase} must have packages`);
+    for (const packageOption of schedule.packages) {
+      variantCount += 1;
+      const variant = VARIANTS_BY_KEY.get(`${schedule.skuBase}-${packageOption.id}`);
+      assert.ok(variant, `${schedule.skuBase}-${packageOption.id} should exist`);
+      assert.equal(variant.unitAmount, packageOption.unitAmount);
+      assert.equal(variant.product.defaultPackageId, schedule.defaultPackageId);
     }
-  };
-
-  for (const [skuBase, schedule] of Object.entries(schedules)) {
-    const variants = schedule.packageIds.map(id => VARIANTS_BY_KEY.get(`${skuBase}-${id}`));
-    assert.deepEqual(
-      variants.map(variant => variant?.unitAmount),
-      schedule.amounts,
-      `${skuBase} prices should match`
-    );
-    assert.ok(variants.every(variant => variant?.product.defaultPackageId === schedule.defaultPackageId));
   }
-
-  assert.equal(VARIANTS_BY_KEY.has('WM-SOL-DOL-200G'), false);
+  assert.equal(variantCount, approvedPricing.modeledVariantCount);
 });
 
-test('selected next-generation salts use the complete owner-approved package ladders', () => {
+test('LiPF6 retains the explicit approved release ladder', () => {
   const packageIds = ['200G', '500G', '1KG', '2KG', '5KG', '10KG'];
-  const schedules = {
-    'WM-NGS-NAODFB': [55995, 79995, 109995, 129995, 179995, 209995],
-    'WM-NGS-NAPO2F2': [59995, 84995, 119995, 139995, 199995, 229995]
-  };
-
-  for (const [skuBase, amounts] of Object.entries(schedules)) {
-    const variants = packageIds.map(id => VARIANTS_BY_KEY.get(`${skuBase}-${id}`));
-    assert.deepEqual(
-      variants.map(variant => variant?.unitAmount),
-      amounts,
-      `${skuBase} prices should match`
-    );
-    assert.ok(variants.every(variant => variant?.product.defaultPackageId === '200G'));
-  }
+  const approvedAmounts = [36995, 40995, 51995, 72995, 108995, 152995];
+  assert.deepEqual(
+    packageIds.map(id => VARIANTS_BY_KEY.get(`WM-LS-LIPF6-${id}`)?.unitAmount),
+    approvedAmounts
+  );
 });
 
 test('standard LiPF6 EC EMC VC formulation uses the complete owner-approved package schedule', () => {
@@ -250,8 +200,8 @@ test('sulfide SSE grades use six approved material-price tiers and require one c
 
 test('client price fields are ignored and a nonexistent package is rejected', () => {
   const resolved = resolveCart([{ variantKey: 'WM-LS-LIFSI-500G', quantity: 2, price: 1, unitAmount: 1 }]);
-  assert.equal(resolved.merchandiseSubtotal, 113990);
-  assert.equal(resolved.items[0].variant.unitAmount, 56995);
+  assert.equal(resolved.merchandiseSubtotal, 83990);
+  assert.equal(resolved.items[0].variant.unitAmount, 41995);
   assert.throws(() => resolveCart([{ variantKey: 'WM-LS-LIFSI-10G', quantity: 1 }]), /not available for online ordering/);
 });
 
@@ -487,7 +437,7 @@ test('Stripe Checkout receives server-owned inline price_data', async () => {
       { country: 'US', amount: 8900, currency: 'usd' },
       { SITE_ORIGIN: 'https://www.winigenmaterials.com', STRIPE_SECRET_KEY: 'test-key-not-sent' }
     );
-    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '56995');
+    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '41995');
     assert.equal(submitted.get('line_items[0][price_data][currency]'), 'usd');
     assert.equal(submitted.get('line_items[0][quantity]'), '2');
     assert.equal(submitted.get('line_items[0][price]'), null);

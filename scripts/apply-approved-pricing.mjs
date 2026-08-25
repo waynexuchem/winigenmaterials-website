@@ -35,7 +35,7 @@ const updatedEcommerce = ecommerce.products
         shippingWeightGrams: packageOption.netWeightGrams,
         shippingWeightBasis: 'NET_CONTENT_PROXY',
         approvalStatus: 'ACTIVE',
-        packageBasis: 'APPROVED_20260820_FINAL_WORKBOOK',
+        packageBasis: `APPROVED_${pricing.version.replaceAll('-', '')}_WORKBOOK`,
         packageBasisConfirmationStatus: 'ACTIVE',
         pricingStatus: 'APPROVED_RETAIL'
       })),
@@ -63,10 +63,10 @@ const updatedSemantic = semantic.products
     };
   });
 
-ecommerce.catalogVersion = '2026-08-20-final-pricing-v3-identities';
+ecommerce.catalogVersion = `${pricing.version}-approved-pricing`;
 ecommerce.products = updatedEcommerce;
 semantic.version = ecommerce.catalogVersion;
-semantic.generatedFrom = 'Canonical Winigen product catalog with approved public pricing from Winigen_Pricing_Balanced_2026-08-20.xlsx';
+semantic.generatedFrom = `Canonical Winigen product catalog with approved public pricing from ${pricing.sourceWorkbook}`;
 semantic.products = updatedSemantic;
 
 await writeFile(ecommercePath, `${JSON.stringify(ecommerce, null, 2)}\n`);

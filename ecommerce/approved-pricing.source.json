@@ -1,14 +1,36 @@
 {
-  "version": "2026-08-20",
-  "sourceWorkbook": "Winigen_Pricing_Balanced_2026-08-20.xlsx",
-  "sourceWorkbookSha256": "51c489c5cdef989c7eeefeb4274fcf10a7a098589db4ceea015c7f4824bd2c8e",
-  "sourceSheet": "综合定价建议",
+  "version": "2026-08-25",
+  "sourceWorkbook": "Winigen_Pricing_Strategy_v5_Final_Target_Margins_2026-08-25.xlsx",
+  "sourceWorkbookSha256": "0dbd4f8d5fc5b2940b77d99da0a65134b9edd91ba05e209c9da607d12f554245",
+  "sourceSheet": "Package Economics",
   "currency": "usd",
-  "policy": "Only approved public package prices are retained; internal costs and competitor analysis are excluded.",
+  "policy": "Only approved public package prices are retained; internal costs, margins, freight assumptions, and competitor analysis are excluded.",
+  "modeledProductCount": 51,
+  "modeledVariantCount": 294,
+  "unmappedRows": [],
   "governance": {
     "workbookScope": "The approved pricing workbook governs only products and package schedules explicitly represented in it.",
     "productsAbsentFromWorkbook": "Products absent from the workbook retain their separately approved commercial schedules; workbook absence does not revoke or replace those schedules."
   },
+  "excludedSpecialCaseSkuBases": [
+    "WM-SSE-LATP-030",
+    "WM-SSE-LATP-040",
+    "WM-SSE-LATP-065",
+    "WM-SSE-LLZTO",
+    "WM-SSE-GSL01",
+    "WM-SSE-GSL02",
+    "WM-SSE-GSL03",
+    "WM-SSE-GSL04",
+    "WM-SSE-GSH01",
+    "WM-SSE-GSH02",
+    "WM-SSE-GSH03",
+    "WM-SSE-GSH04",
+    "WM-SSE-GSB01",
+    "WM-SSE-GSB02",
+    "WM-SSE-GSB03",
+    "WM-SSE-GSB04",
+    "WM-FRM-LIPF6-ECEMC37-VC1"
+  ],
   "schedules": [
     {
       "workbookRow": 2,
@@ -33,7 +55,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 56995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -41,7 +63,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 65995
+          "unitAmount": 66995
         },
         {
           "id": "5KG",
@@ -49,7 +71,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 88995
+          "unitAmount": 92995
         },
         {
           "id": "10KG",
@@ -62,7 +84,7 @@
       ]
     },
     {
-      "workbookRow": 3,
+      "workbookRow": 7,
       "slug": "dimethyl-carbonate-dmc",
       "skuBase": "WM-SOL-DMC",
       "name": "Dimethyl carbonate (DMC)",
@@ -76,7 +98,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 40995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -84,7 +106,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 57995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -108,12 +130,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 124995
+          "unitAmount": 120995
         }
       ]
     },
     {
-      "workbookRow": 4,
+      "workbookRow": 12,
       "slug": "ethylene-carbonate-ec",
       "skuBase": "WM-SOL-EC",
       "name": "Ethylene carbonate (EC)",
@@ -127,7 +149,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 40995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -135,7 +157,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 57995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -159,12 +181,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 124995
+          "unitAmount": 120995
         }
       ]
     },
     {
-      "workbookRow": 5,
+      "workbookRow": 17,
       "slug": "ethyl-methyl-carbonate-emc",
       "skuBase": "WM-SOL-EMC",
       "name": "Ethyl methyl carbonate (EMC)",
@@ -178,7 +200,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 40995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -186,7 +208,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 57995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -202,7 +224,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 92995
+          "unitAmount": 93995
         },
         {
           "id": "10KG",
@@ -210,12 +232,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 124995
+          "unitAmount": 120995
         }
       ]
     },
     {
-      "workbookRow": 6,
+      "workbookRow": 22,
       "slug": "diethyl-carbonate-dec",
       "skuBase": "WM-SOL-DEC",
       "name": "Diethyl carbonate (DEC)",
@@ -229,7 +251,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 40995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -237,7 +259,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 57995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -253,7 +275,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 92995
+          "unitAmount": 93995
         },
         {
           "id": "10KG",
@@ -261,12 +283,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 124995
+          "unitAmount": 121995
         }
       ]
     },
     {
-      "workbookRow": 7,
+      "workbookRow": 27,
       "slug": "1-2-dimethoxyethane-dme",
       "skuBase": "WM-SOL-DME",
       "name": "1,2-Dimethoxyethane (DME)",
@@ -280,7 +302,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 42995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -288,7 +310,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 59995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -296,7 +318,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 68995
+          "unitAmount": 66995
         },
         {
           "id": "5KG",
@@ -304,7 +326,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 95995
+          "unitAmount": 94995
         },
         {
           "id": "10KG",
@@ -312,12 +334,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 128995
+          "unitAmount": 122995
         }
       ]
     },
     {
-      "workbookRow": 8,
+      "workbookRow": 32,
       "slug": "ethyl-propionate-ep",
       "skuBase": "WM-SOL-EP",
       "name": "Ethyl propionate (EP)",
@@ -331,7 +353,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 42995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -339,7 +361,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 59995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -347,7 +369,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 68995
+          "unitAmount": 66995
         },
         {
           "id": "5KG",
@@ -355,7 +377,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 95995
+          "unitAmount": 94995
         },
         {
           "id": "10KG",
@@ -363,12 +385,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 128995
+          "unitAmount": 123995
         }
       ]
     },
     {
-      "workbookRow": 9,
+      "workbookRow": 37,
       "slug": "propyl-propionate-pp",
       "skuBase": "WM-SOL-PP",
       "name": "Propyl propionate (PP)",
@@ -382,7 +404,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 42995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -390,7 +412,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 59995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -398,7 +420,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 68995
+          "unitAmount": 67995
         },
         {
           "id": "5KG",
@@ -406,7 +428,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 95995
+          "unitAmount": 94995
         },
         {
           "id": "10KG",
@@ -414,12 +436,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 128995
+          "unitAmount": 123995
         }
       ]
     },
     {
-      "workbookRow": 10,
+      "workbookRow": 42,
       "slug": "ethyl-acetate-ea",
       "skuBase": "WM-SOL-EA",
       "name": "Ethyl acetate (EA)",
@@ -433,7 +455,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 42995
+          "unitAmount": 39995
         },
         {
           "id": "1KG",
@@ -441,7 +463,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 59995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -449,7 +471,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 68995
+          "unitAmount": 67995
         },
         {
           "id": "5KG",
@@ -465,12 +487,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 128995
+          "unitAmount": 125995
         }
       ]
     },
     {
-      "workbookRow": 11,
+      "workbookRow": 47,
       "slug": "triphenyl-phosphite-tppi",
       "skuBase": "WM-ADD-TPPI",
       "name": "Triphenyl phosphite (TPPI)",
@@ -492,7 +514,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 58995
+          "unitAmount": 40995
         },
         {
           "id": "1KG",
@@ -500,7 +522,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 82995
+          "unitAmount": 48995
         },
         {
           "id": "2KG",
@@ -508,7 +530,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 94995
+          "unitAmount": 67995
         },
         {
           "id": "5KG",
@@ -516,7 +538,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 141995
+          "unitAmount": 95995
         },
         {
           "id": "10KG",
@@ -524,12 +546,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 191995
+          "unitAmount": 125995
         }
       ]
     },
     {
-      "workbookRow": 12,
+      "workbookRow": 53,
       "slug": "biphenyl-bp",
       "skuBase": "WM-ADD-BP",
       "name": "Biphenyl (BP)",
@@ -551,7 +573,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 58995
+          "unitAmount": 40995
         },
         {
           "id": "1KG",
@@ -559,7 +581,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 82995
+          "unitAmount": 49995
         },
         {
           "id": "2KG",
@@ -567,7 +589,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 94995
+          "unitAmount": 67995
         },
         {
           "id": "5KG",
@@ -575,7 +597,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 141995
+          "unitAmount": 96995
         },
         {
           "id": "10KG",
@@ -583,12 +605,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 191995
+          "unitAmount": 126995
         }
       ]
     },
     {
-      "workbookRow": 13,
+      "workbookRow": 59,
       "slug": "propyl-acetate-pa",
       "skuBase": "WM-SOL-PA",
       "name": "Propyl acetate (PA)",
@@ -602,7 +624,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 42995
+          "unitAmount": 40995
         },
         {
           "id": "1KG",
@@ -610,7 +632,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 59995
+          "unitAmount": 49995
         },
         {
           "id": "2KG",
@@ -626,7 +648,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 95995
+          "unitAmount": 97995
         },
         {
           "id": "10KG",
@@ -634,19 +656,16 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 128995
+          "unitAmount": 129995
         }
       ]
     },
     {
-      "workbookRow": 14,
+      "workbookRow": 64,
       "slug": "ethylene-sulfite-es",
       "skuBase": "WM-ADD-ES",
       "name": "Ethylene sulfite (ES)",
       "abbreviation": "ES",
-      "alternateAbbreviations": [
-        "ESI"
-      ],
       "cas": "3741-38-6",
       "defaultPackageId": "200G",
       "packages": [
@@ -656,7 +675,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 39995
+          "unitAmount": 36995
         },
         {
           "id": "500G",
@@ -664,7 +683,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 63995
+          "unitAmount": 40995
         },
         {
           "id": "1KG",
@@ -672,7 +691,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 95995
+          "unitAmount": 49995
         },
         {
           "id": "2KG",
@@ -680,7 +699,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 109995
+          "unitAmount": 68995
         },
         {
           "id": "5KG",
@@ -688,7 +707,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 142995
+          "unitAmount": 98995
         },
         {
           "id": "10KG",
@@ -696,12 +715,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 192995
+          "unitAmount": 130995
         }
       ]
     },
     {
-      "workbookRow": 15,
+      "workbookRow": 70,
       "slug": "hexamethyldisilazane-hmds",
       "skuBase": "WM-ADD-HMDS",
       "name": "Hexamethyldisilazane (HMDS)",
@@ -715,7 +734,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 37995
+          "unitAmount": 36995
         },
         {
           "id": "500G",
@@ -723,7 +742,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 60995
+          "unitAmount": 40995
         },
         {
           "id": "1KG",
@@ -731,7 +750,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 84995
+          "unitAmount": 49995
         },
         {
           "id": "2KG",
@@ -739,7 +758,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 97995
+          "unitAmount": 68995
         },
         {
           "id": "5KG",
@@ -747,7 +766,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 142995
+          "unitAmount": 98995
         },
         {
           "id": "10KG",
@@ -755,12 +774,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 192995
+          "unitAmount": 130995
         }
       ]
     },
     {
-      "workbookRow": 16,
+      "workbookRow": 76,
       "slug": "adiponitrile-adn",
       "skuBase": "WM-ADD-ADN",
       "name": "Adiponitrile (ADN)",
@@ -774,7 +793,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 37995
+          "unitAmount": 36995
         },
         {
           "id": "500G",
@@ -782,7 +801,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 54995
+          "unitAmount": 40995
         },
         {
           "id": "1KG",
@@ -790,7 +809,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 76995
+          "unitAmount": 49995
         },
         {
           "id": "2KG",
@@ -798,7 +817,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 88995
+          "unitAmount": 69995
         },
         {
           "id": "5KG",
@@ -806,7 +825,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 120995
+          "unitAmount": 101995
         },
         {
           "id": "10KG",
@@ -814,12 +833,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 163995
+          "unitAmount": 136995
         }
       ]
     },
     {
-      "workbookRow": 17,
+      "workbookRow": 82,
       "slug": "fluorobenzene-fb",
       "skuBase": "WM-ADD-FB",
       "name": "Fluorobenzene (FB)",
@@ -841,7 +860,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 53995
+          "unitAmount": 40995
         },
         {
           "id": "1KG",
@@ -849,7 +868,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 75995
+          "unitAmount": 50995
         },
         {
           "id": "2KG",
@@ -857,7 +876,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 86995
+          "unitAmount": 70995
         },
         {
           "id": "5KG",
@@ -878,7 +897,7 @@
       ]
     },
     {
-      "workbookRow": 18,
+      "workbookRow": 88,
       "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
       "skuBase": "WM-ADD-FEC",
       "name": "4-Fluoro-1,3-dioxolan-2-one (FEC)",
@@ -886,6 +905,419 @@
       "cas": "114435-02-8",
       "defaultPackageId": "500G",
       "packages": [
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 40995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 50995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 70995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 102995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 139995
+        }
+      ]
+    },
+    {
+      "workbookRow": 93,
+      "slug": "succinonitrile-sn",
+      "skuBase": "WM-ADD-SN",
+      "name": "Succinonitrile (SN)",
+      "abbreviation": "SN",
+      "cas": "110-61-2",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 40995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 50995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 70995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 104995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 143995
+        }
+      ]
+    },
+    {
+      "workbookRow": 99,
+      "slug": "sodium-hexafluorophosphate-napf-6",
+      "skuBase": "WM-NGS-NAPF6",
+      "name": "Sodium hexafluorophosphate (NaPF6)",
+      "abbreviation": "NaPF6",
+      "cas": "21324-39-0",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 40995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 50995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 70995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 104995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 142995
+        }
+      ]
+    },
+    {
+      "workbookRow": 105,
+      "slug": "lithium-tetrafluoroborate-libf-4",
+      "skuBase": "WM-LS-LIBF4",
+      "name": "Lithium tetrafluoroborate (LiBF4)",
+      "abbreviation": "LiBF4",
+      "cas": "14283-07-9",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 42995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 54995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 80995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 128995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 191995
+        }
+      ]
+    },
+    {
+      "workbookRow": 111,
+      "slug": "lithium-hexafluorophosphate-lipf6",
+      "skuBase": "WM-LS-LIPF6",
+      "name": "Lithium hexafluorophosphate (LiPF6)",
+      "abbreviation": "LiPF6",
+      "cas": "21324-40-3",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 40995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 51995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 72995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 108995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 152995
+        }
+      ]
+    },
+    {
+      "workbookRow": 117,
+      "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
+      "skuBase": "WM-ADD-DTD",
+      "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
+      "abbreviation": "DTD",
+      "cas": "1072-53-3",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 42995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 54995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 80995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 128995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 191995
+        }
+      ]
+    },
+    {
+      "workbookRow": 123,
+      "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
+      "skuBase": "WM-NGS-NAFSI",
+      "name": "Sodium bis(fluorosulfonyl)imide (NaFSI)",
+      "abbreviation": "NaFSI",
+      "cas": "100669-96-3",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 40995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 51995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 73995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 110995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 155995
+        }
+      ]
+    },
+    {
+      "workbookRow": 129,
+      "slug": "cyclohexylbenzene-chb",
+      "skuBase": "WM-ADD-CHB",
+      "name": "Cyclohexylbenzene (CHB)",
+      "abbreviation": "CHB",
+      "cas": "827-52-1",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
         {
           "id": "500G",
           "label": "500 g",
@@ -900,7 +1332,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 59995
+          "unitAmount": 51995
         },
         {
           "id": "2KG",
@@ -908,7 +1340,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 68995
+          "unitAmount": 73995
         },
         {
           "id": "5KG",
@@ -916,7 +1348,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 95995
+          "unitAmount": 111995
         },
         {
           "id": "10KG",
@@ -924,17 +1356,776 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 128995
+          "unitAmount": 156995
         }
       ]
     },
     {
-      "workbookRow": 19,
-      "slug": "succinonitrile-sn",
-      "skuBase": "WM-ADD-SN",
-      "name": "Succinonitrile (SN)",
-      "abbreviation": "SN",
-      "cas": "110-61-2",
+      "workbookRow": 135,
+      "slug": "potassium-hexafluorophosphate-kpf-6",
+      "skuBase": "WM-NGS-KPF6",
+      "name": "Potassium hexafluorophosphate (KPF6)",
+      "abbreviation": "KPF6",
+      "cas": "17084-13-8",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 51995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 73995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 111995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 158995
+        }
+      ]
+    },
+    {
+      "workbookRow": 141,
+      "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
+      "skuBase": "WM-ADD-MMDS",
+      "name": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
+      "abbreviation": "MMDS",
+      "cas": "99591-74-9",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 51995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 73995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 111995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 158995
+        }
+      ]
+    },
+    {
+      "workbookRow": 147,
+      "slug": "tris-trimethylsilyl-phosphate-tmsp",
+      "skuBase": "WM-ADD-TMSP",
+      "name": "Tris(trimethylsilyl)phosphate (TMSP)",
+      "abbreviation": "TMSP",
+      "cas": "10497-05-9",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 51995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 73995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 111995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 158995
+        }
+      ]
+    },
+    {
+      "workbookRow": 153,
+      "slug": "vinylene-carbonate-vc",
+      "skuBase": "WM-ADD-VC",
+      "name": "Vinylene carbonate (VC)",
+      "abbreviation": "VC",
+      "cas": "872-36-6",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 53995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 77995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 122995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 179995
+        }
+      ]
+    },
+    {
+      "workbookRow": 159,
+      "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
+      "skuBase": "WM-LS-LIFSI",
+      "name": "Lithium bis(fluorosulfonyl)imide (LiFSI)",
+      "abbreviation": "LiFSI",
+      "cas": "171611-11-3",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 52995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 75995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 115995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 165995
+        }
+      ]
+    },
+    {
+      "workbookRow": 165,
+      "slug": "1-3-propanesultone-ps",
+      "skuBase": "WM-ADD-PS",
+      "name": "1,3-Propanesultone (PS)",
+      "abbreviation": "PS",
+      "cas": "1120-71-4",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 52995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 75995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 116995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 167995
+        }
+      ]
+    },
+    {
+      "workbookRow": 171,
+      "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
+      "skuBase": "WM-ADD-DENE",
+      "name": "1,2-Bis(2-cyanoethoxy)ethane (DENE)",
+      "abbreviation": "DENE",
+      "cas": "3386-87-6",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 52995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 75995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 117995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 168995
+        }
+      ]
+    },
+    {
+      "workbookRow": 177,
+      "slug": "lithium-difluoro-oxalate-borate-liodfb",
+      "skuBase": "WM-LS-LIODFB",
+      "name": "Lithium difluoro oxalate borate (LiODFB)",
+      "abbreviation": "LIODFB",
+      "cas": "409071-16-5",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 51995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 74995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 113995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 161995
+        }
+      ]
+    },
+    {
+      "workbookRow": 183,
+      "slug": "tris-trimethylsilyl-borate-tmsb",
+      "skuBase": "WM-ADD-TMSB",
+      "name": "Tris(trimethylsilyl)borate (TMSB)",
+      "abbreviation": "TMSB",
+      "cas": "4325-85-3",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 41995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 53995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 77995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 121995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 176995
+        }
+      ]
+    },
+    {
+      "workbookRow": 189,
+      "slug": "lithium-bis-oxalato-borate-libob",
+      "skuBase": "WM-LS-LIBOB",
+      "name": "Lithium bis(oxalato)borate (LiBOB)",
+      "abbreviation": "LiBOB",
+      "cas": "244761-29-3",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 42995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 53995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 79995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 126995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 187995
+        }
+      ]
+    },
+    {
+      "workbookRow": 195,
+      "slug": "1-4-butane-sultone-bs",
+      "skuBase": "WM-ADD-BS",
+      "name": "1,4-Butane sultone (BS)",
+      "abbreviation": "BS",
+      "cas": "1633-83-6",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 42995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 54995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 79995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 127995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 188995
+        }
+      ]
+    },
+    {
+      "workbookRow": 201,
+      "slug": "lithium-difluorophosphate-lipo-2-f-2",
+      "skuBase": "WM-LS-LIPO2F2",
+      "name": "Lithium difluorophosphate (LiPO2F2)",
+      "abbreviation": "LiPO2F2",
+      "cas": "24389-25-1",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 36995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 42995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 54995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 80995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 130995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 194995
+        }
+      ]
+    },
+    {
+      "workbookRow": 207,
+      "slug": "1-3-dioxolane-dol",
+      "skuBase": "WM-SOL-DOL",
+      "name": "1,3-Dioxolane (DOL)",
+      "abbreviation": "DOL",
+      "cas": "646-06-0",
+      "defaultPackageId": "500G",
+      "packages": [
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 39995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 48995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 67995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 94995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 124995
+        }
+      ]
+    },
+    {
+      "workbookRow": 212,
+      "slug": "1-3-6-hexanetricarbonitrile-htcn",
+      "skuBase": "WM-ADD-HTCN",
+      "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
+      "abbreviation": "HTCN",
+      "cas": "1772-25-4",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -951,7 +2142,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 54995
+          "unitAmount": 43995
         },
         {
           "id": "1KG",
@@ -959,7 +2150,66 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 76995
+          "unitAmount": 57995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 86995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 145995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 226995
+        }
+      ]
+    },
+    {
+      "workbookRow": 218,
+      "slug": "vinyl-ethylene-carbonate-vec",
+      "skuBase": "WM-ADD-VEC",
+      "name": "Vinyl ethylene carbonate (VEC)",
+      "abbreviation": "VEC",
+      "cas": "4427-96-7",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 37995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 43995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 53995
         },
         {
           "id": "2KG",
@@ -975,7 +2225,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 106995
+          "unitAmount": 151995
         },
         {
           "id": "10KG",
@@ -983,17 +2233,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 144995
+          "unitAmount": 237995
         }
       ]
     },
     {
-      "workbookRow": 20,
-      "slug": "sodium-hexafluorophosphate-napf-6",
-      "skuBase": "WM-NGS-NAPF6",
-      "name": "Sodium hexafluorophosphate (NaPF6)",
-      "abbreviation": "NaPF6",
-      "cas": "21324-39-0",
+      "workbookRow": 224,
+      "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
+      "skuBase": "WM-SOL-TTE",
+      "name": "Tetrafluoroethyl tetrafluoropropyl ether (TTE)",
+      "abbreviation": "TTE",
+      "cas": "16627-68-2",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -1002,7 +2252,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 38995
+          "unitAmount": 37995
         },
         {
           "id": "500G",
@@ -1010,7 +2260,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 56995
+          "unitAmount": 43995
         },
         {
           "id": "1KG",
@@ -1018,7 +2268,66 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 79995
+          "unitAmount": 58995
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 90995
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 154995
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 244995
+        }
+      ]
+    },
+    {
+      "workbookRow": 230,
+      "slug": "sodium-difluoro-oxalate-borate-naodfb",
+      "skuBase": "WM-NGS-NAODFB",
+      "name": "Sodium difluoro(oxalato)borate (NaDFOB)",
+      "abbreviation": "NaODFB",
+      "cas": "1016545-84-8",
+      "defaultPackageId": "200G",
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 37995
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 44995
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 58995
         },
         {
           "id": "2KG",
@@ -1034,7 +2343,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 105995
+          "unitAmount": 158995
         },
         {
           "id": "10KG",
@@ -1042,17 +2351,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 143995
+          "unitAmount": 250995
         }
       ]
     },
     {
-      "workbookRow": 21,
-      "slug": "lithium-tetrafluoroborate-libf-4",
-      "skuBase": "WM-LS-LIBF4",
-      "name": "Lithium tetrafluoroborate (LiBF4)",
-      "abbreviation": "LiBF4",
-      "cas": "14283-07-9",
+      "workbookRow": 236,
+      "slug": "sodium-difluorophosphate-napo2f2",
+      "skuBase": "WM-NGS-NAPO2F2",
+      "name": "Sodium difluorophosphate (NaPO2F2)",
+      "abbreviation": "NaPO2F2",
+      "cas": "15587-24-3",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -1069,7 +2378,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 59995
+          "unitAmount": 47995
         },
         {
           "id": "1KG",
@@ -1077,7 +2386,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 84995
+          "unitAmount": 64995
         },
         {
           "id": "2KG",
@@ -1085,7 +2394,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 99995
+          "unitAmount": 100995
         },
         {
           "id": "5KG",
@@ -1093,7 +2402,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 139995
+          "unitAmount": 178995
         },
         {
           "id": "10KG",
@@ -1101,17 +2410,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 189995
+          "unitAmount": 287995
         }
       ]
     },
     {
-      "workbookRow": 22,
-      "slug": "lithium-hexafluorophosphate-lipf6",
-      "skuBase": "WM-LS-LIPF6",
-      "name": "Lithium hexafluorophosphate (LiPF6)",
-      "abbreviation": "LiPF6",
-      "cas": "21324-40-3",
+      "workbookRow": 242,
+      "slug": "prop-1-ene-1-3-sultone-pst",
+      "skuBase": "WM-ADD-PST",
+      "name": "Prop-1-ene-1,3-sultone (PST)",
+      "abbreviation": "PST",
+      "cas": "21806-61-1",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -1120,7 +2429,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 38995
+          "unitAmount": 39995
         },
         {
           "id": "500G",
@@ -1128,7 +2437,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 56995
+          "unitAmount": 47995
         },
         {
           "id": "1KG",
@@ -1136,7 +2445,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 79995
+          "unitAmount": 64995
         },
         {
           "id": "2KG",
@@ -1144,7 +2453,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 91995
+          "unitAmount": 101995
         },
         {
           "id": "5KG",
@@ -1152,7 +2461,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 99995
+          "unitAmount": 179995
         },
         {
           "id": "10KG",
@@ -1160,135 +2469,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 135995
+          "unitAmount": 289995
         }
       ]
     },
     {
-      "workbookRow": 23,
-      "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
-      "skuBase": "WM-ADD-DTD",
-      "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
-      "abbreviation": "DTD",
-      "cas": "1072-53-3",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 37995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 55995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 77995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 89995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 99995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 135995
-        }
-      ]
-    },
-    {
-      "workbookRow": 24,
-      "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
-      "skuBase": "WM-NGS-NAFSI",
-      "name": "Sodium bis(fluorosulfonyl)imide (NaFSI)",
-      "abbreviation": "NaFSI",
-      "cas": "100669-96-3",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 38995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 56995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 79995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 91995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 105995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 143995
-        }
-      ]
-    },
-    {
-      "workbookRow": 25,
-      "slug": "cyclohexylbenzene-chb",
-      "skuBase": "WM-ADD-CHB",
-      "name": "Cyclohexylbenzene (CHB)",
-      "abbreviation": "CHB",
-      "cas": "827-52-1",
+      "workbookRow": 248,
+      "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
+      "skuBase": "WM-SOL-FEMC",
+      "name": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC)",
+      "abbreviation": "FEMC",
+      "cas": "156783-95-8",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -1305,7 +2496,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 64995
+          "unitAmount": 47995
         },
         {
           "id": "1KG",
@@ -1313,7 +2504,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 90995
+          "unitAmount": 65995
         },
         {
           "id": "2KG",
@@ -1329,7 +2520,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 148995
+          "unitAmount": 186995
         },
         {
           "id": "10KG",
@@ -1337,17 +2528,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 201995
+          "unitAmount": 305995
         }
       ]
     },
     {
-      "workbookRow": 26,
-      "slug": "potassium-hexafluorophosphate-kpf-6",
-      "skuBase": "WM-NGS-KPF6",
-      "name": "Potassium hexafluorophosphate (KPF6)",
-      "abbreviation": "KPF6",
-      "cas": "17084-13-8",
+      "workbookRow": 254,
+      "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
+      "skuBase": "WM-LS-LITFSI",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide (LiTFSI)",
+      "abbreviation": "LiTFSI",
+      "cas": "90076-65-6",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -1356,7 +2547,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 49995
+          "unitAmount": 40995
         },
         {
           "id": "500G",
@@ -1364,7 +2555,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 79995
+          "unitAmount": 48995
         },
         {
           "id": "1KG",
@@ -1372,487 +2563,15 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 119995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 137995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 149995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 202995
-        }
-      ]
-    },
-    {
-      "workbookRow": 27,
-      "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
-      "skuBase": "WM-ADD-MMDS",
-      "name": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
-      "abbreviation": "MMDS",
-      "cas": "99591-74-9",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 44995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
           "unitAmount": 67995
         },
         {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 94995
-        },
-        {
           "id": "2KG",
           "label": "2 kg",
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 108995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 149995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 202995
-        }
-      ]
-    },
-    {
-      "workbookRow": 28,
-      "slug": "tris-trimethylsilyl-phosphate-tmsp",
-      "skuBase": "WM-ADD-TMSP",
-      "name": "Tris-(trimethylsilyl)-phosphate (TMSP)",
-      "abbreviation": "TMSP",
-      "cas": "10497-05-9",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 57995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 90995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 126995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 145995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 149995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 202995
-        }
-      ]
-    },
-    {
-      "workbookRow": 29,
-      "slug": "vinylene-carbonate-vc",
-      "skuBase": "WM-ADD-VC",
-      "name": "Vinylene carbonate (VC)",
-      "abbreviation": "VC",
-      "cas": "872-36-6",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 37995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 55995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 77995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 89995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 99995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 135995
-        }
-      ]
-    },
-    {
-      "workbookRow": 30,
-      "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
-      "skuBase": "WM-LS-LIFSI",
-      "name": "Lithium bis(fluorosulfonyl)imide (LiFSI)",
-      "abbreviation": "LiFSI",
-      "cas": "171611-11-3",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 38995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 56995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 79995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 91995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 105995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 143995
-        }
-      ]
-    },
-    {
-      "workbookRow": 31,
-      "slug": "1-3-propanesultone-ps",
-      "skuBase": "WM-ADD-PS",
-      "name": "1,3-Propanesultone (PS)",
-      "abbreviation": "PS",
-      "cas": "1120-71-4",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 45995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 67995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 94995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 108995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 141995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 191995
-        }
-      ]
-    },
-    {
-      "workbookRow": 32,
-      "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
-      "skuBase": "WM-ADD-DENE",
-      "name": "1,2-Bis(2-cyanoethoxy)ethane (DENE)",
-      "abbreviation": "DENE",
-      "cas": "3386-87-6",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 44995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 65995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 91995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 105995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 134995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 181995
-        }
-      ]
-    },
-    {
-      "workbookRow": 33,
-      "slug": "lithium-difluoro-oxalate-borate-liodfb",
-      "skuBase": "WM-LS-LIODFB",
-      "name": "Lithium difluoro oxalate borate (LiODFB)",
-      "abbreviation": "LIODFB",
-      "cas": "409071-16-5",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 47995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 77995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 109995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 129995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 149995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 199995
-        }
-      ]
-    },
-    {
-      "workbookRow": 34,
-      "slug": "tris-trimethylsilyl-borate-tmsb",
-      "skuBase": "WM-ADD-TMSB",
-      "name": "Tris(trimethylsilyl)borate (TMSB)",
-      "abbreviation": "TMSB",
-      "cas": "4325-85-3",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 65995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 105995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 152995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 175995
+          "unitAmount": 107995
         },
         {
           "id": "5KG",
@@ -1868,17 +2587,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 209995
+          "unitAmount": 323995
         }
       ]
     },
     {
-      "workbookRow": 35,
-      "slug": "lithium-bis-oxalato-borate-libob",
-      "skuBase": "WM-LS-LIBOB",
-      "name": "Lithium bis(oxalato)borate (LiBOB)",
-      "abbreviation": "LiBOB",
-      "cas": "244761-29-3",
+      "workbookRow": 260,
+      "slug": "triallyl-phosphate-tap",
+      "skuBase": "WM-ADD-TAP",
+      "name": "Triallyl phosphate (TAP)",
+      "abbreviation": "TAP",
+      "cas": "1623-19-4",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -1887,7 +2606,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 47995
+          "unitAmount": 40995
         },
         {
           "id": "500G",
@@ -1895,7 +2614,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 74995
+          "unitAmount": 50995
         },
         {
           "id": "1KG",
@@ -1903,7 +2622,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 104995
+          "unitAmount": 71995
         },
         {
           "id": "2KG",
@@ -1911,7 +2630,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 124995
+          "unitAmount": 118995
         },
         {
           "id": "5KG",
@@ -1919,7 +2638,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 144995
+          "unitAmount": 223995
         },
         {
           "id": "10KG",
@@ -1927,17 +2646,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 194995
+          "unitAmount": 378995
         }
       ]
     },
     {
-      "workbookRow": 36,
-      "slug": "1-4-butane-sultone-bs",
-      "skuBase": "WM-ADD-BS",
-      "name": "1,4-Butane sultone (BS)",
-      "abbreviation": "BS",
-      "cas": "1633-83-6",
+      "workbookRow": 266,
+      "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
+      "skuBase": "WM-SOL-TFEC",
+      "name": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC)",
+      "abbreviation": "TFEC",
+      "cas": "1513-87-7  ",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -1946,7 +2665,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 45995
+          "unitAmount": 41995
         },
         {
           "id": "500G",
@@ -1954,7 +2673,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 68995
+          "unitAmount": 51995
         },
         {
           "id": "1KG",
@@ -1962,7 +2681,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 96995
+          "unitAmount": 75995
         },
         {
           "id": "2KG",
@@ -1970,7 +2689,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 111995
+          "unitAmount": 127995
         },
         {
           "id": "5KG",
@@ -1978,7 +2697,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 155995
+          "unitAmount": 248995
         },
         {
           "id": "10KG",
@@ -1986,186 +2705,17 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 210995
+          "unitAmount": 427995
         }
       ]
     },
     {
-      "workbookRow": 37,
-      "slug": "lithium-difluorophosphate-lipo-2-f-2",
-      "skuBase": "WM-LS-LIPO2F2",
-      "name": "Lithium difluorophosphate (LiPO2F2)",
-      "abbreviation": "LIPO2F2",
-      "cas": "24389-25-1",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 49995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 79995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 112995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 134995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 159995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 199995
-        }
-      ]
-    },
-    {
-      "workbookRow": 38,
-      "slug": "1-3-dioxolane-dol",
-      "skuBase": "WM-SOL-DOL",
-      "name": "1,3-Dioxolane (DOL)",
-      "abbreviation": "DOL",
-      "cas": "646-06-0",
-      "defaultPackageId": "500G",
-      "packages": [
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 54995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 74995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 94995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 149995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 199995
-        }
-      ]
-    },
-    {
-      "workbookRow": 39,
-      "slug": "1-3-6-hexanetricarbonitrile-htcn",
-      "skuBase": "WM-ADD-HTCN",
-      "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
-      "abbreviation": "HTCN",
-      "cas": "1772-25-4",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 52995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 78995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 112995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 131995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 161995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 218995
-        }
-      ]
-    },
-    {
-      "workbookRow": 40,
-      "slug": "vinyl-ethylene-carbonate-vec",
-      "skuBase": "WM-ADD-VEC",
-      "name": "Vinyl ethylene carbonate (VEC)",
-      "abbreviation": "VEC",
-      "cas": "4427-96-7",
+      "workbookRow": 272,
+      "slug": "lithium-nitrate-lino3",
+      "skuBase": "WM-ADD-LINO3",
+      "name": "Lithium nitrate (LiNO3)",
+      "abbreviation": "LiNO3",
+      "cas": "7790-69-4",
       "defaultPackageId": "200G",
       "packages": [
         {
@@ -2182,372 +2732,15 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 65995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 93995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 109995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 104995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 157995
-        }
-      ]
-    },
-    {
-      "workbookRow": 41,
-      "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
-      "skuBase": "WM-SOL-TTE",
-      "name": "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether (TTE)",
-      "abbreviation": "TTE",
-      "cas": "16627-68-2",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 44995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 69995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 99995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 129995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 159995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 219995
-        }
-      ]
-    },
-    {
-      "workbookRow": 42,
-      "slug": "sodium-difluoro-oxalate-borate-naodfb",
-      "skuBase": "WM-NGS-NAODFB",
-      "name": "Sodium difluoro(oxalato)borate (NaDFOB)",
-      "abbreviation": "NaDFOB",
-      "alternateAbbreviations": [
-        "NaODFB"
-      ],
-      "cas": "1016545-84-8",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
           "unitAmount": 55995
         },
         {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 79995
-        },
-        {
           "id": "1KG",
           "label": "1 kg",
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 109995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 129995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 179995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 209995
-        }
-      ]
-    },
-    {
-      "workbookRow": 43,
-      "slug": "sodium-difluorophosphate-napo2f2",
-      "skuBase": "WM-NGS-NAPO2F2",
-      "name": "Sodium difluorophosphate (NaPO2F2)",
-      "abbreviation": "NaPO2F2",
-      "cas": "15587-24-3",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 59995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 84995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 119995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 139995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 199995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 229995
-        }
-      ]
-    },
-    {
-      "workbookRow": 44,
-      "slug": "prop-1-ene-1-3-sultone-pst",
-      "skuBase": "WM-ADD-PST",
-      "name": "Prop-1-ene-1,3-sultone (PST)",
-      "abbreviation": "PST",
-      "cas": "21806-61-1",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 48995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 72995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 103995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 121995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 148995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 201995
-        }
-      ]
-    },
-    {
-      "workbookRow": 45,
-      "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
-      "skuBase": "WM-LS-LITFSI",
-      "name": "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI)",
-      "abbreviation": "LiTFSI",
-      "cas": "90076-65-6",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 51995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 77995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 109995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 129995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 154995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 209995
-        }
-      ]
-    },
-    {
-      "workbookRow": 46,
-      "slug": "triallyl-phosphate-tap",
-      "skuBase": "WM-ADD-TAP",
-      "name": "Triallyl phosphate (TAP)",
-      "abbreviation": "TAP",
-      "cas": "1623-19-4",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 60995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 90995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 129995
+          "unitAmount": 85995
         },
         {
           "id": "2KG",
@@ -2563,7 +2756,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 274995
+          "unitAmount": 310995
         },
         {
           "id": "10KG",
@@ -2571,79 +2764,16 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 510995
+          "unitAmount": 551995
         }
       ]
     },
     {
-      "workbookRow": 47,
-      "slug": "lithium-nitrate-lino3",
-      "skuBase": "WM-ADD-LINO3",
-      "name": "Lithium nitrate (LiNO3)",
-      "abbreviation": "LiNO3",
-      "cas": "7790-69-4",
-      "defaultPackageId": "200G",
-      "packages": [
-        {
-          "id": "200G",
-          "label": "200 g",
-          "unit": "g",
-          "quantity": 200,
-          "netWeightGrams": 200,
-          "unitAmount": 39995
-        },
-        {
-          "id": "500G",
-          "label": "500 g",
-          "unit": "g",
-          "quantity": 500,
-          "netWeightGrams": 500,
-          "unitAmount": 54995
-        },
-        {
-          "id": "1KG",
-          "label": "1 kg",
-          "unit": "kg",
-          "quantity": 1,
-          "netWeightGrams": 1000,
-          "unitAmount": 74995
-        },
-        {
-          "id": "2KG",
-          "label": "2 kg",
-          "unit": "kg",
-          "quantity": 2,
-          "netWeightGrams": 2000,
-          "unitAmount": 99995
-        },
-        {
-          "id": "5KG",
-          "label": "5 kg",
-          "unit": "kg",
-          "quantity": 5,
-          "netWeightGrams": 5000,
-          "unitAmount": 149995
-        },
-        {
-          "id": "10KG",
-          "label": "10 kg",
-          "unit": "kg",
-          "quantity": 10,
-          "netWeightGrams": 10000,
-          "unitAmount": 239995
-        }
-      ]
-    },
-    {
-      "workbookRow": 48,
+      "workbookRow": 278,
       "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
       "skuBase": "WM-ADD-LIDODFP",
       "name": "Lithium difluorobis(oxalato)phosphate (LiDFBOP)",
-      "abbreviation": "LiDFBOP",
-      "alternateAbbreviations": [
-        "LiDODFP"
-      ],
-      "workbookAbbreviation": "LiDODFP",
+      "abbreviation": "LiDFOP",
       "cas": "678966-16-0",
       "defaultPackageId": "200G",
       "packages": [
@@ -2653,7 +2783,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 44995
+          "unitAmount": 43995
         },
         {
           "id": "500G",
@@ -2661,7 +2791,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 62995
+          "unitAmount": 56995
         },
         {
           "id": "1KG",
@@ -2669,7 +2799,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 84995
+          "unitAmount": 87995
         },
         {
           "id": "2KG",
@@ -2677,7 +2807,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 109995
+          "unitAmount": 157995
         },
         {
           "id": "5KG",
@@ -2685,7 +2815,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 169995
+          "unitAmount": 324995
         },
         {
           "id": "10KG",
@@ -2693,12 +2823,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 269995
+          "unitAmount": 581995
         }
       ]
     },
     {
-      "workbookRow": 49,
+      "workbookRow": 284,
       "slug": "tetravinylsilane-tvsi",
       "skuBase": "WM-ADD-TVSI",
       "name": "Tetravinylsilane (TVSi)",
@@ -2712,7 +2842,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 110995
+          "unitAmount": 46995
         },
         {
           "id": "500G",
@@ -2720,7 +2850,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 165995
+          "unitAmount": 65995
         },
         {
           "id": "1KG",
@@ -2728,7 +2858,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 236995
+          "unitAmount": 109995
         },
         {
           "id": "2KG",
@@ -2736,7 +2866,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 276995
+          "unitAmount": 210995
         },
         {
           "id": "5KG",
@@ -2744,7 +2874,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 455995
+          "unitAmount": 462995
         },
         {
           "id": "10KG",
@@ -2752,12 +2882,12 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 844995
+          "unitAmount": 856995
         }
       ]
     },
     {
-      "workbookRow": 50,
+      "workbookRow": 290,
       "slug": "2-2-difluoroethyl-acetate-dfea",
       "skuBase": "WM-SOL-DFEA",
       "name": "2,2-Difluoroethyl acetate (DFEA)",
@@ -2771,7 +2901,7 @@
           "unit": "g",
           "quantity": 200,
           "netWeightGrams": 200,
-          "unitAmount": 34995
+          "unitAmount": 37995
         },
         {
           "id": "500G",
@@ -2779,7 +2909,7 @@
           "unit": "g",
           "quantity": 500,
           "netWeightGrams": 500,
-          "unitAmount": 54995
+          "unitAmount": 42995
         },
         {
           "id": "1KG",
@@ -2787,7 +2917,7 @@
           "unit": "kg",
           "quantity": 1,
           "netWeightGrams": 1000,
-          "unitAmount": 74995
+          "unitAmount": 55995
         },
         {
           "id": "2KG",
@@ -2795,7 +2925,7 @@
           "unit": "kg",
           "quantity": 2,
           "netWeightGrams": 2000,
-          "unitAmount": 99995
+          "unitAmount": 84995
         },
         {
           "id": "5KG",
@@ -2803,7 +2933,7 @@
           "unit": "kg",
           "quantity": 5,
           "netWeightGrams": 5000,
-          "unitAmount": 194995
+          "unitAmount": 139995
         },
         {
           "id": "10KG",
@@ -2811,10 +2941,9 @@
           "unit": "kg",
           "quantity": 10,
           "netWeightGrams": 10000,
-          "unitAmount": 394995
+          "unitAmount": 213995
         }
       ]
     }
-  ],
-  "unmappedRows": []
+  ]
 }

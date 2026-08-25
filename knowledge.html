@@ -528,12 +528,12 @@
   var host = window.location.hostname;
   var isLocalDevelopment = host === 'localhost' || host === '127.0.0.1' || host === '::1' || host === '0.0.0.0' || host.endsWith('.localhost');
   var dataSource = isLocalDevelopment
-    ? 'assets/js/knowledge-search-data.development.js'
-    : 'assets/js/knowledge-search-data.js';
+    ? 'assets/js/knowledge-search-data.development.js?v=54e412af0357'
+    : 'assets/js/knowledge-search-data.js?v=828afac77b4f';
   document.write('<script src="' + dataSource + '?v=20260825-1"><\/script>');
 })();
 </script>
-<script src="assets/js/knowledge-search.js?v=20260825-1"></script>
-<script src="assets/js/main.js?v=28f79cb29fc3"></script>
+<script src="assets/js/knowledge-search.js?v=012ec5390942"></script>
+<script src="assets/js/main.js?v=caf6d762b1fd"></script>
 </body>
 </html>

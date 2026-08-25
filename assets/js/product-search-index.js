@@ -1,6 +1,6 @@
 /* Generated from catalog/products.source.json. Do not edit directly. */
 window.WINIGEN_PRODUCT_SEARCH_INDEX = {
-  "version": "2026-08-22-supplier-rfq-quarantine-v1",
+  "version": "2026-08-25-final-target-margins-v5",
   "records": [
     {
       "slug": "lithium-hexafluorophosphate-lipf6",
