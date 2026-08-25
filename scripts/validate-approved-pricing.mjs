@@ -178,7 +178,8 @@ for (const schedule of pricing.schedules) {
       if (offer.priceCurrency !== 'USD') errors.push(`${schedule.slug}: Offer ${sku} has the wrong currency.`);
       if (!String(offer.name || '').includes(expected.label)) errors.push(`${schedule.slug}: Offer ${sku} omits package name ${expected.label}.`);
     }
-    if (!html.includes(`value="${sku}"`) || !html.includes(expected.label) || !html.includes(formatUsd(expected.unitAmount))) {
+    const hasPackageControl = html.includes(`data-package-key="${sku}"`) || html.includes(`value="${sku}"`);
+    if (!hasPackageControl || !html.includes(expected.label) || !html.includes(formatUsd(expected.unitAmount))) {
       errors.push(`${schedule.slug}: raw HTML is missing ${expected.label} / ${formatUsd(expected.unitAmount)}.`);
     }
   }

@@ -12,7 +12,7 @@ const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/produ
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const shippingSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/shipping-countries.source.json'), 'utf8'));
 const commerceAssetVersion = shortCommerceRelease(createCommerceRelease(ecommerceSource, shippingSource));
-const generatedAssetVersion = `${commerceAssetVersion}-storefront-feedback-v1-product-detail-ux-v1`;
+const generatedAssetVersion = `${commerceAssetVersion}-storefront-feedback-v1-product-detail-ux-v2`;
 const intents = JSON.parse(await readFile(resolve(siteRoot, 'seo/search-intents.json'), 'utf8'));
 const pageMetadata = JSON.parse(await readFile(resolve(siteRoot, 'seo/page-metadata.json'), 'utf8'));
 const execFile = promisify(execFileCallback);
@@ -146,8 +146,8 @@ function productKeySpecifications(product) {
 function packagePricingSummary(product, variants = activeVariants(product)) {
   if (!variants.length) return '';
   const defaultVariant = defaultActiveVariant(product, variants);
-  const items = variants.map(variant => `<div class="ecommerce-package-summary__item${variant.key === defaultVariant.key ? ' is-selected' : ''}" data-package-key="${escapeHtml(variant.key)}"><span>${escapeHtml(variant.label)}</span><strong>${formatUsd(variant.unitAmount)}</strong></div>`).join('');
-  return `<section class="ecommerce-package-summary" id="packages" aria-labelledby="package-pricing-title"><div class="ecommerce-package-summary__heading"><h3 id="package-pricing-title">Package pricing</h3><p>Select a package below to add it to your cart.</p></div><div class="ecommerce-package-summary__grid">${items}</div></section>`;
+  const items = variants.map(variant => `<button type="button" class="ecommerce-package-summary__item${variant.key === defaultVariant.key ? ' is-selected' : ''}" data-package-key="${escapeHtml(variant.key)}" aria-pressed="${variant.key === defaultVariant.key ? 'true' : 'false'}"><span>${escapeHtml(variant.label)}</span><strong>${formatUsd(variant.unitAmount)}</strong><span class="ecommerce-package-summary__check" aria-hidden="true">&#10003;</span></button>`).join('');
+  return `<section class="ecommerce-package-summary" id="packages" aria-labelledby="package-pricing-title"><div class="ecommerce-package-summary__heading"><div><p class="ecommerce-panel__step">Step 1</p><h3 id="package-pricing-title">Select a package</h3></div><p>Choose one approved package.</p></div><div class="ecommerce-package-summary__grid">${items}</div></section>`;
 }
 
 function productDocumentation(product, documentationHref) {
@@ -206,8 +206,10 @@ function renderProductDetailExperience(html, product) {
     .replace(/<dl class="detail-facts">[\s\S]*?<\/dl>/i, '')
     .replace(/<h3>Typical Specification<\/h3>\s*<ul class="spec-list">[\s\S]*?<\/ul>/i, '')
     .replace(/(<section class="section dark product-detail-hero">[\s\S]*?<\/section>)/i, `$1${navigation}`)
-    .replace(/<section class="section"><div class="container product-detail-layout">/i, '<section class="section product-detail-overview" id="overview"><div class="container product-detail-layout">')
-    .replace(/(<article class="detail-panel">[\s\S]*?<p>[^<]*<\/p>)/i, `$1${summary}`)
+    .replace(/<section class="section(?: product-detail-overview)?"(?: id="overview")?>\s*<div class="container product-detail-layout(?: product-detail-layout--commerce)?">/i, '<section class="section product-detail-overview" id="overview"><div class="container product-detail-layout product-detail-layout--commerce">')
+    .replace(/<article class="detail-panel(?: product-detail-commerce-content)?">/i, '<article class="detail-panel product-detail-commerce-content">')
+    .replace(/(<article class="detail-panel product-detail-commerce-content">\s*)<p class="detail-kicker">Product Details<\/p>/i, '$1<p class="detail-kicker">About this product</p>')
+    .replace(/(<article class="detail-panel product-detail-commerce-content">)\s*(<p class="detail-kicker">[\s\S]*?<\/p>\s*<h2>[\s\S]*?<\/h2>\s*<p>[\s\S]*?<\/p>)/i, `$1<div class="product-detail-information">$2${summary}</div>`)
     .replace(/<section class="section"><div class="container product-technical-grid">/i, '<section class="section" id="applications"><div class="container product-technical-grid">');
   if (family && !next.includes('data-product-support-routing="true"')) {
     const faqStart = next.search(/<section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Product FAQ/i);
@@ -340,13 +342,12 @@ function commercePanel(product) {
   const variants = activeVariants(product);
   if (!variants.length) return '';
   const defaultVariant = defaultActiveVariant(product, variants);
-  const options = variants.map(variant => `<option value="${escapeHtml(variant.key)}"${variant.key === defaultVariant.key ? ' selected' : ''}>${escapeHtml(variant.label)} — ${formatUsd(variant.unitAmount)}</option>`).join('');
   const quoteProduct = sulfideGradeCode(product) ? `${product.name} (${product.sku})` : product.name;
   const quoteHref = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(quoteProduct)}`;
   const shippingCopy = sulfideGradeCode(product)
     ? '<div class="ecommerce-panel__shipping-note"><strong>Specialized shipping required</strong><p>Sulfide solid electrolytes are air- and moisture-sensitive and require specialized packaging and transportation. Shipping is quoted separately by destination, and multiple sulfide grades may be consolidated in one shipment where feasible.</p></div>'
     : '<p class="ecommerce-panel__note">Shipping and handling are included in listed prices for eligible destinations.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>';
-  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><p class="detail-kicker">${commerceModeLabel(product)}</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label>Package<select class="ecommerce-package" name="package" aria-label="Select package">${options}</select></label><label>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="ecommerce-rfq-link" href="${quoteHref}">Need a larger quantity? Request a quote.</a></div>${shippingCopy}</section>`;
+  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><div><p class="detail-kicker">${commerceModeLabel(product)}</p><p class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></p></div></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label><span class="ecommerce-panel__step">Step 2</span>Quantity<div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><div><span>Selected package × quantity</span><strong class="ecommerce-selection-summary">${escapeHtml(defaultVariant.label)} × 1</strong></div><div><span>Total</span><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p></div></div><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="btn secondary ecommerce-rfq-link" href="${quoteHref}">Request a Quote</a></div>${shippingCopy}</section>`;
 }
 
 function removeCommercePanels(html) {

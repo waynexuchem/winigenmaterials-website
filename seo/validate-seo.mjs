@@ -218,10 +218,11 @@ for (const product of productSource.products) {
     if (!/data-static-commerce="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static commerce panel.`);
     if (!/>Add to Cart</i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static Add to Cart control.`);
     const commercePanelCount = (productHtml.match(/data-ecommerce-panel="true"/gi) || []).length;
-    const packageSelectorCount = (productHtml.match(/class="ecommerce-package"/gi) || []).length;
+    const packageDropdownCount = (productHtml.match(/<select[^>]+class="ecommerce-package"/gi) || []).length;
+    const packageControlCount = (productHtml.match(/<button[^>]+class="ecommerce-package-summary__item(?: is-selected)?"/gi) || []).length;
     const addToCartCount = (productHtml.match(/data-add-to-cart/gi) || []).length;
     if (commercePanelCount !== 1) errors.push(`${pagePath}: expected one commerce panel, found ${commercePanelCount}.`);
-    if (packageSelectorCount !== 1) errors.push(`${pagePath}: expected one package selector, found ${packageSelectorCount}.`);
+    if (packageDropdownCount !== 0) errors.push(`${pagePath}: redundant package dropdown remains.`);
     if (addToCartCount !== 1) errors.push(`${pagePath}: expected one Add to Cart control, found ${addToCartCount}.`);
     if (!/data-product-detail-ux="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks the generated key-specification summary.`);
     if (!/data-product-detail-nav="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks shared section navigation.`);
@@ -266,6 +267,7 @@ for (const product of productSource.products) {
     if (!/id="technical-guides"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks related technical guides.`);
     const packageSummaryItems = (productHtml.match(/class="ecommerce-package-summary__item(?: is-selected)?"/g) || []).length;
     if (packageSummaryItems !== expectedOffers.length) errors.push(`${pagePath}: package summary count ${packageSummaryItems} does not match ${expectedOffers.length} approved packages.`);
+    if (packageControlCount !== expectedOffers.length) errors.push(`${pagePath}: package control count ${packageControlCount} does not match ${expectedOffers.length} approved packages.`);
     if (/\b<dt>Availability<\/dt><dd>RFQ<\/dd>/i.test(productHtml)) errors.push(`${pagePath}: direct product still displays RFQ availability.`);
     if (/Available by RFQ/i.test(productHtml)) errors.push(`${pagePath}: direct product contains contradictory RFQ-only wording.`);
     for (const variant of expectedOffers) {
