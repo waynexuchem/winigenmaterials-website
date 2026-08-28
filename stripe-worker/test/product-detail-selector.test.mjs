@@ -70,7 +70,8 @@ test('product detail generation is idempotent across two consecutive passes', as
 
 test('shared product-page script uses the selected card key for cart updates', async () => {
   const script = await readFile(resolve(siteRoot, 'assets/js/ecommerce-product-page.js'), 'utf8');
-  assert.match(script, /let selectedVariantKey = defaultVariant\.key/);
+  assert.match(script, /const requestedVariantKey = resolveRequestedVariantKey\(activeVariants\)/);
+  assert.match(script, /let selectedVariantKey = requestedVariantKey \|\| defaultVariant\.key/);
   assert.match(script, /selectedVariantKey = item\.dataset\.packageKey/);
   assert.match(script, /cart\.add\(selectedVariantKey, Number\(quantityInput\.value\), addButton\)/);
   assert.match(script, /variant\.unitAmount \* quantity/);

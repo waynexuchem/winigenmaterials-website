@@ -8,6 +8,14 @@
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(unitAmount / 100);
   }
 
+  function resolveRequestedVariantKey(variants, search = window.location.search) {
+    const requestedSku = new URLSearchParams(search).get('package');
+    if (!requestedSku) return null;
+    return variants.find(variant => variant.sku === requestedSku || variant.key === requestedSku)?.key || null;
+  }
+
+  window.WinigenProductPackageLink = Object.freeze({ resolveRequestedVariantKey });
+
   function packageSummary(product, variants) {
     const defaultVariant = variants.find(variant => variant.id === product.defaultPackageId) || variants[0];
     return `<section class="ecommerce-package-summary" id="packages" aria-labelledby="package-pricing-title"><div class="ecommerce-package-summary__heading"><div><h3 id="package-pricing-title">Select a package</h3></div><p>Choose one approved package.</p></div><div class="ecommerce-package-summary__grid">${variants.map(variant => `<button type="button" class="ecommerce-package-summary__item${variant.key === defaultVariant.key ? ' is-selected' : ''}" data-package-key="${variant.key}" aria-pressed="${variant.key === defaultVariant.key ? 'true' : 'false'}"><span>${variant.label}</span><strong>${formatMoney(variant.unitAmount)}</strong><span class="ecommerce-package-summary__check" aria-hidden="true">&#10003;</span></button>`).join('')}</div></section>`;
@@ -72,7 +80,8 @@
     const selectionSummary = panel.querySelector('.ecommerce-selection-summary');
     const status = panel.querySelector('.ecommerce-status');
     const defaultVariant = activeVariants.find(variant => variant.id === product.defaultPackageId) || activeVariants[0];
-    let selectedVariantKey = defaultVariant.key;
+    const requestedVariantKey = resolveRequestedVariantKey(activeVariants);
+    let selectedVariantKey = requestedVariantKey || defaultVariant.key;
     const update = () => {
       const variant = activeVariants.find(entry => entry.key === selectedVariantKey) || defaultVariant;
       const quantity = Math.max(1, Math.min(25, Number(quantityInput.value) || 1));

@@ -11,6 +11,7 @@ scripts/*
 !scripts/apply-approved-pricing.mjs
 !scripts/build-product-search-index.mjs
 !scripts/generate-public-product-pages.mjs
+!scripts/generate-google-merchant-feed.mjs
 !scripts/validate-approved-pricing.mjs
 !scripts/validate-knowledge-registry.mjs
 !scripts/build-commerce-runtime-config.mjs
