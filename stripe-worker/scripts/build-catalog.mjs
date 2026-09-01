@@ -183,8 +183,8 @@ function validateShippingCountries(shippingSource) {
 
 function validateApprovedPricing(source, approvedPricing) {
   const expectedGovernance = {
-    workbookScope: 'The approved pricing workbook governs only products and package schedules explicitly represented in it.',
-    productsAbsentFromWorkbook: 'Products absent from the workbook retain their separately approved commercial schedules; workbook absence does not revoke or replace those schedules.'
+    pricingSourceScope: 'The approved pricing CSV governs only products and package schedules explicitly represented in it.',
+    productsAbsentFromPricingSource: 'Products absent from the approved pricing CSV retain their separately approved commercial schedules; absence does not revoke or replace those schedules.'
   };
   for (const [field, expected] of Object.entries(expectedGovernance)) {
     if (approvedPricing.governance?.[field] !== expected) fail(`Approved pricing governance field ${field} is missing or changed.`);

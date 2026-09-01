@@ -26,18 +26,18 @@ import { sendEmail } from '../src/email/provider.js';
 import { resolveShippingDestination } from '../src/shipping.js';
 
 const representativePrices = {
-  'WM-LS-LIPF6-200G': 36995,
-  'WM-LS-LIBOB-200G': 36995,
-  'WM-LS-LIFSI-500G': 41995,
-  'WM-SOL-DMC-500G': 39995,
-  'WM-SOL-DFEA-500G': 42995,
-  'WM-SOL-TFEC-200G': 41995,
-  'WM-ADD-VC-200G': 36995,
-  'WM-ADD-FEC-500G': 40995,
-  'WM-ADD-MMDS-200G': 36995,
-  'WM-NGS-NAPF6-200G': 36995,
-  'WM-NGS-NAODFB-200G': 37995,
-  'WM-NGS-KPF6-1KG': 51995,
+  'WM-LS-LIPF6-200G': 39995,
+  'WM-LS-LIBOB-200G': 41995,
+  'WM-LS-LIFSI-500G': 44995,
+  'WM-SOL-DMC-500G': 36995,
+  'WM-SOL-DFEA-500G': 41995,
+  'WM-SOL-TFEC-200G': 76995,
+  'WM-ADD-VC-200G': 45995,
+  'WM-ADD-FEC-500G': 41995,
+  'WM-ADD-MMDS-200G': 45995,
+  'WM-NGS-NAPF6-200G': 39995,
+  'WM-NGS-NAODFB-200G': 45995,
+  'WM-NGS-KPF6-1KG': 79995,
   'WM-SSE-LATP-030-25G': 16995,
   'WM-SSE-LLZTO-25G': 17995,
   'WM-SSE-GSL01-10G': 19995,
@@ -96,13 +96,11 @@ test('browser cart presents the canonical aggregate order-review state without b
 });
 
 test('DME 500 g uses its approved Worker-owned price', () => {
-  assert.equal(VARIANTS_BY_KEY.get('WM-SOL-DME-500G')?.unitAmount, 39995);
+  assert.equal(VARIANTS_BY_KEY.get('WM-SOL-DME-500G')?.unitAmount, 37995);
 });
 
-test('all approved workbook schedules resolve exactly from the Worker catalog', () => {
-  assert.equal(approvedPricing.modeledProductCount, 51);
-  assert.equal(approvedPricing.modeledVariantCount, 294);
-  assert.equal(approvedPricing.schedules.length, approvedPricing.modeledProductCount);
+test('all approved CSV schedules resolve exactly from the Worker catalog', () => {
+  assert.equal(approvedPricing.schedules.length, 52);
 
   let variantCount = 0;
   for (const schedule of approvedPricing.schedules) {
@@ -115,12 +113,12 @@ test('all approved workbook schedules resolve exactly from the Worker catalog', 
       assert.equal(variant.product.defaultPackageId, schedule.defaultPackageId);
     }
   }
-  assert.equal(variantCount, approvedPricing.modeledVariantCount);
+  assert.equal(variantCount, 299);
 });
 
 test('LiPF6 retains the explicit approved release ladder', () => {
   const packageIds = ['200G', '500G', '1KG', '2KG', '5KG', '10KG'];
-  const approvedAmounts = [36995, 40995, 51995, 72995, 108995, 152995];
+  const approvedAmounts = [39995, 44995, 52995, 72995, 108995, 149995];
   assert.deepEqual(
     packageIds.map(id => VARIANTS_BY_KEY.get(`WM-LS-LIPF6-${id}`)?.unitAmount),
     approvedAmounts
@@ -131,9 +129,9 @@ test('standard LiPF6 EC EMC VC formulation uses the complete owner-approved pack
   const expected = {
     'WM-FRM-LIPF6-ECEMC37-VC1-500G': 48995,
     'WM-FRM-LIPF6-ECEMC37-VC1-1KG': 64995,
-    'WM-FRM-LIPF6-ECEMC37-VC1-2KG': 74995,
-    'WM-FRM-LIPF6-ECEMC37-VC1-5KG': 94995,
-    'WM-FRM-LIPF6-ECEMC37-VC1-10KG': 124995
+    'WM-FRM-LIPF6-ECEMC37-VC1-2KG': 79995,
+    'WM-FRM-LIPF6-ECEMC37-VC1-5KG': 114995,
+    'WM-FRM-LIPF6-ECEMC37-VC1-10KG': 149995
   };
   for (const [key, amount] of Object.entries(expected)) {
     assert.equal(VARIANTS_BY_KEY.get(key)?.unitAmount, amount);
@@ -200,8 +198,8 @@ test('sulfide SSE grades use six approved material-price tiers and require one c
 
 test('client price fields are ignored and a nonexistent package is rejected', () => {
   const resolved = resolveCart([{ variantKey: 'WM-LS-LIFSI-500G', quantity: 2, price: 1, unitAmount: 1 }]);
-  assert.equal(resolved.merchandiseSubtotal, 83990);
-  assert.equal(resolved.items[0].variant.unitAmount, 41995);
+  assert.equal(resolved.merchandiseSubtotal, 89990);
+  assert.equal(resolved.items[0].variant.unitAmount, 44995);
   assert.throws(() => resolveCart([{ variantKey: 'WM-LS-LIFSI-10G', quantity: 1 }]), /not available for online ordering/);
 });
 
@@ -437,7 +435,7 @@ test('Stripe Checkout receives server-owned inline price_data', async () => {
       { country: 'US', amount: 8900, currency: 'usd' },
       { SITE_ORIGIN: 'https://www.winigenmaterials.com', STRIPE_SECRET_KEY: 'test-key-not-sent' }
     );
-    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '41995');
+    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '44995');
     assert.equal(submitted.get('line_items[0][price_data][currency]'), 'usd');
     assert.equal(submitted.get('line_items[0][quantity]'), '2');
     assert.equal(submitted.get('line_items[0][price]'), null);

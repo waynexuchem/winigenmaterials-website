@@ -12,6 +12,7 @@ const pricing = JSON.parse(await readFile(pricingPath, 'utf8'));
 const ecommerce = JSON.parse(await readFile(ecommercePath, 'utf8'));
 const semantic = JSON.parse(await readFile(semanticPath, 'utf8'));
 const schedulesBySlug = new Map(pricing.schedules.map(schedule => [schedule.slug, schedule]));
+const packageBasis = `APPROVED_${pricing.version.replaceAll('-', '')}_FINAL_${pricing.sourceFormat}`;
 
 if (schedulesBySlug.size !== pricing.schedules.length) {
   throw new Error('Approved pricing contains duplicate product slugs.');
@@ -35,7 +36,7 @@ const updatedEcommerce = ecommerce.products
         shippingWeightGrams: packageOption.netWeightGrams,
         shippingWeightBasis: 'NET_CONTENT_PROXY',
         approvalStatus: 'ACTIVE',
-        packageBasis: `APPROVED_${pricing.version.replaceAll('-', '')}_WORKBOOK`,
+        packageBasis,
         packageBasisConfirmationStatus: 'ACTIVE',
         pricingStatus: 'APPROVED_RETAIL'
       })),
@@ -63,10 +64,10 @@ const updatedSemantic = semantic.products
     };
   });
 
-ecommerce.catalogVersion = `${pricing.version}-approved-pricing`;
+ecommerce.catalogVersion = '2026-09-01-final-approved-pricing';
 ecommerce.products = updatedEcommerce;
 semantic.version = ecommerce.catalogVersion;
-semantic.generatedFrom = `Canonical Winigen product catalog with approved public pricing from ${pricing.sourceWorkbook}`;
+semantic.generatedFrom = `Canonical Winigen product catalog with owner-approved public pricing from ${pricing.sourceFile}`;
 semantic.products = updatedSemantic;
 
 await writeFile(ecommercePath, `${JSON.stringify(ecommerce, null, 2)}\n`);

@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-25-final-target-margins-v5",
-  "generatedFrom": "Canonical Winigen product catalog with approved public pricing from Winigen_Pricing_Strategy_v5_Final_Target_Margins_2026-08-25.xlsx",
+  "version": "2026-09-01-final-approved-pricing",
+  "generatedFrom": "Canonical Winigen product catalog with owner-approved public pricing from Winigen_Final_Approved_Pricing_2026-09-01.csv",
   "commerceStatusValues": [
     "active_checkout",
     "rfq",
