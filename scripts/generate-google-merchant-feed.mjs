@@ -5,6 +5,15 @@ import { fileURLToPath } from 'node:url';
 const SITE_ORIGIN = 'https://www.winigenmaterials.com';
 const MERCHANT_NAMESPACE = 'http://base.google.com/ns/1.0';
 const ALLOWED_AVAILABILITY = new Set(['in_stock', 'out_of_stock', 'preorder', 'backorder']);
+const GOOGLE_SUPPORTED_UNIT_PRICING_UNITS = new Set([
+  'oz', 'lb', 'mg', 'g', 'kg',
+  'floz', 'pt', 'qt', 'gal',
+  'ml', 'cl', 'l', 'cbm',
+  'in', 'ft', 'yd', 'cm', 'm',
+  'sqft', 'sqm', 'ct', 'sheet', 'item'
+]);
+const WEIGHT_UNITS_IN_GRAMS = Object.freeze({ g: 1, kg: 1000 });
+const UNIT_PRICING_BASE_MEASURE = '100g';
 const FORBIDDEN_OUTPUT_PATTERNS = [
   /supplier\s*cost/i,
   /gross\s*margin/i,
@@ -64,17 +73,47 @@ function activePackages(product, packageTemplates) {
   return packages.map(templateVariant => {
     const id = templateVariant.id || templateVariant.key;
     const override = product.variantOverrides?.[id] || {};
+    const unit = String(override.unit || templateVariant.unit || '').toLowerCase();
+    const quantity = override.quantity ?? templateVariant.quantity ?? null;
+    const netWeightGrams = override.netWeightGrams ?? templateVariant.netWeightGrams ?? null;
     return {
       id,
       key: `${product.skuBase}-${id}`,
       sku: override.sku || `${product.skuBase}-${id}`,
       label: override.label || templateVariant.label,
+      unit,
+      quantity,
+      netWeightGrams,
       approvalStatus: override.approvalStatus || templateVariant.approvalStatus,
       unitAmount: override.unitAmount ?? templateVariant.unitAmount ?? null,
       currency: String(override.currency || templateVariant.currency || product.currency || 'usd').toLowerCase(),
       pricingStatus: override.pricingStatus || templateVariant.pricingStatus || 'PROPOSED'
     };
   }).filter(variant => variant.approvalStatus === 'ACTIVE');
+}
+
+function canonicalUnitPricingMeasure(variant) {
+  const gramsPerUnit = WEIGHT_UNITS_IN_GRAMS[variant.unit];
+  if (!gramsPerUnit) return null;
+  const calculatedGrams = Number(variant.quantity) * gramsPerUnit;
+  if (!Number.isInteger(calculatedGrams) || calculatedGrams <= 0) {
+    throw new Error(`${variant.sku} has an invalid canonical weight package quantity.`);
+  }
+  if (!Number.isInteger(variant.netWeightGrams) || variant.netWeightGrams <= 0) {
+    throw new Error(`${variant.sku} is sold by weight but has no valid canonical netWeightGrams.`);
+  }
+  if (calculatedGrams !== variant.netWeightGrams) {
+    throw new Error(`${variant.sku} canonical package size does not match netWeightGrams.`);
+  }
+  return `${variant.netWeightGrams}g`;
+}
+
+function parseGoogleMeasure(value) {
+  const match = String(value || '').match(/^(\d+(?:\.\d+)?)([a-z]+)$/);
+  if (!match) return null;
+  const amount = Number(match[1]);
+  if (!Number.isFinite(amount) || amount <= 0 || !GOOGLE_SUPPORTED_UNIT_PRICING_UNITS.has(match[2])) return null;
+  return { amount, unit: match[2] };
 }
 
 function exclusionReason(semanticProduct, commerceProduct) {
@@ -102,6 +141,12 @@ function renderVariantOption(label) {
 }
 
 function renderItem(item) {
+  const unitPricing = item.unitPricingMeasure
+    ? [
+        `      <g:unit_pricing_measure>${item.unitPricingMeasure}</g:unit_pricing_measure>`,
+        `      <g:unit_pricing_base_measure>${item.unitPricingBaseMeasure}</g:unit_pricing_base_measure>`
+      ]
+    : [];
   return [
     '    <item>',
     `      <g:id>${xmlEscape(item.id)}</g:id>`,
@@ -111,6 +156,7 @@ function renderItem(item) {
     `      <g:image_link>${xmlEscape(item.imageLink)}</g:image_link>`,
     `      <g:availability>${item.availability}</g:availability>`,
     `      <g:price>${item.price}</g:price>`,
+    ...unitPricing,
     '      <g:condition>new</g:condition>',
     '      <g:identifier_exists>no</g:identifier_exists>',
     `      <g:product_type>${xmlEscape(item.productType)}</g:product_type>`,
@@ -134,6 +180,18 @@ function validateItem(item, seenIds) {
   if (!ALLOWED_AVAILABILITY.has(item.availability)) throw new Error(`${item.id} has unsupported availability ${item.availability}.`);
   if (!/^\d+\.\d{2} USD$/.test(item.price) || Number.parseFloat(item.price) <= 0) {
     throw new Error(`${item.id} has invalid price ${item.price}.`);
+  }
+  if (Boolean(item.unitPricingMeasure) !== Boolean(item.unitPricingBaseMeasure)) {
+    throw new Error(`${item.id} must provide both unit pricing measures or neither.`);
+  }
+  if (item.unitPricingMeasure) {
+    const measure = parseGoogleMeasure(item.unitPricingMeasure);
+    const baseMeasure = parseGoogleMeasure(item.unitPricingBaseMeasure);
+    if (!measure || !baseMeasure) throw new Error(`${item.id} has an unsupported Google unit pricing measure.`);
+    if (measure.unit !== baseMeasure.unit) throw new Error(`${item.id} unit pricing measures must use the same unit.`);
+    if (item.unitPricingBaseMeasure !== UNIT_PRICING_BASE_MEASURE) {
+      throw new Error(`${item.id} must use ${UNIT_PRICING_BASE_MEASURE} as its weight pricing base.`);
+    }
   }
   publicUrl(item.link, 'landing-page URL', item.id);
   publicUrl(item.imageLink, 'image URL', item.id);
@@ -188,6 +246,7 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
 
       const merchantLandingUrl = new URL(landingUrl);
       merchantLandingUrl.searchParams.set('package', variant.sku);
+      const unitPricingMeasure = canonicalUnitPricingMeasure(variant);
 
       items.push({
         id: variant.sku,
@@ -197,6 +256,8 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
         imageLink: imageUrl.href,
         availability: 'in_stock',
         price: `${(variant.unitAmount / 100).toFixed(2)} USD`,
+        unitPricingMeasure,
+        unitPricingBaseMeasure: unitPricingMeasure ? UNIT_PRICING_BASE_MEASURE : null,
         productType,
         itemGroupId: commerceProduct.skuBase,
         itemGroupTitle: semanticProduct.name,
@@ -206,7 +267,10 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
           commercialStatus: commerceProduct.commercialStatus,
           schemaOfferEligible: semanticProduct.schemaOfferEligible,
           variantKey: variant.key,
-          unitAmount: variant.unitAmount
+          unitAmount: variant.unitAmount,
+          unit: variant.unit,
+          quantity: variant.quantity,
+          netWeightGrams: variant.netWeightGrams
         }
       });
     }

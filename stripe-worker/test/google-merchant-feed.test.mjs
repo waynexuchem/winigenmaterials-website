@@ -22,6 +22,9 @@ function activeVariants(product) {
     return {
       id,
       sku: override.sku || `${product.skuBase}-${id}`,
+      unit: String(override.unit || templateVariant.unit || '').toLowerCase(),
+      quantity: override.quantity ?? templateVariant.quantity,
+      netWeightGrams: override.netWeightGrams ?? templateVariant.netWeightGrams,
       approvalStatus: override.approvalStatus || templateVariant.approvalStatus,
       unitAmount: override.unitAmount ?? templateVariant.unitAmount
     };
@@ -77,6 +80,46 @@ test('every canonical active offer has the exact canonical SKU and price', () =>
     assert.equal(item.source.unitAmount, variant.unitAmount, item.id);
     assert.equal(item.price, `${(variant.unitAmount / 100).toFixed(2)} USD`, item.id);
   }
+});
+
+test('weight offers use canonical package mass for Google unit pricing', () => {
+  const supportedUnits = new Set(['oz', 'lb', 'mg', 'g', 'kg', 'floz', 'pt', 'qt', 'gal', 'ml', 'cl', 'l', 'cbm', 'in', 'ft', 'yd', 'cm', 'm', 'sqft', 'sqm', 'ct', 'sheet', 'item']);
+  const measurePattern = /^(\d+(?:\.\d+)?)([a-z]+)$/;
+  for (const item of result.items) {
+    const product = commerceBySlug.get(item.source.slug);
+    const variant = activeVariants(product).find(entry => entry.sku === item.id);
+    assert.ok(['g', 'kg'].includes(variant.unit), `${item.id}: canonical sell unit is weight`);
+    assert.equal(item.unitPricingMeasure, `${variant.netWeightGrams}g`, `${item.id}: canonical package mass`);
+    assert.equal(item.unitPricingBaseMeasure, '100g', `${item.id}: common comparison base`);
+    const measure = item.unitPricingMeasure.match(measurePattern);
+    const base = item.unitPricingBaseMeasure.match(measurePattern);
+    assert.ok(measure && Number(measure[1]) > 0 && supportedUnits.has(measure[2]), `${item.id}: supported measure`);
+    assert.ok(base && Number(base[1]) > 0 && supportedUnits.has(base[2]), `${item.id}: supported base measure`);
+    assert.equal(measure[2], base[2], `${item.id}: matching measure units`);
+  }
+  assert.equal((result.xml.match(/<g:unit_pricing_measure>/g) || []).length, result.items.length);
+  assert.equal(
+    result.xml.split('<g:unit_pricing_base_measure>100g</g:unit_pricing_base_measure>').length - 1,
+    result.items.length
+  );
+});
+
+test('non-weight canonical sell units do not receive weight pricing fields', async () => {
+  const fixtureCommerce = structuredClone(commerce);
+  const product = fixtureCommerce.products.find(entry => entry.slug === 'lithium-hexafluorophosphate-lipf6');
+  const packageOption = product.packages.find(entry => entry.id === '200G');
+  packageOption.unit = 'ct';
+  packageOption.quantity = 1;
+  delete packageOption.netWeightGrams;
+  const fixture = await generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: fixtureCommerce });
+  const item = fixture.items.find(entry => entry.id === 'WM-LS-LIPF6-200G');
+  assert.equal(item.unitPricingMeasure, null);
+  assert.equal(item.unitPricingBaseMeasure, null);
+  const itemXml = [...fixture.xml.matchAll(/<item>[\s\S]*?<\/item>/g)]
+    .map(match => match[0])
+    .find(block => block.includes('<g:id>WM-LS-LIPF6-200G</g:id>'));
+  assert.ok(itemXml);
+  assert.doesNotMatch(itemXml, /unit_pricing_(?:measure|base_measure)/);
 });
 
 test('Merchant IDs are stable, unique package SKUs and variants are grouped', () => {

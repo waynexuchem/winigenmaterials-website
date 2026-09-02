@@ -33,6 +33,13 @@ that canonical SKU to activate the matching package card and visible price;
 unknown package values safely fall back to the product's normal default. The
 HTML canonical URL remains the base product URL without the package parameter.
 
+For products whose canonical package unit is weight, each offer also publishes
+`unit_pricing_measure` from the package's canonical `unit`, `quantity`, and
+`netWeightGrams` fields. Weight is normalized to grams and compared on a
+`100g` base. These values are never inferred from the product title or package
+label. Non-weight sell units omit the unit-pricing fields unless a supported
+canonical measure is explicitly available.
+
 ## Shipping
 
 The feed does not publish shipping attributes. Routine shipping is included in
