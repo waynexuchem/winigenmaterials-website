@@ -421,7 +421,55 @@ async function handleShippingQuote(request, env) {
   }, 200, origin);
 }
 
-async function handleOrderStatus(request, env) {
+export async function buildPaidEcommercePayload(order, db) {
+  if (order?.payment_status !== 'PAID') return null;
+  if (!Number.isInteger(order.amount) || order.amount < 0
+      || !Number.isInteger(order.merchandise_amount) || order.merchandise_amount < 0
+      || !Number.isInteger(order.shipping_amount) || order.shipping_amount < 0
+      || !Number.isInteger(order.tax_amount) || order.tax_amount < 0
+      || !Number.isInteger(order.discount_amount) || order.discount_amount < 0
+      || !/^[a-zA-Z]{3}$/.test(order.currency || '')) {
+    throw new Error('Paid order totals are unavailable.');
+  }
+
+  const { results = [] } = await db.prepare(`
+    SELECT sku, product_name, package_label, unit_amount, quantity
+    FROM test_order_lines
+    WHERE winigen_order_id = ?
+    ORDER BY id
+  `).bind(order.winigen_order_id).all();
+  if (results.length === 0) throw new Error('Paid order lines are unavailable.');
+
+  const items = results.map(line => {
+    if (!line.sku || !line.product_name || !Number.isInteger(line.unit_amount) || line.unit_amount < 0 || !Number.isInteger(line.quantity) || line.quantity <= 0) {
+      throw new Error('Paid order line data is invalid.');
+    }
+    return {
+      item_id: line.sku,
+      item_name: line.product_name,
+      ...(line.package_label ? { item_variant: line.package_label } : {}),
+      price: line.unit_amount / 100,
+      quantity: line.quantity
+    };
+  });
+  const itemSubtotal = results.reduce((total, line) => total + line.unit_amount * line.quantity, 0);
+  const reconciledTotal = order.merchandise_amount - order.discount_amount + order.tax_amount + order.shipping_amount;
+  if (itemSubtotal !== order.merchandise_amount || reconciledTotal !== order.amount) {
+    throw new Error('Paid order totals do not reconcile.');
+  }
+  if (order.discount_amount !== 0) throw new Error('Discounted paid orders are not supported for GA4 purchase reporting.');
+
+  return {
+    transaction_id: order.winigen_order_id,
+    value: order.merchandise_amount / 100,
+    currency: order.currency.toUpperCase(),
+    ...(order.tax_amount > 0 ? { tax: order.tax_amount / 100 } : {}),
+    ...(order.shipping_amount > 0 ? { shipping: order.shipping_amount / 100 } : {}),
+    items
+  };
+}
+
+export async function handleOrderStatus(request, env) {
   const origin = request.headers.get('Origin');
   if (!isAllowedOrigin(request)) return jsonResponse({ error: 'Origin not allowed.' }, 403);
 
@@ -432,7 +480,7 @@ async function handleOrderStatus(request, env) {
   }
 
   const order = await env.ORDERS_DB.prepare(`
-    SELECT winigen_order_id, payment_status, fulfillment_status
+    SELECT winigen_order_id, merchandise_amount, shipping_amount, tax_amount, discount_amount, amount, currency, payment_status, fulfillment_status
     FROM test_orders
     WHERE stripe_checkout_session_id = ?
     LIMIT 1
@@ -440,10 +488,20 @@ async function handleOrderStatus(request, env) {
 
   if (!order) return jsonResponse({ error: 'Order status is unavailable.' }, 404, origin);
 
+  let ecommerce = null;
+  try {
+    ecommerce = await buildPaidEcommercePayload(order, env.ORDERS_DB);
+  } catch (error) {
+    console.warn('GA4 purchase payload withheld', {
+      orderId: order.winigen_order_id,
+      reason: error instanceof Error ? error.message : 'Unknown ecommerce reconciliation error.'
+    });
+  }
   return jsonResponse({
     orderId: order.winigen_order_id,
     paymentStatus: order.payment_status,
-    fulfillmentStatus: order.fulfillment_status
+    fulfillmentStatus: order.fulfillment_status,
+    ...(ecommerce ? { ecommerce } : {})
   }, 200, origin);
 }
 
@@ -678,6 +736,9 @@ async function handleCompletedCheckout(event, env) {
         customer_email = ?,
         destination_country = COALESCE(?, destination_country),
         amount = ?,
+        shipping_amount = ?,
+        tax_amount = ?,
+        discount_amount = ?,
         currency = ?,
         payment_status = ?,
         fulfillment_status = ?,
@@ -690,6 +751,9 @@ async function handleCompletedCheckout(event, env) {
     session.customer_details?.email || null,
     shippingDetails?.address?.country || session.customer_details?.address?.country || null,
     session.amount_total ?? null,
+    session.total_details?.amount_shipping ?? null,
+    session.total_details?.amount_tax ?? null,
+    session.total_details?.amount_discount ?? null,
     session.currency || null,
     paymentStatus,
     fulfillmentStatus,

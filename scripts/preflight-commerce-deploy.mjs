@@ -121,6 +121,6 @@ console.log(JSON.stringify({
   database: config.d1_databases?.[0]?.database_name,
   templateMode,
   activationMode,
-  requiredD1SchemaVersion: 6,
+  requiredD1SchemaVersion: 7,
   note: 'This preflight does not apply migrations, deploy a Worker, or modify secrets.'
 }, null, 2));

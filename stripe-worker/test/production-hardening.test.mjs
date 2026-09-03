@@ -94,7 +94,8 @@ test('production URL and migration contracts remain exact', async () => {
     '0003_test_order_notifications.sql',
     '0004_phase2b_order_line_totals.sql',
     '0005_order_contact_destination.sql',
-    '0006_order_purpose.sql'
+    '0006_order_purpose.sql',
+    '0007_order_stripe_totals.sql'
   ]);
 });
 

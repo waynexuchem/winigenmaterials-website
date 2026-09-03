@@ -328,7 +328,7 @@ test('checkout endpoint routes an aggregate over-10-kg cart to review without ca
         prepare() {
           return {
             bind() {
-              return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+              return { first: async () => ({ current_version: 7, required_migration_applied: 1 }) };
             }
           };
         }
@@ -400,7 +400,7 @@ test('sulfide shipping review takes precedence over aggregate order review', asy
         prepare() {
           return {
             bind() {
-              return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+              return { first: async () => ({ current_version: 7, required_migration_applied: 1 }) };
             }
           };
         }
@@ -797,12 +797,12 @@ test('D1 migration ledger recognizes the required schema version', async () => {
     prepare() {
       return {
         bind() {
-          return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+          return { first: async () => ({ current_version: 7, required_migration_applied: 1 }) };
         }
       };
     }
   });
-  assert.deepEqual(ready, { currentVersion: 6, ready: true });
+  assert.deepEqual(ready, { currentVersion: 7, ready: true });
 });
 
 test('commerce status reports release, counts, test mode, D1 readiness, and Worker version', async () => {
@@ -817,7 +817,7 @@ test('commerce status reports release, counts, test mode, D1 readiness, and Work
       prepare() {
         return {
           bind() {
-            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+            return { first: async () => ({ current_version: 7, required_migration_applied: 1 }) };
           }
         };
       }
@@ -835,8 +835,8 @@ test('commerce status reports release, counts, test mode, D1 readiness, and Work
     commerceRelease: COMMERCE_RELEASE,
     catalogProductCount: CATALOG_PRODUCT_COUNT,
     catalogVariantCount: CATALOG_VARIANT_COUNT,
-    requiredD1SchemaVersion: 6,
-    appliedD1SchemaVersion: 6,
+    requiredD1SchemaVersion: 7,
+    appliedD1SchemaVersion: 7,
     workerVersion: 'worker-build-test'
   });
 });
@@ -852,7 +852,7 @@ test('commerce status is healthy with ready D1 when commerce is disabled and Str
       prepare() {
         return {
           bind() {
-            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+            return { first: async () => ({ current_version: 7, required_migration_applied: 1 }) };
           }
         };
       }
@@ -865,7 +865,7 @@ test('commerce status is healthy with ready D1 when commerce is disabled and Str
   assert.equal(payload.commerceEnabled, false);
   assert.equal(payload.smokeTestEnabled, false);
   assert.equal(payload.databaseConfigured, true);
-  assert.equal(payload.appliedD1SchemaVersion, 6);
+  assert.equal(payload.appliedD1SchemaVersion, 7);
   assert.equal(payload.workerVersion, 'worker-build-production-disabled');
 });
 
@@ -881,7 +881,7 @@ test('commerce status permits the trusted public site origin without broadening 
       prepare() {
         return {
           bind() {
-            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+            return { first: async () => ({ current_version: 7, required_migration_applied: 1 }) };
           }
         };
       }
@@ -921,7 +921,7 @@ test('commerce status does not grant CORS access to an untrusted origin', async 
       prepare() {
         return {
           bind() {
-            return { first: async () => ({ current_version: 6, required_migration_applied: 1 }) };
+            return { first: async () => ({ current_version: 7, required_migration_applied: 1 }) };
           }
         };
       }
@@ -935,18 +935,21 @@ test('commerce status does not grant CORS access to an untrusted origin', async 
 
 test('order-status exposes trusted paid and pending states without Stripe identifiers', async () => {
   const rows = new Map([
-    ['cs_test_paidcheckoutsession000001', { winigen_order_id: 'WM-T-20260823-0101', payment_status: 'PAID', fulfillment_status: 'NOT_RELEASED' }],
-    ['cs_test_pendingcheckoutsession001', { winigen_order_id: 'WM-T-20260823-0102', payment_status: 'PENDING', fulfillment_status: 'NOT_APPLICABLE' }]
+    ['cs_test_paidcheckoutsession000001', { winigen_order_id: 'WM-T-20260823-0101', merchandise_amount: 39995, shipping_amount: 0, tax_amount: 0, discount_amount: 0, amount: 39995, currency: 'usd', payment_status: 'PAID', fulfillment_status: 'NOT_RELEASED' }],
+    ['cs_test_pendingcheckoutsession001', { winigen_order_id: 'WM-T-20260823-0102', merchandise_amount: null, shipping_amount: null, amount: null, currency: null, payment_status: 'PENDING', fulfillment_status: 'NOT_APPLICABLE' }]
   ]);
+  const lines = [{ id: 1, sku: 'WM-LS-LIPF6-200G', product_name: 'Lithium hexafluorophosphate (LiPF6)', package_label: '200 g', unit_amount: 39995, quantity: 1 }];
   const env = {
     STRIPE_MODE: 'test',
     STRIPE_SECRET_KEY: 'sk_test_example',
     STRIPE_WEBHOOK_SECRET: 'whsec_example',
     ORDERS_DB: {
-      prepare() {
+      prepare(sql) {
         return {
-          bind(sessionId) {
-            return { first: async () => rows.get(sessionId) || null };
+          bind(value) {
+            return sql.includes('FROM test_order_lines')
+              ? { all: async () => ({ results: value === 'WM-T-20260823-0101' ? lines : [] }) }
+              : { first: async () => rows.get(value) || null };
           }
         };
       }
@@ -965,6 +968,7 @@ test('order-status exposes trusted paid and pending states without Stripe identi
     assert.equal(payload.paymentStatus, expectedStatus);
     assert.equal(payload.orderId, rows.get(sessionId).winigen_order_id);
     assert.equal(Object.hasOwn(payload, 'stripeCheckoutSessionId'), false);
+    assert.equal(Object.hasOwn(payload, 'ecommerce'), expectedStatus === 'PAID');
   }
 });
 

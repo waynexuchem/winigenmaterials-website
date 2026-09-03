@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 
-export const REQUIRED_D1_SCHEMA_VERSION = 6;
-export const REQUIRED_D1_MIGRATION = '0006_order_purpose.sql';
+export const REQUIRED_D1_SCHEMA_VERSION = 7;
+export const REQUIRED_D1_MIGRATION = '0007_order_stripe_totals.sql';
 
 function stableValue(value) {
   if (Array.isArray(value)) return value.map(stableValue);

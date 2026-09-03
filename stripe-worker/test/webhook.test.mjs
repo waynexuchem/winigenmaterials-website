@@ -18,6 +18,8 @@ function createDb({ failOrderUpdateOnce = false, failEventInsertOnce = false } =
       destination_country: 'US',
       merchandise_amount: 38995,
       shipping_amount: 0,
+      tax_amount: null,
+      discount_amount: null,
       amount: null,
       currency: 'usd',
       payment_status: 'PENDING',
@@ -88,9 +90,12 @@ function createDb({ failOrderUpdateOnce = false, failEventInsertOnce = false } =
             customer_email: values[3],
             destination_country: values[4] || state.order.destination_country,
             amount: values[5],
-            currency: values[6],
-            payment_status: values[7],
-            fulfillment_status: values[8],
+            shipping_amount: values[6],
+            tax_amount: values[7],
+            discount_amount: values[8],
+            currency: values[9],
+            payment_status: values[10],
+            fulfillment_status: values[11],
             updated_at: '2026-08-23 12:01:00'
           });
           return { meta: { changes: 1 } };
@@ -167,6 +172,11 @@ function createEvent() {
         payment_intent: 'pi_live_webhookhardening000001',
         payment_status: 'paid',
         amount_total: 38995,
+        total_details: {
+          amount_discount: 0,
+          amount_shipping: 0,
+          amount_tax: 0
+        },
         currency: 'usd',
         metadata: { stripe_mode: 'live' },
         customer_details: {
@@ -232,6 +242,9 @@ test('valid completed Checkout persists payment, completed event, and exactly tw
     assert.equal(response.status, 200);
     assert.equal(state.order.payment_status, 'PAID');
     assert.equal(state.order.fulfillment_status, 'NOT_RELEASED');
+    assert.equal(state.order.shipping_amount, 0);
+    assert.equal(state.order.tax_amount, 0);
+    assert.equal(state.order.discount_amount, 0);
     assert.equal(state.events.size, 1);
     assert.equal(state.notifications.size, 2);
     assert.deepEqual(Array.from(state.notifications.values()).map(row => row.status), ['SENT', 'SENT']);

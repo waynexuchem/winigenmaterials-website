@@ -4,8 +4,22 @@ const protectedHosts = [
 ];
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
-const ecommerceAssetVersion = '64b7aae945b5';
+const ga4MeasurementId = 'G-4PD1MZYGLS';
+const ecommerceAssetVersion = '395cd0ff6b9a';
 const commerceConfigVersion = '83bf682edfba';
+
+function initializeGoogleTag() {
+  if (!isProductionSite) return;
+  if (window.gtag || document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${ga4MeasurementId}"]`)) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', ga4MeasurementId);
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`;
+  document.head.appendChild(script);
+}
 
 function loadSharedScript(path) {
   return new Promise((resolve, reject) => {
@@ -224,6 +238,7 @@ function initializeCartPage() {
   });
 }
 
+initializeGoogleTag();
 initializeEcommerce();
 initializeGlobalFooter();
 
