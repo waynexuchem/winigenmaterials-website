@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { execFile as execFileCallback } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createCommerceRelease, shortCommerceRelease } from '../scripts/commerce-release.mjs';
+import { buildImageDiscovery } from './build-image-discovery.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
@@ -1046,17 +1047,7 @@ if (buildScope === 'all') {
   await writePreservingEol(indexPath, indexHtml, originalIndexHtml);
 }
 
-const sitemapExclusions = new Set(['checkout-success.html', 'checkout-cancel.html', 'stripe-test.html', 'stripe-live-test.html']);
-const sitemapUrls = new Set();
-for (const pagePath of allHtml) {
-  if (sitemapExclusions.has(pagePath)) continue;
-  const html = await readFile(resolve(siteRoot, pagePath), 'utf8');
-  if (/noindex/i.test(html)) continue;
-  const canonical = canonicalOf(html);
-  if (canonical?.startsWith(siteUrl)) sitemapUrls.add(canonical.split('#')[0]);
-}
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...sitemapUrls].sort().map(url => `  <url><loc>${escapeHtml(url)}</loc></url>`).join('\n')}\n</urlset>\n`;
-await writeFile(resolve(siteRoot, 'sitemap.xml'), sitemap);
+const imageDiscovery = await buildImageDiscovery({ siteRoot, scope: buildScope });
 
 const llmsPath = resolve(siteRoot, 'llms.txt');
 let llms = await readFile(llmsPath, 'utf8');
@@ -1085,4 +1076,4 @@ await mkdir(resolve(siteRoot, 'seo'), { recursive: true });
 await writeFile(resolve(siteRoot, 'seo/audit.csv'), `${audit}\n`);
 
 console.log(`Generated SEO metadata and schema for ${productSource.products.length} products and ${auditRows.filter(row => row.pageType === 'Knowledge article').length} knowledge articles.`);
-console.log(`Wrote ${sitemapUrls.size} canonical URLs to sitemap.xml and ${auditRows.length} rows to seo/audit.csv.`);
+console.log(`Wrote ${imageDiscovery.sitemapUrls} canonical URLs (${imageDiscovery.pagesWithImages} pages and ${imageDiscovery.imageAssociations} image associations) to sitemap.xml, enabled large previews on ${imageDiscovery.largePreviewPages} in-scope pages, and wrote ${auditRows.length} rows to seo/audit.csv.`);

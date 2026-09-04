@@ -2,6 +2,15 @@ import { access, readFile, readdir } from 'node:fs/promises';
 import { dirname, extname, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createCommerceRelease } from '../scripts/commerce-release.mjs';
+import {
+  assertPublicImageFile,
+  collectPageImages,
+  expectedCanonical,
+  isUiOrDecorativeImage,
+  loadImageSitemapExclusions,
+  parseAndValidateSitemapXml,
+  robotsDirectives
+} from './image-discovery.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
@@ -191,6 +200,9 @@ for (const pagePath of htmlFiles) {
         warnings.push(`${pagePath}: meta description duplicates ${indexedDescriptions.get(description)}.`);
       }
       else indexedDescriptions.set(description, pagePath);
+    }
+    if (canonical === expectedCanonical(pagePath) && !robotsDirectives(html).includes('max-image-preview:large')) {
+      errors.push(`${pagePath}: canonical indexable page does not permit max-image-preview:large.`);
     }
   }
   if (canonical) {
@@ -397,14 +409,46 @@ for (const [pagePath, expected] of collectionExpectations) {
 }
 
 const sitemap = await readFile(resolve(siteRoot, 'sitemap.xml'), 'utf8');
-const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+let sitemapEntries = [];
+try { sitemapEntries = parseAndValidateSitemapXml(sitemap); }
+catch (error) { errors.push(`sitemap.xml: ${error.message}`); }
+const sitemapUrls = sitemapEntries.map(entry => entry.url);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push('sitemap.xml: duplicate URLs.');
 for (const canonical of indexedCanonicals.keys()) {
-  if (!sitemapUrls.includes(canonical.split('#')[0])) warnings.push(`sitemap.xml: missing ${canonical}.`);
+  if (!sitemapUrls.includes(canonical.split('#')[0])) errors.push(`sitemap.xml: missing ${canonical}.`);
 }
-for (const url of sitemapUrls) {
+const imageSitemapExclusions = await loadImageSitemapExclusions(siteRoot);
+for (const entry of sitemapEntries) {
+  const { url } = entry;
   if (/checkout-(?:success|cancel)|stripe(?:-live)?-test/.test(url)) errors.push(`sitemap.xml: test/checkout URL included: ${url}.`);
+  const pagePath = url === `${siteUrl}/` ? 'index.html' : new URL(url).pathname.replace(/^\//, '');
+  const html = await readFile(resolve(siteRoot, pagePath), 'utf8').catch(() => '');
+  if (!html || canonicalOf(html).split('#')[0] !== url || /noindex/i.test(metaContent(html, 'robots'))) {
+    errors.push(`sitemap.xml: noncanonical, missing, redirect, or noindex page included: ${url}.`);
+    continue;
+  }
+  if (new Set(entry.images).size !== entry.images.length) errors.push(`sitemap.xml: duplicate image association for ${url}.`);
+  const approvedImages = new Set(collectPageImages({ html, pageUrl: url, excludedPaths: imageSitemapExclusions }));
+  for (const imageUrl of entry.images) {
+    if (!imageUrl.startsWith('https://')) errors.push(`sitemap.xml: non-HTTPS image URL: ${imageUrl}.`);
+    try {
+      if (new URL(imageUrl).hostname !== 'www.winigenmaterials.com') errors.push(`sitemap.xml: off-domain image URL: ${imageUrl}.`);
+    } catch {
+      errors.push(`sitemap.xml: invalid image URL: ${imageUrl}.`);
+    }
+    if (isUiOrDecorativeImage(imageUrl)) errors.push(`sitemap.xml: UI/decorative image included: ${imageUrl}.`);
+    if (!approvedImages.has(imageUrl)) errors.push(`sitemap.xml: image is not approved page content for ${url}: ${imageUrl}.`);
+    try { await assertPublicImageFile(siteRoot, imageUrl); }
+    catch (error) { errors.push(`sitemap.xml: ${error.message}`); }
+  }
+  if (entry.images.length !== approvedImages.size) errors.push(`sitemap.xml: image associations for ${url} do not match approved canonical page content.`);
 }
+if (/<image:(?:title|caption|license|geo_location)>/i.test(sitemap)) errors.push('sitemap.xml: deprecated image sitemap fields are present.');
+
+const robotsText = await readFile(resolve(siteRoot, 'robots.txt'), 'utf8');
+const sitemapDeclarations = [...robotsText.matchAll(/^Sitemap:\s*(\S+)\s*$/gim)].map(match => match[1]);
+if (sitemapDeclarations.length !== 1 || sitemapDeclarations[0] !== `${siteUrl}/sitemap.xml`) errors.push('robots.txt: canonical sitemap declaration is missing or duplicated.');
+if (/Disallow:\s*\/assets\/images\//i.test(robotsText)) errors.push('robots.txt: public image directory is blocked.');
 
 const browserCatalogSource = await readFile(resolve(siteRoot, 'assets/js/ecommerce-catalog.js'), 'utf8');
 if (/stripeTestPriceId|price_[A-Za-z0-9]+|stripeProductId/.test(browserCatalogSource)) {
@@ -481,5 +525,7 @@ console.log(`Crawl summary: ${JSON.stringify({
   workerCatalogProducts: workerBySlug.size,
   authoritativeVariants: workerVariantCount,
   sitemapUrls: sitemapUrls.length,
+  sitemapPagesWithImages: sitemapEntries.filter(entry => entry.images.length).length,
+  sitemapImageAssociations: sitemapEntries.reduce((total, entry) => total + entry.images.length, 0),
   brokenInternalLinks: crawlStats.brokenInternalLinks
 })}`);

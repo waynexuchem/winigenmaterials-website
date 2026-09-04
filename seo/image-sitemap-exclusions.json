@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/assets/images/knowledge/social/compare-solid-state-electrolyte-powders.png",
+    "sha256": "7b0eefb4b299287167715cce7db8213f9aa28dc8e35552a0243ab79586cb6e32",
+    "reason": "Byte-identical to a social image labeled for a different Knowledge article; source identity requires review."
+  },
+  {
+    "path": "/assets/images/knowledge/social/sulfide-vs-oxide-vs-halide-solid-electrolytes.png",
+    "sha256": "7b0eefb4b299287167715cce7db8213f9aa28dc8e35552a0243ab79586cb6e32",
+    "reason": "Byte-identical to a social image labeled for a different Knowledge article; source identity requires review."
+  },
+  {
+    "path": "/assets/images/solid-state/latp-300nm-xrd.jpg",
+    "sha256": "d0af5ceec2255e18586f55ada69f7e50e0d0cda9a5f1425bf751b3bb6a2ebc23",
+    "reason": "Byte-identical to an XRD image labeled for a different LATP particle-size grade."
+  },
+  {
+    "path": "/assets/images/solid-state/latp-400nm-powder-photo.jpg",
+    "sha256": "3e926e786b005580b8a4a1d7b5734564de27f979c2d275a72df670c84ebb4a9f",
+    "reason": "Byte-identical to a powder photograph labeled for a different LATP particle-size grade."
+  },
+  {
+    "path": "/assets/images/solid-state/latp-600nm-powder-photo.jpg",
+    "sha256": "3e926e786b005580b8a4a1d7b5734564de27f979c2d275a72df670c84ebb4a9f",
+    "reason": "Byte-identical to a powder photograph labeled for a different LATP particle-size grade."
+  },
+  {
+    "path": "/assets/images/solid-state/latp-600nm-xrd.jpg",
+    "sha256": "d0af5ceec2255e18586f55ada69f7e50e0d0cda9a5f1425bf751b3bb6a2ebc23",
+    "reason": "Byte-identical to an XRD image labeled for a different LATP particle-size grade."
+  },
+  {
+    "path": "/assets/images/solid-state/latp-oil-slurry-photo.jpg",
+    "sha256": "765e379f713cdb3519c078988ca1d9771d0f2749f29e21400e20b2865b327b01",
+    "reason": "Byte-identical to a slurry photograph labeled with a different carrier medium."
+  },
+  {
+    "path": "/assets/images/solid-state/latp-water-slurry-photo.jpg",
+    "sha256": "765e379f713cdb3519c078988ca1d9771d0f2749f29e21400e20b2865b327b01",
+    "reason": "Byte-identical to a slurry photograph labeled with a different carrier medium."
+  },
+  {
+    "path": "/assets/images/solid-state/li55ps45cl15-d50-2um-sem.jpg",
+    "sha256": "f1bad6135a4d2723680d86a3a45355252c80d7040ba17c05dbc43bf3baacf3b8",
+    "reason": "Byte-identical to an SEM image labeled as a different solid-electrolyte chemistry."
+  },
+  {
+    "path": "/assets/images/solid-state/llzto-sem.jpg",
+    "sha256": "f1bad6135a4d2723680d86a3a45355252c80d7040ba17c05dbc43bf3baacf3b8",
+    "reason": "Byte-identical to an SEM image labeled as a different solid-electrolyte chemistry."
+  }
+]
