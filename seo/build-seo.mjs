@@ -125,6 +125,13 @@ function defaultActiveVariant(product, variants = activeVariants(product)) {
   return variants.find(variant => variant.id === commerce?.defaultPackageId) || variants[0];
 }
 
+function isDirectPurchaseProduct(product) {
+  const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  return product.commerceStatus === 'active_checkout'
+    && ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(commerce?.commercialStatus)
+    && activeVariants(product).length > 0;
+}
+
 function productKeySpecifications(product) {
   const excluded = /^(?:availability|commercial availability)$/i;
   const isSse = product.family === 'solid-state-electrolytes';
@@ -581,34 +588,32 @@ function productDescription(product) {
 }
 
 function approvedOffers(product) {
-  if (!product.schemaOfferEligible) return [];
-  const commerce = ecommerceBySlug.get(product.ecommerceSlug);
-  if (!commerce) return [];
-  const packages = commerce.packages || [];
-  return packages.flatMap(packageVariant => {
-    if (packageVariant.approvalStatus !== 'ACTIVE' || packageVariant.pricingStatus !== 'APPROVED_RETAIL' || !(packageVariant.unitAmount > 0)) return [];
-    return [{
-      '@type': 'Offer',
-      sku: packageVariant.sku || `${commerce.skuBase}-${packageVariant.id}`,
-      name: `${product.name} - ${packageVariant.label}`,
-      url: `${siteUrl}${product.url}`,
-      price: (packageVariant.unitAmount / 100).toFixed(2),
-      priceCurrency: 'USD',
-      itemCondition: 'https://schema.org/NewCondition',
-      eligibleQuantity: {
-        '@type': 'QuantitativeValue',
-        value: packageVariant.quantity,
-        unitText: packageVariant.unit
-      }
-    }];
-  });
+  if (!isDirectPurchaseProduct(product)) return [];
+  const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  const priceCurrency = String(commerce.currency || '').toUpperCase();
+  if (priceCurrency !== 'USD') throw new Error(`${product.slug}: direct-purchase Offer currency must be USD.`);
+  return activeVariants(product).map(packageVariant => ({
+    '@type': 'Offer',
+    sku: packageVariant.key,
+    name: `${product.name} - ${packageVariant.label}`,
+    url: `${siteUrl}${product.url}`,
+    price: (packageVariant.unitAmount / 100).toFixed(2),
+    priceCurrency,
+    availability: 'https://schema.org/InStock',
+    itemCondition: 'https://schema.org/NewCondition',
+    eligibleQuantity: {
+      '@type': 'QuantitativeValue',
+      value: packageVariant.quantity,
+      unitText: packageVariant.unit
+    }
+  }));
 }
 
 function productSchema(product) {
   const family = familiesBySlug.get(product.family);
-  const familyIntent = intents.families[product.family];
   const offers = approvedOffers(product);
-  const schema = {
+  if (!offers.length) throw new Error(`${product.slug}: direct-purchase Product schema requires at least one approved Offer.`);
+  return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     '@id': `${siteUrl}${product.url}#product`,
@@ -619,19 +624,58 @@ function productSchema(product) {
     ...(product.image ? { image: absoluteSiteUrl(product.image) } : {}),
     ...(product.sku ? { sku: product.sku } : {}),
     category: family?.name || product.category,
-    brand: { '@id': `${siteUrl}/#organization` },
-    manufacturer: { '@id': `${siteUrl}/#organization` },
     audience: { '@type': 'Audience', audienceType: 'Battery researchers, engineers, and product-development teams' },
-    ...(familyIntent?.entities?.length ? { material: familyIntent.entities.slice(0, 6).join(', ') } : {}),
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Commercial availability', value: product.commerceStatus === 'rfq' ? 'Available by RFQ' : product.commerceStatus === 'sample_only' ? 'Research package validation; confirm commercial availability' : requiresPrepaymentShippingReview(product) ? 'Public package pricing; shipping review required before payment' : 'Online checkout' },
+      { '@type': 'PropertyValue', name: 'Commercial availability', value: requiresPrepaymentShippingReview(product) ? 'Public package pricing; shipping review required before payment' : 'Online checkout' },
       ...product.additionalProperty
         .filter(property => !/^availability$/i.test(property.name))
         .map(property => ({ '@type': 'PropertyValue', ...property }))
     ],
-    ...(offers.length ? { offers: offers.length === 1 ? offers[0] : offers } : {})
+    offers: offers.length === 1 ? offers[0] : offers
   };
-  return schema;
+}
+
+function rfqPageSchema(product) {
+  const canonical = `${siteUrl}${product.url}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: productTitle(product),
+    description: productDescription(product),
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    publisher: { '@id': `${siteUrl}/#organization` },
+    ...(product.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: absoluteSiteUrl(product.image) } } : {}),
+    about: {
+      '@type': 'Thing',
+      name: product.name,
+      ...(product.aliases.length ? { alternateName: product.aliases } : {}),
+      ...(product.sku ? { identifier: product.sku } : {}),
+      additionalProperty: [
+        { '@type': 'PropertyValue', name: 'Commercial availability', value: 'Available by RFQ' },
+        ...product.additionalProperty
+          .filter(property => !/^availability$/i.test(property.name))
+          .map(property => ({ '@type': 'PropertyValue', ...property }))
+      ]
+    }
+  };
+}
+
+function replaceProductPageSchema(html, product) {
+  const canonical = `${siteUrl}${product.url}`;
+  const schema = isDirectPurchaseProduct(product) ? productSchema(product) : rfqPageSchema(product);
+  let replaced = false;
+  const next = replaceJsonLd(html, value => {
+    const isProductEntity = containsType(value, 'Product');
+    const isGeneratedRfqPage = value?.['@type'] === 'WebPage' && value['@id'] === `${canonical}#webpage`;
+    if (!replaced && (isProductEntity || isGeneratedRfqPage)) {
+      replaced = true;
+      return schema;
+    }
+    return value;
+  });
+  return replaced ? next : injectJsonLd(next, schema);
 }
 
 function familyPagePath(family) {
@@ -671,7 +715,7 @@ function collectionSchema(familySlug = null) {
           position: index + 1,
           name: product.name,
           url: `${siteUrl}${product.url}`,
-          item: { '@id': `${siteUrl}${product.url}#product` }
+          item: { '@id': `${siteUrl}${product.url}${isDirectPurchaseProduct(product) ? '#product' : '#webpage'}` }
         }))
       }
     ]
@@ -784,8 +828,8 @@ async function updateProductPage(pagePath, product) {
   let html = replaceTitle(original, title);
   html = replaceMeta(html, 'description', description);
   html = ensureCanonical(html, canonical);
-  html = applyOpenGraph(html, { title, description, canonical, image: absoluteSiteUrl(product.image), type: 'product' });
-  html = replaceTypedSchema(html, 'Product', productSchema(product));
+  html = applyOpenGraph(html, { title, description, canonical, image: absoluteSiteUrl(product.image), type: isDirectPurchaseProduct(product) ? 'product' : 'website' });
+  html = replaceProductPageSchema(html, product);
   html = replaceTypedSchema(html, 'BreadcrumbList', breadcrumbSchema(canonical, [
     { name: 'Home', url: `${siteUrl}/` },
     { name: 'Products', url: `${siteUrl}/products.html` },
@@ -806,7 +850,7 @@ async function updateProductPage(pagePath, product) {
     proposedTitle: title,
     currentDescription,
     proposedDescription: description,
-    schemaType: 'Product',
+    schemaType: isDirectPurchaseProduct(product) ? 'Product + Offer' : 'WebPage',
     primaryEntity: product.name,
     commercialIntent: intents.families[product.family]?.commercialIntents?.[0] || '',
     engineeringIntent: intents.families[product.family]?.engineeringQuestions?.[0] || '',

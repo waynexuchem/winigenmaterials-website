@@ -29,6 +29,10 @@ const crawlStats = {
   offerSchema: 0,
   breadcrumbSchema: 0,
   faqSchema: 0,
+  directProductOfferSchema: 0,
+  rfqWebPageSchema: 0,
+  commercialSchemaMismatches: 0,
+  incompleteProductEntities: 0,
   duplicateTitles: 0,
   duplicateDescriptions: 0,
   invalidCanonicalTargets: 0,
@@ -69,6 +73,13 @@ function activeVariants(product) {
       pricingStatus: override.pricingStatus || template.pricingStatus
     };
   }).filter(variant => variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL' && Number.isInteger(variant.unitAmount) && variant.unitAmount > 0);
+}
+
+function isDirectPurchaseProduct(product) {
+  const commerce = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  return product.commerceStatus === 'active_checkout'
+    && ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(commerce?.commercialStatus)
+    && activeVariants(product).length > 0;
 }
 
 function containsType(value, type) {
@@ -131,6 +142,17 @@ for (const pagePath of htmlFiles) {
   if (schemas.some(schema => containsType(schema, 'BreadcrumbList'))) crawlStats.breadcrumbSchema += 1;
   if (schemas.some(schema => containsType(schema, 'FAQPage'))) crawlStats.faqSchema += 1;
   if (schemas.some(schema => containsType(schema, 'SearchAction'))) errors.push(`${pagePath}: unsupported SearchAction.`);
+  if (pagePath.startsWith('products/')) {
+    for (const productEntity of schemas.flatMap(schema => collectType(schema, 'Product'))) {
+      const hasRichResultQualifier = collectType(productEntity, 'Offer').length > 0 || productEntity.review || productEntity.aggregateRating;
+      if (!hasRichResultQualifier) {
+        crawlStats.incompleteProductEntities += 1;
+        errors.push(`${pagePath}: Product entity lacks offers, review, and aggregateRating.`);
+      }
+      if (productEntity.manufacturer) errors.push(`${pagePath}: Product schema claims a manufacturer not established by the canonical catalog.`);
+      if (productEntity.material) errors.push(`${pagePath}: Product schema contains generic material/template keywords.`);
+    }
+  }
   for (const schema of schemas) {
     for (const org of collectType(schema, 'Organization')) {
       if (org['@id'] && org['@id'] !== `${siteUrl}/#organization`) errors.push(`${pagePath}: inconsistent Organization @id ${org['@id']}.`);
@@ -199,22 +221,44 @@ for (const product of productSource.products) {
   const productHtml = await readFile(resolve(siteRoot, pagePath), 'utf8');
   const schemas = schemasByPath.get(pagePath) || [];
   const products = schemas.flatMap(schema => collectType(schema, 'Product'));
-  if (products.length !== 1) errors.push(`${pagePath}: expected one Product entity, found ${products.length}.`);
   const offers = products.flatMap(schema => collectType(schema, 'Offer'));
   const ecommerceProduct = ecommerceBySlug.get(product.ecommerceSlug || product.slug);
+  const directPurchase = isDirectPurchaseProduct(product);
+  const canonical = `${siteUrl}${product.url}`;
   const expectedCommerceLabel = ecommerceProduct?.commercialStatus === 'PRICE_SHIPPING_REVIEW'
     ? 'Shipping review required'
     : 'Online ordering';
-  if (!product.schemaOfferEligible && offers.length) errors.push(`${pagePath}: non-sellable product emitted Offer schema.`);
-  if (product.schemaOfferEligible) {
-    const expectedOffers = (ecommerceBySlug.get(product.ecommerceSlug)?.packages || [])
-      .filter(variant => variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL');
+  if (directPurchase) {
+    if (products.length !== 1) errors.push(`${pagePath}: direct-purchase page expected one Product entity, found ${products.length}.`);
+    const productEntity = products[0];
+    const expectedOffers = activeVariants(product);
+    if (products.length === 1 && offers.length === expectedOffers.length && offers.length > 0) crawlStats.directProductOfferSchema += 1;
     if (offers.length !== expectedOffers.length) errors.push(`${pagePath}: expected ${expectedOffers.length} package Offers, found ${offers.length}.`);
-    for (const offer of offers) {
-      if (offer.availability) errors.push(`${pagePath}: Offer invents stock availability ${offer.availability}.`);
+    if (productEntity?.url !== canonical) errors.push(`${pagePath}: Product schema URL does not match the canonical product URL.`);
+    const offersBySku = new Map(offers.map(offer => [offer.sku, offer]));
+    for (const expected of expectedOffers) {
+      const offer = offersBySku.get(expected.key);
+      if (!offer) {
+        errors.push(`${pagePath}: missing Offer ${expected.key}.`);
+        continue;
+      }
+      if (Number(offer.price) !== expected.unitAmount / 100) errors.push(`${pagePath}: Offer ${expected.key} price differs from the canonical catalog.`);
+      if (offer.priceCurrency !== 'USD') errors.push(`${pagePath}: Offer ${expected.key} currency is not USD.`);
+      if (offer.url !== canonical) errors.push(`${pagePath}: Offer ${expected.key} URL does not match the canonical product URL.`);
+      if (offer.availability !== 'https://schema.org/InStock') {
+        crawlStats.commercialSchemaMismatches += 1;
+        errors.push(`${pagePath}: Offer ${expected.key} availability is inconsistent with the canonical commerce status.`);
+      }
+      if (!String(offer.name || '').includes(expected.label)) errors.push(`${pagePath}: Offer ${expected.key} omits its canonical package label.`);
     }
-    if (/available by RFQ/i.test(metaContent(productHtml, 'description'))) errors.push(`${pagePath}: direct product meta description still claims RFQ-only availability.`);
-    if (!productHtml.includes(expectedCommerceLabel)) errors.push(`${pagePath}: commercial status does not match ${expectedCommerceLabel}.`);
+    if (/available by RFQ/i.test(metaContent(productHtml, 'description'))) {
+      crawlStats.commercialSchemaMismatches += 1;
+      errors.push(`${pagePath}: direct product meta description still claims RFQ-only availability.`);
+    }
+    if (!productHtml.includes(expectedCommerceLabel)) {
+      crawlStats.commercialSchemaMismatches += 1;
+      errors.push(`${pagePath}: commercial status does not match ${expectedCommerceLabel}.`);
+    }
     if (!/data-static-commerce="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static commerce panel.`);
     if (!/>Add to Cart</i.test(productHtml)) errors.push(`${pagePath}: direct product lacks a static Add to Cart control.`);
     const commercePanelCount = (productHtml.match(/data-ecommerce-panel="true"/gi) || []).length;
@@ -275,10 +319,29 @@ for (const product of productSource.products) {
       if (!productHtml.includes(formatUsd(variant.unitAmount))) errors.push(`${pagePath}: static HTML lacks price ${formatUsd(variant.unitAmount)}.`);
     }
   } else {
+    const rfqPages = schemas.flatMap(schema => collectType(schema, 'WebPage'))
+      .filter(entity => entity['@id'] === `${canonical}#webpage`);
+    if (products.length === 0 && rfqPages.length === 1) crawlStats.rfqWebPageSchema += 1;
+    if (products.length) {
+      crawlStats.commercialSchemaMismatches += 1;
+      errors.push(`${pagePath}: RFQ-only page emitted ${products.length} Product entity or entities.`);
+    }
+    if (rfqPages.length !== 1) errors.push(`${pagePath}: RFQ-only page expected one canonical WebPage entity, found ${rfqPages.length}.`);
+    else {
+      if (rfqPages[0].url !== canonical) errors.push(`${pagePath}: RFQ WebPage URL does not match the canonical URL.`);
+      if (rfqPages[0].publisher?.['@id'] !== `${siteUrl}/#organization`) errors.push(`${pagePath}: RFQ WebPage lacks the canonical Organization publisher reference.`);
+      if (rfqPages[0].isPartOf?.['@id'] !== `${siteUrl}/#website`) errors.push(`${pagePath}: RFQ WebPage lacks the canonical WebSite reference.`);
+    }
     if (!/Request Quote/i.test(productHtml)) errors.push(`${pagePath}: RFQ product lacks a Request Quote action.`);
     if (/data-static-commerce="true"/i.test(productHtml)) errors.push(`${pagePath}: RFQ product contains a direct-commerce panel.`);
-    if (!/Available by RFQ/i.test(productHtml)) errors.push(`${pagePath}: RFQ product lacks an explicit Available by RFQ status.`);
-    if (/Online ordering|Add to Cart/i.test(productHtml)) errors.push(`${pagePath}: RFQ product contains direct-purchase wording or controls.`);
+    if (!/Available by RFQ/i.test(productHtml)) {
+      crawlStats.commercialSchemaMismatches += 1;
+      errors.push(`${pagePath}: RFQ product lacks an explicit Available by RFQ status.`);
+    }
+    if (/Online ordering|Add to Cart/i.test(productHtml)) {
+      crawlStats.commercialSchemaMismatches += 1;
+      errors.push(`${pagePath}: RFQ product contains direct-purchase wording or controls.`);
+    }
   }
   const faqEntities = schemas.flatMap(schema => collectType(schema, 'FAQPage'));
   const faqText = faqEntities.flatMap(entity => entity.mainEntity || []).map(question => `${question.name || ''} ${question.acceptedAnswer?.text || ''}`).join(' ');
@@ -288,8 +351,8 @@ for (const product of productSource.products) {
   if (product.commerceStatus === 'rfq' && /online ordering|Add to Cart|buy online/i.test(faqText)) {
     errors.push(`${pagePath}: RFQ-product FAQ contradicts RFQ availability.`);
   }
-  const canonical = canonicalOf(productHtml);
-  if (canonical !== `${siteUrl}${product.url}`) errors.push(`${pagePath}: canonical does not match semantic source.`);
+  const pageCanonical = canonicalOf(productHtml);
+  if (pageCanonical !== canonical) errors.push(`${pagePath}: canonical does not match semantic source.`);
 }
 
 const productsHtml = await readFile(resolve(siteRoot, 'products.html'), 'utf8');
