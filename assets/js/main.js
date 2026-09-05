@@ -6,7 +6,7 @@ const protectedHosts = [
 const isProductionSite = protectedHosts.includes(window.location.hostname);
 const ga4MeasurementId = 'G-4PD1MZYGLS';
 const ecommerceAssetVersion = '395cd0ff6b9a';
-const commerceConfigVersion = '83bf682edfba';
+const commerceConfigVersion = '643d05c0144c';
 
 function initializeGoogleTag() {
   if (!isProductionSite) return;
@@ -171,21 +171,28 @@ function initializeCartPage() {
     : requiresOrderReview
       ? 'Material subtotal (pending review)'
       : 'Order total';
-  const proceedLabel = requiresShippingReview
+  const commerceConfig = window.WINIGEN_COMMERCE_CONFIG;
+  const checkoutEnabled = commerceConfig?.checkoutEnabled === true;
+  const checkoutMessage = commerceConfig?.checkoutMessage || 'Checkout is disabled on this non-production deployment.';
+  const proceedLabel = !checkoutEnabled
+    ? 'Checkout Disabled on Preview'
+    : requiresShippingReview
     ? 'Request Shipping Review'
     : requiresRfq
       ? 'Request Quote'
     : requiresOrderReview
       ? 'Request Order Review'
       : 'Proceed to Secure Checkout';
-  const trustLabel = requiresShippingReview
+  const trustLabel = !checkoutEnabled
+    ? checkoutMessage
+    : requiresShippingReview
     ? 'Specialized logistics are confirmed before payment.'
     : requiresRfq
       ? 'Payment is requested after quote approval.'
     : requiresOrderReview
       ? 'Payment is requested after fulfillment and shipping are confirmed.'
       : 'Secure payment processed by Stripe';
-  const checkoutBlocked = blockedItems.length > 0 || reviewThresholdUnavailable;
+  const checkoutBlocked = !checkoutEnabled || blockedItems.length > 0 || reviewThresholdUnavailable;
   root.innerHTML = `<div class="cart-layout"><div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>Material / package</th><th>Quantity</th><th>Unit price</th><th>Line total</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>${rows}</tbody></table></div><aside class="cart-summary"><div class="cart-destination"><label for="shipping-destination">Shipping destination</label><select id="shipping-destination" name="shippingCountry" aria-describedby="shipping-destination-note shipping-destination-help">${destinationOptions}</select><small id="shipping-destination-note">Used to confirm destination and fulfillment eligibility.</small><small id="shipping-destination-help" class="cart-destination__help">Don't see your country? <a href="contact.html?inquiry_type=Shipping%20Review&amp;product_interest=Shipping%20availability">Contact us for destination availability.</a></small></div><p><span>Product subtotal</span><strong>${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><p class="cart-note">${fulfillmentMessage}</p><p class="cart-summary__total"><span>${totalLabel}</span><strong id="cart-order-total">${blockedItems.length ? 'Pending approval' : formatMoney(subtotal)}</strong></p><button class="btn cart-checkout" id="cart-proceed" type="button"${checkoutBlocked ? ' disabled' : ''}>${proceedLabel}</button><p class="cart-trust"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>${trustLabel}</span></p><div class="cart-actions"><a class="btn secondary" href="products.html">Continue Shopping</a><button class="cart-quote" id="cart-rfq" type="button"><span>Need a custom order?</span> Request Quote</button></div></aside></div>`;
   root.querySelectorAll('[data-cart-quantity]').forEach(input => input.addEventListener('change', () => window.WinigenCart.update(input.dataset.cartQuantity, Number(input.value))));
   root.querySelectorAll('[data-cart-decrease]').forEach(button => button.addEventListener('click', () => {
@@ -213,6 +220,7 @@ function initializeCartPage() {
     const button = root.querySelector('#cart-proceed');
     button.disabled = true;
     try {
+      if (window.WINIGEN_COMMERCE_CONFIG?.checkoutEnabled !== true) throw new Error(checkoutMessage);
       const attemptId = crypto.randomUUID().replaceAll('-', '');
       const commerceRelease = window.WINIGEN_ECOMMERCE_CATALOG?.commerceRelease;
       const checkoutItems = cartItems.map(item => ({ variantKey: item.variant.key, quantity: item.quantity }));

@@ -1,0 +1,14 @@
+{
+  "name": "winigenmaterials-website-hosting",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:cloudflare": "node scripts/prepare-cloudflare-site.mjs",
+    "test:cloudflare": "node --test test/cloudflare-hosting.test.mjs",
+    "deploy:cloudflare": "wrangler deploy --config cloudflare-site/wrangler.jsonc",
+    "preview:cloudflare": "wrangler versions upload --config cloudflare-site/wrangler.jsonc"
+  },
+  "devDependencies": {
+    "wrangler": "4.120.1"
+  }
+}

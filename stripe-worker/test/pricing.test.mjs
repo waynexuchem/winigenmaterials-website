@@ -87,7 +87,7 @@ test('browser and Worker catalogs share one release and identical commercial var
 test('browser cart presents the canonical aggregate order-review state without blocking its CTA', async () => {
   const source = await readFile(new URL('../../assets/js/main.js', import.meta.url), 'utf8');
   assert.match(source, /totalCartMassGrams > aggregateOrderReviewThresholdGrams/);
-  assert.match(source, /checkoutBlocked = blockedItems\.length > 0 \|\| reviewThresholdUnavailable/);
+  assert.match(source, /checkoutBlocked = !checkoutEnabled \|\| blockedItems\.length > 0 \|\| reviewThresholdUnavailable/);
   assert.doesNotMatch(source, /if \(aggregateMassExceeded\) return;/);
   assert.ok(source.includes('Request Order Review'));
   assert.ok(source.includes(ORDER_REVIEW_MESSAGE));

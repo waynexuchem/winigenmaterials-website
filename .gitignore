@@ -1,5 +1,6 @@
 outputs/
 tmp/
+dist-cloudflare/
 .DS_Store
 .wrangler/
 seo/audit.csv
@@ -16,6 +17,7 @@ scripts/*
 !scripts/validate-approved-pricing.mjs
 !scripts/validate-knowledge-registry.mjs
 !scripts/build-commerce-runtime-config.mjs
+!scripts/prepare-cloudflare-site.mjs
 !stripe-worker/
 !stripe-worker/scripts/
 !stripe-worker/scripts/build-catalog.mjs
