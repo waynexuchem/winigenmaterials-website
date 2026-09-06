@@ -22,10 +22,22 @@ brand, GTIN, UPC, EAN, ISBN, or MPN. CAS numbers are chemical identifiers, not
 GTINs, and are never submitted as GTINs. Internal package SKUs are stable feed
 item IDs but are not asserted to be manufacturer part numbers.
 
-Each item uses `identifier_exists=no` until a legitimate manufacturer-assigned
-identifier set is approved for that product. Package variants share the
-canonical product's stable `skuBase` as `item_group_id` and expose package size
-through `variant_option`.
+Identifier status is governed separately by
+`ecommerce/product-identifiers.source.json`. Its default is `UNKNOWN`, which
+means identifiers have not been authoritatively confirmed either present or
+absent. Unknown status is not the same as confirmation that no identifier
+exists, so the feed omits `identifier_exists` for these products.
+
+`NO_ASSIGNED_UPI` may be used only for an explicit, evidence-backed canonical
+assertion that the product has no manufacturer-assigned UPI; only then does the
+feed emit `identifier_exists=no`. `ASSIGNED_UPI` requires a verified GTIN or a
+verified MPN and brand. Individual identifier fields must include a value,
+`verified=true`, and an evidence reference in the canonical source before they
+can be emitted. The generator does not fall back to CAS numbers, Winigen SKUs,
+site Organization data, or the seller name.
+
+Package variants share the canonical product's stable `skuBase` as
+`item_group_id` and expose package size through `variant_option`.
 
 Each package offer links to the canonical product page with a stable
 `package=<package SKU>` query parameter. The shared product-page runtime uses

@@ -3,6 +3,7 @@ tmp/
 dist-cloudflare/
 .DS_Store
 .wrangler/
+node_modules/
 seo/audit.csv
 scripts/
 !scripts/

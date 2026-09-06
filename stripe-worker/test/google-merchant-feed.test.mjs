@@ -9,7 +9,8 @@ import { generateGoogleMerchantFeed } from '../../scripts/generate-google-mercha
 const siteRoot = resolve(import.meta.dirname, '../..');
 const semantic = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const commerce = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
-const result = await generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce });
+const identifiers = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/product-identifiers.source.json'), 'utf8'));
+const result = await generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce, identifierSource: identifiers });
 const byId = new Map(result.items.map(item => [item.id, item]));
 const semanticBySlug = new Map(semantic.products.map(product => [product.slug, product]));
 const commerceBySlug = new Map(commerce.products.map(product => [product.slug, product]));
@@ -29,6 +30,12 @@ function activeVariants(product) {
       unitAmount: override.unitAmount ?? templateVariant.unitAmount
     };
   }).filter(variant => variant.approvalStatus === 'ACTIVE');
+}
+
+function identifierFixture(slug, record) {
+  const fixture = structuredClone(identifiers);
+  fixture.products[slug] = record;
+  return fixture;
 }
 
 test('feed includes only image-backed direct-checkout products and active variants', () => {
@@ -178,12 +185,122 @@ test('generated XML parses successfully with xmllint when available', t => {
   assert.equal(parsed.status, 0, parsed.stderr);
 });
 
-test('required Merchant fields are present without invented identifiers or brand', () => {
-  for (const tag of ['id', 'title', 'description', 'link', 'image_link', 'availability', 'price', 'condition', 'identifier_exists', 'product_type', 'item_group_id', 'item_group_title', 'variant_option']) {
+test('UNKNOWN is the canonical default and omits identifier_exists and unverified identifiers', () => {
+  assert.equal(identifiers.defaultStatus, 'UNKNOWN');
+  for (const tag of ['id', 'title', 'description', 'link', 'image_link', 'availability', 'price', 'condition', 'product_type', 'item_group_id', 'item_group_title', 'variant_option']) {
     assert.equal((result.xml.match(new RegExp(`<g:${tag}(?:>|>)`, 'g')) || []).length, result.items.length, tag);
   }
-  assert.doesNotMatch(result.xml, /<g:(?:gtin|mpn|brand)>/i);
-  assert.equal((result.xml.match(/<g:identifier_exists>no<\/g:identifier_exists>/g) || []).length, result.items.length);
+  assert.ok(result.items.every(item => item.identifierStatus === 'UNKNOWN'));
+  assert.doesNotMatch(result.xml, /<g:(?:gtin|mpn|brand|identifier_exists)>/i);
+});
+
+test('NO_ASSIGNED_UPI requires explicit evidence and emits identifier_exists=no only for that product', async () => {
+  const slug = '4-fluoro-1-3-dioxolan-2-one-fec';
+  const identifierSource = identifierFixture(slug, {
+    status: 'NO_ASSIGNED_UPI',
+    evidence: 'Supplier confirmation reference TEST-ONLY'
+  });
+  const fixture = await generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce, identifierSource });
+  const targetItems = fixture.items.filter(item => item.source.slug === slug);
+  assert.ok(targetItems.length > 0);
+  assert.equal((fixture.xml.match(/<g:identifier_exists>no<\/g:identifier_exists>/g) || []).length, targetItems.length);
+  assert.ok(targetItems.every(item => item.identifierStatus === 'NO_ASSIGNED_UPI'));
+
+  const missingEvidence = identifierFixture(slug, { status: 'NO_ASSIGNED_UPI' });
+  await assert.rejects(
+    generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce, identifierSource: missingEvidence }),
+    /NO_ASSIGNED_UPI requires an explicit canonical evidence statement/
+  );
+
+  const unsafeDefault = structuredClone(identifiers);
+  unsafeDefault.defaultStatus = 'NO_ASSIGNED_UPI';
+  await assert.rejects(
+    generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce, identifierSource: unsafeDefault }),
+    /defaultStatus must remain UNKNOWN/
+  );
+});
+
+test('ASSIGNED_UPI emits only explicit verified identifier data', async () => {
+  const slug = '4-fluoro-1-3-dioxolan-2-one-fec';
+  const identifierSource = identifierFixture(slug, {
+    status: 'ASSIGNED_UPI',
+    gtin: { value: '00012345600012', verified: true, evidence: 'Manufacturer record TEST-ONLY' }
+  });
+  const fixture = await generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce, identifierSource });
+  const targetItems = fixture.items.filter(item => item.source.slug === slug);
+  assert.ok(targetItems.length > 0);
+  assert.equal((fixture.xml.match(/<g:gtin>00012345600012<\/g:gtin>/g) || []).length, targetItems.length);
+  assert.doesNotMatch(fixture.xml, /<g:identifier_exists>no<\/g:identifier_exists>/);
+
+  const incomplete = identifierFixture(slug, { status: 'ASSIGNED_UPI' });
+  await assert.rejects(
+    generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce, identifierSource: incomplete }),
+    /ASSIGNED_UPI requires a verified GTIN or verified MPN and brand/
+  );
+});
+
+test('UNKNOWN may emit an individually verified field without claiming identifier absence', async () => {
+  const slug = '4-fluoro-1-3-dioxolan-2-one-fec';
+  const identifierSource = identifierFixture(slug, {
+    status: 'UNKNOWN',
+    brand: { value: 'Example Manufacturer Brand', verified: true, evidence: 'Manufacturer record TEST-ONLY' }
+  });
+  const fixture = await generateGoogleMerchantFeed({ semanticSource: semantic, commerceSource: commerce, identifierSource });
+  assert.match(fixture.xml, /<g:brand>Example Manufacturer Brand<\/g:brand>/);
+  assert.doesNotMatch(fixture.xml, /<g:identifier_exists>no<\/g:identifier_exists>/);
+});
+
+test('identifier validation rejects CAS-as-GTIN, internal-SKU-as-MPN, unverified data, and manufacturer fallback', async () => {
+  const slug = '4-fluoro-1-3-dioxolan-2-one-fec';
+  const cases = [
+    [
+      { status: 'ASSIGNED_UPI', gtin: { value: '114435-02-8', verified: true, evidence: 'TEST-ONLY' } },
+      /cannot use a CAS number as GTIN/
+    ],
+    [
+      {
+        status: 'ASSIGNED_UPI',
+        mpn: { value: 'WM-ADD-FEC', verified: true, evidence: 'TEST-ONLY' },
+        brand: { value: 'Example Brand', verified: true, evidence: 'TEST-ONLY' }
+      },
+      /cannot use an internal Winigen SKU as MPN/
+    ],
+    [
+      { status: 'UNKNOWN', brand: { value: 'Winigen Materials', verified: false, evidence: '' } },
+      /requires a value, verified=true, and evidence/
+    ],
+    [
+      { status: 'UNKNOWN', manufacturer: 'Winigen Materials' },
+      /cannot populate manufacturer through Merchant identifier data/
+    ],
+    [
+      { status: 'UNKNOWN', identifier_exists: 'no' },
+      /must derive identifier_exists from the canonical identifier status/
+    ]
+  ];
+  for (const [record, expected] of cases) {
+    await assert.rejects(
+      generateGoogleMerchantFeed({
+        semanticSource: semantic,
+        commerceSource: commerce,
+        identifierSource: identifierFixture(slug, record)
+      }),
+      expected
+    );
+  }
+});
+
+test('site seller metadata never automatically becomes Merchant brand or manufacturer', async () => {
+  const fixtureSemantic = structuredClone(semantic);
+  const target = fixtureSemantic.products.find(product => product.slug === '4-fluoro-1-3-dioxolan-2-one-fec');
+  target.brand = 'Winigen Materials';
+  target.manufacturer = 'Winigen Materials';
+  const fixture = await generateGoogleMerchantFeed({
+    semanticSource: fixtureSemantic,
+    commerceSource: commerce,
+    identifierSource: identifiers
+  });
+  assert.doesNotMatch(fixture.xml, /<g:(?:brand|manufacturer)>/i);
 });
 
 test('explicit public projection does not leak internal fields or secrets', () => {
