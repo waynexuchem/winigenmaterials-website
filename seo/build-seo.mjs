@@ -406,6 +406,7 @@ function renderStaticProductCommerce(html, product) {
   next = next.replace(/<div class="detail-actions"(?:[^>]*)>/i, `${commercePanel(product)}\n        <div class="detail-actions" hidden data-ecommerce-fallback-actions="true">`);
   next = next
     .replace(/Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions\./gi, 'Selected research packages are available for online ordering, with bulk supply and related materials-development requirements handled by quotation.')
+    .replace(/This material is available by RFQ while supplier availability, grade, package sizes, and commercial terms are confirmed\./gi, 'Selected research packages are available for online ordering, with bulk and custom requirements handled by quotation.')
     .replace(/Final specifications, documentation, and available quantity can be confirmed during RFQ\./gi, 'Final specifications, documentation, and fulfillment eligibility are confirmed during order review or through a bulk RFQ.')
     .replace(/This material is available by RFQ for programs where/gi, 'Selected research packages are available for online ordering, while bulk and custom requirements are handled by quotation for programs where');
   const commercialFaq = {

@@ -226,31 +226,6 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "metadata": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC), CAS 1513-87-7, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade. TFEC supplier where to buy TFEC Abbreviation TFEC CAS Number 1513-87-7 Formula C5H4F6O3 Availability RFQ Water < 100 ppm Grade Battery material grade"
     },
     {
-      "slug": "hexafluoroisopropylmethyl-ether",
-      "name": "Hexafluoroisopropylmethyl ether",
-      "aliases": [
-        "HFPM",
-        "HFIPME"
-      ],
-      "cas": "13171-18-1",
-      "formula": "C₄H₄F₆O",
-      "section": "solvents",
-      "category": "Battery Solvents",
-      "metadata": "Hexafluoroisopropylmethyl ether, CAS 13171-18-1, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade. HFPM supplier where to buy HFPM CAS Number 13171-18-1 Formula C₄H₄F₆O Availability RFQ Water < 100 ppm Grade Battery material grade"
-    },
-    {
-      "slug": "sulfolane",
-      "name": "Sulfolane (Sulfolane)",
-      "aliases": [
-        "Sulfolane"
-      ],
-      "cas": "126-33-0",
-      "formula": "C4H8O2 S",
-      "section": "solvents",
-      "category": "Battery Solvents",
-      "metadata": "Sulfolane (Sulfolane), CAS 126-33-0, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade. Sulfolane (Sulfolane) supplier where to buy Sulfolane (Sulfolane) Abbreviation Sulfolane CAS Number 126-33-0 Formula C4H8O2 S Availability RFQ Water < 100 ppm Grade Battery material grade"
-    },
-    {
       "slug": "vinylene-carbonate-vc",
       "name": "Vinylene carbonate (VC)",
       "aliases": [
@@ -285,7 +260,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C3H6O4S",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "1,3-Propanediol cyclic sulfate (TS), CAS 1073-05-8, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. TS supplier where to buy TS Abbreviation TS CAS Number 1073-05-8 Formula C3H6O4S Availability RFQ Grade Battery material grade"
+      "metadata": "1,3-Propanediol cyclic sulfate (TS), CAS 1073-05-8, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. TS supplier where to buy TS Abbreviation TS CAS Number 1073-05-8 Formula C3H6O4S Availability Online ordering Grade Battery material grade"
     },
     {
       "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
@@ -428,18 +403,6 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "metadata": "1,3-Propanesultone (PS), CAS 1120-71-4, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless liquid.. PS supplier where to buy PS Abbreviation PS CAS Number 1120-71-4 Formula C6H12O6S2 Availability RFQ Grade Battery material grade Physical Colorless liquid."
     },
     {
-      "slug": "tetraethylammonium-tetrafluoroborate-teabf-4",
-      "name": "Tetraethylammonium tetrafluoroborate (TEABF4)",
-      "aliases": [
-        "TEABF4"
-      ],
-      "cas": "429-06-1",
-      "formula": "TEABF4",
-      "section": "additives",
-      "category": "Electrolyte Additives",
-      "metadata": "Tetraethylammonium tetrafluoroborate (TEABF4), CAS 429-06-1, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. TEABF4 supplier where to buy TEABF4 Abbreviation TEABF4 CAS Number 429-06-1 Formula TEABF4 Availability RFQ Grade Battery material grade"
-    },
-    {
       "slug": "trimethylsilyl-phosphite-ttpi",
       "name": "Trimethylsilyl phosphite (TTPi)",
       "aliases": [
@@ -450,7 +413,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C9H33O6PSi3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Trimethylsilyl phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. Trimethylsilyl phosphite (TTPi) supplier where to buy Trimethylsilyl phosphite (TTPi) Abbreviation TTPi CAS Number 1795-31-9 Formula C9H33O6PSi3 Availability RFQ Grade Battery material grade"
+      "metadata": "Trimethylsilyl phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. Trimethylsilyl phosphite (TTPi) supplier where to buy Trimethylsilyl phosphite (TTPi) Abbreviation TTPi CAS Number 1795-31-9 Formula C9H33O6PSi3 Availability Online ordering Grade Battery material grade"
     },
     {
       "slug": "sodium-hexafluorophosphate-napf-6",

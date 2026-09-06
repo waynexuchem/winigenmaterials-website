@@ -1025,93 +1025,6 @@
       ]
     },
     {
-      "slug": "hexafluoroisopropylmethyl-ether",
-      "url": "/products/hexafluoroisopropylmethyl-ether.html",
-      "name": "Hexafluoroisopropylmethyl ether",
-      "description": "Hexafluoroisopropylmethyl ether, CAS 13171-18-1, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade.",
-      "family": "battery-solvents",
-      "category": "Battery Solvents",
-      "sku": "WM-SOL-HFIPME",
-      "image": "/assets/images/chemical-structures/hexafluoroisopropylmethyl-ether.png",
-      "aliases": [
-        "HFPM",
-        "HFIPME"
-      ],
-      "commercialIntents": [
-        "HFPM supplier",
-        "where to buy HFPM"
-      ],
-      "commerceStatus": "rfq",
-      "schemaOfferEligible": false,
-      "additionalProperty": [
-        {
-          "name": "CAS Number",
-          "value": "13171-18-1"
-        },
-        {
-          "name": "Formula",
-          "value": "C₄H₄F₆O"
-        },
-        {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
-          "name": "Water",
-          "value": "< 100 ppm"
-        },
-        {
-          "name": "Grade",
-          "value": "Battery material grade"
-        }
-      ]
-    },
-    {
-      "slug": "sulfolane",
-      "url": "/products/sulfolane.html",
-      "name": "Sulfolane (Sulfolane)",
-      "description": "Sulfolane (Sulfolane), CAS 126-33-0, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade.",
-      "family": "battery-solvents",
-      "category": "Battery Solvents",
-      "sku": "WM-SOL-SULFOLANE",
-      "image": "/assets/images/chemical-structures/sulfolane.png",
-      "aliases": [
-        "Sulfolane"
-      ],
-      "commercialIntents": [
-        "Sulfolane (Sulfolane) supplier",
-        "where to buy Sulfolane (Sulfolane)"
-      ],
-      "commerceStatus": "rfq",
-      "schemaOfferEligible": false,
-      "additionalProperty": [
-        {
-          "name": "Abbreviation",
-          "value": "Sulfolane"
-        },
-        {
-          "name": "CAS Number",
-          "value": "126-33-0"
-        },
-        {
-          "name": "Formula",
-          "value": "C4H8O2 S"
-        },
-        {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
-          "name": "Water",
-          "value": "< 100 ppm"
-        },
-        {
-          "name": "Grade",
-          "value": "Battery material grade"
-        }
-      ]
-    },
-    {
       "slug": "vinylene-carbonate-vc",
       "url": "/products/vinylene-carbonate-vc.html",
       "name": "Vinylene carbonate (VC)",
@@ -1216,8 +1129,9 @@
         "TS supplier",
         "where to buy TS"
       ],
-      "commerceStatus": "rfq",
-      "schemaOfferEligible": false,
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "1-3-propanediol-cyclic-sulfate-ts",
       "additionalProperty": [
         {
           "name": "Abbreviation",
@@ -1233,7 +1147,7 @@
         },
         {
           "name": "Availability",
-          "value": "RFQ"
+          "value": "Online ordering"
         },
         {
           "name": "Grade",
@@ -1736,47 +1650,6 @@
       ]
     },
     {
-      "slug": "tetraethylammonium-tetrafluoroborate-teabf-4",
-      "url": "/products/tetraethylammonium-tetrafluoroborate-teabf-4.html",
-      "name": "Tetraethylammonium tetrafluoroborate (TEABF4)",
-      "description": "Tetraethylammonium tetrafluoroborate (TEABF4), CAS 429-06-1, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
-      "family": "electrolyte-additives",
-      "category": "Electrolyte Additives",
-      "sku": "WM-ADD-TEABF4",
-      "image": "/assets/images/chemical-structures/tetraethylammonium-tetrafluoroborate-teabf-4.png",
-      "aliases": [
-        "TEABF4"
-      ],
-      "commercialIntents": [
-        "TEABF4 supplier",
-        "where to buy TEABF4"
-      ],
-      "commerceStatus": "rfq",
-      "schemaOfferEligible": false,
-      "additionalProperty": [
-        {
-          "name": "Abbreviation",
-          "value": "TEABF4"
-        },
-        {
-          "name": "CAS Number",
-          "value": "429-06-1"
-        },
-        {
-          "name": "Formula",
-          "value": "TEABF4"
-        },
-        {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
-          "name": "Grade",
-          "value": "Battery material grade"
-        }
-      ]
-    },
-    {
       "slug": "trimethylsilyl-phosphite-ttpi",
       "url": "/products/trimethylsilyl-phosphite-ttpi.html",
       "name": "Trimethylsilyl phosphite (TTPi)",
@@ -1793,8 +1666,9 @@
         "Trimethylsilyl phosphite (TTPi) supplier",
         "where to buy Trimethylsilyl phosphite (TTPi)"
       ],
-      "commerceStatus": "rfq",
-      "schemaOfferEligible": false,
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "trimethylsilyl-phosphite-ttpi",
       "additionalProperty": [
         {
           "name": "Abbreviation",
@@ -1810,7 +1684,7 @@
         },
         {
           "name": "Availability",
-          "value": "RFQ"
+          "value": "Online ordering"
         },
         {
           "name": "Grade",

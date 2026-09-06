@@ -297,7 +297,6 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethylene-carbonate-ec.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethylene-sulfite-es.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/fluorobenzene-fb.png</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/hexafluoroisopropylmethyl-ether.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/hexamethyldisilazane-hmds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/lithium-bis-fluorosulfonyl-imide-lifsi.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/lithium-bis-oxalato-borate-libob.png</image:loc></image:image>
@@ -319,8 +318,6 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/sodium-difluorophosphate-napo2f2.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/sodium-hexafluorophosphate-napf-6.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/succinonitrile-sn.png</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/sulfolane.png</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tetraethylammonium-tetrafluoroborate-teabf-4.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tetravinylsilane-tvsi.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/triallyl-phosphate-tap.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png</image:loc></image:image>
@@ -418,12 +415,10 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethyl-methyl-carbonate-emc.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethyl-propionate-ep.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethylene-carbonate-ec.png</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/hexafluoroisopropylmethyl-ether.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/propyl-acetate-pa.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/propyl-propionate-pp.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/propylene-carbonate-pc.png</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/sulfolane.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/biphenyl-bp.html</loc>
@@ -469,7 +464,6 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/hexamethyldisilazane-hmds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/prop-1-ene-1-3-sultone-pst.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/succinonitrile-sn.png</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tetraethylammonium-tetrafluoroborate-teabf-4.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tetravinylsilane-tvsi.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/triallyl-phosphate-tap.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png</image:loc></image:image>
@@ -567,10 +561,6 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
   </url>
   <url><loc>https://www.winigenmaterials.com/products/hard-carbon-anode-material.html</loc></url>
-  <url>
-    <loc>https://www.winigenmaterials.com/products/hexafluoroisopropylmethyl-ether.html</loc>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/hexafluoroisopropylmethyl-ether.png</image:loc></image:image>
-  </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/hexamethyldisilazane-hmds.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/hexamethyldisilazane-hmds.png</image:loc></image:image>
@@ -715,14 +705,6 @@
   <url>
     <loc>https://www.winigenmaterials.com/products/succinonitrile-sn.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/succinonitrile-sn.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.winigenmaterials.com/products/sulfolane.html</loc>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/sulfolane.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.winigenmaterials.com/products/tetraethylammonium-tetrafluoroborate-teabf-4.html</loc>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tetraethylammonium-tetrafluoroborate-teabf-4.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/tetravinylsilane-tvsi.html</loc>

@@ -203,20 +203,62 @@ test('client price fields are ignored and a nonexistent package is rejected', ()
   assert.throws(() => resolveCart([{ variantKey: 'WM-LS-LIFSI-10G', quantity: 1 }]), /not available for online ordering/);
 });
 
-test('supplier-review products have no active Worker variants and cannot reach checkout', () => {
-  const formerVariantKeys = [
+test('discontinued and obsolete pre-checkout variants cannot reach checkout', () => {
+  const unavailableVariantKeys = [
     'WM-SOL-HFIPME-100G',
     'WM-SOL-SULFOLANE-500G',
     'WM-ADD-TS-25G',
     'WM-ADD-TEABF4-100G',
     'WM-ADD-TTPI-25G'
   ];
-  for (const variantKey of formerVariantKeys) {
-    assert.equal(VARIANTS_BY_KEY.has(variantKey), false, `${variantKey} must remain RFQ-only`);
+  for (const variantKey of unavailableVariantKeys) {
+    assert.equal(VARIANTS_BY_KEY.has(variantKey), false, `${variantKey} must remain unavailable`);
     assert.throws(
       () => resolveCart([{ variantKey, quantity: 1 }]),
       /not available for online ordering/
     );
+  }
+});
+
+test('TS and TTPi use the approved six-tier direct-order schedule', () => {
+  const packageIds = ['200G', '500G', '1KG', '2KG', '5KG', '10KG'];
+  const approvedAmounts = [79995, 118995, 159995, 184995, 329995, 579995];
+  for (const skuBase of ['WM-ADD-TS', 'WM-ADD-TTPI']) {
+    const variants = packageIds.map(id => VARIANTS_BY_KEY.get(`${skuBase}-${id}`));
+    assert.deepEqual(variants.map(variant => variant?.unitAmount), approvedAmounts, skuBase);
+    assert.ok(variants.every(variant => variant?.product.commercialStatus === 'ONLINE_CHECKOUT'));
+    assert.ok(variants.every(variant => variant?.product.shippingClass === 'STANDARD_RD'));
+    assert.ok(variants.every(variant => variant?.pricingStatus === 'APPROVED_RETAIL'));
+    const resolved = resolveCart([{ variantKey: `${skuBase}-200G`, quantity: 2, unitAmount: 1 }]);
+    assert.equal(resolved.merchandiseSubtotal, 159990);
+    assert.equal(resolved.items[0].variant.unitAmount, 79995);
+  }
+});
+
+test('a new TS package creates Checkout price_data from the Worker catalog', async () => {
+  const originalFetch = globalThis.fetch;
+  let submitted;
+  globalThis.fetch = async (_url, options) => {
+    submitted = new URLSearchParams(options.body);
+    return new Response(JSON.stringify({ id: 'cs_test_ts_checkout', url: 'https://checkout.stripe.test/ts' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  };
+  try {
+    const resolved = resolveCart([{ variantKey: 'WM-ADD-TS-500G', quantity: 2, unitAmount: 1 }]);
+    await createCartCheckoutSession(
+      { winigen_order_id: 'WM-T-TS-0001' },
+      'tscheckoutattempt2026',
+      resolved,
+      { country: 'US', amount: 0, currency: 'usd' },
+      { SITE_ORIGIN: 'https://www.winigenmaterials.com', STRIPE_SECRET_KEY: 'test-key-not-sent' }
+    );
+    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '118995');
+    assert.equal(submitted.get('line_items[0][quantity]'), '2');
+    assert.equal(submitted.get('line_items[0][price]'), null);
+  } finally {
+    globalThis.fetch = originalFetch;
   }
 });
 

@@ -91,7 +91,6 @@ function aliasesFor(name, slug) {
     'sodium-difluoro-oxalate-borate-naodfb': ['NaDFOB', 'NaODFB'],
     'ethylene-sulfite-es': ['ES', 'ESI', 'glycol sulfite'],
     'lithium-difluorobis-oxalato-phosphate-lidodfp': ['LiDFBOP', 'LiDODFP'],
-    'hexafluoroisopropylmethyl-ether': ['HFPM', 'HFIPME'],
     '4-fluoro-1-3-dioxolan-2-one-fec': ['fluoroethylene carbonate'],
     'trimethylsilyl-phosphite-ttpi': ['TMSPi']
   };

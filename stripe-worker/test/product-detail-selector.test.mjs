@@ -37,7 +37,7 @@ test('every direct product page uses package cards without a package dropdown', 
 });
 
 test('every direct product page uses the tightened single-title purchase layout', async () => {
-  assert.equal(directProducts.length, 68, 'expected the complete direct-order catalog');
+  assert.equal(directProducts.length, 70, 'expected the complete direct-order catalog');
   for (const product of directProducts) {
     const html = await readFile(resolve(siteRoot, 'products', `${product.slug}.html`), 'utf8');
     const headings = html.match(/<h1\b/gi) || [];
@@ -49,6 +49,7 @@ test('every direct product page uses the tightened single-title purchase layout'
     assert.match(html, /<div class="product-detail-information"><p class="detail-kicker">About this product<\/p>\s*<p>/i, `${product.slug}: compact about copy`);
     assert.doesNotMatch(html, /product-detail-summary__status/i, `${product.slug}: no duplicate commerce badge`);
     assert.doesNotMatch(html, /ecommerce-panel__step|>Step [12]</i, `${product.slug}: no wizard labels`);
+    assert.doesNotMatch(html, /This material is available by RFQ while supplier availability/i, `${product.slug}: no stale RFQ-only FAQ copy`);
     assert.match(html, /class="ecommerce-panel__quantity-label">Quantity/i, `${product.slug}: compact quantity row`);
   }
 });

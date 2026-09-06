@@ -39,13 +39,13 @@ function identifierFixture(slug, record) {
 }
 
 test('feed includes only image-backed direct-checkout products and active variants', () => {
-  assert.equal(result.stats.baseProductsEvaluated, 99);
-  assert.equal(result.stats.commerceProductsEvaluated, 68);
-  assert.equal(result.stats.productsEmitted, 55);
-  assert.equal(result.stats.variantsEmitted, 314);
+  assert.equal(result.stats.baseProductsEvaluated, 96);
+  assert.equal(result.stats.commerceProductsEvaluated, 70);
+  assert.equal(result.stats.productsEmitted, 57);
+  assert.equal(result.stats.variantsEmitted, 326);
   assert.equal(result.stats.exclusions.manual_review_or_rfq, 12);
   assert.equal(result.stats.exclusions.missing_image, 1);
-  assert.equal(result.stats.exclusions.not_in_commerce_catalog, 31);
+  assert.equal(result.stats.exclusions.not_in_commerce_catalog, 26);
   for (const item of result.items) {
     assert.equal(item.source.commercialStatus, 'ONLINE_CHECKOUT');
     assert.equal(item.source.schemaOfferEligible, true);

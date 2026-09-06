@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import test from 'node:test';
 import { runCommerceClassificationAudit } from '../scripts/audit-commerce-classification.mjs';
 import { resolveProductCommerceState } from '../../ecommerce/commerce-classification.mjs';
@@ -7,21 +8,41 @@ import { resolveProductCommerceState } from '../../ecommerce/commerce-classifica
 test('every canonical product and active variant has one consistent commerce state', async () => {
   const report = await runCommerceClassificationAudit();
   assert.deepEqual(report.issues, []);
-  assert.equal(report.coverage.canonicalProducts, 99);
-  assert.equal(report.coverage.ecommerceProducts, 68);
-  assert.equal(report.coverage.activeVariants, 391);
-  assert.equal(report.matrix.filter(row => row.variantKey).length, 391);
-  assert.equal(new Set(report.matrix.map(row => row.productSlug)).size, 99);
+  assert.equal(report.coverage.canonicalProducts, 96);
+  assert.equal(report.coverage.ecommerceProducts, 70);
+  assert.equal(report.coverage.activeVariants, 403);
+  assert.equal(report.matrix.filter(row => row.variantKey).length, 403);
+  assert.equal(new Set(report.matrix.map(row => row.productSlug)).size, 96);
   assert.deepEqual(report.productStateCounts, {
-    DIRECT_CHECKOUT: 51,
-    RFQ_ONLY: 43,
+    DIRECT_CHECKOUT: 53,
+    RFQ_ONLY: 38,
     DIRECT_CHECKOUT_REVIEW: 5
   });
   assert.deepEqual(report.variantStateCounts, {
-    DIRECT_CHECKOUT: 290,
+    DIRECT_CHECKOUT: 302,
     RFQ_ONLY: 72,
     DIRECT_CHECKOUT_REVIEW: 29
   });
+});
+
+test('discontinued supplier products are absent from canonical and deployable catalog surfaces', async () => {
+  const siteRoot = resolve(import.meta.dirname, '../..');
+  const retiredSlugs = [
+    'hexafluoroisopropylmethyl-ether',
+    'sulfolane',
+    'tetraethylammonium-tetrafluoroborate-teabf-4'
+  ];
+  const canonical = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
+  const ecommerce = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
+  const searchIndex = await readFile(resolve(siteRoot, 'assets/js/product-search-index.js'), 'utf8');
+  const sitemap = await readFile(resolve(siteRoot, 'sitemap.xml'), 'utf8');
+  for (const slug of retiredSlugs) {
+    assert.equal(canonical.products.some(product => product.slug === slug), false, slug);
+    assert.equal(ecommerce.products.some(product => product.slug === slug), false, slug);
+    assert.doesNotMatch(searchIndex, new RegExp(slug), slug);
+    assert.doesNotMatch(sitemap, new RegExp(slug), slug);
+    await assert.rejects(() => access(resolve(siteRoot, 'products', `${slug}.html`)));
+  }
 });
 
 test('RFQ and pre-payment review classes cannot become checkout-enabled', () => {
