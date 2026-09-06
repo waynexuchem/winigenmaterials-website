@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import vm from 'node:vm';
 
-import worker, { isProductionHostname } from '../cloudflare-site/worker.js';
+import worker, { applyResponseHeaders, isProductionHostname } from '../cloudflare-site/worker.js';
 
 const siteRoot = new URL('../', import.meta.url);
 const productionApi = 'https://winigen-stripe-production.winigen.workers.dev';
@@ -62,6 +62,14 @@ test('Worker preserves apex paths and queries when redirecting to www', async ()
     assert.equal(response.status, 308);
     assert.equal(response.headers.get('Location'), destination);
     assert.equal(response.headers.get('X-Robots-Tag'), null);
+    assert.equal(response.headers.get('X-Content-Type-Options'), 'nosniff');
+    assert.equal(response.headers.get('Referrer-Policy'), 'strict-origin-when-cross-origin');
+    assert.equal(response.headers.get('X-Frame-Options'), 'SAMEORIGIN');
+    assert.equal(response.headers.get('Content-Security-Policy'), null);
+    assert.equal(
+      response.headers.get('Strict-Transport-Security'),
+      source.startsWith('https:') ? 'max-age=300' : null
+    );
   }
 });
 
@@ -71,7 +79,7 @@ test('Worker adds noindex only outside production and maps only the root path', 
     ASSETS: {
       async fetch(request) {
         requestedPaths.push(new URL(request.url).pathname);
-        return new Response('asset', { status: 200, headers: { 'Content-Type': 'text/plain' } });
+        return new Response('asset', { status: 200, headers: { 'Content-Type': 'text/html' } });
       }
     }
   };
@@ -81,8 +89,81 @@ test('Worker adds noindex only outside production and maps only the root path', 
 
   assert.deepEqual(requestedPaths, ['/index.html', '/products.html', '/missing']);
   assert.equal(production.headers.get('X-Robots-Tag'), null);
+  assert.equal(production.headers.get('Strict-Transport-Security'), 'max-age=300');
+  assert.equal(production.headers.get('Content-Security-Policy'), null);
+  assert.equal(production.headers.get('Content-Security-Policy-Report-Only'), null);
   assert.equal(preview.headers.get('X-Robots-Tag'), 'noindex, nofollow');
+  assert.equal(preview.headers.get('Strict-Transport-Security'), null);
+  assert.match(preview.headers.get('Content-Security-Policy-Report-Only'), /formspree\.io/);
   assert.equal(unknown.headers.get('X-Robots-Tag'), 'noindex, nofollow');
   assert.equal(isProductionHostname('WWW.WINIGENMATERIALS.COM'), true);
   assert.equal(isProductionHostname('preview.workers.dev'), false);
+});
+
+test('security headers preserve response status, MIME, cache policy, and body', async () => {
+  for (const [pathname, contentType] of [
+    ['/assets/js/main.js', 'text/javascript'],
+    ['/assets/css/style.css', 'text/css'],
+    ['/missing', 'text/html']
+  ]) {
+    const status = pathname === '/missing' ? 404 : 200;
+    const original = new Response('unchanged', {
+      status,
+      headers: {
+        'Cache-Control': 'public, max-age=0, must-revalidate',
+        'Content-Type': contentType,
+        ETag: 'stage3b-etag'
+      }
+    });
+    const response = applyResponseHeaders(
+      original,
+      new URL(`https://www.winigenmaterials.com${pathname}`)
+    );
+
+    assert.equal(response.status, status);
+    assert.equal(response.headers.get('Content-Type'), contentType);
+    assert.equal(response.headers.get('Cache-Control'), 'public, max-age=0, must-revalidate');
+    assert.equal(response.headers.get('ETag'), 'stage3b-etag');
+    assert.equal(response.headers.get('X-Content-Type-Options'), 'nosniff');
+    assert.equal(response.headers.get('Referrer-Policy'), 'strict-origin-when-cross-origin');
+    assert.equal(response.headers.get('X-Frame-Options'), 'SAMEORIGIN');
+    assert.equal(response.headers.get('Strict-Transport-Security'), 'max-age=300');
+    assert.equal(response.headers.get('Content-Security-Policy'), null);
+    assert.equal(await response.text(), 'unchanged');
+  }
+});
+
+test('HSTS is HTTPS-production-only and never broadens to subdomains or preload', () => {
+  for (const target of [
+    'http://www.winigenmaterials.com/',
+    'https://branch.example.workers.dev/',
+    'https://unknown-example-host.com/'
+  ]) {
+    const response = applyResponseHeaders(new Response('ok'), new URL(target));
+    assert.equal(response.headers.get('Strict-Transport-Security'), null);
+  }
+
+  const production = applyResponseHeaders(
+    new Response('ok'),
+    new URL('https://www.winigenmaterials.com/')
+  );
+  const hsts = production.headers.get('Strict-Transport-Security');
+  assert.equal(hsts, 'max-age=300');
+  assert.doesNotMatch(hsts, /includeSubDomains/i);
+  assert.doesNotMatch(hsts, /preload/i);
+});
+
+test('preview CSP remains report-only and commerce cache policy is untouched', () => {
+  const response = applyResponseHeaders(
+    new Response('commerce', {
+      headers: { 'Cache-Control': 'no-store', 'Content-Type': 'text/html' }
+    }),
+    new URL('https://branch.example.workers.dev/cart.html')
+  );
+
+  assert.equal(response.headers.get('Cache-Control'), 'no-store');
+  assert.equal(response.headers.get('Content-Security-Policy'), null);
+  assert.match(response.headers.get('Content-Security-Policy-Report-Only'), /googletagmanager\.com/);
+  assert.match(response.headers.get('Content-Security-Policy-Report-Only'), /fonts\.googleapis\.com/);
+  assert.match(response.headers.get('Content-Security-Policy-Report-Only'), /winigen-stripe-production/);
 });
