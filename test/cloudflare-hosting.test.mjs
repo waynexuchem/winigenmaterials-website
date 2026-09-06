@@ -38,6 +38,29 @@ test('commerce hostname resolution is explicit and fail-closed', async () => {
   }
 });
 
+test('Worker preserves apex paths and queries when redirecting to www', async () => {
+  const env = {
+    ASSETS: {
+      async fetch() {
+        assert.fail('apex redirects must not fetch an asset');
+      }
+    }
+  };
+
+  for (const [source, destination] of [
+    ['http://winigenmaterials.com/', 'https://www.winigenmaterials.com/'],
+    [
+      'https://winigenmaterials.com/products/triallyl-phosphate-tap.html?source=stage2a1',
+      'https://www.winigenmaterials.com/products/triallyl-phosphate-tap.html?source=stage2a1'
+    ]
+  ]) {
+    const response = await worker.fetch(new Request(source), env);
+    assert.equal(response.status, 308);
+    assert.equal(response.headers.get('Location'), destination);
+    assert.equal(response.headers.get('X-Robots-Tag'), null);
+  }
+});
+
 test('Worker adds noindex only outside production and maps only the root path', async () => {
   const requestedPaths = [];
   const env = {
@@ -49,13 +72,11 @@ test('Worker adds noindex only outside production and maps only the root path', 
     }
   };
   const production = await worker.fetch(new Request('https://www.winigenmaterials.com/'), env);
-  const apex = await worker.fetch(new Request('https://winigenmaterials.com/products.html'), env);
   const preview = await worker.fetch(new Request('https://branch.example.workers.dev/products.html'), env);
   const unknown = await worker.fetch(new Request('https://unknown-example-host.com/missing'), env);
 
-  assert.deepEqual(requestedPaths, ['/index.html', '/products.html', '/products.html', '/missing']);
+  assert.deepEqual(requestedPaths, ['/index.html', '/products.html', '/missing']);
   assert.equal(production.headers.get('X-Robots-Tag'), null);
-  assert.equal(apex.headers.get('X-Robots-Tag'), null);
   assert.equal(preview.headers.get('X-Robots-Tag'), 'noindex, nofollow');
   assert.equal(unknown.headers.get('X-Robots-Tag'), 'noindex, nofollow');
   assert.equal(isProductionHostname('WWW.WINIGENMATERIALS.COM'), true);

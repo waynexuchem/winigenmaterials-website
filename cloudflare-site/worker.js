@@ -1,4 +1,6 @@
 const PRODUCTION_HOSTS = new Set(['winigenmaterials.com', 'www.winigenmaterials.com']);
+const APEX_HOST = 'winigenmaterials.com';
+const WWW_HOST = 'www.winigenmaterials.com';
 
 export function isProductionHostname(hostname) {
   return PRODUCTION_HOSTS.has(hostname.toLowerCase());
@@ -7,6 +9,13 @@ export function isProductionHostname(hostname) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.hostname.toLowerCase() === APEX_HOST) {
+      url.protocol = 'https:';
+      url.hostname = WWW_HOST;
+      url.port = '';
+      return Response.redirect(url.toString(), 308);
+    }
+
     const assetUrl = new URL(url);
     if (assetUrl.pathname === '/') assetUrl.pathname = '/index.html';
 
