@@ -326,10 +326,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/vinyl-ethylene-carbonate-vec.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/vinylene-carbonate-vc.png</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-a07-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m07-sem.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m300-sem.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m400-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-p05-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/wbm-p07-boehmite-sem.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-powder-photo.jpg</image:loc></image:image>
@@ -392,14 +389,14 @@
   <url>
     <loc>https://www.winigenmaterials.com/products/alumina-functional-coating-materials.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-a07-sem.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m07-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m300-sem.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m400-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-p05-sem.jpg</image:loc></image:image>
   </url>
   <url><loc>https://www.winigenmaterials.com/products/battery-active-materials.html</loc></url>
   <url>
     <loc>https://www.winigenmaterials.com/products/battery-ceramic-functional-coating-materials.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m07-sem.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-p05-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/wbm-p07-boehmite-sem.png</image:loc></image:image>
   </url>
   <url>
@@ -645,6 +642,12 @@
     <loc>https://www.winigenmaterials.com/products/llzto-powder.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/llzto-powder-photo.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/llzto-xrd.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/mesoporous-alumina-materials.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m07-sem.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m300-sem.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m400-sem.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html</loc>

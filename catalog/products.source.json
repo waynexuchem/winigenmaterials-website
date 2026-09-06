@@ -57,7 +57,24 @@
     {
       "slug": "functional-coatings",
       "name": "Functional Coatings",
-      "url": "/products/battery-ceramic-functional-coating-materials.html"
+      "url": "/products/battery-ceramic-functional-coating-materials.html",
+      "publicItemList": [
+        {
+          "name": "WBM-P07 Fine Boehmite Powder",
+          "url": "/products/wbm-p07-boehmite-powder.html",
+          "entityId": "#webpage"
+        },
+        {
+          "name": "WAL-P05 Fine Alumina Coating Powder",
+          "url": "/products/wal-p05-alumina-coating-powder.html",
+          "entityId": "#webpage"
+        },
+        {
+          "name": "Mesoporous Alumina Materials",
+          "url": "/products/mesoporous-alumina-materials.html",
+          "entityId": "#collection"
+        }
+      ]
     }
   ],
   "products": [
@@ -3373,7 +3390,8 @@
       "name": "WBM-P07 Fine Boehmite Powder",
       "description": "WBM-P07 fine boehmite powder for ceramic coating slurry preparation, separator coating, and electrode coating formulation development.",
       "family": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Boehmite Coating Materials",
+      "catalogPresentation": "PRIMARY",
       "sku": "WBM-P07",
       "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/wbm-p07-boehmite-sem.png",
       "aliases": [],
@@ -3413,7 +3431,8 @@
       "name": "WAL-P05 Fine Alumina Coating Powder",
       "description": "WAL-P05 high-purity fine alumina powder for separator and electrode coating, ceramic slurry preparation, and filler evaluation.",
       "family": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Alumina Coating Materials",
+      "catalogPresentation": "PRIMARY",
       "sku": "WAL-P05",
       "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-p05-sem.jpg",
       "aliases": [],
@@ -3453,7 +3472,8 @@
       "name": "WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation",
       "description": "WAL-A07 high-purity fine alumina powder for evaluating low-level cathode incorporation and composite-electrode interfaces.",
       "family": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Functional Alumina for Cathode/Additive Evaluation",
+      "catalogPresentation": "SECONDARY",
       "sku": "WAL-A07",
       "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-a07-sem.jpg",
       "aliases": [],
@@ -3489,7 +3509,8 @@
       "name": "WAL-M300 Mesoporous Alumina",
       "description": "WAL-M300 high-purity mesoporous alumina with 150-300 m2/g BET and 3-5 µm D50 for high-surface-area material studies.",
       "family": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Mesoporous Alumina Materials",
+      "catalogPresentation": "SUBORDINATE",
       "sku": "WAL-M300",
       "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m300-sem.jpg",
       "aliases": [],
@@ -3525,7 +3546,8 @@
       "name": "WAL-M400 Mesoporous Alumina",
       "description": "WAL-M400 high-purity mesoporous alumina with 250-400 m2/g BET and 4-6 µm D50 for high-surface-area material studies.",
       "family": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Mesoporous Alumina Materials",
+      "catalogPresentation": "SUBORDINATE",
       "sku": "WAL-M400",
       "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m400-sem.jpg",
       "aliases": [],
@@ -3561,7 +3583,8 @@
       "name": "WAL-M07 Fine Mesoporous Alumina",
       "description": "WAL-M07 fine mesoporous alumina with 20-50 m2/g BET and 0.5-1.0 µm D50 for ceramic additive and coating studies.",
       "family": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Mesoporous Alumina Materials",
+      "catalogPresentation": "SUBORDINATE",
       "sku": "WAL-M07",
       "image": "https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m07-sem.jpg",
       "aliases": [],

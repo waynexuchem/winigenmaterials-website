@@ -884,7 +884,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "cas": "",
       "formula": "",
       "section": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Boehmite Coating Materials",
       "metadata": "WBM-P07 fine boehmite powder for ceramic coating slurry preparation, separator coating, and electrode coating formulation development. WBM-P07 Fine Boehmite Powder supplier where to buy WBM-P07 Fine Boehmite Powder Chemical identity gamma-AlO(OH) D50 0.3-0.7 µm D90 ≤ 1.2 µm BET 10-20 m2/g Purity ≥ 99.9 wt%"
     },
     {
@@ -894,7 +894,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "cas": "",
       "formula": "",
       "section": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Alumina Coating Materials",
       "metadata": "WAL-P05 high-purity fine alumina powder for separator and electrode coating, ceramic slurry preparation, and filler evaluation. WAL-P05 Fine Alumina Coating Powder supplier where to buy WAL-P05 Fine Alumina Coating Powder Purity ≥ 99.9% D50 0.4-0.6 µm D90 ≤ 1.2 µm BET 5-9 m2/g Moisture ≤ 3,500 ppm"
     },
     {
@@ -904,7 +904,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "cas": "",
       "formula": "",
       "section": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Functional Alumina for Cathode/Additive Evaluation",
       "metadata": "WAL-A07 high-purity fine alumina powder for evaluating low-level cathode incorporation and composite-electrode interfaces. WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation supplier where to buy WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation Purity ≥ 99.9% D50 0.4-0.8 µm D90 ≤ 2.0 µm BET 3.5-8.5 m2/g"
     },
     {
@@ -914,7 +914,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "cas": "",
       "formula": "",
       "section": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Mesoporous Alumina Materials",
       "metadata": "WAL-M300 high-purity mesoporous alumina with 150-300 m2/g BET and 3-5 µm D50 for high-surface-area material studies. WAL-M300 Mesoporous Alumina supplier where to buy WAL-M300 Mesoporous Alumina Purity ≥ 99.99% D50 3-5 µm BET 150-300 m2/g Pore volume 0.4-0.6 cm3/g"
     },
     {
@@ -924,7 +924,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "cas": "",
       "formula": "",
       "section": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Mesoporous Alumina Materials",
       "metadata": "WAL-M400 high-purity mesoporous alumina with 250-400 m2/g BET and 4-6 µm D50 for high-surface-area material studies. WAL-M400 Mesoporous Alumina supplier where to buy WAL-M400 Mesoporous Alumina Purity ≥ 99.99% D50 4-6 µm BET 250-400 m2/g Pore volume 0.5-1.2 cm3/g"
     },
     {
@@ -934,7 +934,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "cas": "",
       "formula": "",
       "section": "functional-coatings",
-      "category": "Functional Coatings",
+      "category": "Mesoporous Alumina Materials",
       "metadata": "WAL-M07 fine mesoporous alumina with 20-50 m2/g BET and 0.5-1.0 µm D50 for ceramic additive and coating studies. WAL-M07 Fine Mesoporous Alumina supplier where to buy WAL-M07 Fine Mesoporous Alumina Purity ≥ 99.9% D50 0.5-1.0 µm BET 20-50 m2/g Pore volume 0.02-0.2 cm3/g"
     },
     {

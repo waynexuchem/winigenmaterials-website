@@ -70,7 +70,7 @@ Use this framework to understand how Winigen connects chemical supply, interface
 - Solid-State Electrolytes: solid-state electrolyte, solid electrolyte powder, oxide solid electrolyte, sulfide solid electrolyte, LATP, LLZTO, Li6PS5Cl. https://www.winigenmaterials.com/products/solid-state-electrolytes.html
 - Custom Formulations: standard lithium-ion electrolyte, ready-to-use battery electrolyte, custom battery electrolyte, electrolyte formulation service, custom lithium-ion electrolyte, custom sodium-ion electrolyte, silicon-anode electrolyte formulation. https://www.winigenmaterials.com/products/custom-electrolyte-formulations.html
 - Active Materials: cathode material, anode material, LFP, NMC, LCO, silicon anode, graphite anode. https://www.winigenmaterials.com/products/battery-active-materials.html
-- Functional Coatings: boehmite battery coating, alumina battery coating, ceramic coating material, battery separator coating, electrode-edge coating. https://www.winigenmaterials.com/products/battery-ceramic-functional-coating-materials.html
+- Functional Coatings: boehmite battery coating, alumina battery coating, Mesoporous Alumina Materials, ceramic coating material, battery separator coating, electrode-edge coating, pilot-line coating trial. https://www.winigenmaterials.com/products/battery-ceramic-functional-coating-materials.html
 
 ## Product Data Fields
 

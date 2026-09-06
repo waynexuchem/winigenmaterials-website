@@ -681,7 +681,6 @@ function replaceProductPageSchema(html, product) {
 }
 
 function familyPagePath(family) {
-  if (family.slug === 'functional-coatings') return null;
   return family.url.replace(/^\//, '');
 }
 
@@ -689,6 +688,11 @@ function collectionSchema(familySlug = null) {
   const family = familySlug ? familiesBySlug.get(familySlug) : null;
   const familyIntent = familySlug ? intents.families[familySlug] : null;
   const products = familySlug ? productSource.products.filter(product => product.family === familySlug) : productSource.products;
+  const entries = family?.publicItemList || products.map(product => ({
+    name: product.name,
+    url: product.url,
+    entityId: isDirectPurchaseProduct(product) ? '#product' : '#webpage'
+  }));
   const pagePath = family ? family.url : '/products.html';
   const pageUrl = `${siteUrl}${pagePath}`;
   const name = family ? familyIntent.name : 'Winigen Materials Product Catalog';
@@ -710,14 +714,14 @@ function collectionSchema(familySlug = null) {
         '@type': 'ItemList',
         '@id': `${pageUrl}#products`,
         name: `${name} products`,
-        numberOfItems: products.length,
+        numberOfItems: entries.length,
         itemListOrder: 'https://schema.org/ItemListOrderAscending',
-        itemListElement: products.map((product, index) => ({
+        itemListElement: entries.map((entry, index) => ({
           '@type': 'ListItem',
           position: index + 1,
-          name: product.name,
-          url: `${siteUrl}${product.url}`,
-          item: { '@id': `${siteUrl}${product.url}${isDirectPurchaseProduct(product) ? '#product' : '#webpage'}` }
+          name: entry.name,
+          url: `${siteUrl}${entry.url}`,
+          item: { '@id': `${siteUrl}${entry.url}${entry.entityId}` }
         }))
       }
     ]
@@ -832,12 +836,19 @@ async function updateProductPage(pagePath, product) {
   html = ensureCanonical(html, canonical);
   html = applyOpenGraph(html, { title, description, canonical, image: absoluteSiteUrl(product.image), type: isDirectPurchaseProduct(product) ? 'product' : 'website' });
   html = replaceProductPageSchema(html, product);
-  html = replaceTypedSchema(html, 'BreadcrumbList', breadcrumbSchema(canonical, [
+  const productBreadcrumbs = [
     { name: 'Home', url: `${siteUrl}/` },
     { name: 'Products', url: `${siteUrl}/products.html` },
-    { name: family.name, url: `${siteUrl}${family.url}` },
-    { name: product.name, url: canonical }
-  ]));
+    { name: family.name, url: `${siteUrl}${family.url}` }
+  ];
+  if (product.family === 'functional-coatings' && product.sku !== 'WBM-P07') {
+    productBreadcrumbs.push({ name: 'Alumina Materials', url: `${siteUrl}/products/alumina-functional-coating-materials.html` });
+  }
+  if (product.category === 'Mesoporous Alumina Materials') {
+    productBreadcrumbs.push({ name: 'Mesoporous Alumina Materials', url: `${siteUrl}/products/mesoporous-alumina-materials.html` });
+  }
+  productBreadcrumbs.push({ name: product.name, url: canonical });
+  html = replaceTypedSchema(html, 'BreadcrumbList', breadcrumbSchema(canonical, productBreadcrumbs));
   html = renderStaticProductCommerce(html, product);
   html = renderStaticRfqState(html, product);
   html = ensureStylesheet(html, '../assets/css/ecommerce.css?v=' + generatedAssetVersion);
@@ -1009,12 +1020,19 @@ async function normalizeOtherPage(pagePath) {
   await writePreservingEol(fullPath, html, original);
 }
 
-for (const product of productSource.products) await updateProductPage(product.url.replace(/^\//, ''), product);
-await updateProductAliases();
-await updateFamilyPage('products.html');
-for (const family of productSource.families) {
-  const pagePath = familyPagePath(family);
-  if (pagePath) await updateFamilyPage(pagePath, family.slug);
+const scopedProducts = buildScope === 'functional-coatings'
+  ? productSource.products.filter(product => product.family === 'functional-coatings')
+  : productSource.products;
+for (const product of scopedProducts) await updateProductPage(product.url.replace(/^\//, ''), product);
+if (buildScope !== 'functional-coatings') {
+  await updateProductAliases();
+  await updateFamilyPage('products.html');
+  for (const family of productSource.families) {
+    const pagePath = familyPagePath(family);
+    if (pagePath) await updateFamilyPage(pagePath, family.slug);
+  }
+} else {
+  await updateFamilyPage(familyPagePath(familiesBySlug.get('functional-coatings')), 'functional-coatings');
 }
 
 const allHtml = await listHtml(siteRoot);
@@ -1074,7 +1092,7 @@ const audit = [auditHeaders.map(csv).join(','), ...auditRows.map(row => [
   row.primaryEntity, row.commercialIntent, row.engineeringIntent, row.internalLinksAdded, row.schemaIssues, row.ecommerceMismatch
 ].map(csv).join(','))].join('\n');
 await mkdir(resolve(siteRoot, 'seo'), { recursive: true });
-await writeFile(resolve(siteRoot, 'seo/audit.csv'), `${audit}\n`);
+if (buildScope !== 'functional-coatings') await writeFile(resolve(siteRoot, 'seo/audit.csv'), `${audit}\n`);
 
 console.log(`Generated SEO metadata and schema for ${productSource.products.length} products and ${auditRows.filter(row => row.pageType === 'Knowledge article').length} knowledge articles.`);
 console.log(`Wrote ${imageDiscovery.sitemapUrls} canonical URLs (${imageDiscovery.pagesWithImages} pages and ${imageDiscovery.imageAssociations} image associations) to sitemap.xml, enabled large previews on ${imageDiscovery.largePreviewPages} in-scope pages, and wrote ${auditRows.length} rows to seo/audit.csv.`);

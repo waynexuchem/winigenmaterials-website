@@ -382,11 +382,39 @@ for (const product of productSource.products.filter(entry => entry.commerceStatu
 }
 for (const product of productSource.products.filter(entry => entry.commerceStatus === 'rfq')) {
   const article = productArticles.find(markup => markup.includes(`${product.slug}.html`));
-  if (!article) errors.push(`products.html: missing RFQ card for ${product.slug}.`);
-  else {
+  const intentionallyDeemphasized = ['SECONDARY', 'SUBORDINATE'].includes(product.catalogPresentation);
+  if (!article) {
+    if (!intentionallyDeemphasized) errors.push(`products.html: missing RFQ card for ${product.slug}.`);
+  } else if (intentionallyDeemphasized) {
+    errors.push(`products.html: ${product.slug} remains an equally prominent top-level product card.`);
+  } else {
     if (!/Available by RFQ/i.test(article) || !/Request Quote/i.test(article)) errors.push(`products.html: ${product.slug} lacks explicit RFQ status or CTA.`);
     if (/data-static-commerce="true"|Online ordering|Add to Cart/i.test(article)) errors.push(`products.html: ${product.slug} exposes contradictory direct-commerce content.`);
   }
+}
+
+const coatingProducts = productSource.products.filter(product => product.family === 'functional-coatings');
+const expectedCoatingCategories = new Map([
+  ['WBM-P07', 'Boehmite Coating Materials'],
+  ['WAL-P05', 'Alumina Coating Materials'],
+  ['WAL-M07', 'Mesoporous Alumina Materials'],
+  ['WAL-M300', 'Mesoporous Alumina Materials'],
+  ['WAL-M400', 'Mesoporous Alumina Materials'],
+  ['WAL-A07', 'Functional Alumina for Cathode/Additive Evaluation']
+]);
+for (const product of coatingProducts) {
+  if (product.commerceStatus !== 'rfq' || product.schemaOfferEligible !== false || product.ecommerceSlug !== null) {
+    errors.push(`${product.slug}: functional-coating product must remain canonical RFQ-only.`);
+  }
+  if (expectedCoatingCategories.get(product.sku) !== product.category) errors.push(`${product.slug}: functional-coating category mismatch.`);
+  if (ecommerceBySlug.has(product.slug)) errors.push(`${product.slug}: functional-coating RFQ product leaked into ecommerce catalog.`);
+}
+const coatingSection = productsHtml.match(/<section id="functional-coatings"[\s\S]*?<\/section>/i)?.[0] || '';
+for (const required of ['wbm-p07-boehmite-powder.html', 'wal-p05-alumina-coating-powder.html', 'mesoporous-alumina-materials.html', 'Discuss a Ceramic Coating Requirement']) {
+  if (!coatingSection.includes(required)) errors.push(`products.html: functional-coatings hierarchy is missing ${required}.`);
+}
+for (const subordinate of ['wal-m07-mesoporous-alumina.html', 'wal-m300-mesoporous-alumina.html', 'wal-m400-mesoporous-alumina.html']) {
+  if (coatingSection.includes(subordinate)) errors.push(`products.html: subordinate grade remains in the top-level coating grid: ${subordinate}.`);
 }
 
 const homeSchemas = schemasByPath.get('index.html') || [];
@@ -397,8 +425,10 @@ if (homeOrganizations.length !== 1) errors.push(`index.html: expected one canoni
 const collectionExpectations = new Map([['products.html', productSource.products.length]]);
 for (const family of productSource.families) {
   if (!family.url.endsWith('.html')) continue;
-  collectionExpectations.set(family.url.replace(/^\//, ''), productSource.products.filter(product => product.family === family.slug).length);
+  collectionExpectations.set(family.url.replace(/^\//, ''), family.publicItemList?.length || productSource.products.filter(product => product.family === family.slug).length);
 }
+collectionExpectations.set('products/alumina-functional-coating-materials.html', 3);
+collectionExpectations.set('products/mesoporous-alumina-materials.html', 3);
 for (const [pagePath, expected] of collectionExpectations) {
   const lists = (schemasByPath.get(pagePath) || []).flatMap(schema => collectType(schema, 'ItemList'));
   if (lists.length !== 1) errors.push(`${pagePath}: expected one ItemList, found ${lists.length}.`);

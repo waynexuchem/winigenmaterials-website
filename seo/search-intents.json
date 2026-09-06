@@ -78,10 +78,10 @@
     "functional-coatings": {
       "name": "Functional Coatings",
       "title": "Battery Ceramic & Functional Coating Materials | Winigen Materials",
-      "description": "Boehmite and alumina powders for battery separator coatings, electrode coatings, ceramic slurry development, and functional battery-material applications.",
-      "visibleIntro": "Winigen Materials supplies boehmite, alumina, and specialty ceramic materials for separator coating, electrode coating, edge insulation, slurry development, and pilot-line evaluation. Product grade, quantity, morphology, and process requirements are confirmed by quotation.",
-      "entities": ["boehmite battery coating", "alumina battery coating", "ceramic coating material", "battery separator coating", "electrode-edge coating"],
-      "commercialIntents": ["battery-grade boehmite supplier", "battery-grade alumina supplier", "ceramic coating slurry materials"],
+      "description": "Application-led boehmite, alumina, and Mesoporous Alumina Materials selection for battery coating formulation, pilot-line trials, FAT, and process qualification by technical RFQ.",
+      "visibleIntro": "Winigen Materials supports application-led selection of boehmite, alumina, and mesoporous ceramic materials for separator coating, electrode coating, edge insulation, thermal-stability layers, local slurry development, and pilot-line or FAT evaluation. Product, morphology, process, scale, and documentation requirements are confirmed through technical RFQ and customer-specific qualification.",
+      "entities": ["boehmite battery coating", "alumina battery coating", "Mesoporous Alumina Materials", "ceramic coating material", "battery separator coating", "electrode-edge coating", "pilot-line coating trial"],
+      "commercialIntents": ["battery ceramic coating technical RFQ", "battery-grade boehmite supplier", "battery-grade alumina supplier", "ceramic coating material selection"],
       "engineeringQuestions": ["how should ceramic battery coatings be formulated", "how do boehmite and alumina coatings differ"],
       "relatedKnowledge": ["battery-materials-optimization-chemistry-cell-performance.html", "solid-state-electrolyte-screening-rd-to-pilot-line.html"]
     }

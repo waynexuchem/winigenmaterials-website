@@ -13,6 +13,7 @@ scripts/*
 !scripts/apply-approved-pricing.mjs
 !scripts/build-product-search-index.mjs
 !scripts/generate-public-product-pages.mjs
+!scripts/generate-functional-coatings-pages.mjs
 !scripts/generate-google-merchant-feed.mjs
 !scripts/submit-indexnow.mjs
 !scripts/validate-approved-pricing.mjs

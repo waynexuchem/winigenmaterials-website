@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict';
-import { createRequire } from 'node:module';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import vm from 'node:vm';
 
-const require = createRequire(import.meta.url);
-const searchApi = require('../../assets/js/product-search.js');
+const searchScript = await readFile(new URL('../../assets/js/product-search.js', import.meta.url), 'utf8');
+const searchContext = { globalThis: {} };
+vm.runInNewContext(searchScript, searchContext);
+const searchApi = searchContext.globalThis.WinigenProductSearch;
 const indexText = await readFile(new URL('../../assets/js/product-search-index.js', import.meta.url), 'utf8');
 const source = JSON.parse(await readFile(new URL('../../catalog/products.source.json', import.meta.url), 'utf8'));
 const index = JSON.parse(indexText.slice(indexText.indexOf('=') + 1).trim().replace(/;$/, ''));
@@ -12,7 +14,7 @@ const records = index.records.map(searchApi.prepareRecord);
 const slugs = (query, section = '') => searchApi.search(records, query, section).records.map(record => record.slug);
 
 test('catalog families use the approved commercial sequence', () => {
-  assert.deepEqual(searchApi.SECTION_ORDER, [
+  assert.deepEqual([...searchApi.SECTION_ORDER], [
     'salts',
     'solvents',
     'additives',
