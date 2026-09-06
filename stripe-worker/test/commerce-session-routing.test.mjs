@@ -80,6 +80,7 @@ test('normal storefront runtime is generated for production checkout', async () 
   const generated = await readFile(new URL('../../assets/js/commerce-config.js', import.meta.url), 'utf8');
   assert.equal(runtime.environments.test.apiOrigin, 'https://winigen-stripe-test.winigen.workers.dev');
   assert.equal(runtime.environments.production.apiOrigin, 'https://winigen-stripe-production.winigen.workers.dev');
-  assert.match(generated, /"environment": "production"/);
-  assert.match(generated, /"apiOrigin": "https:\/\/winigen-stripe-production\.winigen\.workers\.dev"/);
+  assert.match(generated, /environment: 'production'/);
+  assert.match(generated, /apiOrigin: "https:\/\/winigen-stripe-production\.winigen\.workers\.dev"/);
+  assert.match(generated, /apiOrigin: null, checkoutEnabled: false/);
 });
