@@ -50,6 +50,10 @@ test('Worker preserves apex paths and queries when redirecting to www', async ()
   for (const [source, destination] of [
     ['http://winigenmaterials.com/', 'https://www.winigenmaterials.com/'],
     [
+      'https://winigenmaterials.com/products/triallyl-phosphate-tap.html',
+      'https://www.winigenmaterials.com/products/triallyl-phosphate-tap.html'
+    ],
+    [
       'https://winigenmaterials.com/products/triallyl-phosphate-tap.html?source=stage2a1',
       'https://www.winigenmaterials.com/products/triallyl-phosphate-tap.html?source=stage2a1'
     ]
