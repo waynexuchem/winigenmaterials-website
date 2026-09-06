@@ -35,7 +35,9 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
 const semanticSourcePath = resolve(siteRoot, 'catalog/products.source.json');
 const commerceSourcePath = resolve(siteRoot, 'ecommerce/catalog.source.json');
+const identifierSourcePath = resolve(siteRoot, 'ecommerce/product-identifiers.source.json');
 const outputPath = resolve(siteRoot, 'feeds/google-merchant.xml');
+const IDENTIFIER_STATUSES = new Set(['UNKNOWN', 'NO_ASSIGNED_UPI', 'ASSIGNED_UPI']);
 
 const productTypes = Object.freeze({
   'lithium-salts': 'Science & Laboratory > Battery Materials > Lithium Salts',
@@ -140,6 +142,93 @@ function renderVariantOption(label) {
   return `      <g:variant_option>\n        <g:name>Package size</g:name>\n        <g:value>${xmlEscape(label)}</g:value>\n      </g:variant_option>`;
 }
 
+function hasOwn(object, key) {
+  return Object.prototype.hasOwnProperty.call(object, key);
+}
+
+function validGtin(value) {
+  if (!/^\d{8}$|^\d{12}$|^\d{13}$|^\d{14}$/.test(value)) return false;
+  const digits = [...value].map(Number);
+  const checkDigit = digits.pop();
+  let multiplier = 3;
+  let sum = 0;
+  for (let index = digits.length - 1; index >= 0; index -= 1) {
+    sum += digits[index] * multiplier;
+    multiplier = multiplier === 3 ? 1 : 3;
+  }
+  return (10 - (sum % 10)) % 10 === checkDigit;
+}
+
+function verifiedIdentifier(entry, field, slug) {
+  if (!hasOwn(entry, field)) return null;
+  const identifier = entry[field];
+  if (!identifier || typeof identifier !== 'object' || Array.isArray(identifier)) {
+    throw new Error(`${slug} ${field} must be an explicit verified identifier record.`);
+  }
+  const value = String(identifier.value || '').trim();
+  const evidence = String(identifier.evidence || '').trim();
+  if (!value || identifier.verified !== true || !evidence) {
+    throw new Error(`${slug} ${field} requires a value, verified=true, and evidence.`);
+  }
+  if (field === 'gtin') {
+    if (/^\d{2,7}-\d{2}-\d$/.test(value)) throw new Error(`${slug} cannot use a CAS number as GTIN.`);
+    if (!validGtin(value)) throw new Error(`${slug} has an invalid GTIN.`);
+  }
+  if (field === 'mpn' && /^WM-/i.test(value)) {
+    throw new Error(`${slug} cannot use an internal Winigen SKU as MPN.`);
+  }
+  if (value.length > 70) throw new Error(`${slug} ${field} exceeds Google's 70-character limit.`);
+  return value;
+}
+
+function resolveIdentifierRecords(identifierSource, semanticProducts) {
+  if (!identifierSource || identifierSource.schemaVersion !== 1) {
+    throw new Error('Merchant identifier source requires schemaVersion 1.');
+  }
+  if (identifierSource.defaultStatus !== 'UNKNOWN') {
+    throw new Error('Merchant identifier defaultStatus must remain UNKNOWN; stronger claims require explicit product records.');
+  }
+  const records = identifierSource.products;
+  if (!records || typeof records !== 'object' || Array.isArray(records)) {
+    throw new Error('Merchant identifier source products must be an object keyed by canonical slug.');
+  }
+  const canonicalSlugs = new Set(semanticProducts.map(product => product.slug));
+  for (const slug of Object.keys(records)) {
+    if (!canonicalSlugs.has(slug)) throw new Error(`Merchant identifier source contains unknown product ${slug}.`);
+  }
+
+  return new Map(semanticProducts.map(product => {
+    const explicit = hasOwn(records, product.slug);
+    const entry = explicit ? records[product.slug] : {};
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
+      throw new Error(`${product.slug} identifier record must be an object.`);
+    }
+    if (hasOwn(entry, 'manufacturer')) {
+      throw new Error(`${product.slug} cannot populate manufacturer through Merchant identifier data.`);
+    }
+    if (hasOwn(entry, 'identifier_exists') || hasOwn(entry, 'identifierExists')) {
+      throw new Error(`${product.slug} must derive identifier_exists from the canonical identifier status.`);
+    }
+    const status = entry.status || identifierSource.defaultStatus;
+    if (!IDENTIFIER_STATUSES.has(status)) throw new Error(`${product.slug} has invalid identifier status ${status}.`);
+    const gtin = verifiedIdentifier(entry, 'gtin', product.slug);
+    const mpn = verifiedIdentifier(entry, 'mpn', product.slug);
+    const brand = verifiedIdentifier(entry, 'brand', product.slug);
+
+    if (status === 'NO_ASSIGNED_UPI') {
+      if (!explicit || !String(entry.evidence || '').trim()) {
+        throw new Error(`${product.slug} NO_ASSIGNED_UPI requires an explicit canonical evidence statement.`);
+      }
+      if (gtin || mpn || brand) throw new Error(`${product.slug} NO_ASSIGNED_UPI cannot include assigned identifiers.`);
+    }
+    if (status === 'ASSIGNED_UPI' && !(gtin || (mpn && brand))) {
+      throw new Error(`${product.slug} ASSIGNED_UPI requires a verified GTIN or verified MPN and brand.`);
+    }
+
+    return [product.slug, { status, gtin, mpn, brand }];
+  }));
+}
+
 function renderItem(item) {
   const unitPricing = item.unitPricingMeasure
     ? [
@@ -147,6 +236,12 @@ function renderItem(item) {
         `      <g:unit_pricing_base_measure>${item.unitPricingBaseMeasure}</g:unit_pricing_base_measure>`
       ]
     : [];
+  const identifiers = [
+    item.identifiers.gtin ? `      <g:gtin>${xmlEscape(item.identifiers.gtin)}</g:gtin>` : null,
+    item.identifiers.mpn ? `      <g:mpn>${xmlEscape(item.identifiers.mpn)}</g:mpn>` : null,
+    item.identifiers.brand ? `      <g:brand>${xmlEscape(item.identifiers.brand)}</g:brand>` : null,
+    item.identifierStatus === 'NO_ASSIGNED_UPI' ? '      <g:identifier_exists>no</g:identifier_exists>' : null
+  ].filter(Boolean);
   return [
     '    <item>',
     `      <g:id>${xmlEscape(item.id)}</g:id>`,
@@ -158,7 +253,7 @@ function renderItem(item) {
     `      <g:price>${item.price}</g:price>`,
     ...unitPricing,
     '      <g:condition>new</g:condition>',
-    '      <g:identifier_exists>no</g:identifier_exists>',
+    ...identifiers,
     `      <g:product_type>${xmlEscape(item.productType)}</g:product_type>`,
     `      <g:item_group_id>${xmlEscape(item.itemGroupId)}</g:item_group_id>`,
     `      <g:item_group_title>${xmlEscape(item.itemGroupTitle)}</g:item_group_title>`,
@@ -195,11 +290,23 @@ function validateItem(item, seenIds) {
   }
   publicUrl(item.link, 'landing-page URL', item.id);
   publicUrl(item.imageLink, 'image URL', item.id);
+  if (!IDENTIFIER_STATUSES.has(item.identifierStatus)) throw new Error(`${item.id} has invalid identifier status.`);
+  if (item.identifierStatus === 'UNKNOWN' && item.identifierExists === false) {
+    throw new Error(`${item.id} UNKNOWN identifier status cannot emit identifier_exists=no.`);
+  }
+  if (item.identifierStatus === 'NO_ASSIGNED_UPI' && Object.values(item.identifiers).some(Boolean)) {
+    throw new Error(`${item.id} NO_ASSIGNED_UPI cannot emit assigned identifiers.`);
+  }
+  if (item.identifierStatus === 'ASSIGNED_UPI' && !(item.identifiers.gtin || (item.identifiers.mpn && item.identifiers.brand))) {
+    throw new Error(`${item.id} ASSIGNED_UPI lacks an appropriate verified identifier set.`);
+  }
 }
 
-export async function generateGoogleMerchantFeed({ semanticSource, commerceSource } = {}) {
+export async function generateGoogleMerchantFeed({ semanticSource, commerceSource, identifierSource } = {}) {
   const semantic = semanticSource || JSON.parse(await readFile(semanticSourcePath, 'utf8'));
   const commerce = commerceSource || JSON.parse(await readFile(commerceSourcePath, 'utf8'));
+  const identifiers = identifierSource || JSON.parse(await readFile(identifierSourcePath, 'utf8'));
+  const identifierRecords = resolveIdentifierRecords(identifiers, semantic.products);
   const commerceBySlug = new Map(commerce.products.map(product => [product.slug, product]));
   const exclusions = new Map();
   const products = [];
@@ -235,6 +342,7 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
 
     const productType = productTypes[semanticProduct.family];
     if (!productType) throw new Error(`${semanticProduct.slug} has no public Merchant product_type mapping.`);
+    const identifierRecord = identifierRecords.get(semanticProduct.slug);
     products.push(semanticProduct.slug);
 
     for (const variant of packages) {
@@ -262,6 +370,13 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
         itemGroupId: commerceProduct.skuBase,
         itemGroupTitle: semanticProduct.name,
         packageLabel: variant.label,
+        identifierStatus: identifierRecord.status,
+        identifierExists: identifierRecord.status === 'NO_ASSIGNED_UPI' ? false : null,
+        identifiers: {
+          gtin: identifierRecord.gtin,
+          mpn: identifierRecord.mpn,
+          brand: identifierRecord.brand
+        },
         source: {
           slug: semanticProduct.slug,
           commercialStatus: commerceProduct.commercialStatus,
