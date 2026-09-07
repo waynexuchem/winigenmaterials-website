@@ -91,6 +91,13 @@ function synchronizeCatalogImageFallback(html, subpage) {
   return html;
 }
 
+function synchronizeProductLayoutClasses(html) {
+  return html.replace(
+    /<p style="margin-top:20px">(<a class="btn secondary" href="battery-active-materials\.html">Back to Battery Active Materials<\/a>)<\/p>/g,
+    '<p class="product-detail-back-link">$1</p>'
+  );
+}
+
 function insertIntoSection(html, sectionId, cards) {
   if (!cards.length) return html;
   const start = html.indexOf(`<section id="${sectionId}"`);
@@ -186,7 +193,7 @@ for (const product of catalog.products) {
   try {
     await access(path);
     const current = await readFile(path, 'utf8');
-    const synchronized = synchronizeCatalogImageFallback(synchronizeChemicalStructures(current), true);
+    const synchronized = synchronizeProductLayoutClasses(synchronizeCatalogImageFallback(synchronizeChemicalStructures(current), true));
     if (synchronized !== current) await writeFile(path, synchronized);
   } catch {
     await writeFile(path, detailPage(product));

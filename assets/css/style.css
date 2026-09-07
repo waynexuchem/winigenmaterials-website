@@ -827,6 +827,10 @@ body .structure-fallback.structure-fallback--active { display: grid; font-size: 
   word-break: normal;
 }
 
+.product-detail-back-link {
+  margin-top: 20px;
+}
+
 @media(max-width:900px) {
   .product-detail-hero h1 {
     overflow-wrap: anywhere;
