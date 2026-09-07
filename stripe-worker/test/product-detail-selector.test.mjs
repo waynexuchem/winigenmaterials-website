@@ -4,16 +4,17 @@ import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { promisify } from 'node:util';
+import { withIsolatedSiteFixture } from './isolated-site-fixture.mjs';
 
 const siteRoot = resolve(import.meta.dirname, '../..');
 const execFileAsync = promisify(execFile);
 const source = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const directProducts = source.products.filter(product => product.packages.some(variant => variant.approvalStatus === 'ACTIVE'));
 
-async function directProductPages() {
+async function directProductPages(root = siteRoot) {
   return new Map(await Promise.all(directProducts.map(async product => [
     product.slug,
-    await readFile(resolve(siteRoot, 'products', `${product.slug}.html`), 'utf8')
+    await readFile(resolve(root, 'products', `${product.slug}.html`), 'utf8')
   ])));
 }
 
@@ -55,18 +56,20 @@ test('every direct product page uses the tightened single-title purchase layout'
 });
 
 test('product detail generation is idempotent across two consecutive passes', async () => {
-  const generator = resolve(siteRoot, 'seo/build-seo.mjs');
-  const env = { ...process.env, SEO_SCOPE: 'products' };
-  await execFileAsync(process.execPath, [generator], { cwd: siteRoot, env });
-  const firstPass = new Map([...await directProductPages()].map(([slug, html]) => [slug, relevantProductDetailStructure(html)]));
-  await execFileAsync(process.execPath, [generator], { cwd: siteRoot, env });
-  const secondPass = new Map([...await directProductPages()].map(([slug, html]) => [slug, relevantProductDetailStructure(html)]));
-  for (const [slug, structure] of firstPass) {
-    assert.ok(structure.contextAndNavigation, `${slug}: context and navigation generated`);
-    assert.ok(structure.aboutCopy, `${slug}: compact about copy generated`);
-    assert.ok(structure.purchasePanel, `${slug}: purchase panel generated`);
-  }
-  assert.deepEqual(secondPass, firstPass);
+  await withIsolatedSiteFixture(siteRoot, async isolatedRoot => {
+    const generator = resolve(isolatedRoot, 'seo/build-seo.mjs');
+    const env = { ...process.env, SEO_SCOPE: 'products' };
+    await execFileAsync(process.execPath, [generator], { cwd: isolatedRoot, env });
+    const firstPass = new Map([...await directProductPages(isolatedRoot)].map(([slug, html]) => [slug, relevantProductDetailStructure(html)]));
+    await execFileAsync(process.execPath, [generator], { cwd: isolatedRoot, env });
+    const secondPass = new Map([...await directProductPages(isolatedRoot)].map(([slug, html]) => [slug, relevantProductDetailStructure(html)]));
+    for (const [slug, structure] of firstPass) {
+      assert.ok(structure.contextAndNavigation, `${slug}: context and navigation generated`);
+      assert.ok(structure.aboutCopy, `${slug}: compact about copy generated`);
+      assert.ok(structure.purchasePanel, `${slug}: purchase panel generated`);
+    }
+    assert.deepEqual(secondPass, firstPass);
+  });
 });
 
 test('shared product-page script uses the selected card key for cart updates', async () => {

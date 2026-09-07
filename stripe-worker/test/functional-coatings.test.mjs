@@ -4,6 +4,7 @@ import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { promisify } from 'node:util';
+import { withIsolatedSiteFixture } from './isolated-site-fixture.mjs';
 
 const execFileAsync = promisify(execFile);
 const root = resolve(import.meta.dirname, '../..');
@@ -100,26 +101,29 @@ test('functional-coating products stay out of Merchant while search retains ever
 });
 
 test('functional-coatings generation is idempotent', async () => {
-  const generator = resolve(root, 'scripts/generate-functional-coatings-pages.mjs');
-  const seoGenerator = resolve(root, 'seo/build-seo.mjs');
-  const assetSync = resolve(root, 'scripts/sync-static-asset-versions.mjs');
-  const paths = [
-    'llms.txt',
-    'sitemap.xml',
-    'products.html',
-    'products/battery-ceramic-functional-coating-materials.html',
-    'products/alumina-functional-coating-materials.html',
-    'products/mesoporous-alumina-materials.html',
-    ...coatingProducts.map(product => product.url.replace(/^\//, ''))
-  ];
-  const generate = async () => {
-    await execFileAsync(process.execPath, [generator], { cwd: root });
-    await execFileAsync(process.execPath, [seoGenerator], { cwd: root, env: { ...process.env, SEO_SCOPE: 'functional-coatings' } });
-    await execFileAsync(process.execPath, [assetSync], { cwd: root });
-  };
-  await generate();
-  const first = await Promise.all(paths.map(read));
-  await generate();
-  const second = await Promise.all(paths.map(read));
-  assert.deepEqual(second, first);
+  await withIsolatedSiteFixture(root, async isolatedRoot => {
+    const generator = resolve(isolatedRoot, 'scripts/generate-functional-coatings-pages.mjs');
+    const seoGenerator = resolve(isolatedRoot, 'seo/build-seo.mjs');
+    const assetSync = resolve(isolatedRoot, 'scripts/sync-static-asset-versions.mjs');
+    const paths = [
+      'llms.txt',
+      'sitemap.xml',
+      'products.html',
+      'products/battery-ceramic-functional-coating-materials.html',
+      'products/alumina-functional-coating-materials.html',
+      'products/mesoporous-alumina-materials.html',
+      ...coatingProducts.map(product => product.url.replace(/^\//, ''))
+    ];
+    const readIsolated = path => readFile(resolve(isolatedRoot, path), 'utf8');
+    const generate = async () => {
+      await execFileAsync(process.execPath, [generator], { cwd: isolatedRoot });
+      await execFileAsync(process.execPath, [seoGenerator], { cwd: isolatedRoot, env: { ...process.env, SEO_SCOPE: 'functional-coatings' } });
+      await execFileAsync(process.execPath, [assetSync], { cwd: isolatedRoot });
+    };
+    await generate();
+    const first = await Promise.all(paths.map(readIsolated));
+    await generate();
+    const second = await Promise.all(paths.map(readIsolated));
+    assert.deepEqual(second, first);
+  });
 });
