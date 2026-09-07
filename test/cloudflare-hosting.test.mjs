@@ -68,7 +68,7 @@ test('Worker preserves apex paths and queries when redirecting to www', async ()
     assert.equal(response.headers.get('Content-Security-Policy'), null);
     assert.equal(
       response.headers.get('Strict-Transport-Security'),
-      source.startsWith('https:') ? 'max-age=300' : null
+      source.startsWith('https:') ? 'max-age=86400' : null
     );
   }
 });
@@ -89,12 +89,14 @@ test('Worker adds noindex only outside production and maps only the root path', 
 
   assert.deepEqual(requestedPaths, ['/index.html', '/products.html', '/missing']);
   assert.equal(production.headers.get('X-Robots-Tag'), null);
-  assert.equal(production.headers.get('Strict-Transport-Security'), 'max-age=300');
+  assert.equal(production.headers.get('Strict-Transport-Security'), 'max-age=86400');
   assert.equal(production.headers.get('Content-Security-Policy'), null);
-  assert.equal(production.headers.get('Content-Security-Policy-Report-Only'), null);
+  assert.match(production.headers.get('Content-Security-Policy-Report-Only'), /googletagmanager\.com/);
   assert.equal(preview.headers.get('X-Robots-Tag'), 'noindex, nofollow');
   assert.equal(preview.headers.get('Strict-Transport-Security'), null);
-  assert.match(preview.headers.get('Content-Security-Policy-Report-Only'), /formspree\.io/);
+  const previewPolicy = preview.headers.get('Content-Security-Policy-Report-Only');
+  assert.match(previewPolicy, /formspree\.io/);
+  assert.doesNotMatch(previewPolicy, /winigen-stripe-(?:production|test)/);
   assert.equal(unknown.headers.get('X-Robots-Tag'), 'noindex, nofollow');
   assert.equal(isProductionHostname('WWW.WINIGENMATERIALS.COM'), true);
   assert.equal(isProductionHostname('preview.workers.dev'), false);
@@ -127,8 +129,13 @@ test('security headers preserve response status, MIME, cache policy, and body', 
     assert.equal(response.headers.get('X-Content-Type-Options'), 'nosniff');
     assert.equal(response.headers.get('Referrer-Policy'), 'strict-origin-when-cross-origin');
     assert.equal(response.headers.get('X-Frame-Options'), 'SAMEORIGIN');
-    assert.equal(response.headers.get('Strict-Transport-Security'), 'max-age=300');
+    assert.equal(response.headers.get('Strict-Transport-Security'), 'max-age=86400');
     assert.equal(response.headers.get('Content-Security-Policy'), null);
+    if (contentType === 'text/html') {
+      assert.match(response.headers.get('Content-Security-Policy-Report-Only'), /default-src 'self'/);
+    } else {
+      assert.equal(response.headers.get('Content-Security-Policy-Report-Only'), null);
+    }
     assert.equal(await response.text(), 'unchanged');
   }
 });
@@ -148,12 +155,12 @@ test('HSTS is HTTPS-production-only and never broadens to subdomains or preload'
     new URL('https://www.winigenmaterials.com/')
   );
   const hsts = production.headers.get('Strict-Transport-Security');
-  assert.equal(hsts, 'max-age=300');
+  assert.equal(hsts, 'max-age=86400');
   assert.doesNotMatch(hsts, /includeSubDomains/i);
   assert.doesNotMatch(hsts, /preload/i);
 });
 
-test('preview CSP remains report-only and commerce cache policy is untouched', () => {
+test('preview CSP remains report-only, fail-closed, and commerce cache policy is untouched', () => {
   const response = applyResponseHeaders(
     new Response('commerce', {
       headers: { 'Cache-Control': 'no-store', 'Content-Type': 'text/html' }
@@ -165,5 +172,47 @@ test('preview CSP remains report-only and commerce cache policy is untouched', (
   assert.equal(response.headers.get('Content-Security-Policy'), null);
   assert.match(response.headers.get('Content-Security-Policy-Report-Only'), /googletagmanager\.com/);
   assert.match(response.headers.get('Content-Security-Policy-Report-Only'), /fonts\.googleapis\.com/);
-  assert.match(response.headers.get('Content-Security-Policy-Report-Only'), /winigen-stripe-production/);
+  assert.doesNotMatch(response.headers.get('Content-Security-Policy-Report-Only'), /winigen-stripe-(?:production|test)/);
+});
+
+test('CSP observation is HTML-only, production-safe, and deliberately exposes inline dependencies', () => {
+  for (const hostname of ['www.winigenmaterials.com', 'branch.example.workers.dev']) {
+    const html = applyResponseHeaders(
+      new Response('html', { headers: { 'Content-Type': 'text/html; charset=utf-8' } }),
+      new URL(`https://${hostname}/products.html`)
+    );
+    const policy = html.headers.get('Content-Security-Policy-Report-Only');
+
+    assert.ok(policy);
+    assert.equal(html.headers.get('Content-Security-Policy'), null);
+    assert.match(policy, /script-src 'self' https:\/\/www\.googletagmanager\.com https:\/\/static\.cloudflareinsights\.com/);
+    assert.match(policy, /style-src 'self' https:\/\/fonts\.googleapis\.com/);
+    assert.match(policy, /img-src 'self' data: https:\/\/pubchem\.ncbi\.nlm\.nih\.gov/);
+    assert.match(policy, /frame-src 'none'/);
+    assert.doesNotMatch(policy, /'unsafe-inline'/);
+    assert.doesNotMatch(policy, /'unsafe-eval'/);
+    assert.doesNotMatch(policy, /(?:^|;\s*)[^;]*\*/);
+    if (hostname === 'www.winigenmaterials.com') {
+      assert.match(policy, /winigen-stripe-production\.winigen\.workers\.dev/);
+      assert.doesNotMatch(policy, /winigen-stripe-test\.winigen\.workers\.dev/);
+    } else {
+      assert.doesNotMatch(policy, /winigen-stripe-(?:production|test)/);
+    }
+  }
+
+  const localPolicy = applyResponseHeaders(
+    new Response('html', { headers: { 'Content-Type': 'text/html' } }),
+    new URL('http://localhost:8787/cart.html')
+  ).headers.get('Content-Security-Policy-Report-Only');
+  assert.match(localPolicy, /winigen-stripe-test\.winigen\.workers\.dev/);
+  assert.doesNotMatch(localPolicy, /winigen-stripe-production\.winigen\.workers\.dev/);
+
+  for (const contentType of ['text/css', 'text/javascript', 'image/png', 'application/xml', 'text/plain']) {
+    const asset = applyResponseHeaders(
+      new Response('asset', { headers: { 'Content-Type': contentType } }),
+      new URL('https://www.winigenmaterials.com/asset')
+    );
+    assert.equal(asset.headers.get('Content-Security-Policy-Report-Only'), null);
+    assert.equal(asset.headers.get('Content-Security-Policy'), null);
+  }
 });
