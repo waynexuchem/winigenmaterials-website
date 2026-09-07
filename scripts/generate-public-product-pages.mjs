@@ -25,6 +25,9 @@ const sectionIds = {
   'solid-state-electrolytes': 'solid-state',
   'custom-formulations': 'formulations'
 };
+const leadPresentationByFamily = {
+  'custom-formulations': 'standard-electrolyte-formulation'
+};
 
 const escapeHtml = value => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const property = (product, name) => product.additionalProperty.find(item => item.name === name)?.value || '';
@@ -139,6 +142,31 @@ function insertIntoFamilyGrid(html, cards) {
   return `${html.slice(0, end)}\n${cards.join('\n')}${html.slice(end)}`;
 }
 
+function moveLeadProductCardFirst(html, familySlug, subpage) {
+  const presentation = leadPresentationByFamily[familySlug];
+  if (!presentation) return html;
+  const product = catalog.products.find(item => item.family === familySlug && item.presentation === presentation);
+  if (!product) throw new Error(`Missing lead ${presentation} product for ${familySlug}.`);
+
+  const sectionId = sectionIds[familySlug];
+  const sectionStart = subpage ? html.indexOf('<div class="product-card-grid">') : html.indexOf(`<section id="${sectionId}"`);
+  const sectionEnd = sectionStart >= 0 ? html.indexOf('</section>', sectionStart) : -1;
+  if (sectionStart < 0 || sectionEnd < 0) throw new Error(`Missing product grid for ${familySlug}.`);
+
+  const section = html.slice(sectionStart, sectionEnd);
+  const href = `${subpage ? '' : 'products/'}${product.slug}.html`;
+  const cardMatch = [...section.matchAll(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi)]
+    .find(match => match[0].includes(`href="${href}"`));
+  if (!cardMatch) throw new Error(`Missing lead product card for ${product.slug}.`);
+
+  const gridStart = section.indexOf('<div class="product-card-grid">');
+  const insertAt = gridStart + '<div class="product-card-grid">'.length;
+  if (cardMatch.index === section.indexOf('<article', insertAt)) return html;
+  const withoutCard = `${section.slice(0, cardMatch.index)}${section.slice(cardMatch.index + cardMatch[0].length)}`;
+  const reordered = `${withoutCard.slice(0, insertAt)}\n    ${cardMatch[0]}${withoutCard.slice(insertAt)}`;
+  return `${html.slice(0, sectionStart)}${reordered}${html.slice(sectionEnd)}`;
+}
+
 function detailPage(product) {
   const family = families.get(product.family);
   const cas = property(product, 'CAS Number');
@@ -219,6 +247,7 @@ for (const product of catalog.products) {
   for (const [family, sectionId] of Object.entries(sectionIds)) {
     const cards = catalog.products.filter(product => product.family === family && !hasProductCard(productsHtml, product.slug, false)).map(product => renderCard(product, false));
     productsHtml = insertIntoSection(productsHtml, sectionId, cards);
+    productsHtml = moveLeadProductCardFirst(productsHtml, family, false);
   }
   productsHtml = synchronizeSectionCounts(productsHtml);
   await writeFile(productsPath, productsHtml);
@@ -229,6 +258,7 @@ for (const product of catalog.products) {
     let html = synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(path, 'utf8'))), familySlug));
     const cards = catalog.products.filter(product => product.family === familySlug && !hasProductCard(html, product.slug, true)).map(product => renderCard(product, true));
     html = insertIntoFamilyGrid(html, cards);
+    html = moveLeadProductCardFirst(html, familySlug, true);
     await writeFile(path, html);
   }
 }
