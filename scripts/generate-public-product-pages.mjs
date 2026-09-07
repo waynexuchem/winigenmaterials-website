@@ -7,16 +7,6 @@ const ecommerce = JSON.parse(await readFile(resolve(root, 'ecommerce/catalog.sou
 const ecommerceBySlug = new Map(ecommerce.products.map(product => [product.slug, product]));
 const families = new Map(catalog.families.map(family => [family.slug, family]));
 const canonicalSlugs = new Set(catalog.products.map(product => product.slug));
-const identityCorrectionSlugs = new Set([
-  'ethylene-sulfite-es',
-  'sodium-difluoro-oxalate-borate-naodfb',
-  'lithium-nitrate-lino3',
-  'lithium-difluorobis-oxalato-phosphate-lidodfp'
-]);
-const sourceGeneratedSlugs = new Set([
-  ...identityCorrectionSlugs,
-  '1m-lipf6-ec-emc-3-7-1-vc-electrolyte'
-]);
 const sectionIds = {
   'lithium-salts': 'salts',
   'battery-solvents': 'solvents',
@@ -64,7 +54,6 @@ function removeMisclassifiedCards(html, expectedFamily = null) {
     const product = catalog.products.find(item => item.slug === slug);
     if (!product) return article;
     if (expectedFamily && product.family !== expectedFamily) return '';
-    if (!expectedFamily && identityCorrectionSlugs.has(slug)) return '';
     return article;
   });
 }
@@ -85,23 +74,21 @@ function renderCard(product, subpage) {
   const quote = `${subpage ? '../' : ''}contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
   const media = product.presentation === 'standard-electrolyte-formulation'
     ? `<div class="product-card__media product-card__media--formulation"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><div class="formulation-visual" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div></a></div>`
-    : `<div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="structure-fallback"><span>${escapeHtml(formula || product.aliases[0] || product.name)}</span></div></a></div>`;
+    : `<div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} chemical structure" loading="lazy" data-structure-fallback><div class="structure-fallback"><span>${escapeHtml(formula || product.aliases[0] || product.name)}</span></div></a></div>`;
   return `<article class="product-card" data-product-card data-section="${section}" data-search="${escapeHtml(search)}">
       ${media}
       <div class="product-card__body"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(product.category)}</span><span class="product-card__mode">${modeLabel(product)}</span></div><h3><a class="product-detail-link" href="${href}">${escapeHtml(product.name)}</a></h3><p class="product-card__cas"><span>CAS:</span> ${escapeHtml(cas || 'Not assigned')}</p><ul class="product-card__properties product-card__properties--compact"><li><strong>Grade:</strong> ${escapeHtml(grade)}</li></ul>${product.commerceStatus === 'active_checkout' ? '' : `<div class="product-card__rfq"><a class="btn" href="${quote}">Request Quote</a><div class="product-card__links"><a href="${href}">View details</a></div></div>`}</div>
     </article>`;
 }
 
-function synchronizeIdentityCards(html, subpage) {
-  return html.replace(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi, article => {
-    for (const slug of identityCorrectionSlugs) {
-      const href = `${subpage ? '' : 'products/'}${slug}.html`;
-      if (!article.includes(`href="${href}"`)) continue;
-      const product = catalog.products.find(item => item.slug === slug);
-      return product ? renderCard(product, subpage) : article;
-    }
-    return article;
-  });
+function synchronizeCatalogImageFallback(html, subpage) {
+  const inlineHandler = ' onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\';"';
+  const scriptPath = `${subpage ? '../' : ''}assets/js/catalog-image-fallback.js`;
+  html = html.split(inlineHandler).join(' data-structure-fallback');
+  if (html.includes('data-structure-fallback') && !html.includes(scriptPath)) {
+    html = html.replace('</body>', `<script src="${scriptPath}"></script></body>`);
+  }
+  return html;
 }
 
 function insertIntoSection(html, sectionId, cards) {
@@ -194,18 +181,12 @@ function detailPage(product) {
 }
 
 const missing = [];
-let identityPagesRegenerated = 0;
 for (const product of catalog.products) {
   const path = resolve(root, product.url.replace(/^\//, ''));
-  if (sourceGeneratedSlugs.has(product.slug)) {
-    await writeFile(path, detailPage(product));
-    identityPagesRegenerated += 1;
-    continue;
-  }
   try {
     await access(path);
     const current = await readFile(path, 'utf8');
-    const synchronized = synchronizeChemicalStructures(current);
+    const synchronized = synchronizeCatalogImageFallback(synchronizeChemicalStructures(current), true);
     if (synchronized !== current) await writeFile(path, synchronized);
   } catch {
     await writeFile(path, detailPage(product));
@@ -215,7 +196,7 @@ for (const product of catalog.products) {
 
 {
   const productsPath = resolve(root, 'products.html');
-  let productsHtml = synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(productsPath, 'utf8')))));
+  let productsHtml = synchronizeCatalogImageFallback(synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(productsPath, 'utf8'))))), false);
   for (const [family, sectionId] of Object.entries(sectionIds)) {
     const cards = catalog.products.filter(product => product.family === family && !hasProductCard(productsHtml, product.slug, false)).map(product => renderCard(product, false));
     productsHtml = insertIntoSection(productsHtml, sectionId, cards);
@@ -226,11 +207,11 @@ for (const product of catalog.products) {
   for (const [familySlug, family] of families) {
     if (!sectionIds[familySlug]) continue;
     const path = resolve(root, family.url.replace(/^\//, ''));
-    let html = synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(path, 'utf8'))), familySlug));
+    let html = synchronizeCatalogImageFallback(synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(path, 'utf8'))), familySlug)), true);
     const cards = catalog.products.filter(product => product.family === familySlug && !hasProductCard(html, product.slug, true)).map(product => renderCard(product, true));
     html = insertIntoFamilyGrid(html, cards);
     await writeFile(path, html);
   }
 }
 
-console.log(`Generated ${missing.length} new product pages, regenerated ${identityPagesRegenerated} identity-corrected pages, and synchronized their catalog cards.`);
+console.log(`Generated ${missing.length} new product pages and synchronized their catalog cards.`);
