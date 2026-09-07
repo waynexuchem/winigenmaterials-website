@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { promisify } from 'node:util';
 import test from 'node:test';
 import {
   CATALOG_PRODUCT_COUNT,
@@ -24,6 +27,11 @@ import worker, {
 import { createCustomerTestOrderEmail, createInternalOrderEmail } from '../src/email/templates.js';
 import { sendEmail } from '../src/email/provider.js';
 import { resolveShippingDestination } from '../src/shipping.js';
+import { withIsolatedSiteFixture } from './isolated-site-fixture.mjs';
+
+const siteRoot = resolve(import.meta.dirname, '../..');
+const execFileAsync = promisify(execFile);
+const normalizePrice = unitAmount => Math.ceil(unitAmount / 1000) * 1000;
 
 const representativePrices = {
   'WM-LS-LIPF6-200G': 39995,
@@ -50,12 +58,83 @@ const representativePrices = {
 const approvedPricing = JSON.parse(
   await readFile(new URL('../../ecommerce/approved-pricing.source.json', import.meta.url), 'utf8')
 );
+const supplementalPricing = JSON.parse(
+  await readFile(new URL('../../ecommerce/supplemental-approved-pricing.source.json', import.meta.url), 'utf8')
+);
+const ecommerceSource = JSON.parse(
+  await readFile(new URL('../../ecommerce/catalog.source.json', import.meta.url), 'utf8')
+);
+const applyApprovedPricingSource = await readFile(
+  new URL('../../scripts/apply-approved-pricing.mjs', import.meta.url),
+  'utf8'
+);
+
+test('every active online offer uses the canonical whole-dollar B2B increment', () => {
+  assert.equal(ecommerceSource.priceNormalization.incrementCents, 1000);
+  let activeOfferCount = 0;
+  for (const product of ecommerceSource.products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus))) {
+    for (const variant of product.packages || []) {
+      if (variant.approvalStatus !== 'ACTIVE' || variant.pricingStatus !== 'APPROVED_RETAIL') continue;
+      activeOfferCount += 1;
+      assert.equal(variant.unitAmount % ecommerceSource.priceNormalization.incrementCents, 0, `${product.slug} ${variant.id}`);
+    }
+  }
+  assert.equal(activeOfferCount, 403);
+});
+
+test('approved-pricing regeneration normalizes every canonical raw price once and remains idempotent', async () => {
+  await withIsolatedSiteFixture(siteRoot, async isolatedRoot => {
+    const applyPricing = resolve(isolatedRoot, 'scripts/apply-approved-pricing.mjs');
+    const firstRun = await execFileAsync(process.execPath, [applyPricing], { cwd: isolatedRoot });
+    const firstBytes = await readFile(resolve(isolatedRoot, 'ecommerce/catalog.source.json'), 'utf8');
+    const secondRun = await execFileAsync(process.execPath, [applyPricing], { cwd: isolatedRoot });
+    const secondBytes = await readFile(resolve(isolatedRoot, 'ecommerce/catalog.source.json'), 'utf8');
+    assert.match(firstRun.stdout, /normalized 403 raw approved prices exactly once/);
+    assert.match(secondRun.stdout, /normalized 403 raw approved prices exactly once/);
+    assert.equal(secondBytes, firstBytes);
+    const regenerated = JSON.parse(secondBytes);
+    const expectedTemporarySchedule = [80000, 119000, 160000, 185000, 330000, 580000];
+    for (const slug of ['1-3-propanediol-cyclic-sulfate-ts', 'trimethylsilyl-phosphite-ttpi']) {
+      const product = regenerated.products.find(entry => entry.slug === slug);
+      assert.ok(product, slug);
+      assert.equal(product.commercialStatus, 'ONLINE_CHECKOUT');
+      assert.deepEqual(product.packages.map(variant => variant.unitAmount), expectedTemporarySchedule, slug);
+      assert.ok(product.packages.every(variant => variant.packageBasis === 'OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905'), slug);
+    }
+    for (const product of regenerated.products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus))) {
+      for (const variant of product.packages || []) {
+        if (variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL') {
+          assert.equal(variant.unitAmount % regenerated.priceNormalization.incrementCents, 0, `${product.slug} ${variant.id}`);
+        }
+      }
+    }
+  });
+});
+
+test('canonical raw pricing sources cover all active offers and preserve TS/TTPi provenance', () => {
+  const schedules = [...approvedPricing.schedules, ...supplementalPricing.schedules];
+  assert.equal(approvedPricing.schedules.length, 52);
+  assert.equal(supplementalPricing.schedules.length, 18);
+  assert.equal(new Set(schedules.map(schedule => schedule.slug)).size, 70);
+  assert.equal(schedules.reduce((count, schedule) => count + schedule.packages.length, 0), 403);
+  assert.equal((applyApprovedPricingSource.match(/normalizeApprovedUnitAmount\s*\(/g) || []).length, 1);
+  assert.doesNotMatch(applyApprovedPricingSource, /\.map\(normalize/);
+
+  const expectedTemporaryRaw = [79995, 118995, 159995, 184995, 329995, 579995];
+  for (const slug of ['1-3-propanediol-cyclic-sulfate-ts', 'trimethylsilyl-phosphite-ttpi']) {
+    const schedule = supplementalPricing.schedules.find(entry => entry.slug === slug);
+    assert.ok(schedule, slug);
+    assert.deepEqual(schedule.packages.map(option => option.unitAmount), expectedTemporaryRaw, slug);
+    assert.deepEqual(schedule.approvalProvenance, ['OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905'], slug);
+    assert.ok(schedule.packages.every(option => option.packageBasis === 'OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905'), slug);
+  }
+});
 
 test('representative launch prices resolve from the Worker catalog', () => {
   for (const [key, expected] of Object.entries(representativePrices)) {
     const variant = VARIANTS_BY_KEY.get(key);
     assert.ok(variant, `${key} should exist`);
-    assert.equal(variant.unitAmount, expected);
+    assert.equal(variant.unitAmount, normalizePrice(expected));
     assert.equal(variant.currency, 'usd');
     assert.equal(variant.approvalStatus, 'ACTIVE');
     assert.ok(['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(variant.product.commercialStatus));
@@ -84,6 +163,21 @@ test('browser and Worker catalogs share one release and identical commercial var
   }
 });
 
+test('customer display and machine price representations remain intentionally distinct', async () => {
+  const [productHtml, merchantFeed] = await Promise.all([
+    readFile(new URL('../../products/1-3-propanediol-cyclic-sulfate-ts.html', import.meta.url), 'utf8'),
+    readFile(new URL('../../feeds/google-merchant.xml', import.meta.url), 'utf8')
+  ]);
+  const merchantItem = merchantFeed.match(/<item>[\s\S]*?<g:id>WM-ADD-TS-500G<\/g:id>[\s\S]*?<\/item>/)?.[0];
+
+  assert.ok(productHtml.includes('<strong>$1,190</strong>'));
+  assert.ok(!productHtml.includes('$1,190.00'));
+  assert.ok(productHtml.includes('"price": "1190.00"'));
+  assert.ok(merchantItem);
+  assert.ok(merchantItem.includes('<g:price>1190.00 USD</g:price>'));
+  assert.equal(VARIANTS_BY_KEY.get('WM-ADD-TS-500G')?.unitAmount, 119000);
+});
+
 test('browser cart presents the canonical aggregate order-review state without blocking its CTA', async () => {
   const source = await readFile(new URL('../../assets/js/main.js', import.meta.url), 'utf8');
   assert.match(source, /totalCartMassGrams > aggregateOrderReviewThresholdGrams/);
@@ -96,7 +190,7 @@ test('browser cart presents the canonical aggregate order-review state without b
 });
 
 test('DME 500 g uses its approved Worker-owned price', () => {
-  assert.equal(VARIANTS_BY_KEY.get('WM-SOL-DME-500G')?.unitAmount, 37995);
+  assert.equal(VARIANTS_BY_KEY.get('WM-SOL-DME-500G')?.unitAmount, normalizePrice(37995));
 });
 
 test('all approved CSV schedules resolve exactly from the Worker catalog', () => {
@@ -109,7 +203,7 @@ test('all approved CSV schedules resolve exactly from the Worker catalog', () =>
       variantCount += 1;
       const variant = VARIANTS_BY_KEY.get(`${schedule.skuBase}-${packageOption.id}`);
       assert.ok(variant, `${schedule.skuBase}-${packageOption.id} should exist`);
-      assert.equal(variant.unitAmount, packageOption.unitAmount);
+      assert.equal(variant.unitAmount, normalizePrice(packageOption.unitAmount));
       assert.equal(variant.product.defaultPackageId, schedule.defaultPackageId);
     }
   }
@@ -121,7 +215,7 @@ test('LiPF6 retains the explicit approved release ladder', () => {
   const approvedAmounts = [39995, 44995, 52995, 72995, 108995, 149995];
   assert.deepEqual(
     packageIds.map(id => VARIANTS_BY_KEY.get(`WM-LS-LIPF6-${id}`)?.unitAmount),
-    approvedAmounts
+    approvedAmounts.map(normalizePrice)
   );
 });
 
@@ -134,7 +228,7 @@ test('standard LiPF6 EC EMC VC formulation uses the complete owner-approved pack
     'WM-FRM-LIPF6-ECEMC37-VC1-10KG': 149995
   };
   for (const [key, amount] of Object.entries(expected)) {
-    assert.equal(VARIANTS_BY_KEY.get(key)?.unitAmount, amount);
+    assert.equal(VARIANTS_BY_KEY.get(key)?.unitAmount, normalizePrice(amount));
   }
   assert.equal(VARIANTS_BY_KEY.has('WM-FRM-LIPF6-ECEMC37-VC1-20KG'), false);
 });
@@ -148,7 +242,7 @@ test('oxide SSE powders use the approved 25 g through 2 kg schedules and slurry 
   };
   const packageIds = ['25G', '100G', '500G', '1KG', '2KG'];
   for (const [skuBase, amounts] of Object.entries(schedules)) {
-    assert.deepEqual(packageIds.map((id) => VARIANTS_BY_KEY.get(`${skuBase}-${id}`)?.unitAmount), amounts);
+    assert.deepEqual(packageIds.map((id) => VARIANTS_BY_KEY.get(`${skuBase}-${id}`)?.unitAmount), amounts.map(normalizePrice));
     assert.equal(packageIds.filter((id) => VARIANTS_BY_KEY.has(`${skuBase}-${id}`)).length, 5);
     assert.equal(VARIANTS_BY_KEY.has(`${skuBase}-10G`), false);
     assert.equal(VARIANTS_BY_KEY.has(`${skuBase}-50G`), false);
@@ -179,7 +273,7 @@ test('sulfide SSE grades use six approved material-price tiers and require one c
   const packageIds = ['10G', '50G', '100G', '500G', '1KG', '2KG'];
   for (const [grade, amounts] of Object.entries(schedules)) {
     const variants = packageIds.map(id => VARIANTS_BY_KEY.get(`WM-SSE-${grade}-${id}`));
-    assert.deepEqual(variants.map(variant => variant?.unitAmount), amounts, `${grade} prices should match`);
+    assert.deepEqual(variants.map(variant => variant?.unitAmount), amounts.map(normalizePrice), `${grade} prices should match`);
     assert.ok(variants.every(variant => variant?.product.shippingClass === 'SHIPPING_REVIEW'));
     assert.ok(variants.every(variant => variant?.product.directOrderCeilingGrams === 2000));
     assert.equal(VARIANTS_BY_KEY.has(`WM-SSE-${grade}-5KG`), false);
@@ -193,13 +287,13 @@ test('sulfide SSE grades use six approved material-price tiers and require one c
   ]);
   assert.equal(mixed.shippingClass, 'SHIPPING_REVIEW');
   assert.equal(mixed.items.length, 3);
-  assert.equal(mixed.merchandiseSubtotal, 684985);
+  assert.equal(mixed.merchandiseSubtotal, 686000);
 });
 
 test('client price fields are ignored and a nonexistent package is rejected', () => {
   const resolved = resolveCart([{ variantKey: 'WM-LS-LIFSI-500G', quantity: 2, price: 1, unitAmount: 1 }]);
-  assert.equal(resolved.merchandiseSubtotal, 89990);
-  assert.equal(resolved.items[0].variant.unitAmount, 44995);
+  assert.equal(resolved.merchandiseSubtotal, 90000);
+  assert.equal(resolved.items[0].variant.unitAmount, 45000);
   assert.throws(() => resolveCart([{ variantKey: 'WM-LS-LIFSI-10G', quantity: 1 }]), /not available for online ordering/);
 });
 
@@ -225,13 +319,13 @@ test('TS and TTPi use the approved six-tier direct-order schedule', () => {
   const approvedAmounts = [79995, 118995, 159995, 184995, 329995, 579995];
   for (const skuBase of ['WM-ADD-TS', 'WM-ADD-TTPI']) {
     const variants = packageIds.map(id => VARIANTS_BY_KEY.get(`${skuBase}-${id}`));
-    assert.deepEqual(variants.map(variant => variant?.unitAmount), approvedAmounts, skuBase);
+    assert.deepEqual(variants.map(variant => variant?.unitAmount), approvedAmounts.map(normalizePrice), skuBase);
     assert.ok(variants.every(variant => variant?.product.commercialStatus === 'ONLINE_CHECKOUT'));
     assert.ok(variants.every(variant => variant?.product.shippingClass === 'STANDARD_RD'));
     assert.ok(variants.every(variant => variant?.pricingStatus === 'APPROVED_RETAIL'));
     const resolved = resolveCart([{ variantKey: `${skuBase}-200G`, quantity: 2, unitAmount: 1 }]);
-    assert.equal(resolved.merchandiseSubtotal, 159990);
-    assert.equal(resolved.items[0].variant.unitAmount, 79995);
+    assert.equal(resolved.merchandiseSubtotal, 160000);
+    assert.equal(resolved.items[0].variant.unitAmount, 80000);
   }
 });
 
@@ -254,7 +348,7 @@ test('a new TS package creates Checkout price_data from the Worker catalog', asy
       { country: 'US', amount: 0, currency: 'usd' },
       { SITE_ORIGIN: 'https://www.winigenmaterials.com', STRIPE_SECRET_KEY: 'test-key-not-sent' }
     );
-    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '118995');
+    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '119000');
     assert.equal(submitted.get('line_items[0][quantity]'), '2');
     assert.equal(submitted.get('line_items[0][price]'), null);
   } finally {
@@ -477,7 +571,7 @@ test('Stripe Checkout receives server-owned inline price_data', async () => {
       { country: 'US', amount: 8900, currency: 'usd' },
       { SITE_ORIGIN: 'https://www.winigenmaterials.com', STRIPE_SECRET_KEY: 'test-key-not-sent' }
     );
-    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '44995');
+    assert.equal(submitted.get('line_items[0][price_data][unit_amount]'), '45000');
     assert.equal(submitted.get('line_items[0][price_data][currency]'), 'usd');
     assert.equal(submitted.get('line_items[0][quantity]'), '2');
     assert.equal(submitted.get('line_items[0][price]'), null);
@@ -1082,7 +1176,8 @@ test('confirmation email renders immutable D1 line-item amounts', () => {
     TEST_ORDER_EMAIL_FROM: 'orders@notify.winigenmaterials.com',
     ORDER_EMAIL_REPLY_TO: 'orders@winigenmaterials.com'
   });
-  assert.match(message.html, /\$898\.00/);
+  assert.match(message.html, /\$898(?:<|\s)/);
+  assert.doesNotMatch(message.html, /\$898\.00/);
   assert.doesNotMatch(message.html, /Shipping &amp; Handling/);
   assert.doesNotMatch(message.html, /Not available/);
 });

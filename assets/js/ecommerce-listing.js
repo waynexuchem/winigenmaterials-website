@@ -84,7 +84,7 @@
   }
 
   function formatPrice(unitAmount, compact = false) {
-    const fractionDigits = compact && unitAmount % 100 === 0 ? 0 : 2;
+    const fractionDigits = unitAmount % 100 === 0 ? 0 : 2;
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',

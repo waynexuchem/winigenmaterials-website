@@ -1,6 +1,6 @@
 /* Generated from catalog/products.source.json. Do not edit directly. */
 window.WINIGEN_PRODUCT_SEARCH_INDEX = {
-  "version": "2026-09-01-final-approved-pricing",
+  "version": "2026-09-07-whole-dollar-b2b-pricing",
   "records": [
     {
       "slug": "lithium-hexafluorophosphate-lipf6",

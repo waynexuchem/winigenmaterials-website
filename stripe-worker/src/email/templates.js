@@ -1,6 +1,12 @@
 function formatAmount(amount, currency = 'usd') {
   if (!Number.isInteger(amount)) return 'Not available';
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: currency.toUpperCase() }).format(amount / 100);
+  const fractionDigits = amount % 100 === 0 ? 0 : 2;
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: currency.toUpperCase(),
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits
+  }).format(amount / 100);
 }
 
 function escapeHtml(value) {

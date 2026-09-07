@@ -1,6 +1,6 @@
 {
-  "version": "2026-09-01-final-approved-pricing",
-  "generatedFrom": "Canonical Winigen product catalog with owner-approved public pricing from Winigen_Final_Approved_Pricing_2026-09-01.csv",
+  "version": "2026-09-07-whole-dollar-b2b-pricing",
+  "generatedFrom": "Canonical Winigen product catalog with raw approved pricing from Winigen_Final_Approved_Pricing_2026-09-01.csv and OWNER_APPROVED_SUPPLEMENTAL_PRICING, normalized by 2026-09-07-whole-dollar-b2b",
   "commerceStatusValues": [
     "active_checkout",
     "rfq",

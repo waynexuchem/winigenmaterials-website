@@ -1,0 +1,1204 @@
+{
+  "version": "2026-09-05-consolidated-owner-approved-schedules",
+  "sourceType": "OWNER_APPROVED_SUPPLEMENTAL_PRICING",
+  "currency": "usd",
+  "policy": "Raw owner-approved package prices are preserved exactly in this file and normalized only when producing the effective ecommerce catalog.",
+  "governance": {
+    "pricingSourceScope": "This source governs approved online package schedules not represented in the historical 2026-09-01 pricing CSV.",
+    "historicalSeparation": "Entries retain their original approval provenance and must not be represented as part of the 2026-09-01 CSV approval event."
+  },
+  "schedules": [
+    {
+      "slug": "latp-d-50-0-3-um",
+      "skuBase": "WM-SSE-LATP-030",
+      "name": "LATP powder, D50 0.30 um",
+      "defaultPackageId": "25G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260822_OXIDE_SSE_25G",
+        "OWNER_APPROVED_20260821_OXIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "25G",
+          "label": "25 g",
+          "unit": "g",
+          "quantity": 25,
+          "netWeightGrams": 25,
+          "unitAmount": 16995,
+          "packageBasis": "OWNER_APPROVED_20260822_OXIDE_SSE_25G"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 23995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 33995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 43995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 59995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "latp-d-50-0-4-um",
+      "skuBase": "WM-SSE-LATP-040",
+      "name": "LATP powder, D50 0.40 um",
+      "defaultPackageId": "25G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260822_OXIDE_SSE_25G",
+        "OWNER_APPROVED_20260821_OXIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "25G",
+          "label": "25 g",
+          "unit": "g",
+          "quantity": 25,
+          "netWeightGrams": 25,
+          "unitAmount": 15995,
+          "packageBasis": "OWNER_APPROVED_20260822_OXIDE_SSE_25G"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 22995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 31995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 41995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 56995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "latp-d-50-0-65-um",
+      "skuBase": "WM-SSE-LATP-065",
+      "name": "LATP powder, D50 0.65 um",
+      "defaultPackageId": "25G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260822_OXIDE_SSE_25G",
+        "OWNER_APPROVED_20260821_OXIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "25G",
+          "label": "25 g",
+          "unit": "g",
+          "quantity": 25,
+          "netWeightGrams": 25,
+          "unitAmount": 14995,
+          "packageBasis": "OWNER_APPROVED_20260822_OXIDE_SSE_25G"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 21995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 29995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 39995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 54995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "llzto-powder",
+      "skuBase": "WM-SSE-LLZTO",
+      "name": "LLZTO powder",
+      "defaultPackageId": "25G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260822_OXIDE_SSE_25G",
+        "OWNER_APPROVED_20260821_OXIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "25G",
+          "label": "25 g",
+          "unit": "g",
+          "quantity": 25,
+          "netWeightGrams": 25,
+          "unitAmount": 17995,
+          "packageBasis": "OWNER_APPROVED_20260822_OXIDE_SSE_25G"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 24995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 35995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 46995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 64995,
+          "packageBasis": "OWNER_APPROVED_20260821_OXIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsh04",
+      "skuBase": "WM-SSE-GSH04",
+      "name": "Li5.5PS4.5Cl1.5, D50 0.925 um (GSH04)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 27995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 54995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 69995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 174995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 214995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 319995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsh03",
+      "skuBase": "WM-SSE-GSH03",
+      "name": "Li5.5PS4.5Cl1.5, D50 2.168 um (GSH03)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 24995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 49995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 62495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 154995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 192495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 294995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsh02",
+      "skuBase": "WM-SSE-GSH02",
+      "name": "Li5.5PS4.5Cl1.5, D50 4.5 +/- 1.5 um (GSH02)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 22995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 47495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 59995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 147495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 182495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 277495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsh01",
+      "skuBase": "WM-SSE-GSH01",
+      "name": "Li5.5PS4.5Cl1.5, D50 >10 um (GSH01)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 21995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 44995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 57495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 137495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 172495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 262495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsb04",
+      "skuBase": "WM-SSE-GSB04",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 um (GSB04)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 29995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 59995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 77495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 192495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 239995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 362495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsb03",
+      "skuBase": "WM-SSE-GSB03",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 um (GSB03)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 27995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 54995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 69995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 174995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 219995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 332495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsb02",
+      "skuBase": "WM-SSE-GSB02",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 +/- 1.5 um (GSB02)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 25995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 52495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 67495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 164995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 209995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 314995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsb01",
+      "skuBase": "WM-SSE-GSB01",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 >10 um (GSB01)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 24995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 49995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 62495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 154995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 197495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 299995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsl04",
+      "skuBase": "WM-SSE-GSL04",
+      "name": "Li6PS5Cl, D50 0.734 um (GSL04)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 24995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 49995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 62495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 149995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 187495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 282495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsl03",
+      "skuBase": "WM-SSE-GSL03",
+      "name": "Li6PS5Cl, D50 2.123 um (GSL03)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 22995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 44995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 57495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 137495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 172495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 262495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsl02",
+      "skuBase": "WM-SSE-GSL02",
+      "name": "Li6PS5Cl, D50 4.5 +/- 1.5 um (GSL02)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 20995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 42495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 52495,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 129995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 159995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 244995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "gsl01",
+      "skuBase": "WM-SSE-GSL01",
+      "name": "Li6PS5Cl, D50 >10 um (GSL01)",
+      "defaultPackageId": "10G",
+      "commercialStatus": "PRICE_SHIPPING_REVIEW",
+      "shippingClass": "SHIPPING_REVIEW",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20260821_SULFIDE_SSE"
+      ],
+      "packages": [
+        {
+          "id": "10G",
+          "label": "10 g",
+          "unit": "g",
+          "quantity": 10,
+          "netWeightGrams": 10,
+          "unitAmount": 19995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 39995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 49995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 119995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 149995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 229995,
+          "packageBasis": "OWNER_APPROVED_20260821_SULFIDE_SSE"
+        }
+      ]
+    },
+    {
+      "slug": "1-3-propanediol-cyclic-sulfate-ts",
+      "skuBase": "WM-ADD-TS",
+      "name": "1,3-Propanediol cyclic sulfate (TS)",
+      "defaultPackageId": "200G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+      ],
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 79995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 118995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 159995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 184995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 329995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 579995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        }
+      ]
+    },
+    {
+      "slug": "trimethylsilyl-phosphite-ttpi",
+      "skuBase": "WM-ADD-TTPI",
+      "name": "Trimethylsilyl phosphite (TTPi)",
+      "defaultPackageId": "200G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+      ],
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 79995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 118995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 159995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 184995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 329995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 579995,
+          "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
+        }
+      ]
+    }
+  ]
+}

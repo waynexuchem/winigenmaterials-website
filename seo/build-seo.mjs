@@ -85,7 +85,7 @@ function escapeHtml(value = '') {
 }
 
 function formatUsd(unitAmount, compact = false) {
-  const fractionDigits = compact && unitAmount % 100 === 0 ? 0 : 2;
+  const fractionDigits = unitAmount % 100 === 0 ? 0 : 2;
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -350,7 +350,9 @@ function organizeSulfideCards(html, pagePath) {
     ['Mixed Cl/Br Argyrodite — GSB Series', order.slice(8, 12)]
   ];
   const grouped = groups.map(([label, codes]) => `<h3 class="product-series-heading">${label}</h3>\n${codes.map(code => cards.get(code)).join('\n')}`).join('\n');
-  return next.replace('%%WINIGEN_SULFIDE_SERIES%%', grouped);
+  return next
+    .replace('%%WINIGEN_SULFIDE_SERIES%%', grouped)
+    .replace(/(?:\r?\n[ \t]*){3,}/g, '\n\n');
 }
 
 function commercePanel(product) {
@@ -403,7 +405,7 @@ function renderStaticProductCommerce(html, product) {
   next = next.replace(/(<dt>Availability<\/dt><dd>)[\s\S]*?(<\/dd>)/i, `$1${commerceModeLabel(product)}$2`);
   next = next.replace(/(<section class="section dark product-detail-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i,
     `$1<p>${escapeHtml(productDescription(product))}</p>`);
-  next = next.replace(/<div class="detail-actions"(?:[^>]*)>/i, `${commercePanel(product)}\n        <div class="detail-actions" hidden data-ecommerce-fallback-actions="true">`);
+  next = next.replace(/\s*<div class="detail-actions"(?:[^>]*)>/i, `\n        ${commercePanel(product)}\n        <div class="detail-actions" hidden data-ecommerce-fallback-actions="true">`);
   next = next
     .replace(/Winigen Materials can support RFQ-based supply and related electrolyte or battery materials development discussions\./gi, 'Selected research packages are available for online ordering, with bulk supply and related materials-development requirements handled by quotation.')
     .replace(/This material is available by RFQ while supplier availability, grade, package sizes, and commercial terms are confirmed\./gi, 'Selected research packages are available for online ordering, with bulk and custom requirements handled by quotation.')

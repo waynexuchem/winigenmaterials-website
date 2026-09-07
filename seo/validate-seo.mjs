@@ -62,7 +62,13 @@ function titleOf(html) {
 }
 
 function formatUsd(unitAmount) {
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(unitAmount / 100);
+  const fractionDigits = unitAmount % 100 === 0 ? 0 : 2;
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits
+  }).format(unitAmount / 100);
 }
 
 function activeVariants(product) {

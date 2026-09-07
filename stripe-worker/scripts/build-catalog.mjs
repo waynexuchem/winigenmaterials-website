@@ -12,6 +12,7 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..', '..');
 const sourcePath = resolve(siteRoot, 'ecommerce/catalog.source.json');
 const approvedPricingPath = resolve(siteRoot, 'ecommerce/approved-pricing.source.json');
+const supplementalPricingPath = resolve(siteRoot, 'ecommerce/supplemental-approved-pricing.source.json');
 const shippingSourcePath = resolve(siteRoot, 'ecommerce/shipping-countries.source.json');
 const browserOutputPath = resolve(siteRoot, 'assets/js/ecommerce-catalog.js');
 const workerOutputPath = resolve(siteRoot, 'stripe-worker/src/catalog.js');
@@ -29,6 +30,7 @@ const validShippingRegions = new Set([
   'SOUTH_AMERICA',
   'AFRICA_MIDDLE_EAST'
 ]);
+let effectivePriceNormalization;
 
 function fail(message) {
   throw new Error(`Catalog validation failed: ${message}`);
@@ -108,6 +110,7 @@ function validateProduct(product, templates, slugs, skus) {
       }
       if (variant.currency !== 'usd') fail(`${variant.sku} uses unsupported currency ${variant.currency}.`);
       if (variant.pricingStatus !== 'APPROVED_RETAIL') fail(`${variant.sku} is ACTIVE without APPROVED_RETAIL pricing.`);
+      if (variant.unitAmount % effectivePriceNormalization.incrementCents !== 0) fail(`${variant.sku} is not normalized to the canonical whole-dollar B2B increment.`);
     } else if (variant.unitAmount === 0) {
       fail(`${variant.sku} contains a zero-dollar placeholder price.`);
     }
@@ -181,7 +184,7 @@ function validateShippingCountries(shippingSource) {
   return { codes, allEntries, maximumOnlineOrderWeightGrams };
 }
 
-function validateApprovedPricing(source, approvedPricing) {
+function validateApprovedPricing(source, approvedPricing, supplementalPricing) {
   const expectedGovernance = {
     pricingSourceScope: 'The approved pricing CSV governs only products and package schedules explicitly represented in it.',
     productsAbsentFromPricingSource: 'Products absent from the approved pricing CSV retain their separately approved commercial schedules; absence does not revoke or replace those schedules.'
@@ -189,11 +192,14 @@ function validateApprovedPricing(source, approvedPricing) {
   for (const [field, expected] of Object.entries(expectedGovernance)) {
     if (approvedPricing.governance?.[field] !== expected) fail(`Approved pricing governance field ${field} is missing or changed.`);
   }
+  if (supplementalPricing.sourceType !== 'OWNER_APPROVED_SUPPLEMENTAL_PRICING') fail('Supplemental approved pricing source type is invalid.');
+  const schedules = [...approvedPricing.schedules, ...supplementalPricing.schedules];
+  if (new Set(schedules.map(schedule => schedule.slug)).size !== schedules.length) fail('Approved pricing sources contain duplicate product slugs.');
   const productsBySlug = new Map(source.products.map(product => [product.slug, product]));
   if (productsBySlug.has('n-methyl-2-pyrrolidone-nmp')) {
     fail('NMP must not exist in the ecommerce catalog.');
   }
-  for (const schedule of approvedPricing.schedules) {
+  for (const schedule of schedules) {
     const product = productsBySlug.get(schedule.slug);
     if (!product) fail(`${schedule.slug} is missing from the ecommerce catalog.`);
     if (product.skuBase !== schedule.skuBase) fail(`${schedule.slug} does not match the approved SKU.`);
@@ -202,22 +208,42 @@ function validateApprovedPricing(source, approvedPricing) {
     if (variants.length !== schedule.packages.length) fail(`${schedule.slug} has an unapproved package count.`);
     for (const [index, expected] of schedule.packages.entries()) {
       const actual = variants[index];
+      const normalizedExpected = {
+        ...expected,
+        unitAmount: Math.ceil(expected.unitAmount / effectivePriceNormalization.incrementCents) * effectivePriceNormalization.incrementCents
+      };
       for (const field of ['id', 'label', 'unit', 'quantity', 'netWeightGrams', 'unitAmount']) {
-        if (actual?.[field] !== expected[field]) fail(`${schedule.slug} ${expected.id} differs from approved pricing at ${field}.`);
+        if (actual?.[field] !== normalizedExpected[field]) fail(`${schedule.slug} ${expected.id} differs from normalized approved pricing at ${field}.`);
       }
       if (actual.pricingStatus !== 'APPROVED_RETAIL') fail(`${actual.sku} is not approved retail pricing.`);
+      const expectedBasis = expected.packageBasis || `APPROVED_${approvedPricing.version.replaceAll('-', '')}_FINAL_${approvedPricing.sourceFormat}`;
+      if (actual.packageBasis !== expectedBasis) fail(`${actual.sku} does not preserve its approved pricing provenance.`);
     }
   }
+  const approvedSlugs = new Set(schedules.map(schedule => schedule.slug));
+  const onlineProducts = source.products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus));
+  for (const product of onlineProducts) {
+    if (!approvedSlugs.has(product.slug)) fail(`${product.slug} lacks a canonical raw approved pricing schedule.`);
+  }
+  const rawPackageCount = schedules.reduce((count, schedule) => count + schedule.packages.length, 0);
+  const activePackageCount = onlineProducts.reduce((count, product) => count + resolveVariants(product, source.packageTemplates).filter(variant => variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL').length, 0);
+  if (rawPackageCount !== activePackageCount) fail(`Raw/effective approved package counts differ: ${rawPackageCount} != ${activePackageCount}.`);
 }
 
 const source = JSON.parse(await readFile(sourcePath, 'utf8'));
 const approvedPricing = JSON.parse(await readFile(approvedPricingPath, 'utf8'));
+const supplementalPricing = JSON.parse(await readFile(supplementalPricingPath, 'utf8'));
 const shippingSource = JSON.parse(await readFile(shippingSourcePath, 'utf8'));
+effectivePriceNormalization = source.priceNormalization;
+if (effectivePriceNormalization?.scope !== 'ACTIVE_ONLINE_OFFERS' || effectivePriceNormalization?.method !== 'CEILING' || !Number.isInteger(effectivePriceNormalization?.incrementCents) || effectivePriceNormalization.incrementCents <= 0) {
+  fail('Canonical whole-dollar pricing policy is missing or invalid.');
+}
+if (source.catalogVersion !== effectivePriceNormalization.catalogVersion) fail('Catalog version does not match the canonical pricing policy.');
 if (!Number.isInteger(source.aggregateOrderReviewThresholdGrams) || source.aggregateOrderReviewThresholdGrams <= 0) {
   fail('Catalog requires a positive integer aggregate order-review threshold.');
 }
 const commerceRelease = createCommerceRelease(source, shippingSource);
-validateApprovedPricing(source, approvedPricing);
+validateApprovedPricing(source, approvedPricing, supplementalPricing);
 const slugs = new Set();
 const skus = new Set();
 const products = source.products.map(product => validateProduct(product, source.packageTemplates, slugs, skus));

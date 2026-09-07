@@ -6,7 +6,15 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const siteRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
 const loadJson = async path => JSON.parse(await readFile(resolve(siteRoot, path), 'utf8'));
-const formatUsd = cents => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cents / 100);
+const formatUsd = cents => {
+  const fractionDigits = cents % 100 === 0 ? 0 : 2;
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits
+  }).format(cents / 100);
+};
 const parseCsv = text => {
   const rows = [];
   let row = [];
@@ -60,6 +68,7 @@ const compareVariant = (layer, slug, expected, actual) => {
 };
 
 const pricing = await loadJson('ecommerce/approved-pricing.source.json');
+const supplementalPricing = await loadJson('ecommerce/supplemental-approved-pricing.source.json');
 if (pricing.sourceFormat !== 'CSV') errors.push('Approved pricing source format must be CSV.');
 if (!/^Winigen_Final_Approved_Pricing_\d{4}-\d{2}-\d{2}\.csv$/.test(pricing.sourceFile || '')) {
   errors.push('Approved pricing source file name is invalid.');
@@ -83,6 +92,12 @@ const csvPackageColumns = new Map([
 if (csvByProduct.size !== csvRecords.length) errors.push(`${approvedCsvPath}: duplicate product rows.`);
 if (csvRecords.length !== pricing.schedules.length) errors.push(`${approvedCsvPath}: product count differs from approved pricing schedules.`);
 const ecommerce = await loadJson('ecommerce/catalog.source.json');
+const priceNormalization = ecommerce.priceNormalization;
+if (priceNormalization?.scope !== 'ACTIVE_ONLINE_OFFERS' || priceNormalization?.method !== 'CEILING' || !Number.isInteger(priceNormalization?.incrementCents) || priceNormalization.incrementCents <= 0) {
+  errors.push('Canonical whole-dollar pricing policy is missing or invalid.');
+}
+if (ecommerce.catalogVersion !== priceNormalization?.catalogVersion) errors.push('Catalog version does not match the canonical pricing policy.');
+const normalizeUnitAmount = unitAmount => Math.ceil(unitAmount / priceNormalization.incrementCents) * priceNormalization.incrementCents;
 const semantic = await loadJson('catalog/products.source.json');
 const browserText = await readFile(resolve(siteRoot, 'assets/js/ecommerce-catalog.js'), 'utf8');
 const browser = JSON.parse(browserText.slice(browserText.indexOf('=') + 1).trim().replace(/;$/, ''));
@@ -112,6 +127,10 @@ const expectedGovernance = {
 for (const [field, expected] of Object.entries(expectedGovernance)) {
   if (pricing.governance?.[field] !== expected) errors.push(`approved pricing governance: ${field} is missing or changed.`);
 }
+if (supplementalPricing.sourceType !== 'OWNER_APPROVED_SUPPLEMENTAL_PRICING') errors.push('Supplemental approved pricing source type is invalid.');
+const allApprovedSchedules = [...pricing.schedules, ...supplementalPricing.schedules];
+const historicalSlugs = new Set(pricing.schedules.map(schedule => schedule.slug));
+if (new Set(allApprovedSchedules.map(schedule => schedule.slug)).size !== allApprovedSchedules.length) errors.push('Approved pricing sources contain duplicate product slugs.');
 
 const identityExpectations = [
   {
@@ -166,11 +185,12 @@ for (const [layer, products] of [
   if (slugs.includes('n-methyl-2-pyrrolidone-nmp')) errors.push(`${layer}: stale NMP product.`);
 }
 
-for (const schedule of pricing.schedules) {
-  const csvRecord = csvByProduct.get(schedule.name);
-  if (!csvRecord) {
-    errors.push(`${schedule.slug}: missing from ${approvedCsvPath}.`);
-  } else {
+for (const schedule of allApprovedSchedules) {
+  if (historicalSlugs.has(schedule.slug)) {
+    const csvRecord = csvByProduct.get(schedule.name);
+    if (!csvRecord) {
+      errors.push(`${schedule.slug}: missing from ${approvedCsvPath}.`);
+    } else {
     const csvPackageIds = [...csvPackageColumns]
       .filter(([, column]) => csvRecord[column] !== '')
       .map(([packageId]) => packageId);
@@ -182,9 +202,15 @@ for (const schedule of pricing.schedules) {
       const csvAmount = Math.round(Number(csvRecord[column]) * 100);
       if (csvAmount !== expected.unitAmount) errors.push(`${schedule.slug} ${expected.id}: price differs from ${approvedCsvPath}.`);
     }
-  }
-  for (const packageOption of schedule.packages) {
-    if (packageOption.unitAmount % 100 !== 95) errors.push(`${schedule.slug} ${packageOption.id}: approved CSV price does not preserve .95 cents.`);
+    }
+    for (const packageOption of schedule.packages) {
+      if (packageOption.unitAmount % 100 !== 95) errors.push(`${schedule.slug} ${packageOption.id}: approved CSV price does not preserve .95 cents.`);
+    }
+  } else {
+    if (!Array.isArray(schedule.approvalProvenance) || !schedule.approvalProvenance.length) errors.push(`${schedule.slug}: supplemental schedule lacks approval provenance.`);
+    for (const packageOption of schedule.packages) {
+      if (!packageOption.packageBasis || !schedule.approvalProvenance.includes(packageOption.packageBasis)) errors.push(`${schedule.slug} ${packageOption.id}: supplemental package lacks matching approval provenance.`);
+    }
   }
   for (let index = 1; index < schedule.packages.length; index += 1) {
     if (schedule.packages[index].unitAmount <= schedule.packages[index - 1].unitAmount) {
@@ -213,7 +239,10 @@ for (const schedule of pricing.schedules) {
     const active = variants.filter(variant => variant.approvalStatus === 'ACTIVE');
     if (active.length !== schedule.packages.length) errors.push(`${layer}: ${schedule.slug} package count differs from the approved CSV.`);
     const activeById = new Map(active.map(variant => [variant.id, variant]));
-    schedule.packages.forEach(expected => compareVariant(layer, schedule.slug, expected, activeById.get(expected.id)));
+    schedule.packages.forEach(expected => compareVariant(layer, schedule.slug, {
+      ...expected,
+      unitAmount: normalizeUnitAmount(expected.unitAmount)
+    }, activeById.get(expected.id)));
   }
 
   const pagePath = resolve(siteRoot, semanticProduct.url.replace(/^\//, ''));
@@ -230,9 +259,10 @@ for (const schedule of pricing.schedules) {
     const optionSkus = [...card.matchAll(/<option value="([^"]+)"/g)].map(match => match[1]);
     if (optionSkus.length !== schedule.packages.length) errors.push(`${schedule.slug}: ${listingName} package count differs from the workbook.`);
     for (const expected of schedule.packages) {
+      const effectiveUnitAmount = normalizeUnitAmount(expected.unitAmount);
       const sku = `${schedule.skuBase}-${expected.id}`;
-      if (!card.includes(`value="${sku}"`) || !card.includes(expected.label) || !card.includes(formatUsd(expected.unitAmount))) {
-        errors.push(`${schedule.slug}: ${listingName} is missing ${expected.label} / ${formatUsd(expected.unitAmount)}.`);
+      if (!card.includes(`value="${sku}"`) || !card.includes(expected.label) || !card.includes(formatUsd(effectiveUnitAmount))) {
+        errors.push(`${schedule.slug}: ${listingName} is missing ${expected.label} / ${formatUsd(effectiveUnitAmount)}.`);
       }
     }
   }
@@ -251,19 +281,27 @@ for (const schedule of pricing.schedules) {
   if (offers.length !== schedule.packages.length) errors.push(`${schedule.slug}: Offer count differs from the workbook.`);
   const offersBySku = new Map(offers.map(offer => [offer.sku, offer]));
   for (const expected of schedule.packages) {
+    const effectiveUnitAmount = normalizeUnitAmount(expected.unitAmount);
     const sku = `${schedule.skuBase}-${expected.id}`;
     const offer = offersBySku.get(sku);
     if (!offer) errors.push(`${schedule.slug}: missing Offer ${sku}.`);
     else {
-      if (Number(offer.price) !== expected.unitAmount / 100) errors.push(`${schedule.slug}: Offer ${sku} has the wrong price.`);
+      if (Number(offer.price) !== effectiveUnitAmount / 100) errors.push(`${schedule.slug}: Offer ${sku} has the wrong price.`);
       if (offer.priceCurrency !== 'USD') errors.push(`${schedule.slug}: Offer ${sku} has the wrong currency.`);
       if (!String(offer.name || '').includes(expected.label)) errors.push(`${schedule.slug}: Offer ${sku} omits package name ${expected.label}.`);
     }
     const hasPackageControl = html.includes(`data-package-key="${sku}"`) || html.includes(`value="${sku}"`);
-    if (!hasPackageControl || !html.includes(expected.label) || !html.includes(formatUsd(expected.unitAmount))) {
-      errors.push(`${schedule.slug}: raw HTML is missing ${expected.label} / ${formatUsd(expected.unitAmount)}.`);
+    if (!hasPackageControl || !html.includes(expected.label) || !html.includes(formatUsd(effectiveUnitAmount))) {
+      errors.push(`${schedule.slug}: raw HTML is missing ${expected.label} / ${formatUsd(effectiveUnitAmount)}.`);
     }
   }
+}
+
+const expectedTemporaryRaw = [79995, 118995, 159995, 184995, 329995, 579995];
+for (const slug of ['1-3-propanediol-cyclic-sulfate-ts', 'trimethylsilyl-phosphite-ttpi']) {
+  const schedule = supplementalPricing.schedules.find(entry => entry.slug === slug);
+  if (!schedule || JSON.stringify(schedule.packages.map(option => option.unitAmount)) !== JSON.stringify(expectedTemporaryRaw)) errors.push(`${slug}: canonical raw temporary schedule is missing or changed.`);
+  if (!schedule?.approvalProvenance?.includes('OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905')) errors.push(`${slug}: temporary owner-approved provenance is missing.`);
 }
 
 for (const path of [
@@ -279,8 +317,18 @@ for (const product of ecommerce.products) {
   const variants = product.packages || ecommerce.packageTemplates[product.packageTemplate] || [];
   for (const variant of variants) {
     const override = product.variantOverrides?.[variant.id || variant.key] || {};
-    if ((override.unitAmount ?? variant.unitAmount) === 0) errors.push(`${product.slug}: zero-dollar package.`);
+    const unitAmount = override.unitAmount ?? variant.unitAmount;
+    if (unitAmount === 0) errors.push(`${product.slug}: zero-dollar package.`);
+    const approvalStatus = override.approvalStatus || variant.approvalStatus;
+    const pricingStatus = override.pricingStatus || variant.pricingStatus;
+    if (['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus) && approvalStatus === 'ACTIVE' && pricingStatus === 'APPROVED_RETAIL' && unitAmount % priceNormalization.incrementCents !== 0) {
+      errors.push(`${product.slug}: active offer is not normalized to the canonical whole-dollar B2B increment.`);
+    }
   }
+}
+const approvedSlugs = new Set(allApprovedSchedules.map(schedule => schedule.slug));
+for (const product of ecommerce.products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus))) {
+  if (!approvedSlugs.has(product.slug)) errors.push(`${product.slug}: active online product lacks a canonical raw approved pricing schedule.`);
 }
 
 for (const path of [
@@ -301,4 +349,4 @@ if (errors.length) {
 }
 
 const activePackages = ecommerce.products.reduce((total, product) => total + (product.packages || []).filter(variant => variant.approvalStatus === 'ACTIVE').length, 0);
-console.log(`Approved-pricing validation passed: ${pricing.schedules.length} CSV schedules, ${activePackages} active packages, ${pricing.unmappedRows.length} unmapped CSV rows.`);
+console.log(`Approved-pricing validation passed: ${pricing.schedules.length} historical CSV schedules, ${supplementalPricing.schedules.length} supplemental schedules, ${activePackages} active packages, ${pricing.unmappedRows.length} unmapped CSV rows.`);

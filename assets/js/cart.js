@@ -3,6 +3,17 @@
   const reviewKey = 'winigen-ecommerce-review-v1';
   const destinationKey = 'winigen-shipping-destination-v1';
 
+  function formatMoney(unitAmount) {
+    if (!Number.isInteger(unitAmount)) return 'Not available';
+    const fractionDigits = unitAmount % 100 === 0 ? 0 : 2;
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
+    }).format(unitAmount / 100);
+  }
+
   function readCart() {
     try {
       const parsed = JSON.parse(localStorage.getItem(storageKey) || '{"items":[]}');
@@ -198,14 +209,14 @@
     const form = document.querySelector('form.js-formspree-form');
     if (!review || !form) return;
     const type = review.action === 'rfq' ? 'Request for Quote' : 'Order / Shipping Question';
-    const details = review.items.map(item => `${item.sku}: ${item.name} | ${item.grade} | ${item.packageLabel} x ${item.quantity} | $${(item.unitAmount * item.quantity / 100).toFixed(2)}`).join('\n');
+    const details = review.items.map(item => `${item.sku}: ${item.name} | ${item.grade} | ${item.packageLabel} x ${item.quantity} | ${formatMoney(item.unitAmount * item.quantity)}`).join('\n');
     const destination = review.destinationCountry ? `\nShipping destination: ${review.destinationCountry}` : '';
     const reviewNote = review.action === 'shipping_review'
       ? 'Specialized sulfide logistics require destination review and are quoted separately from the published material subtotal. Multiple sulfide grades may be consolidated into one shipment where feasible. Cart remains saved.'
       : review.action === 'order_review'
         ? 'This order exceeds 10 kg total. Fulfillment and shipping details will be confirmed before payment. Cart remains saved.'
       : 'Destination and fulfillment eligibility require confirmation. Cart remains saved.';
-    const message = `Cart review request\n${details}\nPublished product subtotal: $${(review.merchandiseSubtotal / 100).toFixed(2)}${destination}\n${reviewNote}`;
+    const message = `Cart review request\n${details}\nPublished product subtotal: ${formatMoney(review.merchandiseSubtotal)}${destination}\n${reviewNote}`;
     const setField = (name, value) => {
       const field = form.querySelector(`[name="${name}"]`);
       if (field) field.value = value;

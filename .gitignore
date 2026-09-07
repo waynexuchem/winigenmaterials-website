@@ -11,6 +11,7 @@ scripts/*
 !scripts/sync-static-asset-versions.mjs
 !scripts/build-knowledge-index.mjs
 !scripts/apply-approved-pricing.mjs
+!scripts/normalize-commerce-prices.mjs
 !scripts/build-product-search-index.mjs
 !scripts/generate-public-product-pages.mjs
 !scripts/generate-functional-coatings-pages.mjs
