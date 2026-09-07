@@ -98,6 +98,13 @@ function synchronizeProductLayoutClasses(html) {
   );
 }
 
+function synchronizeProductSearchBootstrap(html) {
+  return html.replace(
+    /(<script src="assets\/js\/product-search\.js[^"]*"><\/script>)\s*<script>\s*\(function \(\) \{[\s\S]*?\}\)\(\);\s*<\/script>/,
+    '$1'
+  );
+}
+
 function insertIntoSection(html, sectionId, cards) {
   if (!cards.length) return html;
   const start = html.indexOf(`<section id="${sectionId}"`);
@@ -209,6 +216,7 @@ for (const product of catalog.products) {
     productsHtml = insertIntoSection(productsHtml, sectionId, cards);
   }
   productsHtml = synchronizeSectionCounts(productsHtml);
+  productsHtml = synchronizeProductSearchBootstrap(productsHtml);
   await writeFile(productsPath, productsHtml);
 
   for (const [familySlug, family] of families) {

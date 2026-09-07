@@ -301,3 +301,12 @@
 
   return { normalize, compact, prepareRecord, exactMatches, broadScore, search, searchView, init, SECTION_ORDER: [...SECTION_ORDER] };
 }));
+
+if (typeof document !== 'undefined') {
+  const initializeProductSearch = () => globalThis.WinigenProductSearch?.init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeProductSearch, { once: true });
+  } else {
+    initializeProductSearch();
+  }
+}

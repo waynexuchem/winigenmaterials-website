@@ -93,9 +93,11 @@ const semanticBySlug = new Map(semantic.products.map(product => [product.slug, p
 const browserBySlug = new Map(browser.products.map(product => [product.slug, product]));
 const workerBySlug = new Map(worker.products.map(product => [product.slug, product]));
 const allProductsListing = await readFile(resolve(siteRoot, 'products.html'), 'utf8');
-if (allProductsListing.includes('\u0008')) errors.push('products.html: search implementation contains a backspace control character instead of a regex word boundary.');
-if (!allProductsListing.includes('rawText.match(/\\b\\d{2,7}-\\d{2}-\\d\\b/g)')) {
-  errors.push('products.html: CAS search extractor is missing.');
+const productSearchScript = await readFile(resolve(siteRoot, 'assets/js/product-search.js'), 'utf8');
+if (!allProductsListing.includes('assets/js/product-search.js')) errors.push('products.html: shared product search script is missing.');
+if (productSearchScript.includes('\u0008')) errors.push('assets/js/product-search.js: search implementation contains a backspace control character instead of a regex word boundary.');
+if (!productSearchScript.includes('card.dataset.search?.match(/\\b\\d{2,7}-\\d{2}-\\d\\b/)')) {
+  errors.push('assets/js/product-search.js: CAS search extractor is missing.');
 }
 const familyListings = new Map();
 for (const family of semantic.families) {
