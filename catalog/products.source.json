@@ -4827,7 +4827,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "ti3c2tx-mxene-multilayer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",
@@ -4919,7 +4918,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "ti3c2tx-mxene-single-few-layer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",
@@ -5011,7 +5009,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "nb2ctx-mxene-multilayer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",
@@ -5108,7 +5105,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "nb2ctx-mxene-single-few-layer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",
@@ -5205,7 +5201,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "v2ctx-mxene-multilayer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",
@@ -5295,7 +5290,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "v2ctx-mxene-single-few-layer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",
@@ -5392,7 +5386,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "mo2ctx-mxene-multilayer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",
@@ -5482,7 +5475,6 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "mo2ctx-mxene-single-few-layer-powder",
-      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
       "additionalProperty": [
         {
           "name": "Material",

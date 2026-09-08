@@ -45,6 +45,7 @@ const productTypes = Object.freeze({
   'electrolyte-additives': 'Science & Laboratory > Battery Materials > Electrolyte Additives',
   'next-generation-salts': 'Science & Laboratory > Battery Materials > Next-Generation Salts',
   'solid-state-electrolytes': 'Science & Laboratory > Battery Materials > Solid-State Electrolytes',
+  'mxene-materials': 'Science & Laboratory > Nanomaterials > MXene Materials',
   'custom-formulations': 'Science & Laboratory > Battery Materials > Standard Electrolyte Formulations'
 });
 
@@ -98,10 +99,10 @@ function canonicalUnitPricingMeasure(variant) {
   const gramsPerUnit = WEIGHT_UNITS_IN_GRAMS[variant.unit];
   if (!gramsPerUnit) return null;
   const calculatedGrams = Number(variant.quantity) * gramsPerUnit;
-  if (!Number.isInteger(calculatedGrams) || calculatedGrams <= 0) {
+  if (!Number.isFinite(calculatedGrams) || calculatedGrams <= 0) {
     throw new Error(`${variant.sku} has an invalid canonical weight package quantity.`);
   }
-  if (!Number.isInteger(variant.netWeightGrams) || variant.netWeightGrams <= 0) {
+  if (!Number.isFinite(variant.netWeightGrams) || variant.netWeightGrams <= 0) {
     throw new Error(`${variant.sku} is sold by weight but has no valid canonical netWeightGrams.`);
   }
   if (calculatedGrams !== variant.netWeightGrams) {
@@ -119,7 +120,6 @@ function parseGoogleMeasure(value) {
 }
 
 function exclusionReason(semanticProduct, commerceProduct) {
-  if (semanticProduct.family === 'mxene-materials') return semanticProduct.merchantExclusionReason;
   if (semanticProduct.retired === true || commerceProduct?.retired === true) return 'retired';
   if (semanticProduct.disabled === true || semanticProduct.published === false || commerceProduct?.disabled === true) return 'disabled_or_unpublished';
   if (!commerceProduct) return 'not_in_commerce_catalog';

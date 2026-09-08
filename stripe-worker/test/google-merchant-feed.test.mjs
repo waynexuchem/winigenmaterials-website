@@ -38,11 +38,16 @@ function identifierFixture(slug, record) {
   return fixture;
 }
 
+function schemaNodes(value) {
+  if (!value || typeof value !== 'object') return [];
+  return [value, ...Object.values(value).flatMap(schemaNodes)];
+}
+
 test('feed includes only image-backed direct-checkout products and active variants', () => {
   assert.equal(result.stats.baseProductsEvaluated, 104);
   assert.equal(result.stats.commerceProductsEvaluated, 78);
-  assert.equal(result.stats.productsEmitted, 57);
-  assert.equal(result.stats.variantsEmitted, 326);
+  assert.equal(result.stats.productsEmitted, 65);
+  assert.equal(result.stats.variantsEmitted, 350);
   assert.equal(result.stats.exclusions.manual_review_or_rfq, 12);
   assert.equal(result.stats.exclusions.missing_image, 1);
   assert.equal(result.stats.exclusions.not_in_commerce_catalog, 26);
@@ -329,6 +334,30 @@ test('representative eligible categories and a multi-package product are emitted
   assert.equal(result.items.filter(item => item.source.slug === samples[0]).length, activeVariants(lipf6).length);
 });
 
+test('every canonical direct-sale Merchant-eligible product is represented', () => {
+  const expected = semantic.products.filter(product => {
+    const commerceProduct = commerceBySlug.get(product.slug);
+    return product.retired !== true
+      && product.disabled !== true
+      && product.published !== false
+      && product.commerceStatus === 'active_checkout'
+      && product.schemaOfferEligible === true
+      && commerceProduct?.commercialStatus === 'ONLINE_CHECKOUT'
+      && Boolean(product.url)
+      && Boolean(product.image);
+  });
+  const emitted = new Set(result.items.map(item => item.source.slug));
+  assert.deepEqual([...emitted].sort(), expected.map(product => product.slug).sort());
+  for (const product of expected) {
+    const commerceProduct = commerceBySlug.get(product.slug);
+    assert.equal(
+      result.items.filter(item => item.source.slug === product.slug).length,
+      activeVariants(commerceProduct).length,
+      product.slug
+    );
+  }
+});
+
 test('landing-page package cards and Product Offer schema match every emitted offer', async () => {
   const htmlBySlug = new Map();
   for (const item of result.items) {
@@ -336,8 +365,8 @@ test('landing-page package cards and Product Offer schema match every emitted of
       htmlBySlug.set(item.source.slug, await readFile(resolve(siteRoot, 'products', `${item.source.slug}.html`), 'utf8'));
     }
     const html = htmlBySlug.get(item.source.slug);
-    const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
-      .map(match => JSON.parse(match[1]));
+    const scripts = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+      .flatMap(match => schemaNodes(JSON.parse(match[1])));
     const productSchema = scripts.find(schema => schema['@type'] === 'Product');
     assert.ok(productSchema, `${item.id}: Product schema exists`);
     const offers = Array.isArray(productSchema.offers) ? productSchema.offers : [productSchema.offers].filter(Boolean);

@@ -14,4 +14,4 @@ Post-payment fulfillment review covers destination eligibility, logistics, compl
 
 If Winigen becomes aware that a specific grade cannot be fulfilled in the normal commercial timeframe, that grade must be disabled or its availability updated before further normal direct orders are accepted.
 
-This availability decision does not authorize Google Merchant inclusion. Existing MXene Merchant exclusions remain in place until separately approved by the owner.
+Google Merchant inclusion is derived through the same canonical eligibility pipeline as other products: public checkout status, approved active package pricing, offer eligibility, canonical landing page, and public image. MXene products must not be maintained through family-specific feed exceptions.
