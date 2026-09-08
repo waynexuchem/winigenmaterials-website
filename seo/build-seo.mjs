@@ -147,6 +147,16 @@ function productKeySpecifications(product) {
     ];
   }
   const excluded = /^(?:availability|commercial availability)$/i;
+  const preferredNames = product.qualityDocumentation?.keySpecifications;
+  if (Array.isArray(preferredNames) && preferredNames.length) {
+    const propertiesByName = new Map((product.additionalProperty || [])
+      .filter(item => item?.name && item?.value && !excluded.test(item.name))
+      .map(item => [item.name.toLowerCase(), item]));
+    return preferredNames
+      .map(name => propertiesByName.get(String(name).toLowerCase()))
+      .filter(Boolean)
+      .slice(0, 6);
+  }
   const isSse = product.family === 'solid-state-electrolytes';
   const priorities = isSse
     ? [/cas/i, /d50|particle size/i, /ionic conductivity/i, /electronic conductivity/i, /appearance|physical/i, /water|moisture/i, /composition/i, /grade|purity/i, /storage|handling/i, /formula/i]
@@ -175,7 +185,12 @@ function productDocumentation(product, documentationHref) {
     const link = product.mxene.tds ? `<a class="btn secondary" href="${escapeHtml(product.mxene.tds)}">Technical Data Sheet (PDF)</a>` : `<a class="btn secondary" href="${documentationHref}">TDS available on request</a>`;
     return `<section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>Current-lot COA or other lot-specific documentation can be requested where available. Availability of lot-specific analytical documentation is confirmed during order review. Additional analytical requirements, including surface characterization, should be discussed before ordering.</p></div><div class="product-documentation__actions">${link}<a href="${documentationHref}">Request Current Lot COA</a></div></section>`;
   }
+  const tds = product.qualityDocumentation?.tds;
   const representativeCoa = product.qualityDocumentation?.representativeCoa;
+  if (tds) {
+    const tdsHref = tds.path.startsWith('/') ? `..${tds.path}` : tds.path;
+    return `<section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Quality and handling documents</h3><p>Review the supplier-backed specification limits in the TDS. Request the current lot-specific COA, SDS, and available handling guidance for material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request COA / SDS</a><a href="../quality.html">Quality documentation</a></div></section>`;
+  }
   if (!representativeCoa) {
     return `<section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Quality and handling documents</h3><p>Request the current lot-specific COA, SDS, specification information, and available handling guidance.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${documentationHref}">Request COA / SDS</a><a href="../quality.html">Quality documentation</a></div></section>`;
   }
@@ -193,10 +208,21 @@ function productDocumentation(product, documentationHref) {
   return `<section class="product-documentation product-documentation--representative" id="documentation" aria-labelledby="product-documentation-title"><div class="product-documentation__content"><p class="detail-kicker">Quality Documentation</p><h3 id="product-documentation-title">${escapeHtml(representativeCoa.title)}</h3><p>${escapeHtml(representativeCoa.description)}</p><div class="product-documentation__acceptance"><h4>Commercial acceptance specifications</h4><dl class="product-documentation__specifications">${acceptanceMarkup}</dl></div><p class="product-documentation__notice">${escapeHtml(representativeCoa.disclaimer)}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(documentHref)}" target="_blank" rel="noopener">View Representative COA (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section>`;
 }
 
-function synchronizeRepresentativeCoaCopy(html, product) {
-  if (!product.qualityDocumentation?.representativeCoa) return html;
+function lowerQualityDocumentation(product, documentationHref) {
+  const tds = product.qualityDocumentation?.tds;
+  if (!tds) return '';
+  const tdsHref = tds.path.startsWith('/') ? `..${tds.path}` : tds.path;
+  const representativeCoa = product.qualityDocumentation?.representativeCoa;
+  const representativeCoaAction = representativeCoa
+    ? `<a href="${escapeHtml(representativeCoa.path.startsWith('/') ? `..${representativeCoa.path}` : representativeCoa.path)}" target="_blank" rel="noopener">View Representative COA (PDF)</a>`
+    : '';
+  return `<!-- product-tds-section:start --><section class="section product-technical-section" id="quality-documentation" data-product-tds-section="true"><div class="container"><section class="product-documentation" aria-labelledby="quality-documentation-title"><div><p class="detail-kicker">Quality Documentation</p><h2 id="quality-documentation-title">Technical and lot documentation</h2><p>Technical specifications are summarized from current supplier quality documentation. The TDS also includes representative COA results where available. Representative results are lot-specific; the applicable lot-specific COA governs material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a>${representativeCoaAction}<a href="../quality.html">Quality documentation</a></div></section></div></section><!-- product-tds-section:end -->`;
+}
+
+function synchronizeQualityDocumentationCopy(html, product) {
+  if (!product.qualityDocumentation?.tds && !product.qualityDocumentation?.representativeCoa) return html;
   const excluded = /^(?:abbreviation|cas number|formula|availability|commercial availability)$/i;
-  const specifications = (product.additionalProperty || [])
+  const specifications = productKeySpecifications(product)
     .filter(item => item?.name && item?.value && !excluded.test(item.name));
   const summary = `The commercial acceptance specifications shown are ${specifications.map(item => `${item.name.toLowerCase()} ${item.value}`).join(', ')}. Request the current lot-specific COA for the material that will ship.`;
   const cleanQuoteHref = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
@@ -219,6 +245,7 @@ function renderProductDetailExperience(html, product) {
   const specs = productKeySpecifications(product);
   const specificationMarkup = specs.map(item => `<div class="product-key-spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('');
   const documentation = product.mxene ? '' : productDocumentation(product, documentationHref);
+  const lowerDocumentation = product.mxene ? '' : lowerQualityDocumentation(product, documentationHref);
   const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${documentation}</div>`;
   const navigation = product.mxene ? `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#characterization">Characterization</a><a href="#documentation">Documentation</a><a href="#faq">FAQ</a><a href="#related-products">Related Products</a></div></nav>` : `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#documentation">Documentation</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a></div></nav>`;
   const support = `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
@@ -227,6 +254,7 @@ function renderProductDetailExperience(html, product) {
   const context = `<div class="product-detail-context"><div class="container">${breadcrumb}</div></div>`;
   let next = html
     .replace(/<div class="mxene-sticky-shell">([\s\S]*?<\/nav>)<\/div>/gi, '$1')
+    .replace(/<!-- product-tds-section:start -->[\s\S]*?<!-- product-tds-section:end -->/gi, '')
     .replace(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"[\s\S]*?<\/nav>/gi, '')
     .replace(/<div class="product-detail-summary"[^>]*data-product-detail-ux="true"[\s\S]*?<\/section><\/div>/gi, '')
     .replace(/<section class="section product-support-routing"[^>]*data-product-support-routing="true"[\s\S]*?<\/section>/gi, '')
@@ -237,7 +265,7 @@ function renderProductDetailExperience(html, product) {
     .replace(/<article class="detail-panel(?: product-detail-commerce-content)?">/i, '<article class="detail-panel product-detail-commerce-content">')
     .replace(/(<article class="detail-panel product-detail-commerce-content">\s*)<p class="detail-kicker">Product Details<\/p>/i, '$1<p class="detail-kicker">About this product</p>')
     .replace(/(<article class="detail-panel product-detail-commerce-content">)\s*(<p class="detail-kicker">[\s\S]*?<\/p>\s*(?:<h2>[\s\S]*?<\/h2>\s*)?<p>[\s\S]*?<\/p>)/i, '$1<div class="product-detail-information">$2</div>')
-    .replace(/(<div class="product-detail-information">\s*<p class="detail-kicker">[\s\S]*?<\/p>\s*)<h2>[\s\S]*?<\/h2>\s*/i, '$1')
+    .replace(/(<div class="product-detail-information">\s*<p class="detail-kicker">[^<]*<\/p>\s*)<h2>[\s\S]*?<\/h2>\s*(?=<p>)/i, '$1')
     .replace(/(<div class="product-detail-information">\s*<p class="detail-kicker">[\s\S]*?<\/p>\s*(?:<h2>[\s\S]*?<\/h2>\s*)?<p>[\s\S]*?<\/p>)\s*<\/div>/i, `$1${summary}</div>`)
     .replace(/<section class="section"><div class="container product-technical-grid">/i, '<section class="section" id="applications"><div class="container product-technical-grid">');
   if (!next.includes('data-product-detail-nav="true"')) {
@@ -250,6 +278,12 @@ function renderProductDetailExperience(html, product) {
   if (product.mxene) {
     next = next.replace(`${context}${navigation}`, `<div class="mxene-sticky-shell">${context}${navigation}</div>`)
       .replace('<section class="product-key-specifications"', '<section data-copy-protected="true" class="product-key-specifications"');
+  }
+  if (lowerDocumentation) {
+    const supportStart = next.search(/<section class="section product-support-routing"[^>]*data-product-support-routing="true"/i);
+    next = supportStart >= 0
+      ? `${next.slice(0, supportStart)}${lowerDocumentation}${next.slice(supportStart)}`
+      : next.replace(/<\/main>/i, `${lowerDocumentation}</main>`);
   }
   return next;
 }
@@ -886,7 +920,7 @@ async function updateProductPage(pagePath, product) {
   html = ensureStylesheet(html, '../assets/css/ecommerce.css?v=' + generatedAssetVersion);
   html = ensureRelatedModule(html, relatedModule('product', [], intents.families[product.family]?.relatedKnowledge || []), 'product');
   html = renderProductDetailExperience(html, product);
-  html = synchronizeRepresentativeCoaCopy(html, product);
+  html = synchronizeQualityDocumentationCopy(html, product);
   await writePreservingEol(fullPath, html, original);
   auditRows.push({
     url: canonical,

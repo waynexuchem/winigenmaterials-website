@@ -12,7 +12,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "LiPF6",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 20 ppm. Lithium hexafluorophosphate (LiPF6) supplier where to buy Lithium hexafluorophosphate (LiPF6) Abbreviation LiPF6 CAS Number 21324-40-3 Formula LiPF6 Availability Online ordering Grade Battery grade Purity > 99.9% Water ≤ 20 ppm"
+      "metadata": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay ≥99.95 wt%, water ≤10 ppm, and free acid ≤90 ppm. Lithium hexafluorophosphate (LiPF6) supplier where to buy Lithium hexafluorophosphate (LiPF6) Abbreviation LiPF6 CAS Number 21324-40-3 Formula LiPF6 Availability Online ordering Grade Battery grade Assay ≥99.95 wt% Water ≤10 ppm Insoluble matter ≤200 ppm Free acid ≤90 ppm Chloride ≤2 ppm Sulfate ≤5 ppm"
     },
     {
       "slug": "lithium-difluorophosphate-lipo-2-f-2",
@@ -25,7 +25,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "LiPO2F2",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Lithium difluorophosphate (LiPO2F2) supplier where to buy Lithium difluorophosphate (LiPO2F2) Abbreviation LiPO2F2 CAS Number 24389-25-1 Formula LiPO2F2 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
+      "metadata": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm. Lithium difluorophosphate (LiPO2F2) supplier where to buy Lithium difluorophosphate (LiPO2F2) Abbreviation LiPO2F2 CAS Number 24389-25-1 Formula LiPO2F2 Availability RFQ Grade Battery grade Classification Lithium electrolyte additive Assay ≥99.9 wt% Water ≤150 µg/g Acidity, as HF ≤100 ppm Chloride ≤5 µg/g Sulfate ≤10 ppm"
     },
     {
       "slug": "lithium-bis-oxalato-borate-libob",
@@ -50,7 +50,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C2BF2LiO4",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a battery-grade lithium salt available from Winigen Materials. Commercial acceptance specifications include purity ≥99.8 wt%, moisture ≤500 ppm, and acidity (as HF) ≤200 ppm. Lithium difluoro oxalate borate (LiODFB) supplier where to buy Lithium difluoro oxalate borate (LiODFB) Abbreviation LiODFB CAS Number 409071-16-5 Formula C2BF2LiO4 Availability RFQ Grade Battery grade Purity ≥99.8 wt% Moisture ≤500 ppm Acidity (as HF) ≤200 ppm Trace metals Generally ≤5 ppm by ICP-OES; Na ≤1 ppm Chloride ≤10 ppm Sulfate ≤10 ppm Residual carbonate solvents ≤500 ppm Residual non-carbonate solvents ≤50 ppm Insolubles ≤1000 ppm"
+      "metadata": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10. Lithium difluoro oxalate borate (LiODFB) supplier where to buy Lithium difluoro oxalate borate (LiODFB) Abbreviation LiODFB CAS Number 409071-16-5 Formula C2BF2LiO4 Availability RFQ Grade Battery grade Classification Lithium electrolyte additive Appearance Colorless transparent liquid; no visible impurities. Assay ≥99.99 wt% Water ≤15 µg/g Hazen color ≤10 Color after 60 °C / 6 h ≤20 Hazen Diethylene glycol + ethylene glycol ≤50 ppm Chloride ≤1 µg/g Sulfate ≤2 ppm"
     },
     {
       "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
@@ -62,7 +62,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "LiN(CF3SO2)2",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI), CAS 90076-65-6, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI) supplier where to buy Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI) Abbreviation LiTFSI CAS Number 90076-65-6 Formula LiN(CF3SO2)2 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
+      "metadata": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity ≥99.9 wt%, water ≤200 ppm, and acidity as HF ≤50 ppm. Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI) supplier where to buy Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI) Abbreviation LiTFSI CAS Number 90076-65-6 Formula LiN(CF3SO2)2 Availability RFQ Grade Battery grade Purity ≥99.9 wt% Water ≤200 ppm Acidity, as HF ≤50 ppm Fluoride ≤20 ppm Chloride ≤5 ppm Sulfate ≤10 ppm Insoluble matter ≤100 ppm"
     },
     {
       "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
@@ -74,7 +74,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "LiN(SO2F)2",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Lithium bis(fluorosulfonyl)imide (LiFSI) supplier where to buy Lithium bis(fluorosulfonyl)imide (LiFSI) Abbreviation LiFSI CAS Number 171611-11-3 Formula LiN(SO2F)2 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
+      "metadata": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay ≥99.8 wt%, water ≤50 ppm, and acidity as HF ≤50 ppm. Lithium bis(fluorosulfonyl)imide (LiFSI) supplier where to buy Lithium bis(fluorosulfonyl)imide (LiFSI) Abbreviation LiFSI CAS Number 171611-11-3 Formula LiN(SO2F)2 Availability RFQ Grade Battery grade Assay ≥99.8 wt% Water ≤50 ppm Hazen color ≤30 Acidity, as HF ≤50 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "lithium-tetrafluoroborate-libf-4",
@@ -86,7 +86,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "LiBF4",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium salt available from Winigen Materials. Commercial acceptance specifications include purity ≥99.7 wt%, moisture ≤100 ppm, and acidity (as HF) ≤100 ppm. Lithium tetrafluoroborate (LiBF4) supplier where to buy Lithium tetrafluoroborate (LiBF4) Abbreviation LiBF4 CAS Number 14283-07-9 Formula LiBF4 Availability RFQ Grade Battery grade Purity ≥99.7 wt% Moisture ≤100 ppm Acidity (as HF) ≤100 ppm Trace metals Individual ICP-OES limits ≤10 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
+      "metadata": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay ≥99.7 wt%, water ≤100 ppm, and acidity ≤100 ppm. Lithium tetrafluoroborate (LiBF4) supplier where to buy Lithium tetrafluoroborate (LiBF4) Abbreviation LiBF4 CAS Number 14283-07-9 Formula LiBF4 Availability RFQ Grade Battery grade Assay ≥99.7 wt% Water ≤100 ppm Hazen color ≤20 Acidity ≤100 ppm Trace metals Individual ICP-OES limits ≤10 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "ethylene-carbonate-ec",
@@ -98,7 +98,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C3H4O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Ethylene carbonate (EC), CAS 96-49-1, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid above 35°C; crystalline solid at room temperature.. EC supplier where to buy EC Abbreviation EC CAS Number 96-49-1 Formula C3H4O3 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid above 35°C; crystalline solid at room temperature."
+      "metadata": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. EC supplier where to buy EC Abbreviation EC CAS Number 96-49-1 Formula C3H4O3 Availability RFQ Assay ≥99.99 wt% Grade Battery material grade Water ≤15 ppm Hazen color ≤10 Ethylene glycol + diethylene glycol ≤50 ppm Color after 60 °C / 6 h ≤20 Hazen Chloride ≤1 ppm Sulfate ≤2 ppm Physical Colorless transparent liquid above 35°C; crystalline solid at room temperature."
     },
     {
       "slug": "dimethyl-carbonate-dmc",
@@ -110,7 +110,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C3H6O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Dimethyl carbonate (DMC), CAS 616-38-6, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid.. DMC supplier where to buy DMC Abbreviation DMC CAS Number 616-38-6 Formula C3H6O3 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid."
+      "metadata": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10. DMC supplier where to buy DMC Abbreviation DMC CAS Number 616-38-6 Formula C3H6O3 Availability RFQ Assay ≥99.995 wt% Grade Battery material grade Water ≤15 µg/g Hazen color ≤10 Total alcohols ≤50 ppm Chloride ≤1 µg/g Sulfate ≤5 ppm Physical Colorless transparent liquid."
     },
     {
       "slug": "diethyl-carbonate-dec",
@@ -122,7 +122,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C5H10O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Diethyl carbonate (DEC), CAS 105-58-8, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid.. DEC supplier where to buy DEC Abbreviation DEC CAS Number 105-58-8 Formula C5H10O3 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid."
+      "metadata": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤30 ppm, and Hazen color ≤10. DEC supplier where to buy DEC Abbreviation DEC CAS Number 105-58-8 Formula C5H10O3 Availability RFQ Assay ≥99.99 wt% Grade Battery material grade Water ≤30 ppm Hazen color ≤10 Total alcohols, methanol + ethanol ≤50 ppm Chloride ≤1 ppm Sulfate ≤5 ppm Physical Colorless transparent liquid."
     },
     {
       "slug": "ethyl-methyl-carbonate-emc",
@@ -134,7 +134,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C4H8O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Ethyl methyl carbonate (EMC), CAS 623-53-0, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid.. EMC supplier where to buy EMC Abbreviation EMC CAS Number 623-53-0 Formula C4H8O3 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid."
+      "metadata": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. EMC supplier where to buy EMC Abbreviation EMC CAS Number 623-53-0 Formula C4H8O3 Availability RFQ Assay ≥99.99 wt% Grade Battery material grade Water ≤15 ppm Hazen color ≤10 Total alcohols, methanol + ethanol ≤50 ppm Chloride ≤1 ppm Sulfate ≤2 ppm Physical Colorless transparent liquid."
     },
     {
       "slug": "propylene-carbonate-pc",
@@ -146,7 +146,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C4H6O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Propylene carbonate (PC), CAS 108-32-7, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid.. PC supplier where to buy PC Abbreviation PC CAS Number 108-32-7 Formula C4H6O3 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid."
+      "metadata": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. PC supplier where to buy PC Abbreviation PC CAS Number 108-32-7 Formula C4H6O3 Availability RFQ Assay ≥99.99 wt% Grade Battery material grade Water ≤15 ppm Hazen color ≤10 Propylene glycol + dipropylene glycol ≤20 ppm Chloride ≤1 ppm Sulfate ≤2 ppm Physical Colorless transparent liquid."
     },
     {
       "slug": "ethyl-acetate-ea",
@@ -168,10 +168,10 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
         "2"
       ],
       "cas": "1550-44-3",
-      "formula": "DFEA",
+      "formula": "C4H6F2O2",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "2,2-Difluoroethyl acetate (DFEA), CAS 1550-44-3, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Liquid.. DFEA supplier where to buy DFEA Abbreviation DFEA CAS Number 1550-44-3 Formula DFEA Availability RFQ Water < 100 ppm Grade Battery material grade Physical Liquid."
+      "metadata": "2,2-Difluoroethyl acetate (DFEA), CAS 1550-44-3, is a fluorinated ester solvent available from Winigen Materials. Supplier specifications include purity 98–100%, specific gravity 1.2060–1.2100 at 20/20, and refractive index 1.3520–1.3560 n20/D. DFEA supplier where to buy DFEA Abbreviation DFEA CAS Number 1550-44-3 Formula C4H6F2O2 Availability RFQ Purity 98–100% Grade Battery material grade Appearance Colorless to very pale yellow clear liquid Specific gravity, 20/20 1.2060–1.2100 Refractive index, n20/D 1.3520–1.3560"
     },
     {
       "slug": "1-2-dimethoxyethane-dme",
@@ -223,7 +223,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C5H4F6O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC), CAS 1513-87-7, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade. TFEC supplier where to buy TFEC Abbreviation TFEC CAS Number 1513-87-7 Formula C5H4F6O3 Availability RFQ Water < 100 ppm Grade Battery material grade"
+      "metadata": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC), CAS 1513-87-7, is a fluorinated carbonate available from Winigen Materials. Supplier specifications establish purity >98% and appearance as a colorless liquid. TFEC supplier where to buy TFEC Abbreviation TFEC CAS Number 1513-87-7 Formula C5H4F6O3 Availability RFQ Purity >98% Grade Battery material grade Appearance Colorless liquid"
     },
     {
       "slug": "vinylene-carbonate-vc",
@@ -947,7 +947,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C5H10O2",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Ethyl propionate (EP), CAS 105-37-3, available from Winigen Materials for battery and electrochemical research. Ethyl propionate is an ester co-solvent for electrolyte-solvent screening and formulation studies. Ethyl propionate (EP) supplier where to buy Ethyl propionate (EP) Abbreviation EP CAS Number 105-37-3 Formula C5H10O2 Grade Battery research grade"
+      "metadata": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Supplier specifications include assay ≥99.95 wt%, water ≤200 ppm, and acidity as HF ≤20 ppm. Ethyl propionate (EP) supplier where to buy Ethyl propionate (EP) Abbreviation EP CAS Number 105-37-3 Formula C5H10O2 Grade Battery research grade Assay ≥99.95 wt% Water ≤200 ppm Hazen color ≤10 Methanol + ethanol + propanol ≤50 ppm Acidity, as HF ≤20 ppm Chloride ≤1 ppm Sulfate ≤2 ppm"
     },
     {
       "slug": "propyl-propionate-pp",
@@ -959,7 +959,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C6H12O2",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Propyl propionate (PP), CAS 106-36-5, available from Winigen Materials for battery and electrochemical research. Propyl propionate is an ester co-solvent for battery-electrolyte formulation and transport studies. Propyl propionate (PP) supplier where to buy Propyl propionate (PP) Abbreviation PP CAS Number 106-36-5 Formula C6H12O2 Grade Battery research grade"
+      "metadata": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Supplier specifications include assay ≥99.95 wt%, water ≤200 ppm, and acidity as HF ≤20 ppm. Propyl propionate (PP) supplier where to buy Propyl propionate (PP) Abbreviation PP CAS Number 106-36-5 Formula C6H12O2 Grade Battery research grade Assay ≥99.95 wt% Water ≤200 ppm Hazen color ≤10 Methanol + ethanol + propanol ≤50 ppm Acidity, as HF ≤20 ppm Chloride ≤1 ppm Sulfate ≤5 ppm"
     },
     {
       "slug": "triphenyl-phosphite-tppi",

@@ -1,4 +1,5 @@
 import { access, readFile, readdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { dirname, extname, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createCommerceRelease } from '../scripts/commerce-release.mjs';
@@ -289,7 +290,44 @@ for (const product of productSource.products) {
     if (!/data-product-detail-ux="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks the generated key-specification summary.`);
     if (!/data-product-detail-nav="true"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks shared section navigation.`);
     if (!productHtml.includes(`Winigen product code</span><strong>${product.sku}</strong>`)) errors.push(`${pagePath}: direct product lacks its canonical customer-facing product code.`);
+    const tds = product.qualityDocumentation?.tds;
     const representativeCoa = product.qualityDocumentation?.representativeCoa;
+    if (tds) {
+      const documentPath = resolve(siteRoot, tds.path.replace(/^\//, ''));
+      let documentBytes;
+      try { documentBytes = await readFile(documentPath); }
+      catch { errors.push(`${pagePath}: TDS file does not exist: ${tds.path}.`); }
+      if (!/^\/assets\/documents\/tds\/Winigen_[A-Za-z0-9_]+_Representative_TDS_RevB\.pdf$/.test(tds.path)) {
+        errors.push(`${pagePath}: TDS path does not use the approved public naming convention: ${tds.path}.`);
+      }
+      if (!/^[a-f0-9]{64}$/.test(tds.sha256 || '')) {
+        errors.push(`${pagePath}: TDS metadata lacks a valid SHA-256 digest.`);
+      } else if (documentBytes && createHash('sha256').update(documentBytes).digest('hex') !== tds.sha256) {
+        errors.push(`${pagePath}: TDS bytes do not match the approved SHA-256 digest.`);
+      }
+      const expectedHref = `..${tds.path}`;
+      const tdsLinkCount = (productHtml.match(new RegExp(`href="${expectedHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`, 'g')) || []).length;
+      if (tdsLinkCount !== 2) errors.push(`${pagePath}: expected two TDS links, found ${tdsLinkCount}.`);
+      if ((productHtml.match(/View Technical Data Sheet \(PDF\)/g) || []).length !== 2) errors.push(`${pagePath}: expected two descriptive TDS actions.`);
+      if (!/data-product-tds-section="true"/i.test(productHtml)) errors.push(`${pagePath}: lower quality/documentation section is missing.`);
+      if (!/Request COA \/ SDS/i.test(productHtml) || !/Request Current Lot COA \/ SDS/i.test(productHtml)) errors.push(`${pagePath}: lot-specific COA/SDS actions are incomplete.`);
+      if (!/representative results are lot-specific/i.test(productHtml) || !/lot-specific COA governs material supplied/i.test(productHtml)) {
+        errors.push(`${pagePath}: TDS and lot-specific COA distinction is incomplete.`);
+      }
+      if (!/href="\.\.\/quality\.html"/i.test(productHtml)) errors.push(`${pagePath}: general quality documentation link is missing.`);
+      const requestedKeys = product.qualityDocumentation?.keySpecifications || [];
+      const propertiesByName = new Map((product.additionalProperty || []).map(item => [item.name?.toLowerCase(), item]));
+      if (!requestedKeys.length || requestedKeys.length > 6) errors.push(`${pagePath}: TDS key-specification selection must contain 1–6 fields.`);
+      for (const key of requestedKeys) {
+        if (!propertiesByName.has(String(key).toLowerCase())) errors.push(`${pagePath}: selected key specification is absent from canonical product data: ${key}.`);
+      }
+      const schemaProperties = products[0]?.additionalProperty || [];
+      for (const specification of (product.additionalProperty || []).filter(item => !/^(?:availability|commercial availability)$/i.test(item.name))) {
+        if (!schemaProperties.some(item => item.name === specification.name && item.value === specification.value)) {
+          errors.push(`${pagePath}: Product schema contradicts or omits ${specification.name}: ${specification.value}.`);
+        }
+      }
+    }
     if (representativeCoa) {
       const documentPath = resolve(siteRoot, representativeCoa.path.replace(/^\//, ''));
       try { await access(documentPath); }
@@ -298,21 +336,21 @@ for (const product of productSource.products) {
       if (!productHtml.includes(`href="${expectedHref}"`)) errors.push(`${pagePath}: representative COA link is missing or incorrect.`);
       if (!/View Representative COA \(PDF\)/i.test(productHtml)) errors.push(`${pagePath}: representative COA action is missing.`);
       if (!/Request Current Lot COA/i.test(productHtml)) errors.push(`${pagePath}: current-lot COA request action is missing.`);
-      if (!/representative production-lot data/i.test(productHtml) || !/lot-specific certificate of analysis/i.test(productHtml)) {
+      if (!tds && (!/representative production-lot data/i.test(productHtml) || !/lot-specific certificate of analysis/i.test(productHtml))) {
         errors.push(`${pagePath}: representative-lot disclaimer is incomplete.`);
       }
       const excluded = /^(?:abbreviation|cas number|formula|availability|commercial availability)$/i;
       const acceptanceSpecifications = (product.additionalProperty || []).filter(item => item?.name && item?.value && !excluded.test(item.name));
       const schemaProperties = products[0]?.additionalProperty || [];
       for (const specification of acceptanceSpecifications) {
-        if (!productHtml.includes(specification.name) || !productHtml.includes(specification.value)) {
+        if (!tds && (!productHtml.includes(specification.name) || !productHtml.includes(specification.value))) {
           errors.push(`${pagePath}: visible acceptance specification is missing ${specification.name}: ${specification.value}.`);
         }
         if (!schemaProperties.some(item => item.name === specification.name && item.value === specification.value)) {
           errors.push(`${pagePath}: Product schema contradicts or omits ${specification.name}: ${specification.value}.`);
         }
       }
-      if (/purity(?:%20|\s)*(?:&gt;|>|%3E)(?:%20|\s)*99\.9%|water(?:%20|\s)*(?:&lt;|<|%3C)(?:=|%3D)?(?:%20|\s)*50\s*ppm/i.test(productHtml)) {
+      if (!tds && /purity(?:%20|\s)*(?:&gt;|>|%3E)(?:%20|\s)*99\.9%|water(?:%20|\s)*(?:&lt;|<|%3C)(?:=|%3D)?(?:%20|\s)*50\s*ppm/i.test(productHtml)) {
         errors.push(`${pagePath}: stale generic purity or water specification remains.`);
       }
       const forbiddenLotResults = product.slug === 'lithium-tetrafluoroborate-libf-4'
@@ -323,7 +361,7 @@ for (const product of productSource.products) {
       for (const measuredValue of forbiddenLotResults) {
         if (productHtml.includes(measuredValue)) errors.push(`${pagePath}: representative-lot result ${measuredValue} leaked into product copy.`);
       }
-    } else if (!(product.mxene ? /Request Current Lot COA/i : /Request COA \/ SDS/i).test(productHtml)) {
+    } else if (!tds && !(product.mxene ? /Request Current Lot COA/i : /Request COA \/ SDS/i).test(productHtml)) {
       errors.push(`${pagePath}: direct product lacks a truthful documentation request action.`);
     }
     if (!(product.mxene ? /id="characterization"/i : /id="technical-guides"/i).test(productHtml)) errors.push(`${pagePath}: direct product lacks related technical guides.`);
