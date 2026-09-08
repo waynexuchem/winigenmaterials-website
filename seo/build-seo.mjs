@@ -216,7 +216,7 @@ function lowerQualityDocumentation(product, documentationHref) {
   const representativeCoaAction = representativeCoa
     ? `<a href="${escapeHtml(representativeCoa.path.startsWith('/') ? `..${representativeCoa.path}` : representativeCoa.path)}" target="_blank" rel="noopener">View Representative COA (PDF)</a>`
     : '';
-  return `<!-- product-tds-section:start --><section class="section product-technical-section" id="quality-documentation" data-product-tds-section="true"><div class="container"><section class="product-documentation" aria-labelledby="quality-documentation-title"><div><p class="detail-kicker">Quality Documentation</p><h2 id="quality-documentation-title">Technical and lot documentation</h2><p>Technical specifications are summarized from current supplier quality documentation. The TDS also includes representative COA results where available. Representative results are lot-specific; the applicable lot-specific COA governs material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a>${representativeCoaAction}<a href="../quality.html">Quality documentation</a></div></section></div></section><!-- product-tds-section:end -->`;
+  return `<!-- product-tds-section:start --><section class="section product-technical-section" id="documentation" data-product-tds-section="true"><div class="container"><section class="product-documentation" aria-labelledby="quality-documentation-title"><div><p class="detail-kicker">Quality Documentation</p><h2 id="quality-documentation-title">Technical and lot documentation</h2><p>Technical specifications are summarized from current supplier quality documentation. The TDS also includes representative COA results where available. Representative results are lot-specific; the applicable lot-specific COA governs material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a>${representativeCoaAction}<a href="../quality.html">Quality documentation</a></div></section></div></section><!-- product-tds-section:end -->`;
 }
 
 function synchronizeQualityDocumentationCopy(html, product) {
@@ -235,7 +235,7 @@ function synchronizeQualityDocumentationCopy(html, product) {
 }
 
 function renderProductDetailExperience(html, product) {
-  if (product.commerceStatus !== 'active_checkout') return html;
+  if (product.commerceStatus !== 'active_checkout') return renderRfqProductNavigation(html, product);
   const variants = activeVariants(product);
   if (!variants.length) return html;
   const family = familiesBySlug.get(product.family);
@@ -244,16 +244,21 @@ function renderProductDetailExperience(html, product) {
   const technicalHref = `../contact.html?inquiry_type=${encodeURIComponent('Technical Discussion')}&amp;product_interest=${encodeURIComponent(product.name)}`;
   const specs = productKeySpecifications(product);
   const specificationMarkup = specs.map(item => `<div class="product-key-spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('');
-  const documentation = product.mxene ? '' : productDocumentation(product, documentationHref);
+  const documentation = product.mxene || product.qualityDocumentation?.tds ? '' : productDocumentation(product, documentationHref);
   const lowerDocumentation = product.mxene ? '' : lowerQualityDocumentation(product, documentationHref);
   const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${documentation}</div>`;
-  const navigation = product.mxene ? `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#characterization">Characterization</a><a href="#documentation">Documentation</a><a href="#faq">FAQ</a><a href="#related-products">Related Products</a></div></nav>` : `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#documentation">Documentation</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a></div></nav>`;
+  const navigation = product.mxene ? `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#characterization">Characterization</a><a href="#documentation">Documentation</a><a href="#faq">FAQ</a><a href="#related-products">Related Products</a></div></nav>` : `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#selection-guide">Selection Guide</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a><a href="#documentation">Documentation</a></div></nav>`;
   const support = `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
 
   const breadcrumb = html.match(/<div class="breadcrumb">[\s\S]*?<\/div>/i)?.[0] || '<div class="breadcrumb"><a href="../products.html">Products</a></div>';
   const context = `<div class="product-detail-context"><div class="container">${breadcrumb}</div></div>`;
   let next = html
     .replace(/<div class="mxene-sticky-shell">([\s\S]*?<\/nav>)<\/div>/gi, '$1')
+    .replace(/<div class="product-sticky-shell">([\s\S]*?<\/nav>)<\/div>/gi, '$1')
+    .replace(/<div class="product-tds-action">[\s\S]*?<\/div>/gi, '')
+    .replace(/<div class="product-visual-frame">([\s\S]*?)<\/div>/gi, '$1')
+    .replace(/<a\b[^>]*data-product-quick-tds="true"[^>]*>[\s\S]*?<\/a>/gi, '')
+    .replace(/class="structure-panel product-tds-media"/gi, 'class="structure-panel"')
     .replace(/<!-- product-tds-section:start -->[\s\S]*?<!-- product-tds-section:end -->/gi, '')
     .replace(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"[\s\S]*?<\/nav>/gi, '')
     .replace(/<div class="product-detail-summary"[^>]*data-product-detail-ux="true"[\s\S]*?<\/section><\/div>/gi, '')
@@ -278,6 +283,13 @@ function renderProductDetailExperience(html, product) {
   if (product.mxene) {
     next = next.replace(`${context}${navigation}`, `<div class="mxene-sticky-shell">${context}${navigation}</div>`)
       .replace('<section class="product-key-specifications"', '<section data-copy-protected="true" class="product-key-specifications"');
+  } else {
+    next = next.replace(`${context}${navigation}`, `<div class="product-sticky-shell">${context}${navigation}</div>`);
+  }
+  if (product.qualityDocumentation?.tds) {
+    const tds = product.qualityDocumentation.tds;
+    const tdsHref = tds.path.startsWith('/') ? `..${tds.path}` : tds.path;
+    next = next.replace(/<aside class="structure-panel"([^>]*)>([\s\S]*?)<\/aside>/i, (_match, attributes, contents) => `<aside class="structure-panel product-tds-media"${attributes}><div class="product-visual-frame">${contents}</div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a></div></aside>`);
   }
   if (lowerDocumentation) {
     const supportStart = next.search(/<section class="section product-support-routing"[^>]*data-product-support-routing="true"/i);
@@ -285,7 +297,44 @@ function renderProductDetailExperience(html, product) {
       ? `${next.slice(0, supportStart)}${lowerDocumentation}${next.slice(supportStart)}`
       : next.replace(/<\/main>/i, `${lowerDocumentation}</main>`);
   }
-  return next;
+  return reconcileProductNavigationTargets(next);
+}
+
+function reconcileProductNavigationTargets(html) {
+  let next = html;
+  if (!/\bid=["']applications["']/i.test(next) && /\bid=["']technical-profile["']/i.test(next)) {
+    next = next.replace(/href="#applications"/i, 'href="#technical-profile"');
+  }
+  const navigation = next.match(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"[\s\S]*?<\/nav>/i)?.[0];
+  if (!navigation) return next;
+  const links = [...navigation.matchAll(/<a href="#([^"]+)">[\s\S]*?<\/a>/gi)]
+    .map(match => ({ markup: match[0], id: match[1] }))
+    .map(link => ({ ...link, position: next.search(new RegExp(`\\bid=["']${link.id}["']`, 'i')) }))
+    .filter(link => link.position >= 0)
+    .sort((left, right) => left.position - right.position);
+  const reconciled = navigation.replace(/(<div class="container">)[\s\S]*?(<\/div><\/nav>)/i, `$1${links.map(link => link.markup).join('')}$2`);
+  return next.replace(navigation, reconciled);
+}
+
+function renderRfqProductNavigation(html, product) {
+  if (product.commerceStatus !== 'rfq') return html;
+  const family = familiesBySlug.get(product.family);
+  let next = html.replace(/<div class="product-sticky-shell">[\s\S]*?<\/nav><\/div>/gi, '');
+  const existingBreadcrumb = next.match(/<div class="breadcrumb">[\s\S]*?<\/div>/i)?.[0];
+  const breadcrumb = existingBreadcrumb || `<div class="breadcrumb"><a href="../products.html">Products</a> / <a href="${escapeHtml(family?.url?.split('/').pop() || '../products.html')}">${escapeHtml(family?.name || 'Materials')}</a> / ${escapeHtml(product.name)}</div>`;
+  if (existingBreadcrumb) next = next.replace(existingBreadcrumb, '');
+  next = next
+    .replace(/<section class="section dark product-detail-hero"(?![^>]*\bid=)/i, '<section class="section dark product-detail-hero" id="overview"')
+    .replace(/(<\/section>\s*)<section class="section"(?![^>]*\bid=)/i, '$1<section class="section" id="specifications"');
+  const links = [
+    ['overview', 'Overview'],
+    ['specifications', 'Specifications & RFQ'],
+    ['selection-guide', 'Selection Guide'],
+    ['technical-guides', 'Related Guides']
+  ].filter(([id]) => new RegExp(`\\bid=["']${id}["']`, 'i').test(next));
+  const navigation = `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container">${links.map(([id, label]) => `<a href="#${id}">${label}</a>`).join('')}</div></nav>`;
+  const context = `<div class="product-detail-context"><div class="container">${breadcrumb}</div></div>`;
+  return reconcileProductNavigationTargets(next.replace(/<main>/i, `<main><div class="product-sticky-shell">${context}${navigation}</div>`));
 }
 
 function ensureStylesheet(html, href) {
@@ -294,6 +343,14 @@ function ensureStylesheet(html, href) {
     return html.replace(new RegExp(`${baseHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?v=[^"']+)?`, 'g'), href);
   }
   return html.replace(/<\/head>/i, `<link rel="stylesheet" href="${href}">\n</head>`);
+}
+
+function ensureScript(html, src) {
+  const baseSrc = src.split('?')[0];
+  if (html.includes(baseSrc)) {
+    return html.replace(new RegExp(`${baseSrc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?v=[^"']+)?`, 'g'), src);
+  }
+  return html.replace(/<\/body>/i, `<script src="${src}" defer></script>\n</body>`);
 }
 
 function propertyLabel(name, value = '') {
@@ -918,6 +975,8 @@ async function updateProductPage(pagePath, product) {
   html = renderStaticProductCommerce(html, product);
   html = renderStaticRfqState(html, product);
   html = ensureStylesheet(html, '../assets/css/ecommerce.css?v=' + generatedAssetVersion);
+  html = ensureStylesheet(html, '../assets/css/mxene.css');
+  html = ensureScript(html, '../assets/js/mxene-presentation.js');
   html = ensureRelatedModule(html, relatedModule('product', [], intents.families[product.family]?.relatedKnowledge || []), 'product');
   html = renderProductDetailExperience(html, product);
   html = synchronizeQualityDocumentationCopy(html, product);
@@ -945,7 +1004,7 @@ async function updateFamilyPage(pagePath, familySlug = null) {
   const family = familySlug ? familiesBySlug.get(familySlug) : null;
   const intent = familySlug ? intents.families[familySlug] : null;
   const title = intent?.title || 'Battery Materials & Electrochemical Components | Winigen Materials';
-  const description = intent?.description || 'Browse battery electrolyte salts, solvents, additives, solid-state electrolytes, active materials, functional coatings, and formulation support from Winigen Materials.';
+  const description = intent?.description || 'Browse battery electrolyte salts, solvents, additives, solid-state electrolytes, active materials, functional coatings, MXene materials, and formulation support from Winigen Materials.';
   const canonical = family ? `${siteUrl}${family.url}` : `${siteUrl}/products.html`;
   let html = replaceTitle(original, title);
   html = replaceMeta(html, 'description', description);

@@ -9,6 +9,7 @@ import { withIsolatedSiteFixture } from './isolated-site-fixture.mjs';
 const siteRoot = resolve(import.meta.dirname, '../..');
 const execFileAsync = promisify(execFile);
 const source = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
+const semantic = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const directProducts = source.products.filter(product => product.packages.some(variant => variant.approvalStatus === 'ACTIVE'));
 
 async function directProductPages(root = siteRoot) {
@@ -22,7 +23,9 @@ function relevantProductDetailStructure(html) {
   return {
     contextAndNavigation: html.match(/<div class="product-detail-context">[\s\S]*?<\/nav>/i)?.[0] || '',
     aboutCopy: html.match(/<div class="product-detail-information"><p class="detail-kicker">About this product<\/p>\s*<p>[\s\S]*?<\/p>/i)?.[0] || '',
-    purchasePanel: html.match(/<section class="ecommerce-panel"[\s\S]*?<\/section>(?=\s*<div class="detail-actions")/i)?.[0] || ''
+    purchasePanel: html.match(/<section class="ecommerce-panel"[\s\S]*?<\/section>(?=\s*<div class="detail-actions")/i)?.[0] || '',
+    relatedResources: html.match(/<section class="section seo-related-resources"[\s\S]*?<\/section>/i)?.[0] || '',
+    hasTds: /data-product-tds-section="true"/i.test(html)
   };
 }
 
@@ -55,6 +58,27 @@ test('every direct product page uses the tightened single-title purchase layout'
   }
 });
 
+test('every non-MXene product page uses the shared sticky section navigation', async () => {
+  const products = semantic.products.filter(product => product.family !== 'mxene-materials');
+  assert.equal(products.length, 96, 'expected every non-MXene canonical product');
+  for (const product of products) {
+    const html = await readFile(resolve(siteRoot, product.url.replace(/^\//, '')), 'utf8');
+    assert.equal((html.match(/class="product-sticky-shell"/g) || []).length, 1, `${product.slug}: one sticky shell`);
+    assert.equal((html.match(/data-product-detail-nav="true"/g) || []).length, 1, `${product.slug}: one section navigation`);
+    assert.match(html, /assets\/css\/mxene\.css\?v=[a-f0-9]{12}/, `${product.slug}: shared sticky styles loaded`);
+    assert.match(html, /assets\/js\/mxene-presentation\.js\?v=[a-f0-9]{12}/, `${product.slug}: shared sticky behavior loaded`);
+    const navigation = html.match(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"[\s\S]*?<\/nav>/i)?.[0] || '';
+    const anchors = [...navigation.matchAll(/href="#([^"]+)"/g)].map(match => match[1]);
+    assert.ok(anchors.length >= 3, `${product.slug}: useful section navigation`);
+    for (const anchor of anchors) assert.match(html, new RegExp(`\\bid=["']${anchor}["']`, 'i'), `${product.slug}: target #${anchor} exists`);
+    const targetPositions = anchors.map(anchor => html.search(new RegExp(`\\bid=["']${anchor}["']`, 'i')));
+    assert.deepEqual(targetPositions, [...targetPositions].sort((left, right) => left - right), `${product.slug}: navigation follows DOM order without backward jumps`);
+    if (/\bid=["']selection-guide["']/i.test(html)) {
+      assert.ok(anchors.includes('selection-guide'), `${product.slug}: selection guide is represented in navigation`);
+    }
+  }
+});
+
 test('product detail generation is idempotent across two consecutive passes', async () => {
   await withIsolatedSiteFixture(siteRoot, async isolatedRoot => {
     const generator = resolve(isolatedRoot, 'seo/build-seo.mjs');
@@ -67,6 +91,9 @@ test('product detail generation is idempotent across two consecutive passes', as
       assert.ok(structure.contextAndNavigation, `${slug}: context and navigation generated`);
       assert.ok(structure.aboutCopy, `${slug}: compact about copy generated`);
       assert.ok(structure.purchasePanel, `${slug}: purchase panel generated`);
+      if (structure.hasTds) {
+        assert.match(structure.relatedResources, /<h2>Related Technical Guides<\/h2>/, `${slug}: related-resources heading preserved`);
+      }
     }
     assert.deepEqual(secondPass, firstPass);
   });
@@ -86,7 +113,6 @@ test('shared product-page script uses the selected card key for cart updates', a
 
 test('RFQ-only product pages remain free of direct purchase controls', async () => {
   const directSlugs = new Set(directProducts.map(product => product.slug));
-  const semantic = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
   const rfqProduct = semantic.products.find(product => !directSlugs.has(product.slug));
   assert.ok(rfqProduct, 'expected at least one RFQ-only product');
   const html = await readFile(resolve(siteRoot, rfqProduct.url.replace(/^\//, '')), 'utf8');

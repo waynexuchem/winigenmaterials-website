@@ -13,7 +13,7 @@
   document.addEventListener('dragstart', event => { if (scientificImage(event.target)) event.preventDefault(); });
   document.addEventListener('contextmenu', event => { if (scientificImage(event.target)) event.preventDefault(); });
 
-  const shell = document.querySelector('.mxene-sticky-shell');
+  const shell = document.querySelector('.mxene-sticky-shell, .product-sticky-shell');
   if (!shell) return;
   const header = document.querySelector('.header');
   const links = [...shell.querySelectorAll('nav a[href^="#"]')];

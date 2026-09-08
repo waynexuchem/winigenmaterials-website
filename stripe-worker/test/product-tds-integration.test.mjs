@@ -53,15 +53,14 @@ test('canonical product specifications and TDS metadata match the approved suppl
   await assert.rejects(readFile(resolve(siteRoot, 'products/sulfolane.html')));
 });
 
-test('each public TDS product has accessible top and lower document actions without representative-lot leakage', async () => {
+test('each public TDS product matches the MXene-style image action and retains lower documentation', async () => {
   for (const document of documents) {
     const html = await readFile(resolve(siteRoot, 'products', `${document.slug}.html`), 'utf8');
     const href = `../assets/documents/tds/Winigen_${document.code}_Representative_TDS_RevB.pdf`;
     assert.equal(html.split(`href="${href}"`).length - 1, 2, `${document.slug}: TDS link count`);
-    assert.equal(html.split('View Technical Data Sheet (PDF)').length - 1, 2, `${document.slug}: descriptive TDS actions`);
-    assert.match(html, /target="_blank" rel="noopener">View Technical Data Sheet \(PDF\)/);
-    assert.match(html, /data-product-tds-section="true"/);
-    assert.match(html, /Request COA \/ SDS/);
+    assert.equal(html.split('Technical Data Sheet (PDF)').length - 1, 2, `${document.slug}: descriptive TDS actions`);
+    assert.match(html, /<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i, `${document.slug}: TDS action is separated below the product image`);
+    assert.match(html, /<section class="section product-technical-section" id="documentation" data-product-tds-section="true">/);
     assert.match(html, /Request Current Lot COA \/ SDS/);
     assert.match(html, /representative results are lot-specific/i);
     assert.match(html, /lot-specific COA governs material supplied/i);
