@@ -1,0 +1,26 @@
+/* Specialized six-column comparison; all table styling is the shared characterization table. */
+.mxene-comparison{min-width:780px}
+
+/* Preserve scientific pixels inside the native media panel. */
+.product-photo.mxene-microscopy,.structure-panel img.mxene-microscopy{object-fit:contain;mix-blend-mode:normal;width:auto;height:auto;max-height:100%}
+
+.product-photo.mxene-microscopy{border-radius:0}
+
+[data-copy-protected="true"]{user-select:none;-webkit-user-select:none}
+img[data-copy-protected="true"]{-webkit-user-drag:none}
+.mxene-sticky-shell{position:sticky;top:var(--mxene-header-height,110px);z-index:40;background:#fff;box-shadow:0 2px 5px #15234112}
+.mxene-sticky-shell .product-detail-context{padding:8px 0}
+.mxene-sticky-shell .breadcrumb{white-space:nowrap;overflow-x:auto;margin:0;font-size:.85rem}
+.mxene-sticky-shell .product-detail-nav{position:static;top:auto;margin:0}
+.mxene-sticky-shell .product-detail-nav .container{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.mxene-sticky-shell .product-detail-nav a{flex:none;white-space:nowrap}
+.mxene-sticky-shell .product-detail-nav a[aria-current="location"]{color:var(--navy,#142444);border-bottom:3px solid var(--gold,#c9aa65);background:#f4f6fa}
+body:has(.mxene-sticky-shell) :is(#overview,#specifications,#packages,#characterization,#documentation,#faq,#related-products){scroll-margin-top:var(--mxene-anchor-offset,220px)}
+body:has(.mxene-sticky-shell) .structure-panel{display:flex;flex-direction:column;gap:24px;justify-content:center;align-items:center}
+body:has(.mxene-sticky-shell) .structure-panel img{max-width:100%;height:auto;flex:none}
+.mxene-quick-tds{max-width:100%;text-align:center}
+.mxene-characterization-contact{margin-top:24px}
+@media(max-width:900px){.mxene-sticky-shell{top:var(--mxene-header-height,92px)}.mxene-sticky-shell .product-detail-nav a{padding:12px 14px;font-size:.85rem}}
+/* Let package anchors move with the document below the shared sticky shell. */
+body:has(.mxene-sticky-shell) .product-detail-layout--commerce .ecommerce-panel{position:static}
+body:has(.mxene-sticky-shell) .characterization-media img{width:auto;height:auto;max-width:100%;margin-inline:auto;border-radius:0}

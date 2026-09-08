@@ -98,6 +98,7 @@
   }
 
   function casMarkup(card) {
+    if (card.dataset.section === 'mxene-materials') return '';
     const casNumber = cardCasNumber(card);
     return `<p class="product-card__cas"><span>CAS:</span> ${casNumber || 'Not assigned'}</p>`;
   }

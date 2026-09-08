@@ -329,6 +329,14 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-m07-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/alumina/wal-p05-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/functional-coatings/wbm-p07-boehmite-sem.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/mo2ctx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/mo2ctx-single-few-xrd-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-single-few-microscopy-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-single-few-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-single-few-tem-web.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-powder-photo.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/llzto-powder-photo.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
@@ -654,6 +662,36 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.winigenmaterials.com/products/mo2ctx-mxene-multilayer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/mo2ctx-multilayer-sem-detail-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/mo2ctx-multilayer-sem-web.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/mo2ctx-mxene-single-few-layer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/mo2ctx-single-few-xrd-web.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/mxene-materials.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/mo2ctx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/mo2ctx-single-few-xrd-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-single-few-microscopy-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-single-few-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-single-few-tem-web.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/nb2ctx-mxene-multilayer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-multilayer-xrd-web.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/nb2ctx-mxene-single-few-layer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-single-few-microscopy-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/nb2ctx-single-few-xrd-web.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.winigenmaterials.com/products/next-generation-salts.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/potassium-hexafluorophosphate-kpf-6.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/sodium-bis-fluorosulfonyl-imide-nafsi.png</image:loc></image:image>
@@ -714,6 +752,18 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tetravinylsilane-tvsi.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.winigenmaterials.com/products/ti3c2tx-mxene-multilayer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-multilayer-sem-detail-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-multilayer-sem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-multilayer-xrd-web.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/ti3c2tx-mxene-single-few-layer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-single-few-sem-detail-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-single-few-sem-field2-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/ti3c2tx-single-few-sem-web.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.winigenmaterials.com/products/triallyl-phosphate-tap.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/triallyl-phosphate-tap.png</image:loc></image:image>
   </url>
@@ -732,6 +782,17 @@
   <url>
     <loc>https://www.winigenmaterials.com/products/tris-trimethylsilyl-phosphate-tmsp.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/v2ctx-mxene-multilayer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-multilayer-sem-detail-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-multilayer-sem-web.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/v2ctx-mxene-single-few-layer-powder.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-single-few-tem-detail-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-single-few-tem-web.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/mxene/v2ctx-single-few-xrd-web.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/vinyl-ethylene-carbonate-vec.html</loc>

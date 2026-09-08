@@ -1199,6 +1199,462 @@
           "packageBasis": "OWNER_APPROVED_TEMP_HIGH_END_RETAIL_20260905"
         }
       ]
+    },
+    {
+      "slug": "ti3c2tx-mxene-multilayer-powder",
+      "skuBase": "WM-MX-TI3C2TX-ML",
+      "name": "Ti₃C₂Tₓ MXene — Multilayer Powder",
+      "defaultPackageId": "1G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 40000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 70000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "5G",
+          "label": "5 g",
+          "unit": "g",
+          "quantity": 5,
+          "netWeightGrams": 5,
+          "shippingWeightGrams": 5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 140000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_APPROVED_MXENE_20260907",
+        "OWNER_REQUESTED_TEMP_MXENE_LAUNCH"
+      ]
+    },
+    {
+      "slug": "ti3c2tx-mxene-single-few-layer-powder",
+      "skuBase": "WM-MX-TI3C2TX-SFL",
+      "name": "Ti₃C₂Tₓ MXene — Single-/Few-Layer Powder",
+      "defaultPackageId": "1G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 85000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 150000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "5G",
+          "label": "5 g",
+          "unit": "g",
+          "quantity": 5,
+          "netWeightGrams": 5,
+          "shippingWeightGrams": 5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 300000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_APPROVED_MXENE_20260907",
+        "OWNER_REQUESTED_TEMP_MXENE_LAUNCH"
+      ]
+    },
+    {
+      "slug": "nb2ctx-mxene-multilayer-powder",
+      "skuBase": "WM-MX-NB2CTX-ML",
+      "name": "Nb₂CTₓ MXene — Multilayer Powder",
+      "defaultPackageId": "1G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 45000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 80000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "5G",
+          "label": "5 g",
+          "unit": "g",
+          "quantity": 5,
+          "netWeightGrams": 5,
+          "shippingWeightGrams": 5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 170000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907"
+      ],
+      "pricingReviewStatus": "PROVISIONAL_OWNER_REVIEW_REQUIRED_BEFORE_RELEASE"
+    },
+    {
+      "slug": "nb2ctx-mxene-single-few-layer-powder",
+      "skuBase": "WM-MX-NB2CTX-SFL",
+      "name": "Nb₂CTₓ MXene — Single-/Few-Layer Powder",
+      "defaultPackageId": "0P5G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "0P5G",
+          "label": "0.5 g",
+          "unit": "g",
+          "quantity": 0.5,
+          "netWeightGrams": 0.5,
+          "shippingWeightGrams": 0.5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 55000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 100000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 180000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_REQUESTED_PROVISIONAL_NB2CTX_20260907"
+      ],
+      "pricingReviewStatus": "PROVISIONAL_OWNER_REVIEW_REQUIRED_BEFORE_RELEASE"
+    },
+    {
+      "slug": "v2ctx-mxene-multilayer-powder",
+      "skuBase": "WM-MX-V2CTX-ML",
+      "name": "V₂CTₓ MXene — Multilayer Powder",
+      "defaultPackageId": "1G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 45000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 80000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "5G",
+          "label": "5 g",
+          "unit": "g",
+          "quantity": 5,
+          "netWeightGrams": 5,
+          "shippingWeightGrams": 5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 170000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_APPROVED_MXENE_20260907",
+        "OWNER_REQUESTED_TEMP_MXENE_LAUNCH"
+      ]
+    },
+    {
+      "slug": "v2ctx-mxene-single-few-layer-powder",
+      "skuBase": "WM-MX-V2CTX-SFL",
+      "name": "V₂CTₓ MXene — Single-/Few-Layer Powder",
+      "defaultPackageId": "0P5G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "0P5G",
+          "label": "0.5 g",
+          "unit": "g",
+          "quantity": 0.5,
+          "netWeightGrams": 0.5,
+          "shippingWeightGrams": 0.5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 55000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 100000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 180000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_APPROVED_MXENE_20260907",
+        "OWNER_REQUESTED_TEMP_MXENE_LAUNCH"
+      ]
+    },
+    {
+      "slug": "mo2ctx-mxene-multilayer-powder",
+      "skuBase": "WM-MX-MO2CTX-ML",
+      "name": "Mo₂CTₓ MXene — Multilayer Powder",
+      "defaultPackageId": "1G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 75000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 130000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "5G",
+          "label": "5 g",
+          "unit": "g",
+          "quantity": 5,
+          "netWeightGrams": 5,
+          "shippingWeightGrams": 5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 280000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_APPROVED_MXENE_20260907",
+        "OWNER_REQUESTED_TEMP_MXENE_LAUNCH"
+      ]
+    },
+    {
+      "slug": "mo2ctx-mxene-single-few-layer-powder",
+      "skuBase": "WM-MX-MO2CTX-SFL",
+      "name": "Mo₂CTₓ MXene — Single-/Few-Layer Powder",
+      "defaultPackageId": "0P5G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "0P5G",
+          "label": "0.5 g",
+          "unit": "g",
+          "quantity": 0.5,
+          "netWeightGrams": 0.5,
+          "shippingWeightGrams": 0.5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 80000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "1G",
+          "label": "1 g",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 150000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "2G",
+          "label": "2 g",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "unitAmount": 270000,
+          "approvalStatus": "ACTIVE",
+          "packageBasis": "OWNER_REQUESTED_TEMP_MXENE_LAUNCH",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_APPROVED_MXENE_20260907",
+        "OWNER_REQUESTED_TEMP_MXENE_LAUNCH"
+      ]
     }
   ]
 }

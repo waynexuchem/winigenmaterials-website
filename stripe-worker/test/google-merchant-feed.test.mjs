@@ -39,8 +39,8 @@ function identifierFixture(slug, record) {
 }
 
 test('feed includes only image-backed direct-checkout products and active variants', () => {
-  assert.equal(result.stats.baseProductsEvaluated, 96);
-  assert.equal(result.stats.commerceProductsEvaluated, 70);
+  assert.equal(result.stats.baseProductsEvaluated, 104);
+  assert.equal(result.stats.commerceProductsEvaluated, 78);
   assert.equal(result.stats.productsEmitted, 57);
   assert.equal(result.stats.variantsEmitted, 326);
   assert.equal(result.stats.exclusions.manual_review_or_rfq, 12);

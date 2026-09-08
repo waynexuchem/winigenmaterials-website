@@ -5,7 +5,7 @@ const protectedHosts = [
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
 const ga4MeasurementId = 'G-4PD1MZYGLS';
-const ecommerceAssetVersion = '13a74bf45da7';
+const ecommerceAssetVersion = 'c6b7ca32d4c0';
 const commerceConfigVersion = '643d05c0144c';
 
 function initializeGoogleTag() {
@@ -290,6 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Electrolyte Additives', href: `${prefix}products/electrolyte-additives.html` },
         { label: 'Next-Gen Salts', href: `${prefix}products/next-generation-salts.html` },
         { label: 'Solid-State Electrolytes', href: `${prefix}products/solid-state-electrolytes.html` },
+        { label: 'MXene Materials', href: `${prefix}products/mxene-materials.html` },
         { label: 'Custom Formulations', href: `${prefix}products/custom-electrolyte-formulations.html`, separatorBefore: true },
         { label: 'Active Materials', href: `${prefix}products/battery-active-materials.html` },
         { label: 'Functional Coatings', href: `${prefix}products/battery-ceramic-functional-coating-materials.html` }

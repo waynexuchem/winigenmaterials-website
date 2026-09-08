@@ -75,6 +75,11 @@
           "entityId": "#collection"
         }
       ]
+    },
+    {
+      "slug": "mxene-materials",
+      "name": "MXene Materials",
+      "url": "/products/mxene-materials.html"
     }
   ],
   "products": [
@@ -4350,6 +4355,752 @@
         }
       ],
       "ecommerceSlug": "tetravinylsilane-tvsi"
+    },
+    {
+      "slug": "ti3c2tx-mxene-multilayer-powder",
+      "url": "/products/ti3c2tx-mxene-multilayer-powder.html",
+      "name": "Ti₃C₂Tₓ MXene — Multilayer Powder",
+      "description": "Research-grade Ti₃C₂Tₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-TI3C2TX-ML",
+      "image": "/assets/images/mxene/ti3c2tx-multilayer-sem-web.png",
+      "aliases": [
+        "Ti3C2Tx MXene",
+        "Ti3C2 MXene",
+        "Ti3C2Tx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "Ti3C2Tx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "ti3c2tx-mxene-multilayer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "Ti₃C₂Tₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "Ti₃AlC₂"
+        },
+        {
+          "name": "Product form",
+          "value": "Multilayer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "LiF/HCl-derived etching route"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "Multilayer"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "1000 ± 500 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F, –Cl"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "Ti₃C₂Tₓ",
+        "ascii": "Ti3C2Tx",
+        "form": "Multilayer powder",
+        "layer": "Multilayer",
+        "size": "Not specified in current source documentation",
+        "conductivity": "1000 ± 500 S/cm",
+        "terminations": "–O, –OH, –F, –Cl",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS.pdf",
+        "source": "Manufacturer brochure, PDF pages 6 and 9",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": false,
+        "primaryImageTechnique": "SEM",
+        "primaryImageWidth": 1000,
+        "primaryImageAlt": "Ti₃C₂Tₓ MXene — Multilayer Powder — representative SEM",
+        "characterizationImages": [
+          {
+            "file": "ti3c2tx-multilayer-sem-detail-web.png",
+            "technique": "SEM",
+            "scaleBarRetained": false,
+            "cropped": true
+          },
+          {
+            "file": "ti3c2tx-multilayer-xrd-web.png",
+            "technique": "XRD",
+            "scaleBarRetained": false,
+            "cropped": false
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ti3c2tx-mxene-single-few-layer-powder",
+      "url": "/products/ti3c2tx-mxene-single-few-layer-powder.html",
+      "name": "Ti₃C₂Tₓ MXene — Single-/Few-Layer Powder",
+      "description": "Research-grade Ti₃C₂Tₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-TI3C2TX-SFL",
+      "image": "/assets/images/mxene/ti3c2tx-single-few-sem-web.png",
+      "aliases": [
+        "Ti3C2Tx MXene",
+        "Ti3C2 MXene",
+        "Ti3C2Tx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "Ti3C2Tx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "ti3c2tx-mxene-single-few-layer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "Ti₃C₂Tₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "Ti₃AlC₂"
+        },
+        {
+          "name": "Product form",
+          "value": "Freeze-dried single-/few-layer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "LiF/HCl-derived etching route"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "≤5 layers"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "3500 ± 500 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F, –Cl"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "Ti₃C₂Tₓ",
+        "ascii": "Ti3C2Tx",
+        "form": "Freeze-dried single-/few-layer powder",
+        "layer": "≤5 layers",
+        "size": "Not specified in current source documentation",
+        "conductivity": "3500 ± 500 S/cm",
+        "terminations": "–O, –OH, –F, –Cl",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+        "source": "Manufacturer brochure, PDF pages 6 and 9",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": true,
+        "primaryImageTechnique": "SEM",
+        "primaryImageWidth": 217,
+        "primaryImageAlt": "Ti₃C₂Tₓ MXene — Single-/Few-Layer Powder — representative SEM",
+        "characterizationImages": [
+          {
+            "file": "ti3c2tx-single-few-sem-detail-web.png",
+            "technique": "SEM",
+            "scaleBarRetained": false,
+            "cropped": true
+          },
+          {
+            "file": "ti3c2tx-single-few-sem-field2-web.png",
+            "technique": "SEM",
+            "cropped": true,
+            "scaleBarRetained": false
+          }
+        ]
+      }
+    },
+    {
+      "slug": "nb2ctx-mxene-multilayer-powder",
+      "url": "/products/nb2ctx-mxene-multilayer-powder.html",
+      "name": "Nb₂CTₓ MXene — Multilayer Powder",
+      "description": "Research-grade Nb₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-NB2CTX-ML",
+      "image": "/assets/images/mxene/nb2ctx-multilayer-sem-web.png",
+      "aliases": [
+        "Nb2CTx MXene",
+        "Nb2C MXene",
+        "Nb2CTx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "Nb2CTx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "nb2ctx-mxene-multilayer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "Nb₂CTₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "Nb₂AlC"
+        },
+        {
+          "name": "Product form",
+          "value": "Multilayer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "HF etching"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "Multilayer"
+        },
+        {
+          "name": "Nominal flake / particle size",
+          "value": "2–20 µm"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "1–10 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "Nb₂CTₓ",
+        "ascii": "Nb2CTx",
+        "form": "Multilayer powder",
+        "layer": "Multilayer",
+        "size": "2–20 µm",
+        "conductivity": "1–10 S/cm",
+        "terminations": "–O, –OH, –F",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS.pdf",
+        "source": "Manufacturer brochure, PDF page 13",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": false,
+        "primaryImageTechnique": "SEM",
+        "primaryImageWidth": 1000,
+        "primaryImageAlt": "Nb₂CTₓ MXene — Multilayer Powder — representative SEM",
+        "characterizationImages": [
+          {
+            "file": "nb2ctx-multilayer-sem-web.png",
+            "technique": "SEM",
+            "scaleBarRetained": false,
+            "cropped": true
+          },
+          {
+            "file": "nb2ctx-multilayer-xrd-web.png",
+            "technique": "XRD",
+            "scaleBarRetained": false,
+            "cropped": true,
+            "annotationMasked": true
+          }
+        ]
+      }
+    },
+    {
+      "slug": "nb2ctx-mxene-single-few-layer-powder",
+      "url": "/products/nb2ctx-mxene-single-few-layer-powder.html",
+      "name": "Nb₂CTₓ MXene — Single-/Few-Layer Powder",
+      "description": "Research-grade Nb₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-NB2CTX-SFL",
+      "image": "/assets/images/mxene/nb2ctx-single-few-microscopy-web.png",
+      "aliases": [
+        "Nb2CTx MXene",
+        "Nb2C MXene",
+        "Nb2CTx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "Nb2CTx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "nb2ctx-mxene-single-few-layer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "Nb₂CTₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "Nb₂AlC"
+        },
+        {
+          "name": "Product form",
+          "value": "Delaminated single-/few-layer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "HF etching followed by intercalation / delamination"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "≤5 layers"
+        },
+        {
+          "name": "Nominal lateral size",
+          "value": "200–1000 nm"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "10–100 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "Nb₂CTₓ",
+        "ascii": "Nb2CTx",
+        "form": "Delaminated single-/few-layer powder",
+        "layer": "≤5 layers",
+        "size": "200–1000 nm",
+        "conductivity": "10–100 S/cm",
+        "terminations": "–O, –OH, –F",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+        "source": "Manufacturer brochure, PDF page 13",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": true,
+        "primaryImageTechnique": "Representative microscopy",
+        "primaryImageWidth": 1000,
+        "primaryImageAlt": "Nb₂CTₓ MXene — Single-/Few-Layer Powder — representative microscopy; technique not specified",
+        "characterizationImages": [
+          {
+            "file": "nb2ctx-single-few-microscopy-web.png",
+            "technique": "Representative microscopy",
+            "scaleBarRetained": true,
+            "cropped": false
+          },
+          {
+            "file": "nb2ctx-single-few-xrd-web.png",
+            "technique": "XRD",
+            "scaleBarRetained": false,
+            "cropped": true,
+            "annotationMasked": true
+          }
+        ]
+      }
+    },
+    {
+      "slug": "v2ctx-mxene-multilayer-powder",
+      "url": "/products/v2ctx-mxene-multilayer-powder.html",
+      "name": "V₂CTₓ MXene — Multilayer Powder",
+      "description": "Research-grade V₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-V2CTX-ML",
+      "image": "/assets/images/mxene/v2ctx-multilayer-sem-web.png",
+      "aliases": [
+        "V2CTx MXene",
+        "V2C MXene",
+        "V2CTx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "V2CTx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "v2ctx-mxene-multilayer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "V₂CTₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "V₂AlC"
+        },
+        {
+          "name": "Product form",
+          "value": "Multilayer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "HF etching"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "Multilayer"
+        },
+        {
+          "name": "Nominal flake / particle size",
+          "value": "2–20 µm"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "10–100 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F, –Cl"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "V₂CTₓ",
+        "ascii": "V2CTx",
+        "form": "Multilayer powder",
+        "layer": "Multilayer",
+        "size": "2–20 µm",
+        "conductivity": "10–100 S/cm",
+        "terminations": "–O, –OH, –F, –Cl",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_V2CTx_MXene_Multilayer_Powder_TDS.pdf",
+        "source": "Winigen Rev B TDS, 01 Sep 2026",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": false,
+        "primaryImageTechnique": "SEM",
+        "primaryImageWidth": 222,
+        "primaryImageAlt": "V₂CTₓ MXene — Multilayer Powder — representative SEM",
+        "characterizationImages": [
+          {
+            "file": "v2ctx-multilayer-sem-detail-web.png",
+            "technique": "SEM",
+            "scaleBarRetained": false,
+            "cropped": true
+          }
+        ]
+      }
+    },
+    {
+      "slug": "v2ctx-mxene-single-few-layer-powder",
+      "url": "/products/v2ctx-mxene-single-few-layer-powder.html",
+      "name": "V₂CTₓ MXene — Single-/Few-Layer Powder",
+      "description": "Research-grade V₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-V2CTX-SFL",
+      "image": "/assets/images/mxene/v2ctx-single-few-tem-web.png",
+      "aliases": [
+        "V2CTx MXene",
+        "V2C MXene",
+        "V2CTx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "V2CTx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "v2ctx-mxene-single-few-layer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "V₂CTₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "V₂AlC"
+        },
+        {
+          "name": "Product form",
+          "value": "Delaminated single-/few-layer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "HF etching followed by intercalation / delamination"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "≤5 layers"
+        },
+        {
+          "name": "Nominal lateral size",
+          "value": "200–1000 nm"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "1500 ± 500 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F, –Cl"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "V₂CTₓ",
+        "ascii": "V2CTx",
+        "form": "Delaminated single-/few-layer powder",
+        "layer": "≤5 layers",
+        "size": "200–1000 nm",
+        "conductivity": "1500 ± 500 S/cm",
+        "terminations": "–O, –OH, –F, –Cl",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_V2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+        "source": "Winigen Rev B TDS, 01 Sep 2026",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": true,
+        "primaryImageTechnique": "TEM",
+        "primaryImageWidth": 304,
+        "primaryImageAlt": "V₂CTₓ MXene — Single-/Few-Layer Powder — representative TEM",
+        "characterizationImages": [
+          {
+            "file": "v2ctx-single-few-tem-detail-web.png",
+            "technique": "TEM",
+            "scaleBarRetained": true,
+            "cropped": true
+          },
+          {
+            "file": "v2ctx-single-few-xrd-web.png",
+            "technique": "XRD",
+            "scaleBarRetained": false,
+            "cropped": false,
+            "annotationMasked": true
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mo2ctx-mxene-multilayer-powder",
+      "url": "/products/mo2ctx-mxene-multilayer-powder.html",
+      "name": "Mo₂CTₓ MXene — Multilayer Powder",
+      "description": "Research-grade Mo₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-MO2CTX-ML",
+      "image": "/assets/images/mxene/mo2ctx-multilayer-sem-web.png",
+      "aliases": [
+        "Mo2CTx MXene",
+        "Mo2C MXene",
+        "Mo2CTx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "Mo2CTx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "mo2ctx-mxene-multilayer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "Mo₂CTₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "Mo₂Ga₂C"
+        },
+        {
+          "name": "Product form",
+          "value": "Multilayer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "HF etching"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "Multilayer"
+        },
+        {
+          "name": "Nominal flake / particle size",
+          "value": "2–20 µm"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "10–100 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "Mo₂CTₓ",
+        "ascii": "Mo2CTx",
+        "form": "Multilayer powder",
+        "layer": "Multilayer",
+        "size": "2–20 µm",
+        "conductivity": "10–100 S/cm",
+        "terminations": "–O, –OH, –F",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_Mo2CTx_MXene_Multilayer_Powder_TDS.pdf",
+        "source": "Winigen Rev B TDS, 01 Sep 2026",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": false,
+        "primaryImageTechnique": "SEM",
+        "primaryImageWidth": 282,
+        "primaryImageAlt": "Mo₂CTₓ MXene — Multilayer Powder — representative SEM",
+        "characterizationImages": [
+          {
+            "file": "mo2ctx-multilayer-sem-detail-web.png",
+            "technique": "SEM",
+            "scaleBarRetained": false,
+            "cropped": true
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mo2ctx-mxene-single-few-layer-powder",
+      "url": "/products/mo2ctx-mxene-single-few-layer-powder.html",
+      "name": "Mo₂CTₓ MXene — Single-/Few-Layer Powder",
+      "description": "Research-grade Mo₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available.",
+      "family": "mxene-materials",
+      "category": "MXene Materials",
+      "sku": "WM-MX-MO2CTX-SFL",
+      "image": "/assets/images/mxene/mo2ctx-single-few-xrd-web.png",
+      "aliases": [
+        "Mo2CTx MXene",
+        "Mo2C MXene",
+        "Mo2CTx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "commercialIntents": [
+        "Mo2CTx MXene powder"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "mo2ctx-mxene-single-few-layer-powder",
+      "merchantExclusionReason": "mxene_clean_product_image_and_fulfillment_validation_pending",
+      "additionalProperty": [
+        {
+          "name": "Material",
+          "value": "Mo₂CTₓ MXene"
+        },
+        {
+          "name": "Precursor",
+          "value": "Mo₂Ga₂C"
+        },
+        {
+          "name": "Product form",
+          "value": "Delaminated single-/few-layer powder"
+        },
+        {
+          "name": "Preparation",
+          "value": "HF etching followed by intercalation / delamination"
+        },
+        {
+          "name": "Layer structure / count",
+          "value": "≤5 layers"
+        },
+        {
+          "name": "Nominal lateral size",
+          "value": "200–1000 nm"
+        },
+        {
+          "name": "Typical conductivity",
+          "value": "1000 ± 500 S/cm"
+        },
+        {
+          "name": "Surface terminations",
+          "value": "–O, –OH, –F"
+        },
+        {
+          "name": "Recommended storage",
+          "value": "Dry; vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Research grade"
+        }
+      ],
+      "mxene": {
+        "formula": "Mo₂CTₓ",
+        "ascii": "Mo2CTx",
+        "form": "Delaminated single-/few-layer powder",
+        "layer": "≤5 layers",
+        "size": "200–1000 nm",
+        "conductivity": "1000 ± 500 S/cm",
+        "terminations": "–O, –OH, –F",
+        "storage": "Keep dry in a tightly closed container. Vacuum or inert-atmosphere storage is recommended.",
+        "tds": "/assets/documents/tds/Winigen_Mo2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+        "source": "Winigen Rev B TDS, 01 Sep 2026",
+        "documentationStatus": "Public TDS",
+        "singleFewLayer": true,
+        "primaryImageAlt": "Mo₂CTₓ MXene — Single-/Few-Layer Powder — representative XRD",
+        "characterizationImages": [
+          {
+            "file": "mo2ctx-single-few-xrd-web.png",
+            "technique": "XRD",
+            "scaleBarRetained": false,
+            "cropped": false,
+            "annotationMasked": true
+          }
+        ],
+        "primaryImageTechnique": "XRD",
+        "primaryImageWidth": 627
+      }
     }
   ]
 }

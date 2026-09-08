@@ -1,0 +1,62 @@
+[
+  {
+    "product": "ti3c2tx-mxene-multilayer-powder",
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-tds-revd-audit/Winigen_V2CTx_MXene_Single_Few_Layer_Powder_TDS_RevD.docx",
+    "sourceSha256": "e8f65410f3b0eacb1dc7d4703c2a73e503777449e56c368936b608181e2a1ac1",
+    "editable": "docs/mxene-tds-sources/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS_RevA.docx",
+    "publicPdf": "/assets/documents/tds/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS_RevA.pdf",
+    "revision": "A",
+    "editableSha256": "c61569741818912dd120f587295bfa4698d9731b734b23227238aa05c3c61677",
+    "publicPdfSha256": "498bae88bc5c40ef542e986db3478db1e9828ffe1cf57d7771823ec5fe2af981"
+  },
+  {
+    "product": "ti3c2tx-mxene-single-few-layer-powder",
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-tds-revd-audit/Winigen_V2CTx_MXene_Single_Few_Layer_Powder_TDS_RevD.docx",
+    "sourceSha256": "e8f65410f3b0eacb1dc7d4703c2a73e503777449e56c368936b608181e2a1ac1",
+    "editable": "docs/mxene-tds-sources/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS_RevA.docx",
+    "publicPdf": "/assets/documents/tds/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS_RevA.pdf",
+    "revision": "A",
+    "editableSha256": "58118fba2d2848f92023134b40cf9c1fbbd5d790c45d16b57f75773eac02efa7",
+    "publicPdfSha256": "e5f28cdd423194903572e58aa069293d53b47424ed516cec9a364ac899c2f3d3"
+  },
+  {
+    "product": "nb2ctx-mxene-multilayer-powder",
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-tds-revd-audit/Winigen_V2CTx_MXene_Single_Few_Layer_Powder_TDS_RevD.docx",
+    "sourceSha256": "e8f65410f3b0eacb1dc7d4703c2a73e503777449e56c368936b608181e2a1ac1",
+    "editable": "docs/mxene-tds-sources/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS_RevA.docx",
+    "publicPdf": "/assets/documents/tds/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS_RevA.pdf",
+    "revision": "A",
+    "editableSha256": "bc5e863f2ed7e04fdfa125c1977857ce47db5ee28a16a9cf893e4c7ec78cdc6a",
+    "publicPdfSha256": "0d504e296aa63c8cf6c33d94e1d7de909476336f689b5b0517a41a1f39427ca0"
+  },
+  {
+    "product": "nb2ctx-mxene-single-few-layer-powder",
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-tds-revd-audit/Winigen_V2CTx_MXene_Single_Few_Layer_Powder_TDS_RevD.docx",
+    "sourceSha256": "e8f65410f3b0eacb1dc7d4703c2a73e503777449e56c368936b608181e2a1ac1",
+    "editable": "docs/mxene-tds-sources/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS_RevA.docx",
+    "publicPdf": "/assets/documents/tds/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS_RevA.pdf",
+    "revision": "A",
+    "editableSha256": "df2eb1c83762a96f05e6633e5d74a2d841f5c8c7691aa9a1e958a3db88899e2c",
+    "publicPdfSha256": "5ef4c57fb67af083b117c274b88526a5dce599605a18a324d51624e8e4ff842d"
+  },
+  {
+    "product": "v2ctx-mxene-multilayer-powder",
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Business/2026-09 MSU Ruigang Wang/Michigan State University Materials List_260831/2. Metal–Sulfur 电池用 MXene  电催化材料/Generated TDS/Winigen_V2CTx_MXene_Multilayer_Powder_TDS_RevB.docx",
+    "sourceSha256": "fef4eafff70a9e5f547813a154d022c707da2b66e2c47d59adbe4bc5acd5d486",
+    "editable": "docs/mxene-tds-sources/Winigen_V2CTx_MXene_Multilayer_Powder_TDS_RevC.docx",
+    "publicPdf": "/assets/documents/tds/Winigen_V2CTx_MXene_Multilayer_Powder_TDS_RevC.pdf",
+    "revision": "C",
+    "editableSha256": "67369a77504023bbcd84c24ac1a732603db15c1af4accd8a1aab817477a3da7b",
+    "publicPdfSha256": "45fc387f06323c4b8face83a08d3fcee0b6bfdccecd258fe7a98b0ea3f10365a"
+  },
+  {
+    "product": "mo2ctx-mxene-multilayer-powder",
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Business/2026-09 MSU Ruigang Wang/Michigan State University Materials List_260831/2. Metal–Sulfur 电池用 MXene  电催化材料/Generated TDS/Winigen_Mo2CTx_MXene_Multilayer_Powder_TDS_RevB.docx",
+    "sourceSha256": "a1626209735ba7a24d23d57980cd4a3787aed2c1cdc61aba4fa1f6415c141ecf",
+    "editable": "docs/mxene-tds-sources/Winigen_Mo2CTx_MXene_Multilayer_Powder_TDS_RevC.docx",
+    "publicPdf": "/assets/documents/tds/Winigen_Mo2CTx_MXene_Multilayer_Powder_TDS_RevC.pdf",
+    "revision": "C",
+    "editableSha256": "c6d10c333e7b4f5c2eedf98b659e63897c565220d29a3fc76d5f04dccd737c1f",
+    "publicPdfSha256": "f026cd66d1ecabc9d46bec5f3ef2a17836cf0720dfdb99846330f1939d5e1d29"
+  }
+]

@@ -323,10 +323,10 @@ for (const product of productSource.products) {
       for (const measuredValue of forbiddenLotResults) {
         if (productHtml.includes(measuredValue)) errors.push(`${pagePath}: representative-lot result ${measuredValue} leaked into product copy.`);
       }
-    } else if (!/Request COA \/ SDS/i.test(productHtml)) {
+    } else if (!(product.mxene ? /Request Current Lot COA/i : /Request COA \/ SDS/i).test(productHtml)) {
       errors.push(`${pagePath}: direct product lacks a truthful documentation request action.`);
     }
-    if (!/id="technical-guides"/i.test(productHtml)) errors.push(`${pagePath}: direct product lacks related technical guides.`);
+    if (!(product.mxene ? /id="characterization"/i : /id="technical-guides"/i).test(productHtml)) errors.push(`${pagePath}: direct product lacks related technical guides.`);
     const packageSummaryItems = (productHtml.match(/class="ecommerce-package-summary__item(?: is-selected)?"/g) || []).length;
     if (packageSummaryItems !== expectedOffers.length) errors.push(`${pagePath}: package summary count ${packageSummaryItems} does not match ${expectedOffers.length} approved packages.`);
     if (packageControlCount !== expectedOffers.length) errors.push(`${pagePath}: package control count ${packageControlCount} does not match ${expectedOffers.length} approved packages.`);

@@ -11,7 +11,8 @@
     'solid-state': 'Solid-State Electrolytes',
     formulations: 'Custom Formulations',
     'active-materials': 'Active Materials',
-    'functional-coatings': 'Functional Coatings'
+    'functional-coatings': 'Functional Coatings',
+    'mxene-materials': 'MXene Materials'
   };
 
   const SECTION_ORDER = [
@@ -20,6 +21,7 @@
     'additives',
     'next-gen',
     'solid-state',
+    'mxene-materials',
     'formulations',
     'active-materials',
     'functional-coatings'

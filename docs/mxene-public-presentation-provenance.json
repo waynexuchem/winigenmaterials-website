@@ -1,0 +1,486 @@
+{
+  "images": [
+    {
+      "original": "v2ctx-single-few-xrd-public.png",
+      "sha256": "b0ffabcb106ac08c76f65253f3ba682cb5146178027d11eb551f3d43920e572d",
+      "crop": [
+        0,
+        0,
+        558,
+        244
+      ],
+      "public": "v2ctx-single-few-xrd-web.png",
+      "dimensions": [
+        558,
+        244
+      ],
+      "originalSha256": "b0ffabcb106ac08c76f65253f3ba682cb5146178027d11eb551f3d43920e572d",
+      "originalDimensions": [
+        558,
+        244
+      ],
+      "publicSha256": "25bef4c365ade8ae5a6272235e678d844205dc8aa4071434ade14a29c531dc23",
+      "archive": "tmp/mxene-public-hardening/originals/images/v2ctx-single-few-xrd-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "mo2ctx-multilayer-sem-characterization.png",
+      "sha256": "3a56f0810d1a87542b285828865e14d749bd1bd1ab46ed01a11ec37f3f54e5ef",
+      "crop": [
+        0,
+        0,
+        216,
+        60
+      ],
+      "public": "mo2ctx-multilayer-sem-detail-web.png",
+      "dimensions": [
+        216,
+        60
+      ],
+      "originalSha256": "3a56f0810d1a87542b285828865e14d749bd1bd1ab46ed01a11ec37f3f54e5ef",
+      "originalDimensions": [
+        216,
+        73
+      ],
+      "publicSha256": "75fea74e216ca80c3c2bc3b6bc63b43b7876de88dd18988dc7b4b238440ba051",
+      "archive": "tmp/mxene-public-hardening/originals/images/mo2ctx-multilayer-sem-characterization.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "nb2ctx-single-few-microscopy-public.png",
+      "sha256": "1effb26e315096b9b67c878a3b2266594a94feb030348ea4e5086d7b9e913823",
+      "crop": [
+        0,
+        0,
+        1341,
+        883
+      ],
+      "public": "nb2ctx-single-few-microscopy-web.png",
+      "dimensions": [
+        1000,
+        658
+      ],
+      "originalSha256": "1effb26e315096b9b67c878a3b2266594a94feb030348ea4e5086d7b9e913823",
+      "originalDimensions": [
+        1341,
+        883
+      ],
+      "publicSha256": "c1fb75758f66b955f5658d563b9a63fd4408eb772a4c6eadf298dc119e8dbd43",
+      "archive": "tmp/mxene-public-hardening/originals/images/nb2ctx-single-few-microscopy-public.png",
+      "scaleBarRetained": true,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "ti3c2tx-multilayer-xrd-public.png",
+      "sha256": "2124f940b36d8f7b8523afe07a72f0367b42b991b80cf0b7155b2f44be87f7b8",
+      "crop": [
+        0,
+        0,
+        1230,
+        514
+      ],
+      "public": "ti3c2tx-multilayer-xrd-web.png",
+      "dimensions": [
+        1000,
+        418
+      ],
+      "originalSha256": "2124f940b36d8f7b8523afe07a72f0367b42b991b80cf0b7155b2f44be87f7b8",
+      "originalDimensions": [
+        1230,
+        514
+      ],
+      "publicSha256": "2d828ea4aef7a46ee7d993c95c7013863d25291a690a9fa63e77c3811d13a45c",
+      "archive": "tmp/mxene-public-hardening/originals/images/ti3c2tx-multilayer-xrd-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "ti3c2tx-multilayer-sem-public.png",
+      "sha256": "3dbd44255cd16e94e3bbd231c6bd3d9a82c870ac62eddd9359bc38e9f4f63b8f",
+      "crop": [
+        0,
+        0,
+        1024,
+        697
+      ],
+      "public": "ti3c2tx-multilayer-sem-web.png",
+      "dimensions": [
+        1000,
+        681
+      ],
+      "originalSha256": "3dbd44255cd16e94e3bbd231c6bd3d9a82c870ac62eddd9359bc38e9f4f63b8f",
+      "originalDimensions": [
+        1024,
+        697
+      ],
+      "publicSha256": "c5174695873f77c8ef7b7b3c26158edfc2d9b87670db97c78626f7708932b809",
+      "archive": "tmp/mxene-public-hardening/originals/images/ti3c2tx-multilayer-sem-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "v2ctx-multilayer-sem-public.png",
+      "sha256": "40e73ba4e0f3e5f753b619ce52f3416964ef8073c1c224d1afb456b2d0e7d0e9",
+      "crop": [
+        0,
+        0,
+        222,
+        222
+      ],
+      "public": "v2ctx-multilayer-sem-web.png",
+      "dimensions": [
+        222,
+        222
+      ],
+      "originalSha256": "40e73ba4e0f3e5f753b619ce52f3416964ef8073c1c224d1afb456b2d0e7d0e9",
+      "originalDimensions": [
+        222,
+        222
+      ],
+      "publicSha256": "eb7f4a09f480d51009a624dccdfc3df472d128d29105f05228a95f4bcc258982",
+      "archive": "tmp/mxene-public-hardening/originals/images/v2ctx-multilayer-sem-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "ti3c2tx-single-few-sem-public.png",
+      "sha256": "e585e8233a1871ff3dba6c3e57184fefa3798eec239291f1ae01249a9d2c720a",
+      "crop": [
+        0,
+        0,
+        217,
+        150
+      ],
+      "public": "ti3c2tx-single-few-sem-web.png",
+      "dimensions": [
+        217,
+        150
+      ],
+      "originalSha256": "e585e8233a1871ff3dba6c3e57184fefa3798eec239291f1ae01249a9d2c720a",
+      "originalDimensions": [
+        217,
+        163
+      ],
+      "publicSha256": "765ec530054e71f3d5ab6e70f6baabd3b19c2baed9646d70eee6a2cc96dd665a",
+      "archive": "tmp/mxene-public-hardening/originals/images/ti3c2tx-single-few-sem-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "v2ctx-single-few-tem-public.png",
+      "sha256": "bf329c188a18015a86dcb52d47bd87a63d42452d0a232b5a5019c0a5e2f4c191",
+      "crop": [
+        0,
+        0,
+        304,
+        124
+      ],
+      "public": "v2ctx-single-few-tem-web.png",
+      "dimensions": [
+        304,
+        124
+      ],
+      "originalSha256": "bf329c188a18015a86dcb52d47bd87a63d42452d0a232b5a5019c0a5e2f4c191",
+      "originalDimensions": [
+        304,
+        124
+      ],
+      "publicSha256": "2bab2bdffb1ad7b0c52155bb541e45879fd6900aebf1050c0affa37f30a59fd8",
+      "archive": "tmp/mxene-public-hardening/originals/images/v2ctx-single-few-tem-public.png",
+      "scaleBarRetained": true,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "nb2ctx-multilayer-sem-public.png",
+      "sha256": "2228dac9c69562024261885d627c6a3a06940505ef94028300705db76589e847",
+      "crop": [
+        0,
+        0,
+        1280,
+        888
+      ],
+      "public": "nb2ctx-multilayer-sem-web.png",
+      "dimensions": [
+        1000,
+        694
+      ],
+      "originalSha256": "2228dac9c69562024261885d627c6a3a06940505ef94028300705db76589e847",
+      "originalDimensions": [
+        1280,
+        960
+      ],
+      "publicSha256": "7212d65249d92352a74bbb1193c8552d0ea60c266f8e5096ceb05bad74a6ceaa",
+      "archive": "tmp/mxene-public-hardening/originals/images/nb2ctx-multilayer-sem-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "v2ctx-single-few-tem-characterization.png",
+      "sha256": "e6e2ad6e9b8d4c7b7a02c5815be9ccc42edfddf4f63990cad9d4fbac07c928a4",
+      "crop": [
+        0,
+        0,
+        336,
+        124
+      ],
+      "public": "v2ctx-single-few-tem-detail-web.png",
+      "dimensions": [
+        336,
+        124
+      ],
+      "originalSha256": "e6e2ad6e9b8d4c7b7a02c5815be9ccc42edfddf4f63990cad9d4fbac07c928a4",
+      "originalDimensions": [
+        336,
+        124
+      ],
+      "publicSha256": "f978fb7fd2ae68b4c9ae3663bce7916113749fe9a4d03446c6a9913e7f7063e4",
+      "archive": "tmp/mxene-public-hardening/originals/images/v2ctx-single-few-tem-characterization.png",
+      "scaleBarRetained": true,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "ti3c2tx-single-few-sem-characterization.png",
+      "sha256": "84f2c0250264cab44267dcb800be305af8e821d86d2c86fc558d23a399623179",
+      "crop": [
+        0,
+        0,
+        217,
+        150
+      ],
+      "public": "ti3c2tx-single-few-sem-detail-web.png",
+      "dimensions": [
+        217,
+        150
+      ],
+      "originalSha256": "84f2c0250264cab44267dcb800be305af8e821d86d2c86fc558d23a399623179",
+      "originalDimensions": [
+        217,
+        333
+      ],
+      "publicSha256": "8134137955df0f7da9476dbf10e91ee38421e651623ff6e23c14a0e7324a3e7d",
+      "archive": "tmp/mxene-public-hardening/originals/images/ti3c2tx-single-few-sem-characterization.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "mo2ctx-single-few-xrd-public.png",
+      "sha256": "3336fba1f8908064944adcb6a8a5076519ea8eeb3fc6e6820217376cb0e14561",
+      "crop": [
+        0,
+        0,
+        627,
+        266
+      ],
+      "public": "mo2ctx-single-few-xrd-web.png",
+      "dimensions": [
+        627,
+        266
+      ],
+      "originalSha256": "3336fba1f8908064944adcb6a8a5076519ea8eeb3fc6e6820217376cb0e14561",
+      "originalDimensions": [
+        627,
+        266
+      ],
+      "publicSha256": "371893f3c5c8f16f2ced9c8a11ed7f42c16bde12df21bc4e6b0db179a6ee09c7",
+      "archive": "tmp/mxene-public-hardening/originals/images/mo2ctx-single-few-xrd-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "nb2ctx-single-few-xrd-public.png",
+      "sha256": "8949dee3a212a0b56ce28fca4afff1ba1d3b38daae118a2325ebda6f62c17b33",
+      "crop": [
+        0,
+        0,
+        830,
+        469
+      ],
+      "public": "nb2ctx-single-few-xrd-web.png",
+      "dimensions": [
+        830,
+        469
+      ],
+      "originalSha256": "8949dee3a212a0b56ce28fca4afff1ba1d3b38daae118a2325ebda6f62c17b33",
+      "originalDimensions": [
+        830,
+        469
+      ],
+      "publicSha256": "f7548fba89df61958e5b564a2d735fc2ed5a297018429a0f5f4447148b80d6e9",
+      "archive": "tmp/mxene-public-hardening/originals/images/nb2ctx-single-few-xrd-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "v2ctx-multilayer-sem-characterization.png",
+      "sha256": "4fa7755059b1689f7aedcbaa3da8ee0e535f612a30a62ff33d0a91dd6ddefe01",
+      "crop": [
+        0,
+        0,
+        336,
+        96
+      ],
+      "public": "v2ctx-multilayer-sem-detail-web.png",
+      "dimensions": [
+        336,
+        96
+      ],
+      "originalSha256": "4fa7755059b1689f7aedcbaa3da8ee0e535f612a30a62ff33d0a91dd6ddefe01",
+      "originalDimensions": [
+        336,
+        113
+      ],
+      "publicSha256": "9b0ea98480d15e64a69febd623d6885e59e924fe3e449a3c387749628799b57d",
+      "archive": "tmp/mxene-public-hardening/originals/images/v2ctx-multilayer-sem-characterization.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "nb2ctx-multilayer-xrd-public.png",
+      "sha256": "33b90e9d5750362b8e01dd95cffa56827f34686541320b2089b790fa354d7442",
+      "crop": [
+        0,
+        0,
+        830,
+        470
+      ],
+      "public": "nb2ctx-multilayer-xrd-web.png",
+      "dimensions": [
+        830,
+        470
+      ],
+      "originalSha256": "33b90e9d5750362b8e01dd95cffa56827f34686541320b2089b790fa354d7442",
+      "originalDimensions": [
+        830,
+        470
+      ],
+      "publicSha256": "d8606bbc52e871cd45de9ba018a7604ee90fc026036d99dba6f579cff7faa023",
+      "archive": "tmp/mxene-public-hardening/originals/images/nb2ctx-multilayer-xrd-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "mo2ctx-multilayer-sem-public.png",
+      "sha256": "3b4848ccdc3f2c465daa79afa2220603af9fb07766bc85bddcfa2d793f0032a6",
+      "crop": [
+        0,
+        0,
+        282,
+        120
+      ],
+      "public": "mo2ctx-multilayer-sem-web.png",
+      "dimensions": [
+        282,
+        120
+      ],
+      "originalSha256": "3b4848ccdc3f2c465daa79afa2220603af9fb07766bc85bddcfa2d793f0032a6",
+      "originalDimensions": [
+        282,
+        146
+      ],
+      "publicSha256": "518b7fd8f637d1dc0859e36129457d54e79ad3c715880497d85c5c8fb28a0394",
+      "archive": "tmp/mxene-public-hardening/originals/images/mo2ctx-multilayer-sem-public.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "ti3c2tx-multilayer-sem-characterization.png",
+      "sha256": "6e2cd9b4cf06e1053d0240281fd1bcd20f054bb096792ab92d004df571e88b0d",
+      "crop": [
+        0,
+        0,
+        1024,
+        697
+      ],
+      "public": "ti3c2tx-multilayer-sem-detail-web.png",
+      "dimensions": [
+        1000,
+        681
+      ],
+      "originalSha256": "6e2cd9b4cf06e1053d0240281fd1bcd20f054bb096792ab92d004df571e88b0d",
+      "originalDimensions": [
+        1024,
+        768
+      ],
+      "publicSha256": "c5174695873f77c8ef7b7b3c26158edfc2d9b87670db97c78626f7708932b809",
+      "archive": "tmp/mxene-public-hardening/originals/images/ti3c2tx-multilayer-sem-characterization.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    },
+    {
+      "original": "ti3c2tx-single-few-sem-characterization.png",
+      "crop": [
+        0,
+        170,
+        217,
+        319
+      ],
+      "public": "ti3c2tx-single-few-sem-field2-web.png",
+      "dimensions": [
+        217,
+        149
+      ],
+      "originalSha256": "84f2c0250264cab44267dcb800be305af8e821d86d2c86fc558d23a399623179",
+      "originalDimensions": [
+        217,
+        333
+      ],
+      "publicSha256": "50c1d18000ec2b7a45a226ea4306425a39a8b68a512d6bee1fafd07fb9e59404",
+      "archive": "tmp/mxene-public-hardening/originals/images/ti3c2tx-single-few-sem-characterization.png",
+      "scaleBarRetained": false,
+      "processing": "Rectangular crop where listed, proportional downsample only above 1000 px; metadata stripped. No inpainting, redrawing, rotation or morphology/trace changes."
+    }
+  ],
+  "history": "Previous image and revisioned PDF assets preserved byte-for-byte under ignored tmp/mxene-public-hardening/originals. Prior provenance records retained unchanged. Editable public TDS sources and owner permission key are in ignored tmp/mxene-public-hardening.",
+  "publicPdfs": [
+    {
+      "file": "assets/documents/tds/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    },
+    {
+      "file": "assets/documents/tds/Winigen_V2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    },
+    {
+      "file": "assets/documents/tds/Winigen_V2CTx_MXene_Multilayer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    },
+    {
+      "file": "assets/documents/tds/Winigen_Mo2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    },
+    {
+      "file": "assets/documents/tds/Winigen_Mo2CTx_MXene_Multilayer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    },
+    {
+      "file": "assets/documents/tds/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    },
+    {
+      "file": "assets/documents/tds/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    },
+    {
+      "file": "assets/documents/tds/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS.pdf",
+      "pages": 1,
+      "permissions": 2564,
+      "encrypted": true
+    }
+  ]
+}

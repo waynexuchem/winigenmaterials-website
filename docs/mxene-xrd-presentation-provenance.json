@@ -1,0 +1,60 @@
+[
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/mo2ctx-single-few-xrd.png",
+    "sourceSha256": "3ae1f945dc554364006464c4f20c05e9d50e9359e3289bde2e7166f7e49e1418",
+    "output": "assets/images/mxene/mo2ctx-single-few-xrd-public.png",
+    "crop": [
+      0,
+      0,
+      627,
+      266
+    ],
+    "mask": [
+      191,
+      87,
+      310,
+      122
+    ],
+    "maskColor": "#ffffff",
+    "rotation": 0,
+    "dimensions": [
+      627,
+      266
+    ],
+    "technique": "XRD",
+    "operation": "Rectangular panel crop; opaque white mask over center annotation in blank space only. Trace and axes unchanged.",
+    "outputSha256": "3336fba1f8908064944adcb6a8a5076519ea8eeb3fc6e6820217376cb0e14561",
+    "pixelsOutsideMaskUnchanged": true,
+    "productGrade": "Mo2CTx single/few",
+    "scaleBarRetained": false
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/v2ctx-single-few-characterization.png",
+    "sourceSha256": "eeb00636da8e3540ee6a0e0aa8621f7958bf47855d4f709c63877d83674514da",
+    "output": "assets/images/mxene/v2ctx-single-few-xrd-public.png",
+    "crop": [
+      0,
+      0,
+      558,
+      244
+    ],
+    "mask": [
+      183,
+      81,
+      290,
+      115
+    ],
+    "maskColor": "#ffffff",
+    "rotation": 0,
+    "dimensions": [
+      558,
+      244
+    ],
+    "technique": "XRD",
+    "operation": "Rectangular panel crop; opaque white mask over center annotation in blank space only. Trace and axes unchanged.",
+    "outputSha256": "b0ffabcb106ac08c76f65253f3ba682cb5146178027d11eb551f3d43920e572d",
+    "pixelsOutsideMaskUnchanged": true,
+    "productGrade": "V2CTx single/few",
+    "scaleBarRetained": false
+  }
+]

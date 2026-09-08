@@ -1,0 +1,322 @@
+[
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/ti3c2tx-multilayer-sem.png",
+    "sourceSha256": "6e2cd9b4cf06e1053d0240281fd1bcd20f054bb096792ab92d004df571e88b0d",
+    "output": "assets/images/mxene/ti3c2tx-multilayer-sem-characterization.png",
+    "crop": [
+      0,
+      0,
+      1024,
+      768
+    ],
+    "rotation": 0,
+    "dimensions": [
+      1024,
+      768
+    ],
+    "technique": "SEM",
+    "productGrade": "Ti3C2Tx multilayer",
+    "scaleBarRetained": true,
+    "role": "characterization",
+    "operation": "unchanged image pixels; PNG public copy",
+    "outputSha256": "6e2cd9b4cf06e1053d0240281fd1bcd20f054bb096792ab92d004df571e88b0d"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/ti3c2tx-multilayer-xrd.png",
+    "sourceSha256": "2124f940b36d8f7b8523afe07a72f0367b42b991b80cf0b7155b2f44be87f7b8",
+    "output": "assets/images/mxene/ti3c2tx-multilayer-xrd-public.png",
+    "crop": [
+      0,
+      0,
+      1230,
+      514
+    ],
+    "rotation": 0,
+    "dimensions": [
+      1230,
+      514
+    ],
+    "technique": "XRD",
+    "productGrade": "Ti3C2Tx multilayer",
+    "scaleBarRetained": false,
+    "role": "characterization",
+    "operation": "unchanged image pixels; PNG public copy",
+    "outputSha256": "2124f940b36d8f7b8523afe07a72f0367b42b991b80cf0b7155b2f44be87f7b8"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/ti3c2tx-single-few-sem.png",
+    "sourceSha256": "84f2c0250264cab44267dcb800be305af8e821d86d2c86fc558d23a399623179",
+    "output": "assets/images/mxene/ti3c2tx-single-few-sem-characterization.png",
+    "crop": [
+      0,
+      0,
+      217,
+      333
+    ],
+    "rotation": 0,
+    "dimensions": [
+      217,
+      333
+    ],
+    "technique": "SEM",
+    "productGrade": "Ti3C2Tx single/few",
+    "scaleBarRetained": true,
+    "role": "characterization",
+    "operation": "unchanged image pixels; PNG public copy",
+    "outputSha256": "84f2c0250264cab44267dcb800be305af8e821d86d2c86fc558d23a399623179"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/v2ctx-multilayer-characterization.png",
+    "sourceSha256": "afe6895bfe9da7ee52902c9207493aa451af30bf655c045a8d42ab9ed2a20a2f",
+    "output": "assets/images/mxene/v2ctx-multilayer-sem-characterization.png",
+    "crop": [
+      563,
+      137,
+      899,
+      250
+    ],
+    "rotation": 0,
+    "dimensions": [
+      336,
+      113
+    ],
+    "technique": "SEM",
+    "productGrade": "V2CTx multilayer",
+    "scaleBarRetained": true,
+    "role": "characterization",
+    "operation": "rectangular crop only",
+    "outputSha256": "4fa7755059b1689f7aedcbaa3da8ee0e535f612a30a62ff33d0a91dd6ddefe01"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/v2ctx-single-few-characterization.png",
+    "sourceSha256": "eeb00636da8e3540ee6a0e0aa8621f7958bf47855d4f709c63877d83674514da",
+    "output": "assets/images/mxene/v2ctx-single-few-tem-characterization.png",
+    "crop": [
+      563,
+      110,
+      899,
+      234
+    ],
+    "rotation": 0,
+    "dimensions": [
+      336,
+      124
+    ],
+    "technique": "TEM",
+    "productGrade": "V2CTx single/few",
+    "scaleBarRetained": true,
+    "role": "characterization",
+    "operation": "rectangular crop only",
+    "outputSha256": "e6e2ad6e9b8d4c7b7a02c5815be9ccc42edfddf4f63990cad9d4fbac07c928a4"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/mo2ctx-multilayer-sem.png",
+    "sourceSha256": "4fb7d81d29b9220aae4ebeb9f47debcf822ace518d4df8a3558dd668e272053d",
+    "output": "assets/images/mxene/mo2ctx-multilayer-sem-characterization.png",
+    "crop": [
+      5,
+      96,
+      221,
+      169
+    ],
+    "rotation": 0,
+    "dimensions": [
+      216,
+      73
+    ],
+    "technique": "SEM",
+    "productGrade": "Mo2CTx multilayer",
+    "scaleBarRetained": true,
+    "role": "characterization",
+    "operation": "rectangular crop only",
+    "outputSha256": "3a56f0810d1a87542b285828865e14d749bd1bd1ab46ed01a11ec37f3f54e5ef"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/mo2ctx-single-few-xrd.png",
+    "sourceSha256": "3ae1f945dc554364006464c4f20c05e9d50e9359e3289bde2e7166f7e49e1418",
+    "output": "assets/images/mxene/mo2ctx-single-few-xrd-public.png",
+    "crop": [
+      0,
+      0,
+      627,
+      266
+    ],
+    "mask": [
+      191,
+      87,
+      310,
+      122
+    ],
+    "maskColor": "#ffffff",
+    "rotation": 0,
+    "dimensions": [
+      627,
+      266
+    ],
+    "technique": "XRD",
+    "operation": "Rectangular panel crop; opaque white mask over center annotation in blank space only. Trace and axes unchanged.",
+    "outputSha256": "3336fba1f8908064944adcb6a8a5076519ea8eeb3fc6e6820217376cb0e14561",
+    "pixelsOutsideMaskUnchanged": true,
+    "productGrade": "Mo2CTx single/few",
+    "scaleBarRetained": false
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-image-presentation/source/v2ctx-single-few-characterization.png",
+    "sourceSha256": "eeb00636da8e3540ee6a0e0aa8621f7958bf47855d4f709c63877d83674514da",
+    "output": "assets/images/mxene/v2ctx-single-few-xrd-public.png",
+    "crop": [
+      0,
+      0,
+      558,
+      244
+    ],
+    "mask": [
+      183,
+      81,
+      290,
+      115
+    ],
+    "maskColor": "#ffffff",
+    "rotation": 0,
+    "dimensions": [
+      558,
+      244
+    ],
+    "technique": "XRD",
+    "operation": "Rectangular panel crop; opaque white mask over center annotation in blank space only. Trace and axes unchanged.",
+    "outputSha256": "b0ffabcb106ac08c76f65253f3ba682cb5146178027d11eb551f3d43920e572d",
+    "pixelsOutsideMaskUnchanged": true,
+    "productGrade": "V2CTx single/few",
+    "scaleBarRetained": false
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-eight/source/page13-IM118.jpg",
+    "sourceSha256": "d419c1bd0ecf8c7bb24e35fa86a9b96a93fbeb128ab380c8b5f2a615f623b0b3",
+    "sourceDocument": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Business/2026-09 MSU Ruigang Wang/Michigan State University Materials List_260831/2. Metal–Sulfur 电池用 MXene  电催化材料/新烯科技产品手册.pdf",
+    "sourceDocumentSha256": "dae93579a909a817b6bfb2862ea58662a68f2c885e49d74324ad9fd36e6ec956",
+    "page": 13,
+    "imageObject": "IM118.jpg",
+    "productGrade": "Nb2CTx multilayer",
+    "technique": "SEM",
+    "techniqueEvidence": "Embedded SU8000 SE(UL) instrument footer",
+    "crop": [
+      0,
+      0,
+      1280,
+      960
+    ],
+    "mask": null,
+    "maskCoordinateSystem": "original image, right/bottom exclusive",
+    "resize": 1,
+    "rotation": 0,
+    "scaleBarRetained": true,
+    "dimensions": [
+      1280,
+      960
+    ],
+    "output": "assets/images/mxene/nb2ctx-multilayer-sem-public.png",
+    "outputSha256": "2228dac9c69562024261885d627c6a3a06940505ef94028300705db76589e847",
+    "role": "primary and characterization",
+    "operation": "native pixels preserved; lossless PNG encoding"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-eight/source/page13-IM119.jpg",
+    "sourceSha256": "1c6b4b7d7cfe374c7bada1d930dce3090b93b28f1741726c34e48b8ccd81d0fe",
+    "sourceDocument": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Business/2026-09 MSU Ruigang Wang/Michigan State University Materials List_260831/2. Metal–Sulfur 电池用 MXene  电催化材料/新烯科技产品手册.pdf",
+    "sourceDocumentSha256": "dae93579a909a817b6bfb2862ea58662a68f2c885e49d74324ad9fd36e6ec956",
+    "page": 13,
+    "imageObject": "IM119.jpg",
+    "productGrade": "Nb2CTx single-few",
+    "technique": "Representative microscopy",
+    "techniqueEvidence": "Technique not named in source; conservative microscopy label",
+    "crop": [
+      0,
+      0,
+      1341,
+      883
+    ],
+    "mask": null,
+    "maskCoordinateSystem": "original image, right/bottom exclusive",
+    "resize": 1,
+    "rotation": 0,
+    "scaleBarRetained": true,
+    "dimensions": [
+      1341,
+      883
+    ],
+    "output": "assets/images/mxene/nb2ctx-single-few-microscopy-public.png",
+    "outputSha256": "1effb26e315096b9b67c878a3b2266594a94feb030348ea4e5086d7b9e913823",
+    "role": "primary and characterization",
+    "operation": "native pixels preserved; lossless PNG encoding"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-eight/source/page13-IM117.jpg",
+    "sourceSha256": "cd9d8a83227845df94d1b7e82c2c39eca69ecedde06d380cfbf069dfd023b81b",
+    "sourceDocument": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Business/2026-09 MSU Ruigang Wang/Michigan State University Materials List_260831/2. Metal–Sulfur 电池用 MXene  电催化材料/新烯科技产品手册.pdf",
+    "sourceDocumentSha256": "dae93579a909a817b6bfb2862ea58662a68f2c885e49d74324ad9fd36e6ec956",
+    "page": 13,
+    "imageObject": "IM117.jpg",
+    "productGrade": "Nb2CTx multilayer",
+    "technique": "XRD",
+    "techniqueEvidence": "Grade-labeled diffraction plot on source page",
+    "crop": [
+      0,
+      0,
+      830,
+      470
+    ],
+    "mask": [
+      260,
+      156,
+      445,
+      211
+    ],
+    "maskCoordinateSystem": "original image, right/bottom exclusive",
+    "resize": 1,
+    "rotation": 0,
+    "scaleBarRetained": false,
+    "dimensions": [
+      830,
+      470
+    ],
+    "output": "assets/images/mxene/nb2ctx-multilayer-xrd-public.png",
+    "outputSha256": "33b90e9d5750362b8e01dd95cffa56827f34686541320b2089b790fa354d7442",
+    "role": "characterization",
+    "operation": "rectangular crop; blank-space annotation mask only"
+  },
+  {
+    "source": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Website/winigen_materials_site_v3/tmp/mxene-eight/source/page13-IM117.jpg",
+    "sourceSha256": "cd9d8a83227845df94d1b7e82c2c39eca69ecedde06d380cfbf069dfd023b81b",
+    "sourceDocument": "/Users/wangxu/Library/Mobile Documents/com~apple~CloudDocs/Winigen Materials/Business/2026-09 MSU Ruigang Wang/Michigan State University Materials List_260831/2. Metal–Sulfur 电池用 MXene  电催化材料/新烯科技产品手册.pdf",
+    "sourceDocumentSha256": "dae93579a909a817b6bfb2862ea58662a68f2c885e49d74324ad9fd36e6ec956",
+    "page": 13,
+    "imageObject": "IM117.jpg",
+    "productGrade": "Nb2CTx single-few",
+    "technique": "XRD",
+    "techniqueEvidence": "Grade-labeled diffraction plot on source page",
+    "crop": [
+      0,
+      499,
+      830,
+      968
+    ],
+    "mask": [
+      235,
+      666,
+      425,
+      719
+    ],
+    "maskCoordinateSystem": "original image, right/bottom exclusive",
+    "resize": 1,
+    "rotation": 0,
+    "scaleBarRetained": false,
+    "dimensions": [
+      830,
+      469
+    ],
+    "output": "assets/images/mxene/nb2ctx-single-few-xrd-public.png",
+    "outputSha256": "8949dee3a212a0b56ce28fca4afff1ba1d3b38daae118a2325ebda6f62c17b33",
+    "role": "characterization",
+    "operation": "rectangular crop; blank-space annotation mask only"
+  }
+]

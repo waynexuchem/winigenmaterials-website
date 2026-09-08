@@ -2,7 +2,7 @@ import { cp, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, relative } from 'node:path';
 
-const excludedRoots = new Set(['.git', 'dist-cloudflare', 'node_modules']);
+const excludedRoots = new Set(['.git', '.codex', 'tmp', 'docs', 'dist-cloudflare', 'node_modules']);
 
 export async function withIsolatedSiteFixture(siteRoot, callback) {
   const temporaryParent = await mkdtemp(join(tmpdir(), 'winigen-site-generator-test-'));

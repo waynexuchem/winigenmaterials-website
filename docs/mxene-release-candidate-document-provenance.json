@@ -1,0 +1,34 @@
+[
+  {
+    "source": "docs/mxene-tds-sources/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS_RevA.docx",
+    "sourceSha256": "c61569741818912dd120f587295bfa4698d9731b734b23227238aa05c3c61677",
+    "editable": "docs/mxene-tds-sources/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS_RevB.docx",
+    "editableSha256": "e9a897c8308cf37d22a033d080e4a35a5f790930fd31319aba55ae8a325ec75d",
+    "publicPdf": "assets/documents/tds/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS_RevB.pdf",
+    "publicPdfSha256": "d806b48d2f062c8260d1345f466a0e2b1deb36465298b43c0236c5bacb98aaa4"
+  },
+  {
+    "source": "docs/mxene-tds-sources/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS_RevA.docx",
+    "sourceSha256": "58118fba2d2848f92023134b40cf9c1fbbd5d790c45d16b57f75773eac02efa7",
+    "editable": "docs/mxene-tds-sources/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS_RevB.docx",
+    "editableSha256": "9e0ac3eee526dbfefa6592dd6209d53f8f871aecf0fbb0e77091b5cad9a23239",
+    "publicPdf": "assets/documents/tds/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS_RevB.pdf",
+    "publicPdfSha256": "c166bae3e42c701a954ed1a586bb744edc593f4bbf24497b6d45bd5f57268d16"
+  },
+  {
+    "source": "docs/mxene-tds-sources/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS_RevA.docx",
+    "sourceSha256": "bc5e863f2ed7e04fdfa125c1977857ce47db5ee28a16a9cf893e4c7ec78cdc6a",
+    "editable": "docs/mxene-tds-sources/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS_RevB.docx",
+    "editableSha256": "1ee6a74d41abefacffffa2b36380688a2388c25063d6e441e7be19b84f327ada",
+    "publicPdf": "assets/documents/tds/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS_RevB.pdf",
+    "publicPdfSha256": "7e35172059fad69b22444d29e60da227c483e0792734f8895fbe42b278bbfed8"
+  },
+  {
+    "source": "docs/mxene-tds-sources/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS_RevA.docx",
+    "sourceSha256": "df2eb1c83762a96f05e6633e5d74a2d841f5c8c7691aa9a1e958a3db88899e2c",
+    "editable": "docs/mxene-tds-sources/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS_RevB.docx",
+    "editableSha256": "2a9851a5f1f1aade4a0ccfe08344c9b7fe400153a687eff6f9d56e3feae86251",
+    "publicPdf": "assets/documents/tds/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS_RevB.pdf",
+    "publicPdfSha256": "2052de4ec4ff785fd747b701098e0c7063eecd5640da5de5d2f5fd9faa169ec8"
+  }
+]

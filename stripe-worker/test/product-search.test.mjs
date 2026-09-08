@@ -20,6 +20,7 @@ test('catalog families use the approved commercial sequence', () => {
     'additives',
     'next-gen',
     'solid-state',
+    'mxene-materials',
     'formulations',
     'active-materials',
     'functional-coatings'

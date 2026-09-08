@@ -134,6 +134,18 @@ function isDirectPurchaseProduct(product) {
 }
 
 function productKeySpecifications(product) {
+  if (product.mxene) {
+    const m = product.mxene;
+    const get = name => product.additionalProperty.find(x => x.name === name)?.value;
+    return [
+      {name:'Layer structure / count', value:m.layer},
+      m.ascii.startsWith('Ti') ? {name:m.singleFewLayer ? 'Product form' : 'Preparation',value:m.singleFewLayer ? m.form : get('Preparation')} : {name:m.singleFewLayer ? 'Nominal lateral size' : 'Nominal flake / particle size',value:m.size},
+      {name:'Surface terminations',value:m.terminations},
+      {name:'Typical conductivity',value:m.conductivity},
+      {name:'Precursor',value:get('Precursor')},
+      {name:'Recommended storage',value:get('Recommended storage')}
+    ];
+  }
   const excluded = /^(?:availability|commercial availability)$/i;
   const isSse = product.family === 'solid-state-electrolytes';
   const priorities = isSse
@@ -159,6 +171,10 @@ function packagePricingSummary(product, variants = activeVariants(product)) {
 }
 
 function productDocumentation(product, documentationHref) {
+  if (product.mxene) {
+    const link = product.mxene.tds ? `<a class="btn secondary" href="${escapeHtml(product.mxene.tds)}">Technical Data Sheet (PDF)</a>` : `<a class="btn secondary" href="${documentationHref}">TDS available on request</a>`;
+    return `<section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>Current-lot COA or other lot-specific documentation can be requested where available. Availability of lot-specific analytical documentation is confirmed during order review. Additional analytical requirements, including surface characterization, should be discussed before ordering.</p></div><div class="product-documentation__actions">${link}<a href="${documentationHref}">Request Current Lot COA</a></div></section>`;
+  }
   const representativeCoa = product.qualityDocumentation?.representativeCoa;
   if (!representativeCoa) {
     return `<section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Quality and handling documents</h3><p>Request the current lot-specific COA, SDS, specification information, and available handling guidance.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${documentationHref}">Request COA / SDS</a><a href="../quality.html">Quality documentation</a></div></section>`;
@@ -202,14 +218,15 @@ function renderProductDetailExperience(html, product) {
   const technicalHref = `../contact.html?inquiry_type=${encodeURIComponent('Technical Discussion')}&amp;product_interest=${encodeURIComponent(product.name)}`;
   const specs = productKeySpecifications(product);
   const specificationMarkup = specs.map(item => `<div class="product-key-spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('');
-  const documentation = productDocumentation(product, documentationHref);
+  const documentation = product.mxene ? '' : productDocumentation(product, documentationHref);
   const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${documentation}</div>`;
-  const navigation = `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#documentation">Documentation</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a></div></nav>`;
+  const navigation = product.mxene ? `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#characterization">Characterization</a><a href="#documentation">Documentation</a><a href="#faq">FAQ</a><a href="#related-products">Related Products</a></div></nav>` : `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#documentation">Documentation</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a></div></nav>`;
   const support = `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
 
   const breadcrumb = html.match(/<div class="breadcrumb">[\s\S]*?<\/div>/i)?.[0] || '<div class="breadcrumb"><a href="../products.html">Products</a></div>';
   const context = `<div class="product-detail-context"><div class="container">${breadcrumb}</div></div>`;
   let next = html
+    .replace(/<div class="mxene-sticky-shell">([\s\S]*?<\/nav>)<\/div>/gi, '$1')
     .replace(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"[\s\S]*?<\/nav>/gi, '')
     .replace(/<div class="product-detail-summary"[^>]*data-product-detail-ux="true"[\s\S]*?<\/section><\/div>/gi, '')
     .replace(/<section class="section product-support-routing"[^>]*data-product-support-routing="true"[\s\S]*?<\/section>/gi, '')
@@ -229,6 +246,10 @@ function renderProductDetailExperience(html, product) {
   if (family && !next.includes('data-product-support-routing="true"')) {
     const faqStart = next.search(/<section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Product FAQ/i);
     next = faqStart >= 0 ? `${next.slice(0, faqStart)}${support}${next.slice(faqStart)}` : next.replace(/<\/main>/i, `${support}</main>`);
+  }
+  if (product.mxene) {
+    next = next.replace(`${context}${navigation}`, `<div class="mxene-sticky-shell">${context}${navigation}</div>`)
+      .replace('<section class="product-key-specifications"', '<section data-copy-protected="true" class="product-key-specifications"');
   }
   return next;
 }
@@ -260,6 +281,13 @@ function sulfideGradeCode(product) {
 }
 
 function listingProperties(product) {
+  if (product.mxene) {
+    const m = product.mxene;
+    const conductivity = {label:'Typical conductivity',value:m.conductivity};
+    return m.ascii.startsWith('Ti')
+      ? (m.singleFewLayer ? [{label:'Layer count',value:m.layer},conductivity,{label:'Form',value:'Freeze-dried powder'}] : [{label:'Layer form',value:m.layer},conductivity,{label:'Preparation',value:'LiF/HCl-derived route'}])
+      : (m.singleFewLayer ? [{label:'Layer count',value:m.layer},{label:'Lateral size',value:m.size},conductivity] : [m.ascii === 'Nb2CTx' ? {label:'Layer form',value:m.layer} : {label:'Flake / particle size',value:m.size},conductivity,{label:'Terminations',value:m.terminations}]);
+  }
   if (sulfideGradeCode(product)) {
     const d50 = product.additionalProperty.find(property => property.name === 'D50 particle size')
       || product.additionalProperty.find(property => /d50/i.test(property.value) || /particle size/i.test(property.name));
@@ -562,6 +590,7 @@ function replaceTypedSchema(html, type, schema) {
 }
 
 function productTitle(product) {
+  if (product.mxene) return `${product.mxene.ascii} MXene ${product.mxene.singleFewLayer ? 'Single-/Few-Layer' : 'Multilayer'} Powder | ${product.mxene.ascii.replace('Tx','')} MXene | Winigen Materials`;
   const family = familiesBySlug.get(product.family);
   if (product.commerceStatus === 'sample_only') return `${product.name} | Research-Grade Battery Material | Winigen Materials`;
   if (product.commerceStatus === 'active_checkout' && product.family === 'lithium-salts' && product.aliases[0]) {
@@ -572,6 +601,7 @@ function productTitle(product) {
 }
 
 function productDescription(product) {
+  if (product.mxene) return `${product.description} ${activeVariants(product).map(v=>v.label).join(', ')} research packages available for online ordering.`;
   const base = product.description.replace(/\s+/g, ' ').trim().replace(/[\s.;:,]+$/, '');
   if (product.commerceStatus === 'active_checkout') {
     const directBase = base.replace(/available by RFQ from Winigen Materials/gi, 'available from Winigen Materials');
@@ -1022,6 +1052,8 @@ async function normalizeOtherPage(pagePath) {
   await writePreservingEol(fullPath, html, original);
 }
 
+export { renderStaticCommerceCards, updateProductPage, updateFamilyPage, productDocumentation };
+async function runSeoBuild() {
 const scopedProducts = buildScope === 'functional-coatings'
   ? productSource.products.filter(product => product.family === 'functional-coatings')
   : productSource.products;
@@ -1098,3 +1130,6 @@ if (buildScope !== 'functional-coatings') await writeFile(resolve(siteRoot, 'seo
 
 console.log(`Generated SEO metadata and schema for ${productSource.products.length} products and ${auditRows.filter(row => row.pageType === 'Knowledge article').length} knowledge articles.`);
 console.log(`Wrote ${imageDiscovery.sitemapUrls} canonical URLs (${imageDiscovery.pagesWithImages} pages and ${imageDiscovery.imageAssociations} image associations) to sitemap.xml, enabled large previews on ${imageDiscovery.largePreviewPages} in-scope pages, and wrote ${auditRows.length} rows to seo/audit.csv.`);
+
+}
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await runSeoBuild();

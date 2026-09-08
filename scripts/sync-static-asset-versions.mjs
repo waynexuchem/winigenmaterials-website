@@ -68,7 +68,7 @@ for (const filePath of await htmlFiles()) {
   if (updated !== original) {
     pendingChanges.push(relative(siteRoot, filePath));
     if (!checkOnly) {
-      const cleanChangedAssetLines = updated.replace(/([^\r\n]*assets\/(?:css|js)\/[^\r\n]*)\r\n/g, '$1\n');
+      const cleanChangedAssetLines = updated.split('\r\n').map((line, index, lines) => line + (index === lines.length - 1 ? '' : /assets\/(?:css|js)\//.test(line) ? '\n' : '\r\n')).join('');
       await writeFile(filePath, cleanChangedAssetLines);
     }
   }

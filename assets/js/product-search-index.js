@@ -1159,6 +1159,126 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "additives",
       "category": "Electrolyte Additives",
       "metadata": "Tetravinylsilane (TVSi), CAS 1112-55-6, available from Winigen Materials for battery and electrochemical research. Tetravinylsilane is a silicon-containing electrolyte additive for polymerization and interphase-screening studies. Tetravinylsilane (TVSi) supplier where to buy Tetravinylsilane (TVSi) Abbreviation TVSi CAS Number 1112-55-6 Formula C8H12Si Grade Battery research grade"
+    },
+    {
+      "slug": "ti3c2tx-mxene-multilayer-powder",
+      "name": "Ti₃C₂Tₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Ti3C2Tx MXene",
+        "Ti3C2 MXene",
+        "Ti3C2Tx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade Ti₃C₂Tₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. Ti3C2Tx MXene powder Material Ti₃C₂Tₓ MXene Precursor Ti₃AlC₂ Product form Multilayer powder Preparation LiF/HCl-derived etching route Layer structure / count Multilayer Typical conductivity 1000 ± 500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "ti3c2tx-mxene-single-few-layer-powder",
+      "name": "Ti₃C₂Tₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Ti3C2Tx MXene",
+        "Ti3C2 MXene",
+        "Ti3C2Tx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade Ti₃C₂Tₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. Ti3C2Tx MXene powder Material Ti₃C₂Tₓ MXene Precursor Ti₃AlC₂ Product form Freeze-dried single-/few-layer powder Preparation LiF/HCl-derived etching route Layer structure / count ≤5 layers Typical conductivity 3500 ± 500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "nb2ctx-mxene-multilayer-powder",
+      "name": "Nb₂CTₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Nb2CTx MXene",
+        "Nb2C MXene",
+        "Nb2CTx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade Nb₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. Nb2CTx MXene powder Material Nb₂CTₓ MXene Precursor Nb₂AlC Product form Multilayer powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Typical conductivity 1–10 S/cm Surface terminations –O, –OH, –F Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "nb2ctx-mxene-single-few-layer-powder",
+      "name": "Nb₂CTₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Nb2CTx MXene",
+        "Nb2C MXene",
+        "Nb2CTx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade Nb₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. Nb2CTx MXene powder Material Nb₂CTₓ MXene Precursor Nb₂AlC Product form Delaminated single-/few-layer powder Preparation HF etching followed by intercalation / delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Typical conductivity 10–100 S/cm Surface terminations –O, –OH, –F Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "v2ctx-mxene-multilayer-powder",
+      "name": "V₂CTₓ MXene — Multilayer Powder",
+      "aliases": [
+        "V2CTx MXene",
+        "V2C MXene",
+        "V2CTx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade V₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. V2CTx MXene powder Material V₂CTₓ MXene Precursor V₂AlC Product form Multilayer powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Typical conductivity 10–100 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "v2ctx-mxene-single-few-layer-powder",
+      "name": "V₂CTₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "V2CTx MXene",
+        "V2C MXene",
+        "V2CTx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade V₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. V2CTx MXene powder Material V₂CTₓ MXene Precursor V₂AlC Product form Delaminated single-/few-layer powder Preparation HF etching followed by intercalation / delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Typical conductivity 1500 ± 500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "mo2ctx-mxene-multilayer-powder",
+      "name": "Mo₂CTₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Mo2CTx MXene",
+        "Mo2C MXene",
+        "Mo2CTx Multilayer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade Mo₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. Mo2CTx MXene powder Material Mo₂CTₓ MXene Precursor Mo₂Ga₂C Product form Multilayer powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Typical conductivity 10–100 S/cm Surface terminations –O, –OH, –F Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "mo2ctx-mxene-single-few-layer-powder",
+      "name": "Mo₂CTₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Mo2CTx MXene",
+        "Mo2C MXene",
+        "Mo2CTx Single-/Few-Layer Powder",
+        "two-dimensional material"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Materials",
+      "metadata": "Research-grade Mo₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. Mo2CTx MXene powder Material Mo₂CTₓ MXene Precursor Mo₂Ga₂C Product form Delaminated single-/few-layer powder Preparation HF etching followed by intercalation / delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Typical conductivity 1000 ± 500 S/cm Surface terminations –O, –OH, –F Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
     }
   ]
 };

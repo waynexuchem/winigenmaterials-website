@@ -119,6 +119,7 @@ function parseGoogleMeasure(value) {
 }
 
 function exclusionReason(semanticProduct, commerceProduct) {
+  if (semanticProduct.family === 'mxene-materials') return semanticProduct.merchantExclusionReason;
   if (semanticProduct.retired === true || commerceProduct?.retired === true) return 'retired';
   if (semanticProduct.disabled === true || semanticProduct.published === false || commerceProduct?.disabled === true) return 'disabled_or_unpublished';
   if (!commerceProduct) return 'not_in_commerce_catalog';

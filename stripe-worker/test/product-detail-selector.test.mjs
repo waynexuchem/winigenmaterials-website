@@ -38,7 +38,7 @@ test('every direct product page uses package cards without a package dropdown', 
 });
 
 test('every direct product page uses the tightened single-title purchase layout', async () => {
-  assert.equal(directProducts.length, 70, 'expected the complete direct-order catalog');
+  assert.equal(directProducts.length, 78, 'expected the complete direct-order catalog');
   for (const product of directProducts) {
     const html = await readFile(resolve(siteRoot, 'products', `${product.slug}.html`), 'utf8');
     const headings = html.match(/<h1\b/gi) || [];

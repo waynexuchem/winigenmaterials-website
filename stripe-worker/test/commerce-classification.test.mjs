@@ -8,18 +8,18 @@ import { resolveProductCommerceState } from '../../ecommerce/commerce-classifica
 test('every canonical product and active variant has one consistent commerce state', async () => {
   const report = await runCommerceClassificationAudit();
   assert.deepEqual(report.issues, []);
-  assert.equal(report.coverage.canonicalProducts, 96);
-  assert.equal(report.coverage.ecommerceProducts, 70);
-  assert.equal(report.coverage.activeVariants, 403);
-  assert.equal(report.matrix.filter(row => row.variantKey).length, 403);
-  assert.equal(new Set(report.matrix.map(row => row.productSlug)).size, 96);
+  assert.equal(report.coverage.canonicalProducts, 104);
+  assert.equal(report.coverage.ecommerceProducts, 78);
+  assert.equal(report.coverage.activeVariants, 427);
+  assert.equal(report.matrix.filter(row => row.variantKey).length, 427);
+  assert.equal(new Set(report.matrix.map(row => row.productSlug)).size, 104);
   assert.deepEqual(report.productStateCounts, {
-    DIRECT_CHECKOUT: 53,
+    DIRECT_CHECKOUT: 61,
     RFQ_ONLY: 38,
     DIRECT_CHECKOUT_REVIEW: 5
   });
   assert.deepEqual(report.variantStateCounts, {
-    DIRECT_CHECKOUT: 302,
+    DIRECT_CHECKOUT: 326,
     RFQ_ONLY: 72,
     DIRECT_CHECKOUT_REVIEW: 29
   });
