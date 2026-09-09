@@ -76,7 +76,7 @@ test('every active online offer uses the canonical whole-dollar B2B increment', 
     for (const variant of product.packages || []) {
       if (variant.approvalStatus !== 'ACTIVE' || variant.pricingStatus !== 'APPROVED_RETAIL') continue;
       activeOfferCount += 1;
-      assert.equal(variant.unitAmount % ecommerceSource.priceNormalization.incrementCents, 0, `${product.slug} ${variant.id}`);
+      assert.equal(variant.unitAmount % (ecommerceSource.priceNormalization.incrementCents), 0, `${product.slug} ${variant.id}`);
     }
   }
   assert.equal(activeOfferCount, 427);
@@ -104,7 +104,7 @@ test('approved-pricing regeneration normalizes every canonical raw price once an
     for (const product of regenerated.products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus))) {
       for (const variant of product.packages || []) {
         if (variant.approvalStatus === 'ACTIVE' && variant.pricingStatus === 'APPROVED_RETAIL') {
-          assert.equal(variant.unitAmount % regenerated.priceNormalization.incrementCents, 0, `${product.slug} ${variant.id}`);
+          assert.equal(variant.unitAmount % (regenerated.priceNormalization.incrementCents), 0, `${product.slug} ${variant.id}`);
         }
       }
     }

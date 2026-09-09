@@ -241,7 +241,7 @@ for (const schedule of allApprovedSchedules) {
     const activeById = new Map(active.map(variant => [variant.id, variant]));
     schedule.packages.forEach(expected => compareVariant(layer, schedule.slug, {
       ...expected,
-      unitAmount: normalizeUnitAmount(expected.unitAmount)
+      unitAmount: (normalizeUnitAmount(expected.unitAmount))
     }, activeById.get(expected.id)));
   }
 
@@ -259,7 +259,7 @@ for (const schedule of allApprovedSchedules) {
     const optionSkus = [...card.matchAll(/<option value="([^"]+)"/g)].map(match => match[1]);
     if (optionSkus.length !== schedule.packages.length) errors.push(`${schedule.slug}: ${listingName} package count differs from the workbook.`);
     for (const expected of schedule.packages) {
-      const effectiveUnitAmount = normalizeUnitAmount(expected.unitAmount);
+      const effectiveUnitAmount = (normalizeUnitAmount(expected.unitAmount));
       const sku = `${schedule.skuBase}-${expected.id}`;
       if (!card.includes(`value="${sku}"`) || !card.includes(expected.label) || !card.includes(formatUsd(effectiveUnitAmount))) {
         errors.push(`${schedule.slug}: ${listingName} is missing ${expected.label} / ${formatUsd(effectiveUnitAmount)}.`);
@@ -281,7 +281,7 @@ for (const schedule of allApprovedSchedules) {
   if (offers.length !== schedule.packages.length) errors.push(`${schedule.slug}: Offer count differs from the workbook.`);
   const offersBySku = new Map(offers.map(offer => [offer.sku, offer]));
   for (const expected of schedule.packages) {
-    const effectiveUnitAmount = normalizeUnitAmount(expected.unitAmount);
+    const effectiveUnitAmount = (normalizeUnitAmount(expected.unitAmount));
     const sku = `${schedule.skuBase}-${expected.id}`;
     const offer = offersBySku.get(sku);
     if (!offer) errors.push(`${schedule.slug}: missing Offer ${sku}.`);
@@ -321,7 +321,7 @@ for (const product of ecommerce.products) {
     if (unitAmount === 0) errors.push(`${product.slug}: zero-dollar package.`);
     const approvalStatus = override.approvalStatus || variant.approvalStatus;
     const pricingStatus = override.pricingStatus || variant.pricingStatus;
-    if (['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus) && approvalStatus === 'ACTIVE' && pricingStatus === 'APPROVED_RETAIL' && unitAmount % priceNormalization.incrementCents !== 0) {
+    if (['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus) && approvalStatus === 'ACTIVE' && pricingStatus === 'APPROVED_RETAIL' && unitAmount % (priceNormalization.incrementCents) !== 0) {
       errors.push(`${product.slug}: active offer is not normalized to the canonical whole-dollar B2B increment.`);
     }
   }

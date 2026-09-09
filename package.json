@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "prepare:cloudflare": "node scripts/prepare-cloudflare-site.mjs",
-    "test:cloudflare": "node --test test/cloudflare-hosting.test.mjs",
+    "test:cloudflare": "node --test test/cloudflare-hosting.test.mjs test/cloudflare-publishing-boundary.test.mjs",
     "deploy:cloudflare": "wrangler deploy --config cloudflare-site/wrangler.jsonc",
     "preview:cloudflare": "wrangler versions upload --config cloudflare-site/wrangler.jsonc"
   },

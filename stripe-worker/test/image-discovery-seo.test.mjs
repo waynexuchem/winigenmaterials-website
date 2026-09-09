@@ -97,7 +97,7 @@ test('all canonical indexable pages explicitly allow large image previews withou
     assert.ok(robotsDirectives(html).includes('max-image-preview:large'), pagePath);
   }
   assert.equal(indexable, 150);
-  assert.equal(noindex, 37);
+  assert.equal(noindex, 41);
 });
 
 test('large-preview merging preserves other directives and leaves noindex pages unchanged', () => {

@@ -33,7 +33,7 @@ async function validateEffectiveCatalog() {
     for (const packageOption of product.packages || []) {
       if (packageOption.approvalStatus !== 'ACTIVE' || packageOption.pricingStatus !== 'APPROVED_RETAIL') continue;
       validatedOffers += 1;
-      if (!Number.isInteger(packageOption.unitAmount) || packageOption.unitAmount <= 0 || packageOption.unitAmount % policy.incrementCents !== 0) {
+      if (!Number.isInteger(packageOption.unitAmount) || packageOption.unitAmount <= 0 || packageOption.unitAmount % (policy.incrementCents) !== 0) {
         invalidOffers.push({ slug: product.slug, package: packageOption.id, unitAmount: packageOption.unitAmount });
       }
     }
