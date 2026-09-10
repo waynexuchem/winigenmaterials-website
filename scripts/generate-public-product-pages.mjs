@@ -1,5 +1,9 @@
-import { access, readFile, writeFile } from 'node:fs/promises';
+import { access, readFile, writeFile as writeRawFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { hardenPublicMarkup } from './harden-public-markup.mjs';
+
+// Apply the same CSP preparation to existing and newly generated HTML.
+const writeFile = (path, html) => writeRawFile(path, hardenPublicMarkup(html));
 
 const root = resolve(import.meta.dirname, '..');
 const catalog = JSON.parse(await readFile(resolve(root, 'catalog/products.source.json'), 'utf8'));
@@ -233,7 +237,7 @@ for (const product of catalog.products) {
   try {
     await access(path);
     const current = await readFile(path, 'utf8');
-    const synchronized = synchronizeChemicalStructures(current);
+    const synchronized = hardenPublicMarkup(synchronizeChemicalStructures(current));
     if (synchronized !== current) await writeFile(path, synchronized);
   } catch {
     await writeFile(path, detailPage(product));

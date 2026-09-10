@@ -100,7 +100,10 @@ test('Nb source grade, scientific labels and documentation are consistent', asyn
 test('MXene release candidate uses shared navigation, final titles, cautious documentation and omitted unsupported Ti size',async()=>{
  const main=await read('assets/js/main.js');
  assert.match(main,/label: 'Solid-State Electrolytes'[\s\S]*label: 'MXene Materials'[\s\S]*label: 'Custom Formulations'[^\n]*separatorBefore: true/);
- const master=await read('products.html');assert.match(master,/const sectionOrder = \['salts', 'solvents', 'additives', 'next-gen', 'solid-state', 'mxene-materials', 'formulations', 'active-materials', 'functional-coatings'\]/);
+ const master=await read('products.html');
+ assert.match(master,/assets\/js\/product-search\.js/);
+ await import('../../assets/js/product-search.js');
+ assert.deepEqual(globalThis.WinigenProductSearch.SECTION_ORDER, ['salts', 'solvents', 'additives', 'next-gen', 'solid-state', 'mxene-materials', 'formulations', 'active-materials', 'functional-coatings']);
  assert.match(master,/<meta name="description"[^>]*MXene materials/);
  for(const p of products){
   const html=await read(p.url.slice(1));const m=p.mxene;

@@ -4,6 +4,7 @@ apple-touch-icon.png
 applications.html
 assets/css/ceramic-knowledge.css
 assets/css/ceramic-product-detail.css
+assets/css/csp-components.css
 assets/css/ecommerce.css
 assets/css/mxene.css
 assets/css/style.css
@@ -346,6 +347,7 @@ assets/images/solid-state/sulfide-packaging-photo.jpg
 assets/images/solid-state/sulfide-sample-photo.jpg
 assets/images/winigen-logo.png
 assets/js/cart.js
+assets/js/catalog-image-fallback.js
 assets/js/ceramic-figures.js
 assets/js/checkout-state.js
 assets/js/commerce-config.js
@@ -356,6 +358,7 @@ assets/js/ecommerce-product-page.js
 assets/js/knowledge-search-data.development.js
 assets/js/knowledge-search-data.js
 assets/js/knowledge-search.js
+assets/js/legacy-redirect.js
 assets/js/main.js
 assets/js/mxene-presentation.js
 assets/js/product-search-index.js

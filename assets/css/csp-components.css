@@ -1,0 +1,4 @@
+/* Preserve the existing back-link spacing and failed-image presentation. */
+.product-detail-back-link { margin-top: 20px; }
+img[data-structure-fallback][hidden] { display: none; }
+.structure-fallback--revealed { display: grid; }
