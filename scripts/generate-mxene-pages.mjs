@@ -1,5 +1,7 @@
 import { reconcileMxeneCatalogOrder } from './mxene-catalog-order.mjs';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile as writeRawFile } from 'node:fs/promises';
+import { formatProductChemistry } from './format-product-chemistry.mjs';
+const writeFile = (path, html) => writeRawFile(path, formatProductChemistry(html));
 import { resolve } from 'node:path';
 import { renderStaticCommerceCards, updateProductPage, updateFamilyPage, productDocumentation } from '../seo/build-seo.mjs';
 

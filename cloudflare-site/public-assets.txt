@@ -350,6 +350,7 @@ assets/js/cart.js
 assets/js/catalog-image-fallback.js
 assets/js/ceramic-figures.js
 assets/js/checkout-state.js
+assets/js/chemical-typography.js
 assets/js/commerce-config.js
 assets/js/commerce-session-routing.js
 assets/js/ecommerce-catalog.js

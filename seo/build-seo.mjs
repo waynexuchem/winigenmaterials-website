@@ -5,6 +5,7 @@ import { execFile as execFileCallback } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createCommerceRelease, shortCommerceRelease } from '../scripts/commerce-release.mjs';
 import { buildImageDiscovery } from './build-image-discovery.mjs';
+import { formatProductChemistry } from '../scripts/format-product-chemistry.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
@@ -29,6 +30,8 @@ function absoluteSiteUrl(value = '') {
 }
 
 async function writePreservingEol(path, content, original = '') {
+  const productPath = relative(siteRoot, path);
+  if (productPath === 'products.html' || (productPath.startsWith('products/') && productPath.endsWith('.html'))) content = formatProductChemistry(content);
   if (path.endsWith('.html')) {
     content = content.replace(
       /(assets\/js\/(?:main|cart|ecommerce-catalog|ecommerce-listing|ecommerce-product-page)\.js)(?:\?v=[^"']+)?/g,

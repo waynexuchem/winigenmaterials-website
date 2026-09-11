@@ -81,6 +81,15 @@
       panel.innerHTML = `<header class="ecommerce-panel__header"><div><p class="detail-kicker">Online ordering</p><h1 class="ecommerce-panel__product">${product.name}<span>${product.grade}</span></h1></div></header>${packageSummary(product, activeVariants)}<div class="ecommerce-panel__fields"><label><span class="ecommerce-panel__quantity-label">Quantity</span><div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><div><span>Selected package × quantity</span><strong class="ecommerce-selection-summary"></strong></div><div><span>Total</span><p class="ecommerce-price"></p></div></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="btn secondary ecommerce-rfq-link" href="${quoteHref}">Request a Quote</a></div><div class="ecommerce-panel__notes"><p class="ecommerce-status"></p>${shippingCopy}</div>`;
       actionHost.insertAdjacentElement('beforebegin', panel);
     }
+    const heading = panel.querySelector('.ecommerce-panel__product');
+    if (heading && !heading.querySelector('sub') && window.WinigenChemicalTypography) {
+      const nameNode = heading.firstChild;
+      if (nameNode?.nodeType === Node.TEXT_NODE) {
+        const template = document.createElement('template');
+        template.innerHTML = window.WinigenChemicalTypography.html(nameNode.textContent);
+        nameNode.replaceWith(template.content);
+      }
+    }
     if (panel.dataset.interactiveReady === 'true') return;
     const price = panel.querySelector('.ecommerce-price');
     const selectionSummary = panel.querySelector('.ecommerce-selection-summary');
