@@ -49,7 +49,7 @@ window.winigenKnowledgeData = {
       ],
       "excerpt": "A coin cell can identify promising chemistry, but pouch cells reveal whether the chemistry survives practical electrode area, electrolyte filling, formation, gas generation, pressure distribution, and manufacturing variation.",
       "image": {
-        "src": "assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation.png?v=20260806-1",
+        "src": "assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation-official-logo.png?v=20260806-1",
         "alt": "Strong coin-cell data is not scale-up proof: coin-to-pouch validation"
       },
       "order": 1,
@@ -116,7 +116,7 @@ window.winigenKnowledgeData = {
       ],
       "excerpt": "Coin cells are useful for early discovery, but pouch cells expose format-dependent failure modes: electrolyte wetting, E/C ratio, gas generation, formation protocol, pressure distribution, current distribution, and scale-dependent impedance.",
       "image": {
-        "src": "assets/images/knowledge/social/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.png?v=20260806-5",
+        "src": "assets/images/knowledge/social/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation-official-logo.png?v=20260806-5",
         "alt": "Coin-cell winner, pouch-cell loser: wetting, formation, gas, pressure, and lean-electrolyte conditions can reorder material performance"
       },
       "order": 2,
@@ -174,7 +174,7 @@ window.winigenKnowledgeData = {
       ],
       "excerpt": "For lithium-rich layered oxide cathodes, first-charge rate changes reaction heterogeneity, plateau access, residual lithium, structural evolution, and later cycling.",
       "image": {
-        "src": "assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects.png?v=20260809-1",
+        "src": "assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects-official-logo.png?v=20260809-1",
         "alt": "The first charge writes the cathode's future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes"
       },
       "order": 3,
@@ -234,7 +234,7 @@ window.winigenKnowledgeData = {
       ],
       "excerpt": "N/P ratio is the negative electrode's receiving-capacity margin, linking practical areal capacity with plating risk, electrode utilization, fast charge, cycle life, and cell-level energy.",
       "image": {
-        "src": "assets/images/knowledge/campaign/np-ratio-effective-margin-hero-v3-diffuse-access.png?v=20260809-1",
+        "src": "assets/images/knowledge/campaign/np-ratio-effective-margin-hero-v3-diffuse-access-official-logo.png?v=20260809-1",
         "alt": "The ratio is fixed, but the margin is not: operating conditions reduce kinetically accessible anode receiving capacity"
       },
       "order": 4,
@@ -298,7 +298,7 @@ window.winigenKnowledgeData = {
       ],
       "excerpt": "Inventory sets the balance envelope; local accessibility determines where demanding operation reaches the lithium-deposition regime first.",
       "image": {
-        "src": "assets/images/knowledge/campaign/beyond-np-spatial-reaction-uniformity-hero-v2-precise-subtitle.png?v=20260809-1",
+        "src": "assets/images/knowledge/campaign/beyond-np-spatial-reaction-uniformity-hero-v2-precise-subtitle-official-logo.png?v=20260809-1",
         "alt": "Balanced on paper, uneven in reality: a localized lithium-plating hotspot in a spatially nonuniform pouch-cell reaction field"
       },
       "order": 5,
@@ -708,7 +708,7 @@ window.winigenKnowledgeData = {
       ],
       "excerpt": "Below −20°C, electrolyte optimization must be matched to graphite kinetics, electrode architecture, lithium-receiving margin, cell hardware, thermal state, and test protocol.",
       "image": {
-        "src": "assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced.png",
+        "src": "assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced-official-logo.png",
         "alt": "Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway"
       },
       "order": 13,
