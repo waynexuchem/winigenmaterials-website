@@ -732,11 +732,23 @@ body .mobile-menu { display: none; }
   font-variant-numeric: lining-nums;
 }
 
+sub,
+sup {
+  line-height: 1;
+}
+
+.product-card h3 sub,
+.ecommerce-panel__product sub,
+.breadcrumb sub,
+.card h3 sub {
+  font-size: .56em;
+}
+
 .formula-text sub,
+.formula-text sup,
 .product-card__properties sub,
 .product-card__properties sup {
   font-size: .64em;
-  line-height: 0;
 }
 
 .structure-fallback {

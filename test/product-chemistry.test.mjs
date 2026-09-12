@@ -6,8 +6,20 @@ import { formatProductChemistry } from '../scripts/format-product-chemistry.mjs'
 test('chemical display handles decimals, variables, groups and leaves specifications/identifiers alone', () => {
   assert.equal(globalThis.WinigenChemicalTypography.html('Li5.5PS4.5ClxBr1.5-x, D50 4.5 ± 1.5 µm'), 'Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub>, D50 4.5 ± 1.5 µm');
   assert.equal(globalThis.WinigenChemicalTypography.html('LiN(CF3SO2)2 SiOx Ti3C2Tx'), 'LiN(CF<sub>3</sub>SO<sub>2</sub>)<sub>2</sub> SiO<sub>x</sub> Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub>');
-  const identifiers = 'NMC811 NCA622 GSB01 D50 D90 1.0 M 99.9% 2,2-Difluoroethyl WM-LS-LiPF6 21324-40-3 Ti₃C₂Tₓ';
+  assert.equal(globalThis.WinigenChemicalTypography.html('Nb₂CTₓ V₂CTₓ Mo₂CTₓ Ti₃C₂Tₓ Li₆PS₅Cl LiPF₆ Al₂O₃ SiOₓ'), 'Nb<sub>2</sub>CT<sub>x</sub> V<sub>2</sub>CT<sub>x</sub> Mo<sub>2</sub>CT<sub>x</sub> Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> Li<sub>6</sub>PS<sub>5</sub>Cl LiPF<sub>6</sub> Al<sub>2</sub>O<sub>3</sub> SiO<sub>x</sub>');
+  const identifiers = 'NMC811 NCA622 GSB01 D50 D90 1.0 M 99.9% 2,2-Difluoroethyl WM-LS-LiPF6 21324-40-3';
   assert.equal(globalThis.WinigenChemicalTypography.html(identifiers), identifiers);
+});
+
+test('shared formula typography preserves nonzero inline boxes without positional hacks', async () => {
+  const css = await readFile(new URL('../assets/css/style.css', import.meta.url), 'utf8');
+  assert.match(css, /sub,\s*sup\s*\{\s*line-height:\s*1;/);
+  const formulaRules = [...css.matchAll(/([^{}]*\b(?:sub|sup)\b[^{}]*)\{([^{}]*)\}/g)];
+  assert.ok(formulaRules.length > 0);
+  for (const [rule, selector, declarations] of formulaRules) {
+    assert.doesNotMatch(declarations, /line-height:\s*0\s*;/, selector);
+    assert.doesNotMatch(declarations, /(?:transform|\btop|\bbottom):/, rule);
+  }
 });
 
 test('markup preserves machine data, scripts, styles, links and existing subscripts', () => {
