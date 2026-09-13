@@ -11,12 +11,16 @@ const execFileAsync = promisify(execFile);
 const standardSlug = '1m-lipf6-ec-emc-3-7-1-vc-electrolyte';
 
 function firstFormulationCardHref(html, sectionId = null) {
+  const firstCard = firstFormulationCard(html, sectionId);
+  return firstCard.match(/class="product-detail-link" href="([^"]+)"/i)?.[1] || '';
+}
+
+function firstFormulationCard(html, sectionId = null) {
   const sectionStart = sectionId ? html.indexOf(`<section id="${sectionId}"`) : 0;
   const gridStart = html.indexOf('<div class="product-card-grid">', sectionStart);
   const sectionEnd = html.indexOf('</section>', gridStart);
   assert.ok(sectionStart >= 0 && gridStart >= 0 && sectionEnd >= 0, 'formulation product grid exists');
-  const firstCard = html.slice(gridStart, sectionEnd).match(/<article\b[\s\S]*?<\/article>/i)?.[0] || '';
-  return firstCard.match(/class="product-detail-link" href="([^"]+)"/i)?.[1] || '';
+  return html.slice(gridStart, sectionEnd).match(/<article\b[\s\S]*?<\/article>/i)?.[0] || '';
 }
 
 function formulationGrid(html, sectionId = null) {
@@ -31,6 +35,10 @@ async function assertStandardFormulationLeads(root) {
   const family = await readFile(resolve(root, 'products/custom-electrolyte-formulations.html'), 'utf8');
   assert.equal(firstFormulationCardHref(catalog, 'formulations'), `products/${standardSlug}.html`);
   assert.equal(firstFormulationCardHref(family), `${standardSlug}.html`);
+  for (const card of [firstFormulationCard(catalog, 'formulations'), firstFormulationCard(family)]) {
+    assert.match(card, /<img[^>]+class="product-photo product-packaging-photo"[^>]+src="\/assets\/images\/product-packaging\/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging\.jpg"/i);
+    assert.doesNotMatch(card, /class="formulation-visual"/i);
+  }
 }
 
 test('standard electrolyte formulation is first in both formulation listings', async () => {

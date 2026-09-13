@@ -40,6 +40,7 @@ const crawlStats = {
   breadcrumbSchema: 0,
   faqSchema: 0,
   directProductOfferSchema: 0,
+  merchantListingProductSchema: 0,
   rfqWebPageSchema: 0,
   commercialSchemaMismatches: 0,
   incompleteProductEntities: 0,
@@ -251,7 +252,17 @@ for (const product of productSource.products) {
     if (products.length !== 1) errors.push(`${pagePath}: direct-purchase page expected one Product entity, found ${products.length}.`);
     const productEntity = products[0];
     const expectedOffers = activeVariants(product);
+    const expectedImage = product.image ? new URL(product.image, siteUrl).href : '';
+    const productImages = Array.isArray(productEntity?.image)
+      ? productEntity.image
+      : [productEntity?.image].filter(Boolean);
+    if (!String(productEntity?.name || '').trim()) errors.push(`${pagePath}: merchant-listing Product is missing name.`);
+    if (!expectedImage) errors.push(`${pagePath}: direct-purchase product lacks an approved canonical image.`);
+    else if (!productImages.includes(expectedImage)) errors.push(`${pagePath}: merchant-listing Product image does not match the approved canonical image.`);
     if (products.length === 1 && offers.length === expectedOffers.length && offers.length > 0) crawlStats.directProductOfferSchema += 1;
+    if (String(productEntity?.name || '').trim() && expectedImage && productImages.includes(expectedImage) && offers.length > 0) {
+      crawlStats.merchantListingProductSchema += 1;
+    }
     if (offers.length !== expectedOffers.length) errors.push(`${pagePath}: expected ${expectedOffers.length} package Offers, found ${offers.length}.`);
     if (productEntity?.url !== canonical) errors.push(`${pagePath}: Product schema URL does not match the canonical product URL.`);
     const offersBySku = new Map(offers.map(offer => [offer.sku, offer]));

@@ -58,6 +58,23 @@ test('every direct product page uses the tightened single-title purchase layout'
   }
 });
 
+test('standard electrolyte formulation uses its canonical packaging image', async () => {
+  const slug = '1m-lipf6-ec-emc-3-7-1-vc-electrolyte';
+  const image = '/assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg';
+  const product = semantic.products.find(item => item.slug === slug);
+  assert.equal(product?.image, image);
+  await withIsolatedSiteFixture(siteRoot, async isolatedRoot => {
+    await execFileAsync(process.execPath, [resolve(isolatedRoot, 'scripts/generate-public-product-pages.mjs')], { cwd: isolatedRoot });
+    await execFileAsync(process.execPath, [resolve(isolatedRoot, 'seo/build-seo.mjs')], {
+      cwd: isolatedRoot,
+      env: { ...process.env, SEO_SCOPE: 'products' }
+    });
+    const html = await readFile(resolve(isolatedRoot, 'products', `${slug}.html`), 'utf8');
+    assert.match(html, new RegExp(`<img[^>]+src="${image}"[^>]+alt="Representative aluminum electrolyte packaging`));
+    assert.match(html, new RegExp(`"image"\\s*:\\s*"https://www\\.winigenmaterials\\.com${image}"`));
+  });
+});
+
 test('every non-MXene product page uses the shared sticky section navigation', async () => {
   const products = semantic.products.filter(product => product.family !== 'mxene-materials');
   assert.equal(products.length, 96, 'expected every non-MXene canonical product');

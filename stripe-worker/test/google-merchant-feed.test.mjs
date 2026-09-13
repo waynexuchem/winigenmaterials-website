@@ -46,10 +46,10 @@ function schemaNodes(value) {
 test('feed includes only image-backed direct-checkout products and active variants', () => {
   assert.equal(result.stats.baseProductsEvaluated, 104);
   assert.equal(result.stats.commerceProductsEvaluated, 78);
-  assert.equal(result.stats.productsEmitted, 65);
-  assert.equal(result.stats.variantsEmitted, 350);
+  assert.equal(result.stats.productsEmitted, 66);
+  assert.equal(result.stats.variantsEmitted, 355);
   assert.equal(result.stats.exclusions.manual_review_or_rfq, 12);
-  assert.equal(result.stats.exclusions.missing_image, 1);
+  assert.equal(result.stats.exclusions.missing_image ?? 0, 0);
   assert.equal(result.stats.exclusions.not_in_commerce_catalog, 26);
   for (const item of result.items) {
     assert.equal(item.source.commercialStatus, 'ONLINE_CHECKOUT');
@@ -417,7 +417,9 @@ test('base product canonicals remain free of package query parameters', async ()
   }
 });
 
-test('products without an approved public image are excluded rather than given a placeholder', () => {
-  assert.equal(result.items.some(item => item.source.slug === '1m-lipf6-ec-emc-3-7-1-vc-electrolyte'), false);
+test('the standard electrolyte formulation uses its approved packaging image', () => {
+  const items = result.items.filter(item => item.source.slug === '1m-lipf6-ec-emc-3-7-1-vc-electrolyte');
+  assert.equal(items.length, 5);
+  assert.ok(items.every(item => item.imageLink === 'https://www.winigenmaterials.com/assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg'));
   assert.doesNotMatch(result.xml, /winigen-logo|placeholder/i);
 });

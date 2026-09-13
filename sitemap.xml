@@ -381,7 +381,10 @@
     <loc>https://www.winigenmaterials.com/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.png</image:loc></image:image>
   </url>
-  <url><loc>https://www.winigenmaterials.com/products/1m-lipf6-ec-emc-3-7-1-vc-electrolyte.html</loc></url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/1m-lipf6-ec-emc-3-7-1-vc-electrolyte.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg</image:loc></image:image>
+  </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/2-2-difluoroethyl-acetate-dfea.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/2-2-difluoroethyl-acetate-dfea.png</image:loc></image:image>
