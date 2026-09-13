@@ -319,6 +319,7 @@ assets/images/mxene/v2ctx-single-few-tem-detail-web.png
 assets/images/mxene/v2ctx-single-few-tem-web.png
 assets/images/mxene/v2ctx-single-few-xrd-web.png
 assets/images/next-gen-mg-k.png
+assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg
 assets/images/quality/moisture-sensitive-packaging.png
 assets/images/quality/redacted-coa-preview.png
 assets/images/raw-chemicals.jpg
