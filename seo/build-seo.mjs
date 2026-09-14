@@ -32,7 +32,8 @@ function absoluteSiteUrl(value = '') {
 async function writePreservingEol(path, content, original = '') {
   const productPath = relative(siteRoot, path);
   if (productPath === 'products.html' || (productPath.startsWith('products/') && productPath.endsWith('.html'))) content = formatProductChemistry(content);
-  if (path.endsWith('.html')) {
+  const preserveExistingAssetVersions = productsByPath.get(productPath)?.qualityDocumentation?.tds?.representativeOnly;
+  if (path.endsWith('.html') && !preserveExistingAssetVersions) {
     content = content.replace(
       /(assets\/js\/(?:main|cart|ecommerce-catalog|ecommerce-listing|ecommerce-product-page)\.js)(?:\?v=[^"']+)?/g,
       `$1?v=${generatedAssetVersion}`
@@ -215,6 +216,9 @@ function lowerQualityDocumentation(product, documentationHref) {
   const tds = product.qualityDocumentation?.tds;
   if (!tds) return '';
   const tdsHref = tds.path.startsWith('/') ? `..${tds.path}` : tds.path;
+  if (tds.representativeOnly) {
+    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Representative TDS</h3><p>Specification limits and representative lot results are provided for technical reference. Representative results are lot-specific; the applicable lot-specific Certificate of Analysis governs material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Representative TDS (PDF)</a></div></section></div></section><!-- product-tds-section:end -->`;
+  }
   const representativeCoa = product.qualityDocumentation?.representativeCoa;
   const representativeCoaAction = representativeCoa
     ? `<a href="${escapeHtml(representativeCoa.path.startsWith('/') ? `..${representativeCoa.path}` : representativeCoa.path)}" target="_blank" rel="noopener">View Representative COA (PDF)</a>`
@@ -343,6 +347,7 @@ function renderRfqProductNavigation(html, product) {
 function ensureStylesheet(html, href) {
   const baseHref = href.split('?')[0];
   if (html.includes(baseHref)) {
+    if (!href.includes('?')) return html;
     return html.replace(new RegExp(`${baseHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?v=[^"']+)?`, 'g'), href);
   }
   return html.replace(/<\/head>/i, `<link rel="stylesheet" href="${href}">\n</head>`);
@@ -351,6 +356,7 @@ function ensureStylesheet(html, href) {
 function ensureScript(html, src) {
   const baseSrc = src.split('?')[0];
   if (html.includes(baseSrc)) {
+    if (!src.includes('?')) return html;
     return html.replace(new RegExp(`${baseSrc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?v=[^"']+)?`, 'g'), src);
   }
   return html.replace(/<\/body>/i, `<script src="${src}" defer></script>\n</body>`);
@@ -977,7 +983,12 @@ async function updateProductPage(pagePath, product) {
   html = replaceTypedSchema(html, 'BreadcrumbList', breadcrumbSchema(canonical, productBreadcrumbs));
   html = renderStaticProductCommerce(html, product);
   html = renderStaticRfqState(html, product);
-  html = ensureStylesheet(html, '../assets/css/ecommerce.css?v=' + generatedAssetVersion);
+  html = ensureStylesheet(
+    html,
+    product.qualityDocumentation?.tds?.representativeOnly
+      ? '../assets/css/ecommerce.css'
+      : '../assets/css/ecommerce.css?v=' + generatedAssetVersion
+  );
   html = ensureStylesheet(html, '../assets/css/mxene.css');
   html = ensureScript(html, '../assets/js/mxene-presentation.js');
   html = ensureRelatedModule(html, relatedModule('product', [], intents.families[product.family]?.relatedKnowledge || []), 'product');

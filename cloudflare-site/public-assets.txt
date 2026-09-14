@@ -10,6 +10,7 @@ assets/css/mxene.css
 assets/css/style.css
 assets/documents/coa/Representative-COA-LiBF4.pdf
 assets/documents/coa/Representative-COA-LiDFOB.pdf
+assets/documents/tds/Winigen_Baseline_Lithium_Ion_Battery_Electrolyte_Representative_TDS.pdf
 assets/documents/tds/Winigen_DEC_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_DFEA_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_DMC_Representative_TDS_RevB.pdf

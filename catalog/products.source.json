@@ -4712,6 +4712,13 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "ecommerceSlug": "1m-lipf6-ec-emc-3-7-1-vc-electrolyte",
+      "qualityDocumentation": {
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_Baseline_Lithium_Ion_Battery_Electrolyte_Representative_TDS.pdf",
+          "sha256": "172c7a5f4343152c0f12b936514abbfe99820e7118a3ed6b1d47f22cd80f9f7a",
+          "representativeOnly": true
+        }
+      },
       "presentation": "standard-electrolyte-formulation",
       "positioning": "Standard Lithium-Ion Battery Electrolyte",
       "formulationComposition": [
