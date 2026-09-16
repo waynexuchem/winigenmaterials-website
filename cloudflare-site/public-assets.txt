@@ -29,6 +29,7 @@ assets/documents/tds/Winigen_Nb2CTx_MXene_Multilayer_Powder_TDS.pdf
 assets/documents/tds/Winigen_Nb2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf
 assets/documents/tds/Winigen_PC_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_PP_Representative_TDS_RevB.pdf
+assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf
 assets/documents/tds/Winigen_TFEC_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_Ti3C2Tx_MXene_Multilayer_Powder_TDS.pdf
 assets/documents/tds/Winigen_Ti3C2Tx_MXene_Single_Few_Layer_Powder_TDS.pdf

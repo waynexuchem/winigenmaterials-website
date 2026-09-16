@@ -12,6 +12,7 @@ import {
   parseAndValidateSitemapXml,
   robotsDirectives
 } from './image-discovery.mjs';
+import { isApprovedPublicTdsPath } from './tds-path-policy.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
@@ -308,7 +309,7 @@ for (const product of productSource.products) {
       let documentBytes;
       try { documentBytes = await readFile(documentPath); }
       catch { errors.push(`${pagePath}: TDS file does not exist: ${tds.path}.`); }
-      if (!/^\/assets\/documents\/tds\/Winigen_[A-Za-z0-9_]+_Representative_TDS_RevB\.pdf$/.test(tds.path)) {
+      if (!isApprovedPublicTdsPath(tds.path)) {
         errors.push(`${pagePath}: TDS path does not use the approved public naming convention: ${tds.path}.`);
       }
       if (!/^[a-f0-9]{64}$/.test(tds.sha256 || '')) {

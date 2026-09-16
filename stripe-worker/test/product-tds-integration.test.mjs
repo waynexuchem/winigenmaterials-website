@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { isApprovedPublicTdsPath } from '../../seo/tds-path-policy.mjs';
 
 const siteRoot = resolve(import.meta.dirname, '../..');
 const catalog = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
@@ -22,29 +23,48 @@ const documents = [
   { slug: 'lithium-bis-trifluoromethane-sulphonyl-imide-litfsi', code: 'LiTFSI', hash: '50d58e212a6a29492da2dbbfcc0c45b847038651ac1c8ea51eb6b07ae7a31907', specs: { Purity: '≥99.9 wt%', Water: '≤200 ppm', 'Acidity, as HF': '≤50 ppm', Fluoride: '≤20 ppm', Chloride: '≤5 ppm', Sulfate: '≤10 ppm', 'Insoluble matter': '≤100 ppm' } },
   { slug: 'propylene-carbonate-pc', code: 'PC', hash: 'a310f344cd092c9936f7ed9afb114091838db906ebbfb4cabe0710c28ac2d84d', specs: { Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Propylene glycol + dipropylene glycol': '≤20 ppm', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
   { slug: 'propyl-propionate-pp', code: 'PP', hash: 'eb616e9882222084c95daf96ef772e94f92060496378148305b158820fab5d82', specs: { Assay: '≥99.95 wt%', Water: '≤200 ppm', 'Hazen color': '≤10', 'Methanol + ethanol + propanol': '≤50 ppm', 'Acidity, as HF': '≤20 ppm', Chloride: '≤1 ppm', Sulfate: '≤5 ppm' } },
-  { slug: 'bis-2-2-2-trifluoroethyl-carbonate-tfec', code: 'TFEC', hash: '7eb398af1edb4fee1312de17e56bf017845bb8667a3dcb6da90498f49b1dc9c9', specs: { Purity: '>98%', Appearance: 'Colorless liquid' } }
+  { slug: 'bis-2-2-2-trifluoroethyl-carbonate-tfec', code: 'TFEC', filename: 'Winigen_TFEC_Representative_TDS.pdf', hash: '9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66', specs: { 'Assay (GC)': '≥99 wt%', Water: '≤20 µg/g', Appearance: 'Colorless liquid' } }
 ];
 
-const representativeResults = ['8.7 ppm', '7.2 µg/g', '7.3 ppm', '9.6 ppm', '99.998 wt%', '15.4 ppm', '99.993 wt%', '99.92 wt%', '16.2 ppm', '99.964 wt%', '6.8 ppm', '99.9698 wt%', '49.8 µg/g', '99.928 wt%', '99.997 wt%', '5.3 ppm', '12.1 ppm', '98.1% representative purity'];
+const representativeResults = ['8.7 ppm', '7.2 µg/g', '7.3 ppm', '9.6 ppm', '99.998 wt%', '15.4 ppm', '99.993 wt%', '99.92 wt%', '16.2 ppm', '99.964 wt%', '6.8 ppm', '99.9698 wt%', '49.8 µg/g', '99.928 wt%', '99.997 wt%', '5.3 ppm', '12.1 ppm', '98.1% representative purity', '99.97 wt%', '16 µg/g'];
+const tdsFilename = document => document.filename || `Winigen_${document.code}_Representative_TDS_RevB.pdf`;
 
 test('all 15 public TDS files are preserved byte-for-byte and retired Sulfolane stays private', async () => {
-  const publicFiles = (await readdir(resolve(siteRoot, 'assets/documents/tds'))).filter(name => /_Representative_TDS_RevB\.pdf$/.test(name)).sort();
-  assert.equal(publicFiles.length, documents.length);
+  const publicFiles = await readdir(resolve(siteRoot, 'assets/documents/tds'));
+  const expectedFilenames = documents.map(tdsFilename);
+  assert.equal(new Set(expectedFilenames).size, documents.length);
+  assert.equal(publicFiles.filter(name => expectedFilenames.includes(name)).length, documents.length);
   for (const document of documents) {
-    const filename = `Winigen_${document.code}_Representative_TDS_RevB.pdf`;
+    const filename = tdsFilename(document);
     assert.ok(publicFiles.includes(filename), filename);
     const bytes = await readFile(resolve(siteRoot, 'assets/documents/tds', filename));
     assert.equal(createHash('sha256').update(bytes).digest('hex'), document.hash, filename);
   }
   assert.equal(publicFiles.includes('Winigen_SULF_Representative_TDS_RevB.pdf'), false);
   await assert.rejects(readFile(resolve(siteRoot, 'assets/documents/tds/Winigen_SULF_Representative_TDS_RevB.pdf')));
+  const currentTfec = await readFile(resolve(siteRoot, 'assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf'));
+  const legacyTfec = await readFile(resolve(siteRoot, 'assets/documents/tds/Winigen_TFEC_Representative_TDS_RevB.pdf'));
+  assert.deepEqual(legacyTfec, currentTfec, 'legacy TFEC URL must serve the current approved document bytes');
+});
+
+test('TDS naming policy accepts only legacy RevB and concise revision-neutral public names', () => {
+  assert.equal(isApprovedPublicTdsPath('/assets/documents/tds/Winigen_LiPF6_Representative_TDS_RevB.pdf'), true);
+  assert.equal(isApprovedPublicTdsPath('/assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf'), true);
+  for (const path of [
+    '/assets/documents/tds/Winigen_TFEC_Representative_TDS_RevC.pdf',
+    '/assets/documents/tds/Winigen_Baseline_Lithium_Ion_Battery_Electrolyte_Representative_TDS.pdf',
+    '/assets/documents/tds/TFEC.pdf',
+    '/assets/documents/tds/Winigen_TFEC_Representative_TDS.txt',
+    '/assets/documents/other/Winigen_TFEC_Representative_TDS.pdf',
+    '/assets/documents/tds/../private/Winigen_TFEC_Representative_TDS.pdf'
+  ]) assert.equal(isApprovedPublicTdsPath(path), false, path);
 });
 
 test('canonical product specifications and TDS metadata match the approved supplier limits', async () => {
   for (const document of documents) {
     const product = catalog.products.find(item => item.slug === document.slug);
     assert.ok(product, document.slug);
-    assert.equal(product.qualityDocumentation?.tds?.path, `/assets/documents/tds/Winigen_${document.code}_Representative_TDS_RevB.pdf`);
+    assert.equal(product.qualityDocumentation?.tds?.path, `/assets/documents/tds/${tdsFilename(document)}`);
     assert.equal(product.qualityDocumentation?.tds?.sha256, document.hash);
     const specifications = Object.fromEntries(product.additionalProperty.map(item => [item.name, item.value]));
     for (const [name, value] of Object.entries(document.specs)) assert.equal(specifications[name], value, `${document.slug}: ${name}`);
@@ -56,7 +76,7 @@ test('canonical product specifications and TDS metadata match the approved suppl
 test('each public TDS product matches the MXene-style image action and retains lower documentation', async () => {
   for (const document of documents) {
     const html = await readFile(resolve(siteRoot, 'products', `${document.slug}.html`), 'utf8');
-    const href = `../assets/documents/tds/Winigen_${document.code}_Representative_TDS_RevB.pdf`;
+    const href = `../assets/documents/tds/${tdsFilename(document)}`;
     assert.equal(html.split(`href="${href}"`).length - 1, 2, `${document.slug}: TDS link count`);
     assert.equal(html.split('Technical Data Sheet (PDF)').length - 1, 2, `${document.slug}: descriptive TDS actions`);
     assert.match(html, /<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i, `${document.slug}: TDS action is separated below the product image`);
@@ -70,13 +90,19 @@ test('each public TDS product matches the MXene-style image action and retains l
   }
 });
 
-test('DFEA and TFEC do not publish unsupported water specifications', async () => {
-  for (const slug of ['2-2-difluoroethyl-acetate-dfea', 'bis-2-2-2-trifluoroethyl-carbonate-tfec']) {
-    const product = catalog.products.find(item => item.slug === slug);
-    assert.equal(product.additionalProperty.some(item => /water|moisture/i.test(item.name)), false, slug);
-    const html = await readFile(resolve(siteRoot, 'products', `${slug}.html`), 'utf8');
-    assert.doesNotMatch(html, /<dt>(?:Water|Moisture)<\/dt>|Water:\s*(?:&lt;|<)/i, slug);
-  }
+test('DFEA omits unsupported water data while TFEC publishes only the qualified water limit', async () => {
+  const dfea = catalog.products.find(item => item.slug === '2-2-difluoroethyl-acetate-dfea');
+  assert.equal(dfea.additionalProperty.some(item => /water|moisture/i.test(item.name)), false);
+  const dfeaHtml = await readFile(resolve(siteRoot, 'products/2-2-difluoroethyl-acetate-dfea.html'), 'utf8');
+  assert.doesNotMatch(dfeaHtml, /<dt>(?:Water|Moisture)<\/dt>|Water:\s*(?:&lt;|<)/i);
+
+  const tfec = catalog.products.find(item => item.slug === 'bis-2-2-2-trifluoroethyl-carbonate-tfec');
+  assert.equal(tfec.additionalProperty.find(item => item.name === 'Assay (GC)')?.value, '≥99 wt%');
+  assert.equal(tfec.additionalProperty.find(item => item.name === 'Water')?.value, '≤20 µg/g');
+  const tfecHtml = await readFile(resolve(siteRoot, 'products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html'), 'utf8');
+  assert.match(tfecHtml, /<dt>Assay \(GC\)<\/dt><dd>≥99 wt%<\/dd>/);
+  assert.match(tfecHtml, /<dt>Water<\/dt><dd>≤20 µg\/g<\/dd>/);
+  assert.doesNotMatch(tfecHtml, /(?:&gt;|>)98%|98\.1|(?:&lt;|<)\s*100\s*ppm/i);
 });
 
 test('representative COA appearance results are not promoted to canonical specifications', () => {

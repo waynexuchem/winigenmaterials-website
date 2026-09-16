@@ -223,7 +223,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C5H4F6O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC), CAS 1513-87-7, is a fluorinated carbonate available from Winigen Materials. Supplier specifications establish purity >98% and appearance as a colorless liquid. TFEC supplier where to buy TFEC Abbreviation TFEC CAS Number 1513-87-7 Formula C5H4F6O3 Availability RFQ Purity >98% Grade Battery material grade Appearance Colorless liquid"
+      "metadata": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications. TFEC supplier where to buy TFEC Abbreviation TFEC CAS Number 1513-87-7 Formula C5H4F6O3 Availability RFQ Assay (GC) ≥99 wt% Water ≤20 µg/g Grade Battery material grade Appearance Colorless liquid"
     },
     {
       "slug": "vinylene-carbonate-vc",

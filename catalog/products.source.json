@@ -1351,7 +1351,7 @@
       "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
       "url": "/products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html",
       "name": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC)",
-      "description": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC), CAS 1513-87-7, is a fluorinated carbonate available from Winigen Materials. Supplier specifications establish purity >98% and appearance as a colorless liquid.",
+      "description": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications.",
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-TFEC",
@@ -1362,15 +1362,15 @@
       ],
       "qualityDocumentation": {
         "tds": {
-          "path": "/assets/documents/tds/Winigen_TFEC_Representative_TDS_RevB.pdf",
-          "sha256": "7eb398af1edb4fee1312de17e56bf017845bb8667a3dcb6da90498f49b1dc9c9"
+          "path": "/assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf",
+          "sha256": "9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66"
         },
         "keySpecifications": [
           "CAS Number",
-          "Purity",
+          "Assay (GC)",
+          "Water",
           "Appearance",
           "Abbreviation",
-          "Grade",
           "Formula"
         ]
       },
@@ -1399,8 +1399,12 @@
           "value": "RFQ"
         },
         {
-          "name": "Purity",
-          "value": ">98%"
+          "name": "Assay (GC)",
+          "value": "≥99 wt%"
+        },
+        {
+          "name": "Water",
+          "value": "≤20 µg/g"
         },
         {
           "name": "Grade",
