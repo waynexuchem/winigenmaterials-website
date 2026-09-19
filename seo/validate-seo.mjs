@@ -163,7 +163,9 @@ for (const pagePath of htmlFiles) {
   if (pagePath.startsWith('products/')) {
     for (const productEntity of schemas.flatMap(schema => collectType(schema, 'Product'))) {
       const hasRichResultQualifier = collectType(productEntity, 'Offer').length > 0 || productEntity.review || productEntity.aggregateRating;
-      if (!hasRichResultQualifier) {
+      const catalogProduct = productSource.products.find(p => p.url === `/${pagePath}`);
+      const informationalMxene = catalogProduct?.mxene && catalogProduct.purchaseMode === 'rfq' && schemas.some(schema => schema['@type'] === 'WebPage' && schema.about === productEntity);
+      if (!hasRichResultQualifier && !informationalMxene) {
         crawlStats.incompleteProductEntities += 1;
         errors.push(`${pagePath}: Product entity lacks offers, review, and aggregateRating.`);
       }
@@ -390,8 +392,13 @@ for (const product of productSource.products) {
   } else {
     const rfqPages = schemas.flatMap(schema => collectType(schema, 'WebPage'))
       .filter(entity => entity['@id'] === `${canonical}#webpage`);
-    if (products.length === 0 && rfqPages.length === 1) crawlStats.rfqWebPageSchema += 1;
-    if (products.length) {
+    const informationalMxene = product.mxene && product.purchaseMode === 'rfq';
+    if (rfqPages.length === 1 && products.length === (informationalMxene ? 1 : 0)) crawlStats.rfqWebPageSchema += 1;
+    if (informationalMxene) {
+      const material = rfqPages[0]?.about;
+      if (products.length !== 1 || material !== products[0] || material?.['@type'] !== 'Product' || material?.sku !== product.sku || material?.name !== product.name || !material?.image || !material?.description) errors.push(`${pagePath}: RFQ material must be a complete nested Product with the existing SKU.`);
+      if (schemas.some(schema => containsType(schema, 'Offer') || containsType(schema, 'AggregateOffer'))) errors.push(`${pagePath}: RFQ material must not expose Offers.`);
+    } else if (products.length) {
       crawlStats.commercialSchemaMismatches += 1;
       errors.push(`${pagePath}: RFQ-only page emitted ${products.length} Product entity or entities.`);
     }
@@ -445,7 +452,7 @@ for (const product of productSource.products.filter(entry => entry.commerceStatu
   } else if (intentionallyDeemphasized) {
     errors.push(`products.html: ${product.slug} remains an equally prominent top-level product card.`);
   } else {
-    if (!/Available by RFQ/i.test(article) || !/Request Quote/i.test(article)) errors.push(`products.html: ${product.slug} lacks explicit RFQ status or CTA.`);
+    if (!(product.mxene ? /product-card__mode[^>]*>Request Quote</i : /Available by RFQ/i).test(article) || !/Request Quote/i.test(article)) errors.push(`products.html: ${product.slug} lacks explicit RFQ status or CTA.`);
     if (/data-static-commerce="true"|Online ordering|Add to Cart/i.test(article)) errors.push(`products.html: ${product.slug} exposes contradictory direct-commerce content.`);
   }
 }

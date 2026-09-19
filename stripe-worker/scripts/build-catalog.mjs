@@ -1,3 +1,4 @@
+import { productPriceIncrement } from '../../scripts/normalize-commerce-prices.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -110,7 +111,7 @@ function validateProduct(product, templates, slugs, skus) {
       }
       if (variant.currency !== 'usd') fail(`${variant.sku} uses unsupported currency ${variant.currency}.`);
       if (variant.pricingStatus !== 'APPROVED_RETAIL') fail(`${variant.sku} is ACTIVE without APPROVED_RETAIL pricing.`);
-      if (variant.unitAmount % (effectivePriceNormalization.incrementCents) !== 0) fail(`${variant.sku} is not normalized to the canonical whole-dollar B2B increment.`);
+      if (variant.unitAmount % productPriceIncrement(effectivePriceNormalization, product.slug) !== 0) fail(`${variant.sku} is not normalized to the canonical whole-dollar B2B increment.`);
     } else if (variant.unitAmount === 0) {
       fail(`${variant.sku} contains a zero-dollar placeholder price.`);
     }
@@ -210,7 +211,7 @@ function validateApprovedPricing(source, approvedPricing, supplementalPricing) {
       const actual = variants[index];
       const normalizedExpected = {
         ...expected,
-        unitAmount: Math.ceil(expected.unitAmount / effectivePriceNormalization.incrementCents) * effectivePriceNormalization.incrementCents
+        unitAmount: Math.ceil(expected.unitAmount / productPriceIncrement(effectivePriceNormalization, product.slug)) * productPriceIncrement(effectivePriceNormalization, product.slug)
       };
       for (const field of ['id', 'label', 'unit', 'quantity', 'netWeightGrams', 'unitAmount']) {
         if (actual?.[field] !== normalizedExpected[field]) fail(`${schedule.slug} ${expected.id} differs from normalized approved pricing at ${field}.`);

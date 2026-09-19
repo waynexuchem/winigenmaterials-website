@@ -1,3 +1,4 @@
+import { productPriceIncrement } from './normalize-commerce-prices.mjs';
 import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
@@ -97,7 +98,7 @@ if (priceNormalization?.scope !== 'ACTIVE_ONLINE_OFFERS' || priceNormalization?.
   errors.push('Canonical whole-dollar pricing policy is missing or invalid.');
 }
 if (ecommerce.catalogVersion !== priceNormalization?.catalogVersion) errors.push('Catalog version does not match the canonical pricing policy.');
-const normalizeUnitAmount = unitAmount => Math.ceil(unitAmount / priceNormalization.incrementCents) * priceNormalization.incrementCents;
+const normalizeUnitAmount = (unitAmount, slug) => Math.ceil(unitAmount / productPriceIncrement(priceNormalization, slug)) * productPriceIncrement(priceNormalization, slug);
 const semantic = await loadJson('catalog/products.source.json');
 const browserText = await readFile(resolve(siteRoot, 'assets/js/ecommerce-catalog.js'), 'utf8');
 const browser = JSON.parse(browserText.slice(browserText.indexOf('=') + 1).trim().replace(/;$/, ''));
@@ -243,7 +244,7 @@ for (const schedule of allApprovedSchedules) {
     const activeById = new Map(active.map(variant => [variant.id, variant]));
     schedule.packages.forEach(expected => compareVariant(layer, schedule.slug, {
       ...expected,
-      unitAmount: (normalizeUnitAmount(expected.unitAmount))
+      unitAmount: (normalizeUnitAmount(expected.unitAmount, schedule.slug))
     }, activeById.get(expected.id)));
   }
 
@@ -261,7 +262,7 @@ for (const schedule of allApprovedSchedules) {
     const optionSkus = [...card.matchAll(/<option value="([^"]+)"/g)].map(match => match[1]);
     if (optionSkus.length !== schedule.packages.length) errors.push(`${schedule.slug}: ${listingName} package count differs from the workbook.`);
     for (const expected of schedule.packages) {
-      const effectiveUnitAmount = (normalizeUnitAmount(expected.unitAmount));
+      const effectiveUnitAmount = (normalizeUnitAmount(expected.unitAmount, schedule.slug));
       const sku = `${schedule.skuBase}-${expected.id}`;
       if (!card.includes(`value="${sku}"`) || !card.includes(expected.label) || !card.includes(formatUsd(effectiveUnitAmount))) {
         errors.push(`${schedule.slug}: ${listingName} is missing ${expected.label} / ${formatUsd(effectiveUnitAmount)}.`);
@@ -283,7 +284,7 @@ for (const schedule of allApprovedSchedules) {
   if (offers.length !== schedule.packages.length) errors.push(`${schedule.slug}: Offer count differs from the workbook.`);
   const offersBySku = new Map(offers.map(offer => [offer.sku, offer]));
   for (const expected of schedule.packages) {
-    const effectiveUnitAmount = (normalizeUnitAmount(expected.unitAmount));
+    const effectiveUnitAmount = (normalizeUnitAmount(expected.unitAmount, schedule.slug));
     const sku = `${schedule.skuBase}-${expected.id}`;
     const offer = offersBySku.get(sku);
     if (!offer) errors.push(`${schedule.slug}: missing Offer ${sku}.`);
@@ -323,7 +324,7 @@ for (const product of ecommerce.products) {
     if (unitAmount === 0) errors.push(`${product.slug}: zero-dollar package.`);
     const approvalStatus = override.approvalStatus || variant.approvalStatus;
     const pricingStatus = override.pricingStatus || variant.pricingStatus;
-    if (['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus) && approvalStatus === 'ACTIVE' && pricingStatus === 'APPROVED_RETAIL' && unitAmount % (priceNormalization.incrementCents) !== 0) {
+    if (['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus) && approvalStatus === 'ACTIVE' && pricingStatus === 'APPROVED_RETAIL' && unitAmount % productPriceIncrement(priceNormalization, product.slug) !== 0) {
       errors.push(`${product.slug}: active offer is not normalized to the canonical whole-dollar B2B increment.`);
     }
   }

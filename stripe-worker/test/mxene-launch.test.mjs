@@ -10,8 +10,8 @@ const root=resolve(import.meta.dirname,'../..');
 const read=p=>readFile(resolve(root,p),'utf8');
 const semantic=JSON.parse(await read('catalog/products.source.json'));
 const source=JSON.parse(await read('ecommerce/catalog.source.json'));
-const products=semantic.products.filter(p=>p.family==='mxene-materials');
-const expected=[['ti3c2tx',false,[1,2,5],[400,700,1400]],['ti3c2tx',true,[1,2,5],[850,1500,3000]],['nb2ctx',false,[1,2,5],[450,800,1700]],['nb2ctx',true,[.5,1,2],[550,1000,1800]],['v2ctx',false,[1,2,5],[450,800,1700]],['v2ctx',true,[.5,1,2],[550,1000,1800]],['mo2ctx',false,[1,2,5],[750,1300,2800]],['mo2ctx',true,[.5,1,2],[800,1500,2700]]];
+const products=semantic.products.filter(p=>p.family==='mxene-materials' && p.commerceStatus==='active_checkout' && !p.mxene.compositionNote);
+const expected=[['ti3c2tx',false,[1,2,5],[360,630,1260]],['ti3c2tx',true,[1,2,5],[765,1350,2700]],['nb2ctx',false,[1,2,5],[405,720,1530]],['nb2ctx',true,[.5,1,2],[495,900,1620]],['v2ctx',false,[1,2,5],[405,720,1530]],['v2ctx',true,[.5,1,2],[495,900,1620]],['mo2ctx',false,[1,2,5],[675,1170,2520]],['mo2ctx',true,[.5,1,2],[720,1350,2430]]];
 const packageRows=[];
 for(const [formula,few,quantities,prices] of expected){
  const slug=`${formula}-mxene-${few?'single-few-layer':'multilayer'}-powder`;
@@ -19,12 +19,12 @@ for(const [formula,few,quantities,prices] of expected){
  for(let i=0;i<3;i++) packageRows.push({product:p,variant:p.packages[i],quantity:quantities[i],price:prices[i]*100,key:`${p.skuBase}-${p.packages[i].id}`});
 }
 function nodes(value){if(!value||typeof value!=='object')return [];return [value,...Object.values(value).flatMap(nodes)];}
-test('MXene launch has exactly eight products, twenty-four intended packages, and no extra composition pages',async()=>{
+test('MXene launch has exactly eight products, twenty-four intended packages, and the expanded RFQ portfolio',async()=>{
  assert.equal(products.length,8);assert.equal(packageRows.length,24);
  const master=await read('products.html');
  const section=master.match(/<section id="mxene-materials"[\s\S]*?<\/section>/)[0];
- assert.equal((section.match(/data-listing-add/g)||[]).length,8);
- assert.equal((section.match(/class="product-card"/g)||[]).length,8);
+ assert.equal((section.match(/data-listing-add/g)||[]).length,23);
+ assert.equal((section.match(/class="product-card"/g)||[]).length,23);
  assert.doesNotMatch(section,/class="container"|product-card--family/);
  assert.match(master,/class="tab" href="#mxene-materials"/);
  const context={};vm.runInNewContext(await read('assets/js/product-search.js'),context);
@@ -32,7 +32,7 @@ test('MXene launch has exactly eight products, twenty-four intended packages, an
  assert.equal(context.WinigenProductSearch.searchView(records,'MXene').sectionCounts['mxene-materials'],8);
 
  const pages=(await readdir(resolve(root,'products'))).filter(x=>x.includes('mxene'));
- assert.equal(pages.length,9);
+ assert.equal(pages.length,24);
  for(const p of products){assert.equal(p.commerceStatus,'active_checkout');assert.equal(source.products.find(c=>c.slug===p.slug).packages.length,3);assert.ok(p.aliases.some(x=>x.includes(p.mxene.ascii)));}
  for(const r of packageRows){assert.equal(r.variant.quantity,r.quantity);assert.equal(r.variant.unitAmount,r.price);assert.equal(r.variant.unit,'g');assert.equal(VARIANTS_BY_KEY.get(r.key).unitAmount,r.price);}
 });
@@ -86,7 +86,7 @@ test('MXene pages have matched offers and prices, safe terminology, related link
  }
  const family=await read('products/mxene-materials.html');assert.doesNotMatch(family,/"@type":\s*"Product"/);assert.match(family,/"@type":\s*"CollectionPage"/);assert.match(family,/"@type":\s*"ItemList"/);
  assert.equal(sitemap.split('<loc>https://www.winigenmaterials.com/products/mxene-materials.html</loc>').length-1,1);
- const feed=await generateGoogleMerchantFeed();const mxeneItems=feed.items.filter(x=>x.source.slug.includes('-mxene-'));assert.equal(mxeneItems.length,24);assert.equal(new Set(mxeneItems.map(x=>x.source.slug)).size,8);assert.deepEqual(new Set(mxeneItems.map(x=>x.productType)),new Set(['Science & Laboratory > Nanomaterials > MXene Materials']));
+ const feed=await generateGoogleMerchantFeed();const mxeneItems=feed.items.filter(x=>x.source.slug.includes('-mxene-'));assert.equal(mxeneItems.length,69);assert.equal(new Set(mxeneItems.map(x=>x.source.slug)).size,23);assert.deepEqual(new Set(mxeneItems.map(x=>x.productType)),new Set(['Science & Laboratory > Nanomaterials > MXene Materials']));
 });
 
 test('Nb source grade, scientific labels and documentation are consistent', async()=>{

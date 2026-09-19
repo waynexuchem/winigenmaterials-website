@@ -1,3 +1,4 @@
+import { productPriceIncrement } from './normalize-commerce-prices.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -47,7 +48,7 @@ const updatedEcommerce = ecommerce.products
         normalizedRawPriceCount += 1;
         return {
           ...packageOption,
-          unitAmount: normalizeApprovedUnitAmount(packageOption.unitAmount, priceNormalization.incrementCents),
+          unitAmount: normalizeApprovedUnitAmount(packageOption.unitAmount, productPriceIncrement(priceNormalization, product.slug)),
           shippingWeightGrams: packageOption.netWeightGrams,
           shippingWeightBasis: 'NET_CONTENT_PROXY',
           approvalStatus: 'ACTIVE',

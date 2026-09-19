@@ -141,6 +141,14 @@ function productKeySpecifications(product) {
   if (product.mxene) {
     const m = product.mxene;
     const get = name => product.additionalProperty.find(x => x.name === name)?.value;
+    if (m.compositionNote) return [
+      {name:'Layer structure / count',value:m.layer},
+      {name:m.singleFewLayer?'Nominal lateral size':'Nominal flake / particle size',value:m.size},
+      {name:'Surface terminations',value:m.terminations},
+      {name:'Representative conductivity',value:m.conductivity},
+      {name:'Precursor',value:get('Precursor')},
+      {name:'Preparation',value:get('Preparation')}
+    ];
     return [
       {name:'Layer structure / count', value:m.layer},
       m.ascii.startsWith('Ti') ? {name:m.singleFewLayer ? 'Product form' : 'Preparation',value:m.singleFewLayer ? m.form : get('Preparation')} : {name:m.singleFewLayer ? 'Nominal lateral size' : 'Nominal flake / particle size',value:m.size},
@@ -185,6 +193,7 @@ function packagePricingSummary(product, variants = activeVariants(product)) {
 }
 
 function productDocumentation(product, documentationHref) {
+  if (product.mxene?.compositionNote) return `<section class="product-documentation" id="documentation"><div><p class="detail-kicker">Documentation</p><h3>Technical and lot documentation</h3><p>Current-lot COA or other lot-specific documentation can be requested where available. Availability of lot-specific analytical documentation is confirmed during technical/order review. Additional analytical requirements should be discussed before ordering.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(product.mxene.tds)}">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section>`;
   if (product.mxene) {
     const link = product.mxene.tds ? `<a class="btn secondary" href="${escapeHtml(product.mxene.tds)}">Technical Data Sheet (PDF)</a>` : `<a class="btn secondary" href="${documentationHref}">TDS available on request</a>`;
     return `<section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>Current-lot COA or other lot-specific documentation can be requested where available. Availability of lot-specific analytical documentation is confirmed during order review. Additional analytical requirements, including surface characterization, should be discussed before ordering.</p></div><div class="product-documentation__actions">${link}<a href="${documentationHref}">Request Current Lot COA</a></div></section>`;
@@ -243,6 +252,9 @@ function synchronizeQualityDocumentationCopy(html, product) {
 
 function renderProductDetailExperience(html, product) {
   if (product.commerceStatus !== 'active_checkout') return renderRfqProductNavigation(html, product);
+  if (product.mxene?.compositionNote && !html.includes('data-product-detail-ux="true"')) {
+    html = html.replace(/<section class="section dark product-detail-hero" id="overview">[\s\S]*?<\/section>/i, '').replace(/<section class="product-key-specifications" id="specifications">[\s\S]*?<\/section>/i, '');
+  }
   const variants = activeVariants(product);
   if (!variants.length) return html;
   const family = familiesBySlug.get(product.family);
@@ -323,25 +335,25 @@ function reconcileProductNavigationTargets(html) {
   return next.replace(navigation, reconciled);
 }
 
-function renderRfqProductNavigation(html, product) {
-  if (product.commerceStatus !== 'rfq') return html;
+function renderRfqProductNavigation(html, product, preserveInformationLayout = false) {
+  if (product.commerceStatus !== 'rfq' && !preserveInformationLayout) return html;
   const family = familiesBySlug.get(product.family);
-  let next = html.replace(/<div class="product-sticky-shell">[\s\S]*?<\/nav><\/div>/gi, '');
+  let next = html.replace(/<div class="(?:product-sticky-shell|mxene-sticky-shell)">[\s\S]*?<\/nav><\/div>/gi, '');
   const existingBreadcrumb = next.match(/<div class="breadcrumb">[\s\S]*?<\/div>/i)?.[0];
   const breadcrumb = existingBreadcrumb || `<div class="breadcrumb"><a href="../products.html">Products</a> / <a href="${escapeHtml(family?.url?.split('/').pop() || '../products.html')}">${escapeHtml(family?.name || 'Materials')}</a> / ${escapeHtml(product.name)}</div>`;
   if (existingBreadcrumb) next = next.replace(existingBreadcrumb, '');
   next = next
-    .replace(/<section class="section dark product-detail-hero"(?![^>]*\bid=)/i, '<section class="section dark product-detail-hero" id="overview"')
-    .replace(/(<\/section>\s*)<section class="section"(?![^>]*\bid=)/i, '$1<section class="section" id="specifications"');
-  const links = [
+    .replace(/<section class="section dark product-detail-hero"(?![^>]*\bid=)/i, '<section class="section dark product-detail-hero" id="overview"');
+  if (!/\bid=["']specifications["']/.test(next)) next = next.replace(/(<\/section>\s*)<section class="section"(?![^>]*\bid=)/i, '$1<section class="section" id="specifications"');
+  const links = (product.mxene ? [['overview','Overview'],['specifications','Specifications'],[product.commerceStatus === 'active_checkout' ? 'packages' : 'request-quote',product.commerceStatus === 'active_checkout' ? 'Packages &amp; Pricing' : 'Request Quote'],['characterization','Characterization'],['documentation','Documentation'],['faq','FAQ'],['related-products','Related Products']] : [
     ['overview', 'Overview'],
     ['specifications', 'Specifications & RFQ'],
     ['selection-guide', 'Selection Guide'],
     ['technical-guides', 'Related Guides']
-  ].filter(([id]) => new RegExp(`\\bid=["']${id}["']`, 'i').test(next));
+  ]).filter(([id]) => new RegExp(`\\bid=["']${id}["']`, 'i').test(next));
   const navigation = `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container">${links.map(([id, label]) => `<a href="#${id}">${label}</a>`).join('')}</div></nav>`;
   const context = `<div class="product-detail-context"><div class="container">${breadcrumb}</div></div>`;
-  return reconcileProductNavigationTargets(next.replace(/<main>/i, `<main><div class="product-sticky-shell">${context}${navigation}</div>`));
+  return reconcileProductNavigationTargets(next.replace(/<main>/i, `<main><div class="${product.mxene ? 'mxene-sticky-shell' : 'product-sticky-shell'}">${context}${navigation}</div>`));
 }
 
 function ensureStylesheet(html, href) {
@@ -383,7 +395,8 @@ function sulfideGradeCode(product) {
 function listingProperties(product) {
   if (product.mxene) {
     const m = product.mxene;
-    const conductivity = {label:'Typical conductivity',value:m.conductivity};
+    const conductivity = {label:product.mxene?.compositionNote ? 'Representative conductivity' : 'Typical conductivity',value:m.conductivity};
+    if (product.mxene?.compositionNote) return [{label:'Layer form',value:m.layer},{label:m.singleFewLayer?'Lateral size':'Flake / particle size',value:m.size},conductivity];
     return m.ascii.startsWith('Ti')
       ? (m.singleFewLayer ? [{label:'Layer count',value:m.layer},conductivity,{label:'Form',value:'Freeze-dried powder'}] : [{label:'Layer form',value:m.layer},conductivity,{label:'Preparation',value:'LiF/HCl-derived route'}])
       : (m.singleFewLayer ? [{label:'Layer count',value:m.layer},{label:'Lateral size',value:m.size},conductivity] : [m.ascii === 'Nb2CTx' ? {label:'Layer form',value:m.layer} : {label:'Flake / particle size',value:m.size},conductivity,{label:'Terminations',value:m.terminations}]);
@@ -432,7 +445,7 @@ function renderStaticCommerceCards(html, pagePath) {
       const category = plainText(article.match(/class="product-card__category"[^>]*>([\s\S]*?)<\/span>/i)?.[1] || product.category);
       const properties = listingProperties(product).map(property => `<li><strong>${escapeHtml(property.label)}:</strong> ${escapeHtml(property.value)}</li>`).join('');
       const quoteHref = `${contactPrefix}contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
-      const body = `<div class="product-card__body"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">Available by RFQ</span></div><h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><ul class="product-card__properties product-card__properties--compact">${properties}</ul><div class="product-card__rfq"><a class="btn" href="${quoteHref}">Request Quote</a><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a></div></div></div>`;
+      const body = `<div class="product-card__body"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">${product.mxene ? 'Request Quote' : 'Available by RFQ'}</span></div><h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><ul${product.mxene ? ' data-copy-protected="true"' : ''} class="product-card__properties product-card__properties--compact">${properties}</ul><div class="product-card__rfq"><a class="btn" href="${quoteHref}">Request Quote</a><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a></div></div></div>`;
       return `${article.slice(0, bodyStart)}${body}\n    </article>`;
     }
     if (product.commerceStatus !== 'active_checkout') return article;
@@ -492,7 +505,7 @@ function commercePanel(product) {
   const shippingCopy = sulfideGradeCode(product)
     ? '<div class="ecommerce-panel__shipping-note"><strong>Specialized shipping required</strong><p>Sulfide solid electrolytes are air- and moisture-sensitive and require specialized packaging and transportation. Shipping is quoted separately by destination, and multiple sulfide grades may be consolidated in one shipment where feasible.</p></div>'
     : '<p class="ecommerce-panel__note">Shipping and handling are included in listed prices for eligible destinations.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>';
-  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><div><p class="detail-kicker">${commerceModeLabel(product)}</p><h1 class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></h1></div></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label><span class="ecommerce-panel__quantity-label">Quantity</span><div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><div><span>Selected package × quantity</span><strong class="ecommerce-selection-summary">${escapeHtml(defaultVariant.label)} × 1</strong></div><div><span>Total</span><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p></div></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="btn secondary ecommerce-rfq-link" href="${quoteHref}">Request a Quote</a></div><div class="ecommerce-panel__notes"><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p>${shippingCopy}</div></section>`;
+  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><div><p class="detail-kicker">${commerceModeLabel(product)}</p><h1 class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></h1></div></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label><span class="ecommerce-panel__quantity-label">Quantity</span><div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><div><span>Selected package × quantity</span><strong class="ecommerce-selection-summary">${escapeHtml(defaultVariant.label)} × 1</strong></div><div><span>Total</span><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p></div></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="btn secondary ecommerce-rfq-link" href="${quoteHref}">${product.mxene ? 'Request Bulk Quote' : 'Request a Quote'}</a>${product.mxene?.compositionNote ? `<a class="btn secondary" href="../contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=${encodeURIComponent(product.name)}">Technical Discussion</a>` : ''}</div><div class="ecommerce-panel__notes"><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p>${shippingCopy}</div></section>`;
 }
 
 function removeCommercePanels(html) {
@@ -530,6 +543,7 @@ function removeOrphanedCommercePanelBodies(html) {
 function renderStaticProductCommerce(html, product) {
   if (product.commerceStatus !== 'active_checkout' || !activeVariants(product).length) return html;
   let next = removeOrphanedCommercePanelBodies(removeCommercePanels(html));
+  if (product.mxene?.compositionNote) next = next.replace(/<section class="ecommerce-rfq-panel"[^>]*>[\s\S]*?<\/section>/i, '<div class="detail-actions"></div>');
   next = next.replace(/(<dt>Availability<\/dt><dd>)[\s\S]*?(<\/dd>)/i, `$1${commerceModeLabel(product)}$2`);
   next = next.replace(/(<section class="section dark product-detail-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i,
     `$1<p>${escapeHtml(productDescription(product))}</p>`);
@@ -701,6 +715,7 @@ function productTitle(product) {
 }
 
 function productDescription(product) {
+  if (product.mxene?.compositionNote) return product.description;
   if (product.mxene) return `${product.description} ${activeVariants(product).map(v=>v.label).join(', ')} research packages available for online ordering.`;
   const base = product.description.replace(/\s+/g, ' ').trim().replace(/[\s.;:,]+$/, '');
   if (product.commerceStatus === 'active_checkout') {
@@ -782,7 +797,8 @@ function rfqPageSchema(product) {
     publisher: { '@id': `${siteUrl}/#organization` },
     ...(product.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: absoluteSiteUrl(product.image) } } : {}),
     about: {
-      '@type': 'Thing',
+      '@type': product.mxene && product.purchaseMode === 'rfq' ? 'Product' : 'Thing',
+      ...(product.mxene && product.purchaseMode === 'rfq' ? { '@id': `${canonical}#product`, sku: product.sku, image: absoluteSiteUrl(product.image), description: productDescription(product) } : {}),
       name: product.name,
       ...(product.aliases.length ? { alternateName: product.aliases } : {}),
       ...(product.sku ? { identifier: product.sku } : {}),
@@ -823,7 +839,7 @@ function collectionSchema(familySlug = null) {
   const entries = family?.publicItemList || products.map(product => ({
     name: product.name,
     url: product.url,
-    entityId: isDirectPurchaseProduct(product) ? '#product' : '#webpage'
+    entityId: isDirectPurchaseProduct(product) || (product.mxene && product.purchaseMode === 'rfq') ? '#product' : '#webpage'
   }));
   const pagePath = family ? family.url : '/products.html';
   const pageUrl = `${siteUrl}${pagePath}`;
@@ -839,7 +855,7 @@ function collectionSchema(familySlug = null) {
         name,
         description,
         isPartOf: { '@id': `${siteUrl}/#website` },
-        about: (familyIntent?.entities || ['Battery materials']).slice(0, 8).map(entity => ({ '@type': 'Thing', name: entity })),
+        about: (familySlug === 'mxene-materials' ? [...new Set(productSource.products.filter(p => p.family === familySlug).map(p => `${p.mxene.formula} MXene`))] : (familyIntent?.entities || ['Battery materials']).slice(0, 8)).map(entity => ({ '@type': 'Thing', name: entity })),
         mainEntity: { '@id': `${pageUrl}#products` }
       },
       {
@@ -969,7 +985,7 @@ async function updateProductPage(pagePath, product) {
   html = applyOpenGraph(html, { title, description, canonical, image: absoluteSiteUrl(product.image), type: isDirectPurchaseProduct(product) ? 'product' : 'website' });
   html = replaceProductPageSchema(html, product);
   const productBreadcrumbs = [
-    { name: 'Home', url: `${siteUrl}/` },
+    ...(product.mxene?.compositionNote ? [] : [{ name: 'Home', url: `${siteUrl}/` }]),
     { name: 'Products', url: `${siteUrl}/products.html` },
     { name: family.name, url: `${siteUrl}${family.url}` }
   ];

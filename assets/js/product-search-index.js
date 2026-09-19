@@ -1279,6 +1279,231 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "mxene-materials",
       "category": "MXene Materials",
       "metadata": "Research-grade Mo₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research. TDS available. Mo2CTx MXene powder Material Mo₂CTₓ MXene Precursor Mo₂Ga₂C Product form Delaminated single-/few-layer powder Preparation HF etching followed by intercalation / delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Typical conductivity 1000 ± 500 S/cm Surface terminations –O, –OH, –F Recommended storage Dry; vacuum or inert atmosphere Grade Research grade"
+    },
+    {
+      "slug": "ti2ctx-mxene-multilayer-powder",
+      "name": "Ti₂CTₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Ti2CTx MXene",
+        "Ti2C MXene",
+        "Ti2C powder",
+        "Ti2CTx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Ti2CTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. Ti2CTx MXene powder online ordering Material Ti₂CTₓ MXene Precursor Ti₂AlC Product form Multilayer Powder Preparation LiF/HCl etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 10–100 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "ti2ctx-mxene-single-few-layer-powder",
+      "name": "Ti₂CTₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Ti2CTx MXene",
+        "Ti2C MXene",
+        "Ti2C powder",
+        "Ti2CTx Single-/Few-Layer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Ti2CTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials. Ti2CTx MXene powder online ordering Material Ti₂CTₓ MXene Precursor Ti₂AlC Product form Single-/Few-Layer Powder Preparation LiF/HCl etching Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Representative conductivity 2000 ± 500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "ti3cntx-mxene-multilayer-powder",
+      "name": "Ti₃CNTₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Ti3CNTx MXene",
+        "Ti3CN MXene",
+        "Ti3CN powder",
+        "Ti3CNTx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Ti3CNTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. Ti3CNTx MXene powder online ordering Material Ti₃CNTₓ MXene Precursor Ti₃AlCN Product form Multilayer Powder Preparation LiF/HCl etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 10–100 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "ti3cntx-mxene-single-few-layer-powder",
+      "name": "Ti₃CNTₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Ti3CNTx MXene",
+        "Ti3CN MXene",
+        "Ti3CN powder",
+        "Ti3CNTx Single-/Few-Layer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Ti3CNTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials. Ti3CNTx MXene powder online ordering Material Ti₃CNTₓ MXene Precursor Ti₃AlCN Product form Single-/Few-Layer Powder Preparation LiF/HCl etching Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Representative conductivity 2500 ± 500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "tivctx-mxene-multilayer-powder",
+      "name": "TiVCTₓ MXene — Multilayer Powder",
+      "aliases": [
+        "TiVCTx MXene",
+        "TiVC MXene",
+        "TiVC powder",
+        "TiVCTx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "TiVCTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. TiVCTx MXene powder online ordering Material TiVCTₓ MXene Precursor TiVAlC Product form Multilayer Powder Preparation LiF/HCl etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 10–100 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "tivctx-mxene-single-few-layer-powder",
+      "name": "TiVCTₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "TiVCTx MXene",
+        "TiVC MXene",
+        "TiVC powder",
+        "TiVCTx Single-/Few-Layer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "TiVCTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials. TiVCTx MXene powder online ordering Material TiVCTₓ MXene Precursor TiVAlC Product form Single-/Few-Layer Powder Preparation LiF/HCl etching followed by intercalation/delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Representative conductivity 1000 ± 500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "tinbctx-mxene-multilayer-powder",
+      "name": "TiNbCTₓ MXene — Multilayer Powder",
+      "aliases": [
+        "TiNbCTx MXene",
+        "TiNbC MXene",
+        "TiNbC powder",
+        "TiNbCTx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "TiNbCTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. TiNbCTx MXene powder online ordering Material TiNbCTₓ MXene Precursor TiNbAlC Product form Multilayer Powder Preparation LiF/HCl etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 10–100 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "tinbctx-mxene-single-few-layer-powder",
+      "name": "TiNbCTₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "TiNbCTx MXene",
+        "TiNbC MXene",
+        "TiNbC powder",
+        "TiNbCTx Single-/Few-Layer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "TiNbCTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials. TiNbCTx MXene powder online ordering Material TiNbCTₓ MXene Precursor TiNbAlC Product form Single-/Few-Layer Powder Preparation LiF/HCl etching followed by intercalation/delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Representative conductivity 800 ± 500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "mo2tic2tx-mxene-multilayer-powder",
+      "name": "Mo₂TiC₂Tₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Mo2TiC2Tx MXene",
+        "Mo2TiC2 MXene",
+        "Mo2TiC2 powder",
+        "Mo2TiC2Tx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Mo2TiC2Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. Mo2TiC2Tx MXene powder online ordering Material Mo₂TiC₂Tₓ MXene Precursor Mo₂TiAlC₂ Product form Multilayer Powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 1–10 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "mo2tic2tx-mxene-single-few-layer-powder",
+      "name": "Mo₂TiC₂Tₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Mo2TiC2Tx MXene",
+        "Mo2TiC2 MXene",
+        "Mo2TiC2 powder",
+        "Mo2TiC2Tx Single-/Few-Layer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Mo2TiC2Tx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials. Mo2TiC2Tx MXene powder online ordering Material Mo₂TiC₂Tₓ MXene Precursor Mo₂TiAlC₂ Product form Single-/Few-Layer Powder Preparation HF etching followed by intercalation/delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Representative conductivity 10–300 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "ta4c3tx-mxene-multilayer-powder",
+      "name": "Ta₄C₃Tₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Ta4C3Tx MXene",
+        "Ta4C3 MXene",
+        "Ta4C3 powder",
+        "Ta4C3Tx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Ta4C3Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. Ta4C3Tx MXene powder online ordering Material Ta₄C₃Tₓ MXene Precursor Ta₄AlC₃ Product form Multilayer Powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 1–10 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "ta4c3tx-mxene-single-few-layer-powder",
+      "name": "Ta₄C₃Tₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Ta4C3Tx MXene",
+        "Ta4C3 MXene",
+        "Ta4C3 powder",
+        "Ta4C3Tx Single-/Few-Layer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Ta4C3Tx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials. Ta4C3Tx MXene powder online ordering Material Ta₄C₃Tₓ MXene Precursor Ta₄AlC₃ Product form Single-/Few-Layer Powder Preparation HF etching followed by intercalation/delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Representative conductivity 10–500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "nb4c3tx-mxene-multilayer-powder",
+      "name": "Nb₄C₃Tₓ MXene — Multilayer Powder",
+      "aliases": [
+        "Nb4C3Tx MXene",
+        "Nb4C3 MXene",
+        "Nb4C3 powder",
+        "Nb4C3Tx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Nb4C3Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. Nb4C3Tx MXene powder online ordering Material Nb₄C₃Tₓ MXene Precursor Nb₄AlC₃ Product form Multilayer Powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 1–10 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "nb4c3tx-mxene-single-few-layer-powder",
+      "name": "Nb₄C₃Tₓ MXene — Single-/Few-Layer Powder",
+      "aliases": [
+        "Nb4C3Tx MXene",
+        "Nb4C3 MXene",
+        "Nb4C3 powder",
+        "Nb4C3Tx Single-/Few-Layer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "Nb4C3Tx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials. Nb4C3Tx MXene powder online ordering Material Nb₄C₃Tₓ MXene Precursor Nb₄AlC₃ Product form Single-/Few-Layer Powder Preparation HF etching followed by intercalation/delamination Layer structure / count ≤5 layers Nominal lateral size 200–1000 nm Representative conductivity 10–500 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "v4c3tx-mxene-multilayer-powder",
+      "name": "V₄C₃Tₓ MXene — Multilayer Powder",
+      "aliases": [
+        "V4C3Tx MXene",
+        "V4C3 MXene",
+        "V4C3 powder",
+        "V4C3Tx Multilayer Powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "V4C3Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. V4C3Tx MXene powder online ordering Material V₄C₃Tₓ MXene Precursor V₄AlC₃ Product form Multilayer Powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 1–10 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
     }
   ]
 };

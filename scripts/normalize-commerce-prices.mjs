@@ -12,6 +12,13 @@ export function validatePriceNormalizationPolicy(policy) {
   return policy;
 }
 
+// Explicit owner-approved per-product increments preserve controlled pricing experiments.
+export function productPriceIncrement(policy, slug) {
+  const increment = policy.productIncrementCents?.[slug] ?? policy.incrementCents;
+  if (!Number.isInteger(increment) || increment < 100 || increment % 100 !== 0) throw new Error(`Invalid whole-dollar increment for ${slug}.`);
+  return increment;
+}
+
 export function normalizeApprovedUnitAmount(unitAmount, incrementCents) {
   if (!Number.isInteger(unitAmount) || unitAmount <= 0) throw new Error(`Invalid approved unit amount: ${unitAmount}.`);
   if (!Number.isInteger(incrementCents) || incrementCents <= 0) throw new Error(`Invalid normalization increment: ${incrementCents}.`);
@@ -33,7 +40,7 @@ async function validateEffectiveCatalog() {
     for (const packageOption of product.packages || []) {
       if (packageOption.approvalStatus !== 'ACTIVE' || packageOption.pricingStatus !== 'APPROVED_RETAIL') continue;
       validatedOffers += 1;
-      if (!Number.isInteger(packageOption.unitAmount) || packageOption.unitAmount <= 0 || packageOption.unitAmount % (policy.incrementCents) !== 0) {
+      if (!Number.isInteger(packageOption.unitAmount) || packageOption.unitAmount <= 0 || packageOption.unitAmount % productPriceIncrement(policy, product.slug) !== 0) {
         invalidOffers.push({ slug: product.slug, package: packageOption.id, unitAmount: packageOption.unitAmount });
       }
     }

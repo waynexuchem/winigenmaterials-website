@@ -15,7 +15,7 @@ img[data-copy-protected="true"]{-webkit-user-drag:none}
 :is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav .container{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
 :is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav a{flex:none;white-space:nowrap}
 :is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav a[aria-current="location"]{color:var(--navy,#142444);border-bottom:3px solid var(--gold,#c9aa65);background:#f4f6fa}
-body:has(:is(.mxene-sticky-shell,.product-sticky-shell)) :is(#overview,#specifications,#packages,#characterization,#documentation,#faq,#related-products,#selection-guide,#technical-profile,#technical-guides){scroll-margin-top:var(--mxene-anchor-offset,220px)}
+body:has(:is(.mxene-sticky-shell,.product-sticky-shell)) :is(#overview,#specifications,#request-quote,#packages,#characterization,#documentation,#faq,#related-products,#selection-guide,#technical-profile,#technical-guides){scroll-margin-top:var(--mxene-anchor-offset,220px)}
 body:has(.mxene-sticky-shell) .structure-panel{display:flex;flex-direction:column;gap:24px;justify-content:center;align-items:center}
 body:has(.mxene-sticky-shell) .structure-panel img{max-width:100%;height:auto;flex:none}
 .structure-panel.product-tds-media{display:grid;grid-template-rows:minmax(0,1fr) auto;padding:0;overflow:hidden}

@@ -7,6 +7,7 @@ import {
   loadImageSitemapExclusions,
   mergeLargeImagePreview,
   renderSitemap,
+  parseAndValidateSitemapXml,
   SITE_ORIGIN
 } from './image-discovery.mjs';
 
@@ -26,7 +27,8 @@ async function listHtml(siteRoot, directory = siteRoot) {
 
 export async function buildImageDiscovery({ siteRoot, scope = 'all' }) {
   const htmlFiles = await listHtml(siteRoot);
-  const robotsTargets = scope === 'all'
+  const mxeneScope = pagePath => pagePath === 'products.html' || /^products\/[^/]*mxene[^/]*\.html$/.test(pagePath);
+  const robotsTargets = scope === 'mxene-materials' ? htmlFiles.filter(mxeneScope) : scope === 'all'
     ? htmlFiles
     : htmlFiles.filter(pagePath => pagePath === 'products.html' || pagePath.startsWith('products/'));
   let largePreviewPages = 0;
@@ -46,7 +48,12 @@ export async function buildImageDiscovery({ siteRoot, scope = 'all' }) {
   const pages = new Map();
   for (const pagePath of htmlFiles) pages.set(pagePath, await readFile(resolve(siteRoot, pagePath), 'utf8'));
   const excludedPaths = await loadImageSitemapExclusions(siteRoot);
-  const sitemapEntries = await buildSitemapEntries({ siteRoot, pages, excludedPaths });
+  let sitemapEntries = await buildSitemapEntries({ siteRoot, pages, excludedPaths });
+  if (scope === 'mxene-materials') {
+    const previous = parseAndValidateSitemapXml(await readFile(resolve(siteRoot, 'sitemap.xml'), 'utf8'));
+    const inScope = entry => mxeneScope(new URL(entry.url).pathname.slice(1));
+    sitemapEntries = [...previous.filter(entry => !inScope(entry)), ...sitemapEntries.filter(inScope)].sort((a, b) => a.url.localeCompare(b.url));
+  }
   await writeFile(resolve(siteRoot, 'sitemap.xml'), renderSitemap(sitemapEntries));
 
   const robotsPath = resolve(siteRoot, 'robots.txt');
