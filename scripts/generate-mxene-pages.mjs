@@ -76,6 +76,24 @@ async function renderRfqMxene(p) {
  await updateProductPage(p.url.slice(1),p);
 }
 
+// Repricing retains existing family/master content and only refreshes commerce fields.
+if (process.argv.includes('--prices-only')) {
+  for (const p of products) await updateProductPage(p.url.slice(1), p);
+  const familyPath = 'products/mxene-materials.html';
+  let familyHtml = renderStaticCommerceCards(await read(familyPath), familyPath);
+  familyHtml = familyHtml.replace(/<tr>[\s\S]*?<\/tr>/g, row => {
+    const product = products.find(p => row.includes(`href="${p.slug}.html"`));
+    return product ? row.replace(/<td>\$[\d,]+<\/td>(<\/tr>)$/, (_match, close) => `<td>${oneGramPrice(product)}</td>${close}`) : row;
+  });
+  await writeFile(resolve(root, familyPath), familyHtml);
+  const master = await read('products.html');
+  const section = /<section id="mxene-materials"[\s\S]*?<\/section>/;
+  if (!section.test(master)) throw new Error('MXene catalog section is missing.');
+  await writeFile(resolve(root, 'products.html'), master.replace(section, html => renderStaticCommerceCards(html, 'products.html')));
+  console.log('Refreshed MXene prices in existing detail pages, family cards/comparison and master cards.');
+  process.exit(0);
+}
+
 for (const p of products) {
   if (process.argv.includes('--commerce-only')) { await updateProductPage(p.url.slice(1),p); continue; }
   if (p.mxene.compositionNote) { await renderRfqMxene(p); continue; }

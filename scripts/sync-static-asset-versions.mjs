@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
 const checkOnly = process.argv.includes('--check');
+const mxeneOnly = process.argv.includes('--mxene-only');
 const publicDirectories = [siteRoot, resolve(siteRoot, 'products'), resolve(siteRoot, 'knowledge')];
 const ecommerceBundleAssets = [
   'assets/css/ecommerce.css',
@@ -57,6 +58,8 @@ async function assetVersion(assetPath) {
 }
 
 for (const filePath of await htmlFiles()) {
+  const pagePath = relative(siteRoot, filePath);
+  if (mxeneOnly && !['products.html', 'cart.html', 'checkout-success.html', 'checkout-cancel.html'].includes(pagePath) && !/^products\/[a-z0-9-]*mxene[a-z0-9-]*\.html$/.test(pagePath)) continue;
   const original = await readFile(filePath, 'utf8');
   let updated = original;
   const matches = [...original.matchAll(/((?:\.\.\/)*assets\/(?:css|js)\/[^"'?#]+\.(?:css|js))(?:\?v=[^"']*)?/g)];
