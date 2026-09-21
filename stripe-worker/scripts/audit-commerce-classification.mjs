@@ -76,7 +76,7 @@ export async function runCommerceClassificationAudit({ outputPath = null } = {})
       issues.push(`${ecommerce.slug}: missing ${!browser ? 'browser' : 'Worker'} projection.`);
       continue;
     }
-    for (const field of ['commercialStatus', 'shippingClass', 'commerceState', 'directOrderCeilingGroup', 'directOrderCeilingGrams']) {
+    for (const field of ['commercialStatus', 'shippingClass', 'commerceState', 'directOrderCeilingGroup', 'directOrderCeilingGrams', 'bulkQuoteThresholdGrams']) {
       if (browser[field] !== worker[field]) issues.push(`${ecommerce.slug}: browser/Worker ${field} mismatch.`);
     }
     if (ecommerce.commercialStatus === 'ONLINE_CHECKOUT' && ['SHIPPING_REVIEW', 'RFQ_SHIPPING'].includes(ecommerce.shippingClass)) {

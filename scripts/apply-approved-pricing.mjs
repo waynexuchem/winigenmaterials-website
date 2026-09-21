@@ -41,6 +41,7 @@ const updatedEcommerce = ecommerce.products
     if (schedule.shippingClass && product.shippingClass !== schedule.shippingClass) throw new Error(`${product.slug} shipping class differs from its approved schedule.`);
     return {
       ...product,
+      name: schedule.name || product.name,
       commercialStatus: schedule.commercialStatus,
       currency: schedule.currency,
       defaultPackageId: schedule.defaultPackageId,

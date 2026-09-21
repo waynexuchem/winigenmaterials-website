@@ -326,7 +326,11 @@ for (const product of productSource.products) {
       if (!/<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i.test(productHtml)) errors.push(`${pagePath}: MXene-style TDS action is not separated below the product image.`);
       if (!/data-product-tds-section="true"/i.test(productHtml)) errors.push(`${pagePath}: lower quality/documentation section is missing.`);
       if (!/Request Current Lot COA \/ SDS/i.test(productHtml)) errors.push(`${pagePath}: lot-specific COA/SDS action is missing.`);
-      if (!/representative results are lot-specific/i.test(productHtml) || !/lot-specific COA governs material supplied/i.test(productHtml)) {
+      if (tds.includesRepresentativeResults === false) {
+        if (!/without publishing representative-lot analytical results/i.test(productHtml) || !/lot-specific COA governs material supplied/i.test(productHtml)) {
+          errors.push(`${pagePath}: specification-only TDS and lot-specific COA distinction is incomplete.`);
+        }
+      } else if (!/representative results are lot-specific/i.test(productHtml) || !/lot-specific COA governs material supplied/i.test(productHtml)) {
         errors.push(`${pagePath}: TDS and lot-specific COA distinction is incomplete.`);
       }
       if (!/href="\.\.\/quality\.html"/i.test(productHtml)) errors.push(`${pagePath}: general quality documentation link is missing.`);

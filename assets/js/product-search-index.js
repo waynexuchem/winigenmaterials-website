@@ -950,6 +950,19 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "metadata": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Supplier specifications include assay ≥99.95 wt%, water ≤200 ppm, and acidity as HF ≤20 ppm. Ethyl propionate (EP) supplier where to buy Ethyl propionate (EP) Abbreviation EP CAS Number 105-37-3 Formula C5H10O2 Grade Battery research grade Assay ≥99.95 wt% Water ≤200 ppm Hazen color ≤10 Methanol + ethanol + propanol ≤50 ppm Acidity, as HF ≤20 ppm Chloride ≤1 ppm Sulfate ≤2 ppm"
     },
     {
+      "slug": "methyl-butyrate-mb-battery-grade",
+      "name": "Methyl Butyrate (MB)",
+      "aliases": [
+        "MB",
+        "Methyl butanoate"
+      ],
+      "cas": "623-42-7",
+      "formula": "C5H10O2",
+      "section": "solvents",
+      "category": "Battery Solvents",
+      "metadata": "Battery-grade methyl butyrate (MB) is a high-purity, low-moisture ester solvent for advanced battery electrolyte research and development. Winigen supplies MB with ≥99.8% purity, <20 ppm water, and <30 ppm acid in research-to-pilot quantities. Direct-order packages are available from 50 g through 1 kg; quantities of 2.5 kg or greater are handled by quotation. battery-grade methyl butyrate supplier where to buy methyl butyrate for battery electrolyte research Abbreviation MB Alternate name Methyl butanoate CAS Number 623-42-7 Formula C5H10O2 Molecular weight 102.13 g/mol PubChem CID 12180 SMILES CCCC(=O)OC Grade Battery Grade Purity ≥99.8% Water <20 ppm Acid <30 ppm Application Lithium-ion and advanced battery electrolyte solvent Bulk quantity ≥2.5 kg by quote"
+    },
+    {
       "slug": "propyl-propionate-pp",
       "name": "Propyl propionate (PP)",
       "aliases": [

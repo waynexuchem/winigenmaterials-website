@@ -209,13 +209,17 @@ export function resolveCart(cart) {
   for (const item of items) {
     const group = item.variant.product.directOrderCeilingGroup;
     const ceiling = item.variant.product.directOrderCeilingGrams;
-    const current = commercialMassByGroup.get(group) || { grams: 0, ceiling, name: item.variant.product.name };
-    if (current.ceiling !== ceiling) throw new Error('Catalog contains inconsistent direct-order commercial ceilings.');
+    const threshold = item.variant.product.bulkQuoteThresholdGrams;
+    const current = commercialMassByGroup.get(group) || { grams: 0, ceiling, threshold, name: item.variant.product.name };
+    if (current.ceiling !== ceiling || current.threshold !== threshold) throw new Error('Catalog contains inconsistent direct-order commercial limits.');
     current.grams += item.variant.netWeightGrams * item.quantity;
     commercialMassByGroup.set(group, current);
   }
   for (const entry of commercialMassByGroup.values()) {
-    if (entry.grams > entry.ceiling) {
+    const requiresQuote = Number.isFinite(entry.threshold)
+      ? entry.grams >= entry.threshold
+      : entry.grams > entry.ceiling;
+    if (requiresQuote) {
       throw new Error(`${entry.name} exceeds its approved direct-order quantity. Please request a bulk quote.`);
     }
   }

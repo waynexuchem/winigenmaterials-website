@@ -44,10 +44,10 @@ function schemaNodes(value) {
 }
 
 test('feed includes only image-backed direct-checkout products and active variants', () => {
-  assert.equal(result.stats.baseProductsEvaluated, 119);
-  assert.equal(result.stats.commerceProductsEvaluated, 93);
-  assert.equal(result.stats.productsEmitted, 81);
-  assert.equal(result.stats.variantsEmitted, 400);
+  assert.equal(result.stats.baseProductsEvaluated, 120);
+  assert.equal(result.stats.commerceProductsEvaluated, 94);
+  assert.equal(result.stats.productsEmitted, 82);
+  assert.equal(result.stats.variantsEmitted, 405);
   assert.equal(result.stats.exclusions.manual_review_or_rfq, 12);
   assert.equal(result.stats.exclusions.missing_image ?? 0, 0);
   assert.equal(result.stats.exclusions.not_in_commerce_catalog, 26);

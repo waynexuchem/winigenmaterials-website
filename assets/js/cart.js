@@ -59,14 +59,16 @@
     const { product, variant } = details;
     const group = product.directOrderCeilingGroup;
     const ceiling = product.directOrderCeilingGrams;
-    if (!group || !Number.isFinite(ceiling) || !Number.isFinite(variant.netWeightGrams)) return 0;
+    const threshold = product.bulkQuoteThresholdGrams;
+    const limit = Number.isFinite(threshold) ? threshold - 1 : ceiling;
+    if (!group || !Number.isFinite(limit) || !Number.isFinite(variant.netWeightGrams)) return 0;
     const otherMass = cart.items.reduce((total, item) => {
       if (item.variantKey === variantKey) return total;
       const other = variantDetails(item.variantKey);
       if (!other || other.product.directOrderCeilingGroup !== group) return total;
       return total + other.variant.netWeightGrams * item.quantity;
     }, 0);
-    return Math.max(0, Math.min(25, Math.floor((ceiling - otherMass) / variant.netWeightGrams)));
+    return Math.max(0, Math.min(25, Math.floor((limit - otherMass) / variant.netWeightGrams)));
   }
 
   function notifyLimit(details) {

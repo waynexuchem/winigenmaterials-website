@@ -5009,6 +5009,97 @@
       ]
     },
     {
+      "skuBase": "WM-SOL-MB",
+      "slug": "methyl-butyrate-mb-battery-grade",
+      "name": "Methyl Butyrate (MB)",
+      "category": "Battery Solvent",
+      "grade": "Battery Grade",
+      "displayGradeInHeading": false,
+      "listingSpecificationOrder": [
+        "Grade",
+        "Purity",
+        "Water"
+      ],
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "launchPhase": "COMMERCIAL_RELEASE_20260919",
+      "currency": "usd",
+      "defaultPackageId": "50G",
+      "bulkQuoteThresholdGrams": 2500,
+      "packages": [
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 40000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919",
+          "shippingWeightGrams": 50,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 60000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919",
+          "shippingWeightGrams": 100,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "250G",
+          "label": "250 g",
+          "unit": "g",
+          "quantity": 250,
+          "netWeightGrams": 250,
+          "unitAmount": 125000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919",
+          "shippingWeightGrams": 250,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 210000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919",
+          "shippingWeightGrams": 500,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 350000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919",
+          "shippingWeightGrams": 1000,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ]
+    },
+    {
       "skuBase": "WM-SOL-PP",
       "slug": "propyl-propionate-pp",
       "name": "Propyl propionate (PP)",

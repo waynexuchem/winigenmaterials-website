@@ -63,13 +63,15 @@
 
   function selectedSpecs(card, product) {
     const context = productContext(card, product);
-    const priority = context.includes('sulfide')
+    const priority = Array.isArray(product.listingSpecificationOrder) && product.listingSpecificationOrder.length
+      ? product.listingSpecificationOrder.map(value => value.toLowerCase())
+      : context.includes('sulfide')
       ? ['composition', 'd50', 'ionic']
       : context.includes('salt')
         ? ['grade', 'purity', 'water']
         : context.includes('solvent')
           ? ['grade', 'water', 'physical']
-          : context.includes('active material') || context.includes('anode') || context.includes('cathode')
+      : context.includes('active material') || context.includes('anode') || context.includes('cathode')
             ? ['d50', 'capacity', 'tap density']
             : ['particle', 'ionic conductivity', 'water'];
     return normalizeProperties(card, product).sort((a, b) => {

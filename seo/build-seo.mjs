@@ -232,7 +232,10 @@ function lowerQualityDocumentation(product, documentationHref) {
   const representativeCoaAction = representativeCoa
     ? `<a href="${escapeHtml(representativeCoa.path.startsWith('/') ? `..${representativeCoa.path}` : representativeCoa.path)}" target="_blank" rel="noopener">View Representative COA (PDF)</a>`
     : '';
-  return `<!-- product-tds-section:start --><section class="section product-technical-section" id="documentation" data-product-tds-section="true"><div class="container"><section class="product-documentation" aria-labelledby="quality-documentation-title"><div><p class="detail-kicker">Quality Documentation</p><h2 id="quality-documentation-title">Technical and lot documentation</h2><p>Technical specifications are summarized from current supplier quality documentation. The TDS also includes representative COA results where available. Representative results are lot-specific; the applicable lot-specific COA governs material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a>${representativeCoaAction}<a href="../quality.html">Quality documentation</a></div></section></div></section><!-- product-tds-section:end -->`;
+  const documentationCopy = tds.includesRepresentativeResults === false
+    ? 'The TDS summarizes current supplier-confirmed specification limits without publishing representative-lot analytical results. The applicable lot-specific COA governs material supplied.'
+    : 'Technical specifications are summarized from current supplier quality documentation. The TDS also includes representative COA results where available. Representative results are lot-specific; the applicable lot-specific COA governs material supplied.';
+  return `<!-- product-tds-section:start --><section class="section product-technical-section" id="documentation" data-product-tds-section="true"><div class="container"><section class="product-documentation" aria-labelledby="quality-documentation-title"><div><p class="detail-kicker">Quality Documentation</p><h2 id="quality-documentation-title">Technical and lot documentation</h2><p>${documentationCopy}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a>${representativeCoaAction}<a href="../quality.html">Quality documentation</a></div></section></div></section><!-- product-tds-section:end -->`;
 }
 
 function synchronizeQualityDocumentationCopy(html, product) {
@@ -265,7 +268,13 @@ function renderProductDetailExperience(html, product) {
   const specificationMarkup = specs.map(item => `<div class="product-key-spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('');
   const documentation = product.mxene || product.qualityDocumentation?.tds ? '' : productDocumentation(product, documentationHref);
   const lowerDocumentation = product.mxene ? '' : lowerQualityDocumentation(product, documentationHref);
-  const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${documentation}</div>`;
+  const specialtyGradeNote = product.specialtyGradeNote
+    ? `<p class="product-specialty-grade-note">${escapeHtml(product.specialtyGradeNote)}</p>`
+    : '';
+  const bulkQuotePrompt = product.bulkQuotePrompt
+    ? `<p class="product-bulk-quote-note">${escapeHtml(product.bulkQuotePrompt.replace(/\s*Request a quote\.$/i, ''))} <a href="${quoteHref}">Request a quote.</a></p>`
+    : '';
+  const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${specialtyGradeNote}${bulkQuotePrompt}${documentation}</div>`;
   const navigation = product.mxene ? `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#characterization">Characterization</a><a href="#documentation">Documentation</a><a href="#faq">FAQ</a><a href="#related-products">Related Products</a></div></nav>` : `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#selection-guide">Selection Guide</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a><a href="#documentation">Documentation</a></div></nav>`;
   const support = `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
 
@@ -413,6 +422,15 @@ function listingProperties(product) {
     ].filter(Boolean);
   }
   const excluded = new Set(['abbreviation', 'cas number', 'formula', 'availability', 'commercial availability']);
+  if (Array.isArray(product.catalogCardSpecifications) && product.catalogCardSpecifications.length) {
+    const propertiesByName = new Map(product.additionalProperty
+      .filter(property => !excluded.has(property.name.toLowerCase()))
+      .map(property => [property.name.toLowerCase(), { ...property, label: propertyLabel(property.name, property.value) }]));
+    return product.catalogCardSpecifications
+      .map(name => propertiesByName.get(String(name).toLowerCase()))
+      .filter(Boolean)
+      .slice(0, 3);
+  }
   const priorities = product.family === 'lithium-salts' || product.family === 'next-generation-salts'
     ? ['grade', 'purity', 'water']
     : product.family === 'battery-solvents'
@@ -439,6 +457,10 @@ function renderStaticCommerceCards(html, pagePath) {
     const slug = detailHref.split('/').pop().replace(/\.html(?:[?#].*)?$/, '');
     const product = productSource.products.find(entry => entry.slug === slug);
     if (!product) return article;
+    article = article.replace(
+      /(<a class="product-media-link"[^>]*\baria-label=")View details for [^"]*(")/i,
+      `$1View details for ${escapeHtml(product.name)}$2`
+    );
     if (product.commerceStatus === 'rfq') {
       const bodyStart = article.match(/<div class="product-card__body"(?:\s[^>]*)?>/i)?.index ?? -1;
       if (bodyStart < 0) return article;
@@ -505,7 +527,9 @@ function commercePanel(product) {
   const shippingCopy = sulfideGradeCode(product)
     ? '<div class="ecommerce-panel__shipping-note"><strong>Specialized shipping required</strong><p>Sulfide solid electrolytes are air- and moisture-sensitive and require specialized packaging and transportation. Shipping is quoted separately by destination, and multiple sulfide grades may be consolidated in one shipment where feasible.</p></div>'
     : '<p class="ecommerce-panel__note">Shipping and handling are included in listed prices for eligible destinations.</p><p class="ecommerce-panel__note">Orders remain pending fulfillment review after payment.</p>';
-  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><div><p class="detail-kicker">${commerceModeLabel(product)}</p><h1 class="ecommerce-panel__product">${escapeHtml(product.name)}<span>${escapeHtml(ecommerceBySlug.get(product.ecommerceSlug)?.grade || '')}</span></h1></div></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label><span class="ecommerce-panel__quantity-label">Quantity</span><div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><div><span>Selected package × quantity</span><strong class="ecommerce-selection-summary">${escapeHtml(defaultVariant.label)} × 1</strong></div><div><span>Total</span><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p></div></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="btn secondary ecommerce-rfq-link" href="${quoteHref}">${product.mxene ? 'Request Bulk Quote' : 'Request a Quote'}</a>${product.mxene?.compositionNote ? `<a class="btn secondary" href="../contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=${encodeURIComponent(product.name)}">Technical Discussion</a>` : ''}</div><div class="ecommerce-panel__notes"><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p>${shippingCopy}</div></section>`;
+  const commerceProduct = ecommerceBySlug.get(product.ecommerceSlug);
+  const headingGrade = commerceProduct?.displayGradeInHeading === false ? '' : commerceProduct?.grade || '';
+  return `<section class="ecommerce-panel" data-ecommerce-panel="true" data-static-commerce="true"><header class="ecommerce-panel__header"><div><p class="detail-kicker">${commerceModeLabel(product)}</p><h1 class="ecommerce-panel__product">${escapeHtml(product.name)}${headingGrade ? `<span>${escapeHtml(headingGrade)}</span>` : ''}</h1></div></header>${packagePricingSummary(product, variants)}<div class="ecommerce-panel__fields"><label><span class="ecommerce-panel__quantity-label">Quantity</span><div class="quantity-stepper"><button class="quantity-stepper__button" type="button" data-quantity-decrease aria-label="Decrease quantity">−</button><input class="ecommerce-quantity" type="number" min="1" max="25" value="1" inputmode="numeric" aria-label="Quantity"><button class="quantity-stepper__button" type="button" data-quantity-increase aria-label="Increase quantity">+</button></div></label></div><div class="ecommerce-panel__summary"><div><span>Selected package × quantity</span><strong class="ecommerce-selection-summary">${escapeHtml(defaultVariant.label)} × 1</strong></div><div><span>Total</span><p class="ecommerce-price">${formatUsd(defaultVariant.unitAmount)}</p></div></div><div class="ecommerce-panel__actions"><button class="btn" type="button" data-add-to-cart>Add to Cart</button><a class="btn secondary ecommerce-rfq-link" href="${quoteHref}">${product.mxene ? 'Request Bulk Quote' : 'Request a Quote'}</a>${product.mxene?.compositionNote ? `<a class="btn secondary" href="../contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=${encodeURIComponent(product.name)}">Technical Discussion</a>` : ''}</div><div class="ecommerce-panel__notes"><p class="ecommerce-status">Lead time and fulfillment eligibility are confirmed during order review.</p>${shippingCopy}</div></section>`;
 }
 
 function removeCommercePanels(html) {
@@ -704,6 +728,7 @@ function replaceTypedSchema(html, type, schema) {
 }
 
 function productTitle(product) {
+  if (product.seoTitle) return product.seoTitle;
   if (product.mxene) return `${product.mxene.ascii} MXene ${product.mxene.singleFewLayer ? 'Single-/Few-Layer' : 'Multilayer'} Powder | ${product.mxene.ascii.replace('Tx','')} MXene | Winigen Materials`;
   const family = familiesBySlug.get(product.family);
   if (product.commerceStatus === 'sample_only') return `${product.name} | Research-Grade Battery Material | Winigen Materials`;
@@ -715,6 +740,7 @@ function productTitle(product) {
 }
 
 function productDescription(product) {
+  if (product.seoDescription) return product.seoDescription;
   if (product.mxene?.compositionNote) return product.description;
   if (product.mxene) return `${product.description} ${activeVariants(product).map(v=>v.label).join(', ')} research packages available for online ordering.`;
   const base = product.description.replace(/\s+/g, ' ').trim().replace(/[\s.;:,]+$/, '');

@@ -4070,6 +4070,108 @@
       ]
     },
     {
+      "slug": "methyl-butyrate-mb-battery-grade",
+      "url": "/products/methyl-butyrate-mb-battery-grade.html",
+      "name": "Methyl Butyrate (MB)",
+      "breadcrumbName": "Methyl Butyrate (MB)",
+      "sourceGeneratedPage": true,
+      "seoTitle": "Methyl Butyrate (MB), Battery Grade | Winigen Materials",
+      "seoDescription": "Battery-grade methyl butyrate (MB), CAS 623-42-7, for advanced electrolyte R&D. ≥99.8% purity, <20 ppm water, <30 ppm acid.",
+      "description": "Battery-grade methyl butyrate (MB) is a high-purity, low-moisture ester solvent for advanced battery electrolyte research and development. Winigen supplies MB with ≥99.8% purity, <20 ppm water, and <30 ppm acid in research-to-pilot quantities. Direct-order packages are available from 50 g through 1 kg; quantities of 2.5 kg or greater are handled by quotation.",
+      "specialtyGradeNote": "Battery-grade MB is a specialized low-moisture electrolyte solvent with limited commercial availability compared with general laboratory grades.",
+      "bulkQuotePrompt": "Need ≥2.5 kg, recurring supply, alternate packaging, or project pricing? Request a quote.",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-MB",
+      "image": "/assets/images/chemical-structures/methyl-butyrate-structure.png",
+      "imageAlt": "Chemical structure of methyl butyrate (methyl butanoate), CAS 623-42-7",
+      "catalogCardSpecifications": [
+        "Grade",
+        "Purity",
+        "Water"
+      ],
+      "aliases": [
+        "MB",
+        "Methyl butanoate"
+      ],
+      "qualityDocumentation": {
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_MB_Battery_Grade_TDS.pdf",
+          "sha256": "69f685f750729f9e20654fba73971b3151e5cdb8844d39524d0fe7c3d4ddbe93",
+          "includesRepresentativeResults": false
+        },
+        "keySpecifications": [
+          "CAS Number",
+          "Purity",
+          "Water",
+          "Acid",
+          "Grade",
+          "Formula"
+        ]
+      },
+      "commercialIntents": [
+        "battery-grade methyl butyrate supplier",
+        "where to buy methyl butyrate for battery electrolyte research"
+      ],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "ecommerceSlug": "methyl-butyrate-mb-battery-grade",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "MB"
+        },
+        {
+          "name": "Alternate name",
+          "value": "Methyl butanoate"
+        },
+        {
+          "name": "CAS Number",
+          "value": "623-42-7"
+        },
+        {
+          "name": "Formula",
+          "value": "C5H10O2"
+        },
+        {
+          "name": "Molecular weight",
+          "value": "102.13 g/mol"
+        },
+        {
+          "name": "PubChem CID",
+          "value": "12180"
+        },
+        {
+          "name": "SMILES",
+          "value": "CCCC(=O)OC"
+        },
+        {
+          "name": "Grade",
+          "value": "Battery Grade"
+        },
+        {
+          "name": "Purity",
+          "value": "≥99.8%"
+        },
+        {
+          "name": "Water",
+          "value": "<20 ppm"
+        },
+        {
+          "name": "Acid",
+          "value": "<30 ppm"
+        },
+        {
+          "name": "Application",
+          "value": "Lithium-ion and advanced battery electrolyte solvent"
+        },
+        {
+          "name": "Bulk quantity",
+          "value": "≥2.5 kg by quote"
+        }
+      ]
+    },
+    {
       "slug": "propyl-propionate-pp",
       "url": "/products/propyl-propionate-pp.html",
       "name": "Propyl propionate (PP)",

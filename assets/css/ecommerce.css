@@ -167,6 +167,8 @@
 .product-detail-information { background: rgba(255,255,255,.94); border: 1px solid var(--border); border-radius: 6px; box-shadow: var(--shadow); grid-column: 1; grid-row: 2; padding: 22px; }
 .product-detail-information > .detail-kicker { margin-bottom: 7px; }
 .product-detail-information > p:not(.detail-kicker) { color: #52667e; font-size: 14px; line-height: 1.65; margin: 0; }
+.product-specialty-grade-note,.product-bulk-quote-note { color: #52667e; font-size: 14px; line-height: 1.65; margin: 14px 0 0; }
+.product-bulk-quote-note a { color: var(--blue); font-weight: 800; }
 .product-detail-layout--commerce .ecommerce-panel { align-self: start; grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 22px; position: sticky; top: 60px; }
 .product-detail-layout .ecommerce-panel__header { border-bottom: 1px solid #d5e0eb; margin-bottom: 14px; padding-bottom: 13px; }
 .product-detail-layout .ecommerce-panel__fields { display: block; }

@@ -2441,6 +2441,65 @@
       ]
     },
     {
+      "slug": "methyl-butyrate-mb-battery-grade",
+      "skuBase": "WM-SOL-MB",
+      "name": "Methyl Butyrate (MB)",
+      "defaultPackageId": "50G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "packages": [
+        {
+          "id": "50G",
+          "label": "50 g",
+          "unit": "g",
+          "quantity": 50,
+          "netWeightGrams": 50,
+          "unitAmount": 40000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919"
+        },
+        {
+          "id": "100G",
+          "label": "100 g",
+          "unit": "g",
+          "quantity": 100,
+          "netWeightGrams": 100,
+          "unitAmount": 60000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919"
+        },
+        {
+          "id": "250G",
+          "label": "250 g",
+          "unit": "g",
+          "quantity": 250,
+          "netWeightGrams": 250,
+          "unitAmount": 125000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 210000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 350000,
+          "packageBasis": "OWNER_APPROVED_MB_DIRECT_ORDER_20260919"
+        }
+      ],
+      "approvalProvenance": [
+        "OWNER_APPROVED_MB_DIRECT_ORDER_20260919"
+      ]
+    },
+    {
       "slug": "v4c3tx-mxene-multilayer-powder",
       "skuBase": "WM-MX-V4C3TX-ML",
       "name": "V₄C₃Tₓ MXene — Multilayer Powder",

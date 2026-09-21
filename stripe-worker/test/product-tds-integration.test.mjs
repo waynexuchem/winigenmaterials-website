@@ -21,6 +21,7 @@ const documents = [
   { slug: 'lithium-hexafluorophosphate-lipf6', code: 'LiPF6', hash: '1282e4c8fa7cd823b9d7557f5dd992734a91d7d68125a5e0e62a9923fc89e996', specs: { Assay: '≥99.95 wt%', Water: '≤10 ppm', 'Insoluble matter': '≤200 ppm', 'Free acid': '≤90 ppm', Chloride: '≤2 ppm', Sulfate: '≤5 ppm' } },
   { slug: 'lithium-difluorophosphate-lipo-2-f-2', code: 'LiPO2F2', hash: 'a48a62fc35e1208d40fc81fef9cd4550c2407cc9eeeb2caeddb2943e56abb482', specs: { Classification: 'Lithium electrolyte additive', Assay: '≥99.9 wt%', Water: '≤150 µg/g', 'Acidity, as HF': '≤100 ppm', Chloride: '≤5 µg/g', Sulfate: '≤10 ppm' } },
   { slug: 'lithium-bis-trifluoromethane-sulphonyl-imide-litfsi', code: 'LiTFSI', hash: '50d58e212a6a29492da2dbbfcc0c45b847038651ac1c8ea51eb6b07ae7a31907', specs: { Purity: '≥99.9 wt%', Water: '≤200 ppm', 'Acidity, as HF': '≤50 ppm', Fluoride: '≤20 ppm', Chloride: '≤5 ppm', Sulfate: '≤10 ppm', 'Insoluble matter': '≤100 ppm' } },
+  { slug: 'methyl-butyrate-mb-battery-grade', code: 'MB', filename: 'Winigen_MB_Battery_Grade_TDS.pdf', hash: '69f685f750729f9e20654fba73971b3151e5cdb8844d39524d0fe7c3d4ddbe93', specs: { Purity: '≥99.8%', Water: '<20 ppm', Acid: '<30 ppm', Grade: 'Battery Grade', Formula: 'C5H10O2' } },
   { slug: 'propylene-carbonate-pc', code: 'PC', hash: 'a310f344cd092c9936f7ed9afb114091838db906ebbfb4cabe0710c28ac2d84d', specs: { Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Propylene glycol + dipropylene glycol': '≤20 ppm', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
   { slug: 'propyl-propionate-pp', code: 'PP', hash: 'eb616e9882222084c95daf96ef772e94f92060496378148305b158820fab5d82', specs: { Assay: '≥99.95 wt%', Water: '≤200 ppm', 'Hazen color': '≤10', 'Methanol + ethanol + propanol': '≤50 ppm', 'Acidity, as HF': '≤20 ppm', Chloride: '≤1 ppm', Sulfate: '≤5 ppm' } },
   { slug: 'bis-2-2-2-trifluoroethyl-carbonate-tfec', code: 'TFEC', filename: 'Winigen_TFEC_Representative_TDS.pdf', hash: '9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66', specs: { 'Assay (GC)': '≥99 wt%', Water: '≤20 µg/g', Appearance: 'Colorless liquid' } }
@@ -29,7 +30,7 @@ const documents = [
 const representativeResults = ['8.7 ppm', '7.2 µg/g', '7.3 ppm', '9.6 ppm', '99.998 wt%', '15.4 ppm', '99.993 wt%', '99.92 wt%', '16.2 ppm', '99.964 wt%', '6.8 ppm', '99.9698 wt%', '49.8 µg/g', '99.928 wt%', '99.997 wt%', '5.3 ppm', '12.1 ppm', '98.1% representative purity', '99.97 wt%', '16 µg/g'];
 const tdsFilename = document => document.filename || `Winigen_${document.code}_Representative_TDS_RevB.pdf`;
 
-test('all 15 public TDS files are preserved byte-for-byte and retired Sulfolane stays private', async () => {
+test('all 16 public TDS integrations are preserved byte-for-byte and retired Sulfolane stays private', async () => {
   const publicFiles = await readdir(resolve(siteRoot, 'assets/documents/tds'));
   const expectedFilenames = documents.map(tdsFilename);
   assert.equal(new Set(expectedFilenames).size, documents.length);
@@ -50,8 +51,11 @@ test('all 15 public TDS files are preserved byte-for-byte and retired Sulfolane 
 test('TDS naming policy accepts only legacy RevB and concise revision-neutral public names', () => {
   assert.equal(isApprovedPublicTdsPath('/assets/documents/tds/Winigen_LiPF6_Representative_TDS_RevB.pdf'), true);
   assert.equal(isApprovedPublicTdsPath('/assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf'), true);
+  assert.equal(isApprovedPublicTdsPath('/assets/documents/tds/Winigen_MB_Battery_Grade_TDS.pdf'), true);
   for (const path of [
     '/assets/documents/tds/Winigen_TFEC_Representative_TDS_RevC.pdf',
+    '/assets/documents/tds/Winigen_EC_Battery_Grade_TDS.pdf',
+    '/assets/documents/tds/Winigen_MB_Battery_Grade_TDS_RevB.pdf',
     '/assets/documents/tds/Winigen_Baseline_Lithium_Ion_Battery_Electrolyte_Representative_TDS.pdf',
     '/assets/documents/tds/TFEC.pdf',
     '/assets/documents/tds/Winigen_TFEC_Representative_TDS.txt',
@@ -82,7 +86,12 @@ test('each public TDS product matches the MXene-style image action and retains l
     assert.match(html, /<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i, `${document.slug}: TDS action is separated below the product image`);
     assert.match(html, /<section class="section product-technical-section" id="documentation" data-product-tds-section="true">/);
     assert.match(html, /Request Current Lot COA \/ SDS/);
-    assert.match(html, /representative results are lot-specific/i);
+    if (document.slug === 'methyl-butyrate-mb-battery-grade') {
+      assert.match(html, /without publishing representative-lot analytical results/i);
+      assert.doesNotMatch(html, /representative results are lot-specific/i);
+    } else {
+      assert.match(html, /representative results are lot-specific/i);
+    }
     assert.match(html, /lot-specific COA governs material supplied/i);
     assert.match(html, /href="\.\.\/quality\.html"/);
     assert.doesNotMatch(html, /Users\/|WiniGen COA_260826|generated tds/i);

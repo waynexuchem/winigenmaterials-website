@@ -128,11 +128,23 @@ function validateProduct(product, templates, slugs, skus) {
   }
 
   const derivedCeilingGrams = activeVariants.reduce((maximum, variant) => Math.max(maximum, variant.netWeightGrams || 0), 0);
-  const directOrderCeilingGrams = product.directOrderCeilingGrams ?? derivedCeilingGrams;
-  if (supportsActivePackages && (!Number.isFinite(directOrderCeilingGrams) || directOrderCeilingGrams <= 0)) {
+  const bulkQuoteThresholdGrams = product.bulkQuoteThresholdGrams ?? null;
+  if (bulkQuoteThresholdGrams !== null && product.directOrderCeilingGrams !== undefined) {
+    fail(`${product.skuBase} cannot define both a direct-order ceiling and a bulk-quote threshold.`);
+  }
+  if (bulkQuoteThresholdGrams !== null && (!Number.isInteger(bulkQuoteThresholdGrams) || bulkQuoteThresholdGrams <= 0)) {
+    fail(`${product.skuBase} has an invalid bulk-quote threshold.`);
+  }
+  if (bulkQuoteThresholdGrams !== null && bulkQuoteThresholdGrams <= derivedCeilingGrams) {
+    fail(`${product.skuBase} has an approved package at or above its bulk-quote threshold.`);
+  }
+  const directOrderCeilingGrams = bulkQuoteThresholdGrams === null
+    ? product.directOrderCeilingGrams ?? derivedCeilingGrams
+    : null;
+  if (supportsActivePackages && bulkQuoteThresholdGrams === null && (!Number.isFinite(directOrderCeilingGrams) || directOrderCeilingGrams <= 0)) {
     fail(`${product.skuBase} requires a positive direct-order commercial ceiling.`);
   }
-  if (supportsActivePackages && directOrderCeilingGrams < derivedCeilingGrams) {
+  if (supportsActivePackages && bulkQuoteThresholdGrams === null && directOrderCeilingGrams < derivedCeilingGrams) {
     fail(`${product.skuBase} has an approved package larger than its direct-order commercial ceiling.`);
   }
 
@@ -141,7 +153,7 @@ function validateProduct(product, templates, slugs, skus) {
     name: normalizeVisibleNotation(product.name),
     commerceState,
     directOrderCeilingGroup: product.directOrderCeilingGroup || product.slug,
-    directOrderCeilingGrams,
+    ...(bulkQuoteThresholdGrams === null ? { directOrderCeilingGrams } : { bulkQuoteThresholdGrams }),
     variants
   };
 }
@@ -248,13 +260,16 @@ validateApprovedPricing(source, approvedPricing, supplementalPricing);
 const slugs = new Set();
 const skus = new Set();
 const products = source.products.map(product => validateProduct(product, source.packageTemplates, slugs, skus));
-const ceilingsByGroup = new Map();
+const commercialLimitsByGroup = new Map();
 for (const product of products.filter(product => ['ONLINE_CHECKOUT', 'PRICE_SHIPPING_REVIEW'].includes(product.commercialStatus))) {
-  const existing = ceilingsByGroup.get(product.directOrderCeilingGroup);
-  if (existing !== undefined && existing !== product.directOrderCeilingGrams) {
-    fail(`${product.directOrderCeilingGroup} has inconsistent direct-order commercial ceilings.`);
+  const limit = product.bulkQuoteThresholdGrams === undefined
+    ? `ceiling:${product.directOrderCeilingGrams}`
+    : `threshold:${product.bulkQuoteThresholdGrams}`;
+  const existing = commercialLimitsByGroup.get(product.directOrderCeilingGroup);
+  if (existing !== undefined && existing !== limit) {
+    fail(`${product.directOrderCeilingGroup} has inconsistent direct-order commercial limits.`);
   }
-  ceilingsByGroup.set(product.directOrderCeilingGroup, product.directOrderCeilingGrams);
+  commercialLimitsByGroup.set(product.directOrderCeilingGroup, limit);
 }
 const { allEntries: shippingEntries, maximumOnlineOrderWeightGrams } = validateShippingCountries(shippingSource);
 

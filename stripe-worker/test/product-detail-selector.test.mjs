@@ -41,7 +41,7 @@ test('every direct product page uses package cards without a package dropdown', 
 });
 
 test('every direct product page uses the tightened single-title purchase layout', async () => {
-  assert.equal(directProducts.length, 93, 'expected the complete direct-order catalog');
+  assert.equal(directProducts.length, 94, 'expected the complete direct-order catalog');
   for (const product of directProducts) {
     const html = await readFile(resolve(siteRoot, 'products', `${product.slug}.html`), 'utf8');
     const headings = html.match(/<h1\b/gi) || [];
@@ -77,7 +77,7 @@ test('standard electrolyte formulation uses its canonical packaging image', asyn
 
 test('every non-MXene product page uses the shared sticky section navigation', async () => {
   const products = semantic.products.filter(product => product.family !== 'mxene-materials');
-  assert.equal(products.length, 96, 'expected every non-MXene canonical product');
+  assert.equal(products.length, 97, 'expected every non-MXene canonical product');
   for (const product of products) {
     const html = await readFile(resolve(siteRoot, product.url.replace(/^\//, '')), 'utf8');
     assert.equal((html.match(/class="product-sticky-shell"/g) || []).length, 1, `${product.slug}: one sticky shell`);

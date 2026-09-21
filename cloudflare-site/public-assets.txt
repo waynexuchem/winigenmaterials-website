@@ -23,6 +23,7 @@ assets/documents/tds/Winigen_LiFSI_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_LiPF6_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_LiPO2F2_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_LiTFSI_Representative_TDS_RevB.pdf
+assets/documents/tds/Winigen_MB_Battery_Grade_TDS.pdf
 assets/documents/tds/Winigen_Mo2CTx_MXene_Multilayer_Powder_TDS.pdf
 assets/documents/tds/Winigen_Mo2CTx_MXene_Single_Few_Layer_Powder_TDS.pdf
 assets/documents/tds/Winigen_Mo2TiC2Tx_MXene_Multilayer_Powder_TDS.pdf
@@ -95,6 +96,7 @@ assets/images/chemical-structures/lithium-hexafluorophosphate-lipf6.png
 assets/images/chemical-structures/lithium-nitrate-lino3.png
 assets/images/chemical-structures/lithium-tetrafluoroborate-libf-4.png
 assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png
+assets/images/chemical-structures/methyl-butyrate-structure.png
 assets/images/chemical-structures/potassium-hexafluorophosphate-kpf-6.png
 assets/images/chemical-structures/prop-1-ene-1-3-sultone-pst.png
 assets/images/chemical-structures/propyl-acetate-pa.png
@@ -571,6 +573,7 @@ products/magnesium-bis-trifluoromethylsulfonyl-imide-mg-tfsi-2.html
 products/magnesium-borohydride-mg-bh-4-2.html
 products/mesoporous-alumina-materials.html
 products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html
+products/methyl-butyrate-mb-battery-grade.html
 products/mo2ctx-mxene-multilayer-powder.html
 products/mo2ctx-mxene-single-few-layer-powder.html
 products/mo2tic2tx-mxene-multilayer-powder.html
