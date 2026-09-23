@@ -30,6 +30,7 @@ const publicRootFiles = new Set([
   'llms.txt',
   'private-orders/confirmation.html',
   'private-orders/wq20260922-01.html',
+  'private-orders/wq20260923-01.html',
   'products.html',
   'quality.html',
   'robots.txt',

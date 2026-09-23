@@ -30,7 +30,7 @@
       const description = document.createElement('p');
       description.textContent = item.kind === 'PRODUCT'
         ? `${item.sku} · ${item.quantity} × ${item.packageLabel}`
-        : 'Fixed freight for the two agreed destinations';
+        : 'Fixed freight for the agreed delivery destination';
       details.append(heading, description);
       const price = document.createElement('div');
       price.className = 'private-order-line__price';
