@@ -256,7 +256,8 @@ function synchronizeQualityDocumentationCopy(html, product) {
 function renderProductDetailExperience(html, product) {
   if (product.commerceStatus !== 'active_checkout') return renderRfqProductNavigation(html, product);
   if (product.mxene?.compositionNote && !html.includes('data-product-detail-ux="true"')) {
-    html = html.replace(/<section class="section dark product-detail-hero" id="overview">[\s\S]*?<\/section>/i, '').replace(/<section class="product-key-specifications" id="specifications">[\s\S]*?<\/section>/i, '');
+    // Keep the source hero until its breadcrumb is converted into shared context/navigation.
+    html = html.replace(/<section class="product-key-specifications" id="specifications">[\s\S]*?<\/section>/i, '');
   }
   const variants = activeVariants(product);
   if (!variants.length) return html;
@@ -293,7 +294,7 @@ function renderProductDetailExperience(html, product) {
     .replace(/<section class="section product-support-routing"[^>]*data-product-support-routing="true"[\s\S]*?<\/section>/gi, '')
     .replace(/<dl class="detail-facts">[\s\S]*?<\/dl>/i, '')
     .replace(/<h3>Typical Specification<\/h3>\s*<ul class="spec-list">[\s\S]*?<\/ul>/i, '')
-    .replace(/<section class="section dark product-detail-hero">[\s\S]*?<\/section>/i, `${context}${navigation}`)
+    .replace(/<section class="section dark product-detail-hero"(?: id="overview")?>[\s\S]*?<\/section>/i, `${context}${navigation}`)
     .replace(/<section class="section(?: product-detail-overview)?"(?: id="overview")?>\s*<div class="container product-detail-layout(?: product-detail-layout--commerce)?">/i, '<section class="section product-detail-overview" id="overview"><div class="container product-detail-layout product-detail-layout--commerce">')
     .replace(/<article class="detail-panel(?: product-detail-commerce-content)?">/i, '<article class="detail-panel product-detail-commerce-content">')
     .replace(/(<article class="detail-panel product-detail-commerce-content">\s*)<p class="detail-kicker">Product Details<\/p>/i, '$1<p class="detail-kicker">About this product</p>')
@@ -1059,10 +1060,13 @@ async function updateFamilyPage(pagePath, familySlug = null) {
   const original = await readFile(fullPath, 'utf8');
   const family = familySlug ? familiesBySlug.get(familySlug) : null;
   const intent = familySlug ? intents.families[familySlug] : null;
-  const title = intent?.title || 'Battery Materials & Electrochemical Components | Winigen Materials';
+  const title = intent?.title || pageMetadata['products.html'].title;
   const description = intent?.description || 'Browse battery electrolyte salts, solvents, additives, solid-state electrolytes, active materials, functional coatings, MXene materials, and formulation support from Winigen Materials.';
   const canonical = family ? `${siteUrl}${family.url}` : `${siteUrl}/products.html`;
   let html = replaceTitle(original, title);
+  if (!familySlug && pagePath === 'products.html') {
+    html = html.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, `<h1>${escapeHtml(pageMetadata['products.html'].h1)}</h1>`);
+  }
   html = replaceMeta(html, 'description', description);
   html = ensureCanonical(html, canonical);
   html = applyOpenGraph(html, { title, description, canonical, image: `${siteUrl}/assets/images/winigen-logo.png`, type: 'website' });

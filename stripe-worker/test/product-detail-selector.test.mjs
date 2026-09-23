@@ -116,6 +116,26 @@ test('product detail generation is idempotent across two consecutive passes', as
   });
 });
 
+test('full MXene reconstruction preserves shared context and navigation on repeated passes', async () => {
+  await withIsolatedSiteFixture(siteRoot, async isolatedRoot => {
+    const mxene = semantic.products.filter(product => product.mxene && product.commerceStatus === 'active_checkout');
+    const run = async () => {
+      await execFileAsync(process.execPath, [resolve(isolatedRoot, 'scripts/generate-mxene-pages.mjs')], { cwd: isolatedRoot });
+      await execFileAsync(process.execPath, [resolve(isolatedRoot, 'seo/build-seo.mjs')], { cwd: isolatedRoot, env: { ...process.env, SEO_SCOPE: 'products' } });
+      return new Map(await Promise.all(mxene.map(async product => {
+        const html = await readFile(resolve(isolatedRoot, product.url.slice(1)), 'utf8');
+        assert.equal((html.match(/class="product-detail-context"/g) || []).length, 1, `${product.slug}: one context strip`);
+        assert.equal((html.match(/data-product-detail-nav="true"/g) || []).length, 1, `${product.slug}: one section navigation`);
+        assert.equal((html.match(/<h1\b/g) || []).length, 1, `${product.slug}: one title`);
+        assert.match(html, /href="#packages"/, `${product.slug}: purchase navigation`);
+        assert.match(html, /data-add-to-cart/, `${product.slug}: direct ordering preserved`);
+        return [product.slug, html];
+      })));
+    };
+    assert.deepEqual(await run(), await run());
+  });
+});
+
 test('shared product-page script uses the selected card key for cart updates', async () => {
   const script = await readFile(resolve(siteRoot, 'assets/js/ecommerce-product-page.js'), 'utf8');
   assert.match(script, /const requestedVariantKey = resolveRequestedVariantKey\(activeVariants\)/);

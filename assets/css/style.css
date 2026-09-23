@@ -286,19 +286,12 @@ body .mobile-menu { display: none; }
     max-width: 390px;
   }
 
-  .mobile-nav-group summary {
-    position: relative;
-    padding: 6px 34px;
-    color: var(--deep);
-    cursor: pointer;
-    font-size: 26px;
-    font-weight: 900;
-    list-style: none;
-  }
-
-  .mobile-nav-group summary::-webkit-details-marker { display: none; }
-  .mobile-nav-group summary::after { content: "+"; position: absolute; right: 8px; top: 4px; color: var(--blue); font-size: 26px; }
-  .mobile-nav-group[open] summary::after { content: "−"; }
+  .mobile-nav-products-row { display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .mobile-menu .mobile-nav-products-row > a { margin: 0; padding: 6px 0; }
+  .mobile-nav-products-toggle { width: 44px; height: 44px; border: 0; border-radius: 6px; background: transparent; color: var(--blue); font: inherit; font-size: 26px; cursor: pointer; }
+  .mobile-nav-products-toggle[aria-expanded="true"] { transform: rotate(180deg); }
+  .mobile-nav-products-toggle:focus-visible, .mobile-nav-products-row > a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+  .mobile-nav-submenu[hidden] { display: none; }
 
   .mobile-nav-submenu {
     display: grid;

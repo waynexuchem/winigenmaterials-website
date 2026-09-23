@@ -350,19 +350,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = Array.from(mobileMenu.querySelectorAll(':scope > a')).find(anchor => config.match.includes(anchor.getAttribute('href') || ''));
     if (!link) return;
 
-    const group = document.createElement('details');
+    const group = document.createElement('div');
     group.className = `mobile-nav-group mobile-nav-products${link.classList.contains('active') ? ' active' : ''}`;
-    const summary = document.createElement('summary');
-    summary.textContent = 'Products';
-    group.appendChild(summary);
+    const row = document.createElement('div');
+    row.className = 'mobile-nav-products-row';
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'mobile-nav-products-toggle';
+    toggle.textContent = '▾';
+    toggle.setAttribute('aria-label', 'Expand product categories');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'mobile-product-categories');
+    group.appendChild(row);
 
     const submenu = document.createElement('div');
     submenu.className = 'mobile-nav-submenu';
-    submenu.setAttribute('role', 'menu');
+    submenu.id = 'mobile-product-categories';
+    submenu.hidden = true;
     appendMenuItem(submenu, { label: config.overview[0], href: config.overview[1] }, 'nav-menu-overview');
     config.items.forEach(item => appendMenuItem(submenu, item));
+    // Ordinary navigation links retain native Tab behavior, not ARIA menu semantics.
+    submenu.querySelectorAll('[role="menuitem"]').forEach(item => item.removeAttribute('role'));
+    const setExpanded = expanded => {
+      submenu.hidden = !expanded;
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.setAttribute('aria-label', `${expanded ? 'Collapse' : 'Expand'} product categories`);
+    };
+    toggle.addEventListener('click', () => setExpanded(submenu.hidden));
+    group.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !submenu.hidden) {
+        setExpanded(false);
+        toggle.focus();
+      }
+    });
     group.appendChild(submenu);
     link.replaceWith(group);
+    row.append(link, toggle);
   };
 
   enhanceLink('products');
