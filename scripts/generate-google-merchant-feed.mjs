@@ -413,8 +413,38 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
   };
 }
 
+// Replace only existing, explicitly selected items; preserve all other bytes.
+export function updateMerchantSkus(current, generated, skus) {
+  if (!skus.length || new Set(skus).size !== skus.length) throw new Error('Provide distinct explicit SKUs.');
+  const blocks = xml => {
+    const found = new Map();
+    for (const match of xml.matchAll(/^    <item>[\s\S]*?^    <\/item>/gm)) {
+      const id = match[0].match(/<g:id>([^<]+)<\/g:id>/)?.[1];
+      if (!id || found.has(id)) throw new Error('Missing or duplicate Merchant item ID.');
+      found.set(id, match[0]);
+    }
+    return found;
+  };
+  const existing = blocks(current), fresh = blocks(generated);
+  for (const sku of skus) {
+    if (!existing.has(sku) || !fresh.has(sku)) throw new Error(`SKU ${sku} must exist in both current and generated feeds.`);
+  }
+  const selected = new Set(skus);
+  return current.replace(/^    <item>[\s\S]*?^    <\/item>/gm, block => {
+    const id = block.match(/<g:id>([^<]+)<\/g:id>/)[1];
+    return selected.has(id) ? fresh.get(id) : block;
+  });
+}
+
 async function run() {
+  const skus = [];
+  for (let i = 2; i < process.argv.length; i += 1) {
+    if (process.argv[i] === '--check') continue;
+    if (process.argv[i] !== '--sku' || !process.argv[i + 1] || process.argv[i + 1].startsWith('--')) throw new Error('Usage: [--check] [--sku SKU ...]');
+    skus.push(process.argv[++i]);
+  }
   const result = await generateGoogleMerchantFeed();
+  if (skus.length) result.xml = updateMerchantSkus(await readFile(outputPath, 'utf8'), result.xml, skus);
   if (process.argv.includes('--check')) {
     const current = await readFile(outputPath, 'utf8').catch(() => '');
     if (current !== result.xml) throw new Error('Generated Merchant feed is stale. Run npm run build:merchant-feed.');

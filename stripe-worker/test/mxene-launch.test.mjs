@@ -11,7 +11,7 @@ const read=p=>readFile(resolve(root,p),'utf8');
 const semantic=JSON.parse(await read('catalog/products.source.json'));
 const source=JSON.parse(await read('ecommerce/catalog.source.json'));
 const products=semantic.products.filter(p=>p.family==='mxene-materials' && p.commerceStatus==='active_checkout' && !p.mxene.compositionNote);
-const expected=[["ti3c2tx",false,[1,2,5],[325,475,825]],["ti3c2tx",true,[1,2,5],[700,1125,2125]],["nb2ctx",false,[1,2,5],[300,425,750]],["nb2ctx",true,[0.5,1,2],[625,1000,1700]],["v2ctx",false,[1,2,5],[300,425,750]],["v2ctx",true,[0.5,1,2],[625,1000,1700]],["mo2ctx",false,[1,2,5],[625,900,1750]],["mo2ctx",true,[0.5,1,2],[900,1600,2700]]];
+const expected=[["ti3c2tx",false,[1,2,5],[310,475,825]],["ti3c2tx",true,[1,2,5],[700,1125,2125]],["nb2ctx",false,[1,2,5],[325,425,750]],["nb2ctx",true,[0.5,1,2],[625,1000,1700]],["v2ctx",false,[1,2,5],[300,425,750]],["v2ctx",true,[0.5,1,2],[625,1000,1700]],["mo2ctx",false,[1,2,5],[625,900,1750]],["mo2ctx",true,[0.5,1,2],[900,1600,2700]]];
 const packageRows=[];
 for(const [formula,few,quantities,prices] of expected){
  const slug=`${formula}-mxene-${few?'single-few-layer':'multilayer'}-powder`;

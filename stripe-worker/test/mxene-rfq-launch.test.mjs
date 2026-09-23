@@ -10,7 +10,7 @@ import {resolveCart,createCartCheckoutSession} from '../src/index.js';
 const root=resolve(import.meta.dirname,'../..'),read=p=>readFile(resolve(root,p),'utf8');
 const semantic=JSON.parse(await read('catalog/products.source.json')),commerce=JSON.parse(await read('ecommerce/catalog.source.json'));
 const all=semantic.products.filter(p=>p.mxene),newProducts=all.filter(p=>p.mxene.compositionNote);
-const prices={"Ti3C2Tx":[[325,475,825],[700,1125,2125]],"Nb2CTx":[[300,425,750],[625,1000,1700]],"V2CTx":[[300,425,750],[625,1000,1700]],"Mo2CTx":[[625,900,1750],[900,1600,2700]],"Ti2CTx":[[275,400,650],[500,725,1200]],"Ti3CNTx":[[325,425,750],[575,875,1500]],"TiVCTx":[[425,575,1050],[675,1100,1950]],"TiNbCTx":[[425,575,1050],[675,1100,1950]],"Mo2TiC2Tx":[[350,475,800],[750,1250,2200]],"Ta4C3Tx":[[425,550,1000],[750,1250,2200]],"Nb4C3Tx":[[425,550,1000],[750,1250,2200]],"V4C3Tx":[[425,550,1000]]};
+const prices={"Ti3C2Tx":[[310,475,825],[700,1125,2125]],"Nb2CTx":[[325,425,750],[625,1000,1700]],"V2CTx":[[300,425,750],[625,1000,1700]],"Mo2CTx":[[625,900,1750],[900,1600,2700]],"Ti2CTx":[[275,400,650],[500,725,1200]],"Ti3CNTx":[[325,425,750],[575,875,1500]],"TiVCTx":[[425,575,1050],[675,1100,1950]],"TiNbCTx":[[425,575,1050],[675,1100,1950]],"Mo2TiC2Tx":[[350,475,800],[750,1250,2200]],"Ta4C3Tx":[[425,550,1000],[750,1250,2200]],"Nb4C3Tx":[[425,550,1000],[750,1250,2200]],"V4C3Tx":[[425,550,1000]]};
 const nodes=x=>!x||typeof x!=='object'?[]:[x,...Object.values(x).flatMap(nodes)];
 const schemas=html=>[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(m=>nodes(JSON.parse(m[1])));
 test('all 69 MXene packages use exact approved prices, canonical SKUs, Offers and Merchant prices',async()=>{
