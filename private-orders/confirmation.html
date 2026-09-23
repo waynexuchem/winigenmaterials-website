@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#12305d">
+  <title>Private Order Confirmation | Winigen Materials</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css?v=bafb66cb44ef">
+  <link rel="stylesheet" href="../assets/css/private-order.css?v=20260922">
+</head>
+<body class="private-order-page" data-private-order-confirmation>
+  <header class="private-order-header">
+    <div class="container private-order-header__inner">
+      <a class="logo" href="/" aria-label="Winigen Materials home"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials"></a>
+      <span>Private customer order</span>
+    </div>
+  </header>
+  <main class="private-order-main private-order-main--confirmation">
+    <div class="container">
+      <section class="private-order-confirmation" aria-labelledby="confirmation-title">
+        <p class="private-order-eyebrow">Payment verification</p>
+        <h1 id="confirmation-title" data-confirmation-title>Confirming payment status…</h1>
+        <p data-confirmation-status>Winigen is waiting for the verified Stripe webhook and server-held order status.</p>
+        <div class="private-order-confirmation__order" data-confirmation-order hidden>
+          <span>Quotation / order number</span>
+          <strong data-confirmation-order-number></strong>
+        </div>
+        <p class="private-order-status private-order-status--error" data-confirmation-error role="alert" hidden></p>
+        <p class="private-order-secure-note">The Stripe redirect alone is not treated as proof of payment.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="private-order-footer">
+    <div class="container"><strong>Winigen Materials LLC</strong><span>Specialty battery materials and electrolyte solutions</span></div>
+  </footer>
+  <script src="../assets/js/commerce-config.js?v=c5bb78604580"></script>
+  <script src="../assets/js/private-order-checkout.js?v=20260922-lifecycle"></script>
+</body>
+</html>

@@ -7,6 +7,7 @@ assets/css/ceramic-product-detail.css
 assets/css/csp-components.css
 assets/css/ecommerce.css
 assets/css/mxene.css
+assets/css/private-order.css
 assets/css/style.css
 assets/documents/coa/Representative-COA-LiBF4.pdf
 assets/documents/coa/Representative-COA-LiDFOB.pdf
@@ -414,6 +415,7 @@ assets/js/knowledge-search.js
 assets/js/legacy-redirect.js
 assets/js/main.js
 assets/js/mxene-presentation.js
+assets/js/private-order-checkout.js
 assets/js/product-search-index.js
 assets/js/product-search.js
 assets/js/purchase-tracking.js
@@ -473,6 +475,8 @@ knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html
 knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html
 knowledge/why-lithium-ion-battery-electrode-edges-are-ceramic-coated.html
 llms.txt
+private-orders/confirmation.html
+private-orders/wq20260922-01.html
 products.html
 products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html
 products/1-2-bis-2-cyanoethoxy-ethane-dene.html

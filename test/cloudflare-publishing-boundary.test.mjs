@@ -22,6 +22,8 @@ test('manifest accepts only recognized production website artifact locations', (
   for (const path of [
     'index.html',
     'knowledge/articles.registry.json',
+    'private-orders/confirmation.html',
+    'private-orders/wq20260922-01.html',
     'products/example.html',
     'knowledge/example.html',
     'feeds/google-merchant.xml',
@@ -49,6 +51,7 @@ test('manifest accepts only recognized production website artifact locations', (
     'assets/images/source.zip',
     'assets/documents/internal.pdf',
     'docs/internal-review.html',
+    'private-orders/unapproved-quote.html',
     'products/nested/example.html'
   ]) {
     assert.throws(() => validatePublicAssetPath(path));

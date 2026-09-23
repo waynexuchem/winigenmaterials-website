@@ -28,6 +28,8 @@ const publicRootFiles = new Set([
   'knowledge.html',
   'knowledge/articles.registry.json',
   'llms.txt',
+  'private-orders/confirmation.html',
+  'private-orders/wq20260922-01.html',
   'products.html',
   'quality.html',
   'robots.txt',

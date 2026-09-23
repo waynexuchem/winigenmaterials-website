@@ -14,6 +14,12 @@ import {
   getPendingOrderNotificationTypes
 } from './email/notifications.js';
 import { resolveShippingDestination } from './shipping.js';
+import {
+  PRIVATE_ORDER_PURPOSE,
+  getPrivateOrder,
+  toCustomerSafePrivateOrder
+} from './private-orders.js';
+import { resolvePrivateCheckout } from './private-checkout-lifecycle.js';
 
 const checkoutPath = '/api/create-checkout-session';
 const shippingQuotePath = '/api/shipping-quote';
@@ -21,6 +27,8 @@ const orderStatusPath = '/api/order-status';
 const commerceStatusPath = '/api/commerce-status';
 const webhookPath = '/api/stripe-webhook';
 const internalCheckoutPath = '/api/internal/cost-compensation-checkout';
+const privateOrderPathPattern = /^\/api\/private-orders\/([A-Z0-9-]+)$/;
+const privateOrderCheckoutPathPattern = /^\/api\/private-orders\/([A-Z0-9-]+)\/checkout$/;
 const webhookToleranceSeconds = 300;
 export const LIVE_SMOKE_TEST_PURPOSE = 'live_checkout_smoke_test';
 export const LIVE_SMOKE_TEST_SKU = 'WM-LIVE-TEST-1USD';
@@ -427,6 +435,7 @@ async function handleShippingQuote(request, env) {
 
 export async function buildPaidEcommercePayload(order, db) {
   if (order?.payment_status !== 'PAID') return null;
+  if (order.purpose === PRIVATE_ORDER_PURPOSE) return null;
   if (!Number.isInteger(order.amount) || order.amount < 0
       || !Number.isInteger(order.merchandise_amount) || order.merchandise_amount < 0
       || !Number.isInteger(order.shipping_amount) || order.shipping_amount < 0
@@ -484,7 +493,7 @@ export async function handleOrderStatus(request, env) {
   }
 
   const order = await env.ORDERS_DB.prepare(`
-    SELECT winigen_order_id, merchandise_amount, shipping_amount, tax_amount, discount_amount, amount, currency, payment_status, fulfillment_status
+    SELECT winigen_order_id, purpose, merchandise_amount, shipping_amount, tax_amount, discount_amount, amount, currency, payment_status, fulfillment_status
     FROM test_orders
     WHERE stripe_checkout_session_id = ?
     LIMIT 1
@@ -507,6 +516,177 @@ export async function handleOrderStatus(request, env) {
     fulfillmentStatus: order.fulfillment_status,
     ...(ecommerce ? { ecommerce } : {})
   }, 200, origin);
+}
+
+function privateOrderRoute(pathname) {
+  const checkoutMatch = pathname.match(privateOrderCheckoutPathPattern);
+  if (checkoutMatch) return { orderId: checkoutMatch[1], action: 'checkout' };
+  const summaryMatch = pathname.match(privateOrderPathPattern);
+  if (summaryMatch) return { orderId: summaryMatch[1], action: 'summary' };
+  return null;
+}
+
+function privateOrderNotFound(origin) {
+  return jsonResponse({ error: 'Private order not found.' }, 404, origin);
+}
+
+async function getPrivateOrderRecord(order, env) {
+  await env.ORDERS_DB.prepare(`
+    INSERT OR IGNORE INTO test_orders (
+      winigen_order_id,
+      checkout_attempt_id,
+      checkout_cart_hash,
+      purpose,
+      payment_status,
+      fulfillment_status
+    ) VALUES (?, ?, ?, ?, 'PENDING', 'NOT_APPLICABLE')
+  `).bind(
+    order.orderId,
+    order.checkoutAttemptId,
+    order.checkoutCartHash,
+    PRIVATE_ORDER_PURPOSE
+  ).run();
+
+  return env.ORDERS_DB.prepare(`
+    SELECT winigen_order_id, stripe_checkout_session_id, checkout_url,
+           checkout_cart_hash, purpose, payment_status
+    FROM test_orders
+    WHERE winigen_order_id = ?
+    LIMIT 1
+  `).bind(order.orderId).first();
+}
+
+export async function createPrivateOrderCheckoutSession(order, env, attempt) {
+  const params = new URLSearchParams({
+    mode: 'payment',
+    expires_at: String(attempt.expires_at),
+    success_url: `${env.SITE_ORIGIN}/private-orders/confirmation.html?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${env.SITE_ORIGIN}/private-orders/${order.orderId.toLowerCase()}.html`,
+    customer_creation: 'always',
+    customer_email: order.billingEmail,
+    billing_address_collection: 'required',
+    'payment_method_types[0]': 'card',
+    client_reference_id: order.orderId,
+    'metadata[winigen_order_id]': order.orderId,
+    'metadata[private_order_id]': order.orderId,
+    'metadata[purpose]': PRIVATE_ORDER_PURPOSE,
+    'metadata[stripe_mode]': env.STRIPE_MODE || 'test',
+    'payment_intent_data[metadata][winigen_order_id]': order.orderId,
+    'payment_intent_data[metadata][private_order_id]': order.orderId,
+    'payment_intent_data[metadata][purpose]': PRIVATE_ORDER_PURPOSE
+  });
+
+  order.lineItems.forEach((item, index) => {
+    params.set(`line_items[${index}][price_data][currency]`, order.currency);
+    params.set(`line_items[${index}][price_data][unit_amount]`, String(item.unitAmount));
+    params.set(`line_items[${index}][price_data][product_data][name]`, item.kind === 'PRODUCT'
+      ? `${item.name} (${item.sku}) — ${item.packageLabel}`
+      : item.name);
+    params.set(`line_items[${index}][price_data][product_data][description]`, item.description);
+    params.set(`line_items[${index}][quantity]`, String(item.quantity));
+  });
+
+  const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Idempotency-Key': `winigen-private-order-${order.orderId}-attempt-${attempt.attempt}`
+    },
+    body: params.toString()
+  });
+  const session = await response.json();
+  if (!response.ok) throw new Error('Unable to create the private-order Checkout Session.');
+  const expectedSessionPrefix = isLiveMode(env) ? 'cs_live_' : 'cs_test_';
+  if (typeof session.id !== 'string' || !session.id.startsWith(expectedSessionPrefix)) {
+    throw new Error('Stripe returned a Checkout Session from the wrong mode.');
+  }
+  if (session.status !== 'open' || session.payment_status !== 'unpaid'
+      || typeof session.url !== 'string' || !session.url.startsWith('https://checkout.stripe.com/')) {
+    throw new Error('Stripe did not return a payable private-order Checkout Session.');
+  }
+  return session;
+}
+
+export async function handlePrivateOrder(request, env, route = privateOrderRoute(new URL(request.url).pathname), now = new Date()) {
+  const origin = request.headers.get('Origin');
+  if (!route || !isAllowedOrigin(request)) return jsonResponse({ error: 'Origin not allowed.' }, 403);
+
+  const order = getPrivateOrder(route.orderId);
+  if (!order) return privateOrderNotFound(origin);
+  if (route.action === 'summary' && request.method === 'GET') {
+    return jsonResponse({ order: toCustomerSafePrivateOrder(order) }, 200, origin);
+  }
+  if (route.action !== 'checkout' || request.method !== 'POST') return privateOrderNotFound(origin);
+
+  const d1Schema = await readD1SchemaStatus(env.ORDERS_DB);
+  if (!d1Schema.ready) {
+    return jsonResponse({ code: 'D1_SCHEMA_OUTDATED', error: 'Checkout is temporarily unavailable while the store is updated.' }, 503, origin);
+  }
+
+  try {
+    const record = await getPrivateOrderRecord(order, env);
+    if (!record
+        || record.checkout_cart_hash !== order.checkoutCartHash
+        || record.purpose !== PRIVATE_ORDER_PURPOSE) {
+      return jsonResponse({ code: 'PRIVATE_ORDER_CONFLICT', error: 'Private order configuration could not be verified.' }, 409, origin);
+    }
+    if (record.payment_status === 'PAID') {
+      return jsonResponse({ code: 'PRIVATE_ORDER_PAID', error: 'This private order has already been paid.' }, 409, origin);
+    }
+    if (record.payment_status !== 'PENDING') {
+      return jsonResponse({ code: 'PRIVATE_ORDER_CLOSED', error: 'This order is closed. Please contact Winigen Materials.' }, 409, origin);
+    }
+
+    const session = await resolvePrivateCheckout(order, env, createPrivateOrderCheckoutSession, now);
+    const lineStatements = order.lineItems.map(item => env.ORDERS_DB.prepare(`
+      INSERT INTO test_order_lines (
+        winigen_order_id, sku, product_slug, product_name, grade, package_label,
+        package_unit, package_quantity, unit_amount, currency, quantity,
+        stripe_price_id, catalog_version, line_subtotal, shipping_amount, order_total
+      )
+      SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'INLINE_PRIVATE_PRICE_DATA', ?, ?, 0, ?
+      WHERE NOT EXISTS (
+        SELECT 1 FROM test_order_lines WHERE winigen_order_id = ? AND sku = ?
+      )
+    `).bind(
+      order.orderId,
+      item.sku,
+      item.productSlug,
+      item.name,
+      item.grade,
+      item.packageLabel,
+      item.packageUnit,
+      item.packageQuantity,
+      item.unitAmount,
+      order.currency,
+      item.quantity,
+      CATALOG_VERSION,
+      item.unitAmount * item.quantity,
+      order.totalAmount,
+      order.orderId,
+      item.sku
+    ));
+    const persisted = await env.ORDERS_DB.batch([
+      env.ORDERS_DB.prepare(`
+        UPDATE test_orders
+        SET stripe_checkout_session_id = ?, checkout_url = ?, merchandise_amount = ?,
+            shipping_amount = 0, shipping_class = 'PRIVATE_NEGOTIATED_FREIGHT',
+            destination_country = 'US', catalog_version = ?, updated_at = CURRENT_TIMESTAMP
+        WHERE winigen_order_id = ? AND payment_status = 'PENDING'
+          AND ? = (SELECT stripe_session_id FROM private_checkout_attempts
+                   WHERE winigen_order_id = ? ORDER BY attempt DESC LIMIT 1)
+      `).bind(session.id, session.url, order.totalAmount, CATALOG_VERSION, order.orderId, session.id, order.orderId),
+      ...lineStatements
+    ]);
+    if (!persisted[0].meta.changes) {
+      return jsonResponse({ error: 'Order status changed; reload before proceeding.' }, 409, origin);
+    }
+    return jsonResponse({ action: 'checkout', url: session.url, orderId: order.orderId }, 200, origin);
+  } catch (error) {
+    console.error('Private-order checkout creation failed', { orderId: order.orderId, message: error.message });
+    return jsonResponse({ error: 'Unable to create private-order checkout.' }, 500, origin);
+  }
 }
 
 function hasValidInternalAuthorization(request, env) {
@@ -848,12 +1028,16 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin');
+    const matchedPrivateOrderRoute = privateOrderRoute(url.pathname);
 
     if (request.method === 'GET' && url.pathname === commerceStatusPath) {
       return handleCommerceStatus(request, env);
     }
 
-    if (request.method === 'OPTIONS' && [checkoutPath, shippingQuotePath].includes(url.pathname) && origin && isAllowedOrigin(request)) {
+    if (request.method === 'OPTIONS'
+      && ([checkoutPath, shippingQuotePath].includes(url.pathname) || matchedPrivateOrderRoute)
+      && origin
+      && isAllowedOrigin(request)) {
       return new Response(null, {
         status: 204,
         headers: {
@@ -878,7 +1062,7 @@ export default {
     }
 
     if (request.method === 'POST'
-      && [checkoutPath, internalCheckoutPath].includes(url.pathname)
+      && ([checkoutPath, internalCheckoutPath].includes(url.pathname) || matchedPrivateOrderRoute?.action === 'checkout')
       && !isCommerceEnabled(env)
       && !liveSmokeGateBypassAllowed) {
       return commerceDisabledResponse(request);
@@ -897,6 +1081,10 @@ export default {
 
     if (request.method === 'POST' && url.pathname === checkoutPath) {
       return handleCreateCheckoutSession(request, env);
+    }
+
+    if (matchedPrivateOrderRoute) {
+      return handlePrivateOrder(request, env, matchedPrivateOrderRoute);
     }
 
     if (request.method === 'POST' && url.pathname === shippingQuotePath) {
