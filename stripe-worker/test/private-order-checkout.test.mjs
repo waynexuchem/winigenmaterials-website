@@ -182,6 +182,10 @@ test('private checkout ignores browser commercial fields and sends fixed server 
     assert.equal(stripeCall.params.get('custom_text[submit][message]'),
       'Delivery destination: Attn: Chuangang Lin, Google LLC, 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA');
     assert.equal(stripeCall.params.get('billing_address_collection'), 'required');
+    assert.equal(stripeCall.params.get('adaptive_pricing[enabled]'), 'false');
+    assert.equal(stripeCall.params.get('payment_method_types[0]'), 'card');
+    assert.equal(stripeCall.params.get('line_items[0][price_data][currency]'), 'usd');
+    assert.equal(stripeCall.params.get('line_items[1][price_data][currency]'), 'usd');
     assert.equal(stripeCall.params.get('line_items[0][price_data][unit_amount]'), '20000');
     assert.equal(stripeCall.params.get('line_items[0][price_data][product_data][name]'),
       'HV LCO–100% Si Electrolyte (KLH-GOG101) — 500 g');

@@ -562,6 +562,7 @@ async function getPrivateOrderRecord(order, env) {
 export async function createPrivateOrderCheckoutSession(order, env, attempt) {
   const params = new URLSearchParams({
     mode: 'payment',
+    'adaptive_pricing[enabled]': 'false',
     expires_at: String(attempt.expires_at),
     success_url: `${env.SITE_ORIGIN}/private-orders/confirmation.html?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${env.SITE_ORIGIN}/private-orders/${order.orderId.toLowerCase()}.html`,
