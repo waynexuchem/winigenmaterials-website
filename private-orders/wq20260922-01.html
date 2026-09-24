@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=bafb66cb44ef">
   <link rel="stylesheet" href="../assets/css/private-order.css?v=20260922">
 </head>
-<body class="private-order-page" data-private-order-id="WQ20260922-01">
+<body class="private-order-page" >
   <header class="private-order-header">
     <div class="container private-order-header__inner">
       <a class="logo" href="/" aria-label="Winigen Materials home"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials"></a>
@@ -22,90 +22,14 @@
   </header>
 
   <main class="private-order-main">
-    <div class="container private-order-shell">
-      <section class="private-order-heading" aria-labelledby="private-order-title">
-        <p class="private-order-eyebrow">Private order checkout</p>
-        <h1 id="private-order-title">Order <span data-order-number>WQ20260922-01</span></h1>
-        <p>Prepared by Winigen Materials LLC for <strong data-customer-name>Google LLC</strong>.</p>
-      </section>
-
-      <div class="private-order-status" data-order-loading role="status">Loading the verified order details…</div>
-      <div class="private-order-status" data-review-banner role="status" hidden><strong>REVIEW ONLY — PAYMENT DISABLED.</strong></div>
-      <div class="private-order-status private-order-status--error" data-order-error role="alert" hidden></div>
-
-      <div class="private-order-layout" data-order-content hidden>
-        <div class="private-order-details">
-          <section class="private-order-card" aria-labelledby="order-summary-title">
-            <div class="private-order-card__heading">
-              <div>
-                <p class="private-order-kicker">Quotation</p>
-                <h2 id="order-summary-title" data-quotation-number>WQ20260922-01</h2>
-              </div>
-              <div class="private-order-meta">
-                <span>Issued <time data-quotation-date></time></span>
-              </div>
-            </div>
-            <div class="private-order-lines" data-order-lines></div>
-            <dl class="private-order-totals">
-              <div><dt>Products</dt><dd data-product-subtotal></dd></div>
-              <div><dt>FedEx Air freight</dt><dd data-freight-total></dd></div>
-              <div class="private-order-totals__grand"><dt>Total</dt><dd data-grand-total></dd></div>
-            </dl>
-          </section>
-
-          <section class="private-order-card" aria-labelledby="shipping-title">
-            <p class="private-order-kicker">Split shipment</p>
-            <h2 id="shipping-title">Delivery destinations</h2>
-            <div class="private-order-addresses" data-shipping-destinations></div>
-          </section>
-
-          <section class="private-order-card private-order-terms" aria-labelledby="terms-title">
-            <p class="private-order-kicker">Commercial terms</p>
-            <h2 id="terms-title">Payment and delivery</h2>
-            <dl>
-              <div><dt>Payment terms</dt><dd data-payment-terms></dd></div>
-              <div><dt>Delivery estimate</dt><dd data-delivery-estimate></dd></div>
-              <div><dt>Delivery basis</dt><dd data-incoterms></dd></div>
-            </dl>
-            <p class="private-order-fine-print" data-buyer-responsibility></p>
-          </section>
-        </div>
-
-        <aside class="private-order-payment" aria-labelledby="payment-title">
-          <p class="private-order-kicker">Payment</p>
-          <h2 id="payment-title">Complete this order securely</h2>
-          <p class="private-order-payment__amount" data-payment-total></p>
-          <p>Billing information will be collected and confirmed in Stripe Checkout.</p>
-          <button class="btn private-order-payment__button" type="button" data-private-order-checkout disabled>Proceed to Secure Payment</button>
-          <p class="private-order-payment__message" data-checkout-message aria-live="polite"></p>
-          <p class="private-order-secure-note"><span aria-hidden="true">●</span> Secure payment processed by Stripe.</p>
-        </aside>
-      </div>
-    </div>
+    <section class="container private-order-shell">
+      <h1>Order WQ20260922-01 is superseded</h1>
+      <p>This quotation is no longer payable. Please use the revised order supplied by Winigen Materials.</p>
+    </section>
   </main>
 
   <footer class="private-order-footer">
     <div class="container"><strong>Winigen Materials LLC</strong><span>Specialty battery materials and electrolyte solutions</span></div>
   </footer>
-  <script src="../assets/js/commerce-config.js?v=c5bb78604580"></script>
-  <script type="application/json" data-private-order-review-summary>
-  {
-    "orderId": "WQ20260922-01", "quotationNumber": "WQ20260922-01", "quotationDate": "2026-09-22",
-    "customerName": "Google LLC", "sellerName": "Winigen Materials LLC", "currency": "USD",
-    "productSubtotal": 40000, "freightTotal": 60000, "totalAmount": 100000,
-    "paymentTerms": "Delivery after payment", "deliveryEstimate": "14–21 days after receipt of payment",
-    "incoterms": "DAP Mountain View, CA / DAP Newberry, IN",
-    "buyerResponsibility": "Import duties, taxes, customs-clearance fees, and unloading are the buyer’s responsibility.",
-    "lineItems": [
-      {"kind":"PRODUCT","sku":"KLH-GOG101","name":"HV LCO–Si Electrolyte","packageLabel":"500 g","quantity":2,"unitAmount":20000,"lineTotal":40000},
-      {"kind":"FREIGHT","sku":"WQ20260922-01-FREIGHT","name":"FedEx Air freight","packageLabel":"Two destinations","quantity":1,"unitAmount":60000,"lineTotal":60000}
-    ],
-    "shippingDestinations": [
-      {"label":"Shipment 1 of 2","recipient":"Chuangang Lin","company":"Google LLC","addressLines":["1600 Amphitheatre Pkwy","Mountain View, CA 94043","USA"]},
-      {"label":"Shipment 2 of 2","recipient":"Swapneel Kulkarni","company":"","addressLines":["7970 S Energy Dr.","Newberry, IN 47449","USA"]}
-    ]
-  }
-  </script>
-  <script src="../assets/js/private-order-checkout.js?v=20260922-lifecycle"></script>
 </body>
 </html>

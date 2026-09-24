@@ -7,9 +7,11 @@ import vm from 'node:vm';
 
 import {
   buildPaidEcommercePayload,
+  handleOrderStatus,
   handlePrivateOrder
 } from '../src/index.js';
 import worker from '../src/index.js';
+import { deliverOrderNotification } from '../src/email/notifications.js';
 import {
   PRIVATE_ORDER_PURPOSE,
   getPrivateOrder,
@@ -17,7 +19,7 @@ import {
 } from '../src/private-orders.js';
 
 const siteOrigin = 'https://www.winigenmaterials.com';
-const testNow = new Date('2026-09-22T16:00:00Z');
+const testNow = new Date('2026-09-23T16:00:00Z');
 
 function createDb() {
   const sqlite = new DatabaseSync(':memory:');
@@ -48,6 +50,9 @@ function createDb() {
       },
       async run() {
         return { meta: sqlite.prepare(sql).run(...values) };
+      },
+      async all() {
+        return { results: sqlite.prepare(sql).all(...values) };
       }
     };
   }
@@ -86,20 +91,36 @@ function privateRequest(path, method = 'GET', body) {
   });
 }
 
-test('WQ20260922-01 is immutable, reconciled, and customer-safe', () => {
-  const order = getPrivateOrder('WQ20260922-01');
+test('superseded quotation is unavailable and cannot reuse or create any Stripe session', async () => {
+  assert.equal(getPrivateOrder('WQ20260922-01'), null);
+  for (const method of ['GET', 'POST']) {
+    const response = await worker.fetch(privateRequest(
+      '/api/private-orders/WQ20260922-01' + (method === 'POST' ? '/checkout' : ''), method
+    ), createEnv({ prepare() { throw new Error('Superseded orders must not reach D1 or Stripe'); } }));
+    assert.equal(response.status, 404);
+  }
+  const retired = await readFile(new URL('../../private-orders/wq20260922-01.html', import.meta.url), 'utf8');
+  assert.match(retired, /noindex,nofollow/);
+  assert.match(retired, /no longer payable/);
+  assert.doesNotMatch(retired, /<script|<button|data-private-order-id|Newberry|split shipment/i);
+});
+
+test('WQ20260923-01 is immutable, reconciled, and customer-safe', () => {
+  const order = getPrivateOrder('WQ20260923-01');
   assert.ok(Object.isFrozen(order));
   assert.equal(order.customerName, 'Google LLC');
   assert.equal(order.productSubtotal, 40000);
-  assert.equal(order.freightTotal, 60000);
-  assert.equal(order.totalAmount, 100000);
-  assert.equal(order.quotationDate, '2026-09-22');
+  assert.equal(order.freightTotal, 40000);
+  assert.equal(order.totalAmount, 80000);
+  assert.equal(order.quotationDate, '2026-09-23');
   assert.equal(order.lineItems[0].sku, 'KLH-GOG101');
+  assert.equal(order.lineItems[0].name, 'HV LCO–100% Si Electrolyte (KLH-GOG101) — 500 g');
   assert.equal(order.lineItems[0].quantity, 2);
   assert.equal(order.lineItems[0].unitAmount, 20000);
   assert.equal(order.shippingDestinations[0].addressLines.join(', '), '1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA');
-  assert.equal(order.shippingDestinations[1].addressLines.join(', '), '7970 S Energy Dr., Newberry, IN 47449, USA');
-  assert.equal(order.shippingDestinations[1].company, '');
+  assert.equal(order.shippingDestinations.length, 1);
+  assert.equal(order.shippingDestinations[0].recipient, 'Chuangang Lin');
+  assert.equal(order.deliveryEstimate, '12–15 days after receipt of payment');
 
   const customerSafe = toCustomerSafePrivateOrder(order);
   const serialized = JSON.stringify(customerSafe);
@@ -113,20 +134,20 @@ test('WQ20260922-01 is immutable, reconciled, and customer-safe', () => {
 test('private order summary returns only server-held customer-safe data', async () => {
   const { db } = createDb();
   const response = await worker.fetch(
-    privateRequest('/api/private-orders/WQ20260922-01'),
+    privateRequest('/api/private-orders/WQ20260923-01'),
     createEnv(db),
     { waitUntil() {} }
   );
   const payload = await response.json();
   assert.equal(response.status, 200);
-  assert.equal(payload.order.orderId, 'WQ20260922-01');
-  assert.equal(payload.order.totalAmount, 100000);
+  assert.equal(payload.order.orderId, 'WQ20260923-01');
+  assert.equal(payload.order.totalAmount, 80000);
   assert.equal(payload.order.lineItems[0].sku, 'KLH-GOG101');
   assert.equal(JSON.stringify(payload).includes('@google.com'), false);
 });
 
 test('private checkout ignores browser commercial fields and sends fixed server values to Stripe', async () => {
-  const { db, state } = createDb();
+  const { db, state, sqlite } = createDb();
   const env = createEnv(db);
   let stripeCall;
   const originalFetch = globalThis.fetch;
@@ -139,7 +160,7 @@ test('private checkout ignores browser commercial fields and sends fixed server 
     });
   };
   try {
-    const request = privateRequest('/api/private-orders/WQ20260922-01/checkout', 'POST', {
+    const request = privateRequest('/api/private-orders/WQ20260923-01/checkout', 'POST', {
       customerName: 'Attacker',
       quantity: 1,
       amount: 1,
@@ -149,28 +170,65 @@ test('private checkout ignores browser commercial fields and sends fixed server 
     const response = await handlePrivateOrder(
       request,
       env,
-      { orderId: 'WQ20260922-01', action: 'checkout' },
+      { orderId: 'WQ20260923-01', action: 'checkout' },
       testNow
     );
     const payload = await response.json();
     assert.equal(response.status, 200);
-    assert.equal(payload.orderId, 'WQ20260922-01');
+    assert.equal(payload.orderId, 'WQ20260923-01');
     assert.equal(stripeCall.url, 'https://api.stripe.com/v1/checkout/sessions');
-    assert.equal(stripeCall.options.headers['Idempotency-Key'], 'winigen-private-order-WQ20260922-01-attempt-1');
-    assert.equal(stripeCall.params.get('client_reference_id'), 'WQ20260922-01');
+    assert.equal(stripeCall.options.headers['Idempotency-Key'], 'winigen-private-order-WQ20260923-01-attempt-1');
+    assert.equal(stripeCall.params.get('client_reference_id'), 'WQ20260923-01');
+    assert.equal(stripeCall.params.get('custom_text[submit][message]'),
+      'Delivery destination: Attn: Chuangang Lin, Google LLC, 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA');
     assert.equal(stripeCall.params.get('billing_address_collection'), 'required');
     assert.equal(stripeCall.params.get('line_items[0][price_data][unit_amount]'), '20000');
+    assert.equal(stripeCall.params.get('line_items[0][price_data][product_data][name]'),
+      'HV LCO–100% Si Electrolyte (KLH-GOG101) — 500 g');
     assert.equal(stripeCall.params.get('line_items[0][quantity]'), '2');
-    assert.equal(stripeCall.params.get('line_items[1][price_data][unit_amount]'), '60000');
+    assert.equal(stripeCall.params.get('line_items[1][price_data][unit_amount]'), '40000');
     assert.equal(stripeCall.params.get('line_items[1][quantity]'), '1');
     assert.equal(stripeCall.params.get('metadata[purpose]'), PRIVATE_ORDER_PURPOSE);
     assert.equal(stripeCall.params.get('success_url'), `${siteOrigin}/private-orders/confirmation.html?session_id={CHECKOUT_SESSION_ID}`);
     assert.equal(stripeCall.params.toString().includes('Attacker'), false);
     assert.equal(stripeCall.params.toString().includes('jpy'), false);
-    assert.equal(state.order.winigen_order_id, 'WQ20260922-01');
-    assert.equal(state.order.merchandise_amount, 100000);
+    assert.equal(state.order.winigen_order_id, 'WQ20260923-01');
+    assert.equal(state.order.merchandise_amount, 80000);
     assert.equal(state.lines.length, 2);
-    assert.equal(state.lines.reduce((sum, line) => sum + line.line_subtotal, 0), 100000);
+    assert.equal(state.lines.reduce((sum, line) => sum + line.line_subtotal, 0), 80000);
+    // Historical snapshots stay untouched; current summaries use the canonical display name.
+    sqlite.prepare("UPDATE test_order_lines SET product_name = 'Electrolyte' WHERE sku = 'KLH-GOG101'").run();
+    const before = JSON.stringify(state.lines);
+    const statusResponse = await handleOrderStatus(privateRequest(
+      '/api/order-status?session_id=cs_live_' + 'q'.repeat(24)), env);
+    const statusPayload = await statusResponse.json();
+    assert.equal(statusPayload.paymentStatus, 'PENDING');
+    assert.equal(statusPayload.privateOrderProductName, getPrivateOrder('WQ20260923-01').lineItems[0].name);
+    assert.equal(JSON.stringify(state.lines), before);
+
+    sqlite.prepare("UPDATE test_orders SET currency = 'usd', amount = 80000, merchandise_amount = 40000, shipping_amount = 40000, payment_status = 'PAID', fulfillment_status = 'NOT_RELEASED'").run();
+    let email;
+    const notificationDb = {
+      prepare(sql) {
+        if (/UPDATE test_order_notifications/.test(sql)) {
+          return { bind() { return this; }, async run() { return { meta: { changes: 1 } }; } };
+        }
+        return db.prepare(sql);
+      }
+    };
+    globalThis.fetch = async (url, options) => {
+      assert.equal(url, 'https://api.resend.com/emails');
+      email = JSON.parse(options.body);
+      return Response.json({ id: 'name-render-test' });
+    };
+    await deliverOrderNotification('evt_name_test', 'WQ20260923-01', 'CUSTOMER_TEST', {
+      ...env, ORDERS_DB: notificationDb, EMAIL_PROVIDER: 'resend', EMAIL_MODE: 'test',
+      RESEND_API_KEY: 'test-only', TEST_ORDER_EMAIL_RECIPIENT: 'test@example.com',
+      ORDER_EMAIL_FROM: 'Winigen <test@example.com>'
+    });
+    assert.ok(email.text.includes(getPrivateOrder('WQ20260923-01').lineItems[0].name));
+    assert.ok(email.html.includes(getPrivateOrder('WQ20260923-01').lineItems[0].name));
+    assert.equal(JSON.stringify(state.lines), before);
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -185,19 +243,19 @@ test('pending session is reused and a paid private order cannot create another C
     calls += 1;
     return Response.json({ id: `cs_live_${'r'.repeat(24)}`, url: 'https://checkout.stripe.com/c/pay/reused',
       status: 'open', payment_status: 'unpaid', expires_at: testNow.getTime() / 1000 + 3600,
-      client_reference_id: 'WQ20260922-01', amount_total: 100000, currency: 'usd', livemode: true });
+      client_reference_id: 'WQ20260923-01', amount_total: 80000, currency: 'usd', livemode: true });
   };
   try {
-    const route = { orderId: 'WQ20260922-01', action: 'checkout' };
-    const first = await handlePrivateOrder(privateRequest('/api/private-orders/WQ20260922-01/checkout', 'POST'), env, route, testNow);
+    const route = { orderId: 'WQ20260923-01', action: 'checkout' };
+    const first = await handlePrivateOrder(privateRequest('/api/private-orders/WQ20260923-01/checkout', 'POST'), env, route, testNow);
     assert.equal(first.status, 200);
-    const second = await handlePrivateOrder(privateRequest('/api/private-orders/WQ20260922-01/checkout', 'POST'), env, route, testNow);
+    const second = await handlePrivateOrder(privateRequest('/api/private-orders/WQ20260923-01/checkout', 'POST'), env, route, testNow);
     assert.equal(second.status, 200);
     assert.equal((await second.json()).url, 'https://checkout.stripe.com/c/pay/reused');
     assert.equal(calls, 2);
 
     state.order.payment_status = 'PAID';
-    const paid = await handlePrivateOrder(privateRequest('/api/private-orders/WQ20260922-01/checkout', 'POST'), env, route, testNow);
+    const paid = await handlePrivateOrder(privateRequest('/api/private-orders/WQ20260923-01/checkout', 'POST'), env, route, testNow);
     assert.equal(paid.status, 409);
     assert.equal((await paid.json()).code, 'PRIVATE_ORDER_PAID');
     assert.equal(calls, 2);
@@ -208,7 +266,7 @@ test('pending session is reused and a paid private order cannot create another C
 
 test('private negotiated orders never emit a GA4 ecommerce payload', async () => {
   const payload = await buildPaidEcommercePayload({
-    winigen_order_id: 'WQ20260922-01',
+    winigen_order_id: 'WQ20260923-01',
     purpose: PRIVATE_ORDER_PURPOSE,
     payment_status: 'PAID'
   }, {
@@ -217,12 +275,12 @@ test('private negotiated orders never emit a GA4 ecommerce payload', async () =>
   assert.equal(payload, null);
 });
 
-const checkoutRoute = { orderId: 'WQ20260922-01', action: 'checkout' };
-const checkoutRequest = () => privateRequest('/api/private-orders/WQ20260922-01/checkout', 'POST');
+const checkoutRoute = { orderId: 'WQ20260923-01', action: 'checkout' };
+const checkoutRequest = () => privateRequest('/api/private-orders/WQ20260923-01/checkout', 'POST');
 function stripeSession(attempt = 1, overrides = {}) {
   return { id: `cs_live_${String(attempt).repeat(24)}`, url: `https://checkout.stripe.com/c/pay/attempt-${attempt}`,
     status: 'open', payment_status: 'unpaid', expires_at: testNow.getTime() / 1000 + 3600,
-    client_reference_id: 'WQ20260922-01', amount_total: 100000, currency: 'usd', livemode: true, ...overrides };
+    client_reference_id: 'WQ20260923-01', amount_total: 80000, currency: 'usd', livemode: true, ...overrides };
 }
 
 for (const unavailable of ['expired', 'missing', 'open-without-url']) {
@@ -248,7 +306,7 @@ for (const unavailable of ['expired', 'missing', 'open-without-url']) {
       const replacement = await handlePrivateOrder(checkoutRequest(), createEnv(db), checkoutRoute, testNow);
       assert.equal(replacement.status, 200);
       assert.equal((await replacement.json()).url, stripeSession(2).url);
-      assert.deepEqual(keys, ['winigen-private-order-WQ20260922-01-attempt-1', 'winigen-private-order-WQ20260922-01-attempt-2']);
+      assert.deepEqual(keys, ['winigen-private-order-WQ20260923-01-attempt-1', 'winigen-private-order-WQ20260923-01-attempt-2']);
       assert.equal(state.lines.length, 2);
       assert.equal(state.order.payment_status, 'PENDING');
       assert.equal(sqlite.prepare('SELECT count(*) AS n FROM private_checkout_attempts').get().n, 2);
@@ -285,7 +343,7 @@ test('concurrent creation retries share the same attempt key and retain one set 
   try {
     const responses = await Promise.all(Array.from({ length: 3 }, () => handlePrivateOrder(checkoutRequest(), createEnv(db), checkoutRoute, testNow)));
     assert.ok(responses.every(response => response.status === 200));
-    assert.deepEqual([...new Set(keys)], ['winigen-private-order-WQ20260922-01-attempt-1']);
+    assert.deepEqual([...new Set(keys)], ['winigen-private-order-WQ20260923-01-attempt-1']);
     assert.equal(state.lines.length, 2);
     assert.equal(sqlite.prepare('SELECT count(*) AS n FROM private_checkout_attempts').get().n, 1);
   } finally { globalThis.fetch = originalFetch; }
@@ -316,7 +374,7 @@ test('missing private-only migration fails closed without contacting Stripe', as
   } finally { globalThis.fetch = originalFetch; }
 });
 
-for (const condition of ['complete', 'paid', 'api-error', 'mismatch']) {
+for (const condition of ['complete', 'paid', 'api-error', 'mismatch', 'obsolete-1000', 'obsolete-780']) {
   test(`${condition} never creates a replacement or marks D1 paid`, async () => {
     const { db, state } = createDb();
     let creates = 0;
@@ -325,7 +383,9 @@ for (const condition of ['complete', 'paid', 'api-error', 'mismatch']) {
       if (options.method === 'POST') { creates += 1; return Response.json(stripeSession()); }
       if (condition === 'api-error') return Response.json({ error: {} }, { status: 503 });
       const overrides = condition === 'complete' ? { status: 'complete' }
-        : condition === 'paid' ? { payment_status: 'paid' } : { amount_total: 1 };
+        : condition === 'paid' ? { payment_status: 'paid' }
+        : condition === 'obsolete-1000' ? { amount_total: 100000 }
+        : condition === 'obsolete-780' ? { amount_total: 78000 } : { amount_total: 1 };
       return Response.json(stripeSession(1, overrides));
     };
     try {
@@ -353,10 +413,10 @@ test('quotation dates do not close checkout; explicitly closed D1 orders cannot 
 });
 
 test('review summary matches server data and preview rendering has no API calls or payment listener', async () => {
-  const html = await readFile(new URL('../../private-orders/wq20260922-01.html', import.meta.url), 'utf8');
+  const html = await readFile(new URL('../../private-orders/wq20260923-01.html', import.meta.url), 'utf8');
   const client = await readFile(new URL('../../assets/js/private-order-checkout.js', import.meta.url), 'utf8');
   const summary = html.match(/<script type="application\/json" data-private-order-review-summary>([\s\S]*?)<\/script>/)[1];
-  const { validThrough, ...safeOrder } = toCustomerSafePrivateOrder(getPrivateOrder('WQ20260922-01'));
+  const { validThrough, ...safeOrder } = toCustomerSafePrivateOrder(getPrivateOrder('WQ20260923-01'));
   assert.deepEqual(JSON.parse(summary), safeOrder);
   for (const hostname of ['review.example.workers.dev', '127.0.0.1', 'www.winigenmaterials.com']) {
     const nodes = new Map();
@@ -366,7 +426,7 @@ test('review summary matches server data and preview rendering has no API calls 
       addEventListener() { throw new Error('Review must not register a payment handler'); }
     });
     const document = {
-      body: { dataset: { privateOrderId: 'WQ20260922-01' }, hasAttribute() { return false; } },
+      body: { dataset: { privateOrderId: 'WQ20260923-01' }, hasAttribute() { return false; } },
       querySelector(selector) {
         if (!nodes.has(selector)) nodes.set(selector, makeNode());
         return nodes.get(selector);
@@ -381,15 +441,47 @@ test('review summary matches server data and preview rendering has no API calls 
     });
     assert.equal(nodes.get('[data-review-banner]').hidden, false);
     assert.equal(nodes.get('[data-private-order-checkout]').disabled, true);
-    assert.equal(nodes.get('[data-grand-total]').textContent, '$1,000.00');
+    assert.equal(nodes.get('[data-grand-total]').textContent, '$800.00');
+    assert.equal(nodes.get('[data-order-lines]').children[0].children[0].children[0].textContent,
+      'HV LCO–100% Si Electrolyte (KLH-GOG101) — 500 g');
+    assert.equal(nodes.get('[data-order-lines]').children[1].children[0].children[0].textContent,
+      'FedEx freight');
     assert.equal(nodes.get('[data-order-content]').hidden, false);
     assert.equal(nodes.get('[data-checkout-message]').textContent, 'REVIEW ONLY — PAYMENT DISABLED.');
   }
 });
 
+test('confirmation renders the server product name and only confirms webhook-paid state', async () => {
+  const client = await readFile(new URL('../../assets/js/private-order-checkout.js', import.meta.url), 'utf8');
+  for (const paymentStatus of ['PENDING', 'PAID']) {
+    const nodes = new Map();
+    const document = {
+      body: { dataset: {}, hasAttribute: () => true },
+      querySelector(selector) {
+        if (!nodes.has(selector)) nodes.set(selector, { textContent: '', hidden: true });
+        return nodes.get(selector);
+      }
+    };
+    const name = getPrivateOrder('WQ20260923-01').lineItems[0].name;
+    vm.runInNewContext(client, { document, URLSearchParams, Intl,
+      sessionStorage: { getItem: () => '', setItem() {}, removeItem() {} },
+      fetch: async () => Response.json({ orderId: 'WQ20260923-01', paymentStatus, privateOrderProductName: name }),
+      window: {
+        location: { hostname: 'www.winigenmaterials.com', search: '?session_id=cs_live_' + 'q'.repeat(24) },
+        WINIGEN_COMMERCE_CONFIG: { checkoutEnabled: true, apiOrigin: 'https://worker.example' },
+        history: { replaceState() {} }, setTimeout: callback => callback()
+      }
+    });
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(nodes.get('[data-confirmation-product-name]').textContent, name);
+    assert.equal(nodes.get('[data-confirmation-product-name]').hidden, false);
+    assert.equal(nodes.get('[data-confirmation-title]').textContent === 'Payment received', paymentStatus === 'PAID');
+  }
+});
+
 test('private pages are unlisted, noindex/nofollow, reusable, and redirect-safe', async () => {
   const [orderPage, confirmationPage, client, sitemap, products, searchIndex] = await Promise.all([
-    readFile(new URL('../../private-orders/wq20260922-01.html', import.meta.url), 'utf8'),
+    readFile(new URL('../../private-orders/wq20260923-01.html', import.meta.url), 'utf8'),
     readFile(new URL('../../private-orders/confirmation.html', import.meta.url), 'utf8'),
     readFile(new URL('../../assets/js/private-order-checkout.js', import.meta.url), 'utf8'),
     readFile(new URL('../../sitemap.xml', import.meta.url), 'utf8'),
@@ -400,14 +492,14 @@ test('private pages are unlisted, noindex/nofollow, reusable, and redirect-safe'
     assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
     assert.doesNotMatch(html, /<nav\b|products\.html|knowledge\.html/);
   }
-  assert.match(orderPage, /data-private-order-id="WQ20260922-01"/);
+  assert.match(orderPage, /data-private-order-id="WQ20260923-01"/);
   assert.match(orderPage, /class="private-order-eyebrow">Private order checkout</);
   assert.doesNotMatch(orderPage, /chuangangl@google\.com|650-660-4312|765-838-9558/);
   assert.match(client, /payload\.paymentStatus === 'PAID'/);
   assert.match(client, /history\.replaceState\(\{\}, '', '\/private-orders\/confirmation\.html'\)/);
   assert.doesNotMatch(client, /gtag|purchase/);
   for (const publicIndex of [sitemap, products, searchIndex]) {
-    assert.equal(publicIndex.includes('WQ20260922-01'), false);
-    assert.equal(publicIndex.includes('wq20260922-01'), false);
+    assert.equal(publicIndex.includes('WQ20260923-01'), false);
+    assert.equal(publicIndex.includes('wq20260923-01'), false);
   }
 });

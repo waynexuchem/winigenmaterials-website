@@ -1,4 +1,5 @@
 import { sendEmail } from './provider.js';
+import { getPrivateOrder } from '../private-orders.js';
 import { createCustomerTestOrderEmail, createInternalOrderEmail } from './templates.js';
 
 const notificationTypes = ['INTERNAL', 'CUSTOMER_TEST'];
@@ -18,11 +19,15 @@ async function loadOrderForNotification(orderId, env) {
     FROM test_orders WHERE winigen_order_id = ?
   `).bind(orderId).first();
   const lineItems = await env.ORDERS_DB.prepare(`
-    SELECT product_name, grade, package_label, unit_amount, line_subtotal, currency, quantity
+    SELECT product_name, grade, package_label, unit_amount, line_subtotal, currency, quantity, sku
     FROM test_order_lines
     WHERE winigen_order_id = ? ORDER BY id
   `).bind(orderId).all();
-  return { order, lineItems: lineItems.results || [] };
+  const privateOrder = getPrivateOrder(orderId);
+  return { order, lineItems: (lineItems.results || []).map(item => {
+    const canonicalItem = privateOrder?.lineItems.find(line => line.sku === item.sku);
+    return canonicalItem ? { ...item, product_name: canonicalItem.name } : item;
+  }) };
 }
 
 export async function createOrderNotificationRecords(eventId, orderId, env) {

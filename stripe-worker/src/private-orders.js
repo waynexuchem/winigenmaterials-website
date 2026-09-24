@@ -1,29 +1,29 @@
 export const PRIVATE_ORDER_PURPOSE = 'PRIVATE_NEGOTIATED_ORDER';
 
 const googleOrder = Object.freeze({
-  orderId: 'WQ20260922-01',
-  quotationNumber: 'WQ20260922-01',
-  quotationDate: '2026-09-22',
-  validThrough: '2026-09-29',
+  orderId: 'WQ20260923-01',
+  quotationNumber: 'WQ20260923-01',
+  quotationDate: '2026-09-23',
+  validThrough: null,
   customerName: 'Google LLC',
   sellerName: 'Winigen Materials LLC',
   billingEmail: 'chuangangl@google.com',
   currency: 'usd',
   productSubtotal: 40000,
-  freightTotal: 60000,
-  totalAmount: 100000,
+  freightTotal: 40000,
+  totalAmount: 80000,
   paymentTerms: 'Delivery after payment',
-  deliveryEstimate: '14–21 days after receipt of payment',
-  incoterms: 'DAP Mountain View, CA / DAP Newberry, IN',
+  deliveryEstimate: '12–15 days after receipt of payment',
+  incoterms: 'DAP Mountain View, CA',
   buyerResponsibility: 'Import duties, taxes, customs-clearance fees, and unloading are the buyer’s responsibility.',
-  checkoutAttemptId: 'private-WQ20260922-01',
-  checkoutCartHash: 'PRIVATE_ORDER|WQ20260922-01|KLH-GOG101|2|500G|FREIGHT|1|USD|100000|v2',
+  checkoutAttemptId: 'private-WQ20260923-01',
+  checkoutCartHash: 'PRIVATE_ORDER|WQ20260923-01|KLH-GOG101|2|500G|FREIGHT|1|USD|80000|v2',
   lineItems: Object.freeze([
     Object.freeze({
       kind: 'PRODUCT',
       sku: 'KLH-GOG101',
       productSlug: 'private-hv-lco-si-electrolyte',
-      name: 'HV LCO–Si Electrolyte',
+      name: 'HV LCO–100% Si Electrolyte (KLH-GOG101) — 500 g',
       grade: 'KLH-GOG101',
       packageLabel: '500 g',
       packageUnit: 'g',
@@ -34,36 +34,26 @@ const googleOrder = Object.freeze({
     }),
     Object.freeze({
       kind: 'FREIGHT',
-      sku: 'WQ20260922-01-FREIGHT',
+      sku: 'WQ20260923-01-FREIGHT',
       productSlug: 'private-order-freight',
-      name: 'FedEx Air freight',
-      grade: 'Split shipment',
-      packageLabel: 'Two destinations',
+      name: 'FedEx freight',
+      grade: 'FedEx freight',
+      packageLabel: 'Mountain View delivery',
       packageUnit: 'shipment',
       packageQuantity: 1,
       quantity: 1,
-      unitAmount: 60000,
-      description: 'FedEx Air · split shipment to Mountain View, CA and Newberry, IN'
+      unitAmount: 40000,
+      description: 'FedEx freight · Mountain View, CA'
     })
   ]),
   shippingDestinations: Object.freeze([
     Object.freeze({
-      label: 'Shipment 1 of 2',
+      label: 'Delivery destination',
       recipient: 'Chuangang Lin',
       company: 'Google LLC',
       addressLines: Object.freeze([
         '1600 Amphitheatre Pkwy',
         'Mountain View, CA 94043',
-        'USA'
-      ])
-    }),
-    Object.freeze({
-      label: 'Shipment 2 of 2',
-      recipient: 'Swapneel Kulkarni',
-      company: '',
-      addressLines: Object.freeze([
-        '7970 S Energy Dr.',
-        'Newberry, IN 47449',
         'USA'
       ])
     })

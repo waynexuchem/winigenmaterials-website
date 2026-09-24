@@ -172,6 +172,7 @@
     const status = document.querySelector('[data-confirmation-status]');
     const orderBlock = document.querySelector('[data-confirmation-order]');
     const orderNumber = document.querySelector('[data-confirmation-order-number]');
+    const productName = document.querySelector('[data-confirmation-product-name]');
     const error = document.querySelector('[data-confirmation-error]');
     if (!apiOrigin || !sessionPattern.test(sessionId)) {
       if (error) {
@@ -189,10 +190,14 @@
         if (orderPattern.test(payload.orderId || '')) {
           if (orderNumber) orderNumber.textContent = payload.orderId;
           if (orderBlock) orderBlock.hidden = false;
+          if (productName && payload.privateOrderProductName) {
+            productName.textContent = payload.privateOrderProductName;
+            productName.hidden = false;
+          }
         }
         if (payload.paymentStatus === 'PAID') {
           if (title) title.textContent = 'Payment received';
-          if (status) status.textContent = 'Your payment has been verified. The order remains pending fulfillment review, and Winigen Materials will coordinate the agreed split shipment.';
+          if (status) status.textContent = 'Your payment has been verified. The order remains pending fulfillment review, and Winigen Materials will coordinate the agreed delivery.';
           try { sessionStorage.removeItem(confirmationStorageKey); } catch { /* Paid status is already confirmed. */ }
           return;
         }

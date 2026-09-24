@@ -514,6 +514,9 @@ export async function handleOrderStatus(request, env) {
     orderId: order.winigen_order_id,
     paymentStatus: order.payment_status,
     fulfillmentStatus: order.fulfillment_status,
+    ...(order.purpose === PRIVATE_ORDER_PURPOSE && getPrivateOrder(order.winigen_order_id)
+      ? { privateOrderProductName: getPrivateOrder(order.winigen_order_id).lineItems.find(item => item.kind === 'PRODUCT').name }
+      : {}),
     ...(ecommerce ? { ecommerce } : {})
   }, 200, origin);
 }
@@ -565,6 +568,9 @@ export async function createPrivateOrderCheckoutSession(order, env, attempt) {
     customer_creation: 'always',
     customer_email: order.billingEmail,
     billing_address_collection: 'required',
+    'custom_text[submit][message]': 'Delivery destination: ' + order.shippingDestinations.map(destination =>
+      [`Attn: ${destination.recipient}`, destination.company, ...destination.addressLines].filter(Boolean).join(', ')
+    ).join('; '),
     'payment_method_types[0]': 'card',
     client_reference_id: order.orderId,
     'metadata[winigen_order_id]': order.orderId,
@@ -579,9 +585,7 @@ export async function createPrivateOrderCheckoutSession(order, env, attempt) {
   order.lineItems.forEach((item, index) => {
     params.set(`line_items[${index}][price_data][currency]`, order.currency);
     params.set(`line_items[${index}][price_data][unit_amount]`, String(item.unitAmount));
-    params.set(`line_items[${index}][price_data][product_data][name]`, item.kind === 'PRODUCT'
-      ? `${item.name} (${item.sku}) — ${item.packageLabel}`
-      : item.name);
+    params.set(`line_items[${index}][price_data][product_data][name]`, item.name);
     params.set(`line_items[${index}][price_data][product_data][description]`, item.description);
     params.set(`line_items[${index}][quantity]`, String(item.quantity));
   });
