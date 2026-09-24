@@ -1419,8 +1419,8 @@
     {
       "slug": "vinylene-carbonate-vc",
       "url": "/products/vinylene-carbonate-vc.html",
-      "name": "Vinylene carbonate (VC)",
-      "description": "Vinylene carbonate (VC), CAS 872-36-6, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid at room temperature; crystalline at lower temperature..",
+      "name": "Vinylene Carbonate (VC)",
+      "description": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-VC",
@@ -1457,10 +1457,64 @@
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Colorless transparent liquid at room temperature; crystalline at lower temperature."
+          "name": "Appearance",
+          "value": "Colorless transparent liquid, no impurities"
+        },
+        {
+          "name": "Assay excluding BHT",
+          "value": "≥99.98 wt%"
+        },
+        {
+          "name": "Water",
+          "value": "≤30 µg/g"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤10 ppm"
+        },
+        {
+          "name": "BHT",
+          "value": "40–110 ppm"
+        },
+        {
+          "name": "Color",
+          "value": "≤10 Hazen"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤1 µg/g"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay excluding BHT",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Assay excluding BHT",
+          "Water",
+          "Acidity, as HF",
+          "BHT",
+          "Color",
+          "Sulfate",
+          "Chloride"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_VC_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "cf2b1963217d853dcf8c6b792ae73935fe95ef49d6d719afa28efb3ed1c894c3"
+        }
+      }
     },
     {
       "slug": "vinyl-ethylene-carbonate-vec",
@@ -1551,7 +1605,7 @@
       "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
       "url": "/products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html",
       "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
-      "description": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "description": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-DTD",
@@ -1587,14 +1641,72 @@
         {
           "name": "Grade",
           "value": "Battery material grade"
+        },
+        {
+          "name": "Appearance",
+          "value": "White crystalline material or powder, no mechanical impurities"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.5 wt%"
+        },
+        {
+          "name": "Water",
+          "value": "≤100 µg/g"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Color",
+          "value": "≤30 Hazen"
+        },
+        {
+          "name": "Ethylene sulfite",
+          "value": "≤500 ppm"
+        },
+        {
+          "name": "Ethylene glycol",
+          "value": "≤300 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 µg/g"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Assay",
+          "Water",
+          "Acidity, as HF",
+          "Color",
+          "Ethylene sulfite",
+          "Ethylene glycol",
+          "Chloride"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_DTD_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "14805bb0725d1540a6c939643fcb581607445238240b2710aafaa53cbe85ae37"
+        }
+      }
     },
     {
       "slug": "prop-1-ene-1-3-sultone-pst",
       "url": "/products/prop-1-ene-1-3-sultone-pst.html",
       "name": "Prop-1-ene-1,3-sultone (PST)",
-      "description": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "description": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-PST",
@@ -1621,7 +1733,7 @@
         },
         {
           "name": "Formula",
-          "value": "C3H4O3 S"
+          "value": "C3H4O3S"
         },
         {
           "name": "Availability",
@@ -1630,14 +1742,57 @@
         {
           "name": "Grade",
           "value": "Battery material grade"
+        },
+        {
+          "name": "Appearance",
+          "value": "White crystalline material, no impurities"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.5 wt%"
+        },
+        {
+          "name": "Water",
+          "value": "≤50 µg/g"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 µg/g"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤20 ppm"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Assay",
+          "Water",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_PST_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "ea60e495b71f5212e710d77631b39ea704b27ccf77e280b46ca2aef729d30d0a"
+        }
+      }
     },
     {
       "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
       "url": "/products/4-fluoro-1-3-dioxolan-2-one-fec.html",
       "name": "4-Fluoro-1,3-dioxolan-2-one (FEC)",
-      "description": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid at room temperature; crystalline at lower temperature..",
+      "description": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-FEC",
@@ -1676,16 +1831,65 @@
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Colorless transparent liquid at room temperature; crystalline at lower temperature."
+          "name": "Appearance",
+          "value": "Colorless transparent liquid, no impurities"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.95 wt%"
+        },
+        {
+          "name": "Water",
+          "value": "≤30 µg/g"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤15 ppm"
+        },
+        {
+          "name": "Color",
+          "value": "≤10 Hazen"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤1 µg/g"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Assay",
+          "Water",
+          "Acidity, as HF",
+          "Color",
+          "Sulfate",
+          "Chloride"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_FEC_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "22976eb978fedee3f14270f000fe202a7ebc65dc4e09a86a4dc12eaf517c6fa8"
+        }
+      }
     },
     {
       "slug": "succinonitrile-sn",
       "url": "/products/succinonitrile-sn.html",
       "name": "Succinonitrile (SN)",
-      "description": "Succinonitrile (SN), CAS 110-61-2, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Solid at room temperature..",
+      "description": "Succinonitrile (SN), CAS 110-61-2, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Waxy solid, no mechanical impurities; Color: ≤30 Hazen; Water: ≤100 ppm; Assay: ≥99.90 wt%; Acidity, as HF: ≤100 ppm; Chloride: ≤5 ppm; Sulfate: ≤10 ppm.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-SN",
@@ -1722,10 +1926,59 @@
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Solid at room temperature."
+          "name": "Appearance",
+          "value": "Waxy solid, no mechanical impurities"
+        },
+        {
+          "name": "Color",
+          "value": "≤30 Hazen"
+        },
+        {
+          "name": "Water",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.90 wt%"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Color",
+          "Water",
+          "Assay",
+          "Acidity, as HF",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_SN_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "a00a863dd0df839a9cad5225f6d6619a34dba4ffc3ab739fd19419ea2cde6dff"
+        }
+      }
     },
     {
       "slug": "adiponitrile-adn",
@@ -1820,7 +2073,7 @@
       "slug": "1-3-6-hexanetricarbonitrile-htcn",
       "url": "/products/1-3-6-hexanetricarbonitrile-htcn.html",
       "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
-      "description": "1,3,6-Hexanetricarbonitrile (HTCN), CAS 1772-25-4, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "description": "1,3,6-Hexanetricarbonitrile (HTCN), CAS 1772-25-4, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities; Color: ≤50 Hazen; Water: ≤100 ppm; Assay: ≥99.5 wt%; Acidity, as HF: ≤100 ppm; Chloride: ≤5 ppm; Sulfate: ≤10 ppm.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-HTCN",
@@ -1856,14 +2109,67 @@
         {
           "name": "Grade",
           "value": "Battery material grade"
+        },
+        {
+          "name": "Appearance",
+          "value": "Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities"
+        },
+        {
+          "name": "Color",
+          "value": "≤50 Hazen"
+        },
+        {
+          "name": "Water",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.5 wt%"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Color",
+          "Water",
+          "Assay",
+          "Acidity, as HF",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_HTCN_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "080551c4179800cd81ca3b6a67a47ec8ab2e38c8da90be3c9fb138fa94961197"
+        }
+      }
     },
     {
       "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
       "url": "/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html",
-      "name": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
-      "description": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS), CAS 99591-74-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Solid powder..",
+      "name": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
+      "description": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS), CAS 99591-74-9, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no mechanical impurities; Color: ≤50 Hazen; Free acid, as HF: ≤80 ppm; Water: ≤80 µg/g; Assay: ≥99.5 wt%; Chloride: ≤5 µg/g.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-MMDS",
@@ -1901,10 +2207,54 @@
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Solid powder."
+          "name": "Appearance",
+          "value": "White crystalline material, no mechanical impurities"
+        },
+        {
+          "name": "Color",
+          "value": "≤50 Hazen"
+        },
+        {
+          "name": "Free acid, as HF",
+          "value": "≤80 ppm"
+        },
+        {
+          "name": "Water",
+          "value": "≤80 µg/g"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.5 wt%"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 µg/g"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Color",
+          "Free acid, as HF",
+          "Water",
+          "Assay",
+          "Chloride"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_MMDS_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "6a6607c659f2f09b3801e7652cd0875fc1133e25161f08b940757606718900b3"
+        }
+      }
     },
     {
       "slug": "tris-trimethylsilyl-borate-tmsb",
@@ -1951,8 +2301,8 @@
     {
       "slug": "tris-trimethylsilyl-phosphate-tmsp",
       "url": "/products/tris-trimethylsilyl-phosphate-tmsp.html",
-      "name": "Tris-(trimethylsilyl)-phosphate (TMSP)",
-      "description": "Tris-(trimethylsilyl)-phosphate (TMSP), CAS 10497-05-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Liquid..",
+      "name": "Tris(trimethylsilyl) phosphate (TMSP)",
+      "description": "Tris(trimethylsilyl) phosphate (TMSP), CAS 10497-05-9, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no mechanical impurities; Color: ≤20 Hazen; Water: ≤50 ppm; Assay: ≥99.5 wt%; Acidity: ≤200 ppm.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TMSP",
@@ -1978,7 +2328,7 @@
         },
         {
           "name": "Formula",
-          "value": "[(CH 3) 3 SiO] 3 P(O)"
+          "value": "C9H27O4PSi3"
         },
         {
           "name": "Availability",
@@ -1989,16 +2339,55 @@
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Liquid."
+          "name": "Appearance",
+          "value": "Colorless transparent liquid, no mechanical impurities"
+        },
+        {
+          "name": "Color",
+          "value": "≤20 Hazen"
+        },
+        {
+          "name": "Water",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.5 wt%"
+        },
+        {
+          "name": "Acidity",
+          "value": "≤200 ppm"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Color",
+          "Water",
+          "Assay",
+          "Acidity"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_TMSP_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "69d52b4fd0df632bd7045b0469bd34efd8ce07e69e246f3322e53af60fc9f4dd"
+        }
+      }
     },
     {
       "slug": "1-3-propanesultone-ps",
       "url": "/products/1-3-propanesultone-ps.html",
       "name": "1,3-Propanesultone (PS)",
-      "description": "1,3-Propanesultone (PS), CAS 1120-71-4, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless liquid..",
+      "description": "1,3-Propanesultone (PS), CAS 1120-71-4, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid or crystalline material, with no mechanical impurities, insoluble matter, or flocculent material; Color: ≤20 Hazen; Water: ≤50 ppm; Assay: ≥99.95 wt%; Free acid, as HF: ≤20 ppm; Chloride: ≤2 ppm; Sulfate: ≤5 ppm.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-PS",
@@ -2025,7 +2414,7 @@
         },
         {
           "name": "Formula",
-          "value": "C6H12O6S2"
+          "value": "C3H6O3S"
         },
         {
           "name": "Availability",
@@ -2036,16 +2425,65 @@
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Colorless liquid."
+          "name": "Appearance",
+          "value": "Colorless transparent liquid or crystalline material, with no mechanical impurities, insoluble matter, or flocculent material"
+        },
+        {
+          "name": "Color",
+          "value": "≤20 Hazen"
+        },
+        {
+          "name": "Water",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.95 wt%"
+        },
+        {
+          "name": "Free acid, as HF",
+          "value": "≤20 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤2 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤5 ppm"
         }
-      ]
+      ],
+      "catalogCardSpecifications": [
+        "Assay",
+        "Water",
+        "Appearance"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "finalized-tds",
+        "keySpecifications": [
+          "CAS Number",
+          "Formula",
+          "Appearance",
+          "Color",
+          "Water",
+          "Assay",
+          "Free acid, as HF",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_PS_Representative_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "includesRepresentativeResults": true,
+          "sha256": "b8189b22da9c63cbe9e7371dcfac63e52f75764acf41d89e14ba31758b01a2c3"
+        }
+      }
     },
     {
       "slug": "trimethylsilyl-phosphite-ttpi",
       "url": "/products/trimethylsilyl-phosphite-ttpi.html",
-      "name": "Trimethylsilyl phosphite (TTPi)",
-      "description": "Trimethylsilyl phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "name": "Tris(trimethylsilyl) phosphite (TTPi)",
+      "description": "Tris(trimethylsilyl) phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TTPI",
@@ -2055,8 +2493,8 @@
         "TMSPi"
       ],
       "commercialIntents": [
-        "Trimethylsilyl phosphite (TTPi) supplier",
-        "where to buy Trimethylsilyl phosphite (TTPi)"
+        "Tris(trimethylsilyl) phosphite (TTPi) supplier",
+        "where to buy Tris(trimethylsilyl) phosphite (TTPi)"
       ],
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
@@ -2072,7 +2510,7 @@
         },
         {
           "name": "Formula",
-          "value": "C9H33O6PSi3"
+          "value": "C9H27O3PSi3"
         },
         {
           "name": "Availability",

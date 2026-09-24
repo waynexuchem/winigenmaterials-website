@@ -14,6 +14,9 @@ scripts/*
 !scripts/normalize-commerce-prices.mjs
 !scripts/build-product-search-index.mjs
 !scripts/generate-public-product-pages.mjs
+!scripts/generate-additive-tds.mjs
+!scripts/sync-additive-tds.mjs
+!scripts/sync-product-identities.mjs
 !scripts/generate-functional-coatings-pages.mjs
 !scripts/generate-mxene-pages.mjs
 !scripts/mxene-catalog-order.mjs

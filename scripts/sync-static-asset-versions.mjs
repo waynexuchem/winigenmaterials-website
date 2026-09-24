@@ -71,8 +71,8 @@ for (const filePath of await htmlFiles()) {
   if (updated !== original) {
     pendingChanges.push(relative(siteRoot, filePath));
     if (!checkOnly) {
-      const cleanChangedAssetLines = updated.split('\r\n').map((line, index, lines) => line + (index === lines.length - 1 ? '' : /assets\/(?:css|js)\//.test(line) ? '\n' : '\r\n')).join('');
-      await writeFile(filePath, cleanChangedAssetLines);
+      // Replacing cache tokens must preserve existing line endings, including mixed-EOL files.
+      await writeFile(filePath, updated);
     }
   }
 }

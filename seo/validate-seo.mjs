@@ -325,8 +325,11 @@ for (const product of productSource.products) {
       if ((productHtml.match(/Technical Data Sheet \(PDF\)/g) || []).length !== 2) errors.push(`${pagePath}: expected two descriptive TDS actions.`);
       if (!/<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i.test(productHtml)) errors.push(`${pagePath}: MXene-style TDS action is not separated below the product image.`);
       if (!/data-product-tds-section="true"/i.test(productHtml)) errors.push(`${pagePath}: lower quality/documentation section is missing.`);
-      if (!/Request Current Lot COA \/ SDS/i.test(productHtml)) errors.push(`${pagePath}: lot-specific COA/SDS action is missing.`);
-      if (tds.includesRepresentativeResults === false) {
+      const finalizedAdditive = product.qualityDocumentation?.specificationBasis === 'finalized-tds';
+      if (!(finalizedAdditive ? /Request Current Lot COA<\/a>/i : /Request Current Lot COA \/ SDS/i).test(productHtml)) errors.push(`${pagePath}: lot-specific COA/SDS action is missing.`);
+      if (finalizedAdditive) {
+        if (!/Technical specifications and representative quality-control data are available in the TDS\./.test(productHtml) || !/Lot-specific Certificate of Analysis and SDS are available upon request\./.test(productHtml)) errors.push(`${pagePath}: finalized additive documentation language is incomplete.`);
+      } else if (tds.includesRepresentativeResults === false) {
         if (!/without publishing representative-lot analytical results/i.test(productHtml) || !/lot-specific COA governs material supplied/i.test(productHtml)) {
           errors.push(`${pagePath}: specification-only TDS and lot-specific COA distinction is incomplete.`);
         }
@@ -336,7 +339,7 @@ for (const product of productSource.products) {
       if (!/href="\.\.\/quality\.html"/i.test(productHtml)) errors.push(`${pagePath}: general quality documentation link is missing.`);
       const requestedKeys = product.qualityDocumentation?.keySpecifications || [];
       const propertiesByName = new Map((product.additionalProperty || []).map(item => [item.name?.toLowerCase(), item]));
-      if (!requestedKeys.length || requestedKeys.length > 6) errors.push(`${pagePath}: TDS key-specification selection must contain 1–6 fields.`);
+      if (!requestedKeys.length || requestedKeys.length > (finalizedAdditive ? 10 : 6)) errors.push(`${pagePath}: TDS key-specification selection must contain 1–6 fields.`);
       for (const key of requestedKeys) {
         if (!propertiesByName.has(String(key).toLowerCase())) errors.push(`${pagePath}: selected key specification is absent from canonical product data: ${key}.`);
       }

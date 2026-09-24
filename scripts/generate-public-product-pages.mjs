@@ -1,10 +1,12 @@
+import { synchronizeAdditiveTds } from './sync-additive-tds.mjs';
 import { access, readFile, writeFile as writeRawFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { hardenPublicMarkup } from './harden-public-markup.mjs';
 import { formatProductChemistry } from './format-product-chemistry.mjs';
+import { synchronizeProductIdentities } from './sync-product-identities.mjs';
 
 // Apply the same CSP preparation to existing and newly generated HTML.
-const writeFile = (path, html) => writeRawFile(path, formatProductChemistry(hardenPublicMarkup(html)));
+const writeFile = (path, html) => writeRawFile(path, formatProductChemistry(hardenPublicMarkup(synchronizeAdditiveTds(synchronizeProductIdentities(html, catalog.products, path), catalog.products, path))));
 
 const root = resolve(import.meta.dirname, '..');
 const catalog = JSON.parse(await readFile(resolve(root, 'catalog/products.source.json'), 'utf8'));
@@ -268,7 +270,7 @@ for (const product of catalog.products) {
   try {
     await access(path);
     const current = await readFile(path, 'utf8');
-    const synchronized = formatProductChemistry(hardenPublicMarkup(synchronizeChemicalStructures(current)));
+    const synchronized = formatProductChemistry(hardenPublicMarkup(synchronizeProductIdentities(synchronizeChemicalStructures(current), catalog.products, path)));
     if (synchronized !== current) await writeFile(path, synchronized);
   } catch {
     await writeFile(path, detailPage(product));

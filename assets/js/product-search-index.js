@@ -227,7 +227,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
     },
     {
       "slug": "vinylene-carbonate-vc",
-      "name": "Vinylene carbonate (VC)",
+      "name": "Vinylene Carbonate (VC)",
       "aliases": [
         "VC"
       ],
@@ -235,7 +235,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C3H2O3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Vinylene carbonate (VC), CAS 872-36-6, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid at room temperature; crystalline at lower temperature.. VC supplier where to buy VC Abbreviation VC CAS Number 872-36-6 Formula C3H2O3 Availability RFQ Grade Battery material grade Physical Colorless transparent liquid at room temperature; crystalline at lower temperature."
+      "metadata": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. VC supplier where to buy VC Abbreviation VC CAS Number 872-36-6 Formula C3H2O3 Availability RFQ Grade Battery material grade Appearance Colorless transparent liquid, no impurities Assay excluding BHT ≥99.98 wt% Water ≤30 µg/g Acidity, as HF ≤10 ppm BHT 40–110 ppm Color ≤10 Hazen Sulfate ≤5 ppm Chloride ≤1 µg/g"
     },
     {
       "slug": "vinyl-ethylene-carbonate-vec",
@@ -273,7 +273,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C2H4O4S",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. DTD supplier where to buy DTD Abbreviation DTD CAS Number 1072-53-3 Formula C2H4O4S Availability RFQ Grade Battery material grade"
+      "metadata": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. DTD supplier where to buy DTD Abbreviation DTD CAS Number 1072-53-3 Formula C2H4O4S Availability RFQ Grade Battery material grade Appearance White crystalline material or powder, no mechanical impurities Assay ≥99.5 wt% Water ≤100 µg/g Acidity, as HF ≤100 ppm Color ≤30 Hazen Ethylene sulfite ≤500 ppm Ethylene glycol ≤300 ppm Chloride ≤5 µg/g"
     },
     {
       "slug": "prop-1-ene-1-3-sultone-pst",
@@ -283,10 +283,10 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
         "Prop-1-ene-1"
       ],
       "cas": "21806-61-1",
-      "formula": "C3H4O3 S",
+      "formula": "C3H4O3S",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. PST supplier where to buy PST Abbreviation PST CAS Number 21806-61-1 Formula C3H4O3 S Availability RFQ Grade Battery material grade"
+      "metadata": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. PST supplier where to buy PST Abbreviation PST CAS Number 21806-61-1 Formula C3H4O3S Availability RFQ Grade Battery material grade Appearance White crystalline material, no impurities Assay ≥99.5 wt% Water ≤50 µg/g Chloride ≤5 µg/g Sulfate ≤20 ppm"
     },
     {
       "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
@@ -300,7 +300,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C3H3FO3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid at room temperature; crystalline at lower temperature.. FEC supplier where to buy FEC Abbreviation FEC CAS Number 114435-02-8 Formula C3H3FO3 Availability RFQ Grade Battery material grade Physical Colorless transparent liquid at room temperature; crystalline at lower temperature."
+      "metadata": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. FEC supplier where to buy FEC Abbreviation FEC CAS Number 114435-02-8 Formula C3H3FO3 Availability RFQ Grade Battery material grade Appearance Colorless transparent liquid, no impurities Assay ≥99.95 wt% Water ≤30 µg/g Acidity, as HF ≤15 ppm Color ≤10 Hazen Sulfate ≤5 ppm Chloride ≤1 µg/g"
     },
     {
       "slug": "succinonitrile-sn",
@@ -312,7 +312,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C4H4N2",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Succinonitrile (SN), CAS 110-61-2, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Solid at room temperature.. SN supplier where to buy SN Abbreviation SN CAS Number 110-61-2 Formula C4H4N2 Availability RFQ Grade Battery material grade Physical Solid at room temperature."
+      "metadata": "Succinonitrile (SN), CAS 110-61-2, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Waxy solid, no mechanical impurities; Color: ≤30 Hazen; Water: ≤100 ppm; Assay: ≥99.90 wt%; Acidity, as HF: ≤100 ppm; Chloride: ≤5 ppm; Sulfate: ≤10 ppm. SN supplier where to buy SN Abbreviation SN CAS Number 110-61-2 Formula C4H4N2 Availability RFQ Grade Battery material grade Appearance Waxy solid, no mechanical impurities Color ≤30 Hazen Water ≤100 ppm Assay ≥99.90 wt% Acidity, as HF ≤100 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "adiponitrile-adn",
@@ -350,11 +350,11 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C9H11N3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "1,3,6-Hexanetricarbonitrile (HTCN), CAS 1772-25-4, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. HTCN supplier where to buy HTCN Abbreviation HTCN CAS Number 1772-25-4 Formula C9H11N3 Availability RFQ Grade Battery material grade"
+      "metadata": "1,3,6-Hexanetricarbonitrile (HTCN), CAS 1772-25-4, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities; Color: ≤50 Hazen; Water: ≤100 ppm; Assay: ≥99.5 wt%; Acidity, as HF: ≤100 ppm; Chloride: ≤5 ppm; Sulfate: ≤10 ppm. HTCN supplier where to buy HTCN Abbreviation HTCN CAS Number 1772-25-4 Formula C9H11N3 Availability RFQ Grade Battery material grade Appearance Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities Color ≤50 Hazen Water ≤100 ppm Assay ≥99.5 wt% Acidity, as HF ≤100 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
-      "name": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
+      "name": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
       "aliases": [
         "MMDS",
         "1"
@@ -363,7 +363,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C2H4O6S2",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "1,5,2,4-dioxadithiane-2,2,4,4-tetraoxide (MMDS), CAS 99591-74-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Solid powder.. MMDS supplier where to buy MMDS Abbreviation MMDS CAS Number 99591-74-9 Formula C2H4O6S2 Availability RFQ Grade Battery material grade Physical Solid powder."
+      "metadata": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS), CAS 99591-74-9, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no mechanical impurities; Color: ≤50 Hazen; Free acid, as HF: ≤80 ppm; Water: ≤80 µg/g; Assay: ≥99.5 wt%; Chloride: ≤5 µg/g. MMDS supplier where to buy MMDS Abbreviation MMDS CAS Number 99591-74-9 Formula C2H4O6S2 Availability RFQ Grade Battery material grade Appearance White crystalline material, no mechanical impurities Color ≤50 Hazen Free acid, as HF ≤80 ppm Water ≤80 µg/g Assay ≥99.5 wt% Chloride ≤5 µg/g"
     },
     {
       "slug": "tris-trimethylsilyl-borate-tmsb",
@@ -379,15 +379,15 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
     },
     {
       "slug": "tris-trimethylsilyl-phosphate-tmsp",
-      "name": "Tris-(trimethylsilyl)-phosphate (TMSP)",
+      "name": "Tris(trimethylsilyl) phosphate (TMSP)",
       "aliases": [
         "TMSP"
       ],
       "cas": "10497-05-9",
-      "formula": "[(CH 3) 3 SiO] 3 P(O)",
+      "formula": "C9H27O4PSi3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Tris-(trimethylsilyl)-phosphate (TMSP), CAS 10497-05-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Liquid.. TMSP supplier where to buy TMSP Abbreviation TMSP CAS Number 10497-05-9 Formula [(CH 3) 3 SiO] 3 P(O) Availability RFQ Grade Battery material grade Physical Liquid."
+      "metadata": "Tris(trimethylsilyl) phosphate (TMSP), CAS 10497-05-9, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no mechanical impurities; Color: ≤20 Hazen; Water: ≤50 ppm; Assay: ≥99.5 wt%; Acidity: ≤200 ppm. TMSP supplier where to buy TMSP Abbreviation TMSP CAS Number 10497-05-9 Formula C9H27O4PSi3 Availability RFQ Grade Battery material grade Appearance Colorless transparent liquid, no mechanical impurities Color ≤20 Hazen Water ≤50 ppm Assay ≥99.5 wt% Acidity ≤200 ppm"
     },
     {
       "slug": "1-3-propanesultone-ps",
@@ -397,23 +397,23 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
         "1"
       ],
       "cas": "1120-71-4",
-      "formula": "C6H12O6S2",
+      "formula": "C3H6O3S",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "1,3-Propanesultone (PS), CAS 1120-71-4, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless liquid.. PS supplier where to buy PS Abbreviation PS CAS Number 1120-71-4 Formula C6H12O6S2 Availability RFQ Grade Battery material grade Physical Colorless liquid."
+      "metadata": "1,3-Propanesultone (PS), CAS 1120-71-4, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid or crystalline material, with no mechanical impurities, insoluble matter, or flocculent material; Color: ≤20 Hazen; Water: ≤50 ppm; Assay: ≥99.95 wt%; Free acid, as HF: ≤20 ppm; Chloride: ≤2 ppm; Sulfate: ≤5 ppm. PS supplier where to buy PS Abbreviation PS CAS Number 1120-71-4 Formula C3H6O3S Availability RFQ Grade Battery material grade Appearance Colorless transparent liquid or crystalline material, with no mechanical impurities, insoluble matter, or flocculent material Color ≤20 Hazen Water ≤50 ppm Assay ≥99.95 wt% Free acid, as HF ≤20 ppm Chloride ≤2 ppm Sulfate ≤5 ppm"
     },
     {
       "slug": "trimethylsilyl-phosphite-ttpi",
-      "name": "Trimethylsilyl phosphite (TTPi)",
+      "name": "Tris(trimethylsilyl) phosphite (TTPi)",
       "aliases": [
         "TTPi",
         "TMSPi"
       ],
       "cas": "1795-31-9",
-      "formula": "C9H33O6PSi3",
+      "formula": "C9H27O3PSi3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Trimethylsilyl phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. Trimethylsilyl phosphite (TTPi) supplier where to buy Trimethylsilyl phosphite (TTPi) Abbreviation TTPi CAS Number 1795-31-9 Formula C9H33O6PSi3 Availability Online ordering Grade Battery material grade"
+      "metadata": "Tris(trimethylsilyl) phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. Tris(trimethylsilyl) phosphite (TTPi) supplier where to buy Tris(trimethylsilyl) phosphite (TTPi) Abbreviation TTPi CAS Number 1795-31-9 Formula C9H27O3PSi3 Availability Online ordering Grade Battery material grade"
     },
     {
       "slug": "sodium-hexafluorophosphate-napf-6",

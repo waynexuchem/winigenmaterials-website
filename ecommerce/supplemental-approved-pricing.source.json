@@ -1135,7 +1135,7 @@
     {
       "slug": "trimethylsilyl-phosphite-ttpi",
       "skuBase": "WM-ADD-TTPI",
-      "name": "Trimethylsilyl phosphite (TTPi)",
+      "name": "Tris(trimethylsilyl) phosphite (TTPi)",
       "defaultPackageId": "200G",
       "commercialStatus": "ONLINE_CHECKOUT",
       "shippingClass": "STANDARD_RD",

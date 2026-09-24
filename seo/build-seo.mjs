@@ -1,4 +1,6 @@
-import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { isFinalizedAdditive, synchronizeAdditiveTds, documentationCopy as additiveDocumentationCopy } from '../scripts/sync-additive-tds.mjs';
+import { synchronizeProductIdentities } from '../scripts/sync-product-identities.mjs';
+import { mkdir, readFile, readdir, writeFile as writeRawFile } from 'node:fs/promises';
 import { dirname, extname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFile as execFileCallback } from 'node:child_process';
@@ -11,6 +13,8 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
 const siteUrl = 'https://www.winigenmaterials.com';
 const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
+const writeFile = (path, content, ...options) => writeRawFile(path,
+  typeof content === 'string' ? synchronizeAdditiveTds(synchronizeProductIdentities(content, productSource.products, path), productSource.products, path) : content, ...options);
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const shippingSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/shipping-countries.source.json'), 'utf8'));
 const commerceAssetVersion = shortCommerceRelease(createCommerceRelease(ecommerceSource, shippingSource));
@@ -32,7 +36,7 @@ function absoluteSiteUrl(value = '') {
 async function writePreservingEol(path, content, original = '') {
   const productPath = relative(siteRoot, path);
   if (productPath === 'products.html' || (productPath.startsWith('products/') && productPath.endsWith('.html'))) content = formatProductChemistry(content);
-  const preserveExistingAssetVersions = productsByPath.get(productPath)?.qualityDocumentation?.tds?.representativeOnly;
+  const preserveExistingAssetVersions = isFinalizedAdditive(productsByPath.get(productPath) || {}) || productsByPath.get(productPath)?.qualityDocumentation?.tds?.representativeOnly;
   if (path.endsWith('.html') && !preserveExistingAssetVersions) {
     content = content.replace(
       /(assets\/js\/(?:main|cart|ecommerce-catalog|ecommerce-listing|ecommerce-product-page)\.js)(?:\?v=[^"']+)?/g,
@@ -167,7 +171,7 @@ function productKeySpecifications(product) {
     return preferredNames
       .map(name => propertiesByName.get(String(name).toLowerCase()))
       .filter(Boolean)
-      .slice(0, 6);
+      .slice(0, isFinalizedAdditive(product) ? undefined : 6);
   }
   const isSse = product.family === 'solid-state-electrolytes';
   const priorities = isSse
@@ -225,6 +229,9 @@ function lowerQualityDocumentation(product, documentationHref) {
   const tds = product.qualityDocumentation?.tds;
   if (!tds) return '';
   const tdsHref = tds.path.startsWith('/') ? `..${tds.path}` : tds.path;
+  if (isFinalizedAdditive(product)) {
+    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>${additiveDocumentationCopy}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section></div></section><!-- product-tds-section:end -->`;
+  }
   if (tds.representativeOnly) {
     return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Representative TDS</h3><p>Specification limits and representative lot results are provided for technical reference. Representative results are lot-specific; the applicable lot-specific Certificate of Analysis governs material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Representative TDS (PDF)</a></div></section></div></section><!-- product-tds-section:end -->`;
   }
@@ -239,6 +246,7 @@ function lowerQualityDocumentation(product, documentationHref) {
 }
 
 function synchronizeQualityDocumentationCopy(html, product) {
+  if (isFinalizedAdditive(product)) return synchronizeAdditiveTds(html, [product], product.url);
   if (!product.qualityDocumentation?.tds && !product.qualityDocumentation?.representativeCoa) return html;
   const excluded = /^(?:abbreviation|cas number|formula|availability|commercial availability)$/i;
   const specifications = productKeySpecifications(product)
@@ -1028,7 +1036,7 @@ async function updateProductPage(pagePath, product) {
   html = renderStaticRfqState(html, product);
   html = ensureStylesheet(
     html,
-    product.qualityDocumentation?.tds?.representativeOnly
+    (isFinalizedAdditive(product) || product.qualityDocumentation?.tds?.representativeOnly)
       ? '../assets/css/ecommerce.css'
       : '../assets/css/ecommerce.css?v=' + generatedAssetVersion
   );
