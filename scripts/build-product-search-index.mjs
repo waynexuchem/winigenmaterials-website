@@ -1,3 +1,4 @@
+import { identityAliases, displayIdentity } from './catalog-card-identity.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,14 +20,16 @@ const sectionByFamily = {
 const property = (product, name) => product.additionalProperty?.find(item => item.name === name)?.value || '';
 const records = source.products.map(product => ({
   slug: product.slug,
-  name: product.name,
-  aliases: product.aliases || [],
+  name: displayIdentity(product),
+  aliases: identityAliases(product),
   cas: property(product, 'CAS Number'),
   formula: property(product, 'Formula'),
   section: sectionByFamily[product.family] || product.family,
   category: product.category,
   metadata: [
     product.description,
+    product.chemicalName,
+    ...identityAliases(product),
     ...(product.commercialIntents || []),
     ...(product.additionalProperty || []).flatMap(item => [item.name, item.value])
   ].filter(Boolean).join(' ')

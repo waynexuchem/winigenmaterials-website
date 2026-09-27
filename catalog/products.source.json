@@ -161,7 +161,13 @@
           "name": "Sulfate",
           "value": "≤5 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "LiPF6",
+      "cardCategory": "Lithium Salt",
+      "familyFaqWaterProperty": "Water",
+      "chemicalName": "Lithium hexafluorophosphate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "lithium-difluorophosphate-lipo-2-f-2",
@@ -242,6 +248,13 @@
           "name": "Sulfate",
           "value": "≤10 ppm"
         }
+      ],
+      "primaryAbbreviation": "LiPO2F2",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium difluorophosphate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [
+        "LiDFP"
       ]
     },
     {
@@ -292,7 +305,12 @@
           "name": "Water",
           "value": "≤ 50 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "LiBOB",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium bis(oxalato)borate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "lithium-difluoro-oxalate-borate-liodfb",
@@ -391,12 +409,19 @@
           "name": "Sulfate",
           "value": "≤2 ppm"
         }
+      ],
+      "primaryAbbreviation": "LiODFB",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium difluoro oxalate borate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [
+        "LiDFOB"
       ]
     },
     {
       "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
       "url": "/products/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.html",
-      "name": "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI)",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide (LiTFSI)",
       "description": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity ≥99.9 wt%, water ≤200 ppm, and acidity as HF ≤50 ppm.",
       "family": "lithium-salts",
       "category": "Lithium Salts",
@@ -420,8 +445,8 @@
         ]
       },
       "commercialIntents": [
-        "Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI) supplier",
-        "where to buy Lithium bis-(trifluoromethane- sulphonyl)imide (LiTFSI)"
+        "Lithium bis(trifluoromethanesulfonyl)imide (LiTFSI) supplier",
+        "where to buy Lithium bis(trifluoromethanesulfonyl)imide (LiTFSI)"
       ],
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
@@ -475,7 +500,16 @@
           "name": "Insoluble matter",
           "value": "≤100 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "LiTFSI",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "legacyChemicalNames": [
+        "Lithium bis-(trifluoromethane- sulphonyl)imide",
+        "Lithium bis-(trifluoromethane-sulphonyl)imide"
+      ],
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
@@ -555,7 +589,12 @@
           "name": "Sulfate",
           "value": "≤10 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "LiFSI",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium bis(fluorosulfonyl)imide",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "lithium-tetrafluoroborate-libf-4",
@@ -645,7 +684,12 @@
           "name": "Sulfate",
           "value": "≤10 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "LiBF4",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium tetrafluoroborate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "ethylene-carbonate-ec",
@@ -733,7 +777,12 @@
           "name": "Physical",
           "value": "Colorless transparent liquid above 35°C; crystalline solid at room temperature."
         }
-      ]
+      ],
+      "primaryAbbreviation": "EC",
+      "cardCategory": "Solvent",
+      "chemicalName": "Ethylene carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "dimethyl-carbonate-dmc",
@@ -817,7 +866,12 @@
           "name": "Physical",
           "value": "Colorless transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "DMC",
+      "cardCategory": "Solvent",
+      "chemicalName": "Dimethyl carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "diethyl-carbonate-dec",
@@ -901,7 +955,12 @@
           "name": "Physical",
           "value": "Colorless transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "DEC",
+      "cardCategory": "Solvent",
+      "chemicalName": "Diethyl carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "ethyl-methyl-carbonate-emc",
@@ -985,7 +1044,12 @@
           "name": "Physical",
           "value": "Colorless transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "EMC",
+      "cardCategory": "Solvent",
+      "chemicalName": "Ethyl methyl carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "propylene-carbonate-pc",
@@ -1069,7 +1133,12 @@
           "name": "Physical",
           "value": "Colorless transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "PC",
+      "cardCategory": "Solvent",
+      "chemicalName": "Propylene carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "ethyl-acetate-ea",
@@ -1119,7 +1188,12 @@
           "name": "Physical",
           "value": "Colorless liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "EA",
+      "cardCategory": "Solvent",
+      "chemicalName": "Ethyl acetate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "2-2-difluoroethyl-acetate-dfea",
@@ -1131,8 +1205,7 @@
       "sku": "WM-SOL-DFEA",
       "image": "/assets/images/chemical-structures/2-2-difluoroethyl-acetate-dfea.png",
       "aliases": [
-        "DFEA",
-        "2"
+        "DFEA"
       ],
       "qualityDocumentation": {
         "tds": {
@@ -1192,7 +1265,12 @@
           "name": "Refractive index, n20/D",
           "value": "1.3520–1.3560"
         }
-      ]
+      ],
+      "primaryAbbreviation": "DFEA",
+      "cardCategory": "Solvent",
+      "chemicalName": "2,2-Difluoroethyl acetate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-2-dimethoxyethane-dme",
@@ -1204,8 +1282,7 @@
       "sku": "WM-SOL-DME",
       "image": "/assets/images/chemical-structures/1-2-dimethoxyethane-dme.png",
       "aliases": [
-        "DME",
-        "1"
+        "DME"
       ],
       "commercialIntents": [
         "DME supplier",
@@ -1243,20 +1320,24 @@
           "name": "Physical",
           "value": "Colorless transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "DME",
+      "cardCategory": "Solvent",
+      "chemicalName": "1,2-Dimethoxyethane",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
       "url": "/products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html",
-      "name": "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether (TTE)",
-      "description": "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether (TTE), CAS 16627-68-2, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "name": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE)",
+      "description": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE), CAS 16627-68-2, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-TTE",
       "image": "/assets/images/chemical-structures/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.png",
       "aliases": [
-        "TTE",
-        "1"
+        "TTE"
       ],
       "commercialIntents": [
         "TTE supplier",
@@ -1294,7 +1375,15 @@
           "name": "Physical",
           "value": "Colorless transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "TTE",
+      "cardCategory": "Solvent",
+      "chemicalName": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether",
+      "legacyChemicalNames": [
+        "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether"
+      ],
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
@@ -1306,8 +1395,7 @@
       "sku": "WM-SOL-FEMC",
       "image": "/assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png",
       "aliases": [
-        "FEMC",
-        "Methyl 2"
+        "FEMC"
       ],
       "commercialIntents": [
         "FEMC supplier",
@@ -1345,7 +1433,12 @@
           "name": "Physical",
           "value": "Transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "FEMC",
+      "cardCategory": "Solvent",
+      "chemicalName": "Methyl 2,2,2-trifluoroethyl carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
@@ -1357,8 +1450,7 @@
       "sku": "WM-SOL-TFEC",
       "image": "/assets/images/chemical-structures/bis-2-2-2-trifluoroethyl-carbonate-tfec.png",
       "aliases": [
-        "TFEC",
-        "Bis(2"
+        "TFEC"
       ],
       "qualityDocumentation": {
         "tds": {
@@ -1414,7 +1506,12 @@
           "name": "Appearance",
           "value": "Colorless liquid"
         }
-      ]
+      ],
+      "primaryAbbreviation": "TFEC",
+      "cardCategory": "Solvent",
+      "chemicalName": "Bis(2,2,2-trifluoroethyl) carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "vinylene-carbonate-vc",
@@ -1514,7 +1611,12 @@
           "includesRepresentativeResults": true,
           "sha256": "cf2b1963217d853dcf8c6b792ae73935fe95ef49d6d719afa28efb3ed1c894c3"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "VC",
+      "cardCategory": "Additive",
+      "chemicalName": "Vinylene Carbonate"
     },
     {
       "slug": "vinyl-ethylene-carbonate-vec",
@@ -1556,7 +1658,12 @@
           "name": "Grade",
           "value": "Battery material grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "VEC",
+      "cardCategory": "Additive",
+      "chemicalName": "Vinyl ethylene carbonate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-3-propanediol-cyclic-sulfate-ts",
@@ -1568,8 +1675,7 @@
       "sku": "WM-ADD-TS",
       "image": "/assets/images/chemical-structures/1-3-propanediol-cyclic-sulfate-ts.png",
       "aliases": [
-        "TS",
-        "1"
+        "TS"
       ],
       "commercialIntents": [
         "TS supplier",
@@ -1599,7 +1705,12 @@
           "name": "Grade",
           "value": "Battery material grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "TS",
+      "cardCategory": "Additive",
+      "chemicalName": "1,3-Propanediol cyclic sulfate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
@@ -1611,8 +1722,7 @@
       "sku": "WM-ADD-DTD",
       "image": "/assets/images/chemical-structures/1-3-2-dioxathiolane-2-2-dioxide-dtd.png",
       "aliases": [
-        "DTD",
-        "1"
+        "DTD"
       ],
       "commercialIntents": [
         "DTD supplier",
@@ -1700,7 +1810,12 @@
           "includesRepresentativeResults": true,
           "sha256": "14805bb0725d1540a6c939643fcb581607445238240b2710aafaa53cbe85ae37"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "DTD",
+      "cardCategory": "Additive",
+      "chemicalName": "1,3,2-Dioxathiolane 2,2-dioxide"
     },
     {
       "slug": "prop-1-ene-1-3-sultone-pst",
@@ -1712,8 +1827,7 @@
       "sku": "WM-ADD-PST",
       "image": "/assets/images/chemical-structures/prop-1-ene-1-3-sultone-pst.png",
       "aliases": [
-        "PST",
-        "Prop-1-ene-1"
+        "PST"
       ],
       "commercialIntents": [
         "PST supplier",
@@ -1786,7 +1900,12 @@
           "includesRepresentativeResults": true,
           "sha256": "ea60e495b71f5212e710d77631b39ea704b27ccf77e280b46ca2aef729d30d0a"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "PST",
+      "cardCategory": "Additive",
+      "chemicalName": "Prop-1-ene-1,3-sultone"
     },
     {
       "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
@@ -1799,7 +1918,6 @@
       "image": "/assets/images/chemical-structures/4-fluoro-1-3-dioxolan-2-one-fec.png",
       "aliases": [
         "FEC",
-        "4-Fluoro-1",
         "fluoroethylene carbonate"
       ],
       "commercialIntents": [
@@ -1883,7 +2001,14 @@
           "includesRepresentativeResults": true,
           "sha256": "22976eb978fedee3f14270f000fe202a7ebc65dc4e09a86a4dc12eaf517c6fa8"
         }
-      }
+      },
+      "approvedSynonyms": [
+        "fluoroethylene carbonate"
+      ],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "FEC",
+      "cardCategory": "Additive",
+      "chemicalName": "4-Fluoro-1,3-dioxolan-2-one"
     },
     {
       "slug": "succinonitrile-sn",
@@ -1978,7 +2103,12 @@
           "includesRepresentativeResults": true,
           "sha256": "a00a863dd0df839a9cad5225f6d6619a34dba4ffc3ab739fd19419ea2cde6dff"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "SN",
+      "cardCategory": "Additive",
+      "chemicalName": "Succinonitrile"
     },
     {
       "slug": "adiponitrile-adn",
@@ -2024,7 +2154,12 @@
           "name": "Physical",
           "value": "Colorless transparent liquid."
         }
-      ]
+      ],
+      "primaryAbbreviation": "ADN",
+      "cardCategory": "Additive",
+      "chemicalName": "Adiponitrile",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
@@ -2036,8 +2171,7 @@
       "sku": "WM-ADD-DENE",
       "image": "/assets/images/chemical-structures/1-2-bis-2-cyanoethoxy-ethane-dene.png",
       "aliases": [
-        "DENE",
-        "1"
+        "DENE"
       ],
       "commercialIntents": [
         "DENE supplier",
@@ -2067,7 +2201,12 @@
           "name": "Grade",
           "value": "Battery material grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "DENE",
+      "cardCategory": "Additive",
+      "chemicalName": "1,2-Bis(2-cyanoethoxy)ethane",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-3-6-hexanetricarbonitrile-htcn",
@@ -2079,8 +2218,7 @@
       "sku": "WM-ADD-HTCN",
       "image": "/assets/images/chemical-structures/1-3-6-hexanetricarbonitrile-htcn.png",
       "aliases": [
-        "HTCN",
-        "1"
+        "HTCN"
       ],
       "commercialIntents": [
         "HTCN supplier",
@@ -2163,7 +2301,12 @@
           "includesRepresentativeResults": true,
           "sha256": "080551c4179800cd81ca3b6a67a47ec8ab2e38c8da90be3c9fb138fa94961197"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "HTCN",
+      "cardCategory": "Additive",
+      "chemicalName": "1,3,6-Hexanetricarbonitrile"
     },
     {
       "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
@@ -2175,8 +2318,7 @@
       "sku": "WM-ADD-MMDS",
       "image": "/assets/images/chemical-structures/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.png",
       "aliases": [
-        "MMDS",
-        "1"
+        "MMDS"
       ],
       "commercialIntents": [
         "MMDS supplier",
@@ -2254,7 +2396,12 @@
           "includesRepresentativeResults": true,
           "sha256": "6a6607c659f2f09b3801e7652cd0875fc1133e25161f08b940757606718900b3"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "MMDS",
+      "cardCategory": "Additive",
+      "chemicalName": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide"
     },
     {
       "slug": "tris-trimethylsilyl-borate-tmsb",
@@ -2296,7 +2443,12 @@
           "name": "Grade",
           "value": "Battery material grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "TMSB",
+      "cardCategory": "Additive",
+      "chemicalName": "Tris(trimethylsilyl)borate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "tris-trimethylsilyl-phosphate-tmsp",
@@ -2381,7 +2533,12 @@
           "includesRepresentativeResults": true,
           "sha256": "69d52b4fd0df632bd7045b0469bd34efd8ce07e69e246f3322e53af60fc9f4dd"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "TMSP",
+      "cardCategory": "Additive",
+      "chemicalName": "Tris(trimethylsilyl) phosphate"
     },
     {
       "slug": "1-3-propanesultone-ps",
@@ -2393,8 +2550,7 @@
       "sku": "WM-ADD-PS",
       "image": "/assets/images/chemical-structures/1-3-propanesultone-ps.png",
       "aliases": [
-        "PS",
-        "1"
+        "PS"
       ],
       "commercialIntents": [
         "PS supplier",
@@ -2477,7 +2633,12 @@
           "includesRepresentativeResults": true,
           "sha256": "b8189b22da9c63cbe9e7371dcfac63e52f75764acf41d89e14ba31758b01a2c3"
         }
-      }
+      },
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "PS",
+      "cardCategory": "Additive",
+      "chemicalName": "1,3-Propanesultone"
     },
     {
       "slug": "trimethylsilyl-phosphite-ttpi",
@@ -2520,6 +2681,13 @@
           "name": "Grade",
           "value": "Battery material grade"
         }
+      ],
+      "primaryAbbreviation": "TTPi",
+      "cardCategory": "Additive",
+      "chemicalName": "Tris(trimethylsilyl) phosphite",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [
+        "TMSPi"
       ]
     },
     {
@@ -2570,7 +2738,12 @@
           "name": "Water",
           "value": "≤ 20 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "NaPF6",
+      "cardCategory": "Next-Gen Salt",
+      "chemicalName": "Sodium hexafluorophosphate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "sodium-difluoro-oxalate-borate-naodfb",
@@ -2598,10 +2771,6 @@
           "value": "NaDFOB"
         },
         {
-          "name": "Alternate Abbreviation",
-          "value": "NaODFB"
-        },
-        {
           "name": "CAS Number",
           "value": "1016545-84-8"
         },
@@ -2625,6 +2794,13 @@
           "name": "Water",
           "value": "≤ 50 ppm"
         }
+      ],
+      "primaryAbbreviation": "NaDFOB",
+      "cardCategory": "Next-Gen Salt",
+      "chemicalName": "Sodium difluoro(oxalato)borate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [
+        "NaODFB"
       ]
     },
     {
@@ -2675,7 +2851,12 @@
           "name": "Water",
           "value": "≤ 50 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "KPF6",
+      "cardCategory": "Next-Gen Salt",
+      "chemicalName": "Potassium hexafluorophosphate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "latp-d-50-0-3-um",
@@ -4505,7 +4686,12 @@
           "name": "Sulfate",
           "value": "≤2 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "EP",
+      "cardCategory": "Solvent",
+      "chemicalName": "Ethyl propionate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "methyl-butyrate-mb-battery-grade",
@@ -4607,7 +4793,14 @@
           "name": "Bulk quantity",
           "value": "≥2.5 kg by quote"
         }
-      ]
+      ],
+      "approvedSynonyms": [
+        "Methyl butanoate"
+      ],
+      "alternateAbbreviations": [],
+      "primaryAbbreviation": "MB",
+      "cardCategory": "Solvent",
+      "chemicalName": "Methyl Butyrate"
     },
     {
       "slug": "propyl-propionate-pp",
@@ -4687,7 +4880,12 @@
           "name": "Sulfate",
           "value": "≤5 ppm"
         }
-      ]
+      ],
+      "primaryAbbreviation": "PP",
+      "cardCategory": "Solvent",
+      "chemicalName": "Propyl propionate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "triphenyl-phosphite-tppi",
@@ -4725,7 +4923,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "TPPI",
+      "cardCategory": "Additive",
+      "chemicalName": "Triphenyl phosphite",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "biphenyl-bp",
@@ -4763,7 +4966,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "BP",
+      "cardCategory": "Additive",
+      "chemicalName": "Biphenyl",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "propyl-acetate-pa",
@@ -4801,7 +5009,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "PA",
+      "cardCategory": "Solvent",
+      "chemicalName": "Propyl acetate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "ethylene-sulfite-es",
@@ -4830,10 +5043,6 @@
           "value": "ES"
         },
         {
-          "name": "Alternate Abbreviation",
-          "value": "ESI"
-        },
-        {
           "name": "CAS Number",
           "value": "3741-38-6"
         },
@@ -4845,7 +5054,19 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "ES",
+      "cardCategory": "Additive",
+      "chemicalName": "Ethylene sulfite",
+      "approvedSynonyms": [
+        "Glycol sulfite"
+      ],
+      "alternateAbbreviations": [
+        "ESI"
+      ],
+      "identityReview": {
+        "ESI": "Retained existing alias pending verification against canonical supplier documentation; ES remains primary."
+      }
     },
     {
       "slug": "hexamethyldisilazane-hmds",
@@ -4883,7 +5104,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "HMDS",
+      "cardCategory": "Additive",
+      "chemicalName": "Hexamethyldisilazane",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "fluorobenzene-fb",
@@ -4921,7 +5147,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "FB",
+      "cardCategory": "Additive",
+      "chemicalName": "Fluorobenzene",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
@@ -4959,7 +5190,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "NaFSI",
+      "cardCategory": "Next-Gen Salt",
+      "chemicalName": "Sodium bis(fluorosulfonyl)imide",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "cyclohexylbenzene-chb",
@@ -4997,7 +5233,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "CHB",
+      "cardCategory": "Additive",
+      "chemicalName": "Cyclohexylbenzene",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-4-butane-sultone-bs",
@@ -5035,7 +5276,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "BS",
+      "cardCategory": "Additive",
+      "chemicalName": "1,4-Butane sultone",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "sodium-difluorophosphate-napo2f2",
@@ -5073,7 +5319,12 @@
           "name": "Grade",
           "value": "Battery research grade"
         }
-      ]
+      ],
+      "primaryAbbreviation": "NaPO2F2",
+      "cardCategory": "Next-Gen Salt",
+      "chemicalName": "Sodium difluorophosphate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "1-3-dioxolane-dol",
@@ -5111,7 +5362,12 @@
           "value": "Battery research grade"
         }
       ],
-      "ecommerceSlug": "1-3-dioxolane-dol"
+      "ecommerceSlug": "1-3-dioxolane-dol",
+      "primaryAbbreviation": "DOL",
+      "cardCategory": "Solvent",
+      "chemicalName": "1,3-Dioxolane",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "triallyl-phosphate-tap",
@@ -5149,7 +5405,12 @@
           "value": "Battery research grade"
         }
       ],
-      "ecommerceSlug": "triallyl-phosphate-tap"
+      "ecommerceSlug": "triallyl-phosphate-tap",
+      "primaryAbbreviation": "TAP",
+      "cardCategory": "Additive",
+      "chemicalName": "Triallyl phosphate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "lithium-nitrate-lino3",
@@ -5187,7 +5448,12 @@
           "value": "Battery research grade"
         }
       ],
-      "ecommerceSlug": "lithium-nitrate-lino3"
+      "ecommerceSlug": "lithium-nitrate-lino3",
+      "primaryAbbreviation": "LiNO3",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium nitrate",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
@@ -5199,8 +5465,9 @@
       "sku": "WM-ADD-LIDODFP",
       "image": "/assets/images/chemical-structures/lithium-difluorobis-oxalato-phosphate-lidodfp.png",
       "aliases": [
+        "LiDODFP",
         "LiDFBOP",
-        "LiDODFP"
+        "LiODFP"
       ],
       "commercialIntents": [
         "Lithium difluorobis(oxalato)phosphate (LiDFBOP) supplier",
@@ -5211,10 +5478,6 @@
       "additionalProperty": [
         {
           "name": "Abbreviation",
-          "value": "LiDFBOP"
-        },
-        {
-          "name": "Alternate Abbreviation",
           "value": "LiDODFP"
         },
         {
@@ -5230,7 +5493,19 @@
           "value": "Battery research grade"
         }
       ],
-      "ecommerceSlug": "lithium-difluorobis-oxalato-phosphate-lidodfp"
+      "ecommerceSlug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+      "primaryAbbreviation": "LiDODFP",
+      "cardCategory": "Lithium Salt",
+      "chemicalName": "Lithium difluorobis(oxalato)phosphate",
+      "displayAbbreviations": [
+        "LiDODFP",
+        "LiDFBOP"
+      ],
+      "approvedSynonyms": [],
+      "alternateAbbreviations": [
+        "LiDFBOP",
+        "LiODFP"
+      ]
     },
     {
       "slug": "1m-lipf6-ec-emc-3-7-1-vc-electrolyte",
@@ -5356,7 +5631,12 @@
           "value": "Battery research grade"
         }
       ],
-      "ecommerceSlug": "tetravinylsilane-tvsi"
+      "ecommerceSlug": "tetravinylsilane-tvsi",
+      "primaryAbbreviation": "TVSi",
+      "cardCategory": "Additive",
+      "chemicalName": "Tetravinylsilane",
+      "approvedSynonyms": [],
+      "alternateAbbreviations": []
     },
     {
       "slug": "ti3c2tx-mxene-multilayer-powder",

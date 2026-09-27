@@ -49,7 +49,7 @@ test('every direct product page uses the tightened single-title purchase layout'
     assert.equal((html.match(/<div class="product-detail-context">/gi) || []).length, 1, `${product.slug}: one shallow context strip`);
     assert.equal((html.match(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"/gi) || []).length, 1, `${product.slug}: one section navigation bar`);
     assert.doesNotMatch(html, /<section class="section dark product-detail-hero">/i, `${product.slug}: legacy hero removed`);
-    assert.match(html, /<h1 class="ecommerce-panel__product">/i, `${product.slug}: purchase-panel title`);
+    assert.match(html, /<h1 class="ecommerce-panel__product"(?:\s[^>]*)?>/i, `${product.slug}: purchase-panel title`);
     assert.match(html, /<div class="product-detail-information"><p class="detail-kicker">About this product<\/p>\s*<p>/i, `${product.slug}: compact about copy`);
     assert.doesNotMatch(html, /product-detail-summary__status/i, `${product.slug}: no duplicate commerce badge`);
     assert.doesNotMatch(html, /ecommerce-panel__step|>Step [12]</i, `${product.slug}: no wizard labels`);

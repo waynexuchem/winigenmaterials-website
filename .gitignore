@@ -40,3 +40,5 @@ stripe-worker/.dev.vars
 stripe-worker/.wrangler/
 stripe-worker/node_modules/
 stripe-worker/wrangler.production.jsonc
+
+!scripts/catalog-card-identity.mjs

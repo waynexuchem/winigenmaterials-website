@@ -5,7 +5,7 @@ const protectedHosts = [
 
 const isProductionSite = protectedHosts.includes(window.location.hostname);
 const ga4MeasurementId = 'G-4PD1MZYGLS';
-const ecommerceAssetVersion = '5553fbd4f4a0';
+const ecommerceAssetVersion = '3451b468810e';
 const commerceConfigVersion = '643d05c0144c';
 
 function initializeGoogleTag() {

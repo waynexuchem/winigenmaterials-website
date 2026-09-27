@@ -1,3 +1,4 @@
+import { identityAliases } from '../scripts/catalog-card-identity.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,6 +9,11 @@ const catalogPagePath = resolve(siteRoot, 'products.html');
 const ecommercePath = resolve(siteRoot, 'ecommerce/catalog.source.json');
 const outputPath = resolve(siteRoot, 'catalog/products.source.json');
 const siteUrl = 'https://www.winigenmaterials.com';
+// Seeding may discover new products, but existing canonical records are authoritative.
+let existingSource = null;
+try { existingSource = JSON.parse(await readFile(outputPath, 'utf8')); }
+catch (error) { if (error.code !== 'ENOENT') throw error; }
+const existingBySlug = new Map((existingSource?.products || []).map(product => [product.slug, product]));
 
 const familyBySection = {
   salts: { slug: 'lithium-salts', name: 'Lithium Salts', url: '/products/lithium-salts.html' },
@@ -74,33 +80,8 @@ function findType(value, type) {
   return null;
 }
 
-function aliasesFor(name, slug) {
-  const aliases = new Set();
-  for (const match of name.matchAll(/\(([^()]{2,24})\)/g)) {
-    const alias = match[1].trim();
-    if (/^[A-Z][A-Za-z0-9+.-]{1,20}$/.test(alias)) aliases.add(alias);
-  }
-  const comma = name.indexOf(',');
-  if (comma > 0) aliases.add(name.slice(0, comma));
-  if (/LATP/i.test(name)) aliases.add('lithium aluminum titanium phosphate');
-  if (/LLZTO/i.test(name)) aliases.add('lithium lanthanum zirconium tantalum oxide');
-  if (/Li6PS5Cl/i.test(name)) aliases.add('lithium argyrodite electrolyte');
-  const explicitAliases = {
-    'lithium-difluorophosphate-lipo-2-f-2': ['LiDFP'],
-    'lithium-difluoro-oxalate-borate-liodfb': ['LiDFOB'],
-    'sodium-difluoro-oxalate-borate-naodfb': ['NaDFOB', 'NaODFB'],
-    'ethylene-sulfite-es': ['ES', 'ESI', 'glycol sulfite'],
-    'lithium-difluorobis-oxalato-phosphate-lidodfp': ['LiDFBOP', 'LiDODFP'],
-    '4-fluoro-1-3-dioxolan-2-one-fec': ['fluoroethylene carbonate'],
-    'trimethylsilyl-phosphite-ttpi': ['TMSPi']
-  };
-  for (const alias of explicitAliases[slug] || []) aliases.add(alias);
-  aliases.delete(name);
-  return [...aliases];
-}
-
 function commercialIntentsFor(name, aliases) {
-  const queryName = aliases.find(alias => /^[A-Z0-9().+-]{2,20}$/.test(alias)) || name.split(',')[0];
+  const queryName = aliases.find(alias => /^[A-Z0-9().+-]{2,20}$/.test(alias)) || name;
   return [`${queryName} supplier`, `where to buy ${queryName}`];
 }
 
@@ -141,6 +122,7 @@ for (const { file, family } of destinations) {
   const expected = `${siteUrl}/products/${file}`;
   if (canonical !== expected) throw new Error(`${file} canonical mismatch: ${canonical || 'missing'}.`);
   const slug = file.replace(/\.html$/, '');
+  if (existingBySlug.has(slug)) { products.push(existingBySlug.get(slug)); continue; }
   const commerce = ecommerceBySlug.get(slug);
   const activePackages = (commerce?.packages || Object.values(commerce?.variantOverrides || {}))
     .filter(variant => variant.approvalStatus === 'ACTIVE');
@@ -150,7 +132,12 @@ for (const { file, family } of destinations) {
   const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1];
   const description = sourceDescription(html.match(/<meta[^>]+name="description"[^>]+content="([^"]*)"/i)?.[1] || schema.description || '');
   const name = text(h1 || schema.name);
-  const aliases = aliasesFor(name, slug);
+  // New records get only explicit abbreviation properties. Synonyms require
+  // canonical review; never infer aliases from punctuation in chemical names.
+  const primaryAbbreviation = schema.additionalProperty?.find(p => p.name === 'Abbreviation')?.value || '';
+  const alternateAbbreviations = [];
+  const approvedSynonyms = [];
+  const aliases = identityAliases({ family: family.slug, primaryAbbreviation, alternateAbbreviations, approvedSynonyms });
   products.push({
     slug,
     url: `/products/${file}`,
@@ -160,6 +147,9 @@ for (const { file, family } of destinations) {
     category: text(schema.category || family.name),
     sku: schema.sku || commerce?.skuBase || null,
     image: normalizeImage(schema.image),
+    primaryAbbreviation,
+    alternateAbbreviations,
+    approvedSynonyms,
     aliases,
     commercialIntents: commercialIntentsFor(name, aliases),
     commerceStatus,
@@ -180,6 +170,7 @@ const source = {
   commerceStatusValues: ['active_checkout', 'rfq', 'sample_only', 'temporarily_unavailable', 'informational'],
   familyOrder,
   families: Object.values(familyBySection),
+  ...existingSource,
   products
 };
 

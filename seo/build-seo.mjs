@@ -1,3 +1,4 @@
+import { synchronizeCatalogCardIdentities, synchronizeProductPresentation, displayIdentity, identityAliases } from '../scripts/catalog-card-identity.mjs';
 import { isFinalizedAdditive, synchronizeAdditiveTds, documentationCopy as additiveDocumentationCopy } from '../scripts/sync-additive-tds.mjs';
 import { synchronizeProductIdentities } from '../scripts/sync-product-identities.mjs';
 import { mkdir, readFile, readdir, writeFile as writeRawFile } from 'node:fs/promises';
@@ -14,7 +15,7 @@ const siteRoot = resolve(scriptDirectory, '..');
 const siteUrl = 'https://www.winigenmaterials.com';
 const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const writeFile = (path, content, ...options) => writeRawFile(path,
-  typeof content === 'string' ? synchronizeAdditiveTds(synchronizeProductIdentities(content, productSource.products, path), productSource.products, path) : content, ...options);
+  typeof content === 'string' ? synchronizeProductPresentation(synchronizeAdditiveTds(synchronizeProductIdentities(content, productSource.products, path), productSource.products, path), productSource.products, path) : content, ...options);
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const shippingSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/shipping-countries.source.json'), 'utf8'));
 const commerceAssetVersion = shortCommerceRelease(createCommerceRelease(ecommerceSource, shippingSource));
@@ -460,7 +461,7 @@ function listingProperties(product) {
 
 function renderStaticCommerceCards(html, pagePath) {
   const contactPrefix = pagePath.startsWith('products/') ? '../' : '';
-  return html.replace(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi, article => {
+  return synchronizeCatalogCardIdentities(html.replace(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi, article => {
     const detailHref = article.match(/class="product-detail-link"[^>]+href="([^"]+)"/i)?.[1];
     if (!detailHref) return article;
     const slug = detailHref.split('/').pop().replace(/\.html(?:[?#].*)?$/, '');
@@ -468,7 +469,7 @@ function renderStaticCommerceCards(html, pagePath) {
     if (!product) return article;
     article = article.replace(
       /(<a class="product-media-link"[^>]*\baria-label=")View details for [^"]*(")/i,
-      `$1View details for ${escapeHtml(product.name)}$2`
+      `$1View details for ${escapeHtml(displayIdentity(product))}$2`
     );
     if (product.commerceStatus === 'rfq') {
       const bodyStart = article.match(/<div class="product-card__body"(?:\s[^>]*)?>/i)?.index ?? -1;
@@ -495,7 +496,7 @@ function renderStaticCommerceCards(html, pagePath) {
     const shippingNote = gradeCode ? '<p class="product-card__shipping-note">Specialized sulfide logistics quoted separately</p>' : '';
     const body = `<div class="product-card__body" data-static-commerce="true"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(category)}</span><span class="product-card__mode commerce-status">${commerceModeLabel(product)}</span></div>${gradeBadge}<h3><a class="product-detail-link" href="${escapeHtml(detailHref)}">${escapeHtml(product.name)}</a></h3><p class="product-card__commercial starting-price"><span data-listing-from-price>From ${formatUsd(defaultVariant.unitAmount, true)} · Multiple package sizes</span></p><ul class="product-card__properties product-card__properties--compact">${properties}</ul>${shippingNote}<div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package name="package" aria-label="Select package">${options}</select></label><label>Qty<div class="listing-quantity quantity-stepper"><button type="button" data-listing-decrease aria-label="Decrease quantity">−</button><input type="number" value="1" min="1" max="25" inputmode="numeric" aria-label="Quantity"><button type="button" data-listing-increase aria-label="Increase quantity">+</button></div></label></div><p class="product-card__price" data-listing-price>${formatUsd(defaultVariant.unitAmount)}</p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${escapeHtml(detailHref)}">View details</a><a href="${quoteHref}">Request Bulk Quote</a></div></div></div>`;
     return `${article.slice(0, bodyStart)}${body}\n    </article>`;
-  });
+  }), productSource.products);
 }
 
 function organizeSulfideCards(html, pagePath) {
@@ -804,7 +805,7 @@ function productSchema(product) {
     url: `${siteUrl}${product.url}`,
     name: product.name,
     description: productDescription(product),
-    ...(product.aliases.length ? { alternateName: product.aliases } : {}),
+    ...(identityAliases(product).length ? { alternateName: identityAliases(product) } : {}),
     ...(product.image ? { image: absoluteSiteUrl(product.image) } : {}),
     ...(product.sku ? { sku: product.sku } : {}),
     category: family?.name || product.category,
@@ -835,7 +836,7 @@ function rfqPageSchema(product) {
       '@type': product.mxene && product.purchaseMode === 'rfq' ? 'Product' : 'Thing',
       ...(product.mxene && product.purchaseMode === 'rfq' ? { '@id': `${canonical}#product`, sku: product.sku, image: absoluteSiteUrl(product.image), description: productDescription(product) } : {}),
       name: product.name,
-      ...(product.aliases.length ? { alternateName: product.aliases } : {}),
+      ...(identityAliases(product).length ? { alternateName: identityAliases(product) } : {}),
       ...(product.sku ? { identifier: product.sku } : {}),
       additionalProperty: [
         { '@type': 'PropertyValue', name: 'Commercial availability', value: 'Available by RFQ' },
@@ -872,7 +873,7 @@ function collectionSchema(familySlug = null) {
   const familyIntent = familySlug ? intents.families[familySlug] : null;
   const products = familySlug ? productSource.products.filter(product => product.family === familySlug) : productSource.products;
   const entries = family?.publicItemList || products.map(product => ({
-    name: product.name,
+    name: displayIdentity(product),
     url: product.url,
     entityId: isDirectPurchaseProduct(product) || (product.mxene && product.purchaseMode === 'rfq') ? '#product' : '#webpage'
   }));

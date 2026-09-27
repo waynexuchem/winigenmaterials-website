@@ -888,3 +888,32 @@ body .structure-fallback.structure-fallback--active { display: grid; font-size: 
   font-size: 0.9rem;
   line-height: 1.65;
 }
+
+/* Canonical identity hierarchy for the four chemical catalog families. */
+.product-card .product-card__identity { min-height: 148px; margin-bottom: 18px; }
+.product-card h3.product-card__identity-title { display: block; min-height: 0; margin: 0; overflow: visible; -webkit-line-clamp: unset; font-size: 24px; line-height: 1.25; }
+.product-card__identity-title .product-detail-link { display: block; color: var(--navy); }
+.product-card__identifier { display: block; font-size: 24px; font-weight: 700; line-height: 1.25; overflow: visible; }
+.product-card__chemical-name { display: block; margin-top: 6px; font-size: 18px; font-weight: 500; line-height: 1.4; overflow-wrap: anywhere; }
+.product-card__identity .product-card__cas { margin: 8px 0 0; font-size: 13px; font-weight: 400; line-height: 1.5; color: var(--muted, #637084); }
+@media (max-width: 700px) {
+  .product-card .product-card__identity { min-height: 0; }
+  .product-card h3.product-card__identity-title, .product-card__identifier { font-size: 22px; }
+  .product-card__chemical-name { font-size: 17px; }
+}
+
+/* Reserve independent identity rows; allow names to expand instead of clipping. */
+.product-card .product-card__identity { min-height: 0; }
+.product-card__identifier { min-height: 30px; }
+.product-card__chemical-name { min-height: 75.6px; }
+.product-card__identity .product-card__cas { min-height: 19.5px; white-space: nowrap; }
+h1[data-product-identity] > span.product-identity__identifier { display: block; font-size: 36px; line-height: 1.2; font-weight: 750; color: var(--navy); text-transform: none; }
+h1[data-product-identity] > span.product-identity__name { display: block; margin-top: 8px; font-size: 22px; line-height: 1.4; font-weight: 500; color: var(--navy); text-transform: none; }
+.product-identity__cas { font-size: 14px; line-height: 1.5; color: var(--muted, #637084); margin: 8px 0 18px; }
+@media (max-width: 680px) {
+  .product-card__identifier, .product-card__chemical-name, .product-card__identity .product-card__cas { min-height: 0; }
+  h1[data-product-identity] > span.product-identity__identifier { font-size: 30px; }
+  h1[data-product-identity] > span.product-identity__name { font-size: 20px; }
+}
+
+.product-card__identifier sub, .product-identity__identifier sub { line-height: 0; }

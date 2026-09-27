@@ -7,8 +7,9 @@
     }
   }
 
-  function quoteHref(product, subpage) {
-    return `${subpage ? '../' : ''}contact.html?inquiry_type=Request%20for%20Quote&product_interest=${encodeURIComponent(product.name)}`;
+  function quoteHref(product, subpage, card) {
+    const identity = card?.querySelector('.product-card__identity')?.dataset.displayIdentity || product.name;
+    return `${subpage ? '../' : ''}contact.html?inquiry_type=Request%20for%20Quote&product_interest=${encodeURIComponent(identity)}`;
   }
 
   function productContext(card, product) {
@@ -110,16 +111,18 @@
     const category = card.querySelector('.product-card__category')?.textContent.trim() || product.category;
     const specs = selectedSpecs(card, product).map(spec => `<li>${spec}</li>`).join('');
     const title = card.querySelector('h3 .product-detail-link')?.innerHTML || card.querySelector('h3')?.innerHTML || product.name;
+    const identity = card.querySelector('.product-card__identity')?.outerHTML
+      || `<h3><a class="product-detail-link" href="${detailHref}">${title}</a></h3>${casMarkup(card)}`;
     const defaultVariant = variants.find(variant => variant.id === product.defaultPackageId) || variants[0];
     const options = variants.map(variant => `<option value="${variant.key}"${variant.key === defaultVariant.key ? ' selected' : ''}>${variant.label} — ${formatPrice(variant.unitAmount)}</option>`).join('');
-    const bulkQuote = quoteHref(product, subpage);
+    const bulkQuote = quoteHref(product, subpage, card);
     const sulfideGrade = /^(?:GSL|GSH|GSB)0[1-4]$/.test(product.grade || '') ? product.grade : '';
     const modeLabel = product.commercialStatus === 'PRICE_SHIPPING_REVIEW'
       ? 'Shipping review required'
       : 'Online ordering';
     const gradeBadge = sulfideGrade ? `<p class="product-card__grade-code">${sulfideGrade}</p>` : '';
     const shippingNote = sulfideGrade ? '<p class="product-card__shipping-note">Specialized sulfide logistics quoted separately</p>' : '';
-    body.innerHTML = `<div class="product-card__topline"><span class="product-card__category">${category}</span><span class="product-card__mode">${modeLabel}</span></div>${gradeBadge}<h3><a class="product-detail-link" href="${detailHref}">${title}</a></h3>${casMarkup(card)}<p class="product-card__commercial"><span data-listing-from-price></span></p><ul class="product-card__properties product-card__properties--compact">${specs}</ul>${shippingNote}<div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package aria-label="Select package">${options}</select></label><label>Qty${quantityStepper()}</label></div><p class="product-card__price" data-listing-price></p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${detailHref}">View details</a><a href="${bulkQuote}">Request Bulk Quote</a></div></div>`;
+    body.innerHTML = `<div class="product-card__topline"><span class="product-card__category">${category}</span><span class="product-card__mode">${modeLabel}</span></div>${gradeBadge}${identity}<p class="product-card__commercial"><span data-listing-from-price></span></p><ul class="product-card__properties product-card__properties--compact">${specs}</ul>${shippingNote}<div class="product-card__purchase"><div class="product-card__selectors"><label>Package<select data-listing-package aria-label="Select package">${options}</select></label><label>Qty${quantityStepper()}</label></div><p class="product-card__price" data-listing-price></p><button class="btn" type="button" data-listing-add>Add to Cart</button><div class="product-card__links"><a href="${detailHref}">View details</a><a href="${bulkQuote}">Request Bulk Quote</a></div></div>`;
     const select = body.querySelector('[data-listing-package]');
     const quantity = body.querySelector('.listing-quantity input');
     const price = body.querySelector('[data-listing-price]');

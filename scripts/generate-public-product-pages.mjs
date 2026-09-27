@@ -1,3 +1,4 @@
+import { synchronizeProductPresentation, identityAliases, displayIdentity } from './catalog-card-identity.mjs';
 import { synchronizeAdditiveTds } from './sync-additive-tds.mjs';
 import { access, readFile, writeFile as writeRawFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -6,7 +7,7 @@ import { formatProductChemistry } from './format-product-chemistry.mjs';
 import { synchronizeProductIdentities } from './sync-product-identities.mjs';
 
 // Apply the same CSP preparation to existing and newly generated HTML.
-const writeFile = (path, html) => writeRawFile(path, formatProductChemistry(hardenPublicMarkup(synchronizeAdditiveTds(synchronizeProductIdentities(html, catalog.products, path), catalog.products, path))));
+const writeFile = (path, html) => writeRawFile(path, formatProductChemistry(synchronizeProductPresentation(hardenPublicMarkup(synchronizeAdditiveTds(synchronizeProductIdentities(html, catalog.products, path), catalog.products, path)), catalog.products, path)));
 
 const root = resolve(import.meta.dirname, '..');
 const catalog = JSON.parse(await readFile(resolve(root, 'catalog/products.source.json'), 'utf8'));
@@ -92,13 +93,13 @@ function renderCard(product, subpage) {
   const formula = property(product, 'Formula');
   const grade = property(product, 'Grade') || 'Battery research grade';
   const section = sectionIds[product.family];
-  const search = [product.category, product.name, ...product.aliases, cas, formula, section].join(' ').toLowerCase();
+  const search = [product.category, product.name, ...identityAliases(product), cas, formula, section].join(' ').toLowerCase();
   const quote = `${subpage ? '../' : ''}contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
   const media = product.presentation === 'standard-electrolyte-formulation' && product.image
-    ? `<div class="product-card__media product-card__media--formulation"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="product-photo product-packaging-photo" src="${escapeHtml(product.image)}" alt="Representative aluminum electrolyte packaging for ${escapeHtml(product.name)}" loading="lazy"></a></div>`
+    ? `<div class="product-card__media product-card__media--formulation"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(displayIdentity(product))}"><img class="product-photo product-packaging-photo" src="${escapeHtml(product.image)}" alt="Representative aluminum electrolyte packaging for ${escapeHtml(product.name)}" loading="lazy"></a></div>`
     : product.presentation === 'standard-electrolyte-formulation'
-    ? `<div class="product-card__media product-card__media--formulation"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><div class="formulation-visual" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div></a></div>`
-    : `<div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(product.name)}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.imageAlt || `${product.name} chemical structure`)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="structure-fallback"><span>${escapeHtml(formula || product.aliases[0] || product.name)}</span></div></a></div>`;
+    ? `<div class="product-card__media product-card__media--formulation"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(displayIdentity(product))}"><div class="formulation-visual" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div></a></div>`
+    : `<div class="product-card__media"><a class="product-media-link" href="${href}" aria-label="View details for ${escapeHtml(displayIdentity(product))}"><img class="chemical-structure chemical-structure--balanced" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.imageAlt || `${displayIdentity(product)} chemical structure`)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="structure-fallback"><span>${escapeHtml(formula || identityAliases(product)[0] || product.name)}</span></div></a></div>`;
   return `<article class="product-card" data-product-card data-section="${section}" data-search="${escapeHtml(search)}">
       ${media}
       <div class="product-card__body"><div class="product-card__topline"><span class="product-card__category">${escapeHtml(product.category)}</span><span class="product-card__mode">${modeLabel(product)}</span></div><h3><a class="product-detail-link" href="${href}">${escapeHtml(product.name)}</a></h3><p class="product-card__cas"><span>CAS:</span> ${escapeHtml(cas || 'Not assigned')}</p><ul class="product-card__properties product-card__properties--compact"><li><strong>Grade:</strong> ${escapeHtml(grade)}</li></ul>${product.commerceStatus === 'active_checkout' ? '' : `<div class="product-card__rfq"><a class="btn" href="${quote}">Request Quote</a><div class="product-card__links"><a href="${href}">View details</a></div></div>`}</div>
@@ -216,7 +217,7 @@ function detailPage(product) {
     ? `<img class="product-packaging-photo product-packaging-photo--detail" src="${escapeHtml(product.image)}" alt="Representative aluminum electrolyte packaging for ${escapeHtml(product.name)}">`
     : isFormulation
     ? `<div class="formulation-visual formulation-visual--detail" aria-label="1.0 M lithium hexafluorophosphate in ethylene carbonate and ethyl methyl carbonate at a 3 to 7 volume ratio with 1 percent vinylene carbonate"><strong>1.0 M LiPF6</strong><span>EC:EMC · 3:7</span><small>+ 1% VC</small></div>`
-    : `<img class="chemical-structure chemical-structure--detail" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.imageAlt || `${product.name} chemical structure`)}">`;
+    : `<img class="chemical-structure chemical-structure--detail" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.imageAlt || `${displayIdentity(product)} chemical structure`)}">`;
   const factsMarkup = isFormulation
     ? `<div class="detail-fact"><dt>Category</dt><dd>${escapeHtml(product.category)}</dd></div><div class="detail-fact"><dt>Positioning</dt><dd>${escapeHtml(product.positioning)}</dd></div><div class="detail-fact"><dt>Product type</dt><dd>Ready-to-use electrolyte formulation</dd></div><div class="detail-fact"><dt>Availability</dt><dd>Online ordering</dd></div>`
     : `<div class="detail-fact"><dt>Category</dt><dd>${escapeHtml(product.category)}</dd></div><div class="detail-fact"><dt>Abbreviation</dt><dd>${escapeHtml(abbreviation)}</dd></div><div class="detail-fact"><dt>CAS Number</dt><dd>${escapeHtml(cas)}</dd></div><div class="detail-fact"><dt>Availability</dt><dd>${product.commerceStatus === 'active_checkout' ? 'Online ordering' : 'Available by RFQ'}</dd></div>`;
