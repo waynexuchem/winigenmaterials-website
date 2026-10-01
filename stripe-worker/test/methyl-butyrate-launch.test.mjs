@@ -130,13 +130,18 @@ test('generated MB page, Product offers, TDS, search, catalog, sitemap, and Merc
   ]);
   assert.match(html, /<title>Methyl Butyrate \(MB\), Battery Grade \| Winigen Materials<\/title>/);
   assert.match(html, /<div class="breadcrumb">[\s\S]*?\/ Methyl Butyrate \(MB\)<\/div>/);
-  assert.match(html, /<h1 class="ecommerce-panel__product">Methyl Butyrate \(MB\)<\/h1>/);
-  assert.doesNotMatch(html, /<h1 class="ecommerce-panel__product">[^<]*<span>Battery Grade<\/span><\/h1>/);
+  const h1 = html.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/)?.[0];
+  assert.ok(h1, 'MB page has a product H1');
+  assert.match(h1, /<h1\b[^>]*class="[^"]*\becommerce-panel__product\b[^"]*"/);
+  assert.match(h1, /<h1\b[^>]*data-product-identity="true"/);
+  assert.match(h1, /<span\b[^>]*class="product-identity__identifier"[^>]*>MB<\/span>/);
+  assert.match(h1, /<span\b[^>]*class="product-identity__name"[^>]*>Methyl Butyrate<\/span>/);
+  assert.doesNotMatch(h1.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' '), /Battery Grade/i);
   assert.match(html, /"name": "Methyl Butyrate \(MB\)"/);
   assert.match(html, /"name": "Grade",\s*"value": "Battery Grade"/);
   assert.match(html, /Battery-grade MB is a specialized low-moisture electrolyte solvent with limited commercial availability compared with general laboratory grades\./);
   assert.match(html, /Need ≥2\.5 kg, recurring supply, alternate packaging, or project pricing\? <a[^>]+>Request a quote\.<\/a>/);
-  assert.match(html, /Chemical structure of methyl butyrate \(methyl butanoate\), CAS 623-42-7/);
+  assert.match(html, /alt="Methyl Butyrate \(MB\) chemical structure"/);
   assert.match(html, /Winigen_MB_Battery_Grade_TDS\.pdf/);
   assert.doesNotMatch(html, /Winigen_MB_Representative_TDS\.pdf/);
   assert.match(html, /"@type":\s*"Product"/);
@@ -148,7 +153,10 @@ test('generated MB page, Product offers, TDS, search, catalog, sitemap, and Merc
   for (const listing of [products, family]) {
     const card = productCard(listing, 'methyl-butyrate-mb-battery-grade');
     assert.ok(card);
-    assert.match(card, /<h3><a[^>]+>Methyl Butyrate \(MB\)<\/a><\/h3>/);
+    const cardHeading = card.match(/<h3\b[^>]*>[\s\S]*?<\/h3>/)?.[0];
+    assert.ok(cardHeading, 'MB card has an identity heading');
+    assert.match(cardHeading, /<span\b[^>]*class="product-card__identifier"[^>]*>MB<\/span>/);
+    assert.match(cardHeading, /<span\b[^>]*class="product-card__chemical-name"[^>]*>Methyl Butyrate<\/span>/);
     assert.match(card, /<strong>Grade:<\/strong> Battery Grade<\/li><li><strong>Purity:<\/strong> ≥99\.8%<\/li><li><strong>Water:<\/strong> &lt;20 ppm/);
     assert.doesNotMatch(card, /<strong>Alternate name:<\/strong>/);
     const order = [
