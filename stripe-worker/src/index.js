@@ -1,3 +1,5 @@
+import { checkD1Storage, recoverStorageAlert, STORAGE_CRON, OUTBOX_CRON } from './maintenance/storage.js';
+import { handleContact, processContactQueue, recoverContactOutbox } from './contact/index.js';
 import {
   CATALOG_PRODUCT_COUNT,
   CATALOG_VARIANT_COUNT,
@@ -1030,8 +1032,17 @@ export async function handleWebhook(request, env, ctx) {
 }
 
 export default {
+  async queue(batch, env) { await processContactQueue(batch, env); },
+  async scheduled(event, env) {
+    if (event.cron === STORAGE_CRON) await checkD1Storage(env);
+    else if (event.cron === OUTBOX_CRON) {
+      try { await recoverContactOutbox(env); }
+      finally { await recoverStorageAlert(env); }
+    }
+  },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (['/api/contact', '/api/contact/session'].includes(url.pathname)) return handleContact(request, env);
     const origin = request.headers.get('Origin');
     const matchedPrivateOrderRoute = privateOrderRoute(url.pathname);
 

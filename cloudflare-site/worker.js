@@ -9,18 +9,18 @@ const CSP_CONNECT_SOURCES = [
   'https://www.google-analytics.com',
   'https://region1.google-analytics.com',
   'https://cloudflareinsights.com',
-  'https://formspree.io'
+  'https://challenges.cloudflare.com'
 ];
 const CSP_REPORT_ONLY_DIRECTIVES = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
-  "script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com",
+  "script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com https://challenges.cloudflare.com",
   "style-src 'self' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https://pubchem.ncbi.nlm.nih.gov",
-  "form-action 'self' https://formspree.io",
-  "frame-src 'none'"
+  "form-action 'self'",
+  "frame-src https://challenges.cloudflare.com"
 ];
 
 function createCspReportOnly(hostname) {
@@ -62,6 +62,13 @@ export default {
       url.port = '';
       const redirectResponse = Response.redirect(url.toString(), 308);
       return applyResponseHeaders(redirectResponse, new URL(request.url));
+    }
+
+    // Exact contact routes only; checkout/static paths retain their existing behavior.
+    if (['/api/contact', '/api/contact/session'].includes(url.pathname)) {
+      if (!env.CONTACT_API) return Response.json({ ok: false, message: 'Please try again shortly.' }, { status: 503 });
+      try { return applyResponseHeaders(await env.CONTACT_API.fetch(request), url); }
+      catch { return Response.json({ ok: false, message: 'Please try again shortly.' }, { status: 503 }); }
     }
 
     const assetUrl = new URL(url);

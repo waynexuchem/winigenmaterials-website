@@ -3,7 +3,9 @@
   "name": "winigenmaterials-site-preview",
   "main": "worker.js",
   "compatibility_date": "2026-09-05",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "assets": {
     "directory": "../dist-cloudflare",
     "binding": "ASSETS",
@@ -13,5 +15,11 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "services": [
+    {
+      "binding": "CONTACT_API",
+      "service": "winigen-stripe-production"
+    }
+  ]
 }

@@ -95,7 +95,8 @@ test('Worker adds noindex only outside production and maps only the root path', 
   assert.equal(preview.headers.get('X-Robots-Tag'), 'noindex, nofollow');
   assert.equal(preview.headers.get('Strict-Transport-Security'), null);
   const previewPolicy = preview.headers.get('Content-Security-Policy-Report-Only');
-  assert.match(previewPolicy, /formspree\.io/);
+  assert.doesNotMatch(previewPolicy, /formspree\.io/);
+  assert.match(previewPolicy, /challenges\.cloudflare\.com/);
   assert.doesNotMatch(previewPolicy, /winigen-stripe-(?:production|test)/);
   assert.equal(unknown.headers.get('X-Robots-Tag'), 'noindex, nofollow');
   assert.equal(isProductionHostname('WWW.WINIGENMATERIALS.COM'), true);
@@ -188,7 +189,7 @@ test('CSP observation is HTML-only, production-safe, and deliberately exposes in
     assert.match(policy, /script-src 'self' https:\/\/www\.googletagmanager\.com https:\/\/static\.cloudflareinsights\.com/);
     assert.match(policy, /style-src 'self' https:\/\/fonts\.googleapis\.com/);
     assert.match(policy, /img-src 'self' data: https:\/\/pubchem\.ncbi\.nlm\.nih\.gov/);
-    assert.match(policy, /frame-src 'none'/);
+    assert.match(policy, /frame-src https:\/\/challenges\.cloudflare\.com/);
     assert.doesNotMatch(policy, /'unsafe-inline'/);
     assert.doesNotMatch(policy, /'unsafe-eval'/);
     assert.doesNotMatch(policy, /(?:^|;\s*)[^;]*\*/);

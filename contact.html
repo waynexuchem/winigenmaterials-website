@@ -33,7 +33,8 @@
 }
 
 
-/* Formspree request form feedback */
+/* Contact form feedback */
+.contact-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .form-status {
   margin-top: 14px;
   margin-bottom: 12px;
@@ -42,7 +43,7 @@
 }
 .form-status.success { color: #0f7a3a; }
 .form-status.error { color: #b42318; }
-.js-formspree-form button[disabled] {
+.js-contact-form button[disabled] {
   opacity: 0.65;
   cursor: not-allowed;
 }
@@ -111,11 +112,10 @@
     <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
   </div>
   <div class="mobile-menu"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a href="knowledge.html">Knowledge</a><a class="active" href="contact.html">Contact</a></div>
-</header><main><section class="section dark"><div class="container split"><div class="contact-intro"><div><p class="eyebrow">Contact Winigen</p><h1>Discuss Your Material Requirements</h1><p>Choose the path that fits your requirement. We aim to respond promptly to technical and commercial inquiries.</p></div><div class="contact-paths"><div class="contact-path"><h2>Standard Research Packages</h2><p>Browse approved package sizes and public pricing for materials currently available for direct online ordering.</p><a class="btn" href="products.html">Browse Products</a></div><div class="contact-path"><h2>Bulk, Custom &amp; Technical Requirements</h2><p>For bulk quantities, custom formulations, shipping, documentation, or technical support.</p><a class="btn secondary" href="#inquiry-form">Start an Inquiry</a></div></div></div><div class="form-card"><form id="inquiry-form" class="js-formspree-form" action="https://formspree.io/f/mlgzldpy" method="POST" data-form-name="Contact Page Request">
-  <input type="hidden" name="_subject" value="New contact page request from Winigen Materials website">
+</header><main><section class="section dark"><div class="container split"><div class="contact-intro"><div><p class="eyebrow">Contact Winigen</p><h1>Discuss Your Material Requirements</h1><p>Choose the path that fits your requirement. We aim to respond promptly to technical and commercial inquiries.</p></div><div class="contact-paths"><div class="contact-path"><h2>Standard Research Packages</h2><p>Browse approved package sizes and public pricing for materials currently available for direct online ordering.</p><a class="btn" href="products.html">Browse Products</a></div><div class="contact-path"><h2>Bulk, Custom &amp; Technical Requirements</h2><p>For bulk quantities, custom formulations, shipping, documentation, or technical support.</p><a class="btn secondary" href="#inquiry-form">Start an Inquiry</a></div></div></div><div class="form-card"><form id="inquiry-form" class="js-contact-form" action="/api/contact" method="POST" data-form-name="Contact Page Request">
   <input type="hidden" name="source_page" value="contact.html">
   <input type="hidden" name="form_location" value="Contact page request form">
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <div class="contact-honeypot" aria-hidden="true"><label>Website<input type="text" name="website_url" tabindex="-1" autocomplete="off"></label></div>
 
   <label>Full Name</label>
   <input type="text" name="name" placeholder="Enter your name" required>
@@ -150,6 +150,8 @@
   <label>Message</label>
   <textarea name="message" placeholder="Tell us what you are looking for..." required></textarea>
 
+  <div class="contact-challenge"></div>
+  <noscript>Please enable JavaScript to send your inquiry, or email contact@winigenmaterials.com.</noscript>
   <div class="form-status" aria-live="polite"></div>
   <button class="btn" type="submit">Send Inquiry</button>
-</form></div></div></section></main><footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer><script src="assets/js/main.js?v=cbcf1024a871"></script></body></html>
+</form></div></div></section></main><footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer><script src="assets/js/main.js?v=6ade620d7f96"></script><script type="module" src="assets/js/contact.js"></script></body></html>

@@ -19,6 +19,9 @@
     }
   },
   "vars": {
+    "CONTACT_FORM_ENABLED": "false",
+    "CONTACT_ACK_ENABLED": "false",
+    "TURNSTILE_SITE_KEY": "",
     "SITE_ORIGIN": "https://www.winigenmaterials.com",
     "COMMERCE_ENABLED": "false",
     "STRIPE_MODE": "live",
@@ -36,5 +39,24 @@
       "database_id": "REPLACE_WITH_PRODUCTION_D1_ID",
       "migrations_dir": "migrations"
     }
-  ]
+  ],
+  "queues": {
+    "producers": [
+      {
+        "binding": "CONTACT_QUEUE",
+        "queue": "winigen-contact-production"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "winigen-contact-production",
+        "max_batch_size": 1,
+        "max_batch_timeout": 5,
+        "max_retries": 8,
+        "retry_delay": 60,
+        "dead_letter_queue": "winigen-contact-production-dlq"
+      }
+    ]
+  },
+  "triggers": { "crons": ["*/15 * * * *", "0 13 * * MON"] }
 }

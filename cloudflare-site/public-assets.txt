@@ -415,6 +415,7 @@ assets/js/checkout-state.js
 assets/js/chemical-typography.js
 assets/js/commerce-config.js
 assets/js/commerce-session-routing.js
+assets/js/contact.js
 assets/js/ecommerce-catalog.js
 assets/js/ecommerce-listing.js
 assets/js/ecommerce-product-page.js

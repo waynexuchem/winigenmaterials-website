@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
-  const contactForm = document.querySelector('form.js-formspree-form');
+  const contactForm = document.querySelector('form.js-contact-form');
 
   const supportedParams = ['inquiry_type', 'product_interest', 'quantity_scale', 'quantity', 'message', 'topic', 'd50', 'carrier_solvent', 'target_solids_loading', 'coating_process'];
   if (!contactForm || !supportedParams.some(name => params.has(name))) return;
@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (field.tagName === 'SELECT') {
       const existing = Array.from(field.options).find(option => option.value === value || option.text === value);
-      if (!existing) field.add(new Option(value, value));
+      if (!existing) value = name === 'quantity_scale' ? 'Not sure / custom' : 'General Inquiry';
     }
 
     field.value = value;
@@ -456,68 +456,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     field.value = value;
   });
-});
-
-// ===============================
-// Formspree Integration
-// ===============================
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  const forms = document.querySelectorAll('form[data-formspree], form.js-formspree-form');
-
-  forms.forEach(form => {
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const submitBtn = form.querySelector('button[type="submit"]');
-
-      if (submitBtn) {
-        submitBtn.dataset.originalText = submitBtn.dataset.originalText || submitBtn.innerText;
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Sending...';
-      }
-
-      const formData = new FormData(form);
-
-      try {
-
-        const response = await fetch('https://formspree.io/f/mlgzldpy', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-
-          alert('Thank you! Your request has been submitted.');
-
-          form.reset();
-
-        } else {
-
-          alert('Oops! Something went wrong. Please try again.');
-
-        }
-
-      } catch (error) {
-
-        alert('Network error. Please try again later.');
-
-      }
-
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerText = submitBtn.dataset.originalText || 'Submit';
-      }
-
-    });
-
-  });
-
 });
 
 // Discourage casual saving or dragging of protected article figures on production only.
