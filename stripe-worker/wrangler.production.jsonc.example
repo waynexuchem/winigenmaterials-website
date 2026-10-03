@@ -19,6 +19,7 @@
     }
   },
   "vars": {
+    "CONTACT_REPORT_ENABLED": "false",
     "CONTACT_FORM_ENABLED": "false",
     "CONTACT_ACK_ENABLED": "false",
     "TURNSTILE_SITE_KEY": "",

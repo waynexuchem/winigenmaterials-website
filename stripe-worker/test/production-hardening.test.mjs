@@ -50,6 +50,7 @@ test('production Wrangler template is complete, secret-free, and disabled by def
   assert.equal(config.name, 'winigen-stripe-production');
   assert.equal(config.version_metadata.binding, 'CF_VERSION_METADATA');
   assert.deepEqual(config.vars, {
+    CONTACT_REPORT_ENABLED: 'false',
     CONTACT_FORM_ENABLED: 'false',
     CONTACT_ACK_ENABLED: 'false',
     TURNSTILE_SITE_KEY: '',
@@ -100,7 +101,8 @@ test('production URL and migration contracts remain exact', async () => {
     '0006_order_purpose.sql',
     '0007_order_stripe_totals.sql',
     '0008_private_checkout_attempts.sql',
-    '0009_contact_submissions.sql'
+    '0009_contact_submissions.sql',
+    '0010_contact_metrics.sql'
   ]);
 });
 

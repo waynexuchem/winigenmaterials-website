@@ -1,3 +1,4 @@
+import { sendWeeklyContactReport } from './contact/metrics.js';
 import { checkD1Storage, recoverStorageAlert, STORAGE_CRON, OUTBOX_CRON } from './maintenance/storage.js';
 import { handleContact, processContactQueue, recoverContactOutbox } from './contact/index.js';
 import {
@@ -1034,7 +1035,10 @@ export async function handleWebhook(request, env, ctx) {
 export default {
   async queue(batch, env) { await processContactQueue(batch, env); },
   async scheduled(event, env) {
-    if (event.cron === STORAGE_CRON) await checkD1Storage(env);
+    if (event.cron === STORAGE_CRON) {
+      await checkD1Storage(env);
+      await sendWeeklyContactReport(env, event.scheduledTime);
+    }
     else if (event.cron === OUTBOX_CRON) {
       try { await recoverContactOutbox(env); }
       finally { await recoverStorageAlert(env); }

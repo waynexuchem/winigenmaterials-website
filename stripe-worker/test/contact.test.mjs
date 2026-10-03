@@ -4,6 +4,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
 import worker from '../src/index.js';
 import { contactEmail } from '../src/contact/email.js';
+import { incrementMetric, sendWeeklyContactReport, reportWindow } from '../src/contact/metrics.js';
 import { sendEmail } from '../src/email/provider.js';
 
 const origin = 'https://www.winigenmaterials.com';
@@ -12,6 +13,7 @@ function setup(t, overrides = {}) {
   const sqlite = new DatabaseSync(':memory:');
   sqlite.exec('PRAGMA foreign_keys = ON');
   sqlite.exec(readFileSync(new URL('../migrations/0009_contact_submissions.sql', import.meta.url), 'utf8'));
+  sqlite.exec(readFileSync(new URL('../migrations/0010_contact_metrics.sql', import.meta.url), 'utf8'));
   const prepare = (sql, values = []) => ({
     bind(...args) { return prepare(sql, args); },
     async run() { return { meta: sqlite.prepare(sql).run(...values) }; },
@@ -301,4 +303,90 @@ test('same normalized content with distinct request identities is accepted twice
   assert.equal(rows[0].content_fingerprint, rows[1].content_fingerprint);
   assert.match(rows[0].content_fingerprint, /^[a-f0-9]{64}$/);
   assert.equal(queue.length, 2);
+});
+
+test('daily metrics count accepted, duplicate, rejects and deliveries without PII or per-attempt rows', async t => {
+  const { accept, post, consume, sqlite, context, state, emails } = setup(t);
+  const body = await accept(); await post(body); await consume(); await consume();
+  const fresh = { ...values(), request_token: await context() };
+  await post({ ...fresh, website_url: 'bot' });
+  state.captcha = false; await post(fresh); state.captcha = true;
+  await post({ ...fresh, email: 'bad' });
+  await post(fresh, { Origin: 'https://evil.example' });
+  const rows = sqlite.prepare('SELECT * FROM contact_daily_metrics').all();
+  assert.equal(rows.length, 1);
+  assert.deepEqual({ ...rows[0], day: 'UTC' }, { day: 'UTC', accepted: 1, duplicate_suppressed: 1, ack_sent: 1, internal_sent: 1, honeypot_rejected: 1, turnstile_rejected: 1, validation_rejected: 1, origin_or_security_rejected: 1, delivery_failed: 0 });
+  assert.doesNotMatch(JSON.stringify(rows), /Jane|jane@|test-token|LiPF6|Example/);
+  assert.equal(emails.length, 2);
+});
+test('delivery failures count failed attempts while success and duplicate queue replay do not inflate sent totals', async t => {
+  const { accept, consume, state, sqlite } = setup(t);
+  await accept(); state.provider = 'failure'; await consume();
+  assert.equal(sqlite.prepare('SELECT delivery_failed FROM contact_daily_metrics').get().delivery_failed, 2);
+  sqlite.exec('UPDATE contact_deliveries SET lease_until=0'); state.provider = 'success'; await consume(); await consume();
+  const row = sqlite.prepare('SELECT * FROM contact_daily_metrics').get();
+  assert.equal(row.ack_sent, 1); assert.equal(row.internal_sent, 1);
+});
+test('atomic metric increments keep one UTC row under concurrency and reject arbitrary columns', async t => {
+  const { env, sqlite } = setup(t);
+  await Promise.all(Array.from({ length: 50 }, () => incrementMetric(env, 'accepted', Date.UTC(2026, 9, 4))));
+  await incrementMetric(env, 'email');
+  assert.equal(sqlite.prepare('SELECT count(*) n FROM contact_daily_metrics').get().n, 1);
+  assert.equal(sqlite.prepare('SELECT accepted FROM contact_daily_metrics').get().accepted, 50);
+});
+test('weekly and month-to-date UTC totals, spam exclusion, envelope and durable duplicate suppression', async t => {
+  const { env, sqlite, emails } = setup(t, { CONTACT_REPORT_ENABLED: 'true' });
+  const now = Date.UTC(2026, 9, 5, 13); t.mock.method(Date, 'now', () => now);
+  assert.deepEqual(reportWindow(now), { start: '2026-09-28', end: '2026-10-05', month: '2026-10-01' });
+  for (const [date, count] of [['2026-09-27', 99], ['2026-09-28', 3], ['2026-10-01', 5], ['2026-10-05', 99]]) {
+    sqlite.prepare('INSERT INTO contact_daily_metrics(day,accepted,turnstile_rejected,honeypot_rejected,validation_rejected) VALUES (?,?,?,?,?)').run(date,count,1,2,10);
+  }
+  await Promise.all([sendWeeklyContactReport(env, now), sendWeeklyContactReport(env, now)]);
+  await sendWeeklyContactReport(env, now);
+  assert.equal(emails.length, 1);
+  const message = emails[0].body;
+  assert.match(message.text, /Previous 7 days:[\s\S]*Valid inquiries received: 8\nPotential spam\/bot submissions blocked: 6\nValidation rejects: 20/);
+  assert.match(message.text, /Month-to-date:[\s\S]*Valid inquiries received: 5\nPotential spam\/bot submissions blocked: 3/);
+  assert.deepEqual(message.to, ['wayne@winigenmaterials.com']); assert.equal(message.cc, undefined); assert.equal(message.bcc, undefined);
+  assert.doesNotMatch(message.text, /Jane|jane@|test-token|LiPF6|Example/);
+  assert.equal(emails[0].options.headers['Idempotency-Key'], 'contact-weekly-v1/2026-10-05');
+  assert.equal(sqlite.prepare('SELECT status FROM contact_weekly_reports').get().status, 'SENT');
+});
+test('ambiguous weekly send keeps identical payload/key and stops beyond safe window', async t => {
+  const { env, state, emails, sqlite } = setup(t, { CONTACT_REPORT_ENABLED: 'true' });
+  let now = Date.UTC(2026, 9, 5, 13); t.mock.method(Date, 'now', () => now);
+  state.provider = 'network'; await sendWeeklyContactReport(env, now);
+  now += 3600000; await sendWeeklyContactReport(env, now);
+  assert.equal(emails.length, 2);
+  assert.deepEqual(emails[0], emails[1]);
+  now += 23 * 3600000; await sendWeeklyContactReport(env, now);
+  assert.equal(emails.length, 2); assert.equal(sqlite.prepare('SELECT status FROM contact_weekly_reports').get().status, 'REVIEW');
+});
+test('missing metrics/report tables fail independently; intake, Queue and commerce OPTIONS still work', async t => {
+  const { env, sqlite, accept, consume, emails } = setup(t, { CONTACT_REPORT_ENABLED: 'true' });
+  sqlite.exec('DROP TABLE contact_daily_metrics; DROP TABLE contact_weekly_reports');
+  await sendWeeklyContactReport(env); assert.equal(emails.length, 0);
+  await accept(); await consume(); assert.equal(emails.length, 2);
+  assert.equal((await worker.fetch(new Request(origin + '/api/create-checkout-session', { method: 'OPTIONS', headers: { Origin: origin } }), env)).status, 204);
+});
+test('report query failure sends nothing and retries querying on next scheduled run; report flag defaults off', async t => {
+  const { env, sqlite, emails } = setup(t);
+  await sendWeeklyContactReport(env); assert.equal(emails.length, 0);
+  env.CONTACT_REPORT_ENABLED = 'true';
+  sqlite.exec("ALTER TABLE contact_daily_metrics RENAME TO missing_metrics");
+  await sendWeeklyContactReport(env); assert.equal(emails.length, 0);
+  assert.equal(sqlite.prepare('SELECT count(*) n FROM contact_weekly_reports').get().n, 0);
+  sqlite.exec('ALTER TABLE missing_metrics RENAME TO contact_daily_metrics');
+  await sendWeeklyContactReport(env); assert.equal(emails.length, 1);
+});
+
+test('weekly job logs no submitted PII and failed aggregate query never fabricates zero totals', async t => {
+  const { env, accept, consume, emails } = setup(t, { CONTACT_REPORT_ENABLED: 'true' });
+  await accept(); await consume(); const logs = [];
+  t.mock.method(console, 'log', line => logs.push(line));
+  await sendWeeklyContactReport(env);
+  assert.doesNotMatch(emails.at(-1).body.text, /Jane|Example|jane@|LiPF6|中文/);
+  assert.doesNotMatch(JSON.stringify(logs), /Jane|Example|jane@|LiPF6|中文/);
+  const badEnv = { ...env, ORDERS_DB: { prepare() { return { bind() { return this; }, async first() { return null; }, async all() { return { success: false, results: [] }; } }; } } };
+  const n = emails.length; await sendWeeklyContactReport(badEnv); assert.equal(emails.length, n);
 });

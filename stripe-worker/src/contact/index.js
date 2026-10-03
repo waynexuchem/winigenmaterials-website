@@ -1,3 +1,4 @@
+import { incrementMetric } from './metrics.js';
 import { FIELD_LIMITS, contactOrigin, log, normalizeFields, readJson, sha256, issueRequestToken, verifyRequestToken } from './validation.js';
 import { contactEmail } from './email.js';
 import { sendEmail } from '../email/provider.js';
@@ -25,22 +26,22 @@ async function verifyTurnstile(token, env) {
 export async function handleContact(request, env) {
   if (request.method !== 'POST') return new Response(genericError, { status: 405, headers: { Allow: 'POST' } });
   if (!enabled(env) || !ready(env)) return fail(503);
-  if (request.headers.get('Origin') !== contactOrigin(env) || request.headers.get('Sec-Fetch-Site') === 'cross-site') return fail(403);
+  if (request.headers.get('Origin') !== contactOrigin(env) || request.headers.get('Sec-Fetch-Site') === 'cross-site') { await incrementMetric(env, 'origin_or_security_rejected'); return fail(403); }
   let body;
-  try { body = await readJson(request); } catch (error) { log('validation_rejected'); return fail(error.message === 'size' ? 413 : 400); }
+  try { body = await readJson(request); } catch (error) { log('validation_rejected'); await incrementMetric(env, 'validation_rejected'); return fail(error.message === 'size' ? 413 : 400); }
   if (new URL(request.url).pathname === '/api/contact/session') {
     if (!body || Array.isArray(body) || typeof body !== 'object' || Object.keys(body).length) return fail();
     return response(200, { request_token: await issueRequestToken(env), site_key: env.TURNSTILE_SITE_KEY });
   }
   log('contact_received');
-  if (!body || Array.isArray(body) || typeof body !== 'object') return fail();
-  if (typeof body.website_url !== 'string' || body.website_url) { log('honeypot_rejected'); return fail(); }
+  if (!body || Array.isArray(body) || typeof body !== 'object') { await incrementMetric(env, 'validation_rejected'); return fail(); }
+  if (typeof body.website_url !== 'string' || body.website_url) { log('honeypot_rejected'); await incrementMetric(env, typeof body.website_url === 'string' && body.website_url ? 'honeypot_rejected' : 'validation_rejected'); return fail(); }
   let identity;
   try { identity = await verifyRequestToken(body.request_token, env); } catch { return fail(503); }
-  if (!identity) { log('validation_rejected'); return fail(); }
-  if (!await verifyTurnstile(body.turnstile_token, env)) { log('turnstile_rejected'); return fail(); }
+  if (!identity) { log('validation_rejected'); await incrementMetric(env, 'origin_or_security_rejected'); return fail(); }
+  if (!await verifyTurnstile(body.turnstile_token, env)) { log('turnstile_rejected'); await incrementMetric(env, 'turnstile_rejected'); return fail(); }
   let fields;
-  try { fields = normalizeFields(body); } catch { log('validation_rejected'); return fail(); }
+  try { fields = normalizeFields(body); } catch { log('validation_rejected'); await incrementMetric(env, 'validation_rejected'); return fail(); }
   const key = await sha256(`contact-v1\n${identity}\n${JSON.stringify(fields)}`);
   const contentFingerprint = await sha256(JSON.stringify(fields));
   const id = crypto.randomUUID();
@@ -56,7 +57,8 @@ export async function handleContact(request, env) {
       env.ORDERS_DB.prepare("INSERT OR IGNORE INTO contact_deliveries (submission_id, kind, status) SELECT id, 'ack', CASE WHEN ack_requested = 1 THEN 'PENDING' ELSE 'SKIPPED' END FROM contact_submissions WHERE submission_key = ?").bind(key)
     ]);
     const row = await env.ORDERS_DB.prepare('SELECT * FROM contact_submissions WHERE request_id = ?').bind(identity).first();
-    if (!row || row.submission_key !== key) return fail(409);
+    if (!row || row.submission_key !== key) { await incrementMetric(env, 'origin_or_security_rejected'); return fail(409); }
+    await incrementMetric(env, result[0].meta.changes ? 'accepted' : 'duplicate_suppressed');
     log(result[0].meta.changes ? 'contact_persisted' : 'duplicate_submission', row.id);
     if (row.queued_at !== null) return success();
     return await enqueueContact(row, env) ? success() : fail(503);
@@ -118,11 +120,13 @@ async function deliver(row, kind, env) {
   } catch {
     await db.prepare("UPDATE contact_deliveries SET status = 'FAILED', last_error = 'provider_failure' WHERE submission_id = ? AND kind = ? AND claim_token = ?")
       .bind(row.id, kind, claim).run();
+    await incrementMetric(env, 'delivery_failed');
     log(`${event}_failed`, row.id);
     return 'retry';
   }
-  await db.prepare("UPDATE contact_deliveries SET status = 'SENT', provider_message_id = ?, sent_at = ?, last_error = NULL WHERE submission_id = ? AND kind = ? AND claim_token = ?")
+  const saved = await db.prepare("UPDATE contact_deliveries SET status = 'SENT', provider_message_id = ?, sent_at = ?, last_error = NULL WHERE submission_id = ? AND kind = ? AND claim_token = ?")
     .bind(result.providerMessageId, now, row.id, kind, claim).run();
+  if (saved.meta.changes) await incrementMetric(env, kind === 'ack' ? 'ack_sent' : 'internal_sent');
   log(`${event}_sent`, row.id);
   return 'done';
 }
