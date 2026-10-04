@@ -20,9 +20,9 @@ test('new canonical records, required search aliases and category registration',
   for(const k of ['name','primaryAbbreviation','category','sku','family'])assert(p[k]);
   const queries=[p.name,p.primaryAbbreviation,prop(p,'CAS Number'),prop(p,'Formula'),...(p.activeMaterialIdentity?['LiDFOP/EMC','LiDFOP','LiDFBOP','LiDODFP','LiODFP','LiDFOP in EMC','LiDFBOP solution','LiDODFP solution']:[])];
   for(const q of queries)assert(search.search(index.records,q).records.some(x=>x.slug===p.slug),`${p.slug}: ${q}`);
-  const section=p.family==='battery-solvents'?'solvents':'additives';
+  const section={'battery-solvents':'solvents','electrolyte-additives':'additives','custom-formulations':'formulations'}[p.family];
   assert(search.search(index.records,p.primaryAbbreviation,section).records.some(x=>x.slug===p.slug));
-  for(const path of ['products.html',`products/${p.family}.html`]){
+  for(const path of ['products.html',catalog.families.find(f=>f.slug===p.family).url.slice(1)]){
    const cards=[...read(path).matchAll(/<article[^>]*class="[^"]*product-card[^"]*"[\s\S]*?<\/article>/g)].map(x=>x[0]).filter(x=>x.includes(p.slug+'.html'));
    assert.equal(cards.length,1,path+' '+p.slug);assert(/Online ordering/.test(cards[0]));assert(!/Available by RFQ/.test(cards[0]));assert(!/<sub>20<\/sub>/.test(cards[0]));
   }

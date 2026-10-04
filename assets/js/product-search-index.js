@@ -1524,9 +1524,9 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       ],
       "cas": "678966-16-0",
       "formula": "C4F2LiO8P",
-      "section": "additives",
-      "category": "Electrolyte Additives",
-      "metadata": "LiDFOP in EMC — 20 wt% is an electrolyte additive solution for formulation research. Active-material CAS: 678966-16-0; active-material formula: C4F2LiO8P. Lithium difluorobis(oxalato)phosphate in EMC — 20 wt% LiDFOP/EMC LiDFOP LiDFBOP LiDODFP LiODFP LiDFOP in EMC LiDFBOP solution LiDODFP solution LiODFP solution LiDFOP in EMC — 20 wt% Abbreviation LiDFOP in EMC — 20 wt% CAS Number 678966-16-0 Formula C4F2LiO8P Product type Electrolyte Additive Solution Appearance Colorless clear liquid Active material concentration 20.0 ±1.0 wt% Color ≤50 APHA Water ≤50 ppm Free acid ≤200 ppm Turbidity ≤1 NTU Sulfate ≤10 ppm Chloride ≤5 ppm EMC purity (GC) ≥99.95%"
+      "section": "formulations",
+      "category": "Custom Electrolyte Formulations",
+      "metadata": "LiDFOP in EMC — 20 wt% is an electrolyte additive solution for formulation research. Active-material CAS: 678966-16-0; active-material formula: C4F2LiO8P. Lithium difluorobis(oxalato)phosphate in EMC — 20 wt% LiDFOP/EMC LiDFOP LiDFBOP LiDODFP LiODFP LiDFOP in EMC LiDFBOP solution LiDODFP solution LiODFP solution LiDFOP in EMC — 20 wt% Abbreviation LiDFOP in EMC — 20 wt% CAS Number 678966-16-0 Formula C4F2LiO8P Product type Electrolyte Additive Solution Grade Battery grade Appearance Colorless clear liquid Active material concentration 20.0 ±1.0 wt% Color ≤50 APHA Water ≤50 ppm Free acid ≤200 ppm Turbidity ≤1 NTU Sulfate ≤10 ppm Chloride ≤5 ppm EMC purity (GC) ≥99.95%"
     },
     {
       "slug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
@@ -1538,7 +1538,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C2H5F5N3OP3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) is a fluorinated phosphazene electrolyte additive for high-voltage and safety-oriented electrolyte formulation research. Ethoxy(pentafluoro)cyclotriphosphazene PFPN Abbreviation PFPN CAS Number 33027-66-6 Formula C2H5F5N3OP3 Product type Fluorinated phosphazene electrolyte additive Appearance Colorless transparent liquid, no mechanical impurities Color ≤50 Hazen Water ≤50 ppm Assay ≥99.9 wt% Chloride ≤5 ppm Sulfate ≤10 ppm"
+      "metadata": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) is a fluorinated phosphazene electrolyte additive for high-voltage and safety-oriented electrolyte formulation research. Ethoxy(pentafluoro)cyclotriphosphazene PFPN Abbreviation PFPN CAS Number 33027-66-6 Formula C2H5F5N3OP3 Product type Fluorinated phosphazene electrolyte additive Grade Battery grade Appearance Colorless transparent liquid, no mechanical impurities Color ≤50 Hazen Water ≤50 ppm Assay ≥99.9 wt% Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
@@ -1550,7 +1550,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C6H6F9O4P",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) is a fluorinated phosphate solvent and cosolvent for reduced-flammability and thermal-safety electrolyte blends research. Tris(2,2,2-trifluoroethyl) phosphate TFEP Abbreviation TFEP CAS Number 358-63-4 Formula C6H6F9O4P Product type Fluorinated phosphate electrolyte solvent / flame-retardant cosolvent Appearance Colorless liquid Purity ≥99.0 wt% Moisture <200 ppm"
+      "metadata": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) is a fluorinated phosphate solvent and cosolvent for reduced-flammability and thermal-safety electrolyte blends research. Tris(2,2,2-trifluoroethyl) phosphate TFEP Abbreviation TFEP CAS Number 358-63-4 Formula C6H6F9O4P Product type Fluorinated phosphate electrolyte solvent / flame-retardant cosolvent Grade Battery grade Appearance Colorless liquid Purity ≥99.0 wt% Moisture <200 ppm"
     }
   ]
 };

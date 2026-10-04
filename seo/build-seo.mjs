@@ -477,7 +477,8 @@ function listingProperties(product) {
     return product.catalogCardSpecifications
       .map(name => propertiesByName.get(String(name).toLowerCase()))
       .filter(Boolean)
-      .slice(0, 3);
+      // A grade label is classification, not a replacement for an analytical row.
+      .slice(0, product.catalogCardSpecifications.includes('Grade') ? 4 : 3);
   }
   const priorities = product.family === 'lithium-salts' || product.family === 'next-generation-salts'
     ? ['grade', 'purity', 'water']
@@ -1054,6 +1055,16 @@ async function updateProductPage(pagePath, product) {
   const canonical = `${siteUrl}${product.url}`;
   const family = familiesBySlug.get(product.family);
   let html = replaceTitle(original, title);
+  // Reconcile category navigation without rebuilding an approved product layout.
+  if (product.activeMaterialIdentity) {
+    const breadcrumb = html.match(/<div class="breadcrumb">([\s\S]*?)<\/div>/)?.[1] || '';
+    const previousFamily = [...familiesBySlug.values()].find(f => breadcrumb.includes(f.url.split('/').pop()));
+    if (previousFamily && previousFamily.slug !== family.slug) {
+      html = html.replace(/<main>[\s\S]*?<\/main>/, main => main
+        .replaceAll(previousFamily.url.split('/').pop(), family.url.split('/').pop())
+        .replaceAll(previousFamily.name, product.category));
+    }
+  }
   html = replaceMeta(html, 'description', description);
   html = ensureCanonical(html, canonical);
   html = applyOpenGraph(html, { title, description, canonical, image: absoluteSiteUrl(product.image), type: isDirectPurchaseProduct(product) ? 'product' : 'website' });

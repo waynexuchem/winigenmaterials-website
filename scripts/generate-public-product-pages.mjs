@@ -261,7 +261,7 @@ function detailPage(product) {
 
 const missing = [];
 let identityPagesRegenerated = 0;
-for (const product of catalog.products) {
+for (const product of process.argv.includes('--catalog-only') ? [] : catalog.products) {
   const path = resolve(root, product.url.replace(/^\//, ''));
   if (sourceGeneratedSlugs.has(product.slug)) {
     await writeFile(path, detailPage(product));
@@ -282,6 +282,16 @@ for (const product of catalog.products) {
 {
   const productsPath = resolve(root, 'products.html');
   let productsHtml = synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(productsPath, 'utf8')))));
+  // Reconcile existing cards by section before inserting missing cards. A canonical
+  // family move must not leave the old card blocking insertion in its new family.
+  for (const [family, sectionId] of Object.entries(sectionIds)) {
+    const start = productsHtml.indexOf(`<section id="${sectionId}"`);
+    const end = start >= 0 ? productsHtml.indexOf('</section>', start) : -1;
+    if (start < 0 || end < 0) continue;
+    productsHtml = productsHtml.slice(0, start)
+      + removeMisclassifiedCards(productsHtml.slice(start, end), family)
+      + productsHtml.slice(end);
+  }
   for (const [family, sectionId] of Object.entries(sectionIds)) {
     const cards = catalog.products.filter(product => product.family === family && !hasProductCard(productsHtml, product.slug, false)).map(product => renderCard(product, false));
     productsHtml = insertIntoSection(productsHtml, sectionId, cards);

@@ -79,7 +79,7 @@
       const aRank = priority.findIndex(term => a.textContent.toLowerCase().includes(term));
       const bRank = priority.findIndex(term => b.textContent.toLowerCase().includes(term));
       return (aRank === -1 ? priority.length : aRank) - (bRank === -1 ? priority.length : bRank);
-    }).slice(0, 3).map(item => item.innerHTML);
+    }).slice(0, Math.max(3, Math.min(product.listingSpecificationOrder?.length || 3, 4))).map(item => item.innerHTML);
   }
 
   function quantityStepper() {

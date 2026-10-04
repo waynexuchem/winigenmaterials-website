@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
+const slug='lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt';
+test('LiDFOP solution belongs only to Custom Electrolyte Formulations',()=>{
+ const p=JSON.parse(read('catalog/products.source.json')).products.find(p=>p.slug===slug);
+ assert.equal(p.family,'custom-formulations');
+ assert.equal(p.category,'Custom Electrolyte Formulations');
+ assert.equal(p.additionalProperty.find(x=>x.name==='Product type').value,'Electrolyte Additive Solution');
+ const custom=read('products/custom-electrolyte-formulations.html');
+ assert(custom.includes(slug+'.html'));
+ assert(!read('products/electrolyte-additives.html').includes(slug+'.html'));
+ const page=read('products/'+slug+'.html');
+ const schemas=[...page.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
+ assert.equal(schemas.find(n=>n['@type']==='Product').category,p.category);
+ assert(schemas.find(n=>n['@type']==='BreadcrumbList').itemListElement.some(x=>x.item.endsWith('/products/custom-electrolyte-formulations.html')));
+ assert(page.match(/<div class="breadcrumb">[\s\S]*?<\/div>/)[0].includes('custom-electrolyte-formulations.html'));
+ const items=[...read('feeds/google-merchant.xml').matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m=>m[1]).filter(x=>x.includes('<g:item_group_id>WM-ADD-LIDFOP-EMC20</g:item_group_id>'));
+ assert.equal(items.length,5);
+ for(const item of items)assert(item.includes('Custom Electrolyte Formulations'));
+});

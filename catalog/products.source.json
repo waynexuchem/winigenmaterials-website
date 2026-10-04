@@ -8198,8 +8198,8 @@
       "slug": "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt",
       "url": "/products/lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt.html",
       "name": "Lithium difluorobis(oxalato)phosphate (LiDFOP) in EMC — 20 wt%",
-      "family": "electrolyte-additives",
-      "category": "Electrolyte Additives",
+      "family": "custom-formulations",
+      "category": "Custom Electrolyte Formulations",
       "sku": "WM-ADD-LIDFOP-EMC20",
       "primaryAbbreviation": "LiDFOP/EMC",
       "chemicalName": "Lithium difluorobis(oxalato)phosphate in EMC — 20 wt%",
@@ -8254,6 +8254,10 @@
           "value": "Electrolyte Additive Solution"
         },
         {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
           "name": "Appearance",
           "value": "Colorless clear liquid"
         },
@@ -8297,12 +8301,14 @@
         "ethyl-methyl-carbonate-emc"
       ],
       "catalogCardSpecifications": [
+        "Grade",
         "Appearance",
         "Water"
       ],
       "qualityDocumentation": {
         "specificationBasis": "approved-tds-release",
         "keySpecifications": [
+          "Grade",
           "Appearance",
           "Active material concentration",
           "Color",
@@ -8322,7 +8328,7 @@
       },
       "researchUse": "Research focuses on solution dosing and electrolyte compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
       "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
-      "cardCategory": "Electrolyte Additives",
+      "cardCategory": "Custom Electrolyte Formulations",
       "ecommerceSlug": "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt",
       "imagePresentation": "electrolyte-solution"
     },
@@ -8365,6 +8371,10 @@
           "value": "Fluorinated phosphazene electrolyte additive"
         },
         {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
           "name": "Appearance",
           "value": "Colorless transparent liquid, no mechanical impurities"
         },
@@ -8390,6 +8400,7 @@
         }
       ],
       "catalogCardSpecifications": [
+        "Grade",
         "Appearance",
         "Water",
         "Assay"
@@ -8397,6 +8408,7 @@
       "qualityDocumentation": {
         "specificationBasis": "approved-tds-release",
         "keySpecifications": [
+          "Grade",
           "Appearance",
           "Color",
           "Water",
@@ -8460,6 +8472,10 @@
           "value": "Fluorinated phosphate electrolyte solvent / flame-retardant cosolvent"
         },
         {
+          "name": "Grade",
+          "value": "Battery grade"
+        },
+        {
           "name": "Appearance",
           "value": "Colorless liquid"
         },
@@ -8473,6 +8489,7 @@
         }
       ],
       "catalogCardSpecifications": [
+        "Grade",
         "Appearance",
         "Purity",
         "Moisture"
@@ -8480,6 +8497,7 @@
       "qualityDocumentation": {
         "specificationBasis": "approved-tds-release",
         "keySpecifications": [
+          "Grade",
           "Appearance",
           "Purity",
           "Moisture"

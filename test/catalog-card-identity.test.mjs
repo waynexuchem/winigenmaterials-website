@@ -10,8 +10,8 @@ const selected=products.filter(p=>identityFamilies.has(p.family));
 const prop=(p,key)=>p.additionalProperty.find(x=>x.name===key)?.value;
 const plain=s=>s.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
 const collect=(o,type)=>{if(!o||typeof o!=='object')return [];return [...(o['@type']===type?[o]:[]),...Object.values(o).flatMap(v=>Array.isArray(v)?v.flatMap(x=>collect(x,type)):collect(v,type))];};
-test('all 57 cards survive repeated generation with canonical aliases and compact categories', async()=>{
- assert.deepEqual([...identityFamilies].map(f=>selected.filter(p=>p.family===f).length),[9,17,26,5]);
+test('all 56 neat-material cards survive repeated generation with canonical aliases and compact categories', async()=>{
+ assert.deepEqual([...identityFamilies].map(f=>selected.filter(p=>p.family===f).length),[9,17,25,5]);
  for(const family of identityFamilies){
   const path=`products/${family}.html`,html=await readFile(new URL(path,root),'utf8');
   assert.equal(synchronizeProductPresentation(html,products,new URL(path,root).pathname),html);

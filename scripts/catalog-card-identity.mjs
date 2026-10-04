@@ -80,7 +80,7 @@ function synchronizeImageIdentity(html, product) {
 }
 
 export function synchronizeCatalogCardIdentities(html, products) {
-  const bySlug = new Map(products.filter(product => identityFamilies.has(product.family)).map(product => [product.slug, product]));
+  const bySlug = new Map(products.filter(product => identityFamilies.has(product.family) || product.activeMaterialIdentity).map(product => [product.slug, product]));
   return html.replace(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi, article => {
     const href = article.match(/class="product-detail-link"[^>]*href="([^"]+)"/i)?.[1];
     const product = bySlug.get(href?.split('/').pop().replace(/\.html(?:[?#].*)?$/, ''));
@@ -106,7 +106,7 @@ export function synchronizeCatalogCardIdentities(html, products) {
 
 export function synchronizeProductPresentation(html, products, pagePath = '') {
   html = synchronizeCatalogCardIdentities(html, products);
-  const selected = products.filter(p => identityFamilies.has(p.family));
+  const selected = products.filter(p => identityFamilies.has(p.family) || p.activeMaterialIdentity);
   html = html.split(/(<(?:script|style|title|code|pre)\b[^>]*>[\s\S]*?<\/(?:script|style|title|code|pre)\s*>|<!--[\s\S]*?-->|<[^>]*>)/gi).map(part => {
     if (part.startsWith('<')) return part;
     for (const p of selected) for (const oldName of p.legacyChemicalNames || []) part = part.split(oldName).join(escapeHtml(p.chemicalName));

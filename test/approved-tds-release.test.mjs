@@ -30,7 +30,8 @@ test('three new products use canonical online commerce and retain discovery regi
   assert(commerce.products.some(x=>x.slug===p.slug));
   const html=await read(p.url.slice(1));assert(/Add to Cart/.test(html),sku);assert(/"@type":\s*"Offer"/.test(html),sku);
   assert((await read('sitemap.xml')).includes(p.url));assert((await read('assets/js/product-search-index.js')).includes(p.slug));
-  assert((await read('products/'+p.family+'.html')).includes(p.slug));
+  const family=JSON.parse(await read('catalog/products.source.json')).families.find(f=>f.slug===p.family);
+  assert((await read(family.url.slice(1))).includes(p.slug));
  }
 });
 test('no invented DME purity or DFEA color limit; solution has separate identity',()=>{

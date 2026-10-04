@@ -4,7 +4,7 @@ import {readFileSync,existsSync} from 'node:fs';
 import {synchronizeProductPresentation} from '../scripts/catalog-card-identity.mjs';
 import {finalizeApprovedTds} from '../scripts/approved-tds-presentation.mjs';
 const root=new URL('../',import.meta.url),read=p=>readFileSync(new URL(p,root),'utf8');
-const products=JSON.parse(read('catalog/products.source.json')).products;
+const {products,families}=JSON.parse(read('catalog/products.source.json'));
 const selected=products.filter(p=>p.imagePresentation);
 const bottle=products.find(p=>p.slug==='1m-lipf6-ec-emc-3-7-1-vc-electrolyte').image;
 const manifest=read('cloudflare-site/public-assets.txt');
@@ -24,7 +24,7 @@ for(const p of selected)test(`${p.primaryAbbreviation}: canonical local media ac
  assert(!/data-structure-fallback|structure-fallback|winigen-logo|\.svg/.test(visual));
  assert(visual.includes(p.imagePresentation==='electrolyte-solution'?'product-packaging-photo':'chemical-structure--detail'));
  assert(visual.includes(p.imageAlt));
- for(const file of ['products.html',`products/${p.family}.html`]){
+ for(const file of ['products.html',families.find(f=>f.slug===p.family).url.slice(1)]){
   const article=[...read(file).matchAll(/<article class="[^\"]*\bproduct-card\b[\s\S]*?<\/article>/g)].find(m=>m[0].includes(p.slug+'.html'))?.[0];
   assert(article?.includes(`src="${p.image}"`),file);
   if(p.imagePresentation==='electrolyte-solution')assert(!article.includes('structure-fallback'));

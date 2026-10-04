@@ -341,7 +341,9 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
       continue;
     }
 
-    const productType = productTypes[semanticProduct.family];
+    const productType = semanticProduct.family === 'custom-formulations' && semanticProduct.activeMaterialIdentity
+      ? `Science & Laboratory > Battery Materials > ${semanticProduct.category}`
+      : productTypes[semanticProduct.family];
     if (!productType) throw new Error(`${semanticProduct.slug} has no public Merchant product_type mapping.`);
     const identifierRecord = identifierRecords.get(semanticProduct.slug);
     products.push(semanticProduct.slug);
