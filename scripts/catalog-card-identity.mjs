@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 export const identityFamilies = new Set(['lithium-salts', 'battery-solvents', 'electrolyte-additives', 'next-generation-salts']);
 const escapeHtml = value => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const property = (product, name) => product.additionalProperty?.find(item => item.name === name)?.value || '';
-const notation = value => escapeHtml(value).replace(/(\d+)/g, '<sub>$1</sub>');
+// Concentrations and descriptive abbreviations are not molecular formulas.
+const notation = value => /\s|%/.test(value) ? escapeHtml(value) : escapeHtml(value).replace(/(\d+)/g, '<sub>$1</sub>');
 export function identityAliases(product) {
   // The migrated families use explicit approved fields only. Legacy `aliases` is a
   // compatibility projection, never an input: old seed fragments must not return.
@@ -23,6 +24,7 @@ export function cardIdentity(product) {
 }
 
 export function displayIdentity(product) {
+  if (product.activeMaterialIdentity) return product.cardName || product.name;
   if (!identityFamilies.has(product.family)) return product.name;
   const { name, shorthand } = cardIdentity(product);
   return shorthand ? `${name} (${shorthand})` : name;
@@ -55,9 +57,24 @@ export function synchronizeRfqIdentity(html, product) {
 function synchronizeImageIdentity(html, product) {
   const identity = escapeHtml(displayIdentity(product));
   return html.replace(/<img\b[^>]*>/gi, tag => {
+    // Explicit media presentation is independent of chemistry/content category.
+    // Limit migrations to this product's own primary image, never related images.
+    if (product.imagePresentation) {
+      const src = tag.match(/\bsrc="([^"]+)"/)?.[1] || '';
+      const path = '/' + src.replace(/^(?:\.\.\/|\/)+/, '');
+      const legacy = `/assets/images/chemical-structures/${product.slug}.svg`;
+      if (path === product.image || path === legacy) {
+        const detail = /--detail/.test(tag) || /product-visual-frame/.test(html.slice(Math.max(0, html.indexOf(tag)-100), html.indexOf(tag)));
+        const classes = product.imagePresentation === 'electrolyte-solution'
+          ? (detail ? 'product-packaging-photo product-packaging-photo--detail' : 'product-photo product-packaging-photo')
+          : `chemical-structure chemical-structure--${detail ? 'detail' : 'large'}`;
+        tag = tag.replace(/\bsrc="[^"]*"/, `src="${product.image}"`).replace(/\bclass="[^"]*"/, `class="${classes}"`).replace(/\sdata-structure-fallback(?:="[^"]*")?/, '');
+      }
+    }
+    if(product.qualityDocumentation?.specificationBasis==='approved-tds-release' && product.commerceStatus==='rfq' && tag.includes('data-structure-fallback')) tag=tag.replace(/src="[^"]*"/,`src="${product.image}"`).replace(/\sdata-structure-fallback/,'');
     const src = tag.match(/\bsrc="([^"]+)"/)?.[1];
     if (!src || '/' + src.replace(/^(?:\.\.\/|\/)+/, '') !== product.image) return tag;
-    const alt = `${identity}${product.image.includes('/chemical-structures/') ? ' chemical structure' : ' product image'}`;
+    const alt = product.imagePresentation && product.imageAlt ? escapeHtml(product.imageAlt) : `${identity}${product.qualityDocumentation?.specificationBasis === 'approved-tds-release' && product.commerceStatus === 'rfq' ? ' identity illustration' : product.image.includes('/chemical-structures/') ? ' chemical structure' : ' product image'}`;
     return /\balt="[^"]*"/.test(tag) ? tag.replace(/\balt="[^"]*"/, `alt="${alt}"`) : tag.replace(/\s*\/?>$/, ` alt="${alt}">`);
   });
 }
@@ -70,11 +87,15 @@ export function synchronizeCatalogCardIdentities(html, products) {
     if (!product) return article;
     const { shorthand, name, cas } = cardIdentity(product);
     article = synchronizeRfqIdentity(synchronizeImageIdentity(article, product), product);
+    if (product.imagePresentation === 'electrolyte-solution') {
+      // A neat-material formula is not a fallback depiction of a formulation.
+      article = article.replace(/<div class="structure-fallback">[\s\S]*?<\/div>/g, '');
+    }
     article = article.replace(/<a\b[^>]*class="product-media-link"[^>]*>/gi, tag => {
       const label = `View details for ${escapeHtml(displayIdentity(product))}`;
       return /aria-label="[^"]*"/.test(tag) ? tag.replace(/aria-label="[^"]*"/, `aria-label="${label}"`) : tag.replace(/>$/, ` aria-label="${label}">`);
     });
-    const title = `<div class="product-card__identity" data-display-identity="${escapeHtml(displayIdentity(product))}"><h3 class="product-card__identity-title"><a class="product-detail-link" href="${href}" aria-label="${escapeHtml(accessibilityIdentity(product))}">${shorthand ? `<span class="product-card__identifier">${notation(shorthand)}</span> <span class="product-card__chemical-name">${escapeHtml(name)}</span>` : escapeHtml(name)}</a></h3>${cas ? `<p class="product-card__cas"><span>CAS:</span> ${escapeHtml(cas)}</p>` : ''}</div>`;
+    const title = `<div class="product-card__identity" data-display-identity="${escapeHtml(displayIdentity(product))}"><h3 class="product-card__identity-title"><a class="product-detail-link" href="${href}" aria-label="${escapeHtml(accessibilityIdentity(product))}">${shorthand ? `<span class="product-card__identifier">${notation(shorthand)}</span> <span class="product-card__chemical-name">${escapeHtml(name)}</span>` : escapeHtml(name)}</a></h3>${cas ? `<p class="product-card__cas"><span>${product.activeMaterialIdentity ? "Active-material CAS" : "CAS"}:</span> ${escapeHtml(cas)}</p>` : ''}</div>`;
     article = article.replace(/<div class="product-card__identity"[^>]*>[\s\S]*?<\/div>|<h3\b[^>]*>[\s\S]*?<\/h3>(?:\s*<p class="product-card__cas">[\s\S]*?<\/p>)?/, title);
     article = article.replace(/(<span class="product-card__category"[^>]*>)[\s\S]*?(<\/span>)/, `$1${escapeHtml(product.cardCategory || product.category)}$2`);
     const search = escapeHtml([product.category, displayIdentity(product), name, ...identityAliases(product), cas, property(product, 'Formula')].join(' ').toLowerCase());
@@ -98,7 +119,7 @@ export function synchronizeProductPresentation(html, products, pagePath = '') {
     const heading = `<span class="product-identity__identifier">${notation(shorthand || name)}</span>${shorthand ? ` <span class="product-identity__name">${escapeHtml(name)}</span>` : ''}`;
     html = html.replace(/<h1\b([^>]*)>[\s\S]*?<\/h1>(?:\s*<p class="product-identity__cas">[\s\S]*?<\/p>)?/, (_, attributes) => {
       attributes = attributes.replace(/\sdata-product-identity="true"/, '');
-      return `<h1${attributes} data-product-identity="true">${heading}</h1><p class="product-identity__cas">CAS: ${escapeHtml(cas)}</p>`;
+      return `<h1${attributes} data-product-identity="true">${heading}</h1><p class="product-identity__cas">${product.activeMaterialIdentity ? 'Active-material CAS' : 'CAS'}: ${escapeHtml(cas)}</p>`;
     });
     const identityData = `<script type="application/json" id="product-identity-data">${JSON.stringify({shorthand, name, cas, displayIdentity: displayIdentity(product), aliases: identityAliases(product)}).replace(/</g, '\\u003c')}</script>`;
     html = /<script type="application\/json" id="product-identity-data">[\s\S]*?<\/script>/.test(html)
@@ -118,6 +139,10 @@ export function synchronizeProductPresentation(html, products, pagePath = '') {
     const set = (node, key, value) => { if (JSON.stringify(node[key]) !== JSON.stringify(value)) { node[key] = value; changed = true; } };
     const visit = node => {
       if (!node || typeof node !== 'object') return;
+      if (product?.imagePresentation && node['@type'] === 'WebPage' && node.primaryImageOfPage) {
+        const image = 'https://www.winigenmaterials.com' + product.image;
+        set(node, 'primaryImageOfPage', typeof node.primaryImageOfPage === 'string' ? image : {...node.primaryImageOfPage, url: image});
+      }
       if (node['@type'] === 'ItemList') {
         for (const entry of node.itemListElement || []) {
           const url = entry.url || (typeof entry.item === 'string' ? entry.item : entry.item?.url || entry.item?.['@id']);
@@ -133,7 +158,7 @@ export function synchronizeProductPresentation(html, products, pagePath = '') {
           if (node.molecularFormula) set(node, 'molecularFormula', property(p, 'Formula'));
           if (Array.isArray(node.additionalProperty)) {
             const props = node.additionalProperty.filter(x => x.name !== 'Alternate Abbreviation').map(x => ['Abbreviation','Formula','CAS Number'].includes(x.name) ? {...x, value: property(p, x.name)} : x);
-            set(node, 'additionalProperty', props);
+            set(node, 'additionalProperty', p.activeMaterialIdentity ? props.map(x => ['CAS Number','Formula'].includes(x.name) ? {...x, name:'Active-material '+x.name} : x) : props);
           }
         }
       }

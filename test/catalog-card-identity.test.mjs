@@ -3,14 +3,15 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { cardIdentity, identityAliases, identityFamilies, displayIdentity, accessibilityIdentity, synchronizeRfqIdentity, synchronizeProductPresentation, synchronizeCatalogCardIdentities } from '../scripts/catalog-card-identity.mjs';
 import { renderStaticCommerceCards } from '../seo/build-seo.mjs';
+import { finalizeApprovedTds } from '../scripts/approved-tds-presentation.mjs';
 const root = new URL('../', import.meta.url);
 const {products}=JSON.parse(await readFile(new URL('catalog/products.source.json', root),'utf8'));
 const selected=products.filter(p=>identityFamilies.has(p.family));
 const prop=(p,key)=>p.additionalProperty.find(x=>x.name===key)?.value;
 const plain=s=>s.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
 const collect=(o,type)=>{if(!o||typeof o!=='object')return [];return [...(o['@type']===type?[o]:[]),...Object.values(o).flatMap(v=>Array.isArray(v)?v.flatMap(x=>collect(x,type)):collect(v,type))];};
-test('all 54 cards survive repeated generation with canonical aliases and compact categories', async()=>{
- assert.deepEqual([...identityFamilies].map(f=>selected.filter(p=>p.family===f).length),[9,16,24,5]);
+test('all 57 cards survive repeated generation with canonical aliases and compact categories', async()=>{
+ assert.deepEqual([...identityFamilies].map(f=>selected.filter(p=>p.family===f).length),[9,17,26,5]);
  for(const family of identityFamilies){
   const path=`products/${family}.html`,html=await readFile(new URL(path,root),'utf8');
   assert.equal(synchronizeProductPresentation(html,products,new URL(path,root).pathname),html);
@@ -28,10 +29,10 @@ test('all 54 cards survive repeated generation with canonical aliases and compac
 test('all individual pages have one canonical H1, CAS, formula, search aliases and JSON-LD alternateName',async()=>{
  for(const p of selected){
   const path=p.url.slice(1),html=await readFile(new URL(path,root),'utf8');
-  assert.equal(synchronizeProductPresentation(html,products,new URL(path,root).pathname),html);
+  assert.equal(finalizeApprovedTds(synchronizeProductPresentation(html,products,new URL(path,root).pathname),p,products),html);
   const headings=[...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)];assert.equal(headings.length,1,p.slug);
   const {shorthand,name,cas}=cardIdentity(p);assert.ok(plain(headings[0][1]).includes(shorthand),p.slug);assert.ok(plain(headings[0][1]).includes(name),p.slug);
-  assert.ok(html.includes(`class="product-identity__cas">CAS: ${cas}`));
+  assert.ok(html.includes(`class="product-identity__cas">${p.activeMaterialIdentity?'Active-material CAS':'CAS'}: ${cas}`));
   const keywords=html.match(/<meta name="keywords" content="([^"]+)"/)[1];for(const alias of identityAliases(p))assert.ok(keywords.includes(alias),`${p.slug} alias ${alias}`);
   const schema=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(x=>collect(JSON.parse(x[1]),'Product'));
   assert.ok(schema.length,p.slug);for(const node of schema){assert.deepEqual(node.alternateName,identityAliases(p));const formula=node.additionalProperty?.find(x=>x.name==='Formula');if(formula)assert.equal(formula.value,prop(p,'Formula'));}
@@ -81,7 +82,7 @@ test('all category ItemList names use the same normalized identity as visible ca
  }
 });
 
-test('all 54 display identities agree across cards, images, detail schema, search and accessibility', async () => {
+test('all 57 display identities agree across cards, images, detail schema, search and accessibility', async () => {
  const catalog = await readFile(new URL('products.html', root), 'utf8');
  for (const p of selected) {
   const display = displayIdentity(p), {shorthand, name} = cardIdentity(p);
@@ -89,11 +90,13 @@ test('all 54 display identities agree across cards, images, detail schema, searc
   assert.ok(article, p.slug);
   assert.ok(plain(article).includes(shorthand) && plain(article).includes(name));
   assert.ok(article.includes(`aria-label="View details for ${display}"`), `${p.slug}: media accessibility`);
-  assert.ok(article.includes(`alt="${display} chemical structure"`), `${p.slug}: card image`);
+  const imageType=p.qualityDocumentation?.specificationBasis==='approved-tds-release'&&p.commerceStatus==='rfq'?'identity illustration':'chemical structure';
+  const imageAlt=p.imagePresentation?p.imageAlt:`${display} ${imageType}`;
+  assert.ok(article.includes(`alt="${imageAlt}"`), `${p.slug}: card image`);
   const detail = await readFile(new URL(p.url.slice(1), root), 'utf8');
-  assert.ok(detail.includes(`alt="${display} chemical structure"`), `${p.slug}: detail image`);
+  assert.ok(detail.includes(`alt="${imageAlt}"`), `${p.slug}: detail image`);
   assert.ok(detail.includes(`<meta name="keywords" content="${display},`), `${p.slug}: detail search metadata`);
-  for (const node of schemas(detail).flatMap(s=>collect(s,'Product'))) assert.equal(node.name, display, p.slug);
+  for (const node of schemas(detail).flatMap(s=>collect(s,'Product'))) assert.equal(node.name, p.qualityDocumentation?.specificationBasis==='approved-tds-release'?p.name:display, p.slug);
   assert.equal(searchRecords.find(r=>r.slug===p.slug).name, display, p.slug);
  }
 });

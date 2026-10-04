@@ -261,7 +261,7 @@
       "slug": "lithium-bis-oxalato-borate-libob",
       "url": "/products/lithium-bis-oxalato-borate-libob.html",
       "name": "Lithium bis(oxalato)borate (LiBOB)",
-      "description": "Lithium bis(oxalato)borate (LiBOB), CAS 244761-29-3, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "description": "Lithium bis(oxalato)borate (LiBOB) is a borate-based lithium electrolyte salt for salt-blend evaluation and electrode-electrolyte compatibility research.",
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIBOB",
@@ -290,27 +290,68 @@
           "value": "C4BLiO8"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
           "name": "Grade",
           "value": "Battery grade"
         },
         {
-          "name": "Purity",
-          "value": "> 99.9%"
+          "name": "Appearance",
+          "value": "White powder"
         },
         {
-          "name": "Water",
-          "value": "≤ 50 ppm"
+          "name": "Assay (IC)",
+          "value": "≥99.8 wt%"
+        },
+        {
+          "name": "Water (Karl Fischer)",
+          "value": "≤300 ppm"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Color",
+          "value": "≤30 Hazen"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤10 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
         }
       ],
       "primaryAbbreviation": "LiBOB",
-      "cardCategory": "Lithium Salt",
+      "alternateAbbreviations": [],
       "chemicalName": "Lithium bis(oxalato)borate",
+      "cardCategory": "Lithium Salts",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Assay (IC)",
+        "Water (Karl Fischer)"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Assay (IC)",
+          "Water (Karl Fischer)",
+          "Acidity, as HF",
+          "Color",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_LiBOB_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "5c635de381820ccd8c7b32ab9d430ddfb6b9a29523297c5edfda2ba5290234cc",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on salt-blend evaluation and electrode-electrolyte compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "lithium-difluoro-oxalate-borate-liodfb",
@@ -1199,7 +1240,7 @@
       "slug": "2-2-difluoroethyl-acetate-dfea",
       "url": "/products/2-2-difluoroethyl-acetate-dfea.html",
       "name": "2,2-Difluoroethyl acetate (DFEA)",
-      "description": "2,2-Difluoroethyl acetate (DFEA), CAS 1550-44-3, is a fluorinated ester solvent available from Winigen Materials. Supplier specifications include purity 98–100%, specific gravity 1.2060–1.2100 at 20/20, and refractive index 1.3520–1.3560 n20/D.",
+      "description": "2,2-Difluoroethyl acetate (DFEA) is a fluorinated ester solvent for solvent-blend screening and interfacial compatibility research.",
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DFEA",
@@ -1208,18 +1249,18 @@
         "DFEA"
       ],
       "qualityDocumentation": {
-        "tds": {
-          "path": "/assets/documents/tds/Winigen_DFEA_Representative_TDS_RevB.pdf",
-          "sha256": "faade6a72e1fb49e7d03e8187dea1f8741ffe082d2f2822bb032d1f539ae73cf"
-        },
+        "specificationBasis": "approved-tds-release",
         "keySpecifications": [
-          "CAS Number",
           "Purity",
-          "Specific gravity, 20/20",
-          "Refractive index, n20/D",
-          "Appearance",
-          "Grade"
-        ]
+          "Acidity, as HF",
+          "Water"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_DFEA_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "41f46d94f9175cb82da5a579fad372a20eaa4d78af87b1e1f510cbdf9e3b204b",
+          "includesRepresentativeResults": true
+        }
       },
       "commercialIntents": [
         "DFEA supplier",
@@ -1242,41 +1283,43 @@
           "value": "C4H6F2O2"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
-          "name": "Purity",
-          "value": "98–100%"
-        },
-        {
           "name": "Grade",
           "value": "Battery material grade"
         },
         {
-          "name": "Appearance",
-          "value": "Colorless to very pale yellow clear liquid"
-        },
-        {
-          "name": "Specific gravity, 20/20",
-          "value": "1.2060–1.2100"
-        },
-        {
           "name": "Refractive index, n20/D",
           "value": "1.3520–1.3560"
+        },
+        {
+          "name": "Purity",
+          "value": "≥99.0 wt%"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Water",
+          "value": "≤200 ppm"
         }
       ],
       "primaryAbbreviation": "DFEA",
-      "cardCategory": "Solvent",
+      "alternateAbbreviations": [],
       "chemicalName": "2,2-Difluoroethyl acetate",
+      "cardCategory": "Battery Solvents",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Purity",
+        "Water"
+      ],
+      "researchUse": "Research focuses on solvent-blend screening and interfacial compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "1-2-dimethoxyethane-dme",
       "url": "/products/1-2-dimethoxyethane-dme.html",
       "name": "1,2-Dimethoxyethane (DME)",
-      "description": "1,2-Dimethoxyethane (DME), CAS 110-71-4, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "description": "1,2-Dimethoxyethane (DME) is an ether solvent for salt solubility, coordination, and electrolyte transport research.",
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DME",
@@ -1305,33 +1348,51 @@
           "value": "C4H10O2"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
-          "name": "Water",
-          "value": "< 100 ppm"
-        },
-        {
           "name": "Grade",
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Colorless transparent liquid."
+          "name": "Color",
+          "value": "≤10 APHA"
+        },
+        {
+          "name": "Water (Karl Fischer)",
+          "value": "≤300 ppm"
         }
       ],
       "primaryAbbreviation": "DME",
-      "cardCategory": "Solvent",
+      "alternateAbbreviations": [],
       "chemicalName": "1,2-Dimethoxyethane",
+      "cardCategory": "Battery Solvents",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Color",
+          "Water (Karl Fischer)"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_DME_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "0bd4b4482a1886e23e55e1bc3f044973a19604555e3df4a4bb705ec379ab2a3f",
+          "includesRepresentativeResults": true
+        }
+      },
+      "catalogCardSpecifications": [
+        "Water (Karl Fischer)"
+      ],
+      "researchUse": "Research focuses on salt solubility, coordination, and electrolyte transport. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "relatedProductSlugs": [
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+        "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte"
+      ]
     },
     {
       "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
       "url": "/products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html",
       "name": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE)",
-      "description": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE), CAS 16627-68-2, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "description": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE) is a fluorinated ether solvent for diluent selection and electrolyte blend compatibility research.",
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-TTE",
@@ -1360,36 +1421,77 @@
           "value": "C5H4F8O"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
-          "name": "Water",
-          "value": "< 100 ppm"
-        },
-        {
           "name": "Grade",
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Colorless transparent liquid."
+          "name": "Appearance",
+          "value": "Colorless transparent liquid; no mechanical impurities"
+        },
+        {
+          "name": "Purity",
+          "value": "≥99.00 wt%"
+        },
+        {
+          "name": "Water",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤10 ppm"
+        },
+        {
+          "name": "Color",
+          "value": "≤20 APHA"
+        },
+        {
+          "name": "Chloride, Cl−",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate, SO42−",
+          "value": "≤10 ppm"
         }
       ],
       "primaryAbbreviation": "TTE",
-      "cardCategory": "Solvent",
+      "alternateAbbreviations": [],
       "chemicalName": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether",
+      "cardCategory": "Battery Solvents",
       "legacyChemicalNames": [
         "1,1,2,2-Tetrafluoroethyl-2,2,3,3-tetrafluoropropylether"
       ],
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Purity",
+          "Water",
+          "Acidity, as HF",
+          "Color",
+          "Chloride, Cl−",
+          "Sulfate, SO42−"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_TTE_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "c9a2065a2075bcaec036d6eb65752a41ab8de0df5fb69f8dd6a8f4ab7f9d5141",
+          "includesRepresentativeResults": true
+        }
+      },
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Purity",
+        "Water"
+      ],
+      "researchUse": "Research focuses on diluent selection and electrolyte blend compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
       "url": "/products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html",
       "name": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC)",
-      "description": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC), CAS 156783-95-8, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Transparent liquid..",
+      "description": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC) is a fluorinated carbonate solvent for fluorinated solvent blends and electrode-electrolyte compatibility research.",
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-FEMC",
@@ -1418,27 +1520,52 @@
           "value": "C4H5F3O3"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
-          "name": "Water",
-          "value": "< 100 ppm"
-        },
-        {
           "name": "Grade",
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Transparent liquid."
+          "name": "Appearance",
+          "value": "Colorless liquid"
+        },
+        {
+          "name": "Purity (GC)",
+          "value": "≥99.9 wt%"
+        },
+        {
+          "name": "Moisture (Coulometric)",
+          "value": "≤30 ppm"
         }
       ],
       "primaryAbbreviation": "FEMC",
-      "cardCategory": "Solvent",
+      "alternateAbbreviations": [],
       "chemicalName": "Methyl 2,2,2-trifluoroethyl carbonate",
+      "cardCategory": "Battery Solvents",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Purity (GC)",
+          "Moisture (Coulometric)"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_FEMC_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "934fbb481ba5419b0de81752ed379060d89fb81674083909aba457c3c2c4adca",
+          "includesRepresentativeResults": true
+        }
+      },
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Purity (GC)",
+        "Moisture (Coulometric)"
+      ],
+      "researchUse": "Research focuses on fluorinated solvent blends and electrode-electrolyte compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "relatedProductSlugs": [
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+        "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte"
+      ]
     },
     {
       "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
@@ -1622,7 +1749,7 @@
       "slug": "vinyl-ethylene-carbonate-vec",
       "url": "/products/vinyl-ethylene-carbonate-vec.html",
       "name": "Vinyl ethylene carbonate (VEC)",
-      "description": "Vinyl ethylene carbonate (VEC), CAS 4427-96-7, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade.",
+      "description": "Vinyl ethylene carbonate (VEC) is a carbonate electrolyte additive for additive screening and electrolyte formulation research.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-VEC",
@@ -1651,19 +1778,63 @@
           "value": "C5H6O3"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
           "name": "Grade",
           "value": "Battery material grade"
+        },
+        {
+          "name": "Appearance",
+          "value": "Colorless transparent liquid, no mechanical impurities, insoluble matter, or flocculent material"
+        },
+        {
+          "name": "Color",
+          "value": "≤20 Hazen"
+        },
+        {
+          "name": "Water",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.9 wt%"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
         }
       ],
       "primaryAbbreviation": "VEC",
-      "cardCategory": "Additive",
+      "alternateAbbreviations": [],
       "chemicalName": "Vinyl ethylene carbonate",
+      "cardCategory": "Electrolyte Additives",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Water",
+        "Assay"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Color",
+          "Water",
+          "Assay",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_VEC_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "f5db0eee7211a45ed88c67191883cb547b0bb7f71b6f6dd5b1b8efa967b61df1",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on additive screening and electrolyte formulation. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "1-3-propanediol-cyclic-sulfate-ts",
@@ -2114,7 +2285,7 @@
       "slug": "adiponitrile-adn",
       "url": "/products/adiponitrile-adn.html",
       "name": "Adiponitrile (ADN)",
-      "description": "Adiponitrile (ADN), CAS 111-69-3, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid..",
+      "description": "Adiponitrile (ADN) is a nitrile solvent and electrolyte additive for nitrile-containing electrolyte blends and compatibility research.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-ADN",
@@ -2143,23 +2314,58 @@
           "value": "C6H8N2"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
           "name": "Grade",
           "value": "Battery material grade"
         },
         {
-          "name": "Physical",
-          "value": "Colorless transparent liquid."
+          "name": "Appearance",
+          "value": "Colorless transparent liquid, no mechanical impurities"
+        },
+        {
+          "name": "Purity (GC)",
+          "value": "≥99.95 wt%"
+        },
+        {
+          "name": "Water (Karl Fischer)",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Color",
+          "value": "≤100 Hazen"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
         }
       ],
       "primaryAbbreviation": "ADN",
-      "cardCategory": "Additive",
+      "alternateAbbreviations": [],
       "chemicalName": "Adiponitrile",
+      "cardCategory": "Electrolyte Additives",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Purity (GC)",
+        "Water (Karl Fischer)"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Purity (GC)",
+          "Water (Karl Fischer)",
+          "Color",
+          "Chloride"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_ADN_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "24febc7bfec8dc20b15a183392f63f8b14ca65f34ea6aa555664c7ce0657ccce",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on nitrile-containing electrolyte blends and compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
@@ -2212,7 +2418,7 @@
       "slug": "1-3-6-hexanetricarbonitrile-htcn",
       "url": "/products/1-3-6-hexanetricarbonitrile-htcn.html",
       "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
-      "description": "1,3,6-Hexanetricarbonitrile (HTCN), CAS 1772-25-4, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities; Color: ≤50 Hazen; Water: ≤100 ppm; Assay: ≥99.5 wt%; Acidity, as HF: ≤100 ppm; Chloride: ≤5 ppm; Sulfate: ≤10 ppm.",
+      "description": "1,3,6-Hexanetricarbonitrile (HTCN) is a nitrile electrolyte additive for nitrile-containing formulations and compatibility research.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-HTCN",
@@ -2239,10 +2445,6 @@
         {
           "name": "Formula",
           "value": "C9H11N3"
-        },
-        {
-          "name": "Availability",
-          "value": "RFQ"
         },
         {
           "name": "Grade",
@@ -2278,15 +2480,13 @@
         }
       ],
       "catalogCardSpecifications": [
-        "Assay",
+        "Appearance",
         "Water",
-        "Appearance"
+        "Assay"
       ],
       "qualityDocumentation": {
-        "specificationBasis": "finalized-tds",
+        "specificationBasis": "approved-tds-release",
         "keySpecifications": [
-          "CAS Number",
-          "Formula",
           "Appearance",
           "Color",
           "Water",
@@ -2296,23 +2496,25 @@
           "Sulfate"
         ],
         "tds": {
-          "path": "/assets/documents/tds/Winigen_HTCN_Representative_TDS.pdf",
+          "path": "/assets/documents/tds/Winigen_HTCN_TDS.pdf",
           "title": "Technical Data Sheet (PDF)",
-          "includesRepresentativeResults": true,
-          "sha256": "080551c4179800cd81ca3b6a67a47ec8ab2e38c8da90be3c9fb138fa94961197"
+          "sha256": "5e478c84ee3f16ed0828fbebf6efd3a621b5ebbc5d37eb9088386e9226b274d7",
+          "includesRepresentativeResults": true
         }
       },
-      "approvedSynonyms": [],
-      "alternateAbbreviations": [],
       "primaryAbbreviation": "HTCN",
-      "cardCategory": "Additive",
-      "chemicalName": "1,3,6-Hexanetricarbonitrile"
+      "alternateAbbreviations": [],
+      "chemicalName": "1,3,6-Hexanetricarbonitrile",
+      "cardCategory": "Electrolyte Additives",
+      "approvedSynonyms": [],
+      "researchUse": "Research focuses on nitrile-containing formulations and compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
       "url": "/products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html",
       "name": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
-      "description": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS), CAS 99591-74-9, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no mechanical impurities; Color: ≤50 Hazen; Free acid, as HF: ≤80 ppm; Water: ≤80 µg/g; Assay: ≥99.5 wt%; Chloride: ≤5 µg/g.",
+      "description": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS) is a sulfur-containing electrolyte additive for additive concentration and cell-material compatibility research.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-MMDS",
@@ -2341,67 +2543,63 @@
           "value": "C2H4O6S2"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
           "name": "Grade",
           "value": "Battery material grade"
         },
         {
           "name": "Appearance",
-          "value": "White crystalline material, no mechanical impurities"
+          "value": "White crystalline material or powder, no mechanical impurities"
         },
         {
-          "name": "Color",
-          "value": "≤50 Hazen"
+          "name": "Water (Karl Fischer)",
+          "value": "≤200 ppm"
         },
         {
-          "name": "Free acid, as HF",
-          "value": "≤80 ppm"
+          "name": "Purity (GC)",
+          "value": "≥99.0 wt%"
         },
         {
-          "name": "Water",
-          "value": "≤80 µg/g"
-        },
-        {
-          "name": "Assay",
-          "value": "≥99.5 wt%"
+          "name": "Acidity, as HF",
+          "value": "≤100 ppm"
         },
         {
           "name": "Chloride",
-          "value": "≤5 µg/g"
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
         }
       ],
       "catalogCardSpecifications": [
-        "Assay",
-        "Water",
-        "Appearance"
+        "Appearance",
+        "Water (Karl Fischer)",
+        "Purity (GC)"
       ],
       "qualityDocumentation": {
-        "specificationBasis": "finalized-tds",
+        "specificationBasis": "approved-tds-release",
         "keySpecifications": [
-          "CAS Number",
-          "Formula",
           "Appearance",
-          "Color",
-          "Free acid, as HF",
-          "Water",
-          "Assay",
-          "Chloride"
+          "Water (Karl Fischer)",
+          "Purity (GC)",
+          "Acidity, as HF",
+          "Chloride",
+          "Sulfate"
         ],
         "tds": {
-          "path": "/assets/documents/tds/Winigen_MMDS_Representative_TDS.pdf",
+          "path": "/assets/documents/tds/Winigen_MMDS_TDS.pdf",
           "title": "Technical Data Sheet (PDF)",
-          "includesRepresentativeResults": true,
-          "sha256": "6a6607c659f2f09b3801e7652cd0875fc1133e25161f08b940757606718900b3"
+          "sha256": "2731bc5dcd938d583ce4e44dc4ed0920564aa6a02b20cd37b99a5f8ccb6126c2",
+          "includesRepresentativeResults": true
         }
       },
-      "approvedSynonyms": [],
-      "alternateAbbreviations": [],
       "primaryAbbreviation": "MMDS",
-      "cardCategory": "Additive",
-      "chemicalName": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide"
+      "alternateAbbreviations": [],
+      "chemicalName": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide",
+      "cardCategory": "Electrolyte Additives",
+      "approvedSynonyms": [],
+      "researchUse": "Research focuses on additive concentration and cell-material compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "tris-trimethylsilyl-borate-tmsb",
@@ -2694,7 +2892,7 @@
       "slug": "sodium-hexafluorophosphate-napf-6",
       "url": "/products/sodium-hexafluorophosphate-napf-6.html",
       "name": "Sodium hexafluorophosphate (NaPF6)",
-      "description": "Sodium hexafluorophosphate (NaPF6), CAS 21324-39-0, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 20 ppm.",
+      "description": "Sodium hexafluorophosphate (NaPF6) is a sodium electrolyte salt for sodium-ion electrolyte formulation and salt-solvent compatibility research.",
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAPF6",
@@ -2723,33 +2921,74 @@
           "value": "NaPF6"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
           "name": "Grade",
           "value": "Battery grade"
         },
         {
-          "name": "Purity",
-          "value": "> 99.9%"
+          "name": "Appearance",
+          "value": "White powder or needle-like solid"
         },
         {
           "name": "Water",
-          "value": "≤ 20 ppm"
+          "value": "≤20 ppm"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤80 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.9 wt%"
+        },
+        {
+          "name": "Residual solvent",
+          "value": "≤500 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤3 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤3 ppm"
         }
       ],
       "primaryAbbreviation": "NaPF6",
-      "cardCategory": "Next-Gen Salt",
+      "alternateAbbreviations": [],
       "chemicalName": "Sodium hexafluorophosphate",
+      "cardCategory": "Next-Gen Salts",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Water",
+        "Assay"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Water",
+          "Acidity, as HF",
+          "Assay",
+          "Residual solvent",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_NaPF6_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "914c335e2208455ac3dceac676b31eccaa72e3cd413396ef8b224b12afdd0b99",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on sodium-ion electrolyte formulation and salt-solvent compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
     },
     {
       "slug": "sodium-difluoro-oxalate-borate-naodfb",
       "url": "/products/sodium-difluoro-oxalate-borate-naodfb.html",
       "name": "Sodium difluoro(oxalato)borate (NaDFOB)",
-      "description": "Sodium difluoro(oxalato)borate (NaDFOB), CAS 1016545-84-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm.",
+      "description": "Sodium difluoro(oxalato)borate (NaDFOB) is a borate-based sodium electrolyte salt for sodium-ion salt blends and electrode-electrolyte compatibility research.",
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAODFB",
@@ -2779,28 +3018,75 @@
           "value": "C2BF2NaO4"
         },
         {
-          "name": "Availability",
-          "value": "RFQ"
-        },
-        {
           "name": "Grade",
           "value": "Battery grade"
         },
         {
-          "name": "Purity",
-          "value": "> 99.9%"
+          "name": "Appearance",
+          "value": "White powder or needle-like solid"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.5 wt%"
         },
         {
           "name": "Water",
-          "value": "≤ 50 ppm"
+          "value": "≤300 ppm"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Residual solvent",
+          "value": "≤1000 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤50 ppm"
         }
       ],
       "primaryAbbreviation": "NaDFOB",
-      "cardCategory": "Next-Gen Salt",
-      "chemicalName": "Sodium difluoro(oxalato)borate",
-      "approvedSynonyms": [],
       "alternateAbbreviations": [
         "NaODFB"
+      ],
+      "chemicalName": "Sodium difluoro(oxalato)borate",
+      "cardCategory": "Next-Gen Salts",
+      "approvedSynonyms": [
+        "NaODFB"
+      ],
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Assay",
+        "Water"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Assay",
+          "Water",
+          "Acidity, as HF",
+          "Residual solvent",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_NaDFOB_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "320d7e8ab6f3d173b1b6bd936a4824b83fd19fc0d25cc966c586d6c3adcf6a19",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on sodium-ion salt blends and electrode-electrolyte compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "relatedProductSlugs": [
+        "sodium-hexafluorophosphate-napf-6",
+        "sodium-bis-fluorosulfonyl-imide-nafsi"
       ]
     },
     {
@@ -4934,7 +5220,7 @@
       "slug": "biphenyl-bp",
       "url": "/products/biphenyl-bp.html",
       "name": "Biphenyl (BP)",
-      "description": "Biphenyl (BP), CAS 92-52-4, available from Winigen Materials for battery and electrochemical research. Biphenyl is an aromatic electrolyte additive used in overcharge-response and interphase-screening studies.",
+      "description": "Biphenyl (BP) is an aromatic electrolyte additive for additive screening and electrochemical compatibility research.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-BP",
@@ -4965,13 +5251,60 @@
         {
           "name": "Grade",
           "value": "Battery research grade"
+        },
+        {
+          "name": "Appearance",
+          "value": "White powder or crystalline solid, no impurities"
+        },
+        {
+          "name": "Water",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.9 wt%"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
         }
       ],
       "primaryAbbreviation": "BP",
-      "cardCategory": "Additive",
+      "alternateAbbreviations": [],
       "chemicalName": "Biphenyl",
+      "cardCategory": "Electrolyte Additives",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Water",
+        "Assay"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Water",
+          "Assay",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_BP_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "5773dfa4fc5f320f17728385a08ed69ea2b863c9198e7e5062390ca0b321994c",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on additive screening and electrochemical compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "relatedProductSlugs": [
+        "vinyl-ethylene-carbonate-vec",
+        "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds"
+      ]
     },
     {
       "slug": "propyl-acetate-pa",
@@ -5158,7 +5491,7 @@
       "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
       "url": "/products/sodium-bis-fluorosulfonyl-imide-nafsi.html",
       "name": "Sodium bis(fluorosulfonyl)imide (NaFSI)",
-      "description": "Sodium bis(fluorosulfonyl)imide (NaFSI), CAS 100669-96-3, available from Winigen Materials for battery and electrochemical research. Sodium bis(fluorosulfonyl)imide is a conducting-salt candidate for sodium-ion electrolyte formulation.",
+      "description": "Sodium bis(fluorosulfonyl)imide (NaFSI) is a sulfonimide sodium electrolyte salt for sodium-ion electrolyte blends and transport research.",
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAFSI",
@@ -5189,13 +5522,75 @@
         {
           "name": "Grade",
           "value": "Battery research grade"
+        },
+        {
+          "name": "Appearance",
+          "value": "White crystalline material, no mechanical impurities"
+        },
+        {
+          "name": "Water",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.50 wt%"
+        },
+        {
+          "name": "Residual solvent",
+          "value": "≤1000 ppm"
+        },
+        {
+          "name": "Fluoride",
+          "value": "≤150 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤10 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤40 ppm"
         }
       ],
       "primaryAbbreviation": "NaFSI",
-      "cardCategory": "Next-Gen Salt",
+      "alternateAbbreviations": [],
       "chemicalName": "Sodium bis(fluorosulfonyl)imide",
+      "cardCategory": "Next-Gen Salts",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Water",
+        "Assay"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Water",
+          "Acidity, as HF",
+          "Assay",
+          "Residual solvent",
+          "Fluoride",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_NaFSI_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "07ec3141af4d18172e31a2c623667742a2c198b76980cdf2b01713bf1364d23c",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on sodium-ion electrolyte blends and transport. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "relatedProductSlugs": [
+        "sodium-hexafluorophosphate-napf-6",
+        "sodium-difluoro-oxalate-borate-naodfb"
+      ]
     },
     {
       "slug": "cyclohexylbenzene-chb",
@@ -5287,7 +5682,7 @@
       "slug": "sodium-difluorophosphate-napo2f2",
       "url": "/products/sodium-difluorophosphate-napo2f2.html",
       "name": "Sodium difluorophosphate (NaPO2F2)",
-      "description": "Sodium difluorophosphate (NaPO2F2), CAS 15587-24-3, available from Winigen Materials for battery and electrochemical research. Sodium difluorophosphate is a sodium electrolyte component for salt and interphase-additive screening.",
+      "description": "Sodium difluorophosphate (NaPO2F2) is a fluorophosphate sodium electrolyte additive for sodium-ion formulation and additive screening research.",
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAPO2F2",
@@ -5318,13 +5713,70 @@
         {
           "name": "Grade",
           "value": "Battery research grade"
+        },
+        {
+          "name": "Appearance",
+          "value": "White powder or granular solid"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.5 wt%"
+        },
+        {
+          "name": "Water",
+          "value": "≤100 ppm"
+        },
+        {
+          "name": "Acidity, as HF",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Residual solvent",
+          "value": "≤5000 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤50 ppm"
         }
       ],
       "primaryAbbreviation": "NaPO2F2",
-      "cardCategory": "Next-Gen Salt",
+      "alternateAbbreviations": [],
       "chemicalName": "Sodium difluorophosphate",
+      "cardCategory": "Next-Gen Salts",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Assay",
+        "Water"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Assay",
+          "Water",
+          "Acidity, as HF",
+          "Residual solvent",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_NaPO2F2_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "7e6e3ba4c8811cf223b9dd781617eaf224fc61d2e1becb403241012b644eb464",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on sodium-ion formulation and additive screening. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "relatedProductSlugs": [
+        "sodium-hexafluorophosphate-napf-6",
+        "sodium-bis-fluorosulfonyl-imide-nafsi"
+      ]
     },
     {
       "slug": "1-3-dioxolane-dol",
@@ -5467,7 +5919,8 @@
       "aliases": [
         "LiDODFP",
         "LiDFBOP",
-        "LiODFP"
+        "LiODFP",
+        "LiDFOP"
       ],
       "commercialIntents": [
         "Lithium difluorobis(oxalato)phosphate (LiDFBOP) supplier",
@@ -5495,17 +5948,22 @@
       ],
       "ecommerceSlug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
       "primaryAbbreviation": "LiDODFP",
-      "cardCategory": "Lithium Salt",
+      "alternateAbbreviations": [
+        "LiDFBOP",
+        "LiODFP",
+        "LiDFOP"
+      ],
       "chemicalName": "Lithium difluorobis(oxalato)phosphate",
+      "cardCategory": "Lithium Salt",
       "displayAbbreviations": [
         "LiDODFP",
         "LiDFBOP"
       ],
       "approvedSynonyms": [],
-      "alternateAbbreviations": [
-        "LiDFBOP",
-        "LiODFP"
-      ]
+      "relatedProductSlugs": [
+        "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt"
+      ],
+      "approvedComparisonPage": true
     },
     {
       "slug": "1m-lipf6-ec-emc-3-7-1-vc-electrolyte",
@@ -7735,6 +8193,313 @@
         "compositionNote": "V₄C₃Tₓ belongs to the M₄C₃-type carbide composition family and is derived from V₄AlC₃."
       },
       "ecommerceSlug": "v4c3tx-mxene-multilayer-powder"
+    },
+    {
+      "slug": "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt",
+      "url": "/products/lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt.html",
+      "name": "Lithium difluorobis(oxalato)phosphate (LiDFOP) in EMC — 20 wt%",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-LIDFOP-EMC20",
+      "primaryAbbreviation": "LiDFOP/EMC",
+      "chemicalName": "Lithium difluorobis(oxalato)phosphate in EMC — 20 wt%",
+      "aliases": [
+        "LiDFOP/EMC",
+        "LiDFOP",
+        "LiDFBOP",
+        "LiDODFP",
+        "LiODFP",
+        "LiDFOP in EMC",
+        "LiDFBOP solution",
+        "LiDODFP solution",
+        "LiODFP solution",
+        "LiDFOP in EMC — 20 wt%"
+      ],
+      "alternateAbbreviations": [
+        "LiDFOP",
+        "LiDFBOP",
+        "LiDODFP",
+        "LiODFP"
+      ],
+      "approvedSynonyms": [
+        "LiDFOP/EMC",
+        "LiDFOP in EMC",
+        "LiDFBOP solution",
+        "LiDODFP solution",
+        "LiODFP solution",
+        "LiDFOP in EMC — 20 wt%"
+      ],
+      "commercialIntents": [],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "sourceGeneratedPage": true,
+      "image": "/assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg",
+      "imageAlt": "Electrolyte solution bottle representing LiDFOP in EMC — 20 wt%",
+      "description": "LiDFOP in EMC — 20 wt% is an electrolyte additive solution for formulation research. Active-material CAS: 678966-16-0; active-material formula: C4F2LiO8P.",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "LiDFOP in EMC — 20 wt%"
+        },
+        {
+          "name": "CAS Number",
+          "value": "678966-16-0"
+        },
+        {
+          "name": "Formula",
+          "value": "C4F2LiO8P"
+        },
+        {
+          "name": "Product type",
+          "value": "Electrolyte Additive Solution"
+        },
+        {
+          "name": "Appearance",
+          "value": "Colorless clear liquid"
+        },
+        {
+          "name": "Active material concentration",
+          "value": "20.0 ±1.0 wt%"
+        },
+        {
+          "name": "Color",
+          "value": "≤50 APHA"
+        },
+        {
+          "name": "Water",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Free acid",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Turbidity",
+          "value": "≤1 NTU"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "EMC purity (GC)",
+          "value": "≥99.95%"
+        }
+      ],
+      "cardName": "LiDFOP/EMC — 20 wt%",
+      "activeMaterialIdentity": true,
+      "relatedProductSlugs": [
+        "lithium-difluorobis-oxalato-phosphate-lidodfp",
+        "ethyl-methyl-carbonate-emc"
+      ],
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Water"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Active material concentration",
+          "Color",
+          "Water",
+          "Free acid",
+          "Turbidity",
+          "Sulfate",
+          "Chloride",
+          "EMC purity (GC)"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_LiDFOP_EMC_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "2e316159be48a7c44ecdf971b61df7ecdb6fb6ef3ec6663c5590916cb3301aa2",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on solution dosing and electrolyte compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "cardCategory": "Electrolyte Additives",
+      "ecommerceSlug": "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt",
+      "imagePresentation": "electrolyte-solution"
+    },
+    {
+      "slug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
+      "url": "/products/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.html",
+      "name": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN)",
+      "family": "electrolyte-additives",
+      "category": "Electrolyte Additives",
+      "sku": "WM-ADD-PFPN",
+      "primaryAbbreviation": "PFPN",
+      "chemicalName": "Ethoxy(pentafluoro)cyclotriphosphazene",
+      "aliases": [
+        "PFPN"
+      ],
+      "alternateAbbreviations": [],
+      "approvedSynonyms": [],
+      "commercialIntents": [],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "sourceGeneratedPage": true,
+      "image": "/assets/images/chemical-structures/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.png",
+      "imageAlt": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) chemical structure",
+      "description": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) is a fluorinated phosphazene electrolyte additive for high-voltage and safety-oriented electrolyte formulation research.",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "PFPN"
+        },
+        {
+          "name": "CAS Number",
+          "value": "33027-66-6"
+        },
+        {
+          "name": "Formula",
+          "value": "C2H5F5N3OP3"
+        },
+        {
+          "name": "Product type",
+          "value": "Fluorinated phosphazene electrolyte additive"
+        },
+        {
+          "name": "Appearance",
+          "value": "Colorless transparent liquid, no mechanical impurities"
+        },
+        {
+          "name": "Color",
+          "value": "≤50 Hazen"
+        },
+        {
+          "name": "Water",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Assay",
+          "value": "≥99.9 wt%"
+        },
+        {
+          "name": "Chloride",
+          "value": "≤5 ppm"
+        },
+        {
+          "name": "Sulfate",
+          "value": "≤10 ppm"
+        }
+      ],
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Water",
+        "Assay"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Color",
+          "Water",
+          "Assay",
+          "Chloride",
+          "Sulfate"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_PFPN_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "be57d3a6f7917cd797c4fa4f6e08b0b4040f3c2d4ffc965676e6044109b9324d",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on high-voltage and safety-oriented electrolyte formulation. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "cardCategory": "Electrolyte Additives",
+      "relatedProductSlugs": [
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+        "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds"
+      ],
+      "ecommerceSlug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
+      "imagePresentation": "chemical-structure"
+    },
+    {
+      "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+      "url": "/products/tris-2-2-2-trifluoroethyl-phosphate-tfep.html",
+      "name": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP)",
+      "family": "battery-solvents",
+      "category": "Battery Solvents",
+      "sku": "WM-SOL-TFEP",
+      "primaryAbbreviation": "TFEP",
+      "chemicalName": "Tris(2,2,2-trifluoroethyl) phosphate",
+      "aliases": [
+        "TFEP"
+      ],
+      "alternateAbbreviations": [],
+      "approvedSynonyms": [],
+      "commercialIntents": [],
+      "commerceStatus": "active_checkout",
+      "schemaOfferEligible": true,
+      "sourceGeneratedPage": true,
+      "image": "/assets/images/chemical-structures/tris-2-2-2-trifluoroethyl-phosphate-tfep.png",
+      "imageAlt": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) chemical structure",
+      "description": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) is a fluorinated phosphate solvent and cosolvent for reduced-flammability and thermal-safety electrolyte blends research.",
+      "additionalProperty": [
+        {
+          "name": "Abbreviation",
+          "value": "TFEP"
+        },
+        {
+          "name": "CAS Number",
+          "value": "358-63-4"
+        },
+        {
+          "name": "Formula",
+          "value": "C6H6F9O4P"
+        },
+        {
+          "name": "Product type",
+          "value": "Fluorinated phosphate electrolyte solvent / flame-retardant cosolvent"
+        },
+        {
+          "name": "Appearance",
+          "value": "Colorless liquid"
+        },
+        {
+          "name": "Purity",
+          "value": "≥99.0 wt%"
+        },
+        {
+          "name": "Moisture",
+          "value": "<200 ppm"
+        }
+      ],
+      "catalogCardSpecifications": [
+        "Appearance",
+        "Purity",
+        "Moisture"
+      ],
+      "qualityDocumentation": {
+        "specificationBasis": "approved-tds-release",
+        "keySpecifications": [
+          "Appearance",
+          "Purity",
+          "Moisture"
+        ],
+        "tds": {
+          "path": "/assets/documents/tds/Winigen_TFEP_TDS.pdf",
+          "title": "Technical Data Sheet (PDF)",
+          "sha256": "5d9cae15ee5e9a23efd523a3fdf564fce0eb8b4dee32a967e784af0bcd33c745",
+          "includesRepresentativeResults": true
+        }
+      },
+      "researchUse": "Research focuses on reduced-flammability and thermal-safety electrolyte blends. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "cardCategory": "Battery Solvents",
+      "relatedProductSlugs": [
+        "methyl-2-2-2-trifluoroethyl-carbonate-femc",
+        "1-2-dimethoxyethane-dme"
+      ],
+      "ecommerceSlug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+      "imagePresentation": "chemical-structure"
     }
   ]
 }

@@ -2554,6 +2554,192 @@
       "approvalProvenance": [
         "OWNER_APPROVED_MXENE_DIRECT_ORDER_20260916"
       ]
+    },
+    {
+      "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+      "skuBase": "WM-SOL-TFEP",
+      "name": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP)",
+      "defaultPackageId": "500G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_AUTHORIZED_LOCAL_REVIEW"
+      ],
+      "packages": [
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 50000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 70000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 100000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 170000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 280000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        }
+      ]
+    },
+    {
+      "slug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
+      "skuBase": "WM-ADD-PFPN",
+      "name": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN)",
+      "defaultPackageId": "200G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_AUTHORIZED_LOCAL_REVIEW"
+      ],
+      "packages": [
+        {
+          "id": "200G",
+          "label": "200 g",
+          "unit": "g",
+          "quantity": 200,
+          "netWeightGrams": 200,
+          "unitAmount": 45000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 70000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 100000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 150000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 260000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 420000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        }
+      ]
+    },
+    {
+      "slug": "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt",
+      "skuBase": "WM-ADD-LIDFOP-EMC20",
+      "name": "Lithium difluorobis(oxalato)phosphate (LiDFOP) in EMC — 20 wt%",
+      "defaultPackageId": "500G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_AUTHORIZED_LOCAL_REVIEW"
+      ],
+      "packages": [
+        {
+          "id": "500G",
+          "label": "500 g",
+          "unit": "g",
+          "quantity": 500,
+          "netWeightGrams": 500,
+          "unitAmount": 60000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "1KG",
+          "label": "1 kg",
+          "unit": "kg",
+          "quantity": 1,
+          "netWeightGrams": 1000,
+          "unitAmount": 80000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "2KG",
+          "label": "2 kg",
+          "unit": "kg",
+          "quantity": 2,
+          "netWeightGrams": 2000,
+          "unitAmount": 110000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "5KG",
+          "label": "5 kg",
+          "unit": "kg",
+          "quantity": 5,
+          "netWeightGrams": 5000,
+          "unitAmount": 180000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        },
+        {
+          "id": "10KG",
+          "label": "10 kg",
+          "unit": "kg",
+          "quantity": 10,
+          "netWeightGrams": 10000,
+          "unitAmount": 300000,
+          "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
+        }
+      ]
     }
   ]
 }

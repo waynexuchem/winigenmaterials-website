@@ -34,7 +34,8 @@
     const panel = document.createElement('section');
     panel.className = 'ecommerce-rfq-panel';
     panel.dataset.commercialPanel = 'true';
-    panel.innerHTML = `<p class="detail-kicker">Available by RFQ</p><h3>Request material and packaging details</h3><p>Final grade, packaging, availability, and project-scale requirements are confirmed with your inquiry.</p><a class="btn" href="${quoteHref}">Request Quote</a>`;
+    const orderingNote = actionHost.dataset.approvedTds === 'true' ? 'Packaging, lead time, availability, and fulfillment are confirmed with your inquiry.' : 'Final grade, packaging, availability, and project-scale requirements are confirmed with your inquiry.';
+    panel.innerHTML = `<p class="detail-kicker">Available by RFQ</p><h3>Request material and packaging details</h3><p>${orderingNote}</p><a class="btn" href="${quoteHref}">Request Quote</a>`;
     actionHost.hidden = true;
     document.querySelectorAll('.detail-fact').forEach(fact => {
       if (fact.querySelector('dt')?.textContent.trim() === 'Availability') fact.hidden = true;

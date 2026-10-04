@@ -18,6 +18,7 @@
 
 .ecommerce-panel { background: #f6f9fc; border: 1px solid #cbd7e5; border-left: 4px solid #1c6f99; border-radius: 6px; margin: 26px 0; padding: 22px; }
 .ecommerce-panel__header { align-items: flex-start; display: flex; gap: 18px; justify-content: space-between; margin-bottom: 18px; }
+.ecommerce-panel__header > div { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
 .ecommerce-panel .detail-kicker { color: #1c6f99; margin: 0; }
 .ecommerce-panel__product { color: #152943; font-size: 14px; font-weight: 700; line-height: 1.35; margin: 0; max-width: 340px; text-align: right; }
 .ecommerce-panel__product span { color: #596b82; display: block; font-size: 12px; font-weight: 500; margin-top: 3px; }

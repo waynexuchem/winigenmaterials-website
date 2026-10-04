@@ -916,4 +916,4 @@ h1[data-product-identity] > span.product-identity__name { display: block; margin
   h1[data-product-identity] > span.product-identity__name { font-size: 20px; }
 }
 
-.product-card__identifier sub, .product-identity__identifier sub { line-height: 0; }
+.product-card__identifier sub, .product-identity__identifier sub { line-height: 1; }

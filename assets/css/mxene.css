@@ -8,11 +8,13 @@
 
 [data-copy-protected="true"]{user-select:none;-webkit-user-select:none}
 img[data-copy-protected="true"]{-webkit-user-drag:none}
+.product-related-materials{display:grid;gap:10px;margin:18px 0}
+.product-related-materials a{display:block;padding:12px 14px;border:1px solid rgba(18,32,51,.1);border-radius:12px;background:#f8fbff;color:var(--navy);font-weight:800;text-decoration:none}
 :is(.mxene-sticky-shell,.product-sticky-shell){position:sticky;top:var(--mxene-header-height,110px);z-index:40;background:#fff;box-shadow:0 2px 5px #15234112}
 :is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-context{padding:8px 0}
 :is(.mxene-sticky-shell,.product-sticky-shell) .breadcrumb{white-space:nowrap;overflow-x:auto;margin:0;font-size:.85rem}
 :is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav{position:static;top:auto;margin:0}
-:is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav .container{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+:is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav .container{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scroll-padding-inline:12px;padding-inline:12px}
 :is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav a{flex:none;white-space:nowrap}
 :is(.mxene-sticky-shell,.product-sticky-shell) .product-detail-nav a[aria-current="location"]{color:var(--navy,#142444);border-bottom:3px solid var(--gold,#c9aa65);background:#f4f6fa}
 body:has(:is(.mxene-sticky-shell,.product-sticky-shell)) :is(#overview,#specifications,#request-quote,#packages,#characterization,#documentation,#faq,#related-products,#selection-guide,#technical-profile,#technical-guides){scroll-margin-top:var(--mxene-anchor-offset,220px)}

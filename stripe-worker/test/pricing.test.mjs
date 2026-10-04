@@ -80,7 +80,7 @@ test('every active online offer uses the canonical whole-dollar B2B increment', 
       assert.equal(variant.unitAmount % productPriceIncrement(ecommerceSource.priceNormalization, product.slug), 0, `${product.slug} ${variant.id}`);
     }
   }
-  assert.equal(activeOfferCount, 477);
+  assert.equal(activeOfferCount, 493);
 });
 
 test('approved-pricing regeneration normalizes every canonical raw price once and remains idempotent', async () => {
@@ -90,8 +90,8 @@ test('approved-pricing regeneration normalizes every canonical raw price once an
     const firstBytes = await readFile(resolve(isolatedRoot, 'ecommerce/catalog.source.json'), 'utf8');
     const secondRun = await execFileAsync(process.execPath, [applyPricing], { cwd: isolatedRoot });
     const secondBytes = await readFile(resolve(isolatedRoot, 'ecommerce/catalog.source.json'), 'utf8');
-    assert.match(firstRun.stdout, /normalized 477 raw approved prices exactly once/);
-    assert.match(secondRun.stdout, /normalized 477 raw approved prices exactly once/);
+    assert.match(firstRun.stdout, /normalized 493 raw approved prices exactly once/);
+    assert.match(secondRun.stdout, /normalized 493 raw approved prices exactly once/);
     assert.equal(secondBytes, firstBytes);
     const regenerated = JSON.parse(secondBytes);
     const expectedTemporarySchedule = [80000, 119000, 160000, 185000, 330000, 580000];
@@ -115,9 +115,9 @@ test('approved-pricing regeneration normalizes every canonical raw price once an
 test('canonical raw pricing sources cover all active offers and preserve TS/TTPi provenance', () => {
   const schedules = [...approvedPricing.schedules, ...supplementalPricing.schedules];
   assert.equal(approvedPricing.schedules.length, 52);
-  assert.equal(supplementalPricing.schedules.length, 42);
-  assert.equal(new Set(schedules.map(schedule => schedule.slug)).size, 94);
-  assert.equal(schedules.reduce((count, schedule) => count + schedule.packages.length, 0), 477);
+  assert.equal(supplementalPricing.schedules.length, 45);
+  assert.equal(new Set(schedules.map(schedule => schedule.slug)).size, 97);
+  assert.equal(schedules.reduce((count, schedule) => count + schedule.packages.length, 0), 493);
   assert.equal((applyApprovedPricingSource.match(/normalizeApprovedUnitAmount\s*\(/g) || []).length, 1);
   assert.doesNotMatch(applyApprovedPricingSource, /\.map\(normalize/);
 

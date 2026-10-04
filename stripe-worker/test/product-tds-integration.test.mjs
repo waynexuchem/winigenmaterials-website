@@ -10,7 +10,7 @@ const catalog = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.so
 
 const documents = [
   { slug: 'diethyl-carbonate-dec', code: 'DEC', hash: '6ddad3a8678912a9672e3bbe2ac9a8616a0e000c4d5672e3f1c5a686b96da751', specs: { Assay: '≥99.99 wt%', Water: '≤30 ppm', 'Hazen color': '≤10', 'Total alcohols, methanol + ethanol': '≤50 ppm', Chloride: '≤1 ppm', Sulfate: '≤5 ppm' } },
-  { slug: '2-2-difluoroethyl-acetate-dfea', code: 'DFEA', hash: 'faade6a72e1fb49e7d03e8187dea1f8741ffe082d2f2822bb032d1f539ae73cf', specs: { Purity: '98–100%', Appearance: 'Colorless to very pale yellow clear liquid', 'Specific gravity, 20/20': '1.2060–1.2100', 'Refractive index, n20/D': '1.3520–1.3560' } },
+  { slug: '2-2-difluoroethyl-acetate-dfea', code: 'DFEA', filename: 'Winigen_DFEA_TDS.pdf', hash: '41f46d94f9175cb82da5a579fad372a20eaa4d78af87b1e1f510cbdf9e3b204b', specs: { Purity: '≥99.0 wt%', 'Acidity, as HF': '≤50 ppm', Water: '≤200 ppm', 'Refractive index, n20/D': '1.3520–1.3560' } },
   { slug: 'dimethyl-carbonate-dmc', code: 'DMC', hash: 'e4837043b7fb874d89d95a8052d4fb643b665dc22e481b8dee0a092af5ffe54c', specs: { Assay: '≥99.995 wt%', Water: '≤15 µg/g', 'Hazen color': '≤10', 'Total alcohols': '≤50 ppm', Chloride: '≤1 µg/g', Sulfate: '≤5 ppm' } },
   { slug: 'ethylene-carbonate-ec', code: 'EC', hash: '44cc78a76e9839e17a9790fb954da01d7f03a83c53b05b4c99302d908a28c792', specs: { Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Ethylene glycol + diethylene glycol': '≤50 ppm', 'Color after 60 °C / 6 h': '≤20 Hazen', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
   { slug: 'ethyl-methyl-carbonate-emc', code: 'EMC', hash: 'ea4b059cfb152b7f909d37915a34f53cf0a4200e76b4d1516f3f84886b39fe00', specs: { Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Total alcohols, methanol + ethanol': '≤50 ppm', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
@@ -82,6 +82,13 @@ test('each public TDS product matches the MXene-style image action and retains l
     const html = await readFile(resolve(siteRoot, 'products', `${document.slug}.html`), 'utf8');
     const href = `../assets/documents/tds/${tdsFilename(document)}`;
     assert.equal(html.split(`href="${href}"`).length - 1, 2, `${document.slug}: TDS link count`);
+    if (document.code === 'DFEA') {
+      assert.match(html, /Technical Data Sheet \(PDF\)/);
+      assert.match(html, /Request Current Lot COA \/ SDS/);
+      assert.match(html, /Technical specifications and representative quality-control data/);
+      assert.match(html, /data-product-quick-tds="true"/);
+      continue;
+    }
     assert.equal(html.split('Technical Data Sheet (PDF)').length - 1, 2, `${document.slug}: descriptive TDS actions`);
     assert.match(html, /<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i, `${document.slug}: TDS action is separated below the product image`);
     assert.match(html, /<section class="section product-technical-section" id="documentation" data-product-tds-section="true">/);
@@ -99,11 +106,12 @@ test('each public TDS product matches the MXene-style image action and retains l
   }
 });
 
-test('DFEA omits unsupported water data while TFEC publishes only the qualified water limit', async () => {
+test('DFEA uses the approved water limit without inventing color; TFEC retains its qualified water limit', async () => {
   const dfea = catalog.products.find(item => item.slug === '2-2-difluoroethyl-acetate-dfea');
-  assert.equal(dfea.additionalProperty.some(item => /water|moisture/i.test(item.name)), false);
+  assert.equal(dfea.additionalProperty.find(item => item.name==='Water')?.value, '≤200 ppm');
+  assert.equal(dfea.additionalProperty.some(item => /color/i.test(item.name)), false);
   const dfeaHtml = await readFile(resolve(siteRoot, 'products/2-2-difluoroethyl-acetate-dfea.html'), 'utf8');
-  assert.doesNotMatch(dfeaHtml, /<dt>(?:Water|Moisture)<\/dt>|Water:\s*(?:&lt;|<)/i);
+  assert.match(dfeaHtml, /<dt>Water<\/dt><dd>≤200 ppm<\/dd>/);
 
   const tfec = catalog.products.find(item => item.slug === 'bis-2-2-2-trifluoroethyl-carbonate-tfec');
   assert.equal(tfec.additionalProperty.find(item => item.name === 'Assay (GC)')?.value, '≥99 wt%');
@@ -116,7 +124,6 @@ test('DFEA omits unsupported water data while TFEC publishes only the qualified 
 
 test('representative COA appearance results are not promoted to canonical specifications', () => {
   const appearanceApproved = new Set([
-    '2-2-difluoroethyl-acetate-dfea',
     'lithium-difluoro-oxalate-borate-liodfb',
     'bis-2-2-2-trifluoroethyl-carbonate-tfec'
   ]);

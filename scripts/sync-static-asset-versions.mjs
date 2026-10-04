@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import { fingerprint } from './asset-fingerprint.mjs';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { dirname, extname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,6 +7,9 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
 const checkOnly = process.argv.includes('--check');
 const mxeneOnly = process.argv.includes('--mxene-only');
+// Scoped releases can refresh only changed assets without unrelated token churn.
+const selectedAssetsArg = process.argv.find(arg => arg.startsWith('--assets='));
+const selectedAssets = selectedAssetsArg ? new Set(selectedAssetsArg.slice('--assets='.length).split(',')) : null;
 const publicDirectories = [siteRoot, resolve(siteRoot, 'products'), resolve(siteRoot, 'knowledge')];
 const ecommerceBundleAssets = [
   'assets/css/ecommerce.css',
@@ -17,9 +20,6 @@ const ecommerceBundleAssets = [
   'assets/js/checkout-state.js'
 ];
 
-function fingerprint(content) {
-  return createHash('sha256').update(content).digest('hex').slice(0, 12);
-}
 
 async function htmlFiles() {
   const files = [];
@@ -45,6 +45,7 @@ if (synchronizedMainScript === mainScript && !mainScript.includes(`const ecommer
 
 const pendingChanges = [];
 if (synchronizedMainScript !== mainScript) {
+  selectedAssets?.add('assets/js/main.js');
   pendingChanges.push(relative(siteRoot, mainScriptPath));
   if (!checkOnly) await writeFile(mainScriptPath, synchronizedMainScript);
 }
@@ -65,6 +66,7 @@ for (const filePath of await htmlFiles()) {
   const matches = [...original.matchAll(/((?:\.\.\/)*assets\/(?:css|js)\/[^"'?#]+\.(?:css|js))(?:\?v=[^"']*)?/g)];
   for (const match of matches) {
     const publicPath = match[1].replace(/^(?:\.\.\/)+/, '');
+    if (selectedAssets && !selectedAssets.has(publicPath)) continue;
     const version = await assetVersion(publicPath);
     updated = updated.replace(match[0], `${match[1]}?v=${version}`);
   }

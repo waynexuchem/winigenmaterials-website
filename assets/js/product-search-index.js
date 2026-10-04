@@ -37,7 +37,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C4BLiO8",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium bis(oxalato)borate (LiBOB), CAS 244761-29-3, Lithium Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Lithium bis(oxalato)borate LiBOB Lithium bis(oxalato)borate (LiBOB) supplier where to buy Lithium bis(oxalato)borate (LiBOB) Abbreviation LiBOB CAS Number 244761-29-3 Formula C4BLiO8 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
+      "metadata": "Lithium bis(oxalato)borate (LiBOB) is a borate-based lithium electrolyte salt for salt-blend evaluation and electrode-electrolyte compatibility research. Lithium bis(oxalato)borate LiBOB Lithium bis(oxalato)borate (LiBOB) supplier where to buy Lithium bis(oxalato)borate (LiBOB) Abbreviation LiBOB CAS Number 244761-29-3 Formula C4BLiO8 Grade Battery grade Appearance White powder Assay (IC) ≥99.8 wt% Water (Karl Fischer) ≤300 ppm Acidity, as HF ≤100 ppm Color ≤30 Hazen Chloride ≤10 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "lithium-difluoro-oxalate-borate-liodfb",
@@ -170,7 +170,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C4H6F2O2",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "2,2-Difluoroethyl acetate (DFEA), CAS 1550-44-3, is a fluorinated ester solvent available from Winigen Materials. Supplier specifications include purity 98–100%, specific gravity 1.2060–1.2100 at 20/20, and refractive index 1.3520–1.3560 n20/D. 2,2-Difluoroethyl acetate DFEA DFEA supplier where to buy DFEA Abbreviation DFEA CAS Number 1550-44-3 Formula C4H6F2O2 Availability RFQ Purity 98–100% Grade Battery material grade Appearance Colorless to very pale yellow clear liquid Specific gravity, 20/20 1.2060–1.2100 Refractive index, n20/D 1.3520–1.3560"
+      "metadata": "2,2-Difluoroethyl acetate (DFEA) is a fluorinated ester solvent for solvent-blend screening and interfacial compatibility research. 2,2-Difluoroethyl acetate DFEA DFEA supplier where to buy DFEA Abbreviation DFEA CAS Number 1550-44-3 Formula C4H6F2O2 Grade Battery material grade Refractive index, n20/D 1.3520–1.3560 Purity ≥99.0 wt% Acidity, as HF ≤50 ppm Water ≤200 ppm"
     },
     {
       "slug": "1-2-dimethoxyethane-dme",
@@ -182,7 +182,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C4H10O2",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "1,2-Dimethoxyethane (DME), CAS 110-71-4, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid.. 1,2-Dimethoxyethane DME DME supplier where to buy DME Abbreviation DME CAS Number 110-71-4 Formula C4H10O2 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid."
+      "metadata": "1,2-Dimethoxyethane (DME) is an ether solvent for salt solubility, coordination, and electrolyte transport research. 1,2-Dimethoxyethane DME DME supplier where to buy DME Abbreviation DME CAS Number 110-71-4 Formula C4H10O2 Grade Battery material grade Color ≤10 APHA Water (Karl Fischer) ≤300 ppm"
     },
     {
       "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
@@ -194,7 +194,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C5H4F8O",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE), CAS 16627-68-2, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Colorless transparent liquid.. 1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether TTE TTE supplier where to buy TTE Abbreviation TTE CAS Number 16627-68-2 Formula C5H4F8O Availability RFQ Water < 100 ppm Grade Battery material grade Physical Colorless transparent liquid."
+      "metadata": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE) is a fluorinated ether solvent for diluent selection and electrolyte blend compatibility research. 1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether TTE TTE supplier where to buy TTE Abbreviation TTE CAS Number 16627-68-2 Formula C5H4F8O Grade Battery material grade Appearance Colorless transparent liquid; no mechanical impurities Purity ≥99.00 wt% Water ≤200 ppm Acidity, as HF ≤10 ppm Color ≤20 APHA Chloride, Cl− ≤5 ppm Sulfate, SO42− ≤10 ppm"
     },
     {
       "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
@@ -206,7 +206,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C4H5F3O3",
       "section": "solvents",
       "category": "Battery Solvents",
-      "metadata": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC), CAS 156783-95-8, Solvent, available from Winigen Materials. Typical specifications: Water: < 100 ppm; Grade: Battery material grade; Physical: Transparent liquid.. Methyl 2,2,2-trifluoroethyl carbonate FEMC FEMC supplier where to buy FEMC Abbreviation FEMC CAS Number 156783-95-8 Formula C4H5F3O3 Availability RFQ Water < 100 ppm Grade Battery material grade Physical Transparent liquid."
+      "metadata": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC) is a fluorinated carbonate solvent for fluorinated solvent blends and electrode-electrolyte compatibility research. Methyl 2,2,2-trifluoroethyl carbonate FEMC FEMC supplier where to buy FEMC Abbreviation FEMC CAS Number 156783-95-8 Formula C4H5F3O3 Grade Battery material grade Appearance Colorless liquid Purity (GC) ≥99.9 wt% Moisture (Coulometric) ≤30 ppm"
     },
     {
       "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
@@ -242,7 +242,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C5H6O3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Vinyl ethylene carbonate (VEC), CAS 4427-96-7, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade. Vinyl ethylene carbonate VEC VEC supplier where to buy VEC Abbreviation VEC CAS Number 4427-96-7 Formula C5H6O3 Availability RFQ Grade Battery material grade"
+      "metadata": "Vinyl ethylene carbonate (VEC) is a carbonate electrolyte additive for additive screening and electrolyte formulation research. Vinyl ethylene carbonate VEC VEC supplier where to buy VEC Abbreviation VEC CAS Number 4427-96-7 Formula C5H6O3 Grade Battery material grade Appearance Colorless transparent liquid, no mechanical impurities, insoluble matter, or flocculent material Color ≤20 Hazen Water ≤50 ppm Assay ≥99.9 wt% Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "1-3-propanediol-cyclic-sulfate-ts",
@@ -315,7 +315,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C6H8N2",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Adiponitrile (ADN), CAS 111-69-3, Additive, available from Winigen Materials. Typical specifications: Grade: Battery material grade; Physical: Colorless transparent liquid.. Adiponitrile ADN ADN supplier where to buy ADN Abbreviation ADN CAS Number 111-69-3 Formula C6H8N2 Availability RFQ Grade Battery material grade Physical Colorless transparent liquid."
+      "metadata": "Adiponitrile (ADN) is a nitrile solvent and electrolyte additive for nitrile-containing electrolyte blends and compatibility research. Adiponitrile ADN ADN supplier where to buy ADN Abbreviation ADN CAS Number 111-69-3 Formula C6H8N2 Grade Battery material grade Appearance Colorless transparent liquid, no mechanical impurities Purity (GC) ≥99.95 wt% Water (Karl Fischer) ≤200 ppm Color ≤100 Hazen Chloride ≤5 ppm"
     },
     {
       "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
@@ -339,7 +339,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C9H11N3",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "1,3,6-Hexanetricarbonitrile (HTCN), CAS 1772-25-4, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities; Color: ≤50 Hazen; Water: ≤100 ppm; Assay: ≥99.5 wt%; Acidity, as HF: ≤100 ppm; Chloride: ≤5 ppm; Sulfate: ≤10 ppm. 1,3,6-Hexanetricarbonitrile HTCN HTCN supplier where to buy HTCN Abbreviation HTCN CAS Number 1772-25-4 Formula C9H11N3 Availability RFQ Grade Battery material grade Appearance Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities Color ≤50 Hazen Water ≤100 ppm Assay ≥99.5 wt% Acidity, as HF ≤100 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
+      "metadata": "1,3,6-Hexanetricarbonitrile (HTCN) is a nitrile electrolyte additive for nitrile-containing formulations and compatibility research. 1,3,6-Hexanetricarbonitrile HTCN HTCN supplier where to buy HTCN Abbreviation HTCN CAS Number 1772-25-4 Formula C9H11N3 Grade Battery material grade Appearance Colorless transparent or pale-yellow liquid, without suspended matter or mechanical impurities Color ≤50 Hazen Water ≤100 ppm Assay ≥99.5 wt% Acidity, as HF ≤100 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
@@ -351,7 +351,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C2H4O6S2",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS), CAS 99591-74-9, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no mechanical impurities; Color: ≤50 Hazen; Free acid, as HF: ≤80 ppm; Water: ≤80 µg/g; Assay: ≥99.5 wt%; Chloride: ≤5 µg/g. 1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide MMDS MMDS supplier where to buy MMDS Abbreviation MMDS CAS Number 99591-74-9 Formula C2H4O6S2 Availability RFQ Grade Battery material grade Appearance White crystalline material, no mechanical impurities Color ≤50 Hazen Free acid, as HF ≤80 ppm Water ≤80 µg/g Assay ≥99.5 wt% Chloride ≤5 µg/g"
+      "metadata": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS) is a sulfur-containing electrolyte additive for additive concentration and cell-material compatibility research. 1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide MMDS MMDS supplier where to buy MMDS Abbreviation MMDS CAS Number 99591-74-9 Formula C2H4O6S2 Grade Battery material grade Appearance White crystalline material or powder, no mechanical impurities Water (Karl Fischer) ≤200 ppm Purity (GC) ≥99.0 wt% Acidity, as HF ≤100 ppm Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "tris-trimethylsilyl-borate-tmsb",
@@ -412,7 +412,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "NaPF6",
       "section": "next-gen",
       "category": "Next-Gen Salts",
-      "metadata": "Sodium hexafluorophosphate (NaPF6), CAS 21324-39-0, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 20 ppm. Sodium hexafluorophosphate NaPF6 Sodium hexafluorophosphate (NaPF6) supplier where to buy Sodium hexafluorophosphate (NaPF6) Abbreviation NaPF6 CAS Number 21324-39-0 Formula NaPF6 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 20 ppm"
+      "metadata": "Sodium hexafluorophosphate (NaPF6) is a sodium electrolyte salt for sodium-ion electrolyte formulation and salt-solvent compatibility research. Sodium hexafluorophosphate NaPF6 Sodium hexafluorophosphate (NaPF6) supplier where to buy Sodium hexafluorophosphate (NaPF6) Abbreviation NaPF6 CAS Number 21324-39-0 Formula NaPF6 Grade Battery grade Appearance White powder or needle-like solid Water ≤20 ppm Acidity, as HF ≤80 ppm Assay ≥99.9 wt% Residual solvent ≤500 ppm Chloride ≤3 ppm Sulfate ≤3 ppm"
     },
     {
       "slug": "sodium-difluoro-oxalate-borate-naodfb",
@@ -425,7 +425,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C2BF2NaO4",
       "section": "next-gen",
       "category": "Next-Gen Salts",
-      "metadata": "Sodium difluoro(oxalato)borate (NaDFOB), CAS 1016545-84-8, Next-Gen Salt, available from Winigen Materials. Typical specifications: battery grade; purity > 99.9%; water ≤ 50 ppm. Sodium difluoro(oxalato)borate NaDFOB NaODFB Sodium difluoro(oxalato)borate (NaDFOB) supplier where to buy Sodium difluoro(oxalato)borate (NaDFOB) Abbreviation NaDFOB CAS Number 1016545-84-8 Formula C2BF2NaO4 Availability RFQ Grade Battery grade Purity > 99.9% Water ≤ 50 ppm"
+      "metadata": "Sodium difluoro(oxalato)borate (NaDFOB) is a borate-based sodium electrolyte salt for sodium-ion salt blends and electrode-electrolyte compatibility research. Sodium difluoro(oxalato)borate NaDFOB NaODFB Sodium difluoro(oxalato)borate (NaDFOB) supplier where to buy Sodium difluoro(oxalato)borate (NaDFOB) Abbreviation NaDFOB CAS Number 1016545-84-8 Formula C2BF2NaO4 Grade Battery grade Appearance White powder or needle-like solid Assay ≥99.5 wt% Water ≤300 ppm Acidity, as HF ≤200 ppm Residual solvent ≤1000 ppm Chloride ≤5 ppm Sulfate ≤50 ppm"
     },
     {
       "slug": "potassium-hexafluorophosphate-kpf-6",
@@ -983,7 +983,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "C12H10",
       "section": "additives",
       "category": "Electrolyte Additives",
-      "metadata": "Biphenyl (BP), CAS 92-52-4, available from Winigen Materials for battery and electrochemical research. Biphenyl is an aromatic electrolyte additive used in overcharge-response and interphase-screening studies. Biphenyl BP Biphenyl (BP) supplier where to buy Biphenyl (BP) Abbreviation BP CAS Number 92-52-4 Formula C12H10 Grade Battery research grade"
+      "metadata": "Biphenyl (BP) is an aromatic electrolyte additive for additive screening and electrochemical compatibility research. Biphenyl BP Biphenyl (BP) supplier where to buy Biphenyl (BP) Abbreviation BP CAS Number 92-52-4 Formula C12H10 Grade Battery research grade Appearance White powder or crystalline solid, no impurities Water ≤100 ppm Assay ≥99.9 wt% Chloride ≤5 ppm Sulfate ≤10 ppm"
     },
     {
       "slug": "propyl-acetate-pa",
@@ -1045,7 +1045,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "F2NNaO4S2",
       "section": "next-gen",
       "category": "Next-Gen Salts",
-      "metadata": "Sodium bis(fluorosulfonyl)imide (NaFSI), CAS 100669-96-3, available from Winigen Materials for battery and electrochemical research. Sodium bis(fluorosulfonyl)imide is a conducting-salt candidate for sodium-ion electrolyte formulation. Sodium bis(fluorosulfonyl)imide NaFSI Sodium bis(fluorosulfonyl)imide (NaFSI) supplier where to buy Sodium bis(fluorosulfonyl)imide (NaFSI) Abbreviation NaFSI CAS Number 100669-96-3 Formula F2NNaO4S2 Grade Battery research grade"
+      "metadata": "Sodium bis(fluorosulfonyl)imide (NaFSI) is a sulfonimide sodium electrolyte salt for sodium-ion electrolyte blends and transport research. Sodium bis(fluorosulfonyl)imide NaFSI Sodium bis(fluorosulfonyl)imide (NaFSI) supplier where to buy Sodium bis(fluorosulfonyl)imide (NaFSI) Abbreviation NaFSI CAS Number 100669-96-3 Formula F2NNaO4S2 Grade Battery research grade Appearance White crystalline material, no mechanical impurities Water ≤100 ppm Acidity, as HF ≤100 ppm Assay ≥99.50 wt% Residual solvent ≤1000 ppm Fluoride ≤150 ppm Chloride ≤10 ppm Sulfate ≤40 ppm"
     },
     {
       "slug": "cyclohexylbenzene-chb",
@@ -1081,7 +1081,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "F2NaO2P",
       "section": "next-gen",
       "category": "Next-Gen Salts",
-      "metadata": "Sodium difluorophosphate (NaPO2F2), CAS 15587-24-3, available from Winigen Materials for battery and electrochemical research. Sodium difluorophosphate is a sodium electrolyte component for salt and interphase-additive screening. Sodium difluorophosphate NaPO2F2 Sodium difluorophosphate (NaPO2F2) supplier where to buy Sodium difluorophosphate (NaPO2F2) Abbreviation NaPO2F2 CAS Number 15587-24-3 Formula F2NaO2P Grade Battery research grade"
+      "metadata": "Sodium difluorophosphate (NaPO2F2) is a fluorophosphate sodium electrolyte additive for sodium-ion formulation and additive screening research. Sodium difluorophosphate NaPO2F2 Sodium difluorophosphate (NaPO2F2) supplier where to buy Sodium difluorophosphate (NaPO2F2) Abbreviation NaPO2F2 CAS Number 15587-24-3 Formula F2NaO2P Grade Battery research grade Appearance White powder or granular solid Assay ≥99.5 wt% Water ≤100 ppm Acidity, as HF ≤200 ppm Residual solvent ≤5000 ppm Chloride ≤5 ppm Sulfate ≤50 ppm"
     },
     {
       "slug": "1-3-dioxolane-dol",
@@ -1125,13 +1125,14 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "aliases": [
         "LiDODFP",
         "LiDFBOP",
-        "LiODFP"
+        "LiODFP",
+        "LiDFOP"
       ],
       "cas": "678966-16-0",
       "formula": "C4F2LiO8P",
       "section": "salts",
       "category": "Lithium Salts",
-      "metadata": "Lithium difluorobis(oxalato)phosphate (LiDFBOP), CAS 678966-16-0, available from Winigen Materials for battery and electrochemical research. Lithium difluorobis(oxalato)phosphate is a lithium-containing electrolyte additive for interphase-forming studies. Lithium difluorobis(oxalato)phosphate LiDODFP LiDFBOP LiODFP Lithium difluorobis(oxalato)phosphate (LiDFBOP) supplier where to buy Lithium difluorobis(oxalato)phosphate (LiDFBOP) Abbreviation LiDODFP CAS Number 678966-16-0 Formula C4F2LiO8P Grade Battery research grade"
+      "metadata": "Lithium difluorobis(oxalato)phosphate (LiDFBOP), CAS 678966-16-0, available from Winigen Materials for battery and electrochemical research. Lithium difluorobis(oxalato)phosphate is a lithium-containing electrolyte additive for interphase-forming studies. Lithium difluorobis(oxalato)phosphate LiDODFP LiDFBOP LiODFP LiDFOP Lithium difluorobis(oxalato)phosphate (LiDFBOP) supplier where to buy Lithium difluorobis(oxalato)phosphate (LiDFBOP) Abbreviation LiDODFP CAS Number 678966-16-0 Formula C4F2LiO8P Grade Battery research grade"
     },
     {
       "slug": "1m-lipf6-ec-emc-3-7-1-vc-electrolyte",
@@ -1505,6 +1506,51 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "mxene-materials",
       "category": "MXene Powder",
       "metadata": "V4C3Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials. V4C3Tx MXene V4C3 MXene V4C3 powder V4C3Tx Multilayer Powder V4C3Tx MXene powder online ordering Material V₄C₃Tₓ MXene Precursor V₄AlC₃ Product form Multilayer Powder Preparation HF etching Layer structure / count Multilayer Nominal flake / particle size 2–20 µm Representative conductivity 1–10 S/cm Surface terminations –O, –OH, –F, –Cl Recommended storage Dry; vacuum or inert atmosphere"
+    },
+    {
+      "slug": "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt",
+      "name": "LiDFOP/EMC — 20 wt%",
+      "aliases": [
+        "LiDFOP/EMC",
+        "LiDFOP",
+        "LiDFBOP",
+        "LiDODFP",
+        "LiODFP",
+        "LiDFOP in EMC",
+        "LiDFBOP solution",
+        "LiDODFP solution",
+        "LiODFP solution",
+        "LiDFOP in EMC — 20 wt%"
+      ],
+      "cas": "678966-16-0",
+      "formula": "C4F2LiO8P",
+      "section": "additives",
+      "category": "Electrolyte Additives",
+      "metadata": "LiDFOP in EMC — 20 wt% is an electrolyte additive solution for formulation research. Active-material CAS: 678966-16-0; active-material formula: C4F2LiO8P. Lithium difluorobis(oxalato)phosphate in EMC — 20 wt% LiDFOP/EMC LiDFOP LiDFBOP LiDODFP LiODFP LiDFOP in EMC LiDFBOP solution LiDODFP solution LiODFP solution LiDFOP in EMC — 20 wt% Abbreviation LiDFOP in EMC — 20 wt% CAS Number 678966-16-0 Formula C4F2LiO8P Product type Electrolyte Additive Solution Appearance Colorless clear liquid Active material concentration 20.0 ±1.0 wt% Color ≤50 APHA Water ≤50 ppm Free acid ≤200 ppm Turbidity ≤1 NTU Sulfate ≤10 ppm Chloride ≤5 ppm EMC purity (GC) ≥99.95%"
+    },
+    {
+      "slug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
+      "name": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN)",
+      "aliases": [
+        "PFPN"
+      ],
+      "cas": "33027-66-6",
+      "formula": "C2H5F5N3OP3",
+      "section": "additives",
+      "category": "Electrolyte Additives",
+      "metadata": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) is a fluorinated phosphazene electrolyte additive for high-voltage and safety-oriented electrolyte formulation research. Ethoxy(pentafluoro)cyclotriphosphazene PFPN Abbreviation PFPN CAS Number 33027-66-6 Formula C2H5F5N3OP3 Product type Fluorinated phosphazene electrolyte additive Appearance Colorless transparent liquid, no mechanical impurities Color ≤50 Hazen Water ≤50 ppm Assay ≥99.9 wt% Chloride ≤5 ppm Sulfate ≤10 ppm"
+    },
+    {
+      "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+      "name": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP)",
+      "aliases": [
+        "TFEP"
+      ],
+      "cas": "358-63-4",
+      "formula": "C6H6F9O4P",
+      "section": "solvents",
+      "category": "Battery Solvents",
+      "metadata": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) is a fluorinated phosphate solvent and cosolvent for reduced-flammability and thermal-safety electrolyte blends research. Tris(2,2,2-trifluoroethyl) phosphate TFEP Abbreviation TFEP CAS Number 358-63-4 Formula C6H6F9O4P Product type Fluorinated phosphate electrolyte solvent / flame-retardant cosolvent Appearance Colorless liquid Purity ≥99.0 wt% Moisture <200 ppm"
     }
   ]
 };

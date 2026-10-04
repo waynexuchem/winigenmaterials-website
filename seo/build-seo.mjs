@@ -1,4 +1,5 @@
 import { synchronizeCatalogCardIdentities, synchronizeProductPresentation, displayIdentity, identityAliases } from '../scripts/catalog-card-identity.mjs';
+import { finalizeApprovedTds } from '../scripts/approved-tds-presentation.mjs';
 import { isFinalizedAdditive, synchronizeAdditiveTds, documentationCopy as additiveDocumentationCopy } from '../scripts/sync-additive-tds.mjs';
 import { synchronizeProductIdentities } from '../scripts/sync-product-identities.mjs';
 import { mkdir, readFile, readdir, writeFile as writeRawFile } from 'node:fs/promises';
@@ -15,7 +16,7 @@ const siteRoot = resolve(scriptDirectory, '..');
 const siteUrl = 'https://www.winigenmaterials.com';
 const productSource = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.source.json'), 'utf8'));
 const writeFile = (path, content, ...options) => writeRawFile(path,
-  typeof content === 'string' ? synchronizeProductPresentation(synchronizeAdditiveTds(synchronizeProductIdentities(content, productSource.products, path), productSource.products, path), productSource.products, path) : content, ...options);
+  typeof content === 'string' ? finalizeApprovedTds(synchronizeProductPresentation(synchronizeAdditiveTds(synchronizeProductIdentities(content, productSource.products, path), productSource.products, path), productSource.products, path), productSource.products.find(p=>path.endsWith(p.url)), productSource.products) : content, ...options);
 const ecommerceSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/catalog.source.json'), 'utf8'));
 const shippingSource = JSON.parse(await readFile(resolve(siteRoot, 'ecommerce/shipping-countries.source.json'), 'utf8'));
 const commerceAssetVersion = shortCommerceRelease(createCommerceRelease(ecommerceSource, shippingSource));
@@ -172,7 +173,7 @@ function productKeySpecifications(product) {
     return preferredNames
       .map(name => propertiesByName.get(String(name).toLowerCase()))
       .filter(Boolean)
-      .slice(0, isFinalizedAdditive(product) ? undefined : 6);
+      .slice(0, (isFinalizedAdditive(product) || product.qualityDocumentation?.specificationBasis === 'approved-tds-release') ? undefined : 6);
   }
   const isSse = product.family === 'solid-state-electrolytes';
   const priorities = isSse
@@ -226,10 +227,13 @@ function productDocumentation(product, documentationHref) {
   return `<section class="product-documentation product-documentation--representative" id="documentation" aria-labelledby="product-documentation-title"><div class="product-documentation__content"><p class="detail-kicker">Quality Documentation</p><h3 id="product-documentation-title">${escapeHtml(representativeCoa.title)}</h3><p>${escapeHtml(representativeCoa.description)}</p><div class="product-documentation__acceptance"><h4>Commercial acceptance specifications</h4><dl class="product-documentation__specifications">${acceptanceMarkup}</dl></div><p class="product-documentation__notice">${escapeHtml(representativeCoa.disclaimer)}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(documentHref)}" target="_blank" rel="noopener">View Representative COA (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section>`;
 }
 
-function lowerQualityDocumentation(product, documentationHref) {
+export function lowerQualityDocumentation(product, documentationHref) {
   const tds = product.qualityDocumentation?.tds;
   if (!tds) return '';
   const tdsHref = tds.path.startsWith('/') ? `..${tds.path}` : tds.path;
+  if (product.qualityDocumentation.specificationBasis === 'approved-tds-release') {
+    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>${additiveDocumentationCopy}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a></div></section></div></section><!-- product-tds-section:end -->`;
+  }
   if (isFinalizedAdditive(product)) {
     return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>${additiveDocumentationCopy}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section></div></section><!-- product-tds-section:end -->`;
   }
@@ -247,6 +251,14 @@ function lowerQualityDocumentation(product, documentationHref) {
 }
 
 function synchronizeQualityDocumentationCopy(html, product) {
+  if (product.qualityDocumentation?.specificationBasis === 'approved-tds-release') {
+    const summary = productKeySpecifications(product).map(item => `${item.name}: ${item.value}`).join('; ');
+    html = html.replace('.product-detail-layout,.product-technical-grid{grid-template-columns:1fr}', '.product-detail-layout,.product-technical-grid{grid-template-columns:minmax(0,1fr)}');
+    html = html.replace('.product-technical-grid { grid-template-columns: 1fr; }', '.product-technical-grid { grid-template-columns: minmax(0, 1fr); }');
+    return html.replace(/(<p class="detail-kicker">Technical Profile<\/p>\s*)<p>[\s\S]*?<\/p>/i, `$1<p>${escapeHtml(product.description)}</p>`)
+      .replace(/<details><summary>What specifications are shown for [\s\S]*?<\/summary><p>[\s\S]*?<\/p><\/details>/i, `<details><summary>What specifications are shown for ${escapeHtml(product.name)}?</summary><p>${escapeHtml(summary)}. ${additiveDocumentationCopy}</p></details>`)
+      .replace(/(<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i, `$1<p>${escapeHtml(product.description)}</p>`);
+  }
   if (isFinalizedAdditive(product)) return synchronizeAdditiveTds(html, [product], product.url);
   if (!product.qualityDocumentation?.tds && !product.qualityDocumentation?.representativeCoa) return html;
   const excluded = /^(?:abbreviation|cas number|formula|availability|commercial availability)$/i;
@@ -262,8 +274,20 @@ function synchronizeQualityDocumentationCopy(html, product) {
   return next;
 }
 
+function renderProjectSupport(quoteHref, technicalHref) {
+  return `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
+}
+
 function renderProductDetailExperience(html, product) {
   if (product.commerceStatus !== 'active_checkout') return renderRfqProductNavigation(html, product);
+  // A source-backed product may move from RFQ to the standard commerce layout.
+  // Retire only the old RFQ presentation; the shared renderer supplies its replacement.
+  if (html.includes('data-approved-rfq="true"')) {
+    html = html.replace(/ data-approved-rfq="true"/g, '')
+      .replace(/<style id="approved-rfq-spacing">[\s\S]*?<\/style>/g, '')
+      .replace(/<section class="section (?:dark )?product-detail-hero" id="overview">[\s\S]*?<\/section>/g, '')
+      .replace(/<section class="product-key-specifications" id="specifications">[\s\S]*?<\/section>/g, '');
+  }
   if (product.mxene?.compositionNote && !html.includes('data-product-detail-ux="true"')) {
     // Keep the source hero until its breadcrumb is converted into shared context/navigation.
     html = html.replace(/<section class="product-key-specifications" id="specifications">[\s\S]*?<\/section>/i, '');
@@ -286,7 +310,7 @@ function renderProductDetailExperience(html, product) {
     : '';
   const summary = `<div class="product-detail-summary" data-product-detail-ux="true"><div class="product-detail-summary__meta"><div><span>Winigen product code</span><strong>${escapeHtml(product.sku)}</strong></div></div><section class="product-key-specifications" id="specifications" aria-labelledby="key-specifications-title"><div class="product-detail-section-heading"><h3 id="key-specifications-title">Key Specifications</h3></div><dl class="product-key-specifications__grid">${specificationMarkup}</dl></section>${specialtyGradeNote}${bulkQuotePrompt}${documentation}</div>`;
   const navigation = product.mxene ? `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#characterization">Characterization</a><a href="#documentation">Documentation</a><a href="#faq">FAQ</a><a href="#related-products">Related Products</a></div></nav>` : `<nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#packages">Packages &amp; Pricing</a><a href="#selection-guide">Selection Guide</a><a href="#applications">Applications &amp; Technical Notes</a><a href="#technical-guides">Related Guides</a><a href="#documentation">Documentation</a></div></nav>`;
-  const support = `<section class="section product-support-routing" data-product-support-routing="true"><div class="container"><div class="section-title"><p class="eyebrow">Project Support</p><h2>Need something beyond the standard package?</h2></div><div class="product-support-routing__grid"><a href="${quoteHref}"><strong>Different grade or package</strong><span>Request a quote</span></a><a href="${technicalHref}"><strong>Formulation or application support</strong><span>Start a technical discussion</span></a><a href="../services.html"><strong>Moving toward pilot scale</strong><span>Explore technical services</span></a></div></div></section>`;
+  const support = renderProjectSupport(quoteHref, technicalHref);
 
   const breadcrumb = html.match(/<div class="breadcrumb">[\s\S]*?<\/div>/i)?.[0] || '<div class="breadcrumb"><a href="../products.html">Products</a></div>';
   const context = `<div class="product-detail-context"><div class="container">${breadcrumb}</div></div>`;
@@ -358,15 +382,29 @@ function renderRfqProductNavigation(html, product, preserveInformationLayout = f
   if (product.commerceStatus !== 'rfq' && !preserveInformationLayout) return html;
   const family = familiesBySlug.get(product.family);
   let next = html.replace(/<div class="(?:product-sticky-shell|mxene-sticky-shell)">[\s\S]*?<\/nav><\/div>/gi, '');
+  if (product.qualityDocumentation?.specificationBasis === 'approved-tds-release') {
+    next = next.replace('class="section dark product-detail-hero"', 'class="section product-detail-hero"');
+    const specs = `<section class="product-key-specifications" id="specifications"><h3>Key Specifications</h3><dl class="product-key-specifications__grid">${productKeySpecifications(product).map(item => `<div class="product-key-spec"><dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('')}</dl></section>`;
+    next = next.replace(/<h3>Typical Specification<\/h3><ul class="spec-list">[\s\S]*?<\/ul>/, specs);
+    next = next.replace(/<section class="product-key-specifications" id="specifications">[\s\S]*?<\/section>/, specs);
+    next = next.replace(/<!-- product-tds-section:start -->[\s\S]*?<!-- product-tds-section:end -->/g, '');
+    next = next.replace(/<section class="section product-support-routing"[^>]*>[\s\S]*?<\/section>/g, '');
+    const href = `../contact.html?inquiry_type=Documentation%20%2F%20COA%20%2F%20SDS%20Request&amp;product_interest=${encodeURIComponent(product.name)}`;
+    const quote = `../contact.html?inquiry_type=Request%20for%20Quote&amp;product_interest=${encodeURIComponent(product.name)}`;
+    const technical = `../contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=${encodeURIComponent(product.name)}`;
+    next = next.replace('</main>', `${lowerQualityDocumentation(product, href)}${renderProjectSupport(quote, technical)}</main>`);
+    if (product.activeMaterialIdentity) next = next.replace(/<dt>CAS Number<\/dt>/g, '<dt>Active-material CAS Number</dt>').replace(/What is the CAS number\?/g, 'What is the active-material CAS number?').replace(/The CAS number shown for/g, 'The active-material CAS number shown for');
+  }
   const existingBreadcrumb = next.match(/<div class="breadcrumb">[\s\S]*?<\/div>/i)?.[0];
   const breadcrumb = existingBreadcrumb || `<div class="breadcrumb"><a href="../products.html">Products</a> / <a href="${escapeHtml(family?.url?.split('/').pop() || '../products.html')}">${escapeHtml(family?.name || 'Materials')}</a> / ${escapeHtml(product.name)}</div>`;
   if (existingBreadcrumb) next = next.replace(existingBreadcrumb, '');
   next = next
-    .replace(/<section class="section dark product-detail-hero"(?![^>]*\bid=)/i, '<section class="section dark product-detail-hero" id="overview"');
+    .replace(/<section class="section (dark )?product-detail-hero"(?![^>]*\bid=)/i, '<section class="section $1product-detail-hero" id="overview"');
   if (!/\bid=["']specifications["']/.test(next)) next = next.replace(/(<\/section>\s*)<section class="section"(?![^>]*\bid=)/i, '$1<section class="section" id="specifications"');
   const links = (product.mxene ? [['overview','Overview'],['specifications','Specifications'],[product.commerceStatus === 'active_checkout' ? 'packages' : 'request-quote',product.commerceStatus === 'active_checkout' ? 'Packages &amp; Pricing' : 'Request Quote'],['characterization','Characterization'],['documentation','Documentation'],['faq','FAQ'],['related-products','Related Products']] : [
     ['overview', 'Overview'],
     ['specifications', 'Specifications & RFQ'],
+    ...(product.qualityDocumentation?.specificationBasis === 'approved-tds-release' ? [['documentation', 'Documentation']] : []),
     ['selection-guide', 'Selection Guide'],
     ['technical-guides', 'Related Guides']
   ]).filter(([id]) => new RegExp(`\\bid=["']${id}["']`, 'i').test(next));
@@ -1037,7 +1075,7 @@ async function updateProductPage(pagePath, product) {
   html = renderStaticRfqState(html, product);
   html = ensureStylesheet(
     html,
-    (isFinalizedAdditive(product) || product.qualityDocumentation?.tds?.representativeOnly)
+    (isFinalizedAdditive(product) || product.qualityDocumentation?.tds?.representativeOnly || product.qualityDocumentation?.specificationBasis === 'approved-tds-release')
       ? '../assets/css/ecommerce.css'
       : '../assets/css/ecommerce.css?v=' + generatedAssetVersion
   );

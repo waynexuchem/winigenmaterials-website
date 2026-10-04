@@ -31,9 +31,10 @@
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 3) active = links.length - 1;
     links.forEach((link, index) => {
       const selected = index === active;
-      if (selected && link.getAttribute('aria-current') !== 'location') {
+      if (selected) {
         const item = link.getBoundingClientRect(), region = scroller.getBoundingClientRect();
-        if (item.left < region.left || item.right > region.right) scroller.scrollTo({left: scroller.scrollLeft + item.left - region.left - (region.width-item.width)/2, behavior:'auto'});
+        const padding = 12;
+        if (item.left < region.left + padding || item.right > region.right - padding) scroller.scrollTo({left: Math.max(0, scroller.scrollLeft + item.left - region.left - (region.width-item.width)/2), behavior:'auto'});
       }
       if (selected) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
     });

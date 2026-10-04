@@ -291,6 +291,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/cyclohexylbenzene-chb.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/diethyl-carbonate-dec.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/dimethyl-carbonate-dmc.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethyl-acetate-ea.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethyl-methyl-carbonate-emc.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethyl-propionate-ep.png</image:loc></image:image>
@@ -323,6 +324,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/triallyl-phosphate-tap.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/triphenyl-phosphite-tppi.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-2-2-2-trifluoroethyl-phosphate-tfep.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-trimethylsilyl-borate-tmsb.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/vinyl-ethylene-carbonate-vec.png</image:loc></image:image>
@@ -445,6 +447,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/propyl-acetate-pa.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/propyl-propionate-pp.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/propylene-carbonate-pc.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-2-2-2-trifluoroethyl-phosphate-tfep.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/biphenyl-bp.html</loc>
@@ -486,6 +489,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/adiponitrile-adn.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/biphenyl-bp.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/cyclohexylbenzene-chb.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethylene-sulfite-es.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/fluorobenzene-fb.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/hexamethyldisilazane-hmds.png</image:loc></image:image>
@@ -499,6 +503,11 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/vinyl-ethylene-carbonate-vec.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/vinylene-carbonate-vc.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/ethyl-acetate-ea.html</loc>
@@ -623,6 +632,10 @@
   <url>
     <loc>https://www.winigenmaterials.com/products/lithium-difluoro-oxalate-borate-liodfb.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/lithium-difluoro-oxalate-borate-liodfb.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/lithium-difluorobis-oxalato-phosphate-lidodfp.html</loc>
@@ -876,6 +889,10 @@
   <url>
     <loc>https://www.winigenmaterials.com/products/triphenyl-phosphite-tppi.html</loc>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/triphenyl-phosphite-tppi.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.winigenmaterials.com/products/tris-2-2-2-trifluoroethyl-phosphate-tfep.html</loc>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/tris-2-2-2-trifluoroethyl-phosphate-tfep.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.winigenmaterials.com/products/tris-trimethylsilyl-borate-tmsb.html</loc>

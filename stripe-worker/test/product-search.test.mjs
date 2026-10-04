@@ -46,8 +46,8 @@ test('exact canonical name and abbreviation are direct lookups', () => {
   assert.deepEqual(slugs('VC'), ['vinylene-carbonate-vc']);
 });
 
-test('alternate alias is a direct lookup', () => {
-  assert.deepEqual(slugs('LiDODFP'), ['lithium-difluorobis-oxalato-phosphate-lidodfp']);
+test('shared alternate alias finds both the neat salt and the distinct EMC solution', () => {
+  assert.deepEqual(slugs('LiDODFP').sort(), ['lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt','lithium-difluorobis-oxalato-phosphate-lidodfp'].sort());
 });
 
 test('standard electrolyte formulation name and approved aliases are direct lookups', () => {

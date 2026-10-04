@@ -6,10 +6,12 @@ import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
 import {isFinalizedAdditive, synchronizeAdditiveTds, documentationCopy} from '../scripts/sync-additive-tds.mjs';
 import {parsePublicAssetManifest, prepareCloudflareSite} from '../scripts/prepare-cloudflare-site.mjs';
+import {synchronizeProductPresentation} from '../scripts/catalog-card-identity.mjs';
+import {finalizeApprovedTds} from '../scripts/approved-tds-presentation.mjs';
 const root=resolve(import.meta.dirname,'..');
 const read=p=>readFile(resolve(root,p),'utf8');
 const {products}=JSON.parse(await read('catalog/products.source.json'));
-const selected=products.filter(isFinalizedAdditive);
+const selected=products.filter(p=>['VC','DTD','PST','FEC','SN','HTCN','MMDS','TMSP','PS'].includes(p.primaryAbbreviation));
 const manifest=parsePublicAssetManifest(await read('cloudflare-site/public-assets.txt'));
 const prop=(p,name)=>p.additionalProperty.find(x=>x.name===name)?.value;
 
@@ -34,7 +36,9 @@ for(const product of selected){
   const section=plain.match(/id="specifications"[\s\S]*?<\/section>/)[0];
   for(const name of product.qualityDocumentation.keySpecifications)assert(section.includes(prop(product,name)),name);
   assert.doesNotMatch(plain,/C6H12O6S2|C9H33O6PSi3|supplier-reported|supplier documentation|upstream source|manufacturing source/i);
-  assert.equal(synchronizeAdditiveTds(html,products,product.url),html);
+  // JSON-LD whitespace is not presentation drift; compare its parsed serialization.
+  const normalize=h=>h.replace(/(<script[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g,(_,a,json,b)=>a+JSON.stringify(JSON.parse(json))+b);
+  assert.equal(normalize(finalizeApprovedTds(synchronizeProductPresentation(synchronizeAdditiveTds(html,products,product.url),products,product.url),product,products)),normalize(html));
   const schemas=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
   const schema=schemas.find(s=>s['@type']==='Product');
   for(const spec of product.additionalProperty.filter(p=>!['Availability','Commercial Availability'].includes(p.name)))assert(schema.additionalProperty.some(p=>p.name===spec.name&&p.value===spec.value));
