@@ -1016,7 +1016,8 @@ export async function handleWebhook(request, env, ctx) {
     if (!completedNow) return new Response('Already processed.', { status: 200 });
     if (notificationOrderId && pendingNotifications.length > 0) {
       ctx.waitUntil(Promise.all(pendingNotifications.map(type => (
-        deliverOrderNotification(event.id, notificationOrderId, type, env)
+        deliverOrderNotification(event.id, notificationOrderId, type, env,
+          type === 'INTERNAL' ? { session: event.data.object, paidAt: event.created } : undefined)
       ))));
     }
 

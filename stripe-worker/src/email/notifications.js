@@ -80,13 +80,13 @@ async function claimNotification(eventId, type, env) {
   return result.meta.changes === 1;
 }
 
-export async function deliverOrderNotification(eventId, orderId, type, env) {
+export async function deliverOrderNotification(eventId, orderId, type, env, completedCheckout) {
   if (!await claimNotification(eventId, type, env)) return;
   try {
     const { order, lineItems } = await loadOrderForNotification(orderId, env);
     if (!order) throw new Error('Order was not available for notification delivery.');
     const message = type === 'INTERNAL'
-      ? createInternalOrderEmail(order, lineItems, env)
+      ? createInternalOrderEmail(order, lineItems, env, completedCheckout)
       : createCustomerTestOrderEmail(order, lineItems, env);
     const delivery = await sendEmail(message, env);
     await env.ORDERS_DB.prepare(`

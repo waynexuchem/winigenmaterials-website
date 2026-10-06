@@ -45,12 +45,67 @@ function shell(body) {
   return `<div style="background:#f4f7fa;padding:28px 12px;font-family:Arial,sans-serif;color:#263b55"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:660px;margin:0 auto;background:#fff;border:1px solid #d7e0ea"><tr><td style="background:#142d4c;color:#fff;padding:18px 24px;font-size:20px;font-weight:700">Winigen Materials</td></tr><tr><td style="padding:26px 24px">${body}</td></tr></table></div>`;
 }
 
-export function createInternalOrderEmail(order, lineItems, env) {
+// This allowlist is deliberately separate from the customer receipt renderer.
+function internalAddress(address) {
+  return ['line1', 'line2', 'city', 'state', 'postal_code', 'country']
+    .map(key => address?.[key]).filter(Boolean).join('\n');
+}
+function addressKey(address) {
+  return ['line1', 'line2', 'city', 'state', 'postal_code', 'country']
+    .map(key => String(address?.[key] || '').trim().replace(/\s+/g, ' ').toLowerCase()).join('|');
+}
+function referenceId(value) {
+  return typeof value === 'string' ? value : value?.id;
+}
+function stripeTime(value) {
+  return Number.isFinite(value) ? new Date(value * 1000).toISOString() : null;
+}
+export function createInternalOrderEmail(order, lineItems, env, completedCheckout = {}) {
+  const session = completedCheckout.session || {};
+  const customer = session.customer_details || {};
+  // Support both Stripe's original and newer collected_information location.
+  const shipping = session.collected_information?.shipping_details || session.shipping_details;
+  const destination = shipping || customer;
   const testMode = env.EMAIL_MODE !== 'live';
   const banner = testMode ? 'TEST MODE — NO GOODS WILL BE SHIPPED' : 'PAID ORDER — FULFILLMENT NOT RELEASED';
-  const html = `<p style="color:#9a6522;font-size:12px;font-weight:700">${banner}</p><h1 style="color:#142d4c;font-size:22px;margin:8px 0 18px">New paid order: ${escapeHtml(order.winigen_order_id)}</h1><p><strong>Customer</strong><br>${escapeHtml(order.customer_name || 'Not available')}<br>${escapeHtml(order.customer_email || 'Not available')}</p><p><strong>Destination country</strong><br>${escapeHtml(order.destination_country || 'Collected securely in Stripe Checkout')}</p><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:18px 0"><tr><td><strong>Payment</strong></td><td align="right">${escapeHtml(order.payment_status)}</td></tr><tr><td><strong>Fulfillment</strong></td><td align="right">${escapeHtml(order.fulfillment_status)}</td></tr></table><h2 style="color:#142d4c;font-size:16px">Order summary</h2>${orderLinesHtml(order, lineItems)}${totalsHtml(order)}<p style="color:#627489;font-size:12px;margin-top:22px">Timestamp: ${escapeHtml(order.updated_at)}<br>Stripe Checkout Session ID: ${escapeHtml(order.stripe_checkout_session_id)}</p>`;
-  const text = `${banner}\n\nNEW PAID ORDER: ${order.winigen_order_id}\nCustomer: ${order.customer_name || 'Not available'}\nEmail: ${order.customer_email || 'Not available'}\nDestination country: ${order.destination_country || 'Collected securely in Stripe Checkout'}\nPayment: ${order.payment_status}\nFulfillment: ${order.fulfillment_status}\n\nORDER SUMMARY\n${orderLinesText(order, lineItems)}\n\n${totalsText(order)}\n\nTimestamp: ${order.updated_at}\nStripe Checkout Session ID: ${order.stripe_checkout_session_id}`;
-  return { from: `Winigen Orders <${env.TEST_ORDER_EMAIL_FROM}>`, to: testMode ? undefined : String(env.ORDER_NOTIFICATION_RECIPIENTS || '').split(',').map(value => value.trim()).filter(Boolean), replyTo: env.ORDER_EMAIL_REPLY_TO, subject: `${testMode ? 'TEST – ' : ''}New Winigen Paid Order – ${order.winigen_order_id}`, html: shell(html), text, metadata: { order_id: order.winigen_order_id, notification_type: 'INTERNAL', mode: testMode ? 'test' : 'live' } };
+  const totals = session.total_details || {};
+  const currency = session.currency || order.currency;
+  const field = (label, value) => value === undefined || value === null || value === '' ? null : `${label}: ${value}`;
+  const text = [banner, '', `NEW PAID ORDER: ${order.winigen_order_id}`,
+    'ORDER', field('Payment', order.payment_status), field('Fulfillment', order.fulfillment_status),
+    field('Payment timestamp', stripeTime(completedCheckout.paidAt) || order.updated_at), '',
+    'CUSTOMER', field('Company', customer.business_name),
+    field('Customer / contact name', customer.individual_name || customer.name || order.customer_name || 'Not available'),
+    field('Email', customer.email || order.customer_email || 'Not available'), field('Phone', customer.phone), '',
+    'SHIP TO', field('Recipient', destination.name || customer.name || order.customer_name),
+    field('Company', destination.business_name || customer.business_name),
+    internalAddress(destination.address) || 'Full address not available in completed Checkout Session',
+    field('Destination country', destination.address?.country || order.destination_country),
+    field('Phone', destination.phone || customer.phone),
+    !shipping ? 'Address source: completed-session customer address fallback' : null,
+    customer.address && addressKey(customer.address) !== addressKey(destination.address)
+      ? `\nBILLING / CUSTOMER ADDRESS\n${internalAddress(customer.address)}` : null,
+    '', 'ORDER SUMMARY',
+    ...lineItems.map(item => [item.product_name, field('Grade', item.grade), field('SKU', item.sku),
+      field('Package', item.package_label), field('Quantity', item.quantity),
+      field('Unit price', formatAmount(item.unit_amount, item.currency || currency)),
+      field('Line total', lineAmount(item, currency))].filter(value => value !== null).join('\n')),
+    '', 'ORDER TOTALS',
+    field('Product subtotal', formatAmount(session.amount_subtotal ?? order.merchandise_amount, currency)),
+    field('Discount', formatAmount(totals.amount_discount ?? order.discount_amount, currency)),
+    field('Shipping/freight', formatAmount(totals.amount_shipping ?? order.shipping_amount, currency)),
+    field('Tax', formatAmount(totals.amount_tax ?? order.tax_amount, currency)),
+    field('Total', formatAmount(session.amount_total ?? order.amount, currency)),
+    field('Currency', currency?.toUpperCase()), '', 'STRIPE / INTERNAL REFERENCES',
+    field('Stripe Checkout Session ID', session.id || order.stripe_checkout_session_id),
+    field('PaymentIntent ID', referenceId(session.payment_intent)),
+    field('Stripe Customer ID', referenceId(session.customer)),
+    field('Client reference / Winigen order reference', session.client_reference_id || order.winigen_order_id),
+    field('Session created', stripeTime(session.created)),
+    field('Timestamp', stripeTime(completedCheckout.paidAt) || order.updated_at)
+  ].filter(value => value !== null && value !== undefined).join('\n');
+  const html = shell(`<div style="white-space:pre-wrap;line-height:1.6">${escapeHtml(text)}</div>`);
+  return { from: `Winigen Orders <${env.TEST_ORDER_EMAIL_FROM}>`, to: testMode ? undefined : String(env.ORDER_NOTIFICATION_RECIPIENTS || '').split(',').map(value => value.trim()).filter(Boolean), replyTo: env.ORDER_EMAIL_REPLY_TO, subject: `${testMode ? 'TEST – ' : ''}New Winigen Paid Order – ${order.winigen_order_id}`, html, text, metadata: { order_id: order.winigen_order_id, notification_type: 'INTERNAL', mode: testMode ? 'test' : 'live' } };
 }
 
 export function createCustomerTestOrderEmail(order, lineItems, env) {
