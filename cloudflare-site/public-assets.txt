@@ -25,6 +25,10 @@ assets/documents/tds/Winigen_EMC_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_EP_Representative_TDS_RevB.pdf
 assets/documents/tds/Winigen_FEC_Representative_TDS.pdf
 assets/documents/tds/Winigen_FEMC_TDS.pdf
+assets/documents/tds/Winigen_GSB03_Technical_Data_Sheet.pdf
+assets/documents/tds/Winigen_GSB04_Technical_Data_Sheet.pdf
+assets/documents/tds/Winigen_GSH03_Technical_Data_Sheet.pdf
+assets/documents/tds/Winigen_GSH04_Technical_Data_Sheet.pdf
 assets/documents/tds/Winigen_HTCN_Representative_TDS.pdf
 assets/documents/tds/Winigen_HTCN_TDS.pdf
 assets/documents/tds/Winigen_LiBF4_Representative_TDS_RevB.pdf
@@ -193,6 +197,7 @@ assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sp
 assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects.png
 assets/images/knowledge/campaign/np-ratio-effective-margin-hero-v3-diffuse-access-official-logo.png
 assets/images/knowledge/campaign/np-ratio-effective-margin-hero-v3-diffuse-access.png
+assets/images/knowledge/campaign/silicon-degradation-hero-v3-cinematic-mechanisms-official-logo.png
 assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced-official-logo.png
 assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced.png
 assets/images/knowledge/coin-to-pouch-part-2/coin-pouch-ranking-reversal.png
@@ -275,6 +280,7 @@ assets/images/knowledge/silicon-degradation/failure-mode-migration.svg
 assets/images/knowledge/silicon-degradation/lithium-inventory.svg
 assets/images/knowledge/silicon-degradation/material-form-tendencies.svg
 assets/images/knowledge/silicon-degradation/moon-lithium-accumulation-fig2ab-cc-by.png
+assets/images/knowledge/silicon-degradation/moon-lithium-accumulation-fig2bcd-cc-by.png
 assets/images/knowledge/silicon-degradation/moon-lithium-accumulation-fig2cd-cc-by.png
 assets/images/knowledge/silicon-degradation/phase-stress-cycle.svg
 assets/images/knowledge/silicon-degradation/sei-rupture-repair.svg
@@ -325,6 +331,7 @@ assets/images/knowledge/social/materials.png
 assets/images/knowledge/social/mechanics-solid-state-electrolyte-lithium-dendrites.png
 assets/images/knowledge/social/np-ratio-lithium-ion-battery-design-official-logo.png
 assets/images/knowledge/social/np-ratio-lithium-ion-battery-design.png
+assets/images/knowledge/social/silicon-anode-degradation-mechanisms-official-logo.png
 assets/images/knowledge/social/silicon-anode-degradation-mechanisms.png
 assets/images/knowledge/social/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.png
 assets/images/knowledge/social/sodium-ion-electrolyte-materials.png
@@ -394,6 +401,14 @@ assets/images/raw-chemicals.jpg
 assets/images/social/winigen-materials-home.png
 assets/images/solid-state-discs.jpg
 assets/images/solid-state-powders.jpg
+assets/images/solid-state/gsb03-psd-tds.png
+assets/images/solid-state/gsb03-xrd-tds.png
+assets/images/solid-state/gsb04-psd-tds.png
+assets/images/solid-state/gsb04-xrd-tds.png
+assets/images/solid-state/gsh03-psd-tds.png
+assets/images/solid-state/gsh03-xrd-tds.png
+assets/images/solid-state/gsh04-psd-tds.png
+assets/images/solid-state/gsh04-xrd-tds.png
 assets/images/solid-state/latp-300nm-powder-photo.jpg
 assets/images/solid-state/latp-300nm-sem.jpg
 assets/images/solid-state/latp-300nm-xrd.jpg

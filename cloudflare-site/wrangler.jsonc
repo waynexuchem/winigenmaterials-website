@@ -1,5 +1,4 @@
 {
-  "$schema": "../node_modules/wrangler/config-schema.json",
   "name": "winigenmaterials-site-preview",
   "main": "worker.js",
   "compatibility_date": "2026-09-05",
@@ -19,7 +18,8 @@
   "services": [
     {
       "binding": "CONTACT_API",
-      "service": "winigen-stripe-production"
+      "service": "winigen-stripe-production",
+      "environment": "production"
     }
   ]
 }

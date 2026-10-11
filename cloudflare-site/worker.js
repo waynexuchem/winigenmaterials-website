@@ -14,7 +14,7 @@ const CSP_CONNECT_SOURCES = [
 const CSP_REPORT_ONLY_DIRECTIVES = [
   "default-src 'self'",
   "base-uri 'self'",
-  "object-src 'none'",
+  "object-src 'self'",
   "script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com https://challenges.cloudflare.com",
   "style-src 'self' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",

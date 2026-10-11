@@ -3739,7 +3739,7 @@
     {
       "skuBase": "WM-SSE-GSH04",
       "slug": "gsh04",
-      "name": "Li5.5PS4.5Cl1.5, D50 0.925 um (GSH04)",
+      "name": "Li5.5PS4.5Cl1.5, D50 0.80 µm (GSH04)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSH04",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",
@@ -3838,7 +3838,7 @@
     {
       "skuBase": "WM-SSE-GSH03",
       "slug": "gsh03",
-      "name": "Li5.5PS4.5Cl1.5, D50 2.168 um (GSH03)",
+      "name": "Li5.5PS4.5Cl1.5, D50 2.06 µm (GSH03)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSH03",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",
@@ -4135,7 +4135,7 @@
     {
       "skuBase": "WM-SSE-GSB04",
       "slug": "gsb04",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 um (GSB04)",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm (GSB04)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSB04",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",
@@ -4234,7 +4234,7 @@
     {
       "skuBase": "WM-SSE-GSB03",
       "slug": "gsb03",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 um (GSB03)",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm (GSB03)",
       "category": "Solid-State Electrolyte Powder",
       "grade": "GSB03",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",

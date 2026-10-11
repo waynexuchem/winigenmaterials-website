@@ -71,6 +71,7 @@
 .faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
 .faq-list p { margin: 12px 0 0; }
 @media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } .figure-grid { grid-template-columns: 1fr; } .figure-grid img { height: auto; min-height: 180px; } }
+.article-main,.article-side{min-width:0}.article-table-wrap{max-width:100%}
 </style>
 <script type="application/ld+json">
 {
@@ -258,7 +259,7 @@
           <p>Ionic conductivity is important, but it should never be interpreted without the test method. A reported value may depend on pellet density, pressing pressure, pellet thickness, temperature, electrode configuration, and EIS fitting method.</p>
           <p>For example, Winigen lists LATP oxide powders with several particle-size grades. The <a href="../products/latp-d-50-0-3-um.html">LATP D<sub>50</sub> 0.30 um</a> powder is specified at &ge;0.55 mS/cm at 25 &deg;C, pressed pellet, while the <a href="../products/latp-d-50-0-4-um.html">D<sub>50</sub> 0.40 um</a> and <a href="../products/latp-d-50-0-65-um.html">D<sub>50</sub> 0.65 um</a> grades are listed at &ge;0.50 mS/cm and &ge;0.30 mS/cm, respectively, under pressed-pellet conditions.</p>
           <p>This is useful because the conductivity value appears together with particle-size grade and test format. Without that context, a conductivity number is difficult to compare across suppliers or material families.</p>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead><tr><th>Question</th><th>Why It Matters</th></tr></thead>
               <tbody>
@@ -276,9 +277,9 @@
         <section class="article-block">
           <h2>Particle-Size Distribution Matters More Than D50 Alone</h2>
           <p>D<sub>50</sub> is useful, but it is not enough. A powder with the same D<sub>50</sub> can still have a different D<sub>10</sub>, D<sub>90</sub>, agglomeration state, and morphology. These factors affect packing, contact area, slurry behavior, composite cathode mixing, and pellet densification.</p>
-          <p>Winigen's <a href="../products/gsh03.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.168 um</a> sulfide powder lists the full particle-size distribution: D<sub>10</sub> 0.567 um, D<sub>50</sub> 2.168 um, D<sub>90</sub> 6.592 um. The same page also reports 8.5 mS/cm ionic conductivity, 1.38 x 10<sup>-6</sup> mS/cm electronic conductivity, 28.8 ppm water, ICP impurity data, and supporting PSD, XRD, and SEM images.</p>
+          <p>Winigen's <a href="../products/gsh03.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.06 µm</a> sulfide powder lists the full particle-size distribution: D<sub>10</sub> 0.58 µm, D<sub>50</sub> 2.06 µm, D<sub>90</sub> 5.29 µm. The same page also reports a typical ionic conductivity of 8.54 mS/cm (conditions unspecified), 1.11 × 10⁻⁹ S/cm electronic conductivity, 5.90 ppm water, ICP impurity data, and supporting representative PSD and XRD images.</p>
           <p>That is much more useful than a simple "high-conductivity sulfide powder" listing.</p>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead><tr><th>Particle-Size Feature</th><th>Practical Effect</th></tr></thead>
               <tbody>
@@ -293,13 +294,13 @@
           <div class="figure-grid" aria-label="Li5.5PS4.5Cl1.5 supporting images">
             <figure class="protected-figure">
               <div class="figure-lock">
-                <img src="../assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Li5.5PS4.5Cl1.5 D50 2.168 um particle-size distribution" loading="lazy" draggable="false">
+                <img src="../assets/images/solid-state/gsh03-psd-tds.png" alt="Li5.5PS4.5Cl1.5 D50 2.06 µm particle-size distribution" loading="lazy" draggable="false">
               </div>
-              <figcaption>PSD for Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.168 um.</figcaption>
+              <figcaption>PSD for Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.06 µm.</figcaption>
             </figure>
             <figure class="protected-figure">
               <div class="figure-lock">
-                <img src="../assets/images/solid-state/li55ps45cl15-d50-2um-xrd-clean.jpg" alt="Li5.5PS4.5Cl1.5 XRD pattern" loading="lazy" draggable="false">
+                <img src="../assets/images/solid-state/gsh03-xrd-tds.png" alt="Li5.5PS4.5Cl1.5 XRD pattern" loading="lazy" draggable="false">
               </div>
               <figcaption>XRD support for sulfide phase review.</figcaption>
             </figure>
@@ -341,7 +342,7 @@
         <section class="article-block">
           <h2>Moisture Content Is a Screening Variable</h2>
           <p>Moisture can change the behavior of solid electrolyte powders, especially sulfides and some halides. It can affect surface chemistry, phase stability, conductivity, interfacial impedance, gas generation, and reproducibility.</p>
-          <p>Winigen's updated product pages make this point by listing water content or water specifications. The Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.168 um sulfide page reports 28.8 ppm water, while the Li<sub>6</sub>PS<sub>5</sub>Cl, D<sub>50</sub> 2.123 um page reports 43 ppm water. The <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub>, D<sub>50</sub> 0.9 um</a> halide product page specifies water &le;500 ppm and includes conductivity and XRD phase data.</p>
+          <p>Winigen's updated product pages make this point by listing water content or water specifications. The Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.06 µm sulfide page reports 5.90 ppm water, while the Li<sub>6</sub>PS<sub>5</sub>Cl, D<sub>50</sub> 2.123 um page reports 43 ppm water. The <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub>, D<sub>50</sub> 0.9 um</a> halide product page specifies water &le;500 ppm and includes conductivity and XRD phase data.</p>
           <p>For customers, the practical lesson is simple: do not interpret conductivity, interfacial resistance, or cycling data unless moisture exposure and handling conditions are controlled.</p>
           <figure class="article-figure protected-figure">
             <div class="figure-lock">
@@ -395,7 +396,7 @@
 
         <section class="article-block">
           <h2>Practical Solid-State Powder Comparison Framework</h2>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead><tr><th>Screening Stage</th><th>What to Compare</th><th>Why It Matters</th></tr></thead>
               <tbody>
@@ -415,13 +416,13 @@
 
         <section class="article-block">
           <h2>Winigen Product Data Examples</h2>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead><tr><th>Product</th><th>Family</th><th>Available Data</th><th>Screening Relevance</th></tr></thead>
               <tbody>
                 <tr><td><a href="../products/latp-d-50-0-3-um.html">LATP powder, D<sub>50</sub> 0.30 um</a></td><td>Oxide</td><td>D<sub>50</sub> 0.30 +/- 0.05 um; water &le;500 ppm; magnetic impurities &le;500 ppb; ionic conductivity &ge;0.55 mS/cm; SEM and XRD</td><td>Oxide powder with particle size, impurity, conductivity, and image support.</td></tr>
                 <tr><td><a href="../products/llzto-powder.html">LLZTO powder</a></td><td>Oxide / garnet</td><td>Customizable particle size; Ta-doped LLZO/LLZTO; SEM and XRD; coating and composite electrolyte use case</td><td>Customizable garnet oxide screening.</td></tr>
-                <tr><td><a href="../products/gsh03.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.168 um</a></td><td>Sulfide</td><td>D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>; 8.5 mS/cm ionic; 1.38 x 10<sup>-6</sup> mS/cm electronic; 28.8 ppm water; ICP; PSD/XRD/SEM</td><td>Complete sulfide characterization package.</td></tr>
+                <tr><td><a href="../products/gsh03.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.06 µm</a></td><td>Sulfide</td><td>D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>; 8.54 mS/cm ionic; 1.11 × 10⁻⁹ S/cm electronic; 5.90 ppm water; ICP; representative PSD/XRD</td><td>Supplier V02 typical data; test conditions unspecified.</td></tr>
                 <tr><td><a href="../products/gsl03.html">Li<sub>6</sub>PS<sub>5</sub>Cl, D<sub>50</sub> 2.123 um</a></td><td>Sulfide</td><td>D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>; 3.5 mS/cm ionic; 1.74 x 10<sup>-6</sup> mS/cm electronic; 43 ppm water; ICP; PSD/XRD</td><td>Argyrodite sulfide example for conductivity and interface discussion.</td></tr>
                 <tr><td><a href="../products/li-3-incl-6-d-50-0-9-um.html">Li<sub>3</sub>InCl<sub>6</sub>, D<sub>50</sub> 0.9 um</a></td><td>Halide</td><td>D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>/D<sub>99</sub>; water &le;500 ppm; measured 1.85 mS/cm at 25 &deg;C; XRD main phase; ICP limits; PSD image</td><td>Halide example for high-voltage/cathode-side screening.</td></tr>
               </tbody>
@@ -455,7 +456,7 @@
           <a href="../products/solid-state-electrolytes.html">Solid-state electrolyte products</a>
           <a href="../products/latp-d-50-0-3-um.html">LATP D50 0.30 um</a>
           <a href="../products/llzto-powder.html">LLZTO powder</a>
-          <a href="../products/gsh03.html">Li5.5PS4.5Cl1.5 D50 2.168 um</a>
+          <a href="../products/gsh03.html">Li5.5PS4.5Cl1.5 D50 2.06 µm</a>
           <a href="../products/gsl03.html">Li6PS5Cl D50 2.123 um</a>
           <a href="../products/li-3-incl-6-d-50-0-9-um.html">Li3InCl6 D50 0.9 um</a>
           <a href="sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Sulfide vs oxide vs halide guide</a>

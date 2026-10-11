@@ -70,6 +70,7 @@
 .faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
 .faq-list p { margin: 12px 0 0; }
 @media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } .figure-grid { grid-template-columns: 1fr; } .figure-grid img { height: auto; min-height: 180px; } }
+.article-main,.article-side{min-width:0}.article-table-wrap{max-width:100%}
 </style>
 <script type="application/ld+json">
 {
@@ -253,20 +254,20 @@
         <section class="article-block">
           <h2>Sulfide Solid Electrolytes</h2>
           <p>Sulfide solid electrolytes are attractive because they can deliver high room-temperature ionic conductivity and can often be densified by cold pressing. This makes them useful for early-stage pellet conductivity testing, composite cathode studies, and solid-state lithium battery research. Literature reviews highlight the high conductivity and mechanical compliance of sulfide solid electrolytes, while also emphasizing interface instability, air or moisture sensitivity, and the need for protective strategies.</p>
-          <p>Winigen's sulfide data illustrates this conductivity advantage. The <a href="../products/gsh03.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.168 um</a> product page lists 8.5 mS/cm ionic conductivity by electrochemical workstation testing, 1.38 x 10<sup>-6</sup> mS/cm electronic conductivity, 28.8 ppm water, D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub> particle-size data, ICP impurity data, and supporting PSD/XRD/SEM images.</p>
+          <p>Winigen's sulfide data illustrates this conductivity advantage. The <a href="../products/gsh03.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub>, D<sub>50</sub> 2.06 µm</a> product page lists a typical ionic conductivity of 8.54 mS/cm (conditions unspecified) by electrochemical workstation testing, 1.11 × 10⁻⁹ S/cm electronic conductivity, 5.90 ppm water, D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub> particle-size data, ICP impurity data, and supporting representative PSD/XRD images.</p>
           <p>Another sulfide example, <a href="../products/gsb01.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub>, D<sub>50</sub> &gt;10 um</a>, is listed with &gt;12 mS/cm ionic conductivity under cold-pressed pellet conditions and &le;10<sup>-6</sup> mS/cm electronic conductivity, showing why sulfides are often screened when high ionic transport is a priority.</p>
           <p>Sulfides should not be selected by conductivity alone. Practical performance depends on moisture control, cathode-side stability, lithium-metal interface behavior, stack pressure, and particle-size selection. Air and moisture exposure can degrade sulfide electrolytes and may generate H<sub>2</sub>S, so handling protocol matters.</p>
           <p><strong>Best fit:</strong> high-conductivity screening, cold-pressed pellet studies, composite cathode development, lithium-metal interface research, and high-power solid-state battery concepts.</p>
           <div class="figure-grid" aria-label="Sulfide supporting images">
             <figure class="protected-figure">
               <div class="figure-lock">
-                <img src="../assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Li5.5PS4.5Cl1.5 D50 2.168 um particle-size distribution" loading="lazy" draggable="false">
+                <img src="../assets/images/solid-state/gsh03-psd-tds.png" alt="Li5.5PS4.5Cl1.5 D50 2.06 µm particle-size distribution" loading="lazy" draggable="false">
               </div>
               <figcaption>Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub> PSD image.</figcaption>
             </figure>
             <figure class="protected-figure">
               <div class="figure-lock">
-                <img src="../assets/images/solid-state/li55ps45cl15-d50-2um-xrd-clean.jpg" alt="Li5.5PS4.5Cl1.5 XRD pattern" loading="lazy" draggable="false">
+                <img src="../assets/images/solid-state/gsh03-xrd-tds.png" alt="Li5.5PS4.5Cl1.5 XRD pattern" loading="lazy" draggable="false">
               </div>
               <figcaption>Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub> XRD pattern.</figcaption>
             </figure>
@@ -325,7 +326,7 @@
 
         <section class="article-block">
           <h2>Practical Comparison</h2>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead>
                 <tr>
@@ -361,7 +362,7 @@
 
         <section class="article-block">
           <h2>Product Data Examples</h2>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead>
                 <tr>
@@ -393,9 +394,9 @@
                 <tr>
                   <td><a href="../products/gsh03.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>1.5</sub></a></td>
                   <td>Sulfide</td>
-                  <td>D<sub>50</sub> 2.168 um</td>
-                  <td>8.5 mS/cm ionic; 1.38 x 10<sup>-6</sup> mS/cm electronic</td>
-                  <td>Water 28.8 ppm; ICP impurities; PSD, XRD, and SEM</td>
+                  <td>D<sub>50</sub> 2.06 µm</td>
+                  <td>Typical: 8.54 mS/cm ionic; 1.11 × 10⁻⁹ S/cm electronic; measurement conditions unspecified</td>
+                  <td>Water 5.90 ppm; ICP impurities; representative PSD and XRD</td>
                   <td>High-conductivity sulfide example</td>
                 </tr>
                 <tr>
@@ -421,7 +422,7 @@
 
         <section class="article-block">
           <h2>How to Choose a Solid Electrolyte Family</h2>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead>
                 <tr>

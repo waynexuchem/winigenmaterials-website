@@ -251,7 +251,7 @@
     {
       "slug": "gsh04",
       "skuBase": "WM-SSE-GSH04",
-      "name": "Li5.5PS4.5Cl1.5, D50 0.925 um (GSH04)",
+      "name": "Li5.5PS4.5Cl1.5, D50 0.80 µm (GSH04)",
       "defaultPackageId": "10G",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
@@ -319,7 +319,7 @@
     {
       "slug": "gsh03",
       "skuBase": "WM-SSE-GSH03",
-      "name": "Li5.5PS4.5Cl1.5, D50 2.168 um (GSH03)",
+      "name": "Li5.5PS4.5Cl1.5, D50 2.06 µm (GSH03)",
       "defaultPackageId": "10G",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
@@ -523,7 +523,7 @@
     {
       "slug": "gsb04",
       "skuBase": "WM-SSE-GSB04",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 um (GSB04)",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm (GSB04)",
       "defaultPackageId": "10G",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",
@@ -591,7 +591,7 @@
     {
       "slug": "gsb03",
       "skuBase": "WM-SSE-GSB03",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 um (GSB03)",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm (GSB03)",
       "defaultPackageId": "10G",
       "commercialStatus": "PRICE_SHIPPING_REVIEW",
       "shippingClass": "SHIPPING_REVIEW",

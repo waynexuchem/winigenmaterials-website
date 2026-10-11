@@ -71,6 +71,7 @@
 .faq-list summary { cursor: pointer; color: var(--navy); font-weight: 900; }
 .faq-list p { margin: 12px 0 0; }
 @media(max-width:900px) { .article-layout { grid-template-columns: 1fr; } .article-main, .article-side { padding: 24px; } .figure-grid { grid-template-columns: 1fr; } .figure-grid img { height: auto; min-height: 180px; } }
+.article-main,.article-side{min-width:0}.article-table-wrap{max-width:100%}
 </style>
 <script type="application/ld+json">
 {
@@ -269,7 +270,7 @@
           <h2>Particle Size, Pellet Density, and Pressing Pressure</h2>
           <p>Particle size is one of the most important variables in solid-state electrolyte screening. It affects powder packing, pellet density, contact area in composite cathodes, cold-press response, slurry behavior, interface uniformity, and reproducibility between labs and scale-up stages.</p>
           <p>Winigen's <a href="../products/latp-d-50-0-3-um.html">LATP D<sub>50</sub> 0.30 um</a>, <a href="../products/latp-d-50-0-4-um.html">LATP D<sub>50</sub> 0.40 um</a>, and <a href="../products/latp-d-50-0-65-um.html">LATP D<sub>50</sub> 0.65 um</a> products illustrate this point. These oxide grades are listed with pressed-pellet ionic conductivity specifications of &ge;0.55 mS/cm, &ge;0.50 mS/cm, and &ge;0.30 mS/cm at 25 &deg;C, respectively. Even within one oxide family, particle-size grade and pellet test conditions matter.</p>
-          <p>The same principle appears in sulfide materials. Winigen's <a href="../products/gsb04.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub> D<sub>50</sub> 0.759 um</a> and <a href="../products/gsb01.html">D<sub>50</sub> &gt;10 um</a> grades span cold-press conductivity values from 6.5 mS/cm to &gt;12 mS/cm. The comparison shows why particle-size grade, densification, and test format must be interpreted together.</p>
+          <p>The same principle appears in sulfide materials. Winigen's <a href="../products/gsb04.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub> D<sub>50</sub> 0.74 µm</a> and <a href="../products/gsb01.html">D<sub>50</sub> &gt;10 um</a> grades report 6.94 mS/cm (GSB04 typical; measurement conditions unspecified) and &gt;12 mS/cm (GSB01 existing specification). The comparison shows why particle-size grade, densification, and test format must be interpreted together.</p>
           <p>Conductivity data are most useful when reported with D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub>, pellet thickness, pellet density, pressing pressure, hold time, test temperature, blocking-electrode method, and whether the value reflects total, bulk, or effective conductivity.</p>
           <div class="figure-grid" aria-label="LATP supporting images">
             <figure class="protected-figure">
@@ -343,7 +344,7 @@
         <section class="article-block">
           <h2>Practical QC Package for Solid-State Material Screening</h2>
           <p>A practical solid-state development program should ask suppliers for more than a chemistry name and one conductivity number. The QC package should include XRD phase identification, D<sub>10</sub>/D<sub>50</sub>/D<sub>90</sub> particle-size distribution, ionic conductivity, electronic conductivity, moisture or water content, elemental impurity profile, SEM morphology, handling notes, pressed-pellet conditions, slurry properties where applicable, and application notes. See Winigen's <a href="../quality.html">battery material quality documentation overview</a> for representative COA, inspection report, packaging, and lot traceability examples.</p>
-          <div class="article-table-wrap">
+          <div class="article-table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
             <table class="article-table">
               <thead>
                 <tr>
@@ -375,8 +376,8 @@
                 <tr>
                   <td><a href="../products/gsb04.html">Li<sub>5.5</sub>PS<sub>4.5</sub>Cl<sub>x</sub>Br<sub>1.5-x</sub></a></td>
                   <td>Sulfide</td>
-                  <td>D<sub>50</sub> 0.759 um to &gt;10 um</td>
-                  <td>6.5 to &gt;12 mS/cm, cold press depending on grade</td>
+                  <td>D<sub>50</sub> 0.74 µm to &gt;10 um</td>
+                  <td>GSB04: 6.94 mS/cm typical, conditions unspecified; GSB01: &gt;12 mS/cm existing specification</td>
                   <td>Multiple particle-size grades for screening</td>
                   <td>Particle-size grade and conductivity must be interpreted together</td>
                 </tr>

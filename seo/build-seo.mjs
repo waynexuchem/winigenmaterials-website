@@ -465,8 +465,8 @@ function listingProperties(product) {
     const composition = product.aliases?.[0];
     return [
       composition ? { label: 'Composition', value: composition } : null,
-      d50 ? { ...d50, label: 'D50', value: d50.value.replace(/^D50\s*/i, '') } : null,
-      ionic ? { ...ionic, label: 'Ionic conductivity', value: /cold press/i.test(ionic.value) ? ionic.value : `${ionic.value}, cold press` } : null
+      d50 ? { ...d50, label: product.tdsSource?.typicalValues ? 'D50 (typical)' : 'D50', value: d50.value.replace(/^D50\s*/i, '') } : null,
+      ionic ? { ...ionic, label: product.tdsSource?.typicalValues ? 'Ionic conductivity (typical)' : 'Ionic conductivity', value: product.tdsSource?.conductivityConditions === 'unspecified' ? `${ionic.value}; conditions unspecified` : /cold press/i.test(ionic.value) ? ionic.value : `${ionic.value}, cold press` } : null
     ].filter(Boolean);
   }
   const excluded = new Set(['abbreviation', 'cas number', 'formula', 'availability', 'commercial availability']);

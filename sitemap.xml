@@ -42,7 +42,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/lab-equipment.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/raw-chemicals.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state-discs.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh03-psd-tds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li6ps5cl-d50-2um-dls.jpg</image:loc></image:image>
   </url>
   <url>
@@ -116,11 +116,11 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/knowledge/social/commercialization.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/knowledge/compare-solid-state-electrolyte-powders.html</loc>
+    <loc>https://www.winigenmaterials.com/knowledge/compare-solid-state-electrolyte-powders.html</loc><lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li3incl6-particle-size.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-2um-xrd-clean.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh03-psd-tds.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh03-xrd-tds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li6ps5cl-d50-2um-dls.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li6ps5cl-d50-2um-xrd-clean.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/llzto-xrd.jpg</image:loc></image:image>
@@ -239,7 +239,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/knowledge/social/solid-state-electrolyte-materials.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html</loc>
+    <loc>https://www.winigenmaterials.com/knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html</loc><lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/knowledge/social/solid-state-electrolyte-screening-rd-to-pilot-line.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state-discs.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-powder-photo.jpg</image:loc></image:image>
@@ -260,16 +260,16 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/knowledge/social/solid-state-sodium-batteries-halide-composite-electrolytes.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html</loc>
+    <loc>https://www.winigenmaterials.com/knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html</loc><lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state-discs.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-powder-photo.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-sem.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li3incl6-particle-size.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-2um-xrd-clean.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh03-psd-tds.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh03-xrd-tds.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/products.html</loc>
+    <loc>https://www.winigenmaterials.com/products.html</loc><lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/High-Ni%20Si-Graphite%20Systems.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/Low-Temperature%20Electrolytes.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/Sodium-Ion%20High-Rate%20Cycling.png</image:loc></image:image>
@@ -544,15 +544,15 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/products/gsb03.html</loc>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45clxbr15x-d50-2um-dls.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45clxbr15x-d50-2um-xrd-clean.jpg</image:loc></image:image>
+    <loc>https://www.winigenmaterials.com/products/gsb03.html</loc><lastmod>2026-10-10</lastmod>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsb03-psd-tds.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsb03-xrd-tds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/products/gsb04.html</loc>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45clxbr15x-d50-1um-dls.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45clxbr15x-d50-1um-xrd-clean.jpg</image:loc></image:image>
+    <loc>https://www.winigenmaterials.com/products/gsb04.html</loc><lastmod>2026-10-10</lastmod>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsb04-psd-tds.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsb04-xrd-tds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
   </url>
   <url>
@@ -564,15 +564,15 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/products/gsh03.html</loc>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-2um-xrd-clean.jpg</image:loc></image:image>
+    <loc>https://www.winigenmaterials.com/products/gsh03.html</loc><lastmod>2026-10-10</lastmod>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh03-psd-tds.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh03-xrd-tds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/products/gsh04.html</loc>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-1um-dls.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/li55ps45cl15-d50-1um-xrd-clean.jpg</image:loc></image:image>
+    <loc>https://www.winigenmaterials.com/products/gsh04.html</loc><lastmod>2026-10-10</lastmod>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh04-psd-tds.png</image:loc></image:image>
+    <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/gsh04-xrd-tds.png</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>
   </url>
   <url>
@@ -808,7 +808,7 @@
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/chemical-structures/sodium-hexafluorophosphate-napf-6.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.winigenmaterials.com/products/solid-state-electrolytes.html</loc>
+    <loc>https://www.winigenmaterials.com/products/solid-state-electrolytes.html</loc><lastmod>2026-10-10</lastmod>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/latp-300nm-powder-photo.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/llzto-powder-photo.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.winigenmaterials.com/assets/images/solid-state/sulfide-sample-photo.jpg</image:loc></image:image>

@@ -504,7 +504,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
     },
     {
       "slug": "gsh04",
-      "name": "Li5.5PS4.5Cl1.5, D50 0.925 µm",
+      "name": "Li5.5PS4.5Cl1.5, D50 0.80 µm",
       "aliases": [
         "Li5.5PS4.5Cl1.5"
       ],
@@ -512,11 +512,11 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "",
       "section": "solid-state",
       "category": "Solid-State Electrolytes",
-      "metadata": "Li5.5PS4.5Cl1.5, D50 0.925 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5Cl1.5 Li5.5PS4.5Cl1.5 supplier where to buy Li5.5PS4.5Cl1.5 Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.474 µm D50 particle size 0.925 µm D90 particle size 2.019 µm Water 17 ppm Elemental impurities Ca 10.59 ppm; Cr 2.7 ppm; Cu ND; Fe 7.56 ppm; Mg 2.39 ppm; Na 19.23 ppm; K 1.2 ppm; Si 39.68 ppm; Zn 6.23 ppm Ionic conductivity 6.2 mS/cm Electronic conductivity 1.67 x 10^-6 mS/cm"
+      "metadata": "Li5.5PS4.5Cl1.5, D50 0.80 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5Cl1.5 Li5.5PS4.5Cl1.5 supplier where to buy Li5.5PS4.5Cl1.5 Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.43 µm (typical) D50 particle size 0.80 µm (typical) D90 particle size 1.56 µm (typical) Water 20.70 ppm (typical) Elemental impurities Na 5.01 ppm; K 3.06 ppm; Ca 5.69 ppm; Ni 0.26 ppm; Cu 0.67 ppm; Cr 3.01 ppm; Zn 3.01 ppm; Fe 2.43 ppm (typical) Ionic conductivity 5.86 mS/cm (typical) Electronic conductivity 1.42 × 10⁻⁹ S/cm (typical) D10 particle size specification ≥0.20 µm D50 particle size specification ≤1.00 µm D90 particle size specification ≤2.50 µm Water specification ≤500.00 ppm Ionic conductivity specification ≥4.00 mS/cm Electronic conductivity specification ≤1.00 × 10⁻⁸ S/cm Na impurity specification ≤200 ppm K impurity specification ≤200 ppm Ca impurity specification ≤200 ppm Ni impurity specification ≤50 ppm Cu impurity specification ≤50 ppm Cr impurity specification ≤50 ppm Zn impurity specification ≤50 ppm Fe impurity specification ≤200 ppm Phase identification specification Main phase: reference 34-0688 Technical Data Sheet /assets/documents/tds/Winigen_GSH04_Technical_Data_Sheet.pdf Conductivity conditions Unspecified in supplier TDS V02 Phase identification (typical) Main phase: reference 34-0688"
     },
     {
       "slug": "gsh03",
-      "name": "Li5.5PS4.5Cl1.5, D50 2.168 µm",
+      "name": "Li5.5PS4.5Cl1.5, D50 2.06 µm",
       "aliases": [
         "Li5.5PS4.5Cl1.5"
       ],
@@ -524,7 +524,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "",
       "section": "solid-state",
       "category": "Solid-State Electrolytes",
-      "metadata": "Li5.5PS4.5Cl1.5, D50 2.168 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5Cl1.5 Li5.5PS4.5Cl1.5 supplier where to buy Li5.5PS4.5Cl1.5 Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.567 µm D50 particle size 2.168 µm D90 particle size 6.592 µm Water 28.8 ppm Elemental impurities Ca 9.64 ppm; Cr 4.41 ppm; Cu ND; Fe 7.53 ppm; Mg 2.56 ppm; Na 11.38 ppm; K 1.75 ppm; Si 33.9 ppm; Zn 4.98 ppm Ionic conductivity 8.5 mS/cm Electronic conductivity 1.38 x 10^-6 mS/cm"
+      "metadata": "Li5.5PS4.5Cl1.5, D50 2.06 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5Cl1.5 Li5.5PS4.5Cl1.5 supplier where to buy Li5.5PS4.5Cl1.5 Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.58 µm (typical) D50 particle size 2.06 µm (typical) D90 particle size 5.29 µm (typical) Water 5.90 ppm (typical) Elemental impurities Na 5.77 ppm; K 2.45 ppm; Ca 10.80 ppm; Ni 0.13 ppm; Cu 0.05 ppm; Cr 2.61 ppm; Zn 1.39 ppm; Fe 3.78 ppm (typical) Ionic conductivity 8.54 mS/cm (typical) Electronic conductivity 1.11 × 10⁻⁹ S/cm (typical) D10 particle size specification ≥0.40 µm D50 particle size specification 2.00 ± 1.00 µm D90 particle size specification ≤8.50 µm Water specification ≤500.00 ppm Ionic conductivity specification ≥5.00 mS/cm Electronic conductivity specification ≤1.00 × 10⁻⁸ S/cm Na impurity specification ≤200 ppm K impurity specification ≤200 ppm Ca impurity specification ≤200 ppm Ni impurity specification ≤50 ppm Cu impurity specification ≤50 ppm Cr impurity specification ≤50 ppm Zn impurity specification ≤50 ppm Fe impurity specification ≤200 ppm Phase identification specification Main phase: reference 34-0688 Technical Data Sheet /assets/documents/tds/Winigen_GSH03_Technical_Data_Sheet.pdf Conductivity conditions Unspecified in supplier TDS V02 Phase identification (typical) Not reported"
     },
     {
       "slug": "gsh02",
@@ -552,7 +552,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
     },
     {
       "slug": "gsb04",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 µm",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm",
       "aliases": [
         "Li5.5PS4.5ClxBr1.5-x"
       ],
@@ -560,11 +560,11 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "",
       "section": "solid-state",
       "category": "Solid-State Electrolytes",
-      "metadata": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5ClxBr1.5-x Li5.5PS4.5ClxBr1.5-x supplier where to buy Li5.5PS4.5ClxBr1.5-x Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.427 µm D50 particle size 0.759 µm D90 particle size 1.277 µm Water 61.6 ppm Elemental impurities Ca 13.8 ppm; Cr 3.43 ppm; Cu 0.17 ppm; Fe 5.79 ppm; Mg 2.71 ppm; Na 24.92 ppm; K 4.1 ppm; Si 67.62 ppm; Zn 2.7 ppm Ionic conductivity 6.5 mS/cm Electronic conductivity 2.37 x 10^-6 mS/cm"
+      "metadata": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5ClxBr1.5-x Li5.5PS4.5ClxBr1.5-x supplier where to buy Li5.5PS4.5ClxBr1.5-x Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.51 µm (typical) D50 particle size 0.74 µm (typical) D90 particle size 1.27 µm (typical) Water 39.50 ppm (typical) Elemental impurities Na 12.31 ppm; K 3.71 ppm; Ca 19.65 ppm; Ni 0.01 ppm; Cu 0.11 ppm; Cr 2.24 ppm; Zn 2.36 ppm; Fe 4.81 ppm (typical) Ionic conductivity 6.94 mS/cm (typical) Electronic conductivity 0.62 × 10⁻⁹ S/cm (typical) D10 particle size specification ≥0.20 µm D50 particle size specification ≤1.00 µm D90 particle size specification ≤2.50 µm Water specification ≤500.00 ppm Ionic conductivity specification ≥5.00 mS/cm Electronic conductivity specification ≤1.00 × 10⁻⁸ S/cm Na impurity specification ≤200 ppm K impurity specification ≤200 ppm Ca impurity specification ≤200 ppm Ni impurity specification ≤50 ppm Cu impurity specification ≤50 ppm Cr impurity specification ≤50 ppm Zn impurity specification ≤50 ppm Fe impurity specification ≤200 ppm Phase identification specification Main phase: reference 34-0688 Technical Data Sheet /assets/documents/tds/Winigen_GSB04_Technical_Data_Sheet.pdf Conductivity conditions Unspecified in supplier TDS V02 Phase identification (typical) Not reported"
     },
     {
       "slug": "gsb03",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 µm",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm",
       "aliases": [
         "Li5.5PS4.5ClxBr1.5-x"
       ],
@@ -572,7 +572,7 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "formula": "",
       "section": "solid-state",
       "category": "Solid-State Electrolytes",
-      "metadata": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5ClxBr1.5-x Li5.5PS4.5ClxBr1.5-x supplier where to buy Li5.5PS4.5ClxBr1.5-x Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.623 µm D50 particle size 2.398 µm D90 particle size 6.559 µm Water 21.4 ppm Elemental impurities Ca 17.08 ppm; Cr 3.19 ppm; Cu ND; Fe 4.71 ppm; Mg 2.02 ppm; Na 20.38 ppm; K 4.93 ppm; Si 41.46 ppm; Zn 0.92 ppm Ionic conductivity 9.2 mS/cm Electronic conductivity 1.84 x 10^-6 mS/cm"
+      "metadata": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research. Li5.5PS4.5ClxBr1.5-x Li5.5PS4.5ClxBr1.5-x supplier where to buy Li5.5PS4.5ClxBr1.5-x Appearance Gray-white powder, uniform color, no visible agglomeration D10 particle size 0.65 µm (typical) D50 particle size 2.19 µm (typical) D90 particle size 5.67 µm (typical) Water 21.70 ppm (typical) Elemental impurities Na 13.26 ppm; K 2.85 ppm; Ca 3.53 ppm; Ni ND ppm; Cu ND ppm; Cr 2.57 ppm; Zn 1.25 ppm; Fe 2.34 ppm (typical) Ionic conductivity 10.12 mS/cm (typical) Electronic conductivity 0.99 × 10⁻⁹ S/cm (typical) D10 particle size specification ≥0.40 µm D50 particle size specification 2.00 ± 1.00 µm D90 particle size specification ≤8.50 µm Water specification ≤500.00 ppm Ionic conductivity specification ≥6.00 mS/cm Electronic conductivity specification ≤1.00 × 10⁻⁸ S/cm Na impurity specification ≤200 ppm K impurity specification ≤200 ppm Ca impurity specification ≤200 ppm Ni impurity specification ≤50 ppm Cu impurity specification ≤50 ppm Cr impurity specification ≤50 ppm Zn impurity specification ≤50 ppm Fe impurity specification ≤200 ppm Phase identification specification Main phase: reference 34-0688 Technical Data Sheet /assets/documents/tds/Winigen_GSB03_Technical_Data_Sheet.pdf Conductivity conditions Unspecified in supplier TDS V02 Phase identification (typical) Not reported ND detection limits Ni and Cu are reported as ND; detection limits unspecified"
     },
     {
       "slug": "gsb02",

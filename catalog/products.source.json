@@ -3371,8 +3371,8 @@
     {
       "slug": "gsh04",
       "url": "/products/gsh04.html",
-      "name": "Li5.5PS4.5Cl1.5, D50 0.925 µm",
-      "description": "Li5.5PS4.5Cl1.5, D50 0.925 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "name": "Li5.5PS4.5Cl1.5, D50 0.80 µm",
+      "description": "Li5.5PS4.5Cl1.5, D50 0.80 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
       "family": "solid-state-electrolytes",
       "category": "Solid-State Electrolytes",
       "sku": "GSH04",
@@ -3394,39 +3394,117 @@
         },
         {
           "name": "D10 particle size",
-          "value": "0.474 µm"
+          "value": "0.43 µm (typical)"
         },
         {
           "name": "D50 particle size",
-          "value": "0.925 µm"
+          "value": "0.80 µm (typical)"
         },
         {
           "name": "D90 particle size",
-          "value": "2.019 µm"
+          "value": "1.56 µm (typical)"
         },
         {
           "name": "Water",
-          "value": "17 ppm"
+          "value": "20.70 ppm (typical)"
         },
         {
           "name": "Elemental impurities",
-          "value": "Ca 10.59 ppm; Cr 2.7 ppm; Cu ND; Fe 7.56 ppm; Mg 2.39 ppm; Na 19.23 ppm; K 1.2 ppm; Si 39.68 ppm; Zn 6.23 ppm"
+          "value": "Na 5.01 ppm; K 3.06 ppm; Ca 5.69 ppm; Ni 0.26 ppm; Cu 0.67 ppm; Cr 3.01 ppm; Zn 3.01 ppm; Fe 2.43 ppm (typical)"
         },
         {
           "name": "Ionic conductivity",
-          "value": "6.2 mS/cm"
+          "value": "5.86 mS/cm (typical)"
         },
         {
           "name": "Electronic conductivity",
-          "value": "1.67 x 10^-6 mS/cm"
+          "value": "1.42 × 10⁻⁹ S/cm (typical)"
+        },
+        {
+          "name": "D10 particle size specification",
+          "value": "≥0.20 µm"
+        },
+        {
+          "name": "D50 particle size specification",
+          "value": "≤1.00 µm"
+        },
+        {
+          "name": "D90 particle size specification",
+          "value": "≤2.50 µm"
+        },
+        {
+          "name": "Water specification",
+          "value": "≤500.00 ppm"
+        },
+        {
+          "name": "Ionic conductivity specification",
+          "value": "≥4.00 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity specification",
+          "value": "≤1.00 × 10⁻⁸ S/cm"
+        },
+        {
+          "name": "Na impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "K impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ca impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ni impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cu impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cr impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Zn impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Fe impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Phase identification specification",
+          "value": "Main phase: reference 34-0688"
+        },
+        {
+          "name": "Technical Data Sheet",
+          "value": "/assets/documents/tds/Winigen_GSH04_Technical_Data_Sheet.pdf"
+        },
+        {
+          "name": "Conductivity conditions",
+          "value": "Unspecified in supplier TDS V02"
+        },
+        {
+          "name": "Phase identification (typical)",
+          "value": "Main phase: reference 34-0688"
         }
-      ]
+      ],
+      "tdsSource": {
+        "version": "V02",
+        "releaseDate": "March 2026",
+        "conductivityConditions": "unspecified",
+        "typicalValues": true
+      }
     },
     {
       "slug": "gsh03",
       "url": "/products/gsh03.html",
-      "name": "Li5.5PS4.5Cl1.5, D50 2.168 µm",
-      "description": "Li5.5PS4.5Cl1.5, D50 2.168 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "name": "Li5.5PS4.5Cl1.5, D50 2.06 µm",
+      "description": "Li5.5PS4.5Cl1.5, D50 2.06 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
       "family": "solid-state-electrolytes",
       "category": "Solid-State Electrolytes",
       "sku": "GSH03",
@@ -3448,33 +3526,111 @@
         },
         {
           "name": "D10 particle size",
-          "value": "0.567 µm"
+          "value": "0.58 µm (typical)"
         },
         {
           "name": "D50 particle size",
-          "value": "2.168 µm"
+          "value": "2.06 µm (typical)"
         },
         {
           "name": "D90 particle size",
-          "value": "6.592 µm"
+          "value": "5.29 µm (typical)"
         },
         {
           "name": "Water",
-          "value": "28.8 ppm"
+          "value": "5.90 ppm (typical)"
         },
         {
           "name": "Elemental impurities",
-          "value": "Ca 9.64 ppm; Cr 4.41 ppm; Cu ND; Fe 7.53 ppm; Mg 2.56 ppm; Na 11.38 ppm; K 1.75 ppm; Si 33.9 ppm; Zn 4.98 ppm"
+          "value": "Na 5.77 ppm; K 2.45 ppm; Ca 10.80 ppm; Ni 0.13 ppm; Cu 0.05 ppm; Cr 2.61 ppm; Zn 1.39 ppm; Fe 3.78 ppm (typical)"
         },
         {
           "name": "Ionic conductivity",
-          "value": "8.5 mS/cm"
+          "value": "8.54 mS/cm (typical)"
         },
         {
           "name": "Electronic conductivity",
-          "value": "1.38 x 10^-6 mS/cm"
+          "value": "1.11 × 10⁻⁹ S/cm (typical)"
+        },
+        {
+          "name": "D10 particle size specification",
+          "value": "≥0.40 µm"
+        },
+        {
+          "name": "D50 particle size specification",
+          "value": "2.00 ± 1.00 µm"
+        },
+        {
+          "name": "D90 particle size specification",
+          "value": "≤8.50 µm"
+        },
+        {
+          "name": "Water specification",
+          "value": "≤500.00 ppm"
+        },
+        {
+          "name": "Ionic conductivity specification",
+          "value": "≥5.00 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity specification",
+          "value": "≤1.00 × 10⁻⁸ S/cm"
+        },
+        {
+          "name": "Na impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "K impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ca impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ni impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cu impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cr impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Zn impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Fe impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Phase identification specification",
+          "value": "Main phase: reference 34-0688"
+        },
+        {
+          "name": "Technical Data Sheet",
+          "value": "/assets/documents/tds/Winigen_GSH03_Technical_Data_Sheet.pdf"
+        },
+        {
+          "name": "Conductivity conditions",
+          "value": "Unspecified in supplier TDS V02"
+        },
+        {
+          "name": "Phase identification (typical)",
+          "value": "Not reported"
         }
-      ]
+      ],
+      "tdsSource": {
+        "version": "V02",
+        "releaseDate": "March 2026",
+        "conductivityConditions": "unspecified",
+        "typicalValues": true
+      }
     },
     {
       "slug": "gsh02",
@@ -3563,8 +3719,8 @@
     {
       "slug": "gsb04",
       "url": "/products/gsb04.html",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 µm",
-      "description": "Li5.5PS4.5ClxBr1.5-x, D50 0.759 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm",
+      "description": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
       "family": "solid-state-electrolytes",
       "category": "Solid-State Electrolytes",
       "sku": "GSB04",
@@ -3586,39 +3742,117 @@
         },
         {
           "name": "D10 particle size",
-          "value": "0.427 µm"
+          "value": "0.51 µm (typical)"
         },
         {
           "name": "D50 particle size",
-          "value": "0.759 µm"
+          "value": "0.74 µm (typical)"
         },
         {
           "name": "D90 particle size",
-          "value": "1.277 µm"
+          "value": "1.27 µm (typical)"
         },
         {
           "name": "Water",
-          "value": "61.6 ppm"
+          "value": "39.50 ppm (typical)"
         },
         {
           "name": "Elemental impurities",
-          "value": "Ca 13.8 ppm; Cr 3.43 ppm; Cu 0.17 ppm; Fe 5.79 ppm; Mg 2.71 ppm; Na 24.92 ppm; K 4.1 ppm; Si 67.62 ppm; Zn 2.7 ppm"
+          "value": "Na 12.31 ppm; K 3.71 ppm; Ca 19.65 ppm; Ni 0.01 ppm; Cu 0.11 ppm; Cr 2.24 ppm; Zn 2.36 ppm; Fe 4.81 ppm (typical)"
         },
         {
           "name": "Ionic conductivity",
-          "value": "6.5 mS/cm"
+          "value": "6.94 mS/cm (typical)"
         },
         {
           "name": "Electronic conductivity",
-          "value": "2.37 x 10^-6 mS/cm"
+          "value": "0.62 × 10⁻⁹ S/cm (typical)"
+        },
+        {
+          "name": "D10 particle size specification",
+          "value": "≥0.20 µm"
+        },
+        {
+          "name": "D50 particle size specification",
+          "value": "≤1.00 µm"
+        },
+        {
+          "name": "D90 particle size specification",
+          "value": "≤2.50 µm"
+        },
+        {
+          "name": "Water specification",
+          "value": "≤500.00 ppm"
+        },
+        {
+          "name": "Ionic conductivity specification",
+          "value": "≥5.00 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity specification",
+          "value": "≤1.00 × 10⁻⁸ S/cm"
+        },
+        {
+          "name": "Na impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "K impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ca impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ni impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cu impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cr impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Zn impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Fe impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Phase identification specification",
+          "value": "Main phase: reference 34-0688"
+        },
+        {
+          "name": "Technical Data Sheet",
+          "value": "/assets/documents/tds/Winigen_GSB04_Technical_Data_Sheet.pdf"
+        },
+        {
+          "name": "Conductivity conditions",
+          "value": "Unspecified in supplier TDS V02"
+        },
+        {
+          "name": "Phase identification (typical)",
+          "value": "Not reported"
         }
-      ]
+      ],
+      "tdsSource": {
+        "version": "V02",
+        "releaseDate": "March 26, 2026",
+        "conductivityConditions": "unspecified",
+        "typicalValues": true
+      }
     },
     {
       "slug": "gsb03",
       "url": "/products/gsb03.html",
-      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 µm",
-      "description": "Li5.5PS4.5ClxBr1.5-x, D50 2.398 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+      "name": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm",
+      "description": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
       "family": "solid-state-electrolytes",
       "category": "Solid-State Electrolytes",
       "sku": "GSB03",
@@ -3640,33 +3874,115 @@
         },
         {
           "name": "D10 particle size",
-          "value": "0.623 µm"
+          "value": "0.65 µm (typical)"
         },
         {
           "name": "D50 particle size",
-          "value": "2.398 µm"
+          "value": "2.19 µm (typical)"
         },
         {
           "name": "D90 particle size",
-          "value": "6.559 µm"
+          "value": "5.67 µm (typical)"
         },
         {
           "name": "Water",
-          "value": "21.4 ppm"
+          "value": "21.70 ppm (typical)"
         },
         {
           "name": "Elemental impurities",
-          "value": "Ca 17.08 ppm; Cr 3.19 ppm; Cu ND; Fe 4.71 ppm; Mg 2.02 ppm; Na 20.38 ppm; K 4.93 ppm; Si 41.46 ppm; Zn 0.92 ppm"
+          "value": "Na 13.26 ppm; K 2.85 ppm; Ca 3.53 ppm; Ni ND ppm; Cu ND ppm; Cr 2.57 ppm; Zn 1.25 ppm; Fe 2.34 ppm (typical)"
         },
         {
           "name": "Ionic conductivity",
-          "value": "9.2 mS/cm"
+          "value": "10.12 mS/cm (typical)"
         },
         {
           "name": "Electronic conductivity",
-          "value": "1.84 x 10^-6 mS/cm"
+          "value": "0.99 × 10⁻⁹ S/cm (typical)"
+        },
+        {
+          "name": "D10 particle size specification",
+          "value": "≥0.40 µm"
+        },
+        {
+          "name": "D50 particle size specification",
+          "value": "2.00 ± 1.00 µm"
+        },
+        {
+          "name": "D90 particle size specification",
+          "value": "≤8.50 µm"
+        },
+        {
+          "name": "Water specification",
+          "value": "≤500.00 ppm"
+        },
+        {
+          "name": "Ionic conductivity specification",
+          "value": "≥6.00 mS/cm"
+        },
+        {
+          "name": "Electronic conductivity specification",
+          "value": "≤1.00 × 10⁻⁸ S/cm"
+        },
+        {
+          "name": "Na impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "K impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ca impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Ni impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cu impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Cr impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Zn impurity specification",
+          "value": "≤50 ppm"
+        },
+        {
+          "name": "Fe impurity specification",
+          "value": "≤200 ppm"
+        },
+        {
+          "name": "Phase identification specification",
+          "value": "Main phase: reference 34-0688"
+        },
+        {
+          "name": "Technical Data Sheet",
+          "value": "/assets/documents/tds/Winigen_GSB03_Technical_Data_Sheet.pdf"
+        },
+        {
+          "name": "Conductivity conditions",
+          "value": "Unspecified in supplier TDS V02"
+        },
+        {
+          "name": "Phase identification (typical)",
+          "value": "Not reported"
+        },
+        {
+          "name": "ND detection limits",
+          "value": "Ni and Cu are reported as ND; detection limits unspecified"
         }
-      ]
+      ],
+      "tdsSource": {
+        "version": "V02",
+        "releaseDate": "March 2026",
+        "conductivityConditions": "unspecified",
+        "typicalValues": true
+      }
     },
     {
       "slug": "gsb02",
