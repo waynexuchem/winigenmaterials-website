@@ -3,6 +3,7 @@
 
   const config = global.WINIGEN_COMMERCE_CONFIG;
   const reviewMode = global.location.hostname !== 'www.winigenmaterials.com'
+    || document.body.dataset.privateOrderReview === 'true'
     || new URLSearchParams(global.location.search).get('review') === '1';
   const apiOrigin = !reviewMode && config?.checkoutEnabled ? config.apiOrigin : null;
   const currencyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
@@ -29,7 +30,7 @@
       heading.textContent = item.name;
       const description = document.createElement('p');
       description.textContent = item.kind === 'PRODUCT'
-        ? `${item.sku} · ${item.quantity} × ${item.packageLabel}`
+        ? `${item.specification || item.sku} · ${item.quantity} × ${item.packageLabel}`
         : 'Fixed freight for the agreed delivery destination';
       details.append(heading, description);
       const price = document.createElement('div');
@@ -73,8 +74,11 @@
     setText('[data-customer-name]', order.customerName);
     setText('[data-quotation-number]', order.quotationNumber);
     setText('[data-quotation-date]', formatDate(order.quotationDate));
+    if (order.validThrough) setText('[data-valid-through]', formatDate(order.validThrough));
     setText('[data-product-subtotal]', money(order.productSubtotal));
     setText('[data-freight-total]', money(order.freightTotal));
+    if (order.discountTotal !== undefined) setText('[data-discount-total]', money(order.discountTotal));
+    if (order.taxTotal !== undefined) setText('[data-tax-total]', money(order.taxTotal));
     setText('[data-grand-total]', money(order.totalAmount));
     setText('[data-payment-total]', money(order.totalAmount));
     setText('[data-payment-terms]', order.paymentTerms);
@@ -125,6 +129,11 @@
       renderOrder(payload.order);
       if (loading) loading.hidden = true;
       if (content) content.hidden = false;
+      if (payload.order.checkoutEnabled === false) {
+        if (button) { button.disabled = true; button.textContent = 'Payment disabled'; }
+        if (message) message.textContent = payload.order.checkoutMessage;
+        return;
+      }
       if (button) button.disabled = false;
     } catch (requestError) {
       if (loading) loading.hidden = true;
@@ -191,7 +200,10 @@
           if (orderNumber) orderNumber.textContent = payload.orderId;
           if (orderBlock) orderBlock.hidden = false;
           if (productName && payload.privateOrderProductName) {
-            productName.textContent = payload.privateOrderProductName;
+            productName.textContent = Array.isArray(payload.privateOrderItems)
+              ? payload.privateOrderItems.map(item =>
+                `${item.name} · ${item.quantity} × ${item.packageLabel}`).join('; ')
+              : payload.privateOrderProductName;
             productName.hidden = false;
           }
         }

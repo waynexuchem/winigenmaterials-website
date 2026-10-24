@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { parseWranglerSecretNames } from '../scripts/production-secret-bindings.mjs';
 
 const siteRoot = new URL('../../', import.meta.url);
 
@@ -81,8 +82,33 @@ test('production activation preflight requires remote secret binding names witho
   const preflight = await read('scripts/preflight-commerce-deploy.mjs');
   assert.match(preflight, /--activation/);
   assert.match(preflight, /secret', 'list'/);
+  assert.match(preflight, /'--format', 'json'/);
+  assert.match(preflight, /CI: 'true'/);
   assert.match(preflight, /Production activation is missing required secret bindings/);
   assert.doesNotMatch(preflight, /secret put|secret value/);
+});
+
+test('secret-list parser accepts pure JSON and only the exact known Wrangler upgrade notice', () => {
+  const json = JSON.stringify([{ name: 'STRIPE_SECRET_KEY', type: 'secret_text' }]);
+  const notice = 'There is a newer version of Wrangler available (current: 4.120.1, latest: 4.152.0). Try upgrading, as it might support this configuration option.\n';
+  for (const output of [json, notice + json]) {
+    assert.deepEqual([...parseWranglerSecretNames(output)], ['STRIPE_SECRET_KEY']);
+  }
+  for (const output of ['Unexpected warning\n' + json, json + '\nUnexpected output', '{}', '[null]',
+    '[{"name":"STRIPE_SECRET_KEY"}]', '[{"name":"STRIPE_SECRET_KEY","type":"plain_text"}]',
+    '[{"name":{},"type":"secret_text"}]', '[{"name":"","type":"secret_text"}]',
+    JSON.stringify([{name:'X',type:'secret_text'},{name:'X',type:'secret_text'}]), '[']) {
+    assert.throws(() => parseWranglerSecretNames(output));
+  }
+});
+
+test('missing required production secrets remain a hard preflight failure', async () => {
+  const source = await read('scripts/preflight-commerce-deploy.mjs');
+  const names = parseWranglerSecretNames('[{"name":"STRIPE_SECRET_KEY","type":"secret_text"}]');
+  const required = ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET', 'RESEND_API_KEY', 'INTERNAL_CHECKOUT_TOKEN'];
+  assert.deepEqual(required.filter(name => !names.has(name)), ['STRIPE_WEBHOOK_SECRET', 'RESEND_API_KEY', 'INTERNAL_CHECKOUT_TOKEN']);
+  assert.match(source, /missingSecrets = expectedProductionSecrets\.filter\(name => !configuredSecrets\.has\(name\)\)/);
+  assert.match(source, /requireCondition\(\s*missingSecrets\.length === 0,/);
 });
 
 test('production URL and migration contracts remain exact', async () => {

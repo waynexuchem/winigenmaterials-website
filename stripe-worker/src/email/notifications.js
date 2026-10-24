@@ -24,7 +24,12 @@ async function loadOrderForNotification(orderId, env) {
     WHERE winigen_order_id = ? ORDER BY id
   `).bind(orderId).all();
   const privateOrder = getPrivateOrder(orderId);
-  return { order, lineItems: (lineItems.results || []).map(item => {
+  return { order: order && privateOrder?.strictSessionValidation ? {
+    ...order, private_order_totals: {
+      productSubtotal: privateOrder.productSubtotal, discountTotal: privateOrder.discountTotal,
+      freightTotal: privateOrder.freightTotal, taxTotal: privateOrder.taxTotal
+    }
+  } : order, lineItems: (lineItems.results || []).map(item => {
     const canonicalItem = privateOrder?.lineItems.find(line => line.sku === item.sku);
     return canonicalItem ? { ...item, product_name: canonicalItem.name } : item;
   }) };

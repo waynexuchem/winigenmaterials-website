@@ -20,9 +20,11 @@ import { resolveShippingDestination } from './shipping.js';
 import {
   PRIVATE_ORDER_PURPOSE,
   getPrivateOrder,
+  isPrivateOrderCheckoutEnabled,
   toCustomerSafePrivateOrder
 } from './private-orders.js';
 import { resolvePrivateCheckout } from './private-checkout-lifecycle.js';
+import { validatePrivateOrderSession } from './private-order-validation.js';
 
 const checkoutPath = '/api/create-checkout-session';
 const shippingQuotePath = '/api/shipping-quote';
@@ -503,6 +505,7 @@ export async function handleOrderStatus(request, env) {
   `).bind(sessionId).first();
 
   if (!order) return jsonResponse({ error: 'Order status is unavailable.' }, 404, origin);
+  const privateOrder = order.purpose === PRIVATE_ORDER_PURPOSE ? getPrivateOrder(order.winigen_order_id) : null;
 
   let ecommerce = null;
   try {
@@ -517,8 +520,12 @@ export async function handleOrderStatus(request, env) {
     orderId: order.winigen_order_id,
     paymentStatus: order.payment_status,
     fulfillmentStatus: order.fulfillment_status,
-    ...(order.purpose === PRIVATE_ORDER_PURPOSE && getPrivateOrder(order.winigen_order_id)
-      ? { privateOrderProductName: getPrivateOrder(order.winigen_order_id).lineItems.find(item => item.kind === 'PRODUCT').name }
+    ...(privateOrder
+      ? { privateOrderProductName: privateOrder.lineItems
+        .filter(item => item.kind === 'PRODUCT').map(item => item.name).join('; '),
+        ...(privateOrder.strictSessionValidation
+          ? { privateOrderItems: toCustomerSafePrivateOrder(privateOrder).lineItems
+            .filter(item => item.kind === 'PRODUCT') } : {}) }
       : {}),
     ...(ecommerce ? { ecommerce } : {})
   }, 200, origin);
@@ -563,6 +570,7 @@ async function getPrivateOrderRecord(order, env) {
 }
 
 export async function createPrivateOrderCheckoutSession(order, env, attempt) {
+  if (!isPrivateOrderCheckoutEnabled(order, env)) throw new Error('Private order requires sales-tax approval.');
   const params = new URLSearchParams({
     mode: 'payment',
     'adaptive_pricing[enabled]': 'false',
@@ -570,7 +578,6 @@ export async function createPrivateOrderCheckoutSession(order, env, attempt) {
     success_url: `${env.SITE_ORIGIN}/private-orders/confirmation.html?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${env.SITE_ORIGIN}/private-orders/${order.orderId.toLowerCase()}.html`,
     customer_creation: 'always',
-    customer_email: order.billingEmail,
     billing_address_collection: 'required',
     'custom_text[submit][message]': 'Delivery destination: ' + order.shippingDestinations.map(destination =>
       [`Attn: ${destination.recipient}`, destination.company, ...destination.addressLines].filter(Boolean).join(', ')
@@ -585,6 +592,16 @@ export async function createPrivateOrderCheckoutSession(order, env, attempt) {
     'payment_intent_data[metadata][private_order_id]': order.orderId,
     'payment_intent_data[metadata][purpose]': PRIVATE_ORDER_PURPOSE
   });
+
+  if (order.billingEmail) params.set('customer_email', order.billingEmail);
+  if (order.strictSessionValidation) {
+    params.set('automatic_tax[enabled]', 'false');
+    params.set('allow_promotion_codes', 'false');
+    for (const prefix of ['metadata', 'payment_intent_data[metadata]']) {
+      params.set(`${prefix}[quotation_reference]`, order.quotationNumber);
+      params.set(`${prefix}[checkout_config_hash]`, order.checkoutCartHash);
+    }
+  }
 
   order.lineItems.forEach((item, index) => {
     params.set(`line_items[${index}][price_data][currency]`, order.currency);
@@ -605,6 +622,7 @@ export async function createPrivateOrderCheckoutSession(order, env, attempt) {
   });
   const session = await response.json();
   if (!response.ok) throw new Error('Unable to create the private-order Checkout Session.');
+  validatePrivateOrderSession(order, session, env);
   const expectedSessionPrefix = isLiveMode(env) ? 'cs_live_' : 'cs_test_';
   if (typeof session.id !== 'string' || !session.id.startsWith(expectedSessionPrefix)) {
     throw new Error('Stripe returned a Checkout Session from the wrong mode.');
@@ -623,9 +641,14 @@ export async function handlePrivateOrder(request, env, route = privateOrderRoute
   const order = getPrivateOrder(route.orderId);
   if (!order) return privateOrderNotFound(origin);
   if (route.action === 'summary' && request.method === 'GET') {
-    return jsonResponse({ order: toCustomerSafePrivateOrder(order) }, 200, origin);
+    return jsonResponse({ order: toCustomerSafePrivateOrder(order, env) }, 200, origin);
   }
   if (route.action !== 'checkout' || request.method !== 'POST') return privateOrderNotFound(origin);
+  if (!isCommerceEnabled(env)) return commerceDisabledResponse(request);
+  if (!isPrivateOrderCheckoutEnabled(order, env)) {
+    return jsonResponse({ code: 'PRIVATE_ORDER_APPROVAL_REQUIRED',
+      error: 'Payment is disabled pending sales-tax approval.' }, 403, origin);
+  }
 
   const d1Schema = await readD1SchemaStatus(env.ORDERS_DB);
   if (!d1Schema.ready) {
@@ -916,6 +939,18 @@ async function markWebhookEventCompleted(event, env) {
 
 async function handleCompletedCheckout(event, env) {
   const session = event.data.object;
+  const existingOrder = await env.ORDERS_DB.prepare(`
+    SELECT winigen_order_id, purpose, checkout_cart_hash
+    FROM test_orders WHERE stripe_checkout_session_id = ?
+  `).bind(session.id).first();
+  const privateOrder = getPrivateOrder(existingOrder?.winigen_order_id);
+  if (privateOrder?.strictSessionValidation) {
+    validatePrivateOrderSession(privateOrder, session, env);
+    if (existingOrder.purpose !== PRIVATE_ORDER_PURPOSE
+        || existingOrder.checkout_cart_hash !== privateOrder.checkoutCartHash
+        || session.status !== 'complete') throw new Error('Private payment could not be reconciled.');
+    if (session.payment_status !== 'paid') return existingOrder;
+  }
   const paymentStatus = session.payment_status === 'paid' ? 'PAID' : session.payment_status.toUpperCase();
   const fulfillmentStatus = paymentStatus === 'PAID' ? 'NOT_RELEASED' : 'NOT_APPLICABLE';
   const shippingDetails = session.collected_information?.shipping_details || session.shipping_details;
@@ -941,7 +976,8 @@ async function handleCompletedCheckout(event, env) {
     event.id,
     session.customer_details?.name || shippingDetails?.name || null,
     session.customer_details?.email || null,
-    shippingDetails?.address?.country || session.customer_details?.address?.country || null,
+    privateOrder?.strictSessionValidation ? 'US'
+      : shippingDetails?.address?.country || session.customer_details?.address?.country || null,
     session.amount_total ?? null,
     session.total_details?.amount_shipping ?? null,
     session.total_details?.amount_tax ?? null,

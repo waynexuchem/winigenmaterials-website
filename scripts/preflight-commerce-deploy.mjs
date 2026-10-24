@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
+import { parseWranglerSecretNames } from '../stripe-worker/scripts/production-secret-bindings.mjs';
 
 const execFile = promisify(execFileCallback);
 const siteRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -47,20 +48,14 @@ async function readConfiguredProductionSecretNames() {
   const wranglerCli = resolve(siteRoot, 'stripe-worker/node_modules/wrangler/bin/wrangler.js');
   let stdout;
   try {
-    ({ stdout } = await execFile(node, [wranglerCli, 'secret', 'list', '--config', configPath], {
-      cwd: resolve(siteRoot, 'stripe-worker')
+    ({ stdout } = await execFile(node, [wranglerCli, 'secret', 'list', '--format', 'json', '--config', configPath], {
+      cwd: resolve(siteRoot, 'stripe-worker'),
+      env: { ...process.env, CI: 'true' }
     }));
   } catch {
     throw new Error('Unable to verify production secret binding names with Wrangler.');
   }
-  let bindings;
-  try {
-    bindings = JSON.parse(stdout);
-  } catch {
-    throw new Error('Wrangler returned an unreadable production secret binding list.');
-  }
-  requireCondition(Array.isArray(bindings), 'Wrangler production secret binding response is invalid.');
-  return new Set(bindings.map(binding => binding?.name).filter(Boolean));
+  return parseWranglerSecretNames(stdout);
 }
 
 if (target === 'test') {

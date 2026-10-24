@@ -1,3 +1,5 @@
+import { getPrivateOrder } from '../private-orders.js';
+
 function formatAmount(amount, currency = 'usd') {
   if (!Number.isInteger(amount)) return 'Not available';
   const fractionDigits = amount % 100 === 0 ? 0 : 2;
@@ -34,11 +36,25 @@ function orderLinesText(order, lineItems) {
 }
 
 function totalsHtml(order) {
+  if (order.private_order_totals) {
+    return '<table role="presentation" width="100%" style="margin-top:16px">' +
+      privateOrderTotalRows(order).map(([label, amount]) =>
+        `<tr><td>${escapeHtml(label)}</td><td align="right">${escapeHtml(formatAmount(amount, order.currency))}</td></tr>`).join('') +
+      '</table>';
+  }
   return `<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin-top:16px"><tr><td style="padding:4px 0">Product subtotal</td><td align="right" style="padding:4px 0">${formatAmount(order.merchandise_amount, order.currency)}</td></tr><tr><td style="border-top:1px solid #cfdbe7;padding:12px 0 0"><strong>Total</strong></td><td align="right" style="border-top:1px solid #cfdbe7;padding:12px 0 0"><strong>${formatAmount(order.amount, order.currency)}</strong></td></tr></table>`;
 }
 
 function totalsText(order) {
+  if (order.private_order_totals) return privateOrderTotalRows(order)
+    .map(([label, amount]) => `${label}: ${formatAmount(amount, order.currency)}`).join('\n');
   return `Product subtotal: ${formatAmount(order.merchandise_amount, order.currency)}\nTotal: ${formatAmount(order.amount, order.currency)}`;
+}
+
+function privateOrderTotalRows(order) {
+  const totals = order.private_order_totals;
+  return [['Product subtotal', totals.productSubtotal], ['Discount', totals.discountTotal],
+    ['Freight', totals.freightTotal], ['Tax charged', totals.taxTotal], ['Total', order.amount]];
 }
 
 function shell(body) {
@@ -61,11 +77,14 @@ function stripeTime(value) {
   return Number.isFinite(value) ? new Date(value * 1000).toISOString() : null;
 }
 export function createInternalOrderEmail(order, lineItems, env, completedCheckout = {}) {
+  const canonical = getPrivateOrder(order.winigen_order_id);
+  const negotiated = canonical?.strictSessionValidation ? canonical : null;
   const session = completedCheckout.session || {};
   const customer = session.customer_details || {};
   // Support both Stripe's original and newer collected_information location.
   const shipping = session.collected_information?.shipping_details || session.shipping_details;
   const destination = shipping || customer;
+  const agreedDestination = negotiated?.shippingDestinations[0];
   const testMode = env.EMAIL_MODE !== 'live';
   const banner = testMode ? 'TEST MODE — NO GOODS WILL BE SHIPPED' : 'PAID ORDER — FULFILLMENT NOT RELEASED';
   const totals = session.total_details || {};
@@ -77,13 +96,15 @@ export function createInternalOrderEmail(order, lineItems, env, completedCheckou
     'CUSTOMER', field('Company', customer.business_name),
     field('Customer / contact name', customer.individual_name || customer.name || order.customer_name || 'Not available'),
     field('Email', customer.email || order.customer_email || 'Not available'), field('Phone', customer.phone), '',
-    'SHIP TO', field('Recipient', destination.name || customer.name || order.customer_name),
-    field('Company', destination.business_name || customer.business_name),
-    internalAddress(destination.address) || 'Full address not available in completed Checkout Session',
-    field('Destination country', destination.address?.country || order.destination_country),
-    field('Phone', destination.phone || customer.phone),
-    !shipping ? 'Address source: completed-session customer address fallback' : null,
-    customer.address && addressKey(customer.address) !== addressKey(destination.address)
+    'SHIP TO', field('Recipient', agreedDestination?.recipient || destination.name || customer.name || order.customer_name),
+    field('Company', agreedDestination?.company || destination.business_name || customer.business_name),
+    agreedDestination ? agreedDestination.addressLines.join('\n')
+      : internalAddress(destination.address) || 'Full address not available in completed Checkout Session',
+    field('Destination country', agreedDestination ? 'US' : destination.address?.country || order.destination_country),
+    field('Phone', negotiated?.fulfillmentContact.phone || destination.phone || customer.phone),
+    agreedDestination ? 'Address source: agreed private-order destination'
+      : !shipping ? 'Address source: completed-session customer address fallback' : null,
+    customer.address && (agreedDestination || addressKey(customer.address) !== addressKey(destination.address))
       ? `\nBILLING / CUSTOMER ADDRESS\n${internalAddress(customer.address)}` : null,
     '', 'ORDER SUMMARY',
     ...lineItems.map(item => [item.product_name, field('Grade', item.grade), field('SKU', item.sku),
@@ -91,9 +112,9 @@ export function createInternalOrderEmail(order, lineItems, env, completedCheckou
       field('Unit price', formatAmount(item.unit_amount, item.currency || currency)),
       field('Line total', lineAmount(item, currency))].filter(value => value !== null).join('\n')),
     '', 'ORDER TOTALS',
-    field('Product subtotal', formatAmount(session.amount_subtotal ?? order.merchandise_amount, currency)),
+    field('Product subtotal', formatAmount(negotiated?.productSubtotal ?? session.amount_subtotal ?? order.merchandise_amount, currency)),
     field('Discount', formatAmount(totals.amount_discount ?? order.discount_amount, currency)),
-    field('Shipping/freight', formatAmount(totals.amount_shipping ?? order.shipping_amount, currency)),
+    field('Shipping/freight', formatAmount(negotiated?.freightTotal ?? totals.amount_shipping ?? order.shipping_amount, currency)),
     field('Tax', formatAmount(totals.amount_tax ?? order.tax_amount, currency)),
     field('Total', formatAmount(session.amount_total ?? order.amount, currency)),
     field('Currency', currency?.toUpperCase()), '', 'STRIPE / INTERNAL REFERENCES',

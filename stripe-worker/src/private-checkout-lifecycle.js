@@ -1,3 +1,5 @@
+import { validatePrivateOrderSession } from './private-order-validation.js';
+
 // Session history is retained; D1 payment state is changed only by the verified webhook.
 export async function resolvePrivateCheckout(order, env, createSession, now) {
   const db = env.ORDERS_DB;
@@ -34,6 +36,7 @@ export async function resolvePrivateCheckout(order, env, createSession, now) {
       const missing = [400, 404].includes(response.status) && session.error?.code === 'resource_missing';
       if (!response.ok && !missing) throw new Error('Unable to verify existing Stripe session; retry later.');
       if (!missing) {
+        validatePrivateOrderSession(order, session, env);
         if (session.id !== attempt.stripe_session_id || session.client_reference_id !== order.orderId
             || session.amount_total !== order.totalAmount || session.currency !== order.currency
             || session.livemode !== (env.STRIPE_MODE === 'live')) throw new Error('Stripe session does not match private order.');

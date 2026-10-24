@@ -25,6 +25,7 @@ test('manifest accepts only recognized production website artifact locations', (
     'private-orders/confirmation.html',
     'private-orders/wq20260922-01.html',
     'private-orders/wq20260923-01.html',
+    'private-orders/wq20261021-01.html',
     'products/example.html',
     'knowledge/example.html',
     'feeds/google-merchant.xml',
