@@ -24,7 +24,7 @@ import {
   toCustomerSafePrivateOrder
 } from './private-orders.js';
 import { resolvePrivateCheckout } from './private-checkout-lifecycle.js';
-import { validatePrivateOrderSession } from './private-order-validation.js';
+import { validatePrivateOrderSession, validatePrivateOrderWallet } from './private-order-validation.js';
 
 const checkoutPath = '/api/create-checkout-session';
 const shippingQuotePath = '/api/shipping-quote';
@@ -594,6 +594,7 @@ export async function createPrivateOrderCheckoutSession(order, env, attempt) {
   });
 
   if (order.billingEmail) params.set('customer_email', order.billingEmail);
+  if (order.orderId === 'WQ20261021-01') params.set('wallet_options[link][display]', 'never');
   if (order.strictSessionValidation) {
     params.set('automatic_tax[enabled]', 'false');
     params.set('allow_promotion_codes', 'false');
@@ -623,6 +624,7 @@ export async function createPrivateOrderCheckoutSession(order, env, attempt) {
   const session = await response.json();
   if (!response.ok) throw new Error('Unable to create the private-order Checkout Session.');
   validatePrivateOrderSession(order, session, env);
+  validatePrivateOrderWallet(order, session);
   const expectedSessionPrefix = isLiveMode(env) ? 'cs_live_' : 'cs_test_';
   if (typeof session.id !== 'string' || !session.id.startsWith(expectedSessionPrefix)) {
     throw new Error('Stripe returned a Checkout Session from the wrong mode.');

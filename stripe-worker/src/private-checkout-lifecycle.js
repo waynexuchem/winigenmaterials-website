@@ -1,4 +1,4 @@
-import { validatePrivateOrderSession } from './private-order-validation.js';
+import { validatePrivateOrderSession, validatePrivateOrderWallet } from './private-order-validation.js';
 
 // Session history is retained; D1 payment state is changed only by the verified webhook.
 export async function resolvePrivateCheckout(order, env, createSession, now) {
@@ -45,6 +45,7 @@ export async function resolvePrivateCheckout(order, env, createSession, now) {
         }
         if (session.status === 'open' && session.expires_at > timestamp
             && typeof session.url === 'string' && session.url.startsWith('https://checkout.stripe.com/')) {
+          validatePrivateOrderWallet(order, session);
           await requirePending();
           return session;
         }

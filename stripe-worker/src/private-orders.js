@@ -154,7 +154,7 @@ export function toCustomerSafePrivateOrder(order, env = {}) {
     quotationDate: order.quotationDate,
     validThrough: order.validThrough,
     customerName: order.customerName,
-    sellerName: order.sellerName,
+    sellerName: order.sellerName === 'Winigen Materials LLC' ? 'Winigen Materials' : order.sellerName,
     currency: order.currency.toUpperCase(),
     productSubtotal: order.productSubtotal,
     freightTotal: order.freightTotal,

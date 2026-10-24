@@ -1,5 +1,12 @@
 import { PRIVATE_ORDER_PURPOSE } from './private-orders.js';
 
+// Checkout presentation policy is not payment authority. Never apply this to paid webhooks.
+export function validatePrivateOrderWallet(order, session) {
+  if (order.orderId === 'WQ20261021-01' && session.wallet_options?.link?.display !== 'never') {
+    throw new Error('Private Checkout requires Link to be disabled; retire the old unpaid session before retrying.');
+  }
+}
+
 // Historical orders keep their existing contract. New negotiated orders opt in.
 export function validatePrivateOrderSession(order, session, env) {
   if (!order.strictSessionValidation) return;

@@ -184,6 +184,7 @@ test('private checkout ignores browser commercial fields and sends fixed server 
     assert.equal(stripeCall.params.get('billing_address_collection'), 'required');
     assert.equal(stripeCall.params.get('adaptive_pricing[enabled]'), 'false');
     assert.equal(stripeCall.params.get('payment_method_types[0]'), 'card');
+    assert.equal(stripeCall.params.get('wallet_options[link][display]'), null);
     assert.equal(stripeCall.params.get('line_items[0][price_data][currency]'), 'usd');
     assert.equal(stripeCall.params.get('line_items[1][price_data][currency]'), 'usd');
     assert.equal(stripeCall.params.get('line_items[0][price_data][unit_amount]'), '20000');

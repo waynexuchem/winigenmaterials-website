@@ -80,6 +80,7 @@ async function harness(run) {
         client_reference_id: params.get('client_reference_id'), currency: 'usd',
         amount_subtotal: 129000, amount_total: 129000, expires_at: Number(params.get('expires_at')),
         adaptive_pricing: { enabled: false }, automatic_tax: { enabled: false },
+        wallet_options: { link: { display: params.get('wallet_options[link][display]') } },
         billing_address_collection: 'required', payment_method_types: ['card'],
         total_details: { amount_discount: 0, amount_shipping: 0, amount_tax: 0 },
         metadata: Object.fromEntries([...params].filter(([k]) => /^metadata\[/.test(k)).map(([k, v]) => [k.slice(9, -1), v]))
@@ -151,6 +152,7 @@ test('browser tampering cannot change five Stripe lines or authority; no old cus
   assert.equal(params.get('customer'), null);
   assert.equal(params.get('billing_address_collection'), 'required');
   assert.equal(params.get('adaptive_pricing[enabled]'), 'false');
+  assert.equal(params.get('wallet_options[link][display]'), 'never');
   assert.equal(params.get('payment_method_types[0]'), 'card');
   assert.equal(params.get('payment_method_types[1]'), null);
   assert.equal(params.get('automatic_tax[enabled]'), 'false');
@@ -217,6 +219,30 @@ test('unresolved creation cannot move to a new key after its expiry', async () =
   assert.equal(state.keys.size, 1);
 }));
 
+test('old unpaid Link-enabled session cannot be reused; confirmed expiry safely advances the attempt', async () => harness(async ({ checkout, state, sqlite }) => {
+  assert.equal((await checkout()).status, 200);
+  const old = [...state.sessions.values()][0];
+  old.wallet_options = null;
+  assert.equal((await checkout()).status, 500);
+  assert.equal(state.keys.size, 1);
+  assert.equal(sqlite.prepare('SELECT payment_status FROM test_orders').get().payment_status, 'PENDING');
+  Object.assign(old, { status: 'expired', url: null });
+  assert.equal((await checkout()).status, 200);
+  assert.equal(state.keys.size, 2);
+  assert.ok(state.keys.has('winigen-private-order-WQ20261021-01-attempt-2'));
+  assert.equal([...state.sessions.values()][1].wallet_options.link.display, 'never');
+  assert.equal((await checkout()).status, 200);
+  assert.equal(state.keys.size, 2);
+  assert.equal(state.emails.length, 0);
+}));
+
+test('Stripe failing to disable Link fails closed during creation without paid state or email', async () => harness(async ({ checkout, state, sqlite }) => {
+  state.create = session => { session.wallet_options = null; };
+  assert.equal((await checkout()).status, 500);
+  assert.equal(sqlite.prepare('SELECT payment_status FROM test_orders').get().payment_status, 'PENDING');
+  assert.equal(state.emails.length, 0);
+}));
+
 for (const phase of ['creation', 'reuse']) {
   for (const mismatch of ['reference', 'total', 'currency', 'mode', 'environment', 'configuration', 'adaptive', 'methods']) {
     test(`${phase}: ${mismatch} mismatch fails closed without replacement or paid state`, async () => harness(async ({ checkout, state, sqlite }) => {
@@ -273,7 +299,7 @@ async function signedRequest(event, valid = true) {
 
 test('signed paid webhook replay is idempotent; all four items reach both emails and fulfillment stays held', async () => harness(async ({ checkout, state, sqlite, env }) => {
   await checkout();
-  const session = { ...[...state.sessions.values()][0], status: 'complete', payment_status: 'paid',
+  const session = { ...[...state.sessions.values()][0], status: 'complete', payment_status: 'paid', wallet_options: null,
     customer_details: { name: 'Local Payer', email: 'payer@example.invalid', address: { country: 'CA', line1: 'Billing only' } } };
   const event = { id: 'evt_oct_paid_mock', type: 'checkout.session.completed', livemode: false, created: 1792767600, data: { object: session } };
   const pending = [];
@@ -328,10 +354,16 @@ test('October page reuses cart branding/footer with approved mailing address and
   const cart = readFileSync(new URL('../../cart.html', import.meta.url), 'utf8');
   const shared = readFileSync(new URL('../../assets/js/main.js', import.meta.url), 'utf8');
   const footer = shared.match(/footer\.innerHTML = `([^`]+)`/)[1].replaceAll('${prefix}', '../')
-    .replace('<h4>Location</h4><p>New Jersey, USA</p>', '<h4>Mailing address</h4><p>Winigen Materials LLC<br>24 Park Ave<br>PO Box 116<br>Park Ridge, NJ 07656<br>USA</p>');
+    .replace('<h4>Location</h4><p>New Jersey, USA</p>', '<h4>Mailing address</h4><p>Winigen Materials<br>24 Park Ave<br>PO Box 116<br>Park Ridge, NJ 07656<br>USA</p>');
   assert.equal(html.match(/<footer class="footer">\s*([\s\S]*?)\s*<\/footer>/)[1], footer);
   assert.match(html, /<header class="header">\s*<div class="container nav">/);
-  assert.match(html, /Prepared by Winigen Materials LLC/);
+  assert.match(html, /Prepared by Winigen Materials for/);
+  assert.equal(toCustomerSafePrivateOrder(order).sellerName, 'Winigen Materials');
+  for (const file of ['cart.html', 'checkout-success.html', 'checkout-cancel.html',
+    'private-orders/confirmation.html', 'private-orders/wq20260922-01.html',
+    'private-orders/wq20260923-01.html', 'private-orders/wq20261021-01.html']) {
+    assert.doesNotMatch(readFileSync(new URL('../../' + file, import.meta.url), 'utf8'), /Winigen Materials LLC/);
+  }
   assert.equal(order.buyerResponsibility, 'Applicable import duties, import taxes, and customs-clearance charges, if any, are excluded.');
   assert.equal(html.match(/style\.css\?v=([a-f0-9]+)/)[1], cart.match(/style\.css\?v=([a-f0-9]+)/)[1]);
   assert.doesNotMatch(html, /<script[^>]+(?:main\.js|cart\.js|googletagmanager)/);
