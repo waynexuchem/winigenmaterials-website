@@ -43,7 +43,9 @@ export async function resolvePrivateCheckout(order, env, createSession, now) {
         if (session.payment_status !== 'unpaid' || session.status === 'complete') {
           throw new Error('Awaiting verified payment webhook; another checkout is not permitted.');
         }
-        if (session.status === 'open' && session.expires_at > timestamp
+        const requiresLinkRetirement = order.orderId === 'WQ20261021-01'
+          && session.wallet_options?.link?.display !== 'never';
+        if (!requiresLinkRetirement && session.status === 'open' && session.expires_at > timestamp
             && typeof session.url === 'string' && session.url.startsWith('https://checkout.stripe.com/')) {
           validatePrivateOrderWallet(order, session);
           await requirePending();

@@ -57,7 +57,7 @@ async function harness(run) {
     ORDER_NOTIFICATION_RECIPIENTS: 'wayne@winigenmaterials.com,catherinew@winigenmaterials.com',
     [flag]: 'true'
   };
-  const state = { calls: [], sessions: new Map(), keys: new Map(), emails: [], create: null, retrieve: null, lost: false };
+  const state = { calls: [], sessions: new Map(), keys: new Map(), emails: [], create: null, retrieve: null, expire: null, lost: false };
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (url, options = {}) => {
     state.calls.push({ url, options });
@@ -95,6 +95,7 @@ async function harness(run) {
     const session = state.sessions.get(sessionId);
     assert.ok(session, 'Mock session must exist');
     if (url.endsWith('/expire')) {
+      if (state.expire) return state.expire(session);
       Object.assign(session, { status: 'expired', url: null });
       return Response.json(session);
     }
@@ -219,20 +220,34 @@ test('unresolved creation cannot move to a new key after its expiry', async () =
   assert.equal(state.keys.size, 1);
 }));
 
-test('old unpaid Link-enabled session cannot be reused; confirmed expiry safely advances the attempt', async () => harness(async ({ checkout, state, sqlite }) => {
+test('old unpaid Link-enabled session is confirmed expired before safely advancing the attempt', async () => harness(async ({ checkout, state, sqlite }) => {
   assert.equal((await checkout()).status, 200);
   const old = [...state.sessions.values()][0];
   old.wallet_options = null;
-  assert.equal((await checkout()).status, 500);
-  assert.equal(state.keys.size, 1);
-  assert.equal(sqlite.prepare('SELECT payment_status FROM test_orders').get().payment_status, 'PENDING');
-  Object.assign(old, { status: 'expired', url: null });
   assert.equal((await checkout()).status, 200);
+  assert.equal(old.status, 'expired');
+  const expirationIndex = state.calls.findIndex(call => call.url.endsWith('/expire'));
+  const creationIndices = state.calls.flatMap((call, index) => call.options.method === 'POST' && !call.url.endsWith('/expire') ? [index] : []);
+  assert.ok(expirationIndex > creationIndices[0] && expirationIndex < creationIndices[1]);
+  assert.equal(sqlite.prepare('SELECT payment_status FROM test_orders').get().payment_status, 'PENDING');
   assert.equal(state.keys.size, 2);
   assert.ok(state.keys.has('winigen-private-order-WQ20261021-01-attempt-2'));
   assert.equal([...state.sessions.values()][1].wallet_options.link.display, 'never');
   assert.equal((await checkout()).status, 200);
   assert.equal(state.keys.size, 2);
+  assert.equal(state.emails.length, 0);
+}));
+
+test('uncertain old-session expiry cannot create a new payable attempt or change payment state', async () => harness(async ({ checkout, state, sqlite }) => {
+  await checkout();
+  const old = [...state.sessions.values()][0];
+  old.wallet_options = null;
+  state.expire = () => Response.json({ error: { message: 'Session may have completed' } }, { status: 400 });
+  assert.equal((await checkout()).status, 500);
+  assert.equal(state.keys.size, 1);
+  assert.equal(sqlite.prepare('SELECT count(*) n FROM private_checkout_attempts').get().n, 1);
+  assert.equal(sqlite.prepare('SELECT payment_status FROM test_orders').get().payment_status, 'PENDING');
+  assert.equal(old.status, 'open');
   assert.equal(state.emails.length, 0);
 }));
 
