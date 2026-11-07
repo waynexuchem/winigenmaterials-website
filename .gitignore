@@ -42,3 +42,9 @@ stripe-worker/node_modules/
 stripe-worker/wrangler.production.jsonc
 
 !scripts/catalog-card-identity.mjs
+
+!scripts/product-image-presentation.mjs
+
+!scripts/build-product-image-presentation.mjs
+
+!scripts/finalize-mxene-accordion.mjs

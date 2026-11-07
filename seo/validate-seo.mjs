@@ -399,7 +399,7 @@ for (const product of productSource.products) {
   } else {
     const rfqPages = schemas.flatMap(schema => collectType(schema, 'WebPage'))
       .filter(entity => entity['@id'] === `${canonical}#webpage`);
-    const informationalMxene = product.mxene && product.purchaseMode === 'rfq';
+    const informationalMxene = product.mxene && product.purchaseMode === 'rfq' && product.rfqSchemaType !== 'WebPage';
     if (rfqPages.length === 1 && products.length === (informationalMxene ? 1 : 0)) crawlStats.rfqWebPageSchema += 1;
     if (informationalMxene) {
       const material = rfqPages[0]?.about;

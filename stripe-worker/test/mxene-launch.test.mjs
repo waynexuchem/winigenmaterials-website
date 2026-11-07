@@ -24,7 +24,8 @@ test('MXene launch has exactly eight products, twenty-four intended packages, an
  const master=await read('products.html');
  const section=master.match(/<section id="mxene-materials"[\s\S]*?<\/section>/)[0];
  assert.equal((section.match(/data-listing-add/g)||[]).length,23);
- assert.equal((section.match(/class="product-card"/g)||[]).length,23);
+ assert.equal((section.match(/class="product-card"/g)||[]).length,24);
+ assert.equal((section.match(/product-card__mode[^>]*>Request Quote</g)||[]).length,1);
  assert.doesNotMatch(section,/class="container"|product-card--family/);
  assert.match(master,/class="tab" href="#mxene-materials"/);
  const context={};vm.runInNewContext(await read('assets/js/product-search.js'),context);
@@ -32,7 +33,7 @@ test('MXene launch has exactly eight products, twenty-four intended packages, an
  assert.equal(context.WinigenProductSearch.searchView(records,'MXene').sectionCounts['mxene-materials'],8);
 
  const pages=(await readdir(resolve(root,'products'))).filter(x=>x.includes('mxene'));
- assert.equal(pages.length,24);
+ assert.equal(pages.length,25);
  for(const p of products){assert.equal(p.commerceStatus,'active_checkout');assert.equal(source.products.find(c=>c.slug===p.slug).packages.length,3);assert.ok(p.aliases.some(x=>x.includes(p.mxene.ascii)));}
  for(const r of packageRows){assert.equal(r.variant.quantity,r.quantity);assert.equal(r.variant.unitAmount,r.price);assert.equal(r.variant.unit,'g');assert.equal(VARIANTS_BY_KEY.get(r.key).unitAmount,r.price);}
 });
@@ -112,7 +113,7 @@ test('MXene release candidate uses shared navigation, final titles, cautious doc
   assert.doesNotMatch(html,/Lot-specific COA is provided with shipment|Request grade-specific size/);
   if(m.ascii==='Ti3C2Tx') assert.ok(!p.additionalProperty.some(x=>/size/i.test(x.name)));
   assert.match(m.tds,/_TDS.pdf$/); assert.doesNotMatch(m.tds,/Rev[A-D]/);
-  assert.doesNotMatch(html,/View characterization image|full-resolution|supplier|vendor|source-language|source documentation/i);
+  assert.doesNotMatch(html.replace(/Representative supplier (?:SEM|TEM|XRD); not lot-specific\./g,''),/View characterization image|full-resolution|supplier|vendor|source-language|source documentation/i);
   assert.match(html,/mxene-sticky-shell/); assert.match(html,/mxene-quick-tds/);
   for(const img of m.characterizationImages)assert.match(img.file,/-web.png$/);
  }

@@ -1,0 +1,189 @@
+[
+  {
+    "path": "assets/images/mxene/nb2ctx-multilayer-xrd-web.png",
+    "products": [
+      "nb2ctx-mxene-multilayer-powder"
+    ],
+    "imageSHA256": "d8606bbc52e871cd45de9ba018a7604ee90fc026036d99dba6f579cff7faa023",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/nb2ctx-single-few-xrd-web.png",
+    "products": [
+      "nb2ctx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "f7548fba89df61958e5b564a2d735fc2ed5a297018429a0f5f4447148b80d6e9",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/nb4c3tx-single-few-layer-xrd-web.png",
+    "products": [
+      "nb4c3tx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "feb6163e570fdb2b58d03d48bf653fdd9dd19fd250ab90dfad4f6905ffa6194f",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/ta4c3tx-single-few-layer-xrd-web.png",
+    "products": [
+      "ta4c3tx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "b2bcd9dd570702f16f37628c642d44539024d55cd7d21241b8218a6d06f665a6",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/ti3c2tx-multilayer-xrd-web.png",
+    "products": [
+      "ti3c2tx-mxene-multilayer-powder"
+    ],
+    "imageSHA256": "2d828ea4aef7a46ee7d993c95c7013863d25291a690a9fa63e77c3811d13a45c",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/ti3cntx-single-few-layer-xrd-web.png",
+    "products": [
+      "ti3cntx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "72e1fd0534a52a8b7ba1b5ec86d823c583a0cf436b29d0fbe075daee14279307",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/tinbctx-single-few-layer-xrd-web.png",
+    "products": [
+      "tinbctx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "0678aeaabbeabd0cd38486f346e699cb967067f12b4a11b61c8ae4ca0f281c3d",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/tivctx-single-few-layer-xrd-web.png",
+    "products": [
+      "tivctx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "1092c0e734beea021c0d9410b6d7346791c7538186ae256af24ed298486fb7a4",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/mxene/v2ctx-single-few-xrd-web.png",
+    "products": [
+      "v2ctx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "25bef4c365ade8ae5a6272235e678d844205dc8aa4071434ade14a29c531dc23",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/product-images/merchant-materials/mo2ctx-mxene-single-few-layer-powder-clean.png",
+    "products": [
+      "mo2ctx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "cfb4971b09f7542121e6d07c16d59d96e7ad6c8064cdf93ed1a4bc2d83ee78bc",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  },
+  {
+    "path": "assets/images/product-images/website/materials/mo2ctx-mxene-single-few-layer-powder-website.png",
+    "products": [
+      "mo2ctx-mxene-single-few-layer-powder"
+    ],
+    "imageSHA256": "1395b50544272ec9f65ba69e7f1943de3cbb32eec94cd2a8e048aedfe09464cc",
+    "confirmed": "Representative XRD trace with retained numerical horizontal ticks. No documented radiation source, ordinate units or scan conditions in the inspected figure.",
+    "doNotInfer": [
+      "2θ",
+      "degrees",
+      "Cu Kα",
+      "arbitrary intensity units",
+      "crystal-phase assignment"
+    ],
+    "proposedCaption": "Representative XRD pattern; not lot-specific. Numerical axis ticks are retained; axis quantities, units and measurement conditions are not specified in the supplied figure.",
+    "action": "Text-only caption proposal for separate integration review; no image or existing TDS edits now."
+  }
+]

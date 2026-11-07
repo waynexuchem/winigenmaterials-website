@@ -1,3 +1,4 @@
+import { cleanProductImage } from './product-image-presentation.mjs';
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -322,7 +323,7 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
     if (!reason) {
       try {
         landingUrl = publicUrl(semanticProduct.url, 'landing-page URL', semanticProduct.slug);
-        imageUrl = publicUrl(semanticProduct.image, 'image URL', semanticProduct.slug);
+        imageUrl = publicUrl(cleanProductImage(semanticProduct), 'image URL', semanticProduct.slug);
         await access(localPathFor(landingUrl));
         await access(localPathFor(imageUrl));
       } catch (error) {

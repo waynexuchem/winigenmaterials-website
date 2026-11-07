@@ -1,0 +1,140 @@
+{
+  "version": "2026-11-07-final",
+  "sourcePDFSHA256": "dae93579a909a817b6bfb2862ea58662a68f2c885e49d74324ad9fd36e6ec956",
+  "records": [
+    {
+      "object": 71,
+      "page": 5,
+      "role": "sem-primary",
+      "nativeDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        0,
+        0,
+        910,
+        768
+      ],
+      "retainedDimensions": [
+        910,
+        768
+      ],
+      "source": "docs/mxene-accordion-phase1/sources/IM71.jpg",
+      "sourceSHA256": "f434b0f452540f4d400c85752e41d6b66b50e0784cb53548a0432e3f765b2a6f",
+      "nativeClean": "docs/mxene-accordion-phase1/native-clean/sem-primary.png",
+      "nativeCleanSHA256": "d28adcd4b56766fe0a0a65fdfa1bb6eb6648ba3442a432a446f2c1cdcd0f6c1b",
+      "scaleBar": "Authentic 2 µm bar retained",
+      "cleanup": "Rectangular right crop; logo entirely outside retained region. No masking or morphology edits.",
+      "qualification": "Representative characterization; not lot-specific.",
+      "merchant": "/assets/images/product-images/merchant-materials/ti3c2tx-mxene-accordion-multilayer-powder-sem-primary-clean.png",
+      "website": "/assets/images/product-images/website/materials/ti3c2tx-mxene-accordion-multilayer-powder-sem-primary-website.png",
+      "merchantSHA256": "3f9eff0a7ff0ab094a5d35693d952c04f4c3b9dac202379a7ff4e4d939f02938",
+      "websiteSHA256": "443bdec1cbf552a6700fe497f462add3aa9da190879d57b970248bab4dac9bd6",
+      "presentation": {
+        "merchant": {
+          "fieldPixels": [
+            165,
+            256,
+            1170,
+            987
+          ],
+          "widthOccupancy": 0.78,
+          "scaling": "Proportional Lanczos only; no sharpening, reconstruction or new microstructure."
+        },
+        "website": {
+          "fieldPixels": [
+            180,
+            30,
+            1140,
+            962
+          ],
+          "widthOccupancy": 0.76,
+          "scaling": "Proportional Lanczos only; no sharpening, reconstruction or new microstructure."
+        }
+      }
+    },
+    {
+      "object": 72,
+      "page": 5,
+      "role": "sem-field2",
+      "nativeDimensions": [
+        1024,
+        768
+      ],
+      "crop": [
+        0,
+        0,
+        910,
+        768
+      ],
+      "retainedDimensions": [
+        910,
+        768
+      ],
+      "source": "docs/mxene-accordion-phase1/sources/IM72.jpg",
+      "sourceSHA256": "6bd7ec77243a94c3a9a375a77797988c6507ad4314b106b4f846ec3dbff8c94e",
+      "nativeClean": "docs/mxene-accordion-phase1/native-clean/sem-field2.png",
+      "nativeCleanSHA256": "5c1e176923bb5b9642b7de56945a050e5b706c71ac63522ad94eef00f8906ba3",
+      "scaleBar": "Authentic 2 µm bar retained",
+      "cleanup": "Rectangular right crop; logo entirely outside retained region. No masking or morphology edits.",
+      "qualification": "Representative characterization; not lot-specific.",
+      "merchant": "/assets/images/product-images/merchant-materials/ti3c2tx-mxene-accordion-multilayer-powder-sem-field2-clean.png",
+      "website": "/assets/images/product-images/website/materials/ti3c2tx-mxene-accordion-multilayer-powder-sem-field2-website.png",
+      "merchantSHA256": "d2d3937017de5545c11eac69658e9310b9b7f50740571303355cc625e76fa2f4",
+      "websiteSHA256": "6ff4a3f95e0fcb9bccaf0ff223fedca894cc4eec59bfb1152290460678d63bc6",
+      "presentation": {
+        "merchant": {
+          "fieldPixels": [
+            165,
+            256,
+            1170,
+            987
+          ],
+          "widthOccupancy": 0.78,
+          "scaling": "Proportional Lanczos only; no sharpening, reconstruction or new microstructure."
+        },
+        "website": {
+          "fieldPixels": [
+            180,
+            30,
+            1140,
+            962
+          ],
+          "widthOccupancy": 0.76,
+          "scaling": "Proportional Lanczos only; no sharpening, reconstruction or new microstructure."
+        }
+      }
+    },
+    {
+      "object": 73,
+      "page": 5,
+      "role": "xrd",
+      "nativeDimensions": [
+        1226,
+        515
+      ],
+      "crop": [
+        0,
+        0,
+        1226,
+        515
+      ],
+      "retainedDimensions": [
+        1226,
+        515
+      ],
+      "source": "docs/mxene-accordion-phase1/sources/IM73.jpg",
+      "sourceSHA256": "ab58421ddd4cf2d422f2cf47819334671a6ed875322ea77f31ee751cc7365a46",
+      "nativeClean": "docs/mxene-accordion-phase1/native-clean/xrd.png",
+      "nativeCleanSHA256": "6255c3e8d19d7f229127659aef50433b10c5f4ab1e9febbc49d00ea301e355e6",
+      "scaleBar": "XRD numerical axes and complete trace retained",
+      "cleanup": "Non-data software toolbar footprint [985,496,1226,515] replaced with the matching dark annotation-band background; trace and numbered axis labels unchanged.",
+      "qualification": "Representative characterization; not lot-specific.",
+      "merchant": "/assets/images/product-images/merchant-materials/ti3c2tx-mxene-accordion-multilayer-powder-xrd-clean.png",
+      "website": "/assets/images/product-images/website/materials/ti3c2tx-mxene-accordion-multilayer-powder-xrd-website.png",
+      "merchantSHA256": "7a65897677d7fa80558769bf9eefd4f368e23c47a00206946bb106c05b1dd38f",
+      "websiteSHA256": "ce28328fc2e80eb37991bf28369623dd03eb785eeecd37c3a7d3bbb9ee57c0ab"
+    }
+  ]
+}

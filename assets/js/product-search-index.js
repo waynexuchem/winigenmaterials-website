@@ -1551,6 +1551,20 @@ window.WINIGEN_PRODUCT_SEARCH_INDEX = {
       "section": "solvents",
       "category": "Battery Solvents",
       "metadata": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) is a fluorinated phosphate solvent and cosolvent for reduced-flammability and thermal-safety electrolyte blends research. Tris(2,2,2-trifluoroethyl) phosphate TFEP Abbreviation TFEP CAS Number 358-63-4 Formula C6H6F9O4P Product type Fluorinated phosphate electrolyte solvent / flame-retardant cosolvent Grade Battery grade Appearance Colorless liquid Purity ≥99.0 wt% Moisture <200 ppm"
+    },
+    {
+      "slug": "ti3c2tx-mxene-accordion-multilayer-powder",
+      "name": "Ti₃C₂Tₓ MXene — Accordion-Structured Multilayer Powder (HF-Etched)",
+      "aliases": [
+        "HF-etched Ti3C2Tx",
+        "accordion Ti3C2Tx",
+        "Ti3C2Tx accordion multilayer powder"
+      ],
+      "cas": "",
+      "formula": "",
+      "section": "mxene-materials",
+      "category": "MXene Powder",
+      "metadata": "HF-etched Ti3C2Tx MXene with accordion-like stacked lamellae. Representative conductivity 10–100 S/cm; −200 and −400 mesh precursor grades. Request a technical quotation. HF-etched Ti3C2Tx accordion Ti3C2Tx Ti3C2Tx accordion multilayer powder HF-etched accordion Ti3C2Tx technical quotation Material Ti₃C₂Tₓ MXene Precursor Ti₃AlC₂ Product form Multilayer powder Morphology Accordion-like stacked lamellae Preparation HF etching Appearance Dark-purple powder Representative conductivity 10–100 S/cm Representative specific surface area 15 ± 5 m²/g; method not specified Surface terminations Mixed –O, –OH, –F and –Cl Grade A precursor / nominal post-etching size −200 mesh / 2–50 µm Grade B precursor / nominal post-etching size −400 mesh / 2–20 µm Water solubility Poor (supplier-reported, qualitative) Storage Sealed and dry; preferably vacuum or inert atmosphere"
     }
   ]
 };

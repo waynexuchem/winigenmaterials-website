@@ -1,0 +1,9 @@
+/* HF accordion RFQ page: use the established compact product-heading scale. */
+.mxene-accordion-page .detail-panel h1 {
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  line-height: 1.2;
+}
+.mxene-accordion-page .detail-panel h2 {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  line-height: 1.25;
+}

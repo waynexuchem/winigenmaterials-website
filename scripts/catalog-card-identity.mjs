@@ -1,3 +1,4 @@
+import { synchronizeProductImages } from './product-image-presentation.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -176,7 +177,7 @@ export function synchronizeProductPresentation(html, products, pagePath = '') {
         match => `The ${match.includes('<sub>') ? 'LiPF<sub>6</sub>' : 'LiPF6'} product page lists ${limit} water as a target specification.`);
     }
   }
-  return html;
+  return synchronizeProductImages(html, products);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

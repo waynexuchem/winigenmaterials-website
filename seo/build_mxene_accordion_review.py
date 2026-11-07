@@ -1,0 +1,101 @@
+"""Source-driven HF accordion RFQ expansion; never edits commerce or publishes.
+Run with the bundled Pillow/reportlab/lxml/pypdf Python environment.
+"""
+import base64,copy,csv,hashlib,html as h,io,json,os,re,subprocess,sys,zipfile
+from pathlib import Path
+from urllib.parse import urlencode
+from lxml import html,etree
+from PIL import Image,ImageDraw
+from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Table,TableStyle,Image as PDFImage,PageBreak,KeepTogether
+from reportlab.lib.styles import getSampleStyleSheet,ParagraphStyle
+from reportlab.lib import colors
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'docs/mxene-accordion-phase1';SLUG='ti3c2tx-mxene-accordion-multilayer-powder';ORIGIN='https://www.winigenmaterials.com';CODE='WM-MX-TI3C2TX-ACC-ML'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+product=lambda:next(p for p in json.loads((ROOT/'catalog/products.source.json').read_text())['products'] if p['slug']==SLUG)
+def save(path,data):path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+def images():
+ # Approved existing fields are inputs, not targets for repeated reconstruction.
+ records=json.loads((ROOT/'catalog/mxene-accordion-images.source.json').read_text())['records']
+ for record in records:
+  for key in ('merchant','website'):
+   assert sha(ROOT/record[key].lstrip('/'))==record[key+'SHA256'],record[key]
+ return records
+
+def resize_new_sems():
+ records=images();logo=Image.open(ROOT/'assets/images/winigen-logo.png').convert('RGBA').crop((31,62,869,640)).resize((195,135),Image.Resampling.LANCZOS)
+ for record in records:
+  if record['object']==73:continue
+  assert sha(ROOT/record['source'])==record['sourceSHA256']
+  assert sha(ROOT/record['nativeClean'])==record['nativeCleanSHA256']
+  im=Image.open(ROOT/record['nativeClean']).convert('RGBA')
+  original=Image.open(ROOT/record['source']).convert('RGBA').crop(record['crop'])
+  assert original.tobytes()==im.tobytes()
+  occupancy={}
+  for kind,width,size in [('merchant',1170,(1500,1500)),('website',1140,(1500,1200))]:
+   height=round(im.height*width/im.width);view=im.resize((width,height),Image.Resampling.LANCZOS);canvas=Image.new('RGB',size,'white');x=(1500-width)//2;y=(1500-height)//2 if kind=='merchant' else 30
+   canvas.paste(view,(x,y),view)
+   if kind=='website':
+    assert y+height<1025
+    canvas.paste(logo,(1235,1025),logo);ImageDraw.Draw(canvas).line((92,1112,180,1112),fill='#b8964a',width=4)
+   dest=ROOT/record[kind].lstrip('/');canvas.save(dest,optimize=True);record[kind+'SHA256']=sha(dest);occupancy[kind]={'fieldPixels':[x,y,width,height],'widthOccupancy':width/1500,'scaling':'Proportional Lanczos only; no sharpening, reconstruction or new microstructure.'}
+  record['presentation']=occupancy
+ save(OUT/'image-provenance.json',records);config=json.loads((ROOT/'catalog/mxene-accordion-images.source.json').read_text());config['records']=records;save(ROOT/'catalog/mxene-accordion-images.source.json',config);return records
+
+def tds(p,records):
+ pdfmetrics.registerFont(TTFont('ArialReview','/System/Library/Fonts/Supplemental/Arial.ttf'));pdfmetrics.registerFont(TTFont('ArialReviewBold','/System/Library/Fonts/Supplemental/Arial Bold.ttf'))
+ styles=getSampleStyleSheet();styles.add(ParagraphStyle(name='BodyW',fontName='ArialReview',fontSize=9,leading=13,textColor=colors.HexColor('#14213d'),spaceAfter=7));styles.add(ParagraphStyle(name='TitleW',parent=styles['BodyW'],fontName='ArialReviewBold',fontSize=18,leading=23,spaceAfter=12));styles.add(ParagraphStyle(name='HeadW',parent=styles['BodyW'],fontName='ArialReviewBold',fontSize=12,leading=16,spaceBefore=9))
+ def markup(t):
+  text=h.escape(t)
+  for a,b in zip('₀₁₂₃₄₅₆₇₈₉ₓ','0123456789x'):text=text.replace(a,'<sub>'+b+'</sub>')
+  for a,b in [('²','2'),('³','3')]:text=text.replace(a,'<super>'+b+'</super>')
+  return text
+ P=lambda t:Paragraph(markup(t),styles['BodyW']);H=lambda t:Paragraph(markup(t),styles['HeadW']);story=[Paragraph(markup(p['name']),styles['TitleW']),P('Representative Technical Data Sheet | '+p['sku']+' | '+p['mxene']['documentCode']+' | Revision 1'),P('Issue date: November 7, 2026'),H('1. Product identification'),P('Ti₃C₂Tₓ MXene; Ti₃AlC₂ precursor; multilayer powder prepared by HF etching.'),H('2. Product overview'),P('Accordion-like stacked lamellae provide a morphology option for powder processing and interfacial research. This grade is distinct from the LiF/HCl-derived clay-like multilayer grade (representative conductivity 1000 ± 500 S/cm). The HF grade is reported at 10–100 S/cm. These are not controlled comparative measurements and do not establish superior electrochemical performance.'),H('3. Representative technical properties'),P('All values below are supplier-reported representative information, not guaranteed release specifications.'),P(p['mxene']['waterSolubilityQualification'])]
+ props=[x for x in p['additionalProperty'] if not x['name'].startswith('Grade ')];rows=[[P('Property'),P('Representative information')]]+[[P(x['name']),P(x['value'])] for x in props];table=Table(rows,colWidths=[175,335],hAlign='LEFT');table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#dce6f2')),('LINEBELOW',(0,0),(-1,0),1,colors.HexColor('#b8964a')),('BOTTOMPADDING',(0,0),(-1,-1),5),('TOPPADDING',(0,0),(-1,-1),4)]));story+=[table,PageBreak(),H('4. Available technical grades'),P('Grade A: −200 mesh precursor; nominal post-etching size 2–50 µm. Grade B: −400 mesh precursor; nominal post-etching size 2–20 µm. These are technical options, not guaranteed particle-size distributions or approved ordering packages.'),H('5. Representative characterization')]
+ for r in records:
+  im=Image.open(ROOT/r['nativeClean']);ratio=min(470/im.width,230/im.height);story +=[Spacer(1,10),KeepTogether([P(('SEM field 1' if r['object']==71 else 'SEM field 2' if r['object']==72 else 'XRD')+(' - Representative supplier XRD pattern. Measurement conditions and axis definitions were not provided. Not lot-specific.' if r['object']==73 else ' - Representative characterization; not lot-specific.')),PDFImage(str(ROOT/r['nativeClean']),width=im.width*ratio,height=im.height*ratio)])]
+ story +=[H('6. Storage and handling'),P(p['mxene']['storage']),H('7. Technical disclaimer'),P('This document provides representative technical information for research and evaluation. Values are not lot-specific release specifications and may vary with manufacturing conditions, preparation and measurement methods. Current-lot documentation may be requested where available.'),P('Characterization is representative third-party reference data; it is not represented as testing performed by Winigen. No lot-specific COA is fabricated or supplied by this document.')]
+ def decorate(c,doc):
+  c.setTitle('Winigen Materials — Ti₃C₂Tₓ MXene Accordion-Structured Multilayer Powder TDS');c.setAuthor('Winigen Materials');c.setCreator('Winigen Materials');c.setSubject('Representative Technical Data Sheet');c.setStrokeColor(colors.HexColor('#b8964a'));c.line(42,790,553,790);c.drawImage(str(ROOT/'assets/images/winigen-logo.png'),42,800,width=60,height=36,preserveAspectRatio=True,mask='auto');c.setFont('ArialReview',8);c.setFillColor(colors.HexColor('#14213d'));c.drawRightString(553,817,'WINIGEN MATERIALS | TECHNICAL DATA SHEET');c.drawString(42,25,p['mxene']['documentCode']+' | Rev. 1 | Research and evaluation');c.drawRightString(553,25,str(doc.page))
+ target=ROOT/p['mxene']['tds'].lstrip('/');SimpleDocTemplate(str(target),pagesize=(595,842),leftMargin=42,rightMargin=42,topMargin=68,bottomMargin=42,invariant=1).build(story,onFirstPage=decorate,onLaterPages=decorate)
+ from pypdf import PdfReader,PdfWriter
+ writer=PdfWriter(clone_from=PdfReader(target));writer.add_metadata({'/Title':'Winigen Materials — Ti₃C₂Tₓ MXene Accordion-Structured Multilayer Powder TDS','/Author':'Winigen Materials','/Subject':'Representative Technical Data Sheet','/CreationDate':"D:20261107120000+00'00'",'/ModDate':"D:20261107120000+00'00'"});buffer=io.BytesIO();writer.write(buffer);target.write_bytes(buffer.getvalue())
+ return target
+
+def page(p,records):
+ old=(ROOT/'products/ti3c2tx-mxene-multilayer-powder.html').read_text();head=old.split('<head>',1)[1].split('</head>',1)[0];head=re.sub(r'<script[^>]*type="application/ld\+json"[^>]*>[\s\S]*?</script>','',head);head=re.sub(r'<title>.*?</title>','<title>'+h.escape(p['name'])+' | Winigen Materials</title>',head);head=re.sub(r'<meta[^>]*(?:name="description"|property="og:[^"]+"|name="twitter:[^"]+")[^>]*>','',head);head=re.sub(r'<link[^>]*rel="canonical"[^>]*>','',head);url=ORIGIN+p['url'];head+='<meta property="og:title" content="'+h.escape(p['name'],quote=True)+'"><meta name="description" content="'+h.escape(p['description'],quote=True)+'"><link rel="canonical" href="'+url+'"><meta property="og:image" content="'+ORIGIN+p['image']+'">'
+ head+='<link rel="stylesheet" href="../assets/css/mxene-accordion.css?v='+sha(ROOT/'assets/css/mxene-accordion.css')[:12]+'">'
+ graph={'@context':'https://schema.org','@graph':[{'@type':'WebPage','@id':url+'#webpage','url':url,'name':p['name'],'description':p['description'],'image':ORIGIN+p['image'],'publisher':{'@id':ORIGIN+'/#organization'},'isPartOf':{'@id':ORIGIN+'/#website'},'breadcrumb':{'@id':url+'#breadcrumb'}},{'@type':'BreadcrumbList','@id':url+'#breadcrumb','itemListElement':[{'@type':'ListItem','position':i+1,'name':name,'item':u} for i,(name,u) in enumerate([('Products',ORIGIN+'/products.html'),('MXene Materials',ORIGIN+'/products/mxene-materials.html'),(p['name'],url)])]}]};head+='<script type="application/ld+json">'+json.dumps(graph,ensure_ascii=False)+'</script>'
+ header=re.search(r'<header\b[\s\S]*?</header>',old)[0];footer=re.search(r'<footer\b[\s\S]*?</footer>',old)[0];scripts=''.join(re.findall(r'<script[^>]+src=[^>]+></script>',old));quote='../contact.html?'+urlencode({'inquiry_type':'Request for Quote','product_interest':p['name']});tds=p['mxene']['tds'];props=''.join('<tr><th scope="row">'+h.escape(x['name'])+'</th><td>'+h.escape(x['value'])+'</td></tr>' for x in p['additionalProperty']);nav=[('overview','Overview'),('specifications','Specifications'),('request-quote','Request Quote'),('selection-guide','Selection Guide'),('characterization','Characterization'),('storage','Storage'),('documentation','Documentation'),('faq','FAQ'),('related-products','Related Products')]
+ body='<div class="mxene-sticky-shell"><div class="product-detail-context"><div class="container"><div class="breadcrumb"><a href="../products.html">Products</a> / <a href="mxene-materials.html">MXene Materials</a> / HF-Etched Accordion Ti₃C₂Tₓ</div></div></div><nav class="product-detail-nav" data-product-detail-nav="true" aria-label="Product sections"><div class="container">'+''.join('<a href="#'+a+'">'+b+'</a>' for a,b in nav)+'</div></nav></div>'
+ body+='<section class="section" id="overview"><div class="container product-detail-layout"><aside class="structure-panel"><img src="'+p['websiteImage']+'" width="1500" height="1200" class="mxene-microscopy" data-product-image="scientific" data-website-branded="true" alt="'+p['mxene']['primaryImageAlt']+'"><p class="product-image-caption">Representative characterization; not lot-specific.</p><a class="btn secondary mxene-quick-tds" href="'+tds+'">Technical Data Sheet (PDF)</a></aside><article class="detail-panel"><p class="detail-kicker">Available by RFQ | '+CODE+'</p><h1>'+p['name']+'</h1><p>HF etching of Ti₃AlC₂ produces representative accordion-like stacked lamellae. This multilayer grade is offered for technical evaluation of layered-powder processing, interfaces and composite integration; morphology alone does not establish application performance.</p><p>The existing LiF/HCl-derived Ti₃C₂Tₓ multilayer powder is a separate clay-like grade. Its representative conductivity is 1000 ± 500 S/cm, compared with 10–100 S/cm reported for this HF-etched grade. Measurement conditions are unspecified, so these values are not a controlled performance comparison.</p><section id="specifications"><h2>Key specifications</h2><p>HF etching · Multilayer powder · Dark-purple appearance · Representative conductivity 10–100 S/cm · Specific surface area 15 ± 5 m²/g (method unspecified).</p></section><section id="request-quote" class="ecommerce-rfq-panel"><h2>Request a technical quotation</h2><p>Grade A: −200 mesh precursor, nominal post-etching size 2–50 µm. Grade B: −400 mesh precursor, nominal post-etching size 2–20 µm. Please specify your preferred grade, quantity and evaluation requirements. Availability, lead time, quantities and pricing require confirmation.</p><a class="btn" href="'+h.escape(quote,quote=True)+'">Request Quote</a><a class="btn secondary" href="'+h.escape(quote.replace('Request+for+Quote','Technical+Discussion'),quote=True)+'">Technical Discussion</a></section></article></div></section>'
+ sections=[('selection-guide','Technical Selection Guide','<p>Select this grade when accordion-like stacked lamellae and an HF preparation route match your evaluation. Consider the nominal precursor-size option and processing route. Water solubility is poor (supplier-reported, qualitative). Qualitative supplier description; no quantitative water-solubility measurement method or result was provided. Compare against the LiF/HCl grade under matched preparation and measurement conditions before drawing conclusions.</p>'),('characterization','Representative Characterization','<p>Representative supplier-reported information; not guaranteed release specifications. No particular conductivity or surface-area measurement method is claimed.</p><div class="characterization-table-wrap"><table class="characterization-table">'+props+'</table></div><div class="characterization-media">'+''.join('<figure><img src="'+r['website']+'" width="1500" height="1200" data-product-image="scientific" alt="HF-etched accordion Ti₃C₂Tₓ '+('XRD' if r['object']==73 else 'SEM')+' representative characterization"><figcaption>Representative characterization; not lot-specific. '+r['scaleBar']+'.</figcaption></figure>' for r in records[1:])+'</div>'),('storage','Storage and Handling','<p>'+p['mxene']['storage']+'</p>'),('documentation','Documentation and Quality','<p>Representative technical information is provided for research and evaluation. Values may vary with preparation, manufacturing and measurement conditions. Current-lot documentation may be requested where available; no guaranteed release specification or lot-specific COA is implied.</p><a class="btn secondary" href="'+tds+'">Technical Data Sheet (PDF)</a>'),('faq','Product FAQ','<details><summary>Is this the existing LiF/HCl multilayer grade?</summary><p>No. This is the HF-etched accordion-like multilayer grade from a distinct preparation route; the clay-like LiF/HCl product remains unchanged.</p></details><details><summary>Are Grade A and Grade B purchasable package SKUs?</summary><p>No. They describe precursor mesh and nominal post-etching size options for quotation. No ordering price or package is approved.</p></details><details><summary>Is the surface area a BET result?</summary><p>The source does not state a measurement method. The 15 ± 5 m²/g value is representative and is not described as BET.</p></details><details><summary>Are purity and conductivity guaranteed?</summary><p>No purity guarantee or lot-specific result is provided. Conductivity is representative supplier-reported information with unspecified measurement conditions.</p></details>'),('related-products','Related MXene Products','<p><a href="ti3c2tx-mxene-multilayer-powder.html">LiF/HCl-derived Ti₃C₂Tₓ multilayer powder</a> — separate clay-like grade.</p><p><a href="ti3c2tx-mxene-single-few-layer-powder.html">Ti₃C₂Tₓ single-/few-layer powder</a> — compare layer form and preparation requirements.</p>')]
+ for id,title,content in sections:body+='<section class="section" id="'+id+'"><div class="container"><article class="detail-panel"><h2>'+title+'</h2>'+content+'</article></div></section>'
+ (ROOT/p['url'].lstrip('/')).write_text('<!doctype html><html lang="en"><head>'+head+'</head><body class="mxene-accordion-page">'+header+'<main>'+body+'</main>'+footer+scripts+'</body></html>\n')
+
+def integrate(p,records):
+ # Marker-bounded additions preserve the approved existing page bytes around them.
+ for name in ('products.html','products/mxene-materials.html'):
+  path=ROOT/name;text=path.read_text();text=re.sub(r'<!-- accordion-rfq:start -->[\s\S]*?<!-- accordion-rfq:end -->','',text);prefix='products/' if name=='products.html' else ''
+  addition='<!-- accordion-rfq:start --><section class="section" id="hf-accordion-mxene"><div class="container"><h2>HF-Etched Accordion MXene — Request Quote</h2><article class="product-card" data-product-card data-section="mxene-materials"><div class="product-card__media"><a href="'+prefix+SLUG+'.html"><img data-product-image="scientific" class="product-photo mxene-microscopy" src="'+p['websiteImage']+'" width="1500" height="1200" alt="HF-etched accordion Ti₃C₂Tₓ representative SEM"></a></div><div class="product-card__body"><span class="product-card__mode">Request Quote</span><h3><a href="'+prefix+SLUG+'.html">'+p['name']+'</a></h3><p>Representative conductivity: 10–100 S/cm · HF etching · Grade A / Grade B technical options.</p><a class="btn secondary" href="'+prefix+SLUG+'.html#request-quote">Request Quote</a></div></article></div></section><!-- accordion-rfq:end -->'
+  if name=='products.html':
+   fragment=addition.replace('<section class="section" id="hf-accordion-mxene">','<div id="hf-accordion-mxene">').replace('</section><!-- accordion-rfq:end -->','</div><!-- accordion-rfq:end -->')
+   fragment=fragment.replace('<div class="container">','').replace('</article></div></div><!--','</article></div><!--').replace('<article class="product-card"','<div class="product-card-grid"><article class="product-card"').replace('</article>','</article></div>')
+   text=re.sub(r'(<section id="mxene-materials"[\s\S]*?)(</section>)',lambda m:m[1]+fragment+m[2],text,count=1)
+  else:text=text.replace('</main>',addition+'</main>')
+  search=ROOT/'assets/js/product-search-index.js'
+  if search.is_file():text=re.sub(r'product-search-index\.js\?v=[^"\s]+','product-search-index.js?v='+sha(search)[:12],text)
+  path.write_text(text)
+ path=ROOT/'products/ti3c2tx-mxene-multilayer-powder.html';text=path.read_text();text=re.sub(r'<!-- accordion-related:start -->[\s\S]*?<!-- accordion-related:end -->','',text);anchor='<section class="section" id="related-products">';assert anchor in text;text=text.replace(anchor,anchor+'<!-- accordion-related:start --><div class="container"><p>Looking for an HF-etched accordion morphology? <a href="'+SLUG+'.html">Compare the distinct HF-etched accordion multilayer grade</a> (RFQ only).</p></div><!-- accordion-related:end -->');path.write_text(text)
+ # Append just the new canonical page; the existing XML bytes stay untouched.
+ path=ROOT/'sitemap.xml';text=path.read_text();url=ORIGIN+p['url'];text=re.sub(r'\s*<url>\s*<loc>'+re.escape(url)+r'</loc>[\s\S]*?</url>','',text);entry='\n<url><loc>'+url+'</loc>'+''.join('<image:image><image:loc>'+ORIGIN+r['website']+'</image:loc></image:image>' for r in records)+'</url>';path.write_text(text.replace('</urlset>',entry+'\n</urlset>'))
+ # Explicit manifest only. Even unused clean variants are included for review readiness.
+ manifest=ROOT/'cloudflare-site/public-assets.txt';paths=set(manifest.read_text().splitlines());paths.add(p['url'].lstrip('/'));paths.add(p['mxene']['tds'].lstrip('/'));paths.add('assets/css/mxene-accordion.css')
+ for r in records:
+  for k in ('website','merchant'):paths.add(r[k].lstrip('/'))
+ manifest.write_text('\n'.join(sorted(paths))+'\n')
+if __name__=='__main__':
+ p=product();records=resize_new_sems() if '--resize-sems' in sys.argv else images();
+ if '--documents' in sys.argv:tds(p,records)
+ page(p,records);integrate(p,records);subprocess.run([os.environ.get('WINIGEN_NODE','node'),'scripts/finalize-mxene-accordion.mjs'],cwd=ROOT,check=True);print('Generated RFQ page, six derivatives, representative TDS and bounded integrations. Commerce/feed untouched.')

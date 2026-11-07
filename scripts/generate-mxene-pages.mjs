@@ -1,7 +1,8 @@
 import { reconcileMxeneCatalogOrder } from './mxene-catalog-order.mjs';
 import { readFile, writeFile as writeRawFile } from 'node:fs/promises';
 import { formatProductChemistry } from './format-product-chemistry.mjs';
-const writeFile = (path, html) => writeRawFile(path, formatProductChemistry(html));
+import { synchronizeProductImages } from './product-image-presentation.mjs';
+const writeFile = (path, html) => writeRawFile(path, synchronizeProductImages(formatProductChemistry(html), source.products));
 import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { renderStaticCommerceCards, updateProductPage, updateFamilyPage, productDocumentation } from '../seo/build-seo.mjs';
@@ -160,3 +161,9 @@ let finalMaster=await read('products.html');
 if(!finalMaster.includes('assets/css/mxene.css')) finalMaster=finalMaster.replace('</head>','<link rel="stylesheet" href="assets/css/mxene.css"></head>');
 if(!finalMaster.includes('assets/js/mxene-presentation.js')) finalMaster=finalMaster.replace('</body>','<script src="assets/js/mxene-presentation.js" defer></script></body>');
 await writeFile(resolve(root,'products.html'),finalMaster);
+
+// Preserve the separately source-backed HF accordion RFQ supplement.
+if (products.some(p => p.slug === 'ti3c2tx-mxene-accordion-multilayer-powder')) {
+ const { execFileSync } = await import('node:child_process');
+ execFileSync(process.env.MERCHANT_IMAGE_PYTHON || 'python3', [resolve(root, 'seo/build_mxene_accordion_review.py')], {cwd:root,stdio:'inherit'});
+}

@@ -53,6 +53,9 @@ test('manifest accepts only recognized production website artifact locations', (
     'assets/images/source.zip',
     'assets/documents/internal.pdf',
     'docs/internal-review.html',
+    'docs/merchant-images/checkpoint-b-final/sources/brochure/original-source.pdf',
+    'docs/merchant-images/mxene-visual-qa/sources/legacy/source.png',
+    'tmp/mxene-image-presentation/source/original.png',
     'private-orders/unapproved-quote.html',
     'products/nested/example.html'
   ]) {

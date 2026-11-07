@@ -9,7 +9,7 @@ import {productPriceIncrement,normalizeApprovedUnitAmount} from '../../scripts/n
 import {resolveCart,createCartCheckoutSession} from '../src/index.js';
 const root=resolve(import.meta.dirname,'../..'),read=p=>readFile(resolve(root,p),'utf8');
 const semantic=JSON.parse(await read('catalog/products.source.json')),commerce=JSON.parse(await read('ecommerce/catalog.source.json'));
-const all=semantic.products.filter(p=>p.mxene),newProducts=all.filter(p=>p.mxene.compositionNote);
+const all=semantic.products.filter(p=>p.mxene && p.purchaseMode!=='rfq'),newProducts=all.filter(p=>p.mxene.compositionNote);
 const prices={"Ti3C2Tx":[[310,475,825],[700,1125,2125]],"Nb2CTx":[[325,425,750],[625,1000,1700]],"V2CTx":[[300,425,750],[625,1000,1700]],"Mo2CTx":[[625,900,1750],[900,1600,2700]],"Ti2CTx":[[275,400,650],[500,725,1200]],"Ti3CNTx":[[325,425,750],[575,875,1500]],"TiVCTx":[[425,575,1050],[675,1100,1950]],"TiNbCTx":[[425,575,1050],[675,1100,1950]],"Mo2TiC2Tx":[[350,475,800],[750,1250,2200]],"Ta4C3Tx":[[425,550,1000],[750,1250,2200]],"Nb4C3Tx":[[425,550,1000],[750,1250,2200]],"V4C3Tx":[[425,550,1000]]};
 const nodes=x=>!x||typeof x!=='object'?[]:[x,...Object.values(x).flatMap(nodes)];
 const schemas=html=>[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(m=>nodes(JSON.parse(m[1])));
@@ -43,7 +43,7 @@ test('family and master contain 23 direct cards and correct 1 g comparisons; sea
  const family=await read('products/mxene-materials.html'),master=await read('products.html'),sitemap=await read('sitemap.xml');
  assert.match(family,/Online Ordering — 23 Products/);assert.doesNotMatch(family,/Additional MXene Powders — Request Quote|Compare RFQ/);
  assert.equal((family.match(/data-listing-add/g)||[]).length,23);
- const list=schemas(family).find(s=>s['@type']==='ItemList');assert.equal(list.itemListElement.length,23);assert.ok(list.itemListElement.every(e=>e.item['@id'].endsWith('#product')));
+ const list=schemas(family).find(s=>s['@type']==='ItemList');assert.equal(list.itemListElement.length,24);assert.ok(list.itemListElement.filter(e=>!e.item['@id'].includes('accordion')).every(e=>e.item['@id'].endsWith('#product')));
  for(const p of all){
   assert.ok(master.includes(p.slug+'.html'));assert.ok(sitemap.includes(p.url));const cp=commerce.products.find(c=>c.slug===p.slug);
   const row=[...family.matchAll(/<tr>[\s\S]*?<\/tr>/g)].map(x=>x[0]).find(x=>x.includes(p.slug+'.html'));
@@ -51,7 +51,7 @@ test('family and master contain 23 direct cards and correct 1 g comparisons; sea
   assert.ok(row.includes(p.mxene.compositionNote?'Representative conductivity':'Typical conductivity'));
  }
  const ctx={window:{}};vm.runInNewContext(await read('assets/js/product-search-index.js'),ctx);vm.runInNewContext(await read('assets/js/product-search.js'),ctx);
- for(const [q,n] of Object.entries({Ti2C:2,Ti3CN:2,TiVC:2,TiNbC:2,Mo2TiC2:2,Ta4C3:2,Nb4C3:2,V4C3:1,mxene:23,'multilayer mxene':12,'single few layer mxene':11}))assert.equal(ctx.WinigenProductSearch.searchView(ctx.window.WINIGEN_PRODUCT_SEARCH_INDEX.records,q).sectionCounts['mxene-materials'],n,q);
+ for(const [q,n] of Object.entries({Ti2C:2,Ti3CN:2,TiVC:2,TiNbC:2,Mo2TiC2:2,Ta4C3:2,Nb4C3:2,V4C3:1,mxene:24,'multilayer mxene':13,'single few layer mxene':11}))assert.equal(ctx.WinigenProductSearch.searchView(ctx.window.WINIGEN_PRODUCT_SEARCH_INDEX.records,q).sectionCounts['mxene-materials'],n,q);
 });
 test('all 45 new variants pass real cart resolution and mocked Stripe Checkout Session price/SKU routing',async()=>{
  const original=globalThis.fetch;let count=0;

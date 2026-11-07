@@ -1,0 +1,76 @@
+/* Type-aware, noncropping image stages. Only explicitly classified product images. */
+.product-card__media:has(img[data-product-image="scientific"]) {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  position: relative;
+  min-height: 0;
+  padding: 12px 12px 44px;
+}.product-card__media:has(img[data-product-image="scientific"]) .product-media-link {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: 12px 12px 44px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+}.product-card__media img[data-product-image="scientific"] {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  transform: none !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+}.product-detail-layout img[data-product-image="scientific"] {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 520px !important;
+  object-fit: contain !important;
+  transform: none !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+.product-detail-layout :is(.structure-panel,.product-visual-frame,.detail-image,.detail-visual):has(img[data-product-image="scientific"]) {
+  min-width: 0;
+  height: auto;
+}
+.product-visual-frame:has(img[data-product-image="scientific"]) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  aspect-ratio: auto;
+}
+.product-visual-frame img[data-product-image="scientific"] { flex: 0 1 auto; }
+.product-detail-layout img[data-product-image="scientific"] + .product-tds-link {
+  position: static;
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .product-detail-layout img[data-product-image="scientific"] { max-height: 260px !important; }
+}
+
+/* Precomposed website derivatives already reserve a logo footer. */
+.product-card__media:has(img[data-website-branded="true"]) { padding: 0; }
+.product-card__media:has(img[data-website-branded="true"]) .product-media-link { inset: 0; }
+.product-card__media:has(img[data-website-branded="true"])::after,
+.product-visual-frame:has(img[data-website-branded="true"])::after { display: none; }
+
+.product-image-caption { margin: 10px 0 0; font-size: .78rem; line-height: 1.5; color: var(--text-muted, #52627a); text-align: center; max-width: 42em; }
+@media (max-width: 600px) {
+  .product-detail-layout :is(.structure-panel,.product-visual-frame,.detail-image,.detail-visual):has(img[data-product-image="scientific"]) { min-height: 0; padding: 12px; }
+}
+@media (max-width: 600px) {
+  body:has(.mxene-sticky-shell) .structure-panel:has(img[data-product-image="scientific"]) { gap: 8px; }
+  .product-detail-layout .product-image-caption { margin-top: 0; }
+}
