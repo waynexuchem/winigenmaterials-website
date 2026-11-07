@@ -1,7 +1,7 @@
 # HF accordion MXene pricing proposal — not active commerce
 
 Product: WM-MX-TI3C2TX-ACC-ML. Status remains RFQ-only.
-Owner-proposed research-package prices, USD:
+Owner-approved proposed research-package prices, USD:
 
 | Proposed quantity | Proposed price | Existing Ti3C2Tx multilayer price | Difference |
 |---|---:|---:|---:|
@@ -9,7 +9,9 @@ Owner-proposed research-package prices, USD:
 | 2 g | $525 | $475 | +10.53% |
 | 5 g | $900 | $825 | +9.09% |
 
-These are a commercial proposal only, approximately 10% above the existing
+Wayne explicitly approved use of this proposed ladder during final readiness
+review. Commercial activation remains out of scope; the product stays RFQ-only.
+These prices are approximately 10% above the existing
 LiF/HCl-derived multilayer grade. They are not approved supplier availability,
 an active offer, an ordering schedule, or a package/SKU definition.
 
