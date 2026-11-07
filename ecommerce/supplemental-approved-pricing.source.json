@@ -2740,6 +2740,47 @@
           "packageBasis": "OWNER_AUTHORIZED_LOCAL_REVIEW"
         }
       ]
+    },
+    {
+      "slug": "ti3c2tx-mxene-accordion-multilayer-powder",
+      "skuBase": "WM-MX-TI3C2TX-ACC-ML",
+      "name": "Ti₃C₂Tₓ MXene — Accordion-Structured Multilayer Powder (HF-Etched)",
+      "defaultPackageId": "A-1G",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "currency": "usd",
+      "approvalProvenance": [
+        "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL"
+      ],
+      "packages": [
+        {
+          "id": "A-1G",
+          "label": "1 g — Grade A",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "unitAmount": 34000,
+          "packageBasis": "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL"
+        },
+        {
+          "id": "A-2G",
+          "label": "2 g — Grade A",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "unitAmount": 52500,
+          "packageBasis": "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL"
+        },
+        {
+          "id": "A-5G",
+          "label": "5 g — Grade A",
+          "unit": "g",
+          "quantity": 5,
+          "netWeightGrams": 5,
+          "unitAmount": 90000,
+          "packageBasis": "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL"
+        }
+      ]
     }
   ]
 }

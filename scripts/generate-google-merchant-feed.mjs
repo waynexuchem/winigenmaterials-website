@@ -120,6 +120,17 @@ function parseGoogleMeasure(value) {
   return { amount, unit: match[2] };
 }
 
+// A canonical availability hold overrides checkout eligibility; never infer stock from payment acceptance.
+export function merchantAvailabilityFor(product) {
+  if (!product?.merchantAvailability) return 'in_stock';
+  const { status, confirmationReference } = product.merchantAvailability;
+  if (status === 'UNCONFIRMED') return null;
+  if (status !== 'CONFIRMED_IN_STOCK' || typeof confirmationReference !== 'string' || !confirmationReference.trim()) {
+    throw new Error(`${product.slug}: Merchant availability requires explicit confirmation evidence.`);
+  }
+  return 'in_stock';
+}
+
 function exclusionReason(semanticProduct, commerceProduct) {
   if (semanticProduct.retired === true || commerceProduct?.retired === true) return 'retired';
   if (semanticProduct.disabled === true || semanticProduct.published === false || commerceProduct?.disabled === true) return 'disabled_or_unpublished';
@@ -127,6 +138,7 @@ function exclusionReason(semanticProduct, commerceProduct) {
   if (semanticProduct.commerceStatus !== 'active_checkout') return 'not_public_checkout';
   if (semanticProduct.schemaOfferEligible !== true) return 'not_offer_eligible';
   if (commerceProduct.commercialStatus !== 'ONLINE_CHECKOUT') return 'manual_review_or_rfq';
+  if (merchantAvailabilityFor(commerceProduct) === null) return 'unconfirmed_availability';
   if (!semanticProduct.url) return 'missing_landing_page';
   if (!semanticProduct.image) return 'missing_image';
   return null;
@@ -366,7 +378,7 @@ export async function generateGoogleMerchantFeed({ semanticSource, commerceSourc
         description: merchantDescription(semanticProduct, variant.label),
         link: merchantLandingUrl.href,
         imageLink: imageUrl.href,
-        availability: 'in_stock',
+        availability: merchantAvailabilityFor(commerceProduct),
         price: `${(variant.unitAmount / 100).toFixed(2)} USD`,
         unitPricingMeasure,
         unitPricingBaseMeasure: unitPricingMeasure ? UNIT_PRICING_BASE_MEASURE : null,

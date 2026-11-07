@@ -9000,7 +9000,7 @@
       "slug": "ti3c2tx-mxene-accordion-multilayer-powder",
       "url": "/products/ti3c2tx-mxene-accordion-multilayer-powder.html",
       "name": "Ti₃C₂Tₓ MXene — Accordion-Structured Multilayer Powder (HF-Etched)",
-      "description": "HF-etched Ti3C2Tx MXene with accordion-like stacked lamellae. Representative conductivity 10–100 S/cm; −200 and −400 mesh precursor grades. Request a technical quotation.",
+      "description": "HF-etched Ti3C2Tx MXene with accordion-like stacked lamellae. Representative conductivity 10–100 S/cm; Grade A, −200 mesh precursor, 2–50 µm nominal post-etching size. Research packages available for online ordering with fulfillment review.",
       "family": "mxene-materials",
       "category": "MXene Powder",
       "sku": "WM-MX-TI3C2TX-ACC-ML",
@@ -9016,11 +9016,12 @@
         "Ti3C2Tx accordion multilayer powder"
       ],
       "commercialIntents": [
-        "HF-etched accordion Ti3C2Tx technical quotation"
+        "HF-etched accordion Ti3C2Tx Grade A online ordering",
+        "HF-etched accordion Ti3C2Tx bulk quotation"
       ],
-      "commerceStatus": "rfq",
-      "purchaseMode": "rfq",
-      "schemaOfferEligible": false,
+      "commerceStatus": "active_checkout",
+      "purchaseMode": "online",
+      "schemaOfferEligible": true,
       "additionalProperty": [
         {
           "name": "Material",
@@ -9063,16 +9064,16 @@
           "value": "−200 mesh / 2–50 µm"
         },
         {
-          "name": "Grade B precursor / nominal post-etching size",
-          "value": "−400 mesh / 2–20 µm"
-        },
-        {
           "name": "Water solubility",
           "value": "Poor (supplier-reported, qualitative)"
         },
         {
           "name": "Storage",
           "value": "Sealed and dry; preferably vacuum or inert atmosphere"
+        },
+        {
+          "name": "Grade",
+          "value": "Grade A"
         }
       ],
       "mxene": {
@@ -9080,7 +9081,7 @@
         "ascii": "Ti3C2Tx",
         "form": "Multilayer powder",
         "layer": "Multilayer",
-        "size": "Grade A: 2–50 µm; Grade B: 2–20 µm (nominal post-etching)",
+        "size": "Grade A: 2–50 µm (nominal post-etching)",
         "conductivity": "10–100 S/cm",
         "terminations": "–O, –OH, –F, –Cl",
         "singleFewLayer": false,
@@ -9108,17 +9109,12 @@
             "name": "Grade A",
             "precursor": "−200 mesh",
             "nominalPostEtchingSize": "2–50 µm"
-          },
-          {
-            "name": "Grade B",
-            "precursor": "−400 mesh",
-            "nominalPostEtchingSize": "2–20 µm"
           }
         ],
         "issueDate": "2026-11-07",
         "waterSolubilityQualification": "Qualitative supplier description; no quantitative water-solubility measurement method or result was provided."
       },
-      "rfqSchemaType": "WebPage"
+      "ecommerceSlug": "ti3c2tx-mxene-accordion-multilayer-powder"
     }
   ]
 }

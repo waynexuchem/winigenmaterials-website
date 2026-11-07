@@ -823,7 +823,7 @@ function approvedOffers(product) {
     url: `${siteUrl}${product.url}`,
     price: (packageVariant.unitAmount / 100).toFixed(2),
     priceCurrency,
-    availability: 'https://schema.org/InStock',
+    ...(commerce.merchantAvailability?.status === 'UNCONFIRMED' ? {} : { availability: 'https://schema.org/InStock' }),
     itemCondition: 'https://schema.org/NewCondition',
     eligibleQuantity: {
       '@type': 'QuantitativeValue',

@@ -15,7 +15,7 @@ const mxeneCssVersion = createHash('sha256').update(await read('assets/css/mxene
 const mainJsVersion = createHash('sha256').update(await read('assets/js/main.js')).digest('hex').slice(0,12);
 const source = JSON.parse(await read('catalog/products.source.json'));
 const commerce = JSON.parse(await read('ecommerce/catalog.source.json'));
-const products = source.products.filter(p => p.family === 'mxene-materials');
+const products = source.products.filter(p => p.family === 'mxene-materials' && !p.mxene?.technicalGradeOptions);
 const detailReference = await read('products/ethylene-carbonate-ec.html');
 const familyReference = await read('products/battery-active-materials.html');
 const esc = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');

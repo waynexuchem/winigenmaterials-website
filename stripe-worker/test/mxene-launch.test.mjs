@@ -10,7 +10,7 @@ const root=resolve(import.meta.dirname,'../..');
 const read=p=>readFile(resolve(root,p),'utf8');
 const semantic=JSON.parse(await read('catalog/products.source.json'));
 const source=JSON.parse(await read('ecommerce/catalog.source.json'));
-const products=semantic.products.filter(p=>p.family==='mxene-materials' && p.commerceStatus==='active_checkout' && !p.mxene.compositionNote);
+const products=semantic.products.filter(p=>p.family==='mxene-materials' && p.commerceStatus==='active_checkout' && !p.mxene.compositionNote && !p.mxene.technicalGradeOptions);
 const expected=[["ti3c2tx",false,[1,2,5],[310,475,825]],["ti3c2tx",true,[1,2,5],[700,1125,2125]],["nb2ctx",false,[1,2,5],[325,425,750]],["nb2ctx",true,[0.5,1,2],[625,1000,1700]],["v2ctx",false,[1,2,5],[300,425,750]],["v2ctx",true,[0.5,1,2],[625,1000,1700]],["mo2ctx",false,[1,2,5],[625,900,1750]],["mo2ctx",true,[0.5,1,2],[900,1600,2700]]];
 const packageRows=[];
 for(const [formula,few,quantities,prices] of expected){
@@ -23,9 +23,9 @@ test('MXene launch has exactly eight products, twenty-four intended packages, an
  assert.equal(products.length,8);assert.equal(packageRows.length,24);
  const master=await read('products.html');
  const section=master.match(/<section id="mxene-materials"[\s\S]*?<\/section>/)[0];
- assert.equal((section.match(/data-listing-add/g)||[]).length,23);
+ assert.equal((section.match(/data-listing-add/g)||[]).length,24);
  assert.equal((section.match(/class="product-card"/g)||[]).length,24);
- assert.equal((section.match(/product-card__mode[^>]*>Request Quote</g)||[]).length,1);
+ assert.equal((section.match(/product-card__mode[^>]*>Request Quote</g)||[]).length,0);
  assert.doesNotMatch(section,/class="container"|product-card--family/);
  assert.match(master,/class="tab" href="#mxene-materials"/);
  const context={};vm.runInNewContext(await read('assets/js/product-search.js'),context);
@@ -87,7 +87,7 @@ test('MXene pages have matched offers and prices, safe terminology, related link
  }
  const family=await read('products/mxene-materials.html');assert.doesNotMatch(family,/"@type":\s*"Product"/);assert.match(family,/"@type":\s*"CollectionPage"/);assert.match(family,/"@type":\s*"ItemList"/);
  assert.equal(sitemap.split('<loc>https://www.winigenmaterials.com/products/mxene-materials.html</loc>').length-1,1);
- const feed=await generateGoogleMerchantFeed();const mxeneItems=feed.items.filter(x=>x.source.slug.includes('-mxene-'));assert.equal(mxeneItems.length,69);assert.equal(new Set(mxeneItems.map(x=>x.source.slug)).size,23);assert.deepEqual(new Set(mxeneItems.map(x=>x.productType)),new Set(['Science & Laboratory > Nanomaterials > MXene Materials']));
+ const feed=await generateGoogleMerchantFeed();const mxeneItems=feed.items.filter(x=>x.source.slug.includes('-mxene-'));assert.equal(mxeneItems.length,72);assert.equal(new Set(mxeneItems.map(x=>x.source.slug)).size,24);assert.deepEqual(new Set(mxeneItems.map(x=>x.productType)),new Set(['Science & Laboratory > Nanomaterials > MXene Materials']));
 });
 
 test('Nb source grade, scientific labels and documentation are consistent', async()=>{

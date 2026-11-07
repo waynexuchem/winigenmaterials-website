@@ -6,10 +6,10 @@ from pypdf import PdfReader
 ROOT=Path(__file__).resolve().parents[1];SLUG='ti3c2tx-mxene-accordion-multilayer-powder';SOURCE_MANIFEST=ROOT/'catalog/mxene-accordion-images.source.json'
 class AccordionReview(unittest.TestCase):
  def setUp(self):self.p=next(p for p in json.loads((ROOT/'catalog/products.source.json').read_text())['products'] if p['slug']==SLUG);self.doc=html.parse(str(ROOT/self.p['url'].lstrip('/')))
- def test_distinct_identity_and_rfq_only(self):
-  rows=json.loads((ROOT/'catalog/products.source.json').read_text())['products'];self.assertEqual(sum(p['family']=='mxene-materials' for p in rows),24);self.assertEqual(sum(p['sku']==self.p['sku'] for p in rows),1);self.assertEqual((self.p['purchaseMode'],self.p['commerceStatus'],self.p['schemaOfferEligible']),('rfq','rfq',False));self.assertNotIn(SLUG,(ROOT/'ecommerce/catalog.source.json').read_text())
- def test_no_offer_or_commerce_control(self):
-  graphs=[json.loads(n.text) for n in self.doc.xpath('//script[@type="application/ld+json"]')];types=[x.get('@type') for g in graphs for x in g.get('@graph',[g])];self.assertIn('WebPage',types);self.assertNotIn('Product',types);self.assertNotIn('Offer',types);self.assertFalse(self.doc.xpath('//*[contains(text(),"Add to Cart")]'));self.assertNotIn(SLUG,(ROOT/'feeds/google-merchant.xml').read_text())
+ def test_distinct_identity_and_grade_a_direct_order(self):
+  rows=json.loads((ROOT/'catalog/products.source.json').read_text())['products'];self.assertEqual(sum(p['family']=='mxene-materials' for p in rows),24);self.assertEqual(sum(p['sku']==self.p['sku'] for p in rows),1);self.assertEqual((self.p['purchaseMode'],self.p['commerceStatus'],self.p['schemaOfferEligible']),('online','active_checkout',True));self.assertIn(SLUG,(ROOT/'ecommerce/catalog.source.json').read_text())
+ def test_three_grade_a_offers_with_fulfillment_review(self):
+  graphs=[json.loads(n.text) for n in self.doc.xpath('//script[@type="application/ld+json"]')];products=[x for g in graphs for x in g.get('@graph',[g]) if x.get('@type')=='Product'];self.assertEqual(len(products),1);offers=products[0]['offers'];self.assertEqual([x['price'] for x in offers],['340.00','525.00','900.00']);self.assertTrue(all('-A-' in x['sku'] and x.get('availability')=='https://schema.org/InStock' for x in offers));self.assertEqual(len(self.doc.xpath('//*[@data-add-to-cart]')),1);self.assertIn(SLUG,(ROOT/'feeds/google-merchant.xml').read_text());self.assertIn('Orders remain pending fulfillment review after payment.',''.join(self.doc.xpath('//main//text()')))
  def test_committed_source_records_and_approved_public_hashes(self):
   manifest=json.loads(SOURCE_MANIFEST.read_text());rows=manifest['records'];self.assertEqual([r['object'] for r in rows],[71,72,73]);self.assertTrue(all(r['page']==5 for r in rows));self.assertRegex(manifest['sourcePDFSHA256'],r'^[a-f0-9]{64}$')
   for r in rows:
@@ -48,6 +48,7 @@ class AccordionReview(unittest.TestCase):
    for k in ('merchant','website'):
     rect=r['presentation'][k]['fieldPixels'];self.assertGreaterEqual(rect[2]/1500,.75);self.assertLessEqual(rect[2]/1500,.80);self.assertAlmostEqual(rect[2]/rect[3],910/768,places=2)
     if k=='website':self.assertLess(rect[1]+rect[3],1025)
- def test_new_record_never_gains_price_or_package_skus(self):
-  self.assertFalse(any(k in self.p for k in ('price','prices','packages','variants','ecommerceSlug')));self.assertEqual(len(self.p['mxene']['technicalGradeOptions']),2)
+ def test_grade_b_is_not_offered(self):
+  self.assertEqual(self.p['mxene']['technicalGradeOptions'],[{'name':'Grade A','precursor':'−200 mesh','nominalPostEtchingSize':'2–50 µm'}]);self.assertNotIn('Grade B',''.join(self.doc.xpath('//main//text()')))
+  product=next(p for p in json.loads((ROOT/'ecommerce/catalog.source.json').read_text())['products'] if p['slug']==SLUG);self.assertEqual([v['id'] for v in product['packages']],['A-1G','A-2G','A-5G'])
 if __name__=='__main__':unittest.main()

@@ -9,17 +9,17 @@ test('every canonical product and active variant has one consistent commerce sta
   const report = await runCommerceClassificationAudit();
   assert.deepEqual(report.issues, []);
   assert.equal(report.coverage.canonicalProducts, 124);
-  assert.equal(report.coverage.ecommerceProducts, 97);
-  assert.equal(report.coverage.activeVariants, 493);
-  assert.equal(report.matrix.filter(row => row.variantKey).length, 493);
+  assert.equal(report.coverage.ecommerceProducts, 98);
+  assert.equal(report.coverage.activeVariants, 496);
+  assert.equal(report.matrix.filter(row => row.variantKey).length, 496);
   assert.equal(new Set(report.matrix.map(row => row.productSlug)).size, 124);
   assert.deepEqual(report.productStateCounts, {
-    DIRECT_CHECKOUT: 80,
-    RFQ_ONLY: 39,
+    DIRECT_CHECKOUT: 81,
+    RFQ_ONLY: 38,
     DIRECT_CHECKOUT_REVIEW: 5
   });
   assert.deepEqual(report.variantStateCounts, {
-    DIRECT_CHECKOUT: 392,
+    DIRECT_CHECKOUT: 395,
     RFQ_ONLY: 72,
     DIRECT_CHECKOUT_REVIEW: 29
   });

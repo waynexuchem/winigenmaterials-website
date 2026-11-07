@@ -31,7 +31,8 @@
       "ta4c3tx-mxene-single-few-layer-powder": 100,
       "nb4c3tx-mxene-multilayer-powder": 100,
       "nb4c3tx-mxene-single-few-layer-powder": 100,
-      "v4c3tx-mxene-multilayer-powder": 100
+      "v4c3tx-mxene-multilayer-powder": 100,
+      "ti3c2tx-mxene-accordion-multilayer-powder": 100
     }
   },
   "aggregateOrderReviewThresholdGrams": 10000,
@@ -8201,7 +8202,12 @@
       "name": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP)",
       "category": "Battery Solvents",
       "grade": "Battery grade",
-      "listingSpecificationOrder": ["Grade", "Appearance", "Purity", "Moisture"],
+      "listingSpecificationOrder": [
+        "Grade",
+        "Appearance",
+        "Purity",
+        "Moisture"
+      ],
       "commercialStatus": "ONLINE_CHECKOUT",
       "shippingClass": "STANDARD_RD",
       "currency": "usd",
@@ -8286,7 +8292,12 @@
       "name": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN)",
       "category": "Electrolyte Additives",
       "grade": "Battery grade",
-      "listingSpecificationOrder": ["Grade", "Appearance", "Water", "Assay"],
+      "listingSpecificationOrder": [
+        "Grade",
+        "Appearance",
+        "Water",
+        "Assay"
+      ],
       "commercialStatus": "ONLINE_CHECKOUT",
       "shippingClass": "STANDARD_RD",
       "currency": "usd",
@@ -8385,7 +8396,11 @@
       "name": "Lithium difluorobis(oxalato)phosphate (LiDFOP) in EMC — 20 wt%",
       "category": "Custom Electrolyte Formulations",
       "grade": "Battery grade",
-      "listingSpecificationOrder": ["Grade", "Appearance", "Water"],
+      "listingSpecificationOrder": [
+        "Grade",
+        "Appearance",
+        "Water"
+      ],
       "commercialStatus": "ONLINE_CHECKOUT",
       "shippingClass": "STANDARD_RD",
       "currency": "usd",
@@ -8463,6 +8478,68 @@
           "pricingStatus": "APPROVED_RETAIL"
         }
       ]
+    },
+    {
+      "skuBase": "WM-MX-TI3C2TX-ACC-ML",
+      "slug": "ti3c2tx-mxene-accordion-multilayer-powder",
+      "name": "Ti₃C₂Tₓ MXene — Accordion-Structured Multilayer Powder (HF-Etched)",
+      "category": "MXene Materials",
+      "grade": "Grade A · −200 mesh precursor · 2–50 µm nominal post-etching size",
+      "commercialStatus": "ONLINE_CHECKOUT",
+      "shippingClass": "STANDARD_RD",
+      "launchPhase": "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL",
+      "currency": "usd",
+      "defaultPackageId": "A-1G",
+      "packages": [
+        {
+          "id": "A-1G",
+          "label": "1 g — Grade A",
+          "unit": "g",
+          "quantity": 1,
+          "netWeightGrams": 1,
+          "unitAmount": 34000,
+          "packageBasis": "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL",
+          "shippingWeightGrams": 1,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "A-2G",
+          "label": "2 g — Grade A",
+          "unit": "g",
+          "quantity": 2,
+          "netWeightGrams": 2,
+          "unitAmount": 52500,
+          "packageBasis": "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL",
+          "shippingWeightGrams": 2,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        },
+        {
+          "id": "A-5G",
+          "label": "5 g — Grade A",
+          "unit": "g",
+          "quantity": 5,
+          "netWeightGrams": 5,
+          "unitAmount": 90000,
+          "packageBasis": "OWNER_APPROVED_20261107_HF_ACCORDION_GRADE_A_RETAIL",
+          "shippingWeightGrams": 5,
+          "shippingWeightBasis": "NET_CONTENT_PROXY",
+          "approvalStatus": "ACTIVE",
+          "packageBasisConfirmationStatus": "ACTIVE",
+          "pricingStatus": "APPROVED_RETAIL"
+        }
+      ],
+      "merchantAvailability": {
+        "status": "CONFIRMED_IN_STOCK",
+        "confirmationReference": "OWNER_CONFIRMED_SUPPLIER_AVAILABILITY_20261107_GRADE_A"
+      },
+      "fulfillmentReviewRequired": true,
+      "directOrderCeilingGrams": 5
     }
   ]
 }

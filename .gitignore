@@ -48,3 +48,5 @@ stripe-worker/wrangler.production.jsonc
 !scripts/build-product-image-presentation.mjs
 
 !scripts/finalize-mxene-accordion.mjs
+
+!scripts/asset-fingerprint.mjs

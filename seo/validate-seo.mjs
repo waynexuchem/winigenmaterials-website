@@ -278,7 +278,7 @@ for (const product of productSource.products) {
       if (Number(offer.price) !== expected.unitAmount / 100) errors.push(`${pagePath}: Offer ${expected.key} price differs from the canonical catalog.`);
       if (offer.priceCurrency !== 'USD') errors.push(`${pagePath}: Offer ${expected.key} currency is not USD.`);
       if (offer.url !== canonical) errors.push(`${pagePath}: Offer ${expected.key} URL does not match the canonical product URL.`);
-      if (offer.availability !== 'https://schema.org/InStock') {
+      if (ecommerceProduct.merchantAvailability?.status === 'UNCONFIRMED' ? offer.availability !== undefined : offer.availability !== 'https://schema.org/InStock') {
         crawlStats.commercialSchemaMismatches += 1;
         errors.push(`${pagePath}: Offer ${expected.key} availability is inconsistent with the canonical commerce status.`);
       }

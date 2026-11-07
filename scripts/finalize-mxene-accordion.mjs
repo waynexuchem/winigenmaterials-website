@@ -4,6 +4,13 @@ import {formatProductChemistry} from './format-product-chemistry.mjs';
 import {buildImageDiscovery} from '../seo/build-image-discovery.mjs';
 const root=resolve(import.meta.dirname,'..'),slug='ti3c2tx-mxene-accordion-multilayer-powder';
 const p=JSON.parse(await readFile(resolve(root,'catalog/products.source.json'),'utf8')).products.find(p=>p.slug===slug),url='https://www.winigenmaterials.com'+p.url;
+if(p.schemaOfferEligible){
+ const page=await readFile(resolve(root,p.url.slice(1)),'utf8');
+ const graphs=[...page.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
+ const entity=graphs.flatMap(g=>g['@graph']||[g]).find(g=>g['@type']==='Product');
+ if(!entity?.offers?.length)throw Error('Direct product lacks complete Product/Offer schema.');
+ p.listSchemaEntity={'@id':entity['@id'],url:entity.url,name:entity.name};
+}
 // Locate JSON value spans so unrelated readable JSON-LD bytes are preserved.
 export function appendRfqListEntry(raw,product=p){
  let i=0;const objects=[];const ws=()=>{while(/\s/.test(raw[i]||'')&&i<raw.length)i++;};
@@ -15,7 +22,16 @@ export function appendRfqListEntry(raw,product=p){
  }
  value();ws();if(i!==raw.length)throw Error('Trailing JSON content');const edits=[];
  for(const node of objects){if(node.data['@type']!=='ItemList'||!node.props.itemListElement)continue;const list=node.props.itemListElement;
-  if(list.entries.some(e=>JSON.stringify(e.data).includes(product.url)))continue;
+  const existing=list.entries.find(e=>JSON.stringify(e.data).includes(product.url));
+  if(existing){
+   if(product.schemaOfferEligible===true){
+    const old=raw.slice(existing.start,existing.end),entry={...existing.data,item:product.listSchemaEntity||{'@id':'https://www.winigenmaterials.com'+product.url+'#product'}};
+    const indent=(raw.slice(raw.lastIndexOf('\n',existing.start)+1,existing.start).match(/^\s*/)||[''])[0];
+    const next=JSON.stringify(entry,null,2).split('\n').map((line,index)=>index?indent+line:line).join('\n');
+    if(next!==old)edits.push({start:existing.start,end:existing.end,text:next});
+   }
+   continue;
+  }
   const entry={'@type':'ListItem',position:list.entries.length+1,item:{'@type':'WebPage','@id':'https://www.winigenmaterials.com'+product.url+'#webpage',url:'https://www.winigenmaterials.com'+product.url,name:product.name}};
   const last=list.entries.at(-1),anchor=last?.end??list.start+1;const lineStart=raw.lastIndexOf('\n',last?.start??anchor)+1;const indent=(raw.slice(lineStart,last?.start??anchor).match(/^\s*/)||[''])[0];
   const pretty=JSON.stringify(entry,null,2).split('\n').map(l=>indent+l).join('\n');

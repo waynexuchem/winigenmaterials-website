@@ -45,12 +45,12 @@ function schemaNodes(value) {
 
 test('feed includes only image-backed direct-checkout products and active variants', () => {
   assert.equal(result.stats.baseProductsEvaluated, 124);
-  assert.equal(result.stats.commerceProductsEvaluated, 97);
-  assert.equal(result.stats.productsEmitted, 85);
-  assert.equal(result.stats.variantsEmitted, 421);
+  assert.equal(result.stats.commerceProductsEvaluated, 98);
+  assert.equal(result.stats.productsEmitted, 86);
+  assert.equal(result.stats.variantsEmitted, 424);
   assert.equal(result.stats.exclusions.manual_review_or_rfq, 12);
   assert.equal(result.stats.exclusions.missing_image ?? 0, 0);
-  assert.equal(result.stats.exclusions.not_in_commerce_catalog, 27);
+  assert.equal(result.stats.exclusions.not_in_commerce_catalog, 26);
   for (const item of result.items) {
     assert.equal(item.source.commercialStatus, 'ONLINE_CHECKOUT');
     assert.equal(item.source.schemaOfferEligible, true);
@@ -343,6 +343,7 @@ test('every canonical direct-sale Merchant-eligible product is represented', () 
       && product.commerceStatus === 'active_checkout'
       && product.schemaOfferEligible === true
       && commerceProduct?.commercialStatus === 'ONLINE_CHECKOUT'
+      && commerceProduct?.merchantAvailability?.status !== 'UNCONFIRMED'
       && Boolean(product.url)
       && Boolean(product.image);
   });
