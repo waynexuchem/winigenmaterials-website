@@ -91,7 +91,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIPF6",
-      "image": "/assets/images/chemical-structures/lithium-hexafluorophosphate-lipf6.png",
+      "image": "/assets/images/product-images/merchant/lithium-hexafluorophosphate-lipf6-clean-v2.png",
       "aliases": [
         "LiPF6"
       ],
@@ -167,7 +167,13 @@
       "familyFaqWaterProperty": "Water",
       "chemicalName": "Lithium hexafluorophosphate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/lithium-hexafluorophosphate-lipf6.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-hexafluorophosphate-lipf6-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-hexafluorophosphate-lipf6-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-difluorophosphate-lipo-2-f-2",
@@ -177,7 +183,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIPO2F2",
-      "image": "/assets/images/chemical-structures/lithium-difluorophosphate-lipo-2-f-2.png",
+      "image": "/assets/images/product-images/merchant/lithium-difluorophosphate-lipo-2-f-2-clean-v2.png",
       "aliases": [
         "LiPO2F2",
         "LiDFP"
@@ -255,7 +261,13 @@
       "approvedSynonyms": [],
       "alternateAbbreviations": [
         "LiDFP"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/lithium-difluorophosphate-lipo-2-f-2.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-difluorophosphate-lipo-2-f-2-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-difluorophosphate-lipo-2-f-2-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-bis-oxalato-borate-libob",
@@ -265,7 +277,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIBOB",
-      "image": "/assets/images/chemical-structures/lithium-bis-oxalato-borate-libob.png",
+      "image": "/assets/images/product-images/merchant/lithium-bis-oxalato-borate-libob-clean-v2.png",
       "aliases": [
         "LiBOB"
       ],
@@ -351,7 +363,13 @@
         }
       },
       "researchUse": "Research focuses on salt-blend evaluation and electrode-electrolyte compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/lithium-bis-oxalato-borate-libob.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-bis-oxalato-borate-libob-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-bis-oxalato-borate-libob-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-difluoro-oxalate-borate-liodfb",
@@ -361,7 +379,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIODFB",
-      "image": "/assets/images/chemical-structures/lithium-difluoro-oxalate-borate-liodfb.png",
+      "image": "/assets/images/product-images/merchant/lithium-difluoro-oxalate-borate-liodfb-clean-v2.png",
       "aliases": [
         "LiODFB",
         "LiDFOB"
@@ -457,7 +475,13 @@
       "approvedSynonyms": [],
       "alternateAbbreviations": [
         "LiDFOB"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/lithium-difluoro-oxalate-borate-liodfb.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-difluoro-oxalate-borate-liodfb-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-difluoro-oxalate-borate-liodfb-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
@@ -467,7 +491,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LITFSI",
-      "image": "/assets/images/chemical-structures/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.png",
+      "image": "/assets/images/product-images/merchant/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-clean-v2.png",
       "aliases": [
         "LiTFSI"
       ],
@@ -550,7 +574,13 @@
         "Lithium bis-(trifluoromethane-sulphonyl)imide"
       ],
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
@@ -560,7 +590,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIFSI",
-      "image": "/assets/images/chemical-structures/lithium-bis-fluorosulfonyl-imide-lifsi.png",
+      "image": "/assets/images/product-images/merchant/lithium-bis-fluorosulfonyl-imide-lifsi-clean-v2.png",
       "aliases": [
         "LiFSI"
       ],
@@ -635,7 +665,13 @@
       "cardCategory": "Lithium Salt",
       "chemicalName": "Lithium bis(fluorosulfonyl)imide",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/lithium-bis-fluorosulfonyl-imide-lifsi.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-bis-fluorosulfonyl-imide-lifsi-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-bis-fluorosulfonyl-imide-lifsi-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-tetrafluoroborate-libf-4",
@@ -645,7 +681,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIBF4",
-      "image": "/assets/images/chemical-structures/lithium-tetrafluoroborate-libf-4.png",
+      "image": "/assets/images/product-images/merchant/lithium-tetrafluoroborate-libf-4-clean-v2.png",
       "aliases": [
         "LiBF4"
       ],
@@ -730,7 +766,13 @@
       "cardCategory": "Lithium Salt",
       "chemicalName": "Lithium tetrafluoroborate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/lithium-tetrafluoroborate-libf-4.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-tetrafluoroborate-libf-4-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-tetrafluoroborate-libf-4-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "ethylene-carbonate-ec",
@@ -740,7 +782,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EC",
-      "image": "/assets/images/chemical-structures/ethylene-carbonate-ec.png",
+      "image": "/assets/images/product-images/merchant/ethylene-carbonate-ec-clean-v2.png",
       "aliases": [
         "EC"
       ],
@@ -823,7 +865,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Ethylene carbonate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/ethylene-carbonate-ec.png",
+      "merchantImage": "/assets/images/product-images/merchant/ethylene-carbonate-ec-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/ethylene-carbonate-ec-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "dimethyl-carbonate-dmc",
@@ -833,7 +881,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DMC",
-      "image": "/assets/images/chemical-structures/dimethyl-carbonate-dmc.png",
+      "image": "/assets/images/product-images/merchant/dimethyl-carbonate-dmc-clean-v2.png",
       "aliases": [
         "DMC"
       ],
@@ -912,7 +960,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Dimethyl carbonate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/dimethyl-carbonate-dmc.png",
+      "merchantImage": "/assets/images/product-images/merchant/dimethyl-carbonate-dmc-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/dimethyl-carbonate-dmc-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "diethyl-carbonate-dec",
@@ -922,7 +976,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DEC",
-      "image": "/assets/images/chemical-structures/diethyl-carbonate-dec.png",
+      "image": "/assets/images/product-images/merchant/diethyl-carbonate-dec-clean-v2.png",
       "aliases": [
         "DEC"
       ],
@@ -1001,7 +1055,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Diethyl carbonate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/diethyl-carbonate-dec.png",
+      "merchantImage": "/assets/images/product-images/merchant/diethyl-carbonate-dec-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/diethyl-carbonate-dec-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "ethyl-methyl-carbonate-emc",
@@ -1011,7 +1071,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EMC",
-      "image": "/assets/images/chemical-structures/ethyl-methyl-carbonate-emc.png",
+      "image": "/assets/images/product-images/merchant/ethyl-methyl-carbonate-emc-clean-v2.png",
       "aliases": [
         "EMC"
       ],
@@ -1090,7 +1150,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Ethyl methyl carbonate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/ethyl-methyl-carbonate-emc.png",
+      "merchantImage": "/assets/images/product-images/merchant/ethyl-methyl-carbonate-emc-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/ethyl-methyl-carbonate-emc-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "propylene-carbonate-pc",
@@ -1100,7 +1166,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-PC",
-      "image": "/assets/images/chemical-structures/propylene-carbonate-pc.png",
+      "image": "/assets/images/product-images/merchant/propylene-carbonate-pc-clean-v2.png",
       "aliases": [
         "PC"
       ],
@@ -1179,7 +1245,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Propylene carbonate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/propylene-carbonate-pc.png",
+      "merchantImage": "/assets/images/product-images/merchant/propylene-carbonate-pc-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/propylene-carbonate-pc-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "ethyl-acetate-ea",
@@ -1189,7 +1261,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EA",
-      "image": "/assets/images/chemical-structures/ethyl-acetate-ea.png",
+      "image": "/assets/images/product-images/merchant/ethyl-acetate-ea-clean-v2.png",
       "aliases": [
         "EA"
       ],
@@ -1234,7 +1306,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Ethyl acetate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/ethyl-acetate-ea.png",
+      "merchantImage": "/assets/images/product-images/merchant/ethyl-acetate-ea-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/ethyl-acetate-ea-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "2-2-difluoroethyl-acetate-dfea",
@@ -1244,7 +1322,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DFEA",
-      "image": "/assets/images/chemical-structures/2-2-difluoroethyl-acetate-dfea.png",
+      "image": "/assets/images/product-images/merchant/2-2-difluoroethyl-acetate-dfea-clean-v2.png",
       "aliases": [
         "DFEA"
       ],
@@ -1313,7 +1391,13 @@
         "Water"
       ],
       "researchUse": "Research focuses on solvent-blend screening and interfacial compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/2-2-difluoroethyl-acetate-dfea.png",
+      "merchantImage": "/assets/images/product-images/merchant/2-2-difluoroethyl-acetate-dfea-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/2-2-difluoroethyl-acetate-dfea-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-2-dimethoxyethane-dme",
@@ -1323,7 +1407,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DME",
-      "image": "/assets/images/chemical-structures/1-2-dimethoxyethane-dme.png",
+      "image": "/assets/images/product-images/merchant/1-2-dimethoxyethane-dme-clean-v2.png",
       "aliases": [
         "DME"
       ],
@@ -1386,7 +1470,13 @@
       "relatedProductSlugs": [
         "tris-2-2-2-trifluoroethyl-phosphate-tfep",
         "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/1-2-dimethoxyethane-dme.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-2-dimethoxyethane-dme-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-2-dimethoxyethane-dme-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
@@ -1396,7 +1486,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-TTE",
-      "image": "/assets/images/chemical-structures/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.png",
+      "image": "/assets/images/product-images/merchant/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-clean-v2.png",
       "aliases": [
         "TTE"
       ],
@@ -1485,7 +1575,13 @@
         "Water"
       ],
       "researchUse": "Research focuses on diluent selection and electrolyte blend compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
@@ -1495,7 +1591,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-FEMC",
-      "image": "/assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png",
+      "image": "/assets/images/product-images/merchant/methyl-2-2-2-trifluoroethyl-carbonate-femc-clean-v2.png",
       "aliases": [
         "FEMC"
       ],
@@ -1565,7 +1661,13 @@
       "relatedProductSlugs": [
         "tris-2-2-2-trifluoroethyl-phosphate-tfep",
         "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png",
+      "merchantImage": "/assets/images/product-images/merchant/methyl-2-2-2-trifluoroethyl-carbonate-femc-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/methyl-2-2-2-trifluoroethyl-carbonate-femc-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
@@ -1575,7 +1677,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-TFEC",
-      "image": "/assets/images/chemical-structures/bis-2-2-2-trifluoroethyl-carbonate-tfec.png",
+      "image": "/assets/images/product-images/merchant/bis-2-2-2-trifluoroethyl-carbonate-tfec-clean-v2.png",
       "aliases": [
         "TFEC"
       ],
@@ -1638,7 +1740,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Bis(2,2,2-trifluoroethyl) carbonate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/bis-2-2-2-trifluoroethyl-carbonate-tfec.png",
+      "merchantImage": "/assets/images/product-images/merchant/bis-2-2-2-trifluoroethyl-carbonate-tfec-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/bis-2-2-2-trifluoroethyl-carbonate-tfec-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "vinylene-carbonate-vc",
@@ -1648,7 +1756,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-VC",
-      "image": "/assets/images/chemical-structures/vinylene-carbonate-vc.png",
+      "image": "/assets/images/product-images/merchant/vinylene-carbonate-vc-clean-v2.png",
       "aliases": [
         "VC"
       ],
@@ -1743,7 +1851,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "VC",
       "cardCategory": "Additive",
-      "chemicalName": "Vinylene Carbonate"
+      "chemicalName": "Vinylene Carbonate",
+      "originalImage": "/assets/images/chemical-structures/vinylene-carbonate-vc.png",
+      "merchantImage": "/assets/images/product-images/merchant/vinylene-carbonate-vc-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/vinylene-carbonate-vc-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "vinyl-ethylene-carbonate-vec",
@@ -1753,7 +1867,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-VEC",
-      "image": "/assets/images/chemical-structures/vinyl-ethylene-carbonate-vec.png",
+      "image": "/assets/images/product-images/merchant/vinyl-ethylene-carbonate-vec-clean-v2.png",
       "aliases": [
         "VEC"
       ],
@@ -1834,7 +1948,13 @@
         }
       },
       "researchUse": "Research focuses on additive screening and electrolyte formulation. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/vinyl-ethylene-carbonate-vec.png",
+      "merchantImage": "/assets/images/product-images/merchant/vinyl-ethylene-carbonate-vec-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/vinyl-ethylene-carbonate-vec-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-3-propanediol-cyclic-sulfate-ts",
@@ -1844,7 +1964,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TS",
-      "image": "/assets/images/chemical-structures/1-3-propanediol-cyclic-sulfate-ts.png",
+      "image": "/assets/images/product-images/merchant/1-3-propanediol-cyclic-sulfate-ts-clean-v2.png",
       "aliases": [
         "TS"
       ],
@@ -1881,7 +2001,13 @@
       "cardCategory": "Additive",
       "chemicalName": "1,3-Propanediol cyclic sulfate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/1-3-propanediol-cyclic-sulfate-ts.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-3-propanediol-cyclic-sulfate-ts-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-3-propanediol-cyclic-sulfate-ts-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
@@ -1891,7 +2017,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-DTD",
-      "image": "/assets/images/chemical-structures/1-3-2-dioxathiolane-2-2-dioxide-dtd.png",
+      "image": "/assets/images/product-images/merchant/1-3-2-dioxathiolane-2-2-dioxide-dtd-clean-v2.png",
       "aliases": [
         "DTD"
       ],
@@ -1986,7 +2112,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "DTD",
       "cardCategory": "Additive",
-      "chemicalName": "1,3,2-Dioxathiolane 2,2-dioxide"
+      "chemicalName": "1,3,2-Dioxathiolane 2,2-dioxide",
+      "originalImage": "/assets/images/chemical-structures/1-3-2-dioxathiolane-2-2-dioxide-dtd.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-3-2-dioxathiolane-2-2-dioxide-dtd-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-3-2-dioxathiolane-2-2-dioxide-dtd-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "prop-1-ene-1-3-sultone-pst",
@@ -1996,7 +2128,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-PST",
-      "image": "/assets/images/chemical-structures/prop-1-ene-1-3-sultone-pst.png",
+      "image": "/assets/images/product-images/merchant/prop-1-ene-1-3-sultone-pst-clean-v2.png",
       "aliases": [
         "PST"
       ],
@@ -2076,7 +2208,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "PST",
       "cardCategory": "Additive",
-      "chemicalName": "Prop-1-ene-1,3-sultone"
+      "chemicalName": "Prop-1-ene-1,3-sultone",
+      "originalImage": "/assets/images/chemical-structures/prop-1-ene-1-3-sultone-pst.png",
+      "merchantImage": "/assets/images/product-images/merchant/prop-1-ene-1-3-sultone-pst-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/prop-1-ene-1-3-sultone-pst-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
@@ -2086,7 +2224,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-FEC",
-      "image": "/assets/images/chemical-structures/4-fluoro-1-3-dioxolan-2-one-fec.png",
+      "image": "/assets/images/product-images/merchant/4-fluoro-1-3-dioxolan-2-one-fec-clean-v2.png",
       "aliases": [
         "FEC",
         "fluoroethylene carbonate"
@@ -2179,7 +2317,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "FEC",
       "cardCategory": "Additive",
-      "chemicalName": "4-Fluoro-1,3-dioxolan-2-one"
+      "chemicalName": "4-Fluoro-1,3-dioxolan-2-one",
+      "originalImage": "/assets/images/chemical-structures/4-fluoro-1-3-dioxolan-2-one-fec.png",
+      "merchantImage": "/assets/images/product-images/merchant/4-fluoro-1-3-dioxolan-2-one-fec-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/4-fluoro-1-3-dioxolan-2-one-fec-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "succinonitrile-sn",
@@ -2189,7 +2333,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-SN",
-      "image": "/assets/images/chemical-structures/succinonitrile-sn.png",
+      "image": "/assets/images/product-images/merchant/succinonitrile-sn-clean-v2.png",
       "aliases": [
         "SN"
       ],
@@ -2279,7 +2423,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "SN",
       "cardCategory": "Additive",
-      "chemicalName": "Succinonitrile"
+      "chemicalName": "Succinonitrile",
+      "originalImage": "/assets/images/chemical-structures/succinonitrile-sn.png",
+      "merchantImage": "/assets/images/product-images/merchant/succinonitrile-sn-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/succinonitrile-sn-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "adiponitrile-adn",
@@ -2289,7 +2439,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-ADN",
-      "image": "/assets/images/chemical-structures/adiponitrile-adn.png",
+      "image": "/assets/images/product-images/merchant/adiponitrile-adn-clean-v2.png",
       "aliases": [
         "ADN"
       ],
@@ -2365,7 +2515,13 @@
         }
       },
       "researchUse": "Research focuses on nitrile-containing electrolyte blends and compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/adiponitrile-adn.png",
+      "merchantImage": "/assets/images/product-images/merchant/adiponitrile-adn-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/adiponitrile-adn-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
@@ -2375,7 +2531,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-DENE",
-      "image": "/assets/images/chemical-structures/1-2-bis-2-cyanoethoxy-ethane-dene.png",
+      "image": "/assets/images/product-images/merchant/1-2-bis-2-cyanoethoxy-ethane-dene-clean-v2.png",
       "aliases": [
         "DENE"
       ],
@@ -2412,7 +2568,13 @@
       "cardCategory": "Additive",
       "chemicalName": "1,2-Bis(2-cyanoethoxy)ethane",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/1-2-bis-2-cyanoethoxy-ethane-dene.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-2-bis-2-cyanoethoxy-ethane-dene-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-2-bis-2-cyanoethoxy-ethane-dene-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-3-6-hexanetricarbonitrile-htcn",
@@ -2422,7 +2584,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-HTCN",
-      "image": "/assets/images/chemical-structures/1-3-6-hexanetricarbonitrile-htcn.png",
+      "image": "/assets/images/product-images/merchant/1-3-6-hexanetricarbonitrile-htcn-clean-v2.png",
       "aliases": [
         "HTCN"
       ],
@@ -2508,7 +2670,13 @@
       "cardCategory": "Electrolyte Additives",
       "approvedSynonyms": [],
       "researchUse": "Research focuses on nitrile-containing formulations and compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/1-3-6-hexanetricarbonitrile-htcn.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-3-6-hexanetricarbonitrile-htcn-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-3-6-hexanetricarbonitrile-htcn-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
@@ -2518,7 +2686,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-MMDS",
-      "image": "/assets/images/chemical-structures/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.png",
+      "image": "/assets/images/product-images/merchant/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-clean-v2.png",
       "aliases": [
         "MMDS"
       ],
@@ -2599,7 +2767,13 @@
       "cardCategory": "Electrolyte Additives",
       "approvedSynonyms": [],
       "researchUse": "Research focuses on additive concentration and cell-material compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "tris-trimethylsilyl-borate-tmsb",
@@ -2609,7 +2783,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TMSB",
-      "image": "/assets/images/chemical-structures/tris-trimethylsilyl-borate-tmsb.png",
+      "image": "/assets/images/product-images/merchant/tris-trimethylsilyl-borate-tmsb-clean-v2.png",
       "aliases": [
         "TMSB"
       ],
@@ -2646,7 +2820,13 @@
       "cardCategory": "Additive",
       "chemicalName": "Tris(trimethylsilyl)borate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/tris-trimethylsilyl-borate-tmsb.png",
+      "merchantImage": "/assets/images/product-images/merchant/tris-trimethylsilyl-borate-tmsb-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/tris-trimethylsilyl-borate-tmsb-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "tris-trimethylsilyl-phosphate-tmsp",
@@ -2656,7 +2836,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TMSP",
-      "image": "/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png",
+      "image": "/assets/images/product-images/merchant/tris-trimethylsilyl-phosphate-tmsp-clean-v2.png",
       "aliases": [
         "TMSP"
       ],
@@ -2736,7 +2916,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "TMSP",
       "cardCategory": "Additive",
-      "chemicalName": "Tris(trimethylsilyl) phosphate"
+      "chemicalName": "Tris(trimethylsilyl) phosphate",
+      "originalImage": "/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png",
+      "merchantImage": "/assets/images/product-images/merchant/tris-trimethylsilyl-phosphate-tmsp-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/tris-trimethylsilyl-phosphate-tmsp-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-3-propanesultone-ps",
@@ -2746,7 +2932,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-PS",
-      "image": "/assets/images/chemical-structures/1-3-propanesultone-ps.png",
+      "image": "/assets/images/product-images/merchant/1-3-propanesultone-ps-clean-v2.png",
       "aliases": [
         "PS"
       ],
@@ -2836,7 +3022,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "PS",
       "cardCategory": "Additive",
-      "chemicalName": "1,3-Propanesultone"
+      "chemicalName": "1,3-Propanesultone",
+      "originalImage": "/assets/images/chemical-structures/1-3-propanesultone-ps.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-3-propanesultone-ps-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-3-propanesultone-ps-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "trimethylsilyl-phosphite-ttpi",
@@ -2846,7 +3038,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TTPI",
-      "image": "/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png",
+      "image": "/assets/images/product-images/merchant/trimethylsilyl-phosphite-ttpi-clean-v2.png",
       "aliases": [
         "TTPi",
         "TMSPi"
@@ -2886,7 +3078,13 @@
       "approvedSynonyms": [],
       "alternateAbbreviations": [
         "TMSPi"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png",
+      "merchantImage": "/assets/images/product-images/merchant/trimethylsilyl-phosphite-ttpi-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/trimethylsilyl-phosphite-ttpi-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "sodium-hexafluorophosphate-napf-6",
@@ -2896,7 +3094,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAPF6",
-      "image": "/assets/images/chemical-structures/sodium-hexafluorophosphate-napf-6.png",
+      "image": "/assets/images/product-images/merchant/sodium-hexafluorophosphate-napf-6-clean-v2.png",
       "aliases": [
         "NaPF6"
       ],
@@ -2982,7 +3180,13 @@
         }
       },
       "researchUse": "Research focuses on sodium-ion electrolyte formulation and salt-solvent compatibility. Assess concentration, electrode compatibility, and complete-formulation behavior in the intended system.",
-      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions."
+      "evaluationNote": "Compare matched formulations and confirm suitability for the intended electrode chemistry and operating conditions.",
+      "originalImage": "/assets/images/chemical-structures/sodium-hexafluorophosphate-napf-6.png",
+      "merchantImage": "/assets/images/product-images/merchant/sodium-hexafluorophosphate-napf-6-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/sodium-hexafluorophosphate-napf-6-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "sodium-difluoro-oxalate-borate-naodfb",
@@ -2992,7 +3196,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAODFB",
-      "image": "/assets/images/chemical-structures/sodium-difluoro-oxalate-borate-naodfb.png",
+      "image": "/assets/images/product-images/merchant/sodium-difluoro-oxalate-borate-naodfb-clean-v2.png",
       "aliases": [
         "NaDFOB",
         "NaODFB"
@@ -3087,7 +3291,13 @@
       "relatedProductSlugs": [
         "sodium-hexafluorophosphate-napf-6",
         "sodium-bis-fluorosulfonyl-imide-nafsi"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/sodium-difluoro-oxalate-borate-naodfb.png",
+      "merchantImage": "/assets/images/product-images/merchant/sodium-difluoro-oxalate-borate-naodfb-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/sodium-difluoro-oxalate-borate-naodfb-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "potassium-hexafluorophosphate-kpf-6",
@@ -3097,7 +3307,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-KPF6",
-      "image": "/assets/images/chemical-structures/potassium-hexafluorophosphate-kpf-6.png",
+      "image": "/assets/images/product-images/merchant/potassium-hexafluorophosphate-kpf-6-clean-v2.png",
       "aliases": [
         "KPF6"
       ],
@@ -3142,7 +3352,13 @@
       "cardCategory": "Next-Gen Salt",
       "chemicalName": "Potassium hexafluorophosphate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/potassium-hexafluorophosphate-kpf-6.png",
+      "merchantImage": "/assets/images/product-images/merchant/potassium-hexafluorophosphate-kpf-6-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/potassium-hexafluorophosphate-kpf-6-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "latp-d-50-0-3-um",
@@ -3199,7 +3415,7 @@
       "family": "solid-state-electrolytes",
       "category": "Solid-State Electrolytes",
       "sku": "WM-SSE-LATP-040",
-      "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-400nm-powder-photo.jpg",
+      "image": "/assets/images/product-images/merchant-materials/latp-representative-powder-b-clean.png",
       "aliases": [
         "LATP powder",
         "lithium aluminum titanium phosphate"
@@ -3236,7 +3452,14 @@
           "name": "Use case",
           "value": "Separator, current-collector, or electrode coating"
         }
-      ]
+      ],
+      "originalImage": "https://www.winigenmaterials.com/assets/images/solid-state/latp-400nm-powder-photo.jpg",
+      "merchantImage": "/assets/images/product-images/merchant-materials/latp-representative-powder-b-clean.png",
+      "websiteImage": "/assets/images/product-images/website/materials/latp-representative-powder-b-website.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1200,
+      "imageCaption": "Representative packaging and powder imagery; not lot-specific or verified experimental morphology. Shared representative source; limited native resolution."
     },
     {
       "slug": "latp-d-50-0-65-um",
@@ -3246,7 +3469,7 @@
       "family": "solid-state-electrolytes",
       "category": "Solid-State Electrolytes",
       "sku": "WM-SSE-LATP-065",
-      "image": "https://www.winigenmaterials.com/assets/images/solid-state/latp-600nm-powder-photo.jpg",
+      "image": "/assets/images/product-images/merchant-materials/latp-representative-powder-b-clean.png",
       "aliases": [
         "LATP powder",
         "lithium aluminum titanium phosphate"
@@ -3283,7 +3506,14 @@
           "name": "Use case",
           "value": "Separator, current-collector, or electrode coating"
         }
-      ]
+      ],
+      "originalImage": "https://www.winigenmaterials.com/assets/images/solid-state/latp-600nm-powder-photo.jpg",
+      "merchantImage": "/assets/images/product-images/merchant-materials/latp-representative-powder-b-clean.png",
+      "websiteImage": "/assets/images/product-images/website/materials/latp-representative-powder-b-website.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1200,
+      "imageCaption": "Representative packaging and powder imagery; not lot-specific or verified experimental morphology. Shared representative source; limited native resolution."
     },
     {
       "slug": "llzto-powder",
@@ -5218,7 +5448,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-EP",
-      "image": "/assets/images/chemical-structures/ethyl-propionate-ep.png",
+      "image": "/assets/images/product-images/merchant/ethyl-propionate-ep-clean-v2.png",
       "aliases": [
         "EP"
       ],
@@ -5293,7 +5523,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Ethyl propionate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/ethyl-propionate-ep.png",
+      "merchantImage": "/assets/images/product-images/merchant/ethyl-propionate-ep-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/ethyl-propionate-ep-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "methyl-butyrate-mb-battery-grade",
@@ -5309,7 +5545,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-MB",
-      "image": "/assets/images/chemical-structures/methyl-butyrate-structure.png",
+      "image": "/assets/images/product-images/merchant/methyl-butyrate-mb-battery-grade-clean-v2.png",
       "imageAlt": "Chemical structure of methyl butyrate (methyl butanoate), CAS 623-42-7",
       "catalogCardSpecifications": [
         "Grade",
@@ -5402,7 +5638,13 @@
       "alternateAbbreviations": [],
       "primaryAbbreviation": "MB",
       "cardCategory": "Solvent",
-      "chemicalName": "Methyl Butyrate"
+      "chemicalName": "Methyl Butyrate",
+      "originalImage": "/assets/images/chemical-structures/methyl-butyrate-structure.png",
+      "merchantImage": "/assets/images/product-images/merchant/methyl-butyrate-mb-battery-grade-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/methyl-butyrate-mb-battery-grade-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "propyl-propionate-pp",
@@ -5412,7 +5654,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-PP",
-      "image": "/assets/images/chemical-structures/propyl-propionate-pp.png",
+      "image": "/assets/images/product-images/merchant/propyl-propionate-pp-clean-v2.png",
       "aliases": [
         "PP"
       ],
@@ -5487,7 +5729,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Propyl propionate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/propyl-propionate-pp.png",
+      "merchantImage": "/assets/images/product-images/merchant/propyl-propionate-pp-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/propyl-propionate-pp-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "triphenyl-phosphite-tppi",
@@ -5497,7 +5745,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TPPI",
-      "image": "/assets/images/chemical-structures/triphenyl-phosphite-tppi.png",
+      "image": "/assets/images/product-images/merchant/triphenyl-phosphite-tppi-clean-v2.png",
       "aliases": [
         "TPPI"
       ],
@@ -5530,7 +5778,13 @@
       "cardCategory": "Additive",
       "chemicalName": "Triphenyl phosphite",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/triphenyl-phosphite-tppi.png",
+      "merchantImage": "/assets/images/product-images/merchant/triphenyl-phosphite-tppi-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/triphenyl-phosphite-tppi-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "biphenyl-bp",
@@ -5540,7 +5794,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-BP",
-      "image": "/assets/images/chemical-structures/biphenyl-bp.png",
+      "image": "/assets/images/product-images/merchant/biphenyl-bp-clean-v2.png",
       "aliases": [
         "BP"
       ],
@@ -5620,7 +5874,13 @@
       "relatedProductSlugs": [
         "vinyl-ethylene-carbonate-vec",
         "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/biphenyl-bp.png",
+      "merchantImage": "/assets/images/product-images/merchant/biphenyl-bp-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/biphenyl-bp-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "propyl-acetate-pa",
@@ -5630,7 +5890,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-PA",
-      "image": "/assets/images/chemical-structures/propyl-acetate-pa.png",
+      "image": "/assets/images/product-images/merchant/propyl-acetate-pa-clean-v2.png",
       "aliases": [
         "PA"
       ],
@@ -5663,7 +5923,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "Propyl acetate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/propyl-acetate-pa.png",
+      "merchantImage": "/assets/images/product-images/merchant/propyl-acetate-pa-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/propyl-acetate-pa-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "ethylene-sulfite-es",
@@ -5673,7 +5939,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-ES",
-      "image": "/assets/images/chemical-structures/ethylene-sulfite-es.png",
+      "image": "/assets/images/product-images/merchant/ethylene-sulfite-es-clean-v2.png",
       "aliases": [
         "ES",
         "ESI",
@@ -5715,7 +5981,13 @@
       ],
       "identityReview": {
         "ESI": "Retained existing alias pending verification against canonical supplier documentation; ES remains primary."
-      }
+      },
+      "originalImage": "/assets/images/chemical-structures/ethylene-sulfite-es.png",
+      "merchantImage": "/assets/images/product-images/merchant/ethylene-sulfite-es-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/ethylene-sulfite-es-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "hexamethyldisilazane-hmds",
@@ -5725,7 +5997,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-HMDS",
-      "image": "/assets/images/chemical-structures/hexamethyldisilazane-hmds.png",
+      "image": "/assets/images/product-images/merchant/hexamethyldisilazane-hmds-clean-v2.png",
       "aliases": [
         "HMDS"
       ],
@@ -5758,7 +6030,13 @@
       "cardCategory": "Additive",
       "chemicalName": "Hexamethyldisilazane",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/hexamethyldisilazane-hmds.png",
+      "merchantImage": "/assets/images/product-images/merchant/hexamethyldisilazane-hmds-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/hexamethyldisilazane-hmds-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "fluorobenzene-fb",
@@ -5768,7 +6046,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-FB",
-      "image": "/assets/images/chemical-structures/fluorobenzene-fb.png",
+      "image": "/assets/images/product-images/merchant/fluorobenzene-fb-clean-v2.png",
       "aliases": [
         "FB"
       ],
@@ -5801,7 +6079,13 @@
       "cardCategory": "Additive",
       "chemicalName": "Fluorobenzene",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/fluorobenzene-fb.png",
+      "merchantImage": "/assets/images/product-images/merchant/fluorobenzene-fb-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/fluorobenzene-fb-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
@@ -5811,7 +6095,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAFSI",
-      "image": "/assets/images/chemical-structures/sodium-bis-fluorosulfonyl-imide-nafsi.png",
+      "image": "/assets/images/product-images/merchant/sodium-bis-fluorosulfonyl-imide-nafsi-clean-v2.png",
       "aliases": [
         "NaFSI"
       ],
@@ -5906,7 +6190,13 @@
       "relatedProductSlugs": [
         "sodium-hexafluorophosphate-napf-6",
         "sodium-difluoro-oxalate-borate-naodfb"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/sodium-bis-fluorosulfonyl-imide-nafsi.png",
+      "merchantImage": "/assets/images/product-images/merchant/sodium-bis-fluorosulfonyl-imide-nafsi-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/sodium-bis-fluorosulfonyl-imide-nafsi-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "cyclohexylbenzene-chb",
@@ -5916,7 +6206,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-CHB",
-      "image": "/assets/images/chemical-structures/cyclohexylbenzene-chb.png",
+      "image": "/assets/images/product-images/merchant/cyclohexylbenzene-chb-clean-v2.png",
       "aliases": [
         "CHB"
       ],
@@ -5949,7 +6239,13 @@
       "cardCategory": "Additive",
       "chemicalName": "Cyclohexylbenzene",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/cyclohexylbenzene-chb.png",
+      "merchantImage": "/assets/images/product-images/merchant/cyclohexylbenzene-chb-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/cyclohexylbenzene-chb-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-4-butane-sultone-bs",
@@ -5959,7 +6255,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-BS",
-      "image": "/assets/images/chemical-structures/1-4-butane-sultone-bs.png",
+      "image": "/assets/images/product-images/merchant/1-4-butane-sultone-bs-clean-v2.png",
       "aliases": [
         "BS"
       ],
@@ -5992,7 +6288,13 @@
       "cardCategory": "Additive",
       "chemicalName": "1,4-Butane sultone",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/1-4-butane-sultone-bs.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-4-butane-sultone-bs-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-4-butane-sultone-bs-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "sodium-difluorophosphate-napo2f2",
@@ -6002,7 +6304,7 @@
       "family": "next-generation-salts",
       "category": "Next-Gen Salts",
       "sku": "WM-NGS-NAPO2F2",
-      "image": "/assets/images/chemical-structures/sodium-difluorophosphate-napo2f2.png",
+      "image": "/assets/images/product-images/merchant/sodium-difluorophosphate-napo2f2-clean-v2.png",
       "aliases": [
         "NaPO2F2"
       ],
@@ -6092,7 +6394,13 @@
       "relatedProductSlugs": [
         "sodium-hexafluorophosphate-napf-6",
         "sodium-bis-fluorosulfonyl-imide-nafsi"
-      ]
+      ],
+      "originalImage": "/assets/images/chemical-structures/sodium-difluorophosphate-napo2f2.png",
+      "merchantImage": "/assets/images/product-images/merchant/sodium-difluorophosphate-napo2f2-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/sodium-difluorophosphate-napo2f2-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1-3-dioxolane-dol",
@@ -6102,7 +6410,7 @@
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DOL",
-      "image": "/assets/images/chemical-structures/1-3-dioxolane-dol.png",
+      "image": "/assets/images/product-images/merchant/1-3-dioxolane-dol-clean-v2.png",
       "aliases": [
         "DOL"
       ],
@@ -6135,7 +6443,13 @@
       "cardCategory": "Solvent",
       "chemicalName": "1,3-Dioxolane",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/1-3-dioxolane-dol.png",
+      "merchantImage": "/assets/images/product-images/merchant/1-3-dioxolane-dol-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/1-3-dioxolane-dol-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "triallyl-phosphate-tap",
@@ -6145,7 +6459,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TAP",
-      "image": "/assets/images/chemical-structures/triallyl-phosphate-tap.png",
+      "image": "/assets/images/product-images/merchant/triallyl-phosphate-tap-clean-v2.png",
       "aliases": [
         "TAP"
       ],
@@ -6178,7 +6492,13 @@
       "cardCategory": "Additive",
       "chemicalName": "Triallyl phosphate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/triallyl-phosphate-tap.png",
+      "merchantImage": "/assets/images/product-images/merchant/triallyl-phosphate-tap-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/triallyl-phosphate-tap-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-nitrate-lino3",
@@ -6188,7 +6508,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-ADD-LINO3",
-      "image": "/assets/images/chemical-structures/lithium-nitrate-lino3.png",
+      "image": "/assets/images/product-images/merchant/lithium-nitrate-lino3-clean-v2.png",
       "aliases": [
         "LiNO3"
       ],
@@ -6221,7 +6541,13 @@
       "cardCategory": "Lithium Salt",
       "chemicalName": "Lithium nitrate",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/lithium-nitrate-lino3.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-nitrate-lino3-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-nitrate-lino3-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
@@ -6231,7 +6557,7 @@
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-ADD-LIDODFP",
-      "image": "/assets/images/chemical-structures/lithium-difluorobis-oxalato-phosphate-lidodfp.png",
+      "image": "/assets/images/product-images/merchant/lithium-difluorobis-oxalato-phosphate-lidodfp-clean-v2.png",
       "aliases": [
         "LiDODFP",
         "LiDFBOP",
@@ -6279,7 +6605,13 @@
       "relatedProductSlugs": [
         "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt"
       ],
-      "approvedComparisonPage": true
+      "approvedComparisonPage": true,
+      "originalImage": "/assets/images/chemical-structures/lithium-difluorobis-oxalato-phosphate-lidodfp.png",
+      "merchantImage": "/assets/images/product-images/merchant/lithium-difluorobis-oxalato-phosphate-lidodfp-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/lithium-difluorobis-oxalato-phosphate-lidodfp-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "1m-lipf6-ec-emc-3-7-1-vc-electrolyte",
@@ -6377,7 +6709,7 @@
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-TVSI",
-      "image": "/assets/images/chemical-structures/tetravinylsilane-tvsi.png",
+      "image": "/assets/images/product-images/merchant/tetravinylsilane-tvsi-clean-v2.png",
       "aliases": [
         "TVSi"
       ],
@@ -6410,7 +6742,13 @@
       "cardCategory": "Additive",
       "chemicalName": "Tetravinylsilane",
       "approvedSynonyms": [],
-      "alternateAbbreviations": []
+      "alternateAbbreviations": [],
+      "originalImage": "/assets/images/chemical-structures/tetravinylsilane-tvsi.png",
+      "merchantImage": "/assets/images/product-images/merchant/tetravinylsilane-tvsi-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/tetravinylsilane-tvsi-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "ti3c2tx-mxene-multilayer-powder",
@@ -8827,7 +9165,7 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "sourceGeneratedPage": true,
-      "image": "/assets/images/chemical-structures/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.png",
+      "image": "/assets/images/product-images/merchant/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-clean-v2.png",
       "imageAlt": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) chemical structure",
       "description": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) is a fluorinated phosphazene electrolyte additive for high-voltage and safety-oriented electrolyte formulation research.",
       "additionalProperty": [
@@ -8908,7 +9246,13 @@
         "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds"
       ],
       "ecommerceSlug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
-      "imagePresentation": "chemical-structure"
+      "imagePresentation": "chemical-structure",
+      "originalImage": "/assets/images/chemical-structures/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.png",
+      "merchantImage": "/assets/images/product-images/merchant/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
@@ -8928,7 +9272,7 @@
       "commerceStatus": "active_checkout",
       "schemaOfferEligible": true,
       "sourceGeneratedPage": true,
-      "image": "/assets/images/chemical-structures/tris-2-2-2-trifluoroethyl-phosphate-tfep.png",
+      "image": "/assets/images/product-images/merchant/tris-2-2-2-trifluoroethyl-phosphate-tfep-clean-v2.png",
       "imageAlt": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) chemical structure",
       "description": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) is a fluorinated phosphate solvent and cosolvent for reduced-flammability and thermal-safety electrolyte blends research.",
       "additionalProperty": [
@@ -8994,7 +9338,13 @@
         "1-2-dimethoxyethane-dme"
       ],
       "ecommerceSlug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
-      "imagePresentation": "chemical-structure"
+      "imagePresentation": "chemical-structure",
+      "originalImage": "/assets/images/chemical-structures/tris-2-2-2-trifluoroethyl-phosphate-tfep.png",
+      "merchantImage": "/assets/images/product-images/merchant/tris-2-2-2-trifluoroethyl-phosphate-tfep-clean-v2.png",
+      "websiteImage": "/assets/images/product-images/website/artwork/tris-2-2-2-trifluoroethyl-phosphate-tfep-option-a-website-v1.png",
+      "imageKind": "scientific",
+      "websiteImageWidth": 1500,
+      "websiteImageHeight": 1500
     },
     {
       "slug": "ti3c2tx-mxene-accordion-multilayer-powder",

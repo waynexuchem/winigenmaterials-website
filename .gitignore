@@ -50,3 +50,5 @@ stripe-worker/wrangler.production.jsonc
 !scripts/finalize-mxene-accordion.mjs
 
 !scripts/asset-fingerprint.mjs
+
+!scripts/build-chemical-image-integration.mjs

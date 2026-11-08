@@ -1,0 +1,41 @@
+{
+  "products": [
+    "latp-d-50-0-4-um",
+    "latp-d-50-0-65-um"
+  ],
+  "source": "/assets/images/solid-state/latp-400nm-powder-photo.jpg",
+  "sourceSHA256": "3e926e786b005580b8a4a1d7b5734564de27f979c2d275a72df670c84ebb4a9f",
+  "nativeDimensions": [
+    450,
+    736
+  ],
+  "crop": [
+    0,
+    0,
+    450,
+    736
+  ],
+  "nativeClean": "/docs/merchant-images/checkpoint-b-final/native-clean/latp-representative-powder-b.png",
+  "nativeCleanSHA256": "3d9224cb60f6b5f34378f9d576ffd845611959637f323c87d3fb9b63fe69603b",
+  "retainedDimensions": [
+    450,
+    736
+  ],
+  "merchant": "/assets/images/product-images/merchant-materials/latp-representative-powder-b-clean.png",
+  "website": "/assets/images/product-images/website/materials/latp-representative-powder-b-website.png",
+  "finalDimensions": [
+    1500,
+    1500
+  ],
+  "websiteDimensions": [
+    1500,
+    1200
+  ],
+  "merchantSHA256": "9a29a4950b1e905c70ddbeac8754775564d4d0ec88e17eac2ccfca841764610c",
+  "websiteSHA256": "86deb5cf943df132dc49f529dbfaaa31efbb77ac6b3d297381fff0f81a4a9cc1",
+  "resamplingFactor": 1.9293,
+  "processing": "Crop only, proportional Lanczos resampling and neutral padding. No generated microscopy, contrast filter, invented scale or graph redraw. Official website logo outside data only.",
+  "rights": "Owner confirmed modification rights, 2026-11-07",
+  "qualityWarning": "Representative imagery, possibly AI-assisted; not verified experimental morphology. Grades 0.4 / 0.65 share identical source bytes; no artificial grade differences.",
+  "attribution": "300 nm bottom-right Chinese AI attribution excluded by crop; source preserved unchanged. Shared 400/600 source has no visible attribution."
+}

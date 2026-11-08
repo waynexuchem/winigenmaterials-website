@@ -19,7 +19,7 @@ test('PS identity retains CAS, name, URL and image with the monomer formula', ()
   assert.equal(property(ps, 'Formula'), 'C3H6O3S');
   assert.notEqual(property(ps, 'Formula'), 'C6H12O6S2');
   assert.equal(ps.url, '/products/1-3-propanesultone-ps.html');
-  assert.equal(ps.image, '/assets/images/chemical-structures/1-3-propanesultone-ps.png');
+  assert.equal(ps.image, '/assets/images/product-images/merchant/1-3-propanesultone-ps-clean-v2.png');
 });
 
 test('TTPi identity is tris(trimethylsilyl) phosphite, distinct from TMSP phosphate', () => {
@@ -27,7 +27,7 @@ test('TTPi identity is tris(trimethylsilyl) phosphite, distinct from TMSP phosph
   assert.equal(property(ttpi, 'Formula'), 'C9H27O3PSi3');
   assert.notEqual(property(ttpi, 'Formula'), 'C9H33O6PSi3');
   assert.equal(ttpi.url, '/products/trimethylsilyl-phosphite-ttpi.html');
-  assert.equal(ttpi.image, '/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png');
+  assert.equal(ttpi.image, '/assets/images/product-images/merchant/trimethylsilyl-phosphite-ttpi-clean-v2.png');
   assert.equal(tmsp.slug, 'tris-trimethylsilyl-phosphate-tmsp');
   assert.match(tmsp.name, /phosphate/);
   // Existing condensed representation expands to C9H27O4PSi3: three

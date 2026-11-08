@@ -1,0 +1,3538 @@
+{
+  "products": [
+    {
+      "slug": "lithium-hexafluorophosphate-lipf6",
+      "name": "Lithium hexafluorophosphate (LiPF6)",
+      "cas": "21324-40-3",
+      "catalogFormula": "LiPF6",
+      "oldImage": "/assets/images/chemical-structures/lithium-hexafluorophosphate-lipf6.png",
+      "sku": "WM-LS-LIPF6",
+      "cid": 23688915,
+      "formula": "F6LiP",
+      "inchiKey": "AXPLOJNSKRXQPA-UHFFFAOYSA-N",
+      "isomericSmiles": "F[P-](F)(F)(F)(F)F.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "F6P-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "lithium-hexafluorophosphate-lipf6-sdf.sdf": "fb6e88dd4d47362cebcce4c22a29867f564a0f039fe04c3f04422f373efe2846",
+        "lithium-hexafluorophosphate-lipf6-urls.json": "1d5e9c3e777fe61727103056c1fc1e08c480d28c28b5b9d6f3c83a7a4d8f7bb2",
+        "lithium-hexafluorophosphate-lipf6-resolve.json": "3f6a45424d88de0fc23f9ff041116e332e354059a16e033d24542507e817da34",
+        "lithium-hexafluorophosphate-lipf6-properties.json": "51749c49e1efcaa7b43a511b59b62681ddb070c37a44bdbac7c38ec30f8bfa85",
+        "lithium-hexafluorophosphate-lipf6-synonyms.json": "8beea800bed375183813b7284e0b18791beab39e31f3bfdac0ac0f5b72be79bd"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-40-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688915/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688915/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688915/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-hexafluorophosphate-lipf6-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 932.7,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 344.9,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-hexafluorophosphate-lipf6-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-hexafluorophosphate-lipf6-clean-v2.png",
+      "scientificBounds": [
+        249,
+        317,
+        1258,
+        1191
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-hexafluorophosphate-lipf6-scientific-v2.png",
+      "masterSHA256": "5eec2a077c385d0af2aaea2c4427be49155a76e1bdc52efc299164060fc7c490",
+      "merchantSHA256": "0721d5dd8f2c23fe65fc0537e79e7681d260ad6a390a73fe41bd7338d6bcd567",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "7f6f87a89cea3209b7dd676b91fdf84f2af44045563cc2ea861df9877f716125"
+    },
+    {
+      "slug": "lithium-difluorophosphate-lipo-2-f-2",
+      "name": "Lithium difluorophosphate (LiPO2F2)",
+      "cas": "24389-25-1",
+      "catalogFormula": "LiPO2F2",
+      "oldImage": "/assets/images/chemical-structures/lithium-difluorophosphate-lipo-2-f-2.png",
+      "sku": "WM-LS-LIPO2F2",
+      "cid": 23697195,
+      "formula": "F2LiO2P",
+      "inchiKey": "IGILRSKEFZLPKG-UHFFFAOYSA-M",
+      "isomericSmiles": "O=P([O-])(F)F.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "F2O2P-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "alternatives/lithium-difluorophosphate-lipo-2-f-2-properties.json": "1cde2d928bc9a60e327c0352b751442044bbd69d35749b0dd85eb5954b07f693",
+        "alternatives/lithium-difluorophosphate-lipo-2-f-2-synonyms.json": "6b1aaae8915e89646ab443f90ac47dd2537908ec675076e4d2f565ba6cb3d3a7",
+        "alternatives/lithium-difluorophosphate-lipo-2-f-2-resolve.json": "c061d51ebb73f3762b890d20c14469d1ebd30939110869473c12e1cce1117bda",
+        "alternatives/lithium-difluorophosphate-lipo-2-f-2-casAnnotation.json": "c55cc12757eb78b44c4a0020d98e45043f487779afe3f9477a9b641c8dfabaac",
+        "alternatives/lithium-difluorophosphate-lipo-2-f-2-urls.json": "71413b4242573cb769dbbec1ed18daebd1e36755f9d0a920d660e07bb132fb89",
+        "alternatives/lithium-difluorophosphate-lipo-2-f-2-sdf.sdf": "8edd2de670c20c3b425d95b8f938c07d44b559fb86ff900290a04ff06414a4ea"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/SDF?record_type=2d",
+        "casAnnotation": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/23697195/JSON?heading=CAS"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-difluorophosphate-lipo-2-f-2-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 599.3,
+          "y": 939.4,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 344.9,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-difluorophosphate-lipo-2-f-2-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-difluorophosphate-lipo-2-f-2-clean-v2.png",
+      "scientificBounds": [
+        249,
+        371,
+        1274,
+        1138
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-difluorophosphate-lipo-2-f-2-scientific-v2.png",
+      "masterSHA256": "6e7c70d4347506fa94f831b8eeb889c099a6394655891a8d85bc445a2a1740eb",
+      "merchantSHA256": "196500f1588cb19eed8ea8ffa4e9e1fc13ad2aa32ece66ca18b4da773c422270",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "03cfe23be5433508134dfbf357e8f6f2f3cd0926635adfa751133252457c656e"
+    },
+    {
+      "slug": "lithium-bis-oxalato-borate-libob",
+      "name": "Lithium bis(oxalato)borate (LiBOB)",
+      "cas": "244761-29-3",
+      "catalogFormula": "C4BLiO8",
+      "oldImage": "/assets/images/chemical-structures/lithium-bis-oxalato-borate-libob.png",
+      "sku": "WM-LS-LIBOB",
+      "cid": 23677815,
+      "formula": "C4BLiO8",
+      "inchiKey": "NVQAYVUCVASGDK-UHFFFAOYSA-N",
+      "isomericSmiles": "O=C1O[B-]2(OC1=O)OC(=O)C(=O)O2.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "C4BO8-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "lithium-bis-oxalato-borate-libob-urls.json": "4773e7878b0c9f65362dff0046274fdddb6816ed5beb341231081673fd1c0383",
+        "lithium-bis-oxalato-borate-libob-properties.json": "9aa89428edcfefeb9750d32a588cf7732cf0e249115ce426f3c4e99990d9114e",
+        "lithium-bis-oxalato-borate-libob-synonyms.json": "e08405cde4fb93092e7ce5c50cb5057a5c84b3010f136a4f02e23e3d75974aba",
+        "lithium-bis-oxalato-borate-libob-sdf.sdf": "9cc3e9415fb811239ccbdf39b76c2ac57e6731876d465942a3e7961185340185",
+        "lithium-bis-oxalato-borate-libob-resolve.json": "ab83953c862eaad3cd8276f846ba50393568ece30ad6ee63cb36924ae3064723"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/244761-29-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23677815/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23677815/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23677815/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-bis-oxalato-borate-libob-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 800.5,
+          "y": 810.9,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 824.0,
+          "y": 437.7,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-bis-oxalato-borate-libob-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-bis-oxalato-borate-libob-clean-v2.png",
+      "scientificBounds": [
+        223,
+        393,
+        1296,
+        1097
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-bis-oxalato-borate-libob-scientific-v2.png",
+      "masterSHA256": "b13cb08bea050416a2604ff1d77ab07a588a1b858dc47bd86b3111a8fee92794",
+      "merchantSHA256": "7f726c960c30800d7bcb11463a8972769e7c9bee34bc9fa8fb142e378662184d",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "b9968f7d0f10be01243e3a3a0a74619a08e0e0c541e606c6b2639ed787bdfc64"
+    },
+    {
+      "slug": "lithium-difluoro-oxalate-borate-liodfb",
+      "name": "Lithium difluoro oxalate borate (LiODFB)",
+      "cas": "409071-16-5",
+      "catalogFormula": "C2BF2LiO4",
+      "oldImage": "/assets/images/chemical-structures/lithium-difluoro-oxalate-borate-liodfb.png",
+      "sku": "WM-LS-LIODFB",
+      "cid": 91810277,
+      "formula": "C2BF2LiO4",
+      "inchiKey": "MEDDCIKGDMDORY-UHFFFAOYSA-N",
+      "isomericSmiles": "O=C1O[B-](F)(F)OC1=O.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "C2BF2O4-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "lithium-difluoro-oxalate-borate-liodfb-sdf.sdf": "3f7a9f9d3d12e19e73e92de6d406d6ec682bc02507a086909854af6e7f6ef41a",
+        "lithium-difluoro-oxalate-borate-liodfb-resolve.json": "07c9244a35b010a80ae47736b2a233951f6f3151117a31c24e9a1b0788ba55c1",
+        "lithium-difluoro-oxalate-borate-liodfb-synonyms.json": "0e96d57ed693a84f63ad1639a1e08f78a17b79496d9bbcb2b46651600eaa59a2",
+        "lithium-difluoro-oxalate-borate-liodfb-urls.json": "a65abb0bcb1c46a8b3a7029fac433ec6fba8c25a8e413da233d6c6464c033442",
+        "lithium-difluoro-oxalate-borate-liodfb-properties.json": "a76b84dfdf9ee9591194348a5fe545ba55998114b2126d76f289a0c5b11d1e16"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/409071-16-5/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/91810277/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/91810277/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/91810277/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-difluoro-oxalate-borate-liodfb-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 547.6,
+          "y": 845.1,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 832.4,
+          "y": 292.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-difluoro-oxalate-borate-liodfb-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-difluoro-oxalate-borate-liodfb-clean-v2.png",
+      "scientificBounds": [
+        240,
+        248,
+        1284,
+        1243
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-difluoro-oxalate-borate-liodfb-scientific-v2.png",
+      "masterSHA256": "cb24f11704b2c5af61a9aa8d97fb11beb4da63a5207c193b842759433123f2c7",
+      "merchantSHA256": "e404bc9625c13d36d9bf55e3505f75f2623df9ec035f6e58dbad30b5276cd814",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "6179e5541f5cf07ff2aa9e08d745f6af1884e3d6ad3328a30a37fdd9c02e164e"
+    },
+    {
+      "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide (LiTFSI)",
+      "cas": "90076-65-6",
+      "catalogFormula": "LiN(CF3SO2)2",
+      "oldImage": "/assets/images/chemical-structures/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.png",
+      "sku": "WM-LS-LITFSI",
+      "cid": 3816071,
+      "formula": "C2F6LiNO4S2",
+      "inchiKey": "QSZMZKBZAYQGRS-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S(=O)([N-]S(=O)(=O)C(F)(F)F)C(F)(F)F.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "C2F6NO4S2-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "alternatives/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-sdf.sdf": "6070d9f7b26f182f0f705e4c453487da742b6087ef6f9fad9dfc49b8cc0a0bd3",
+        "alternatives/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-properties.json": "6fedfecc666ce60925cf0304ab15d3e50c07901fd4fa43308a8a9c4555adb01c",
+        "alternatives/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-casAnnotation.json": "49bf09f54f9a27870c812158f83228a50e7161b88a0ddb5d56cfc326a515df18",
+        "alternatives/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-urls.json": "323dacb739a4b207c0aad815235b98cb46d376b8b15d8dc3b4bbe64bc241b3da",
+        "alternatives/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-resolve.json": "137f2dc17639768e3a878892bbda208c9451bda5be6439f50518cf3ac90a2f07",
+        "alternatives/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-synonyms.json": "33d950565f51b8131ebb857f0a2fb1186704b44dd9692f31e9594542a46600ec"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/SDF?record_type=2d",
+        "casAnnotation": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/3816071/JSON?heading=CAS"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 863.1,
+          "y": 610.8,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 318.4,
+          "y": 748.6,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-clean-v2.png",
+      "scientificBounds": [
+        222,
+        522,
+        1284,
+        985
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-scientific-v2.png",
+      "masterSHA256": "eb22697cf842ee62be0bbb4fe1471d4445b4766ac625597c746d1d03019f5a84",
+      "merchantSHA256": "1454749487de0a3797457546d90b56f37454c878759c03989ae24f597695859e",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "2811fa15f615ce6981b9525d3455840f5edf59616c36e555d8c6a3c77ddefaba"
+    },
+    {
+      "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
+      "name": "Lithium bis(fluorosulfonyl)imide (LiFSI)",
+      "cas": "171611-11-3",
+      "catalogFormula": "LiN(SO2F)2",
+      "oldImage": "/assets/images/chemical-structures/lithium-bis-fluorosulfonyl-imide-lifsi.png",
+      "sku": "WM-LS-LIFSI",
+      "cid": 86277430,
+      "formula": "F2LiNO4S2",
+      "inchiKey": "VDVLPSWVDYJFRW-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S(=O)(F)[N-]S(=O)(=O)F.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "F2NO4S2-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "lithium-bis-fluorosulfonyl-imide-lifsi-sdf.sdf": "208f3726d8148a84f54ae411508e603fcfe2ff6b287365d17e273f0412f8c96b",
+        "lithium-bis-fluorosulfonyl-imide-lifsi-urls.json": "3079593b8e33753f527d724f23a2cb8adbd17e8f279a56fdcc711061061bff59",
+        "lithium-bis-fluorosulfonyl-imide-lifsi-resolve.json": "4918e6e64b8c1426947faba4632fc1da03437580caa3af2e8c26f86a47571f87",
+        "lithium-bis-fluorosulfonyl-imide-lifsi-synonyms.json": "e3548549ede31b7af2d088beb08a66d94b8fd573cbbbc52a3017104dc0fef04f",
+        "lithium-bis-fluorosulfonyl-imide-lifsi-properties.json": "f8781ed5fcfb2a81ab1b6652a42202f0090211ccda3e51909b4cabcd3bfb7e90"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/171611-11-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/86277430/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/86277430/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/86277430/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-bis-fluorosulfonyl-imide-lifsi-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 885.9,
+          "y": 860.3,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 326.4,
+          "y": 726.6,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-bis-fluorosulfonyl-imide-lifsi-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-bis-fluorosulfonyl-imide-lifsi-clean-v2.png",
+      "scientificBounds": [
+        230,
+        508,
+        1293,
+        1003
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-bis-fluorosulfonyl-imide-lifsi-scientific-v2.png",
+      "masterSHA256": "42aefaac531d4438fd8abb59800e0aee027f5406f85b5655a8afce251fdd4550",
+      "merchantSHA256": "707b4dd7a210339534fcb03475939d40fb3fdd790d9d3ab37cbc37ee115255f9",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "d30e18318b6eff6c25b3904e766abd7b116f5cd2a233e087cbeb40cedca1f89b"
+    },
+    {
+      "slug": "lithium-tetrafluoroborate-libf-4",
+      "name": "Lithium tetrafluoroborate (LiBF4)",
+      "cas": "14283-07-9",
+      "catalogFormula": "LiBF4",
+      "oldImage": "/assets/images/chemical-structures/lithium-tetrafluoroborate-libf-4.png",
+      "sku": "WM-LS-LIBF4",
+      "cid": 4298216,
+      "formula": "BF4Li",
+      "inchiKey": "UFXJWFBILHTTET-UHFFFAOYSA-N",
+      "isomericSmiles": "F[B-](F)(F)F.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "BF4-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "lithium-tetrafluoroborate-libf-4-sdf.sdf": "10242265776da35cdcaf3dc32325142297bc22da4af31c09899da3272bb7f13a",
+        "lithium-tetrafluoroborate-libf-4-properties.json": "890c83b2a84b0c0fc1bb9feacd93acb8d5e668c7454d113aa37f431d11821124",
+        "lithium-tetrafluoroborate-libf-4-resolve.json": "81bb83fb9194c5cc7e73864f955c97e0c07c69c4b3c1394af03c071c84630614",
+        "lithium-tetrafluoroborate-libf-4-synonyms.json": "0933af83c411fdc0508fa7bb32e85a87f85ed4b95cd6d2b2ad32a051d1e5437a",
+        "lithium-tetrafluoroborate-libf-4-urls.json": "1f9095bfe94992e34a3a4944ea53aa075525c85160bc276057856eb3f38555fb"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/14283-07-9/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4298216/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4298216/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4298216/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-tetrafluoroborate-libf-4-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 920.4,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 340.6,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-tetrafluoroborate-libf-4-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-tetrafluoroborate-libf-4-clean-v2.png",
+      "scientificBounds": [
+        244,
+        354,
+        1262,
+        1154
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-tetrafluoroborate-libf-4-scientific-v2.png",
+      "masterSHA256": "564ff2d1af97b559b2cb6374bdd53581ef2fe3b680c263fa6397f55f87b454c4",
+      "merchantSHA256": "35d924cb937ca7eb37d18620699db98b24c7f4a285ca3bb380c60676aaa6ded1",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "7f188414bb04ca8748b2a12c307de2b13a1e00d8c037f1417a9d1f50731cc46a"
+    },
+    {
+      "slug": "ethylene-carbonate-ec",
+      "name": "Ethylene carbonate (EC)",
+      "cas": "96-49-1",
+      "catalogFormula": "C3H4O3",
+      "oldImage": "/assets/images/chemical-structures/ethylene-carbonate-ec.png",
+      "sku": "WM-SOL-EC",
+      "cid": 7303,
+      "formula": "C3H4O3",
+      "inchiKey": "KMTRUDSVKNLOMY-UHFFFAOYSA-N",
+      "isomericSmiles": "O=C1OCCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H4O3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "ethylene-carbonate-ec-synonyms.json": "1b36bbb99e84bede033469b88ebf7685ac32cf2c6044e9113b9026ff1eceb716",
+        "ethylene-carbonate-ec-resolve.json": "66ce3b49e6e63dd27fa4f0ec523b4d6628ccff4f35cf7ad38c17e3c3c055a339",
+        "ethylene-carbonate-ec-urls.json": "f42e87cdc3f020a4f9c0aa2a47d824f98e153b653975d154d2d44a771c39e975",
+        "ethylene-carbonate-ec-sdf.sdf": "4f4c58bd2916c730365fb5d58a73ca62c4aa192034f2a470b9d12ce2808b1870",
+        "ethylene-carbonate-ec-properties.json": "fd260c6db9ea710c9f9c75b2d67a72124ed4c535e007a37743d3d0ea4798c1f0"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/96-49-1/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7303/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7303/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7303/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/ethylene-carbonate-ec-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/ethylene-carbonate-ec-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/ethylene-carbonate-ec-clean-v2.png",
+      "scientificBounds": [
+        169,
+        362,
+        1337,
+        1144
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/ethylene-carbonate-ec-scientific-v2.png",
+      "masterSHA256": "836aaff3418a14788f1866bc458d79cc6bdca8be89b921838c0aeaa009b63a57",
+      "merchantSHA256": "4c599b812a261ab786703d24d7c30f4b1d895c253f09fc126fa3643985543412",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "0f570fff379d51718f3a7e93249c6850284c14c6153b249e65ea78fe39124f1a"
+    },
+    {
+      "slug": "dimethyl-carbonate-dmc",
+      "name": "Dimethyl carbonate (DMC)",
+      "cas": "616-38-6",
+      "catalogFormula": "C3H6O3",
+      "oldImage": "/assets/images/chemical-structures/dimethyl-carbonate-dmc.png",
+      "sku": "WM-SOL-DMC",
+      "cid": 12021,
+      "formula": "C3H6O3",
+      "inchiKey": "IEJIGPNLZYLLBP-UHFFFAOYSA-N",
+      "isomericSmiles": "COC(=O)OC",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H6O3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "dimethyl-carbonate-dmc-synonyms.json": "a903a707dd8b4c0adb5b37329f7eed5b9230569e5c1aed2704ec2cf2d30a8d31",
+        "dimethyl-carbonate-dmc-properties.json": "784a82aa2f72888c54f8d24bcc545f37179cc0dbb30fd8d0639525dfc136669d",
+        "dimethyl-carbonate-dmc-sdf.sdf": "fc9d34ac08bcbf987985c1c0faf5464c2d5817e469524542a9e2b2e384e8d209",
+        "dimethyl-carbonate-dmc-urls.json": "a7bb26b55346aab501c4fe9e47e9f3fa9c2bccb465842d4e3ec8f3be92c5111f",
+        "dimethyl-carbonate-dmc-resolve.json": "aaae9ba167970df3b165c630f1f268c4c5acaa8a55c1dc9e5b098a7d924a5946"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/616-38-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12021/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12021/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12021/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/dimethyl-carbonate-dmc-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/dimethyl-carbonate-dmc-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/dimethyl-carbonate-dmc-clean-v2.png",
+      "scientificBounds": [
+        148,
+        467,
+        1352,
+        1039
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/dimethyl-carbonate-dmc-scientific-v2.png",
+      "masterSHA256": "d48f88fc5c0446fc4a493c088c8a04f49dc663ab28377165aeeac5d038d4982a",
+      "merchantSHA256": "8036c7a3cdb6e40a9a449bae6f9e6da9cf201bd0e94def22656bd6a87310ac7c",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "24e9925b3d21d55479a3ab7b92a13a171b8f8044ca470e8d657a5a292e280cb5"
+    },
+    {
+      "slug": "diethyl-carbonate-dec",
+      "name": "Diethyl carbonate (DEC)",
+      "cas": "105-58-8",
+      "catalogFormula": "C5H10O3",
+      "oldImage": "/assets/images/chemical-structures/diethyl-carbonate-dec.png",
+      "sku": "WM-SOL-DEC",
+      "cid": 7766,
+      "formula": "C5H10O3",
+      "inchiKey": "OIFBSDVPJOWBCH-UHFFFAOYSA-N",
+      "isomericSmiles": "CCOC(=O)OCC",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C5H10O3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "diethyl-carbonate-dec-urls.json": "c4049e0814a26945ad801832e8be75f1da49872b3d093f5ea5ef7075fcb7693d",
+        "diethyl-carbonate-dec-properties.json": "93ef1e9264797de4f6fd08682e27c703168227c320080a72dfeaba4c58c0f859",
+        "diethyl-carbonate-dec-sdf.sdf": "67a4ab285e6ad9a54f4455c7bfd97ad560341612b33200f1d65e8a28de0c5fbc",
+        "diethyl-carbonate-dec-synonyms.json": "73169b245cf147f34dc37dab2af888003c5fa06e07d5011eb662cde9f179ed30",
+        "diethyl-carbonate-dec-resolve.json": "1c9d382be6ab98081b2a50d6dce7dbc70ebe28b2bf327df6a50618622fead558"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-58-8/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7766/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7766/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7766/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/diethyl-carbonate-dec-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/diethyl-carbonate-dec-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/diethyl-carbonate-dec-clean-v2.png",
+      "scientificBounds": [
+        148,
+        554,
+        1352,
+        952
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/diethyl-carbonate-dec-scientific-v2.png",
+      "masterSHA256": "c3d1b2b615afb96a75c582836a9cecefb25e061d7f340d59aadbb99db2987a8f",
+      "merchantSHA256": "a25c08d3f397da96b42552b59c05d62a4cd19515f2a05c07ad8e025a2ae069da",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "42b2ed8808e05219b51c9a3072f70fdbd570c7200cd007fc0f6d47ed5dd52e86"
+    },
+    {
+      "slug": "ethyl-methyl-carbonate-emc",
+      "name": "Ethyl methyl carbonate (EMC)",
+      "cas": "623-53-0",
+      "catalogFormula": "C4H8O3",
+      "oldImage": "/assets/images/chemical-structures/ethyl-methyl-carbonate-emc.png",
+      "sku": "WM-SOL-EMC",
+      "cid": 522046,
+      "formula": "C4H8O3",
+      "inchiKey": "JBTWLSYIZRCDFO-UHFFFAOYSA-N",
+      "isomericSmiles": "CCOC(=O)OC",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H8O3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "ethyl-methyl-carbonate-emc-urls.json": "20032a720d272b62efae0d8c0b140855333eaa63f9f3ac624894cd84aadd2fe3",
+        "ethyl-methyl-carbonate-emc-sdf.sdf": "711cb76694ea7c8026f7e27c56767de55de8f78bcae76993badeff3dc8b6aba0",
+        "ethyl-methyl-carbonate-emc-properties.json": "5b4d839731e8c20dea88c9ce76a6fac7380fdc834cf9fe89c832c217b5639770",
+        "ethyl-methyl-carbonate-emc-synonyms.json": "b09ad1fd031d16098daca686f4535d27991c935756563f024b220cb1e1b30a1b",
+        "ethyl-methyl-carbonate-emc-resolve.json": "2198d51e8a8e2dc21522f665989eea009348e7fe044aee2a882ec4e4a2719c8f"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/623-53-0/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/522046/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/522046/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/522046/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/ethyl-methyl-carbonate-emc-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/ethyl-methyl-carbonate-emc-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/ethyl-methyl-carbonate-emc-clean-v2.png",
+      "scientificBounds": [
+        148,
+        510,
+        1352,
+        996
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/ethyl-methyl-carbonate-emc-scientific-v2.png",
+      "masterSHA256": "91c657ac16a35dbbd2e56144dce845237787c95f937e84b1f4f1cdc867b85146",
+      "merchantSHA256": "34494f80b704a0a8dc99b895eaced0b4a73e86d70d8a3a6c95d1a48384e584e8",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "99e0ab039ad97c2dccfa06f8919b1947b49bd0148ce9a8f7c3be01c082b6fc5e"
+    },
+    {
+      "slug": "propylene-carbonate-pc",
+      "name": "Propylene carbonate (PC)",
+      "cas": "108-32-7",
+      "catalogFormula": "C4H6O3",
+      "oldImage": "/assets/images/chemical-structures/propylene-carbonate-pc.png",
+      "sku": "WM-SOL-PC",
+      "cid": 7924,
+      "formula": "C4H6O3",
+      "inchiKey": "RUOJZAUFBMNUDX-UHFFFAOYSA-N",
+      "isomericSmiles": "CC1COC(=O)O1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H6O3"
+      ],
+      "stereocenters": [
+        [
+          3,
+          "?"
+        ]
+      ],
+      "sourceSHA256": {
+        "propylene-carbonate-pc-properties.json": "71478f61e4e89f45d1492f578f431b4cfbae9271ab663ab2761689cfb1d7579c",
+        "propylene-carbonate-pc-urls.json": "f00aaa5e0695d01d82005084d90f0dc9cc924682bfb754d17787c63bc40798ec",
+        "propylene-carbonate-pc-synonyms.json": "e77fb20fcb7f0029a5a3adab0f846b63f60dad9270d1e3b42f08d4bdefb26034",
+        "propylene-carbonate-pc-sdf.sdf": "de716373d3426c4bacd0d8b2524007f0bfd56587c378010ee174733424be8abd",
+        "propylene-carbonate-pc-resolve.json": "f902e12c43dde483403c3e8010b232d169cf1bd5352192b418856e59a033774d"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/108-32-7/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7924/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7924/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7924/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/propylene-carbonate-pc-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/propylene-carbonate-pc-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/propylene-carbonate-pc-clean-v2.png",
+      "scientificBounds": [
+        162,
+        473,
+        1342,
+        1033
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/propylene-carbonate-pc-scientific-v2.png",
+      "masterSHA256": "e673ea4272ec4194a40322ea263258b790718492c0182f4545f4a086f59cefdc",
+      "merchantSHA256": "5c7426e2caa32386001b57ac5523eee61fca0dfb16849346f9ead23b9ce4f1b1",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "fe7ef9bb0663bf5cd214ba6ba0cb4b8387ad6beaafbc1da5a2894468eb3b8ab6"
+    },
+    {
+      "slug": "ethyl-acetate-ea",
+      "name": "Ethyl acetate (EA)",
+      "cas": "141-78-6",
+      "catalogFormula": "C4H8O2",
+      "oldImage": "/assets/images/chemical-structures/ethyl-acetate-ea.png",
+      "sku": "WM-SOL-EA",
+      "cid": 8857,
+      "formula": "C4H8O2",
+      "inchiKey": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+      "isomericSmiles": "CCOC(C)=O",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H8O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "ethyl-acetate-ea-urls.json": "e9317f3b0bd2f2a532385039632fc18dac26c4e4da767b19323c2216a2bf40e9",
+        "ethyl-acetate-ea-properties.json": "ef8332e123225635d5a9d66fdc796945eee634c2192326bdf65fae91d2596910",
+        "ethyl-acetate-ea-synonyms.json": "242d9f7c07fda4ffa6bbbb4fd756997146b9f7ab9995b981ebf76b01716c106b",
+        "ethyl-acetate-ea-sdf.sdf": "2c19d726500f43674627f619859f0b99b2615d19119f963aa1185ff61c14d110",
+        "ethyl-acetate-ea-resolve.json": "cc0d97a4fd846ed7e680e6a8eab8e4e558f76a2cb30dc4fa0c879ef5c1bcc7f2"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/141-78-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8857/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8857/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8857/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/ethyl-acetate-ea-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/ethyl-acetate-ea-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/ethyl-acetate-ea-clean-v2.png",
+      "scientificBounds": [
+        148,
+        462,
+        1352,
+        1044
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/ethyl-acetate-ea-scientific-v2.png",
+      "masterSHA256": "4ca259930e454725e7fab9cc1495d29cf6c9be07e041975458bc9d1129d0480b",
+      "merchantSHA256": "0914128425f28c3fdb8b2342058a71f30c074360464caeb9ed18c1e69325df0a",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "2d20fa5b7867b5bdc3c875402582ec200cfc9276563fbc411be0833894353e8b"
+    },
+    {
+      "slug": "2-2-difluoroethyl-acetate-dfea",
+      "name": "2,2-Difluoroethyl acetate (DFEA)",
+      "cas": "1550-44-3",
+      "catalogFormula": "C4H6F2O2",
+      "oldImage": "/assets/images/chemical-structures/2-2-difluoroethyl-acetate-dfea.png",
+      "sku": "WM-SOL-DFEA",
+      "cid": 137074,
+      "formula": "C4H6F2O2",
+      "inchiKey": "PFJLHSIZFYNAHH-UHFFFAOYSA-N",
+      "isomericSmiles": "CC(=O)OCC(F)F",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H6F2O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "2-2-difluoroethyl-acetate-dfea-resolve.json": "054b597f3d36c4fcf33a0927e24a813110395d6441729cdf2c21d1b64a0f8617",
+        "2-2-difluoroethyl-acetate-dfea-properties.json": "4f7b2b37c9b9fbc452ef9f0180fc884e9a115376f457156267a375ed3f259017",
+        "2-2-difluoroethyl-acetate-dfea-urls.json": "4650befc123fb1f80b511aaa729426daf120e82a48d8c65ed65076da30fe7de7",
+        "2-2-difluoroethyl-acetate-dfea-sdf.sdf": "df741ca7080a5cf4033b15e3d42968da28d1c25fcea16658f178f00bf67732c2",
+        "2-2-difluoroethyl-acetate-dfea-synonyms.json": "43f3c7f2b68f5f8b7f520992a88bd08b84be231c96efcb3db25821088ea4f9b6"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1550-44-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137074/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137074/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137074/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/2-2-difluoroethyl-acetate-dfea-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/2-2-difluoroethyl-acetate-dfea-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/2-2-difluoroethyl-acetate-dfea-clean-v2.png",
+      "scientificBounds": [
+        162,
+        453,
+        1346,
+        1055
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/2-2-difluoroethyl-acetate-dfea-scientific-v2.png",
+      "masterSHA256": "26348d54fe5863cc84170741af41d289ca07a899da33cab39814775e40c5876b",
+      "merchantSHA256": "36603b2803bbfc52e8d0488f595134900d8c58665ba42536bbf2bee84b8f6c7e",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "29912e9e11d5c45439f9bf18aa85452ad99e00023b38bdf47cde6f9de691676d"
+    },
+    {
+      "slug": "1-2-dimethoxyethane-dme",
+      "name": "1,2-Dimethoxyethane (DME)",
+      "cas": "110-71-4",
+      "catalogFormula": "C4H10O2",
+      "oldImage": "/assets/images/chemical-structures/1-2-dimethoxyethane-dme.png",
+      "sku": "WM-SOL-DME",
+      "cid": 8071,
+      "formula": "C4H10O2",
+      "inchiKey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+      "isomericSmiles": "COCCOC",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H10O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-2-dimethoxyethane-dme-synonyms.json": "78bf1b586b7e17dfe81aa817c4e5651fbcd23e6cb0b43303a8230b21b8f3b3ca",
+        "1-2-dimethoxyethane-dme-urls.json": "43dc98f2dddf207516bbf232c3eeacabcde921b31ec401420aef21651500c010",
+        "1-2-dimethoxyethane-dme-resolve.json": "9fd14d735ece12308eb7e8cff4c4f849343efa0501ce6d847836844d0d8bda5a",
+        "1-2-dimethoxyethane-dme-sdf.sdf": "cf44393d4d49fa06b506a3df2bce16b53d7a5ce97f107897d491aeb446dad5f4",
+        "1-2-dimethoxyethane-dme-properties.json": "bf9e4ef1b8c0ab2d286388c9cfbd2b8a1a6a5750c3afad84c14e039026f48d7e"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-71-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8071/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8071/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8071/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-2-dimethoxyethane-dme-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-2-dimethoxyethane-dme-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-2-dimethoxyethane-dme-clean-v2.png",
+      "scientificBounds": [
+        148,
+        640,
+        1352,
+        866
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-2-dimethoxyethane-dme-scientific-v2.png",
+      "masterSHA256": "f49ad12e72cc5bb81414399cdecbc5671261be0f96f36f7f03cd450f087c5837",
+      "merchantSHA256": "abee2beda255ae708aeeb1e81301bd2c3b02c01f107ba5480810eed0ac1c327c",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "ee603ddb7a885e93f73887080b502168f4a68f677ac6c7e5ae86a99dc6e0bc97"
+    },
+    {
+      "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
+      "name": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE)",
+      "cas": "16627-68-2",
+      "catalogFormula": "C5H4F8O",
+      "oldImage": "/assets/images/chemical-structures/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.png",
+      "sku": "WM-SOL-TTE",
+      "cid": 2776662,
+      "formula": "C5H4F8O",
+      "inchiKey": "HCBRSIIGBBDDCD-UHFFFAOYSA-N",
+      "isomericSmiles": "FC(F)C(F)(F)COC(F)(F)C(F)F",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C5H4F8O"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-synonyms.json": "e22d3b16619b6712ba18f3827702b1fb73fc20d2c9e2b0ecdfa11fe383512b70",
+        "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-resolve.json": "ae070f0a4ca8d6cd5839a7e6adbffcd39f2c1ab70c31844d97672af263dbe78c",
+        "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-sdf.sdf": "2294939b76b56d40f6aa407aab4a53b8d18e841001a9486b8b85e79082e18e8e",
+        "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-urls.json": "9e6932b0c74c5e1d1f1da21c882ff27cb99059c55f9b8b0a134d73becb99cfde",
+        "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-properties.json": "0818d811b27fdba7e776d4a0b898bf966b17e89f4e2547b80b80f83071f9578f"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16627-68-2/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2776662/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2776662/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2776662/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-clean-v2.png",
+      "scientificBounds": [
+        158,
+        514,
+        1346,
+        992
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-scientific-v2.png",
+      "masterSHA256": "0086542116752f52f1c3ef5494755f096d52c1efce35b152c04f699a139f35e9",
+      "merchantSHA256": "902bbcd1b6f0e8753fbcbb2ddfe72c1ed5030a3a335d5b23a755b31c75cc4791",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "d534837f86fac93cbc512a3947f361c36ee8dfc1663e79a898f4a8d7cfa164a6"
+    },
+    {
+      "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
+      "name": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC)",
+      "cas": "156783-95-8",
+      "catalogFormula": "C4H5F3O3",
+      "oldImage": "/assets/images/chemical-structures/methyl-2-2-2-trifluoroethyl-carbonate-femc.png",
+      "sku": "WM-SOL-FEMC",
+      "cid": 17761042,
+      "formula": "C4H5F3O3",
+      "inchiKey": "GBPVMEKUJUKTBA-UHFFFAOYSA-N",
+      "isomericSmiles": "COC(=O)OCC(F)(F)F",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H5F3O3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "methyl-2-2-2-trifluoroethyl-carbonate-femc-synonyms.json": "58f42fa17b26a913da441df66ac0a352bad914795180af5bb84b898b9320b048",
+        "methyl-2-2-2-trifluoroethyl-carbonate-femc-resolve.json": "6b75344bc166836962f99da5284ee40a8968a03d97d0fd4c09d511aa32a68595",
+        "methyl-2-2-2-trifluoroethyl-carbonate-femc-properties.json": "c5131ac3d6b563360f70feef116533152c46e00a27a33b6ac1bdc07f3b20f879",
+        "methyl-2-2-2-trifluoroethyl-carbonate-femc-sdf.sdf": "422e3bc60d22b9a26ff82f0fba3376cb607c5495d1f5f3dceef131bb611be948",
+        "methyl-2-2-2-trifluoroethyl-carbonate-femc-urls.json": "56de88ff90e5bf179fedf36d1864e8e9bf9026807a0dbad519abc6b61c9c10da"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/156783-95-8/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/17761042/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/17761042/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/17761042/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/methyl-2-2-2-trifluoroethyl-carbonate-femc-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/methyl-2-2-2-trifluoroethyl-carbonate-femc-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/methyl-2-2-2-trifluoroethyl-carbonate-femc-clean-v2.png",
+      "scientificBounds": [
+        152,
+        504,
+        1346,
+        1003
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/methyl-2-2-2-trifluoroethyl-carbonate-femc-scientific-v2.png",
+      "masterSHA256": "9651139f6fd640cbdefcfcbaf53b9451f54dbacc6165430567b7e8668d053e3b",
+      "merchantSHA256": "0beb34cac7ff0fc04c7ca54e12be61437785bdf7dbdb6ad519b52e1f498d0340",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "c74ea760cf90daa929e7c2a79db34555a2188dffa95b7bc4c471c68862e70388"
+    },
+    {
+      "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
+      "name": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC)",
+      "cas": "1513-87-7",
+      "catalogFormula": "C5H4F6O3",
+      "oldImage": "/assets/images/chemical-structures/bis-2-2-2-trifluoroethyl-carbonate-tfec.png",
+      "sku": "WM-SOL-TFEC",
+      "cid": 11447463,
+      "formula": "C5H4F6O3",
+      "inchiKey": "WLLOZRDOFANZMZ-UHFFFAOYSA-N",
+      "isomericSmiles": "O=C(OCC(F)(F)F)OCC(F)(F)F",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C5H4F6O3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "bis-2-2-2-trifluoroethyl-carbonate-tfec-synonyms.json": "7bb0db64958b96f5e0c76facd11a8b9ed525de3bf052054f56bff91257252c73",
+        "bis-2-2-2-trifluoroethyl-carbonate-tfec-sdf.sdf": "d1cb20042dc6c7571a828cefb71173a8721058b489776265f6e0439bec9add37",
+        "bis-2-2-2-trifluoroethyl-carbonate-tfec-properties.json": "6d73081363a7388df2de673bc8586f0a076eb8803189f85584d8fbb8fe42d88f",
+        "bis-2-2-2-trifluoroethyl-carbonate-tfec-urls.json": "2e9629f30d8c781ab36028652c8b0d71c29a043582ae5ecd4a3d58a55d002411",
+        "bis-2-2-2-trifluoroethyl-carbonate-tfec-resolve.json": "23312e1288a26f6a7116e38dfc778ce2778b959b963e620ef44f407a66596dd1"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1513-87-7/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11447463/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11447463/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11447463/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/bis-2-2-2-trifluoroethyl-carbonate-tfec-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/bis-2-2-2-trifluoroethyl-carbonate-tfec-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/bis-2-2-2-trifluoroethyl-carbonate-tfec-clean-v2.png",
+      "scientificBounds": [
+        155,
+        530,
+        1350,
+        977
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/bis-2-2-2-trifluoroethyl-carbonate-tfec-scientific-v2.png",
+      "masterSHA256": "270ec298d277ac6e1200e5c9b5eabad7ff1aac1b1cc6444be9e1bd9905f4695d",
+      "merchantSHA256": "c07ea8ffb4bb9ae35b3fe6df15e2238773a183c686287251114c22d99369bc8e",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "41bf0a0b9357820c3bf589b1d22d94d460b0d0bb6c2c20fb7032deeb6fbf2447"
+    },
+    {
+      "slug": "vinylene-carbonate-vc",
+      "name": "Vinylene Carbonate (VC)",
+      "cas": "872-36-6",
+      "catalogFormula": "C3H2O3",
+      "oldImage": "/assets/images/chemical-structures/vinylene-carbonate-vc.png",
+      "sku": "WM-ADD-VC",
+      "cid": 13385,
+      "formula": "C3H2O3",
+      "inchiKey": "VAYTZRYEBVHVLE-UHFFFAOYSA-N",
+      "isomericSmiles": "O=c1occo1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H2O3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "vinylene-carbonate-vc-synonyms.json": "ab978d362071604a97afa6e2b51c564a83a74843d2f07f420be2fe1a4b214dd1",
+        "vinylene-carbonate-vc-properties.json": "598c46d6b8122a8bda5f4a91cfa71cda41fd0c7e2b8e1c09da5b3db63ef11ebe",
+        "vinylene-carbonate-vc-urls.json": "371580f8fab34c11d32147edc628713266512d6c6d3cdff61c1461abbe8c1cf5",
+        "vinylene-carbonate-vc-resolve.json": "8955c03ccd37979f91efd9f70466a9257626f3ce08549107e8c2ab2aa87dc74a",
+        "vinylene-carbonate-vc-sdf.sdf": "09b5398127bf5fe307723d8573cb7e17626c54aede047a4cc1b0aa07701cbb1f"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/872-36-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13385/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13385/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13385/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/vinylene-carbonate-vc-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/vinylene-carbonate-vc-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/vinylene-carbonate-vc-clean-v2.png",
+      "scientificBounds": [
+        169,
+        362,
+        1337,
+        1144
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/vinylene-carbonate-vc-scientific-v2.png",
+      "masterSHA256": "ec281c54d17165c95dcae92cd9fb31aff8cced5df9cf23c306d62b1fcbe2e09b",
+      "merchantSHA256": "3e5cf74d77beacde016df9572152058b136b63dd16b903fb6053f4bfbc8398ed",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "2e635d51572bdf7ca7d38d18cc9aa9cbb9fa778c5b47c8588d0e0ebd3dbfe9fa"
+    },
+    {
+      "slug": "vinyl-ethylene-carbonate-vec",
+      "name": "Vinyl ethylene carbonate (VEC)",
+      "cas": "4427-96-7",
+      "catalogFormula": "C5H6O3",
+      "oldImage": "/assets/images/chemical-structures/vinyl-ethylene-carbonate-vec.png",
+      "sku": "WM-ADD-VEC",
+      "cid": 2735038,
+      "formula": "C5H6O3",
+      "inchiKey": "BJWMSGRKJIOCNR-UHFFFAOYSA-N",
+      "isomericSmiles": "C=CC1COC(=O)O1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C5H6O3"
+      ],
+      "stereocenters": [
+        [
+          3,
+          "?"
+        ]
+      ],
+      "sourceSHA256": {
+        "vinyl-ethylene-carbonate-vec-urls.json": "8c3c6eab5110594b16302e16dcbd72eb215d1769c0258eb86bbc59881cc3fe1d",
+        "vinyl-ethylene-carbonate-vec-properties.json": "1f945fabab569c65f5bab7d389181a1a6cdb518008d05b482e3eac791fab2765",
+        "vinyl-ethylene-carbonate-vec-sdf.sdf": "95362a9246953e467e5ff2d5605a980e5541e761e6064ed0a01bafbf7eaec6b3",
+        "vinyl-ethylene-carbonate-vec-resolve.json": "7e41154046fce0af853067f05e3a568c7f829ed991c53afc83816118dc6d259c",
+        "vinyl-ethylene-carbonate-vec-synonyms.json": "1bf332f80bb8a6fe184d61c29cfe2f348b6c275118272f39712132a04f1305de"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4427-96-7/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735038/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735038/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735038/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/vinyl-ethylene-carbonate-vec-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/vinyl-ethylene-carbonate-vec-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/vinyl-ethylene-carbonate-vec-clean-v2.png",
+      "scientificBounds": [
+        160,
+        450,
+        1345,
+        1048
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/vinyl-ethylene-carbonate-vec-scientific-v2.png",
+      "masterSHA256": "117878c6b215bcb35bfd1ce58eaecbfe769f2178169e8774f00396f18a8b4939",
+      "merchantSHA256": "a0b31870876aced743b5c90ad515ba0f38d873b682c944862c7c07818133bfbe",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "ef41edca9edef7a3d384a301c846998fbee80783768031a98ffbaebbb61c0b6e"
+    },
+    {
+      "slug": "1-3-propanediol-cyclic-sulfate-ts",
+      "name": "1,3-Propanediol cyclic sulfate (TS)",
+      "cas": "1073-05-8",
+      "catalogFormula": "C3H6O4S",
+      "oldImage": "/assets/images/chemical-structures/1-3-propanediol-cyclic-sulfate-ts.png",
+      "sku": "WM-ADD-TS",
+      "cid": 70623,
+      "formula": "C3H6O4S",
+      "inchiKey": "OQYOVYWFXHQYOP-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S1(=O)OCCCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H6O4S"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-3-propanediol-cyclic-sulfate-ts-sdf.sdf": "ba55f9c33aae2f6e90aaf359328df5fde822a8b0be787e8b59207ecb23ab7863",
+        "1-3-propanediol-cyclic-sulfate-ts-resolve.json": "bc3895685084919d57f6a3ecff69292c960261b1644f3523ae10d49ff4c759e1",
+        "1-3-propanediol-cyclic-sulfate-ts-properties.json": "91f8eb9a502cb707342b1b256f4807ce6ccd48412167115d4f539002a4cde34d",
+        "1-3-propanediol-cyclic-sulfate-ts-synonyms.json": "39bbfcd176e10eb6ce1ab7a9bde0bac0e4fa6439f3c590dbfc00c37aa7ffd8d8",
+        "1-3-propanediol-cyclic-sulfate-ts-urls.json": "46d2d1a624ff1033bc0e08975740a77504c9b5d5b8b05f6ed1d4e34357a6a93d"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1073-05-8/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/70623/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/70623/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/70623/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-3-propanediol-cyclic-sulfate-ts-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-3-propanediol-cyclic-sulfate-ts-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-3-propanediol-cyclic-sulfate-ts-clean-v2.png",
+      "scientificBounds": [
+        160,
+        367,
+        1345,
+        1139
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-3-propanediol-cyclic-sulfate-ts-scientific-v2.png",
+      "masterSHA256": "cd60192a2349179a57f291f9b509dc1a24541cca71b752708ad9be2e3e223a98",
+      "merchantSHA256": "f72fc92257b453b7b34eebe18720901a20816bf59453cd64e4f337eb9723cd7b",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "2dd3be9ebdada0ea62fb2f8928fee9557d896effa4aafcb3fd7264bb3e695ba5"
+    },
+    {
+      "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
+      "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
+      "cas": "1072-53-3",
+      "catalogFormula": "C2H4O4S",
+      "oldImage": "/assets/images/chemical-structures/1-3-2-dioxathiolane-2-2-dioxide-dtd.png",
+      "sku": "WM-ADD-DTD",
+      "cid": 14075,
+      "formula": "C2H4O4S",
+      "inchiKey": "ZPFAVCIQZKRBGF-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S1(=O)OCCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C2H4O4S"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-3-2-dioxathiolane-2-2-dioxide-dtd-synonyms.json": "c1307dd739d7badf9ae871e0f9a0c7613143a6ae7e68273bd76eef03c01cfa46",
+        "1-3-2-dioxathiolane-2-2-dioxide-dtd-urls.json": "6bf8ed0e471fa16cf5e1465a1be489a926952d51bcf8fedafb2cb75f84098818",
+        "1-3-2-dioxathiolane-2-2-dioxide-dtd-sdf.sdf": "ca7e54757cc73a59ada5caea5b4faaa10fdc6c5462f53f6b8b568315bf3f20df",
+        "1-3-2-dioxathiolane-2-2-dioxide-dtd-properties.json": "373c7e03e95c900651d797cfa29cf4b71dbf136be6771eb7f1f2364a6fe2f618",
+        "1-3-2-dioxathiolane-2-2-dioxide-dtd-resolve.json": "f63a005afdc7728468fbb365887c100e59df58b8b5479a656dce21d38e809e65"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1072-53-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14075/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14075/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14075/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-3-2-dioxathiolane-2-2-dioxide-dtd-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-3-2-dioxathiolane-2-2-dioxide-dtd-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-3-2-dioxathiolane-2-2-dioxide-dtd-clean-v2.png",
+      "scientificBounds": [
+        166,
+        323,
+        1340,
+        1183
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-3-2-dioxathiolane-2-2-dioxide-dtd-scientific-v2.png",
+      "masterSHA256": "5aa880132fee746c19c1098fa1eaa1d609c83df65d57c6c505c340925ec62345",
+      "merchantSHA256": "6b9539835d43752dd8fa953d71c950ee196ef4d7082a3e58d14e60a31cdcfdfd",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "dba59ecec7a8fde13a3e4b2113b5aed3c8b203cb314b7ca460373b578e9af7c5"
+    },
+    {
+      "slug": "prop-1-ene-1-3-sultone-pst",
+      "name": "Prop-1-ene-1,3-sultone (PST)",
+      "cas": "21806-61-1",
+      "catalogFormula": "C3H4O3S",
+      "oldImage": "/assets/images/chemical-structures/prop-1-ene-1-3-sultone-pst.png",
+      "sku": "WM-ADD-PST",
+      "cid": 10898703,
+      "formula": "C3H4O3S",
+      "inchiKey": "KLLQVNFCMHPYGL-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S1(=O)C=CCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H4O3S"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "prop-1-ene-1-3-sultone-pst-resolve.json": "06054c3b8badf5911a59982c8fc14aa2289b546f17aa2e33fae40333ca89fe1a",
+        "prop-1-ene-1-3-sultone-pst-sdf.sdf": "a49e6437b2558f554a7f413f434c27f40c81ae6eedfbfa265ffdd112df5c385f",
+        "prop-1-ene-1-3-sultone-pst-synonyms.json": "2260b845a7f66d03928e56edd477882b165fb34ae43a9e494e1d75f227105a09",
+        "prop-1-ene-1-3-sultone-pst-properties.json": "189500258a1803314169b1442842a89a6556684c3bb022ccf735223fb5b2b347",
+        "prop-1-ene-1-3-sultone-pst-urls.json": "2f6942ab12b4e7775443c74cb201a78abf35737cbaaf39939a576d25ebc1f819"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21806-61-1/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10898703/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10898703/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10898703/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/prop-1-ene-1-3-sultone-pst-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/prop-1-ene-1-3-sultone-pst-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/prop-1-ene-1-3-sultone-pst-clean-v2.png",
+      "scientificBounds": [
+        166,
+        340,
+        1340,
+        1169
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/prop-1-ene-1-3-sultone-pst-scientific-v2.png",
+      "masterSHA256": "7851746545d0afa75c1614d8b5a969a4db35df8f83174217a51ec89625252224",
+      "merchantSHA256": "f495cd9e47fbf7798c8671dd1dac5b713479a8c8a93c9b25172c468137191f56",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "0e8eeb0056ed684beabe74869a4dfecfcdcbdc4e8843604b137a9bbc7edeb632"
+    },
+    {
+      "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
+      "name": "4-Fluoro-1,3-dioxolan-2-one (FEC)",
+      "cas": "114435-02-8",
+      "catalogFormula": "C3H3FO3",
+      "oldImage": "/assets/images/chemical-structures/4-fluoro-1-3-dioxolan-2-one-fec.png",
+      "sku": "WM-ADD-FEC",
+      "cid": 2769656,
+      "formula": "C3H3FO3",
+      "inchiKey": "SBLRHMKNNHXPHG-UHFFFAOYSA-N",
+      "isomericSmiles": "O=C1OCC(F)O1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H3FO3"
+      ],
+      "stereocenters": [
+        [
+          4,
+          "?"
+        ]
+      ],
+      "sourceSHA256": {
+        "4-fluoro-1-3-dioxolan-2-one-fec-sdf.sdf": "a9f2167190c1d0c75644a503f03e099b9537ec6cfd92a668d4c329f727d383f4",
+        "4-fluoro-1-3-dioxolan-2-one-fec-resolve.json": "0f5a031fc0a5e4564c751c6211c808ef05217266c7410c4d3df78677f9f3ab9e",
+        "4-fluoro-1-3-dioxolan-2-one-fec-urls.json": "4e328158974c7d4aca44821afcde31a60bb66ef44a5132fa2faf5467b9ab55fe",
+        "4-fluoro-1-3-dioxolan-2-one-fec-synonyms.json": "2e7e7faf313519dbd6ec53d49211037c07e878cac3f65292245228bba6016508",
+        "4-fluoro-1-3-dioxolan-2-one-fec-properties.json": "7250bc9296dfd1a04e37050fc19efb27417d63d3420336bb44e882a2d117b300"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/114435-02-8/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2769656/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2769656/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2769656/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/4-fluoro-1-3-dioxolan-2-one-fec-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/4-fluoro-1-3-dioxolan-2-one-fec-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/4-fluoro-1-3-dioxolan-2-one-fec-clean-v2.png",
+      "scientificBounds": [
+        170,
+        481,
+        1331,
+        1025
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/4-fluoro-1-3-dioxolan-2-one-fec-scientific-v2.png",
+      "masterSHA256": "212baedaee4c1191011011c9b42989b0e709368e5305f6c70290939f92e8cabe",
+      "merchantSHA256": "3e1fb2dae341f5e51570dcdbed2a02e1d85dc43c94373daef7434851c2bccef2",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "e9807f18f9d47c8f41ec9f5aa1101e80f112a09512867086cd9dd82143aa94a1"
+    },
+    {
+      "slug": "succinonitrile-sn",
+      "name": "Succinonitrile (SN)",
+      "cas": "110-61-2",
+      "catalogFormula": "C4H4N2",
+      "oldImage": "/assets/images/chemical-structures/succinonitrile-sn.png",
+      "sku": "WM-ADD-SN",
+      "cid": 8062,
+      "formula": "C4H4N2",
+      "inchiKey": "IAHFWCOBPZCAEA-UHFFFAOYSA-N",
+      "isomericSmiles": "N#CCCC#N",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H4N2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "succinonitrile-sn-urls.json": "ddb146688fd63c8ab3c9ae7d262118256ea57f9d4f566736861f5785bc8b09b0",
+        "succinonitrile-sn-sdf.sdf": "2e1a9b5c6efcf771cbb667aab9a089e55389a979ec7902ccff9d78617804168a",
+        "succinonitrile-sn-properties.json": "de04517ec0ad40676d6cfc124dbfaa9968d76bc1550f1e5b7365df976ab8fe2c",
+        "succinonitrile-sn-resolve.json": "1e565d830cf8a9189741619ac96a2cdf912d5e3501686e96e9bd8dc77ea23ad1",
+        "succinonitrile-sn-synonyms.json": "91cde2f0904129d168f0bf82bf35d8704ade3682b3241e069637d78ef6a831a7"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-61-2/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8062/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8062/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8062/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/succinonitrile-sn-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/succinonitrile-sn-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/succinonitrile-sn-clean-v2.png",
+      "scientificBounds": [
+        164,
+        656,
+        1344,
+        844
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/succinonitrile-sn-scientific-v2.png",
+      "masterSHA256": "728f3aa78d55e00eb7c5acc1e563a5715181df9d6f3344fc382245d58dd40178",
+      "merchantSHA256": "e2a1d8dbe01ca496b16aab9f9a7b9c105e846917c94f53ffaebf00e4ec87e5f6",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "abaabdd07b2405fde101df247fb995e8efbaae71b328343494f277d8fc55ab0d"
+    },
+    {
+      "slug": "adiponitrile-adn",
+      "name": "Adiponitrile (ADN)",
+      "cas": "111-69-3",
+      "catalogFormula": "C6H8N2",
+      "oldImage": "/assets/images/chemical-structures/adiponitrile-adn.png",
+      "sku": "WM-ADD-ADN",
+      "cid": 8128,
+      "formula": "C6H8N2",
+      "inchiKey": "BTGRAWJCKBQKAO-UHFFFAOYSA-N",
+      "isomericSmiles": "N#CCCCCC#N",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C6H8N2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "adiponitrile-adn-resolve.json": "69c20ab24301fe66dd72be96d6dbe23bc6c7ba67ed960fef8c0028318535c3bb",
+        "adiponitrile-adn-properties.json": "f9a7f86968f0a45a0f9d46b3fa83783c9b357fa139a4bf4557f0c5d65215bbc4",
+        "adiponitrile-adn-synonyms.json": "36ebbb653e1cb9f29a4ef7e4ab6ba2f0b4286e629e1c6d802c68c838adf4fe37",
+        "adiponitrile-adn-sdf.sdf": "c808f4f226dd280a2f3e0706b76c33831c43b89649aea49baea9c19d413fcbda",
+        "adiponitrile-adn-urls.json": "a260a801930b08d53736f15e072355499569bd4a966710dafbed2cb576c68b4f"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/111-69-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8128/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8128/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8128/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/adiponitrile-adn-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/adiponitrile-adn-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/adiponitrile-adn-clean-v2.png",
+      "scientificBounds": [
+        157,
+        660,
+        1352,
+        840
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/adiponitrile-adn-scientific-v2.png",
+      "masterSHA256": "a2e0b91edc99fcebd2ac70d987ad01513551e22ade56df4ccc8545232550cdc6",
+      "merchantSHA256": "0ae66a1b2e65c9d23610fd43df96748c0c8fa0e5010112dbd1b1c9f5063e3cc7",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "b70abad37828190c90bde03845306b53ad518ed846b62dad3ea935e5a36743c9"
+    },
+    {
+      "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
+      "name": "1,2-Bis(2-cyanoethoxy)ethane (DENE)",
+      "cas": "3386-87-6",
+      "catalogFormula": "C8H12N2O2",
+      "oldImage": "/assets/images/chemical-structures/1-2-bis-2-cyanoethoxy-ethane-dene.png",
+      "sku": "WM-ADD-DENE",
+      "cid": 76921,
+      "formula": "C8H12N2O2",
+      "inchiKey": "VTHRQKSLPFJQHN-UHFFFAOYSA-N",
+      "isomericSmiles": "N#CCCOCCOCCC#N",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C8H12N2O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-2-bis-2-cyanoethoxy-ethane-dene-sdf.sdf": "3a57fb03614962ba03d38968e2e686ee82a48e37f415afca0c8c3fe8b3c1fb9b",
+        "1-2-bis-2-cyanoethoxy-ethane-dene-resolve.json": "8a60785e69033b3858ddd0f65031a362f2e7b36a23c2b22ff9143682a9415953",
+        "1-2-bis-2-cyanoethoxy-ethane-dene-properties.json": "e69b60b743a06f2ca9560030b7d36fe36c0b0640db8f927d714af5c19d86e5c3",
+        "1-2-bis-2-cyanoethoxy-ethane-dene-synonyms.json": "8850e622b5f8f4af81154c098b8e09302e8dec53f6a6c0fd149a0da868295acf",
+        "1-2-bis-2-cyanoethoxy-ethane-dene-urls.json": "a84dc6bac4b4d95c9c3b869eddf3e85bbca200917f123d51dacbdc36dfb3cdd0"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3386-87-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/76921/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/76921/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/76921/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-2-bis-2-cyanoethoxy-ethane-dene-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-2-bis-2-cyanoethoxy-ethane-dene-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-2-bis-2-cyanoethoxy-ethane-dene-clean-v2.png",
+      "scientificBounds": [
+        149,
+        680,
+        1359,
+        824
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-2-bis-2-cyanoethoxy-ethane-dene-scientific-v2.png",
+      "masterSHA256": "11dbd8d0618228c8dcf9482f7d06a583d3ca51d0b0a028afa0d615fad796d4cc",
+      "merchantSHA256": "bedf8b588003a850ea728694cf5804a385b20d843b859722cdc8787b4bb29c1c",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "6d5e04cd91d757acdbaab86e50521d072a067dd7392711e5b338b62b3c64780c"
+    },
+    {
+      "slug": "1-3-6-hexanetricarbonitrile-htcn",
+      "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
+      "cas": "1772-25-4",
+      "catalogFormula": "C9H11N3",
+      "oldImage": "/assets/images/chemical-structures/1-3-6-hexanetricarbonitrile-htcn.png",
+      "sku": "WM-ADD-HTCN",
+      "cid": 15678,
+      "formula": "C9H11N3",
+      "inchiKey": "LNLFLMCWDHZINJ-UHFFFAOYSA-N",
+      "isomericSmiles": "N#CCCCC(C#N)CCC#N",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C9H11N3"
+      ],
+      "stereocenters": [
+        [
+          3,
+          "?"
+        ]
+      ],
+      "sourceSHA256": {
+        "1-3-6-hexanetricarbonitrile-htcn-properties.json": "3046cb733dfeb17982fd8ff94eb63cfb56b19b78137a50bed95eac2e9c4a1ea6",
+        "1-3-6-hexanetricarbonitrile-htcn-sdf.sdf": "1e2cec3571a42c63ebb0749bf6795844d0b4731bf912c142ec41a4560b2b3265",
+        "1-3-6-hexanetricarbonitrile-htcn-urls.json": "d3ddf81f07cf305a8d27a77b04ac44d7c02da983cc957decd79023d0380905a1",
+        "1-3-6-hexanetricarbonitrile-htcn-synonyms.json": "0fe1791c7ebc638decc83bb3ca4466cdacf5a32c1afe061bae36a8f8e885454e",
+        "1-3-6-hexanetricarbonitrile-htcn-resolve.json": "63bf8e31c70ae665796c90bede2ac5d8c8030eb78df0fdb387c3962d06c2dfab"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1772-25-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15678/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15678/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15678/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-3-6-hexanetricarbonitrile-htcn-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-3-6-hexanetricarbonitrile-htcn-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-3-6-hexanetricarbonitrile-htcn-clean-v2.png",
+      "scientificBounds": [
+        152,
+        533,
+        1356,
+        973
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-3-6-hexanetricarbonitrile-htcn-scientific-v2.png",
+      "masterSHA256": "be05d202c6d5b353858071e2b9fa04095e7e5b900cc032001571cdf5b06370ae",
+      "merchantSHA256": "df37c631c2f20ce246ac1a0a0177547a72d962178c32fe84b95aeee80ea11fb7",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "36410013d5127e8ade45f8983dd92a4c7cbe5913fe56638e212d0d3e976250c9"
+    },
+    {
+      "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
+      "name": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
+      "cas": "99591-74-9",
+      "catalogFormula": "C2H4O6S2",
+      "oldImage": "/assets/images/chemical-structures/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.png",
+      "sku": "WM-ADD-MMDS",
+      "cid": 11600810,
+      "formula": "C2H4O6S2",
+      "inchiKey": "GWAOOGWHPITOEY-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S1(=O)CS(=O)(=O)OCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C2H4O6S2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-resolve.json": "16cffed19e24f805f80920e4a36f194803256b90519a3545f78acd3ad1d3aca2",
+        "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-sdf.sdf": "5a644d26cb11941e585e606cbbf1b7edcfd88596fc26c640eab95b33a1dca593",
+        "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-properties.json": "0c754f59b85efecaa1a2a2fb987f76672e1989d3ca2fcabb5b80bac1587a883b",
+        "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-synonyms.json": "52d2ff8c666ca490b59a4c0ec8ba1695e8a6acc143c0684f2e16e8559b58cd77",
+        "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-urls.json": "024d625941cc1bbb1f9c3a120ec94b2eca87086a5345e7e6c43897acb3ffad29"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/99591-74-9/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11600810/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11600810/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11600810/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-clean-v2.png",
+      "scientificBounds": [
+        168,
+        357,
+        1344,
+        1140
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-scientific-v2.png",
+      "masterSHA256": "81b3cf0c86ae2c31207076ac1784aaf8f5ab4f5d96b939474240bb3f3c1274ac",
+      "merchantSHA256": "13aaa74fab97336169c57250f11347076aaa270be014769936a383455151f86d",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "f30481a8c5c749137e423263385856b9222a253470cec19a786331b9c2ef5b6f"
+    },
+    {
+      "slug": "tris-trimethylsilyl-borate-tmsb",
+      "name": "Tris(trimethylsilyl)borate (TMSB)",
+      "cas": "4325-85-3",
+      "catalogFormula": "[(CH 3) 3 SiO] 3 B",
+      "oldImage": "/assets/images/chemical-structures/tris-trimethylsilyl-borate-tmsb.png",
+      "sku": "WM-ADD-TMSB",
+      "cid": 78020,
+      "formula": "C9H27BO3Si3",
+      "inchiKey": "YZYKZHPNRDIPFA-UHFFFAOYSA-N",
+      "isomericSmiles": "C[Si](C)(C)OB(O[Si](C)(C)C)O[Si](C)(C)C",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C9H27BO3Si3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "tris-trimethylsilyl-borate-tmsb-urls.json": "c4c7b3645e0d2674f85d3e2ba196ed7eb01617a7d414f12e1bb7182fe9551d2e",
+        "tris-trimethylsilyl-borate-tmsb-sdf.sdf": "bed0eaa22e737ce83354dc8979f5d9b732bb2e273c97684e0fe2070bcaa6caec",
+        "tris-trimethylsilyl-borate-tmsb-properties.json": "f1c9c5f8ebfa886bf01e2e8ea8a0f3451de58141af8c95073f02438844d1538f",
+        "tris-trimethylsilyl-borate-tmsb-synonyms.json": "4a02bf2fc8286232659704195e22da9f62a029638e90ce217492b66e0e80e397",
+        "tris-trimethylsilyl-borate-tmsb-resolve.json": "9f607a3e2570c2c8c4b434139d207f3ac8c53974d795877eaca1f4ad3f7c18cb"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4325-85-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/78020/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/78020/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/78020/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/tris-trimethylsilyl-borate-tmsb-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/tris-trimethylsilyl-borate-tmsb-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/tris-trimethylsilyl-borate-tmsb-clean-v2.png",
+      "scientificBounds": [
+        198,
+        150,
+        1301,
+        1352
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/tris-trimethylsilyl-borate-tmsb-scientific-v2.png",
+      "masterSHA256": "ea991915d6ee774370e41168e28f488cb45a232fb4b53f801c61fc601ab44137",
+      "merchantSHA256": "b6395764f31a706cca9786813698086e365fcdc90472658b5935eafb44f580ea",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "c7658e45e5f957c4a1c1553d29df2baf094ee8e90a38aaaccdb2610b388814d8"
+    },
+    {
+      "slug": "tris-trimethylsilyl-phosphate-tmsp",
+      "name": "Tris(trimethylsilyl) phosphate (TMSP)",
+      "cas": "10497-05-9",
+      "catalogFormula": "C9H27O4PSi3",
+      "oldImage": "/assets/images/chemical-structures/tris-trimethylsilyl-phosphate-tmsp.png",
+      "sku": "WM-ADD-TMSP",
+      "cid": 25317,
+      "formula": "C9H27O4PSi3",
+      "inchiKey": "QJMMCGKXBZVAEI-UHFFFAOYSA-N",
+      "isomericSmiles": "C[Si](C)(C)OP(=O)(O[Si](C)(C)C)O[Si](C)(C)C",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C9H27O4PSi3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "tris-trimethylsilyl-phosphate-tmsp-properties.json": "9ccb777d70b18d8b7607d5494a8b2d2f57254de4f8ac821dd928fa85db487684",
+        "tris-trimethylsilyl-phosphate-tmsp-urls.json": "8acd8f67cc433ca28d72003f0234bc74ca206d753eb8ada8bf8085041011328f",
+        "tris-trimethylsilyl-phosphate-tmsp-resolve.json": "adbe784196a5bd5f51e38c78b3e06a71a2acac823372ca3afbebfa43e9e9b35e",
+        "tris-trimethylsilyl-phosphate-tmsp-sdf.sdf": "ae94218acb5767dfda6c379afad0d9d45878f5a4b8c94cca62f55026d08768b5",
+        "tris-trimethylsilyl-phosphate-tmsp-synonyms.json": "f4bfe0e8c634974718bec2939eb045293331f8de5ae67d4ca2654ae3d262cdcb"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/tris-trimethylsilyl-phosphate-tmsp-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/tris-trimethylsilyl-phosphate-tmsp-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/tris-trimethylsilyl-phosphate-tmsp-clean-v2.png",
+      "scientificBounds": [
+        149,
+        250,
+        1352,
+        1250
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/tris-trimethylsilyl-phosphate-tmsp-scientific-v2.png",
+      "masterSHA256": "459f637753754b1f8e55619694670bc8d344d42d3e2356e2fff277446858d980",
+      "merchantSHA256": "718d74824a1b688ff323175760ca71953d199bd14590ff374fce07319783bdaf",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "68de8fecfce8566cf32592474d00f112415763ea3cf7983ae542d1569147666a"
+    },
+    {
+      "slug": "1-3-propanesultone-ps",
+      "name": "1,3-Propanesultone (PS)",
+      "cas": "1120-71-4",
+      "catalogFormula": "C3H6O3S",
+      "oldImage": "/assets/images/chemical-structures/1-3-propanesultone-ps.png",
+      "sku": "WM-ADD-PS",
+      "cid": 14264,
+      "formula": "C3H6O3S",
+      "inchiKey": "FSSPGSAQUIYDCN-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S1(=O)CCCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H6O3S"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-3-propanesultone-ps-resolve.json": "ccc9b546d71bce7db9b3ba3ae4f9e5060012c45d0fec8fe5468e4665012ad2bb",
+        "1-3-propanesultone-ps-synonyms.json": "faf5837e0fe068eef62a9334ba834b5d47eae1e46000ea9eb31d51111158e173",
+        "1-3-propanesultone-ps-sdf.sdf": "b8da46bf4afaa8b41721e0f765e2fda270ff1f1faa25e235e224ada29734ed57",
+        "1-3-propanesultone-ps-properties.json": "753732c9eb40b9f220a65024a46dae3c0414ab85d61a57d45fba07b4a74c807c",
+        "1-3-propanesultone-ps-urls.json": "c596e7845d3ecedbccb65071c8328ae3919a4dc3c38512970c5b7a8dae0f5a14"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1120-71-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14264/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14264/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14264/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-3-propanesultone-ps-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-3-propanesultone-ps-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-3-propanesultone-ps-clean-v2.png",
+      "scientificBounds": [
+        166,
+        340,
+        1340,
+        1169
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-3-propanesultone-ps-scientific-v2.png",
+      "masterSHA256": "4d79e7c6fe807047e6a7b4ae59076b6c2b5b7a0deb1cb4570d6960b5b79baff5",
+      "merchantSHA256": "1e4ecb349245f97c8b2151faaaa93b288c4d439019a2794648ad7ccc454f960c",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "ef6e9f12b7d3405f424eb38fae2c9713ddb6f8ac4b4a169271d6d9f3fa6a61e7"
+    },
+    {
+      "slug": "trimethylsilyl-phosphite-ttpi",
+      "name": "Tris(trimethylsilyl) phosphite (TTPi)",
+      "cas": "1795-31-9",
+      "catalogFormula": "C9H27O3PSi3",
+      "oldImage": "/assets/images/chemical-structures/trimethylsilyl-phosphite-ttpi.png",
+      "sku": "WM-ADD-TTPI",
+      "cid": 137213,
+      "formula": "C9H27O3PSi3",
+      "inchiKey": "VMZOBROUFBEGAR-UHFFFAOYSA-N",
+      "isomericSmiles": "C[Si](C)(C)OP(O[Si](C)(C)C)O[Si](C)(C)C",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C9H27O3PSi3"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "trimethylsilyl-phosphite-ttpi-resolve.json": "bd6a1bd14d6636ee3f5027ee857730c09a4bb49ceeb5ade516df8adee598d75a",
+        "trimethylsilyl-phosphite-ttpi-urls.json": "f5abc757ecb47fed233ad839cc4e30408b6f658f8929803097388f6493362933",
+        "trimethylsilyl-phosphite-ttpi-synonyms.json": "70f6efa723b798ffcd7e5605b1eba0d02caffeee46bad173df1ff643a829dcfd",
+        "trimethylsilyl-phosphite-ttpi-sdf.sdf": "8fb7755618eabe89d65963c83e26d05717e47c48379a8c6abaf4852a7bb34352",
+        "trimethylsilyl-phosphite-ttpi-properties.json": "16a0044bca011e58fc3b939b81f89fb04065786083b8bdb8e2fda96e2929574c"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1795-31-9/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137213/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137213/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137213/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/trimethylsilyl-phosphite-ttpi-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/trimethylsilyl-phosphite-ttpi-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/trimethylsilyl-phosphite-ttpi-clean-v2.png",
+      "scientificBounds": [
+        150,
+        198,
+        1352,
+        1301
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/trimethylsilyl-phosphite-ttpi-scientific-v2.png",
+      "masterSHA256": "625e816c78f0be0cc86d0b3f889464442e881457d533c1b65fd923ba92fdb485",
+      "merchantSHA256": "966bf27afdaa65c55924d4dc8297a0104ccf5701ccab40f5b144a0b849694c28",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "02812ddcb446a43261def221143dbda6268009312a9588d896cee46070ed191c"
+    },
+    {
+      "slug": "sodium-hexafluorophosphate-napf-6",
+      "name": "Sodium hexafluorophosphate (NaPF6)",
+      "cas": "21324-39-0",
+      "catalogFormula": "NaPF6",
+      "oldImage": "/assets/images/chemical-structures/sodium-hexafluorophosphate-napf-6.png",
+      "sku": "WM-NGS-NAPF6",
+      "cid": 5147921,
+      "formula": "F6NaP",
+      "inchiKey": "KMADQUOCJBLXRP-UHFFFAOYSA-N",
+      "isomericSmiles": "F[P-](F)(F)(F)(F)F.[Na+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "F6P-",
+        "Na+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "sodium-hexafluorophosphate-napf-6-resolve.json": "e2b6f706b46f3c5381b89c50c9dc4422f15d2b1e33d1abee3098fe091fc34fcb",
+        "sodium-hexafluorophosphate-napf-6-properties.json": "3a6b274b067e284385b0bf8acb5c66501daa07f9b55b7f555b4d9fc89de66044",
+        "sodium-hexafluorophosphate-napf-6-sdf.sdf": "181ee37f14917f45848c0cc37a652b5fc2f873e5148fffd9f1f4ec0245f5eaa6",
+        "sodium-hexafluorophosphate-napf-6-urls.json": "a4e53bf8bc794101a6322a8148c2e98ddc6b92fdbb29f2fa7bdd42592182fde3",
+        "sodium-hexafluorophosphate-napf-6-synonyms.json": "6bf6851a97bad454edd77955154ae7590c616da0944d020bb7eefbc5dbad77d3"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-39-0/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5147921/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5147921/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5147921/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/sodium-hexafluorophosphate-napf-6-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 635.0,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 1229.1,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/sodium-hexafluorophosphate-napf-6-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/sodium-hexafluorophosphate-napf-6-clean-v2.png",
+      "scientificBounds": [
+        260,
+        368,
+        1277,
+        1141
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/sodium-hexafluorophosphate-napf-6-scientific-v2.png",
+      "masterSHA256": "c5011b4d964bc56acfd89e72806c13275111e7b79cae577490cf465964fb5474",
+      "merchantSHA256": "a491b515154e7a5532fea0a8c49e19194714e8a23ca195e49ea25ff17d6fb885",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "a1f4093af6b112b00bbd4605b0950db52a1e40bb43141dceca592dd5169b7859"
+    },
+    {
+      "slug": "sodium-difluoro-oxalate-borate-naodfb",
+      "name": "Sodium difluoro(oxalato)borate (NaDFOB)",
+      "cas": "1016545-84-8",
+      "catalogFormula": "C2BF2NaO4",
+      "oldImage": "/assets/images/chemical-structures/sodium-difluoro-oxalate-borate-naodfb.png",
+      "sku": "WM-NGS-NAODFB",
+      "cid": 155293661,
+      "formula": "C2BF2NaO4",
+      "inchiKey": "HRRQLROHUSYBRX-UHFFFAOYSA-N",
+      "isomericSmiles": "O=C1O[B-](F)(F)OC1=O.[Na+]",
+      "fragmentCharges": [
+        1,
+        -1
+      ],
+      "fragmentFormulas": [
+        "Na+",
+        "C2BF2O4-"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "sodium-difluoro-oxalate-borate-naodfb-synonyms.json": "b5afda1de54284bdd3d5b341f656b5e53234745e13a8c4b897e6fdfbe29f68ae",
+        "sodium-difluoro-oxalate-borate-naodfb-urls.json": "cef81ccb2956d40791c203c28183cca6445c60ada0dc8775f4e19d0a977e4ff3",
+        "sodium-difluoro-oxalate-borate-naodfb-sdf.sdf": "27604d65ff3369463155f8b0e8239e1a1669a9ae1274a147ed47d2ea500b2f66",
+        "sodium-difluoro-oxalate-borate-naodfb-properties.json": "8153e24ce9bb8b4303df920e605e4a7743ceb3181d721b7e8548d0bf869b9e57",
+        "sodium-difluoro-oxalate-borate-naodfb-resolve.json": "447b67324b78b326412f489e8d300a641e24b9e1099bf80d076b193b6a5d099d"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1016545-84-8/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155293661/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155293661/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155293661/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/sodium-difluoro-oxalate-borate-naodfb-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "+",
+          "x": 869.4,
+          "y": 292.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "\u2212",
+          "x": 547.6,
+          "y": 845.1,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/sodium-difluoro-oxalate-borate-naodfb-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/sodium-difluoro-oxalate-borate-naodfb-clean-v2.png",
+      "scientificBounds": [
+        240,
+        248,
+        1284,
+        1243
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/sodium-difluoro-oxalate-borate-naodfb-scientific-v2.png",
+      "masterSHA256": "b73e4f20a025a0c196d81f5ca8137c54ab8e2131ba6a98b351c0a2598169ab80",
+      "merchantSHA256": "bcf2506ce77911f30597b594381e08032c8103c1ce6158fc454a0acfe7857e8a",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "08e2518e73808f386a32c61de5ffc653ac615f810bb47af91d734c63bcbfa761"
+    },
+    {
+      "slug": "potassium-hexafluorophosphate-kpf-6",
+      "name": "Potassium hexafluorophosphate (KPF6)",
+      "cas": "17084-13-8",
+      "catalogFormula": "KPF6",
+      "oldImage": "/assets/images/chemical-structures/potassium-hexafluorophosphate-kpf-6.png",
+      "sku": "WM-NGS-KPF6",
+      "cid": 23688904,
+      "formula": "F6KP",
+      "inchiKey": "YZDGRYDIGCWVND-UHFFFAOYSA-N",
+      "isomericSmiles": "F[P-](F)(F)(F)(F)F.[K+]",
+      "fragmentCharges": [
+        1,
+        -1
+      ],
+      "fragmentFormulas": [
+        "K+",
+        "F6P-"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "potassium-hexafluorophosphate-kpf-6-resolve.json": "45df378020bddfa5d60190415a4ae5b390b185dcb6a3cd294cd8b75afc94ba01",
+        "potassium-hexafluorophosphate-kpf-6-sdf.sdf": "c726b54dcf1cfda631edd347f7b9a70e62a1ad33be13ff5d9df95d9002c1199b",
+        "potassium-hexafluorophosphate-kpf-6-properties.json": "3da3a46338486c18e562232a0c84a9d7632eb0a5d68845ec25036b5a4ae16f55",
+        "potassium-hexafluorophosphate-kpf-6-synonyms.json": "24d4e844e62037d276c974dd6414558b0b7c78fcf54a649a91f14fec3c4abb99",
+        "potassium-hexafluorophosphate-kpf-6-urls.json": "953658264c7730e432a0ead1123fd52109b63705a6bc750f82f4487f19a9a3f4"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/17084-13-8/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688904/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688904/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688904/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/potassium-hexafluorophosphate-kpf-6-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "+",
+          "x": 1225.2,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "\u2212",
+          "x": 653.2,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/potassium-hexafluorophosphate-kpf-6-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/potassium-hexafluorophosphate-kpf-6-clean-v2.png",
+      "scientificBounds": [
+        257,
+        343,
+        1273,
+        1166
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/potassium-hexafluorophosphate-kpf-6-scientific-v2.png",
+      "masterSHA256": "e0afd8dde2e226beed28e690b02e34307dad4baccf9e41d1981063facb846a83",
+      "merchantSHA256": "999b1ded98cf4abfa959b91a27cd9f149d3d1a88ac021cb23b5b7ade28d4af7e",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "348575745596f82078aeb10d7351bfb92b9c1bc7989fe54661ceaf92813aa1bc"
+    },
+    {
+      "slug": "ethyl-propionate-ep",
+      "name": "Ethyl propionate (EP)",
+      "cas": "105-37-3",
+      "catalogFormula": "C5H10O2",
+      "oldImage": "/assets/images/chemical-structures/ethyl-propionate-ep.png",
+      "sku": "WM-SOL-EP",
+      "cid": 7749,
+      "formula": "C5H10O2",
+      "inchiKey": "FKRCODPIKNYEAC-UHFFFAOYSA-N",
+      "isomericSmiles": "CCOC(=O)CC",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C5H10O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "ethyl-propionate-ep-urls.json": "936ff056fc5965a99690b81a9c22cb22cf86a545436cae92d815e45a3736e48e",
+        "ethyl-propionate-ep-resolve.json": "85423843c845b777c014c7e4a7db1291737dd4c9fb0f225aadd5fa495bbf4fc9",
+        "ethyl-propionate-ep-sdf.sdf": "724984e2bfb8f662362247908c5be193ebcbed650051dd381ef52a02cdccf103",
+        "ethyl-propionate-ep-synonyms.json": "138fc7d30527c8c6fea58cd9d14bcc85f092544511594207cd67b216a6eb8f3e",
+        "ethyl-propionate-ep-properties.json": "d40a47e3a53ea11499bdbd143596bf487797e0938ae146535d919171900e8b41"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-37-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7749/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7749/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7749/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/ethyl-propionate-ep-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/ethyl-propionate-ep-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/ethyl-propionate-ep-clean-v2.png",
+      "scientificBounds": [
+        148,
+        512,
+        1352,
+        986
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/ethyl-propionate-ep-scientific-v2.png",
+      "masterSHA256": "043156fc4df502162040cee9e5f455840be8c09332b944763f741a3625853683",
+      "merchantSHA256": "6fa98575409949bb8d56ba8957ef90d0b3b56a86e81832a665d2afdee1427d07",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "35e59d942245a4053bcbd296fb15ce581e59f6d15ebc91a187eccc6dd99890d4"
+    },
+    {
+      "slug": "methyl-butyrate-mb-battery-grade",
+      "name": "Methyl Butyrate (MB)",
+      "cas": "623-42-7",
+      "catalogFormula": "C5H10O2",
+      "oldImage": "/assets/images/chemical-structures/methyl-butyrate-structure.png",
+      "sku": "WM-SOL-MB",
+      "cid": 12180,
+      "formula": "C5H10O2",
+      "inchiKey": "UUIQMZJEGPQKFD-UHFFFAOYSA-N",
+      "isomericSmiles": "CCCC(=O)OC",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C5H10O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "methyl-butyrate-mb-battery-grade-urls.json": "8838c5699c91dcacbc93158976e1d29f2c1bc3dc97acc7b10ece28f70f72ab24",
+        "methyl-butyrate-mb-battery-grade-synonyms.json": "e1ecab905d5b4a71c5b846e344f0012ef4379ed9a5912059efa290b0f160e197",
+        "methyl-butyrate-mb-battery-grade-sdf.sdf": "84e87cbb579474fb7eb76df8f5d83a5543cacaaee026cb29d853c7f7515b559a",
+        "methyl-butyrate-mb-battery-grade-properties.json": "ecb6c242c158d7b95c7c7fb72a0d401921554bf38693e72a4fdfad978b80c2cb",
+        "methyl-butyrate-mb-battery-grade-resolve.json": "47897bf599e33ab1e9d7d342d1606ad2326d7ac35f2d451246fd5af57c732075"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/623-42-7/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12180/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12180/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12180/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/methyl-butyrate-mb-battery-grade-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/methyl-butyrate-mb-battery-grade-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/methyl-butyrate-mb-battery-grade-clean-v2.png",
+      "scientificBounds": [
+        148,
+        510,
+        1352,
+        996
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/methyl-butyrate-mb-battery-grade-scientific-v2.png",
+      "masterSHA256": "2c93232040a642e07f01d423d84fd12c33574581df42d48a2bde69c8310c5ca3",
+      "merchantSHA256": "7c6a27d4c15d11fe3a159d610c2225d6666f0013d408e969e4c5bab635aabe04",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "554243feb8d27eee13c7ba3b6c9daefc230ccffc44179b4b36126577377100fb"
+    },
+    {
+      "slug": "propyl-propionate-pp",
+      "name": "Propyl propionate (PP)",
+      "cas": "106-36-5",
+      "catalogFormula": "C6H12O2",
+      "oldImage": "/assets/images/chemical-structures/propyl-propionate-pp.png",
+      "sku": "WM-SOL-PP",
+      "cid": 7803,
+      "formula": "C6H12O2",
+      "inchiKey": "MCSINKKTEDDPNK-UHFFFAOYSA-N",
+      "isomericSmiles": "CCCOC(=O)CC",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C6H12O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "propyl-propionate-pp-synonyms.json": "1ec12e9a9233aa6d0871ad4d83e80a7b3bbfd3a5249cc53cf26074f2eda5da99",
+        "propyl-propionate-pp-sdf.sdf": "6f98546f81768ec88d76b820dec7b83cdea8ce62873e8404dd7b76e0ab2c4308",
+        "propyl-propionate-pp-urls.json": "dd5afefec6a2e0de67ab01d26f58d8fe42eabceba5b64a3ea3740e8e24507aa0",
+        "propyl-propionate-pp-properties.json": "d43773db0ffc6c414118435b562b367b623e643a6f8ca1605642ba95f3175d24",
+        "propyl-propionate-pp-resolve.json": "4d017d05621ee2176cfd3af5a64db00ed5c8498267c12498ed202016c8c18473"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/106-36-5/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7803/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7803/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7803/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/propyl-propionate-pp-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/propyl-propionate-pp-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/propyl-propionate-pp-clean-v2.png",
+      "scientificBounds": [
+        148,
+        558,
+        1352,
+        948
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/propyl-propionate-pp-scientific-v2.png",
+      "masterSHA256": "1eef1f9db2f4b5754be7dcbbb647ebb5a6fc10e3f83571a18239b3ab2a5086cf",
+      "merchantSHA256": "6423d4d955faa1ccd5cd94bd14269a80df28a27d96eb1b6e9b58f7fb5052836b",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "f5c13bb370144121e6f4ca7dd3a260060a6e3217a34cdd009e02c5bbdfa956ce"
+    },
+    {
+      "slug": "triphenyl-phosphite-tppi",
+      "name": "Triphenyl phosphite (TPPI)",
+      "cas": "101-02-0",
+      "catalogFormula": "C18H15O3P",
+      "oldImage": "/assets/images/chemical-structures/triphenyl-phosphite-tppi.png",
+      "sku": "WM-ADD-TPPI",
+      "cid": 7540,
+      "formula": "C18H15O3P",
+      "inchiKey": "HVLLSGMXQDNUAL-UHFFFAOYSA-N",
+      "isomericSmiles": "c1ccc(OP(Oc2ccccc2)Oc2ccccc2)cc1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C18H15O3P"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "triphenyl-phosphite-tppi-sdf.sdf": "84bdd79206c1beb358a08a40ccce3a1c91639154a5b2dcce8b0f75e1f2295031",
+        "triphenyl-phosphite-tppi-resolve.json": "96547caad8b0bb00e5c9a38dfdbad0b9af8b7947019b02fd5546c27ffd7db126",
+        "triphenyl-phosphite-tppi-synonyms.json": "2b79066f63239dd58a453aa1e197186ab81ce796ce73b4f5ee989d9d81bdf2a6",
+        "triphenyl-phosphite-tppi-properties.json": "079ac5189e21a0d0fe8724272b5273b8aed4601707a1702bd4bfda55f7d8e7f2",
+        "triphenyl-phosphite-tppi-urls.json": "b8bc22af9e82b96768100be4669340c8da6bd7e05184fb7c30f433cf1c210737"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/101-02-0/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7540/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7540/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7540/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/triphenyl-phosphite-tppi-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/triphenyl-phosphite-tppi-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/triphenyl-phosphite-tppi-clean-v2.png",
+      "scientificBounds": [
+        146,
+        186,
+        1354,
+        1314
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/triphenyl-phosphite-tppi-scientific-v2.png",
+      "masterSHA256": "f4502bbc45ebc0b1a5326ba0ceafc534966eff9ce44f5a33f125f4c474eb600f",
+      "merchantSHA256": "bfcf2cc8a7feb6c9d99d29fc92b8f9954844a7119009aa2459227f9802d033a3",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "07defaf0778205ea16311d09da0bd41f0b641bbc799ac1869a8eaa35a3f1d299"
+    },
+    {
+      "slug": "biphenyl-bp",
+      "name": "Biphenyl (BP)",
+      "cas": "92-52-4",
+      "catalogFormula": "C12H10",
+      "oldImage": "/assets/images/chemical-structures/biphenyl-bp.png",
+      "sku": "WM-ADD-BP",
+      "cid": 7095,
+      "formula": "C12H10",
+      "inchiKey": "ZUOUZKKEUPVFJK-UHFFFAOYSA-N",
+      "isomericSmiles": "c1ccc(-c2ccccc2)cc1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C12H10"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "biphenyl-bp-properties.json": "94bda5824fd7bf894b438fcdba25459cc716bd488628c0747acaeb0cdad956a4",
+        "biphenyl-bp-resolve.json": "2a66fae5348ea18b42d103faf5b4f2922b4dfc895cd7afa26b40a7ff45cc5fd1",
+        "biphenyl-bp-synonyms.json": "7b04b181ad1c59530f86253715bc758f48f221ac0d83980df83ecc79d4e07fc0",
+        "biphenyl-bp-sdf.sdf": "4c38a9433e96708075209c6eb6ad4c5daea6fc63dddd030e6e86f3dfea2da100",
+        "biphenyl-bp-urls.json": "b2230dd070c761f76d38614b6cfc54b7b99a165c33ce3c947ef87d9f17b9441e"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/92-52-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7095/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7095/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7095/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/biphenyl-bp-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/biphenyl-bp-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/biphenyl-bp-clean-v2.png",
+      "scientificBounds": [
+        146,
+        538,
+        1354,
+        962
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/biphenyl-bp-scientific-v2.png",
+      "masterSHA256": "fad46e958bf733ef4161120903a2fb4cc6cf16d1b87ed178b884aecfe74e3f41",
+      "merchantSHA256": "3aad38d9eef36741f06304d784ac40017c253f74c02fdabdeb92a26912129263",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "8bf0f0642e5113446cc72262c9e7450fe861ce3615e650d76b50217a2f24571f"
+    },
+    {
+      "slug": "propyl-acetate-pa",
+      "name": "Propyl acetate (PA)",
+      "cas": "109-60-4",
+      "catalogFormula": "C5H10O2",
+      "oldImage": "/assets/images/chemical-structures/propyl-acetate-pa.png",
+      "sku": "WM-SOL-PA",
+      "cid": 7997,
+      "formula": "C5H10O2",
+      "inchiKey": "YKYONYBAUNKHLG-UHFFFAOYSA-N",
+      "isomericSmiles": "CCCOC(C)=O",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C5H10O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "propyl-acetate-pa-synonyms.json": "3d7fdbfed5ef0950c9f1ffce0f1b6bdfde020971e77d1b6b039c1b2fec8043aa",
+        "propyl-acetate-pa-resolve.json": "7ee04dc73acbb4913f90ac82bc325cf2d7ba3e824bf75e084f2bc3f34aa7fd5c",
+        "propyl-acetate-pa-urls.json": "614f5674fc47293ad2b9340338380b380f4d03aea2843249fd3c58236da9d919",
+        "propyl-acetate-pa-properties.json": "d8413803e07f152e85cec74e45c5075feeb69930706c35056337ae32f990832b",
+        "propyl-acetate-pa-sdf.sdf": "68ef9f309d36e41aac8fdcdf4521c1d0ac95b9224f2a9d44a72b0f913f21e1c5"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/109-60-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7997/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7997/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7997/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/propyl-acetate-pa-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/propyl-acetate-pa-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/propyl-acetate-pa-clean-v2.png",
+      "scientificBounds": [
+        148,
+        524,
+        1352,
+        981
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/propyl-acetate-pa-scientific-v2.png",
+      "masterSHA256": "0546d4efa5c55409810bff0f63ae0311993da938bb9a0afd3cf8f1875601dd6a",
+      "merchantSHA256": "93cbbb478aa5ca150cfba10c9d514ce0cbba0aa2d7675a099d0bfcbba81183dc",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "ab5b33e796847f02a36514a345b92398f1fb0ad0080740c25ef99f1ac74533c0"
+    },
+    {
+      "slug": "ethylene-sulfite-es",
+      "name": "Ethylene sulfite (ES)",
+      "cas": "3741-38-6",
+      "catalogFormula": "C2H4O3S",
+      "oldImage": "/assets/images/chemical-structures/ethylene-sulfite-es.png",
+      "sku": "WM-ADD-ES",
+      "cid": 77342,
+      "formula": "C2H4O3S",
+      "inchiKey": "WDXYVJKNSMILOQ-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S1OCCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C2H4O3S"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "ethylene-sulfite-es-urls.json": "9c6975117e9b71a4f3bf36637e218f5598e64dfeec4bdb0d4aa54928226c7c20",
+        "ethylene-sulfite-es-sdf.sdf": "d16098e484094d2c0e152db10b5624bae5888f26712045cd512e320a343cf0bf",
+        "ethylene-sulfite-es-properties.json": "1f37e14aeb544fefe7a4ac4b6b68d1e72da030822827ab09668f8b94aa0dc6b8",
+        "ethylene-sulfite-es-synonyms.json": "4993678f0d1eb83b3e1e02b30040615cfce376551bc69d7aab706c3d7e39a0d4",
+        "ethylene-sulfite-es-resolve.json": "2bb38e06dbed451869299f2403cd1f1ef2bca73c3c4a2bded3274a054c1a5323"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3741-38-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/77342/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/77342/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/77342/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/ethylene-sulfite-es-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/ethylene-sulfite-es-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/ethylene-sulfite-es-clean-v2.png",
+      "scientificBounds": [
+        163,
+        362,
+        1343,
+        1144
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/ethylene-sulfite-es-scientific-v2.png",
+      "masterSHA256": "c4bbf2d92d669e572506842ba10358d8f20b387491ffb44f7bfca6bb410e59f1",
+      "merchantSHA256": "9125efe596b16b6c89b9b313e063adde9e80f06525aded5c3a579fc20d971c63",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "82474e86c1e4bb6457b7ec27f3a50f5d2be16490c6fb5984310f1382c47bdcca"
+    },
+    {
+      "slug": "hexamethyldisilazane-hmds",
+      "name": "Hexamethyldisilazane (HMDS)",
+      "cas": "999-97-3",
+      "catalogFormula": "C6H19NSi2",
+      "oldImage": "/assets/images/chemical-structures/hexamethyldisilazane-hmds.png",
+      "sku": "WM-ADD-HMDS",
+      "cid": 13838,
+      "formula": "C6H19NSi2",
+      "inchiKey": "FFUAGWLWBBFQJT-UHFFFAOYSA-N",
+      "isomericSmiles": "C[Si](C)(C)N[Si](C)(C)C",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C6H19NSi2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "hexamethyldisilazane-hmds-resolve.json": "e4d79a519a535bd73740ffd75f409ef41120c91550641d2e5cb48afd85a2d51b",
+        "hexamethyldisilazane-hmds-synonyms.json": "a940e245d442bfc73af9fc9c3dccdc96dfcda04d183670a0c94bb9c6e61afbd3",
+        "hexamethyldisilazane-hmds-urls.json": "dbf3717bb4e54d46bedf9e2312084b452b489aeafba11854541ea406e60c0e2a",
+        "hexamethyldisilazane-hmds-sdf.sdf": "3e5d4109ccb90c06022604996cca931d60b78acdf36fc3f80bfed9e1697e4894",
+        "hexamethyldisilazane-hmds-properties.json": "2e8d168c6d25f08c467c7021bb724c383969cc5bfbdf792a490728d08079b468"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/999-97-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13838/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13838/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13838/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/hexamethyldisilazane-hmds-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/hexamethyldisilazane-hmds-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/hexamethyldisilazane-hmds-clean-v2.png",
+      "scientificBounds": [
+        148,
+        448,
+        1352,
+        1052
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/hexamethyldisilazane-hmds-scientific-v2.png",
+      "masterSHA256": "1dbe69bd34882a0c671db66cb2e984e648e4d846ed2718fe4905fbfc5fcef548",
+      "merchantSHA256": "78760f35f4805135a850846bc99546f71029ff04808afa5906f4706df557dc20",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "f2244406d8d4f6fec613e141c1472edbf046e3fdb15c7ae647a3135506c8ad79"
+    },
+    {
+      "slug": "fluorobenzene-fb",
+      "name": "Fluorobenzene (FB)",
+      "cas": "462-06-6",
+      "catalogFormula": "C6H5F",
+      "oldImage": "/assets/images/chemical-structures/fluorobenzene-fb.png",
+      "sku": "WM-ADD-FB",
+      "cid": 10008,
+      "formula": "C6H5F",
+      "inchiKey": "PYLWMHQQBFSUBP-UHFFFAOYSA-N",
+      "isomericSmiles": "Fc1ccccc1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C6H5F"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "fluorobenzene-fb-urls.json": "04bec85c5b937936e0bd91f7b9a81a60d2d3358456ac9efb25ce9028478697f0",
+        "fluorobenzene-fb-properties.json": "09e0f8e875367b943db9a6ba2d2707c5dda28db874abea5ba85376f5a3095bfb",
+        "fluorobenzene-fb-synonyms.json": "2817b39835b8835bbc22e938759582dd77966b74ac64c18ec48406ffc5533c7a",
+        "fluorobenzene-fb-resolve.json": "7e8017f58a372a6c70ff4b817940e8125645e7a8d9c2e641a92096169965538e",
+        "fluorobenzene-fb-sdf.sdf": "8245948353b86e110b9426cc524569ab163af21a905c00e3c33b4da146769dfb"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/462-06-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10008/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10008/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10008/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/fluorobenzene-fb-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/fluorobenzene-fb-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/fluorobenzene-fb-clean-v2.png",
+      "scientificBounds": [
+        159,
+        413,
+        1336,
+        1087
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/fluorobenzene-fb-scientific-v2.png",
+      "masterSHA256": "cf5f5f4ce1c14606f684e6aa9c98b544d809886e9c4927ffa5d34edc7c991c6c",
+      "merchantSHA256": "f27138b3c61b2d2742ee0e8ec470267973d49aa937d76ecf349bdd86a1cf5687",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "25df10173c5d511232edaac7f56d66f82293ec950b1c596d1c277aabeb58799f"
+    },
+    {
+      "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
+      "name": "Sodium bis(fluorosulfonyl)imide (NaFSI)",
+      "cas": "100669-96-3",
+      "catalogFormula": "F2NNaO4S2",
+      "oldImage": "/assets/images/chemical-structures/sodium-bis-fluorosulfonyl-imide-nafsi.png",
+      "sku": "WM-NGS-NAFSI",
+      "cid": 102310776,
+      "formula": "F2NNaO4S2",
+      "inchiKey": "VCCATSJUUVERFU-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S(=O)(F)[N-]S(=O)(=O)F.[Na+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "F2NO4S2-",
+        "Na+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "sodium-bis-fluorosulfonyl-imide-nafsi-synonyms.json": "25186185c432a0371080ef3c7ac71585398deaa40e2892e60f6c13a4717aba32",
+        "sodium-bis-fluorosulfonyl-imide-nafsi-urls.json": "e05b78a5f288287fb713b990456bd74263ea2ef6d6417828e6a4a9f7ecd57eb4",
+        "sodium-bis-fluorosulfonyl-imide-nafsi-sdf.sdf": "b306ed514b663b9fb60f1728e2e0377afd4111e10f2c2619bed968ddd244cb84",
+        "sodium-bis-fluorosulfonyl-imide-nafsi-resolve.json": "05aafc7938351284187521ca152f83ccd8646d528e0094365283bce0e9bf73f7",
+        "sodium-bis-fluorosulfonyl-imide-nafsi-properties.json": "1fda55647a2b374b64f132094e3c6a0655456311ad96d9db98c2d17fa4440af6"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/100669-96-3/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/102310776/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/102310776/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/102310776/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/sodium-bis-fluorosulfonyl-imide-nafsi-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "+",
+          "x": 861.0,
+          "y": 400.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "\u2212",
+          "x": 806.5,
+          "y": 976.2,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/sodium-bis-fluorosulfonyl-imide-nafsi-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/sodium-bis-fluorosulfonyl-imide-nafsi-clean-v2.png",
+      "scientificBounds": [
+        231,
+        356,
+        1287,
+        1135
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/sodium-bis-fluorosulfonyl-imide-nafsi-scientific-v2.png",
+      "masterSHA256": "07e496a1a532b7f0b3ee6deec6947e79a8496a15e36fc862323ae8e31e4a29a4",
+      "merchantSHA256": "945a4df0c51de61b63643f6e75a075b88791d153e86a44f6c62ff0c360c89de2",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "7faf1609783b1e91d0d6a6135b481a8355d6eee4a4c647d74b00bee0b1d41d4d"
+    },
+    {
+      "slug": "cyclohexylbenzene-chb",
+      "name": "Cyclohexylbenzene (CHB)",
+      "cas": "827-52-1",
+      "catalogFormula": "C12H16",
+      "oldImage": "/assets/images/chemical-structures/cyclohexylbenzene-chb.png",
+      "sku": "WM-ADD-CHB",
+      "cid": 13229,
+      "formula": "C12H16",
+      "inchiKey": "IGARGHRYKHJQSM-UHFFFAOYSA-N",
+      "isomericSmiles": "c1ccc(C2CCCCC2)cc1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C12H16"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "cyclohexylbenzene-chb-sdf.sdf": "9884daf632aee35749e9d81f2f4030036ddcb9e0268e2cdf80d2135eafcff048",
+        "cyclohexylbenzene-chb-urls.json": "6cab943e3d7291e3068ad77c257934dd1dae89bc0ef0c2586cbe867c4019f939",
+        "cyclohexylbenzene-chb-properties.json": "48791ea6bc5078483a5060cbed9575355d659c39453f2b8cc4b4807e316395ca",
+        "cyclohexylbenzene-chb-resolve.json": "452f2fd438cdfb6a3a7d854bffe151d3ff0850be48eaf6381a039f5456800d8c",
+        "cyclohexylbenzene-chb-synonyms.json": "e2700174b5186bf8a29f4a779bea1376a51db6ad681156fd8cc10ad29b505557"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/827-52-1/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13229/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13229/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13229/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/cyclohexylbenzene-chb-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/cyclohexylbenzene-chb-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/cyclohexylbenzene-chb-clean-v2.png",
+      "scientificBounds": [
+        146,
+        538,
+        1354,
+        962
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/cyclohexylbenzene-chb-scientific-v2.png",
+      "masterSHA256": "48d68baf6fe35da22b0e1aeea1f96d1849d02636bd3c9da4780ac002587bb831",
+      "merchantSHA256": "79a6533aa908f28cd792a96d5ed9fcc97fd85cd1d48890cdef4e6461b92b8a8f",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "5446b403c312801dc6a0b1cbc1cd5333bcce304f074e152990e3a9ed3852b11d"
+    },
+    {
+      "slug": "1-4-butane-sultone-bs",
+      "name": "1,4-Butane sultone (BS)",
+      "cas": "1633-83-6",
+      "catalogFormula": "C4H8O3S",
+      "oldImage": "/assets/images/chemical-structures/1-4-butane-sultone-bs.png",
+      "sku": "WM-ADD-BS",
+      "cid": 15411,
+      "formula": "C4H8O3S",
+      "inchiKey": "MHYFEEDKONKGEB-UHFFFAOYSA-N",
+      "isomericSmiles": "O=S1(=O)CCCCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C4H8O3S"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-4-butane-sultone-bs-properties.json": "560af88a3958bc712c297f3db89acd7217a76925cabbb941512f104f02834bb3",
+        "1-4-butane-sultone-bs-sdf.sdf": "693e554d56879dbfc745a8a7e92939fe83a732b13c858ffd5f2072383fa3a0f4",
+        "1-4-butane-sultone-bs-synonyms.json": "f47888e996e5f7c01b2a33e709b9e4ca182b91d657c4cd02ec6aaeb73994ea67",
+        "1-4-butane-sultone-bs-resolve.json": "7ed978e594cb3962957e88ff979a80902f1d2919ddb75da240c399c5220db4f4",
+        "1-4-butane-sultone-bs-urls.json": "255f1eebd0d2faef4eb0479f5b83096390ad40356f6e04faed6fb7796bf7ac9c"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1633-83-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15411/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15411/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15411/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-4-butane-sultone-bs-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-4-butane-sultone-bs-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-4-butane-sultone-bs-clean-v2.png",
+      "scientificBounds": [
+        160,
+        369,
+        1345,
+        1129
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-4-butane-sultone-bs-scientific-v2.png",
+      "masterSHA256": "521551f1ce7b4b055c3e523b9e839c1595c14d0ce41b6d6fd01d7a471813d112",
+      "merchantSHA256": "81f7812f979b8e1da830087fee4db733e0ae3bc56c035c4418d9f341a5fb7f91",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "10fe4c22c6a9257ae95661d1d0657150752483ab1e604eb86d82e7d36bbfc3a7"
+    },
+    {
+      "slug": "1-3-dioxolane-dol",
+      "name": "1,3-Dioxolane (DOL)",
+      "cas": "646-06-0",
+      "catalogFormula": "C3H6O2",
+      "oldImage": "/assets/images/chemical-structures/1-3-dioxolane-dol.png",
+      "sku": "WM-SOL-DOL",
+      "cid": 12586,
+      "formula": "C3H6O2",
+      "inchiKey": "WNXJIVFYUVYPPR-UHFFFAOYSA-N",
+      "isomericSmiles": "C1COCO1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C3H6O2"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "1-3-dioxolane-dol-properties.json": "42879b6459e725a412d3f4c7b1ac8c81dc1e9ba9fc6c446cbe09c12378ff3b52",
+        "1-3-dioxolane-dol-sdf.sdf": "ae0e81c0f242529109d3bc2782207cc42822646a7ccbf2956d2f5952af3a7c7a",
+        "1-3-dioxolane-dol-resolve.json": "78c9897f738786bff1c0c5cb874f93574205add1128d310b32c92c0b7dc63978",
+        "1-3-dioxolane-dol-urls.json": "7a97b3e86f3a2fd6c91e8d16b7cbf4d1159cdc67a59d89039135d31d6df6260d",
+        "1-3-dioxolane-dol-synonyms.json": "571b2bb649e9db743befaa87ce68a430d80e34aa97fe0645f91453d7d6a7430d"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/646-06-0/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12586/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12586/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12586/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/1-3-dioxolane-dol-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/1-3-dioxolane-dol-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/1-3-dioxolane-dol-clean-v2.png",
+      "scientificBounds": [
+        213,
+        200,
+        1299,
+        1300
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/1-3-dioxolane-dol-scientific-v2.png",
+      "masterSHA256": "b0b28beb5af61f6b5137de2a8c9749d53424d722e1deb404228e37611b2da6fe",
+      "merchantSHA256": "00b835d446ca008f336762eccad2316b74ee23f553b43a9385308ad9d3eae375",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "17d02f1dbad2075e98757110b7e608698ff9d3145131453b1599ae59e39bcbce"
+    },
+    {
+      "slug": "triallyl-phosphate-tap",
+      "name": "Triallyl phosphate (TAP)",
+      "cas": "1623-19-4",
+      "catalogFormula": "C9H15O4P",
+      "oldImage": "/assets/images/chemical-structures/triallyl-phosphate-tap.png",
+      "sku": "WM-ADD-TAP",
+      "cid": 15390,
+      "formula": "C9H15O4P",
+      "inchiKey": "XHGIFBQQEGRTPB-UHFFFAOYSA-N",
+      "isomericSmiles": "C=CCOP(=O)(OCC=C)OCC=C",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C9H15O4P"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "triallyl-phosphate-tap-properties.json": "bb045c6e951b936c7bc72c0c0b5e29d1daa6efd65a5490d9820de5381b7eb8fe",
+        "triallyl-phosphate-tap-resolve.json": "9c49855e47673f167aea3ed0465f66f4a2b18951f9cbc71e1b11620f0704e5a9",
+        "triallyl-phosphate-tap-synonyms.json": "54b4535d013cb7fb31221ac232b838c88a328d0857668e5755a2e65884b05a41",
+        "triallyl-phosphate-tap-sdf.sdf": "5c8214a826059285988381c8f2ce1870be20d7a4be17832fb74b07e4aef53daa",
+        "triallyl-phosphate-tap-urls.json": "ac0a76cfc07f85cf35e6c57a50e7591a32ea117a62ccabac3df2fd7342b0e9ed"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1623-19-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/triallyl-phosphate-tap-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/triallyl-phosphate-tap-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/triallyl-phosphate-tap-clean-v2.png",
+      "scientificBounds": [
+        149,
+        296,
+        1352,
+        1201
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/triallyl-phosphate-tap-scientific-v2.png",
+      "masterSHA256": "2745905d55cbf237b707b967e3e4c11e74fb7713057528635c3adadf0b1f98cf",
+      "merchantSHA256": "134952c52feeb71cee5ab074f1a54822eb5e0b7548158ce2604d82a36a2b236e",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "387038782472897253d887c2b94c3a4c2cc6acba0ce48112d8e0020be1892f50"
+    },
+    {
+      "slug": "lithium-nitrate-lino3",
+      "name": "Lithium nitrate (LiNO3)",
+      "cas": "7790-69-4",
+      "catalogFormula": "LiNO3",
+      "oldImage": "/assets/images/chemical-structures/lithium-nitrate-lino3.png",
+      "sku": "WM-ADD-LINO3",
+      "cid": 10129889,
+      "formula": "LiNO3",
+      "inchiKey": "IIPYXGDZVMZOAP-UHFFFAOYSA-N",
+      "isomericSmiles": "O=[N+]([O-])[O-].[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "fragmentFormulas": [
+        "NO3-",
+        "Li+"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "lithium-nitrate-lino3-sdf.sdf": "58a5af939619236ff84e7c60b645e7eebd2510ceddf3a365887c7ec19c800c87",
+        "lithium-nitrate-lino3-urls.json": "2c2d6f2ac01ed47a379d2dad6ba3878ac28d50364149a7cb0d9088bcd18bdceb",
+        "lithium-nitrate-lino3-synonyms.json": "91f0615743ac0dbb9c2d4bbe279796eec8bb6c8f9a8513fe887b18104cdf188b",
+        "lithium-nitrate-lino3-resolve.json": "a11037c4610d2b2c22579ff6ec9c5f3a52ebd79589ca01adacc1e8f58dbab7a1",
+        "lithium-nitrate-lino3-properties.json": "30494a591bc8d5ac90e0b98c9a912a73e1fe331d1eba9886fbc9e8f3aef6f44a"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/7790-69-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10129889/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10129889/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10129889/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-nitrate-lino3-scientific-v2.svg",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 1258.3,
+          "y": 452.3,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "\u2212",
+          "x": 593.7,
+          "y": 452.3,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 920.0,
+          "y": 644.1,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 349.5,
+          "y": 644.1,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "website": "/assets/images/product-images/website/artwork/lithium-nitrate-lino3-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/lithium-nitrate-lino3-clean-v2.png",
+      "scientificBounds": [
+        253,
+        426,
+        1306,
+        1082
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/lithium-nitrate-lino3-scientific-v2.png",
+      "masterSHA256": "bbc058989c5f52059969e483ec245141463fec1e03b84a1c82f4137280bc097d",
+      "merchantSHA256": "eeacee2c79a5be442a7fd59f284292c5aa2ddf50d73d2fe06764ee903fa99de6",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "c7417143971d8e720090439babffea81a77ea60bf0bbe4e19499c845c8f807b9"
+    },
+    {
+      "slug": "tetravinylsilane-tvsi",
+      "name": "Tetravinylsilane (TVSi)",
+      "cas": "1112-55-6",
+      "catalogFormula": "C8H12Si",
+      "oldImage": "/assets/images/chemical-structures/tetravinylsilane-tvsi.png",
+      "sku": "WM-ADD-TVSI",
+      "cid": 66188,
+      "formula": "C8H12Si",
+      "inchiKey": "UFHILTCGAOPTOV-UHFFFAOYSA-N",
+      "isomericSmiles": "C=C[Si](C=C)(C=C)C=C",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C8H12Si"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "tetravinylsilane-tvsi-properties.json": "187bae47bbe015e9ff4fc185afde112b898fbbcc3ddb975469e4869cc76b25ec",
+        "tetravinylsilane-tvsi-sdf.sdf": "d5bed359f3b7ed74e7fd7eb8aa7a168d1345b613a5b5152d95e1f442abc88f9d",
+        "tetravinylsilane-tvsi-resolve.json": "ec22cc6700a2c471a24cc9f048dad71e232fa4e0c107c298149c16e88a75e831",
+        "tetravinylsilane-tvsi-synonyms.json": "936fd88f023e0e0d077b31fdebdda05673de5764dc778ee2f7e4342e24647f33",
+        "tetravinylsilane-tvsi-urls.json": "0f108926fc0d87f51ecec7ee2d303c4a7dd3acdeeec80abfd710f6a72c4e8d48"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1112-55-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/tetravinylsilane-tvsi-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/tetravinylsilane-tvsi-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/tetravinylsilane-tvsi-clean-v2.png",
+      "scientificBounds": [
+        149,
+        319,
+        1351,
+        1178
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/tetravinylsilane-tvsi-scientific-v2.png",
+      "masterSHA256": "3b96c27e0309b1e24f0f9af736acca37567b7c1dc8eb31900df6810967632503",
+      "merchantSHA256": "cc99c111974f149934ee7851503411781a62460ac315578781a5222842975ac9",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "547cd1313c9d422153332a5c2b31fa3cecaa5cf8b9279d0a7d3a855852357d1b"
+    },
+    {
+      "slug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
+      "name": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN)",
+      "cas": "33027-66-6",
+      "catalogFormula": "C2H5F5N3OP3",
+      "oldImage": "/assets/images/chemical-structures/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.png",
+      "sku": "WM-ADD-PFPN",
+      "cid": 23419249,
+      "formula": "C2H5F5N3OP3",
+      "inchiKey": "CBTAIOOTRCAMBD-UHFFFAOYSA-N",
+      "isomericSmiles": "CCOP1(F)=NP(F)(F)=NP(F)(F)=N1",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C2H5F5N3OP3"
+      ],
+      "stereocenters": [
+        [
+          0,
+          "?"
+        ]
+      ],
+      "sourceSHA256": {
+        "ethoxy-pentafluoro-cyclotriphosphazene-pfpn-properties.json": "9894fe3880ff6e79a2f964453f14eed6c0b1d028691186bb5054eda72e900dc1",
+        "ethoxy-pentafluoro-cyclotriphosphazene-pfpn-resolve.json": "0d34a3b7d5dbe8e0cb577d07d46229731553111b92113ec702019502883d34b6",
+        "ethoxy-pentafluoro-cyclotriphosphazene-pfpn-sdf.sdf": "8c30facf8bfccfa41f57edac0887505d46907aefe4db10b4d05c4cf6ee055132",
+        "ethoxy-pentafluoro-cyclotriphosphazene-pfpn-synonyms.json": "c60e4726ebbb8cf6de7ea0e2782b0ba788dbf0ea0480e2e43f6bf5bbff859a4a",
+        "ethoxy-pentafluoro-cyclotriphosphazene-pfpn-urls.json": "22c7104e8a4850ec089c2084f090e3d7e213f717bb6b7b411599fdf7f7e4fe2d"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/33027-66-6/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23419249/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23419249/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23419249/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-clean-v2.png",
+      "scientificBounds": [
+        159,
+        324,
+        1349,
+        1182
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-scientific-v2.png",
+      "masterSHA256": "f12f466ecd708ae4664adcedbf55320d991555ef5d706c93a3aefa271402ad19",
+      "merchantSHA256": "ec703c277b9a39bb31ae3fd319d5cda57d7d6c3f7d31769fe0228d16c5ca4a2f",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "b80e8684ace644eed670b03cf626c6a1c0acd8ce70abda3c21d82609050942cd"
+    },
+    {
+      "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+      "name": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP)",
+      "cas": "358-63-4",
+      "catalogFormula": "C6H6F9O4P",
+      "oldImage": "/assets/images/chemical-structures/tris-2-2-2-trifluoroethyl-phosphate-tfep.png",
+      "sku": "WM-SOL-TFEP",
+      "cid": 303454,
+      "formula": "C6H6F9O4P",
+      "inchiKey": "ZMQDTYVODWKHNT-UHFFFAOYSA-N",
+      "isomericSmiles": "O=P(OCC(F)(F)F)(OCC(F)(F)F)OCC(F)(F)F",
+      "fragmentCharges": [
+        0
+      ],
+      "fragmentFormulas": [
+        "C6H6F9O4P"
+      ],
+      "stereocenters": [],
+      "sourceSHA256": {
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep-synonyms.json": "ebb439fbf89af952c063488d4359df301b91fbf7a3ac1228e97fd50c128b5b31",
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep-sdf.sdf": "e5241396dd3d238819990952ad6e02a99252c1e202bf9dde642380c7d8a3caf1",
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep-resolve.json": "7c4e6cc607553d4017eb9f4d29c627e9aeb8f9237da7739544a7ae7cf78b90e6",
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep-properties.json": "a90346dac57c4f8934d28f140889cdacbc9e3635b4b9e3d35a4102b5eccd7dd0",
+        "tris-2-2-2-trifluoroethyl-phosphate-tfep-urls.json": "ba3bec7ec4816a709fc7de793c05ddbd745bdc7e1a1e90b0830b5311741c9dd2"
+      },
+      "sourceURLs": {
+        "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/358-63-4/cids/JSON",
+        "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/303454/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+        "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/303454/synonyms/JSON",
+        "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/303454/SDF?record_type=2d"
+      },
+      "identityStatus": "CAS/CID, CAS synonym, SDF, formula and InChIKey matched; automated scientific checks, owner review pending",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/tris-2-2-2-trifluoroethyl-phosphate-tfep-scientific-v2.svg",
+      "charges": [],
+      "website": "/assets/images/product-images/website/artwork/tris-2-2-2-trifluoroethyl-phosphate-tfep-option-a-website-v1.png",
+      "merchant": "/assets/images/product-images/merchant/tris-2-2-2-trifluoroethyl-phosphate-tfep-clean-v2.png",
+      "scientificBounds": [
+        156,
+        240,
+        1349,
+        1266
+      ],
+      "masterPNG": "/assets/images/product-images/scientific/tris-2-2-2-trifluoroethyl-phosphate-tfep-scientific-v2.png",
+      "masterSHA256": "f41d63cb68a09466db1f8b767e8a4652faa907689d51bbd942230b7b04538ee3",
+      "merchantSHA256": "1845c4eea39b90ef6a69d4f43b4fb8b304a2765475b9da6662eeeacda0265bdf",
+      "websiteRole": "WEBSITE_ONLY",
+      "merchantPolicy": "Molecular illustration: content-policy review needed; dimension compliance is not policy approval",
+      "logo": {
+        "variant": "symbol",
+        "x": 1235,
+        "y": 1325,
+        "width": 195,
+        "height": 134.49880668257757,
+        "opacity": 0.6
+      },
+      "websiteSHA256": "45742ae7a01de5f77b1b909f6e3d0686f8b75ea119880da87d74608c6be4d1b3"
+    },
+    {
+      "slug": "sodium-difluorophosphate-napo2f2",
+      "name": "Sodium difluorophosphate (NaPO2F2)",
+      "cas": "15587-24-3",
+      "catalogFormula": "F2NaO2P",
+      "oldImage": "/assets/images/chemical-structures/sodium-difluorophosphate-napo2f2.png",
+      "sku": "WM-NGS-NAPO2F2",
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/sodium-difluorophosphate-napo2f2-scientific-v2.svg",
+      "masterPNG": "/assets/images/product-images/scientific/sodium-difluorophosphate-napo2f2-scientific-v2.png",
+      "formula": "F2NaO2P",
+      "inchiKey": "KBVUALKOHTZCGR-UHFFFAOYSA-M",
+      "smiles": "O=P([O-])(F)F.[Na+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "sourceURLs": [
+        "https://www.sigmaaldrich.com/US/en/product/aldrich/939773",
+        "https://pubchem.ncbi.nlm.nih.gov/compound/23694905"
+      ],
+      "resolution": "Prior CAS-synonym gate rejected absent PubChem CAS annotation. Sigma CAS/name/formula plus the intact ionic PubChem SDF independently establishes identity. No generic CAS gate was relaxed.",
+      "charges": [
+        {
+          "text": "+",
+          "x": 1229.1,
+          "y": 740.0,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "\u2212",
+          "x": 345.4,
+          "y": 914.1,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "merchant": "/assets/images/product-images/merchant/sodium-difluorophosphate-napo2f2-clean-v2.png",
+      "website": "/assets/images/product-images/website/artwork/sodium-difluorophosphate-napo2f2-option-a-website-v1.png",
+      "masterSHA256": "93e696be4b142d9b672a0dd0da014f04b4725a680202d150eee37baa1d2429d1",
+      "merchantSHA256": "24a6881c3643eb19336cef61104e6ed40405401b6a200a8c4dc0ffa4a6eeaf7c",
+      "websiteSHA256": "b6c2932ecbf943a0f9a5872c93e85e3995295edc5f16acdf5aed03acb1ea3409"
+    },
+    {
+      "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+      "name": "Lithium difluorobis(oxalato)phosphate (LiDFBOP)",
+      "cas": "678966-16-0",
+      "catalogFormula": "C4F2LiO8P",
+      "oldImage": "/assets/images/chemical-structures/lithium-difluorobis-oxalato-phosphate-lidodfp.png",
+      "sku": "WM-ADD-LIDODFP",
+      "drawingCoordinates": [
+        [
+          -3.2,
+          2
+        ],
+        [
+          -2.4,
+          1
+        ],
+        [
+          -1.2,
+          0.7
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1.6
+        ],
+        [
+          -1.2,
+          -0.7
+        ],
+        [
+          -2.4,
+          -1
+        ],
+        [
+          -3.2,
+          -2
+        ],
+        [
+          1.2,
+          0.7
+        ],
+        [
+          2.4,
+          1
+        ],
+        [
+          2.4,
+          -1
+        ],
+        [
+          1.2,
+          -0.7
+        ],
+        [
+          3.2,
+          -2
+        ],
+        [
+          3.2,
+          2
+        ],
+        [
+          0,
+          -1.6
+        ],
+        [
+          0,
+          3.4
+        ]
+      ],
+      "status": "VERIFIED",
+      "master": "/assets/images/product-images/scientific/lithium-difluorobis-oxalato-phosphate-lidodfp-scientific-v2.svg",
+      "masterPNG": "/assets/images/product-images/scientific/lithium-difluorobis-oxalato-phosphate-lidodfp-scientific-v2.png",
+      "formula": "C4F2LiO8P",
+      "inchiKey": "KRYVNYFSKKOTLE-UHFFFAOYSA-N",
+      "smiles": "O=C1O[P-]2(F)(F)(OC1=O)OC(=O)C(=O)O2.[Li+]",
+      "fragmentCharges": [
+        -1,
+        1
+      ],
+      "sourceURLs": [
+        "https://www.tcichemicals.com/US/en/p/L0369",
+        "https://www.chemscene.com/product/678966-16-0.html",
+        "https://www.aaronchem.com/678966-16-0"
+      ],
+      "resolution": "Rejected PubChem record has a five-coordinate neutral phosphorane plus separate fluoride (three fragments). Two independent published six-coordinate graphs agree. Only their formal-charge convention is normalized; every atom and bond is unchanged.",
+      "charges": [
+        {
+          "text": "\u2212",
+          "x": 800.5,
+          "y": 848.7,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        },
+        {
+          "text": "+",
+          "x": 824.0,
+          "y": 320.6,
+          "fontSize": 86,
+          "cssSizeAt180": 10.32
+        }
+      ],
+      "merchant": "/assets/images/product-images/merchant/lithium-difluorobis-oxalato-phosphate-lidodfp-clean-v2.png",
+      "website": "/assets/images/product-images/website/artwork/lithium-difluorobis-oxalato-phosphate-lidodfp-option-a-website-v1.png",
+      "masterSHA256": "3b578dc0f71b2df64710057e0dc468010d6070f125f6585b5d5612cc2c6641aa",
+      "merchantSHA256": "8a50e1aca49f75a27e8a82f1f226f056d3e74c33753fe3af7e5f25a016a2dc8a",
+      "websiteSHA256": "eead1cbf2ca717ef187c5adf205e5d2db6ee5b777423904c099cb7ff52d469c4"
+    }
+  ]
+}

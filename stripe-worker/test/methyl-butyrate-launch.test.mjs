@@ -27,7 +27,7 @@ test('MB identity and supplier specifications remain canonical and narrowly scop
   assert.equal(product.specialtyGradeNote, 'Battery-grade MB is a specialized low-moisture electrolyte solvent with limited commercial availability compared with general laboratory grades.');
   assert.equal(product.bulkQuotePrompt, 'Need ≥2.5 kg, recurring supply, alternate packaging, or project pricing? Request a quote.');
   assert.equal(product.url, '/products/methyl-butyrate-mb-battery-grade.html');
-  assert.equal(product.image, '/assets/images/chemical-structures/methyl-butyrate-structure.png');
+  assert.equal(product.image, '/assets/images/product-images/merchant/methyl-butyrate-mb-battery-grade-clean-v2.png');
   assert.equal(product.imageAlt, 'Chemical structure of methyl butyrate (methyl butanoate), CAS 623-42-7');
   assert.deepEqual(product.catalogCardSpecifications, ['Grade', 'Purity', 'Water']);
   const properties = Object.fromEntries(product.additionalProperty.map(item => [item.name, item.value]));

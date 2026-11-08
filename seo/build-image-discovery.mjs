@@ -25,10 +25,10 @@ async function listHtml(siteRoot, directory = siteRoot) {
   return files.sort();
 }
 
-export async function buildImageDiscovery({ siteRoot, scope = 'all' }) {
+export async function buildImageDiscovery({ siteRoot, scope = 'all', pagePaths = [] }) {
   const htmlFiles = await listHtml(siteRoot);
   const mxeneScope = pagePath => pagePath === 'products.html' || /^products\/[^/]*mxene[^/]*\.html$/.test(pagePath);
-  const robotsTargets = scope === 'mxene-materials' ? htmlFiles.filter(mxeneScope) : scope === 'all'
+  const robotsTargets = scope === 'chemical-images' ? htmlFiles.filter(p => pagePaths.includes(p)) : scope === 'mxene-materials' ? htmlFiles.filter(mxeneScope) : scope === 'all'
     ? htmlFiles
     : htmlFiles.filter(pagePath => pagePath === 'products.html' || pagePath.startsWith('products/'));
   let largePreviewPages = 0;
@@ -49,9 +49,9 @@ export async function buildImageDiscovery({ siteRoot, scope = 'all' }) {
   for (const pagePath of htmlFiles) pages.set(pagePath, await readFile(resolve(siteRoot, pagePath), 'utf8'));
   const excludedPaths = await loadImageSitemapExclusions(siteRoot);
   let sitemapEntries = await buildSitemapEntries({ siteRoot, pages, excludedPaths });
-  if (scope === 'mxene-materials') {
+  if (scope === 'mxene-materials' || scope === 'chemical-images') {
     const previous = parseAndValidateSitemapXml(await readFile(resolve(siteRoot, 'sitemap.xml'), 'utf8'));
-    const inScope = entry => mxeneScope(new URL(entry.url).pathname.slice(1));
+    const inScope = entry => scope === 'chemical-images' ? pagePaths.includes(new URL(entry.url).pathname.slice(1)) : mxeneScope(new URL(entry.url).pathname.slice(1));
     sitemapEntries = [...previous.filter(entry => !inScope(entry)), ...sitemapEntries.filter(inScope)].sort((a, b) => a.url.localeCompare(b.url));
   }
   await writeFile(resolve(siteRoot, 'sitemap.xml'), renderSitemap(sitemapEntries));

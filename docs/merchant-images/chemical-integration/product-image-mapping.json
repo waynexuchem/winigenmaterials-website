@@ -1,0 +1,1042 @@
+[
+  {
+    "slug": "lithium-hexafluorophosphate-lipf6",
+    "name": "Lithium hexafluorophosphate (LiPF6)",
+    "sku": "WM-LS-LIPF6",
+    "cas": "21324-40-3",
+    "formula": "F6LiP",
+    "inchiKey": "AXPLOJNSKRXQPA-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-hexafluorophosphate-lipf6-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-hexafluorophosphate-lipf6-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-hexafluorophosphate-lipf6-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-hexafluorophosphate-lipf6-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-difluorophosphate-lipo-2-f-2",
+    "name": "Lithium difluorophosphate (LiPO2F2)",
+    "sku": "WM-LS-LIPO2F2",
+    "cas": "24389-25-1",
+    "formula": "F2LiO2P",
+    "inchiKey": "IGILRSKEFZLPKG-UHFFFAOYSA-M",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-difluorophosphate-lipo-2-f-2-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-difluorophosphate-lipo-2-f-2-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-difluorophosphate-lipo-2-f-2-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-difluorophosphate-lipo-2-f-2-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-bis-oxalato-borate-libob",
+    "name": "Lithium bis(oxalato)borate (LiBOB)",
+    "sku": "WM-LS-LIBOB",
+    "cas": "244761-29-3",
+    "formula": "C4BLiO8",
+    "inchiKey": "NVQAYVUCVASGDK-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-bis-oxalato-borate-libob-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-bis-oxalato-borate-libob-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-bis-oxalato-borate-libob-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-bis-oxalato-borate-libob-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-difluoro-oxalate-borate-liodfb",
+    "name": "Lithium difluoro oxalate borate (LiODFB)",
+    "sku": "WM-LS-LIODFB",
+    "cas": "409071-16-5",
+    "formula": "C2BF2LiO4",
+    "inchiKey": "MEDDCIKGDMDORY-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-difluoro-oxalate-borate-liodfb-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-difluoro-oxalate-borate-liodfb-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-difluoro-oxalate-borate-liodfb-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-difluoro-oxalate-borate-liodfb-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
+    "name": "Lithium bis(trifluoromethanesulfonyl)imide (LiTFSI)",
+    "sku": "WM-LS-LITFSI",
+    "cas": "90076-65-6",
+    "formula": "C2F6LiNO4S2",
+    "inchiKey": "QSZMZKBZAYQGRS-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
+    "name": "Lithium bis(fluorosulfonyl)imide (LiFSI)",
+    "sku": "WM-LS-LIFSI",
+    "cas": "171611-11-3",
+    "formula": "F2LiNO4S2",
+    "inchiKey": "VDVLPSWVDYJFRW-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-bis-fluorosulfonyl-imide-lifsi-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-bis-fluorosulfonyl-imide-lifsi-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-bis-fluorosulfonyl-imide-lifsi-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-bis-fluorosulfonyl-imide-lifsi-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-tetrafluoroborate-libf-4",
+    "name": "Lithium tetrafluoroborate (LiBF4)",
+    "sku": "WM-LS-LIBF4",
+    "cas": "14283-07-9",
+    "formula": "BF4Li",
+    "inchiKey": "UFXJWFBILHTTET-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-tetrafluoroborate-libf-4-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-tetrafluoroborate-libf-4-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-tetrafluoroborate-libf-4-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-tetrafluoroborate-libf-4-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "ethylene-carbonate-ec",
+    "name": "Ethylene carbonate (EC)",
+    "sku": "WM-SOL-EC",
+    "cas": "96-49-1",
+    "formula": "C3H4O3",
+    "inchiKey": "KMTRUDSVKNLOMY-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/ethylene-carbonate-ec-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/ethylene-carbonate-ec-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/ethylene-carbonate-ec-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/ethylene-carbonate-ec-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "dimethyl-carbonate-dmc",
+    "name": "Dimethyl carbonate (DMC)",
+    "sku": "WM-SOL-DMC",
+    "cas": "616-38-6",
+    "formula": "C3H6O3",
+    "inchiKey": "IEJIGPNLZYLLBP-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/dimethyl-carbonate-dmc-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/dimethyl-carbonate-dmc-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/dimethyl-carbonate-dmc-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/dimethyl-carbonate-dmc-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "diethyl-carbonate-dec",
+    "name": "Diethyl carbonate (DEC)",
+    "sku": "WM-SOL-DEC",
+    "cas": "105-58-8",
+    "formula": "C5H10O3",
+    "inchiKey": "OIFBSDVPJOWBCH-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/diethyl-carbonate-dec-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/diethyl-carbonate-dec-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/diethyl-carbonate-dec-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/diethyl-carbonate-dec-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "ethyl-methyl-carbonate-emc",
+    "name": "Ethyl methyl carbonate (EMC)",
+    "sku": "WM-SOL-EMC",
+    "cas": "623-53-0",
+    "formula": "C4H8O3",
+    "inchiKey": "JBTWLSYIZRCDFO-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/ethyl-methyl-carbonate-emc-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/ethyl-methyl-carbonate-emc-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/ethyl-methyl-carbonate-emc-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/ethyl-methyl-carbonate-emc-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "propylene-carbonate-pc",
+    "name": "Propylene carbonate (PC)",
+    "sku": "WM-SOL-PC",
+    "cas": "108-32-7",
+    "formula": "C4H6O3",
+    "inchiKey": "RUOJZAUFBMNUDX-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/propylene-carbonate-pc-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/propylene-carbonate-pc-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/propylene-carbonate-pc-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/propylene-carbonate-pc-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "ethyl-acetate-ea",
+    "name": "Ethyl acetate (EA)",
+    "sku": "WM-SOL-EA",
+    "cas": "141-78-6",
+    "formula": "C4H8O2",
+    "inchiKey": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/ethyl-acetate-ea-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/ethyl-acetate-ea-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/ethyl-acetate-ea-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/ethyl-acetate-ea-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "2-2-difluoroethyl-acetate-dfea",
+    "name": "2,2-Difluoroethyl acetate (DFEA)",
+    "sku": "WM-SOL-DFEA",
+    "cas": "1550-44-3",
+    "formula": "C4H6F2O2",
+    "inchiKey": "PFJLHSIZFYNAHH-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/2-2-difluoroethyl-acetate-dfea-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/2-2-difluoroethyl-acetate-dfea-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/2-2-difluoroethyl-acetate-dfea-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/2-2-difluoroethyl-acetate-dfea-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-2-dimethoxyethane-dme",
+    "name": "1,2-Dimethoxyethane (DME)",
+    "sku": "WM-SOL-DME",
+    "cas": "110-71-4",
+    "formula": "C4H10O2",
+    "inchiKey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-2-dimethoxyethane-dme-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-2-dimethoxyethane-dme-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-2-dimethoxyethane-dme-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-2-dimethoxyethane-dme-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
+    "name": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE)",
+    "sku": "WM-SOL-TTE",
+    "cas": "16627-68-2",
+    "formula": "C5H4F8O",
+    "inchiKey": "HCBRSIIGBBDDCD-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
+    "name": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC)",
+    "sku": "WM-SOL-FEMC",
+    "cas": "156783-95-8",
+    "formula": "C4H5F3O3",
+    "inchiKey": "GBPVMEKUJUKTBA-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/methyl-2-2-2-trifluoroethyl-carbonate-femc-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/methyl-2-2-2-trifluoroethyl-carbonate-femc-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/methyl-2-2-2-trifluoroethyl-carbonate-femc-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/methyl-2-2-2-trifluoroethyl-carbonate-femc-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
+    "name": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC)",
+    "sku": "WM-SOL-TFEC",
+    "cas": "1513-87-7",
+    "formula": "C5H4F6O3",
+    "inchiKey": "WLLOZRDOFANZMZ-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/bis-2-2-2-trifluoroethyl-carbonate-tfec-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/bis-2-2-2-trifluoroethyl-carbonate-tfec-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/bis-2-2-2-trifluoroethyl-carbonate-tfec-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/bis-2-2-2-trifluoroethyl-carbonate-tfec-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "vinylene-carbonate-vc",
+    "name": "Vinylene Carbonate (VC)",
+    "sku": "WM-ADD-VC",
+    "cas": "872-36-6",
+    "formula": "C3H2O3",
+    "inchiKey": "VAYTZRYEBVHVLE-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/vinylene-carbonate-vc-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/vinylene-carbonate-vc-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/vinylene-carbonate-vc-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/vinylene-carbonate-vc-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "vinyl-ethylene-carbonate-vec",
+    "name": "Vinyl ethylene carbonate (VEC)",
+    "sku": "WM-ADD-VEC",
+    "cas": "4427-96-7",
+    "formula": "C5H6O3",
+    "inchiKey": "BJWMSGRKJIOCNR-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/vinyl-ethylene-carbonate-vec-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/vinyl-ethylene-carbonate-vec-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/vinyl-ethylene-carbonate-vec-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/vinyl-ethylene-carbonate-vec-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-3-propanediol-cyclic-sulfate-ts",
+    "name": "1,3-Propanediol cyclic sulfate (TS)",
+    "sku": "WM-ADD-TS",
+    "cas": "1073-05-8",
+    "formula": "C3H6O4S",
+    "inchiKey": "OQYOVYWFXHQYOP-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-3-propanediol-cyclic-sulfate-ts-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-3-propanediol-cyclic-sulfate-ts-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-3-propanediol-cyclic-sulfate-ts-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-3-propanediol-cyclic-sulfate-ts-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
+    "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
+    "sku": "WM-ADD-DTD",
+    "cas": "1072-53-3",
+    "formula": "C2H4O4S",
+    "inchiKey": "ZPFAVCIQZKRBGF-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-3-2-dioxathiolane-2-2-dioxide-dtd-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-3-2-dioxathiolane-2-2-dioxide-dtd-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-3-2-dioxathiolane-2-2-dioxide-dtd-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-3-2-dioxathiolane-2-2-dioxide-dtd-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "prop-1-ene-1-3-sultone-pst",
+    "name": "Prop-1-ene-1,3-sultone (PST)",
+    "sku": "WM-ADD-PST",
+    "cas": "21806-61-1",
+    "formula": "C3H4O3S",
+    "inchiKey": "KLLQVNFCMHPYGL-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/prop-1-ene-1-3-sultone-pst-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/prop-1-ene-1-3-sultone-pst-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/prop-1-ene-1-3-sultone-pst-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/prop-1-ene-1-3-sultone-pst-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
+    "name": "4-Fluoro-1,3-dioxolan-2-one (FEC)",
+    "sku": "WM-ADD-FEC",
+    "cas": "114435-02-8",
+    "formula": "C3H3FO3",
+    "inchiKey": "SBLRHMKNNHXPHG-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/4-fluoro-1-3-dioxolan-2-one-fec-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/4-fluoro-1-3-dioxolan-2-one-fec-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/4-fluoro-1-3-dioxolan-2-one-fec-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/4-fluoro-1-3-dioxolan-2-one-fec-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "succinonitrile-sn",
+    "name": "Succinonitrile (SN)",
+    "sku": "WM-ADD-SN",
+    "cas": "110-61-2",
+    "formula": "C4H4N2",
+    "inchiKey": "IAHFWCOBPZCAEA-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/succinonitrile-sn-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/succinonitrile-sn-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/succinonitrile-sn-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/succinonitrile-sn-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "adiponitrile-adn",
+    "name": "Adiponitrile (ADN)",
+    "sku": "WM-ADD-ADN",
+    "cas": "111-69-3",
+    "formula": "C6H8N2",
+    "inchiKey": "BTGRAWJCKBQKAO-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/adiponitrile-adn-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/adiponitrile-adn-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/adiponitrile-adn-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/adiponitrile-adn-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
+    "name": "1,2-Bis(2-cyanoethoxy)ethane (DENE)",
+    "sku": "WM-ADD-DENE",
+    "cas": "3386-87-6",
+    "formula": "C8H12N2O2",
+    "inchiKey": "VTHRQKSLPFJQHN-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-2-bis-2-cyanoethoxy-ethane-dene-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-2-bis-2-cyanoethoxy-ethane-dene-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-2-bis-2-cyanoethoxy-ethane-dene-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-2-bis-2-cyanoethoxy-ethane-dene-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-3-6-hexanetricarbonitrile-htcn",
+    "name": "1,3,6-Hexanetricarbonitrile (HTCN)",
+    "sku": "WM-ADD-HTCN",
+    "cas": "1772-25-4",
+    "formula": "C9H11N3",
+    "inchiKey": "LNLFLMCWDHZINJ-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-3-6-hexanetricarbonitrile-htcn-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-3-6-hexanetricarbonitrile-htcn-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-3-6-hexanetricarbonitrile-htcn-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-3-6-hexanetricarbonitrile-htcn-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
+    "name": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS)",
+    "sku": "WM-ADD-MMDS",
+    "cas": "99591-74-9",
+    "formula": "C2H4O6S2",
+    "inchiKey": "GWAOOGWHPITOEY-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "tris-trimethylsilyl-borate-tmsb",
+    "name": "Tris(trimethylsilyl)borate (TMSB)",
+    "sku": "WM-ADD-TMSB",
+    "cas": "4325-85-3",
+    "formula": "C9H27BO3Si3",
+    "inchiKey": "YZYKZHPNRDIPFA-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/tris-trimethylsilyl-borate-tmsb-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/tris-trimethylsilyl-borate-tmsb-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/tris-trimethylsilyl-borate-tmsb-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/tris-trimethylsilyl-borate-tmsb-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "tris-trimethylsilyl-phosphate-tmsp",
+    "name": "Tris(trimethylsilyl) phosphate (TMSP)",
+    "sku": "WM-ADD-TMSP",
+    "cas": "10497-05-9",
+    "formula": "C9H27O4PSi3",
+    "inchiKey": "QJMMCGKXBZVAEI-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/tris-trimethylsilyl-phosphate-tmsp-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/tris-trimethylsilyl-phosphate-tmsp-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/tris-trimethylsilyl-phosphate-tmsp-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/tris-trimethylsilyl-phosphate-tmsp-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-3-propanesultone-ps",
+    "name": "1,3-Propanesultone (PS)",
+    "sku": "WM-ADD-PS",
+    "cas": "1120-71-4",
+    "formula": "C3H6O3S",
+    "inchiKey": "FSSPGSAQUIYDCN-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-3-propanesultone-ps-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-3-propanesultone-ps-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-3-propanesultone-ps-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-3-propanesultone-ps-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "trimethylsilyl-phosphite-ttpi",
+    "name": "Tris(trimethylsilyl) phosphite (TTPi)",
+    "sku": "WM-ADD-TTPI",
+    "cas": "1795-31-9",
+    "formula": "C9H27O3PSi3",
+    "inchiKey": "VMZOBROUFBEGAR-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/trimethylsilyl-phosphite-ttpi-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/trimethylsilyl-phosphite-ttpi-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/trimethylsilyl-phosphite-ttpi-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/trimethylsilyl-phosphite-ttpi-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "sodium-hexafluorophosphate-napf-6",
+    "name": "Sodium hexafluorophosphate (NaPF6)",
+    "sku": "WM-NGS-NAPF6",
+    "cas": "21324-39-0",
+    "formula": "F6NaP",
+    "inchiKey": "KMADQUOCJBLXRP-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/sodium-hexafluorophosphate-napf-6-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/sodium-hexafluorophosphate-napf-6-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/sodium-hexafluorophosphate-napf-6-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/sodium-hexafluorophosphate-napf-6-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "sodium-difluoro-oxalate-borate-naodfb",
+    "name": "Sodium difluoro(oxalato)borate (NaDFOB)",
+    "sku": "WM-NGS-NAODFB",
+    "cas": "1016545-84-8",
+    "formula": "C2BF2NaO4",
+    "inchiKey": "HRRQLROHUSYBRX-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/sodium-difluoro-oxalate-borate-naodfb-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/sodium-difluoro-oxalate-borate-naodfb-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/sodium-difluoro-oxalate-borate-naodfb-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/sodium-difluoro-oxalate-borate-naodfb-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "potassium-hexafluorophosphate-kpf-6",
+    "name": "Potassium hexafluorophosphate (KPF6)",
+    "sku": "WM-NGS-KPF6",
+    "cas": "17084-13-8",
+    "formula": "F6KP",
+    "inchiKey": "YZDGRYDIGCWVND-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/potassium-hexafluorophosphate-kpf-6-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/potassium-hexafluorophosphate-kpf-6-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/potassium-hexafluorophosphate-kpf-6-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/potassium-hexafluorophosphate-kpf-6-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "ethyl-propionate-ep",
+    "name": "Ethyl propionate (EP)",
+    "sku": "WM-SOL-EP",
+    "cas": "105-37-3",
+    "formula": "C5H10O2",
+    "inchiKey": "FKRCODPIKNYEAC-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/ethyl-propionate-ep-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/ethyl-propionate-ep-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/ethyl-propionate-ep-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/ethyl-propionate-ep-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "methyl-butyrate-mb-battery-grade",
+    "name": "Methyl Butyrate (MB)",
+    "sku": "WM-SOL-MB",
+    "cas": "623-42-7",
+    "formula": "C5H10O2",
+    "inchiKey": "UUIQMZJEGPQKFD-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/methyl-butyrate-mb-battery-grade-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/methyl-butyrate-mb-battery-grade-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/methyl-butyrate-mb-battery-grade-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/methyl-butyrate-mb-battery-grade-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "propyl-propionate-pp",
+    "name": "Propyl propionate (PP)",
+    "sku": "WM-SOL-PP",
+    "cas": "106-36-5",
+    "formula": "C6H12O2",
+    "inchiKey": "MCSINKKTEDDPNK-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/propyl-propionate-pp-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/propyl-propionate-pp-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/propyl-propionate-pp-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/propyl-propionate-pp-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "triphenyl-phosphite-tppi",
+    "name": "Triphenyl phosphite (TPPI)",
+    "sku": "WM-ADD-TPPI",
+    "cas": "101-02-0",
+    "formula": "C18H15O3P",
+    "inchiKey": "HVLLSGMXQDNUAL-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/triphenyl-phosphite-tppi-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/triphenyl-phosphite-tppi-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/triphenyl-phosphite-tppi-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/triphenyl-phosphite-tppi-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "biphenyl-bp",
+    "name": "Biphenyl (BP)",
+    "sku": "WM-ADD-BP",
+    "cas": "92-52-4",
+    "formula": "C12H10",
+    "inchiKey": "ZUOUZKKEUPVFJK-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/biphenyl-bp-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/biphenyl-bp-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/biphenyl-bp-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/biphenyl-bp-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "propyl-acetate-pa",
+    "name": "Propyl acetate (PA)",
+    "sku": "WM-SOL-PA",
+    "cas": "109-60-4",
+    "formula": "C5H10O2",
+    "inchiKey": "YKYONYBAUNKHLG-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/propyl-acetate-pa-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/propyl-acetate-pa-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/propyl-acetate-pa-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/propyl-acetate-pa-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "ethylene-sulfite-es",
+    "name": "Ethylene sulfite (ES)",
+    "sku": "WM-ADD-ES",
+    "cas": "3741-38-6",
+    "formula": "C2H4O3S",
+    "inchiKey": "WDXYVJKNSMILOQ-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/ethylene-sulfite-es-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/ethylene-sulfite-es-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/ethylene-sulfite-es-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/ethylene-sulfite-es-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "hexamethyldisilazane-hmds",
+    "name": "Hexamethyldisilazane (HMDS)",
+    "sku": "WM-ADD-HMDS",
+    "cas": "999-97-3",
+    "formula": "C6H19NSi2",
+    "inchiKey": "FFUAGWLWBBFQJT-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/hexamethyldisilazane-hmds-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/hexamethyldisilazane-hmds-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/hexamethyldisilazane-hmds-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/hexamethyldisilazane-hmds-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "fluorobenzene-fb",
+    "name": "Fluorobenzene (FB)",
+    "sku": "WM-ADD-FB",
+    "cas": "462-06-6",
+    "formula": "C6H5F",
+    "inchiKey": "PYLWMHQQBFSUBP-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/fluorobenzene-fb-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/fluorobenzene-fb-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/fluorobenzene-fb-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/fluorobenzene-fb-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
+    "name": "Sodium bis(fluorosulfonyl)imide (NaFSI)",
+    "sku": "WM-NGS-NAFSI",
+    "cas": "100669-96-3",
+    "formula": "F2NNaO4S2",
+    "inchiKey": "VCCATSJUUVERFU-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/sodium-bis-fluorosulfonyl-imide-nafsi-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/sodium-bis-fluorosulfonyl-imide-nafsi-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/sodium-bis-fluorosulfonyl-imide-nafsi-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/sodium-bis-fluorosulfonyl-imide-nafsi-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "cyclohexylbenzene-chb",
+    "name": "Cyclohexylbenzene (CHB)",
+    "sku": "WM-ADD-CHB",
+    "cas": "827-52-1",
+    "formula": "C12H16",
+    "inchiKey": "IGARGHRYKHJQSM-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/cyclohexylbenzene-chb-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/cyclohexylbenzene-chb-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/cyclohexylbenzene-chb-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/cyclohexylbenzene-chb-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-4-butane-sultone-bs",
+    "name": "1,4-Butane sultone (BS)",
+    "sku": "WM-ADD-BS",
+    "cas": "1633-83-6",
+    "formula": "C4H8O3S",
+    "inchiKey": "MHYFEEDKONKGEB-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-4-butane-sultone-bs-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-4-butane-sultone-bs-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-4-butane-sultone-bs-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-4-butane-sultone-bs-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "sodium-difluorophosphate-napo2f2",
+    "name": "Sodium difluorophosphate (NaPO2F2)",
+    "sku": "WM-NGS-NAPO2F2",
+    "cas": "15587-24-3",
+    "formula": "F2NaO2P",
+    "inchiKey": "KBVUALKOHTZCGR-UHFFFAOYSA-M",
+    "scientificMaster": "/assets/images/product-images/scientific/sodium-difluorophosphate-napo2f2-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/sodium-difluorophosphate-napo2f2-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/sodium-difluorophosphate-napo2f2-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/sodium-difluorophosphate-napo2f2-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "1-3-dioxolane-dol",
+    "name": "1,3-Dioxolane (DOL)",
+    "sku": "WM-SOL-DOL",
+    "cas": "646-06-0",
+    "formula": "C3H6O2",
+    "inchiKey": "WNXJIVFYUVYPPR-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/1-3-dioxolane-dol-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/1-3-dioxolane-dol-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/1-3-dioxolane-dol-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/1-3-dioxolane-dol-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "triallyl-phosphate-tap",
+    "name": "Triallyl phosphate (TAP)",
+    "sku": "WM-ADD-TAP",
+    "cas": "1623-19-4",
+    "formula": "C9H15O4P",
+    "inchiKey": "XHGIFBQQEGRTPB-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/triallyl-phosphate-tap-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/triallyl-phosphate-tap-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/triallyl-phosphate-tap-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/triallyl-phosphate-tap-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-nitrate-lino3",
+    "name": "Lithium nitrate (LiNO3)",
+    "sku": "WM-ADD-LINO3",
+    "cas": "7790-69-4",
+    "formula": "LiNO3",
+    "inchiKey": "IIPYXGDZVMZOAP-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-nitrate-lino3-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-nitrate-lino3-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-nitrate-lino3-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-nitrate-lino3-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+    "name": "Lithium difluorobis(oxalato)phosphate (LiDFBOP)",
+    "sku": "WM-ADD-LIDODFP",
+    "cas": "678966-16-0",
+    "formula": "C4F2LiO8P",
+    "inchiKey": "KRYVNYFSKKOTLE-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/lithium-difluorobis-oxalato-phosphate-lidodfp-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/lithium-difluorobis-oxalato-phosphate-lidodfp-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/lithium-difluorobis-oxalato-phosphate-lidodfp-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/lithium-difluorobis-oxalato-phosphate-lidodfp-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "tetravinylsilane-tvsi",
+    "name": "Tetravinylsilane (TVSi)",
+    "sku": "WM-ADD-TVSI",
+    "cas": "1112-55-6",
+    "formula": "C8H12Si",
+    "inchiKey": "UFHILTCGAOPTOV-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/tetravinylsilane-tvsi-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/tetravinylsilane-tvsi-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/tetravinylsilane-tvsi-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/tetravinylsilane-tvsi-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
+    "name": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN)",
+    "sku": "WM-ADD-PFPN",
+    "cas": "33027-66-6",
+    "formula": "C2H5F5N3OP3",
+    "inchiKey": "CBTAIOOTRCAMBD-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/ethoxy-pentafluoro-cyclotriphosphazene-pfpn-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+    "name": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP)",
+    "sku": "WM-SOL-TFEP",
+    "cas": "358-63-4",
+    "formula": "C6H6F9O4P",
+    "inchiKey": "ZMQDTYVODWKHNT-UHFFFAOYSA-N",
+    "scientificMaster": "/assets/images/product-images/scientific/tris-2-2-2-trifluoroethyl-phosphate-tfep-scientific-v2.svg",
+    "scientificPNG": "/assets/images/product-images/scientific/tris-2-2-2-trifluoroethyl-phosphate-tfep-scientific-v2.png",
+    "websiteImage": "/assets/images/product-images/website/artwork/tris-2-2-2-trifluoroethyl-phosphate-tfep-option-a-website-v1.png",
+    "merchantImage": "/assets/images/product-images/merchant/tris-2-2-2-trifluoroethyl-phosphate-tfep-clean-v2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "verification": "Previously approved asset; recorded hashes verified; no reconstruction",
+    "limitations": "Molecular illustration: technical dimensions do not establish Google policy acceptance."
+  },
+  {
+    "slug": "latp-d-50-0-4-um",
+    "name": "LATP powder, D50 0.40 \u00b5m",
+    "sku": "WM-SSE-LATP-040",
+    "websiteImage": "/assets/images/product-images/website/materials/latp-representative-powder-b-website.png",
+    "merchantImage": "/assets/images/product-images/merchant-materials/latp-representative-powder-b-clean.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "nativeDimensions": [
+      450,
+      736
+    ],
+    "limitations": "Representative imagery, possibly AI-assisted; not verified experimental morphology. Grades 0.4 / 0.65 share identical source bytes; no artificial grade differences."
+  },
+  {
+    "slug": "latp-d-50-0-65-um",
+    "name": "LATP powder, D50 0.65 \u00b5m",
+    "sku": "WM-SSE-LATP-065",
+    "websiteImage": "/assets/images/product-images/website/materials/latp-representative-powder-b-website.png",
+    "merchantImage": "/assets/images/product-images/merchant-materials/latp-representative-powder-b-clean.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "nativeDimensions": [
+      450,
+      736
+    ],
+    "limitations": "Representative imagery, possibly AI-assisted; not verified experimental morphology. Grades 0.4 / 0.65 share identical source bytes; no artificial grade differences."
+  }
+]
