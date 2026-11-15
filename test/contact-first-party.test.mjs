@@ -92,6 +92,6 @@ test('contact publication contains the new script, honeypot, original fields and
   assert.match(html, /aria-hidden="true"/);
   for (const field of ['name', 'company', 'email', 'inquiry_type', 'product_interest', 'quantity_scale', 'message', 'source_page', 'form_location']) assert.ok(html.includes(`name="${field}"`));
   assert.doesNotMatch(html + main, /formspree/i);
-  assert.match(html, /type="module" src="assets\/js\/contact.js"/);
+  assert.match(html, /type="module" src="assets\/js\/contact.js(?:\?v=[a-f0-9]{12})?"/);
   assert.match(manifest, /^assets\/js\/contact.js$/m);
 });

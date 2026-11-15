@@ -1,6 +1,24 @@
 // Same-origin contact API; provider credentials never enter this file.
 const fields = ['name', 'company', 'email', 'inquiry_type', 'product_interest', 'quantity_scale', 'message', 'source_page', 'form_location'];
+// The optional role is carried in the existing bounded message field; no schema or delivery changes.
+export function contactPayload(form) {
+  const data = Object.fromEntries(fields.map(field => [field, form.elements.namedItem(field)?.value || '']));
+  const title = (form.elements.namedItem('job_title')?.value || '').replace(/[\r\n\x00-\x1f]/g, ' ').trim().slice(0, 120);
+  if (title) data.message = `Job Title: ${title}\n\n${data.message}`;
+  return data;
+}
 export async function initContactForm(form, platform = window) {
+  // Local/staging design reviews must never request a challenge or deliver an inquiry.
+  if (platform.location && !['winigenmaterials.com', 'www.winigenmaterials.com'].includes(platform.location.hostname)) {
+    const status = form.querySelector('.form-status');
+    const message = 'Review mode — inquiries are disabled.';
+    status.textContent = message;
+    status.className = 'form-status review';
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = false;
+    form.addEventListener('submit', event => { event.preventDefault(); status.textContent = message; });
+    return;
+  }
   const status = form.querySelector('.form-status');
   const button = form.querySelector('button[type="submit"]');
   const container = form.querySelector('.contact-challenge');
@@ -56,7 +74,7 @@ export async function initContactForm(form, platform = window) {
     try {
       if (!requestToken) { await start(); show('Please complete the verification, then send your inquiry.'); return; }
       if (!token) { show('Please complete the verification, then send your inquiry.'); resetChallenge(); return; }
-      const data = Object.fromEntries(fields.map((field) => [field, form.elements.namedItem(field)?.value || '']));
+      const data = contactPayload(form);
       data.website_url = form.elements.namedItem('website_url').value;
       data.request_token = requestToken;
       data.turnstile_token = token;

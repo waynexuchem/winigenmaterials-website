@@ -1,0 +1,105 @@
+[
+  {
+    "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+    "originalImages": {
+      "website": {
+        "path": "/assets/images/product-images/website/artwork/lithium-difluorobis-oxalato-phosphate-lidodfp-option-a-website-v1.png",
+        "sha256": "eead1cbf2ca717ef187c5adf205e5d2db6ee5b777423904c099cb7ff52d469c4"
+      },
+      "merchant": {
+        "path": "/assets/images/product-images/merchant/lithium-difluorobis-oxalato-phosphate-lidodfp-clean-v2.png",
+        "sha256": "8a50e1aca49f75a27e8a82f1f226f056d3e74c33753fe3af7e5f25a016a2dc8a"
+      }
+    },
+    "identity": {
+      "cas": "678966-16-0",
+      "formula": "C4F2LiO8P",
+      "inchiKey": "KRYVNYFSKKOTLE-UHFFFAOYSA-N",
+      "smiles": "O=C1O[P-]2(F)(F)(OC1=O)OC(=O)C(=O)O2.[Li+]"
+    },
+    "references": [
+      "https://www.tcichemicals.com/US/en/p/L0369",
+      "https://www.chemscene.com/product/678966-16-0.html",
+      "https://www.aaronchem.com/678966-16-0"
+    ],
+    "scope": "Website replacement; original website and Merchant bytes preserved"
+  },
+  {
+    "slug": "triallyl-phosphate-tap",
+    "originalImages": {
+      "website": {
+        "path": "/assets/images/product-images/website/artwork/triallyl-phosphate-tap-option-a-website-v1.png",
+        "sha256": "387038782472897253d887c2b94c3a4c2cc6acba0ce48112d8e0020be1892f50"
+      },
+      "merchant": {
+        "path": "/assets/images/product-images/merchant/triallyl-phosphate-tap-clean-v2.png",
+        "sha256": "134952c52feeb71cee5ab074f1a54822eb5e0b7548158ce2604d82a36a2b236e"
+      }
+    },
+    "identity": {
+      "cas": "1623-19-4",
+      "formula": "C9H15O4P",
+      "inchiKey": "XHGIFBQQEGRTPB-UHFFFAOYSA-N",
+      "smiles": "C=CCOP(=O)(OCC=C)OCC=C"
+    },
+    "references": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1623-19-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/SDF?record_type=2d"
+    },
+    "scope": "Website replacement; original website and Merchant bytes preserved"
+  },
+  {
+    "slug": "tetravinylsilane-tvsi",
+    "originalImages": {
+      "website": {
+        "path": "/assets/images/product-images/website/artwork/tetravinylsilane-tvsi-option-a-website-v1.png",
+        "sha256": "547cd1313c9d422153332a5c2b31fa3cecaa5cf8b9279d0a7d3a855852357d1b"
+      },
+      "merchant": {
+        "path": "/assets/images/product-images/merchant/tetravinylsilane-tvsi-clean-v2.png",
+        "sha256": "cc99c111974f149934ee7851503411781a62460ac315578781a5222842975ac9"
+      }
+    },
+    "identity": {
+      "cas": "1112-55-6",
+      "formula": "C8H12Si",
+      "inchiKey": "UFHILTCGAOPTOV-UHFFFAOYSA-N",
+      "smiles": "C=C[Si](C=C)(C=C)C=C"
+    },
+    "references": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1112-55-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/SDF?record_type=2d"
+    },
+    "scope": "Website replacement; original website and Merchant bytes preserved"
+  },
+  {
+    "slug": "tris-trimethylsilyl-phosphate-tmsp",
+    "originalImages": {
+      "website": {
+        "path": "/assets/images/product-images/website/artwork/tris-trimethylsilyl-phosphate-tmsp-option-a-website-v1.png",
+        "sha256": "68de8fecfce8566cf32592474d00f112415763ea3cf7983ae542d1569147666a"
+      },
+      "merchant": {
+        "path": "/assets/images/product-images/merchant/tris-trimethylsilyl-phosphate-tmsp-clean-v2.png",
+        "sha256": "718d74824a1b688ff323175760ca71953d199bd14590ff374fce07319783bdaf"
+      }
+    },
+    "identity": {
+      "cas": "10497-05-9",
+      "formula": "C9H27O4PSi3",
+      "inchiKey": "QJMMCGKXBZVAEI-UHFFFAOYSA-N",
+      "smiles": "C[Si](C)(C)OP(=O)(O[Si](C)(C)C)O[Si](C)(C)C"
+    },
+    "references": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/SDF?record_type=2d"
+    },
+    "scope": "Website replacement; original website and Merchant bytes preserved"
+  }
+]

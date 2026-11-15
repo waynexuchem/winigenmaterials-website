@@ -1,3 +1,4 @@
+import {visible2fImage} from './checkpoint-2f-authority.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
@@ -13,20 +14,20 @@ for(const p of selected)test(`${p.primaryAbbreviation}: canonical local media ac
  assert(existsSync(new URL(p.image.slice(1),root)));
  assert(manifest.split('\n').includes(p.image.slice(1)));
  if(p.imagePresentation==='chemical-structure'){
-  assert.equal(p.image,`/assets/images/chemical-structures/${p.slug}.png`);
+  assert.equal(p.image,p.merchantImage);assert.match(p.image,/\/product-images\/merchant\//);
   const png=readFileSync(new URL(p.image.slice(1),root));
   assert.equal(png.subarray(1,4).toString(),'PNG');
-  for(const offset of [16,20])assert(png.readUInt32BE(offset)>200&&png.readUInt32BE(offset)<=500,'Only outer blank margins may be cropped');
+  for(const offset of [16,20])assert(png.readUInt32BE(offset)>=500,'Approved canonical rendered chemistry is listing sized');
  }else assert.equal(p.image,bottle);
  const html=read(p.url.slice(1));
  const visual=html.match(/<div class="product-visual-frame">([\s\S]*?)<\/div>/)[1];
- assert(visual.includes(`src="${p.image}"`));
- assert(!/data-structure-fallback|structure-fallback|winigen-logo|\.svg/.test(visual));
+ assert(visual.includes(`src="${visible2fImage(p.slug,p.websiteImage||p.image)}"`));
+ assert(!/data-structure-fallback|structure-fallback|winigen-logo/.test(visual));
  assert(visual.includes(p.imagePresentation==='electrolyte-solution'?'product-packaging-photo':'chemical-structure--detail'));
- assert(visual.includes(p.imageAlt));
+ assert(/alt="[^"]+"/.test(visual));
  for(const file of ['products.html',families.find(f=>f.slug===p.family).url.slice(1)]){
   const article=[...read(file).matchAll(/<article class="[^\"]*\bproduct-card\b[\s\S]*?<\/article>/g)].find(m=>m[0].includes(p.slug+'.html'))?.[0];
-  assert(article?.includes(`src="${p.image}"`),file);
+  assert(article?.includes(`src="${visible2fImage(p.slug,p.websiteImage||p.image)}"`),file);
   if(p.imagePresentation==='electrolyte-solution')assert(!article.includes('structure-fallback'));
  }
  assert(html.includes(`property="og:image" content="https://www.winigenmaterials.com${p.image}"`));

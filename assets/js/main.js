@@ -110,7 +110,7 @@ function initializeCartPage() {
   const variants = new Map(catalog.products.flatMap(product => product.variants.map(variant => [variant.key, { ...variant, product }])));
   const cartItems = window.WinigenCart.getValidItems().map(item => ({ ...item, variant: variants.get(item.variantKey) }));
   if (cartItems.length === 0) {
-    root.innerHTML = '<section class="cart-empty"><h2>Your cart is currently empty.</h2><p>Browse battery materials and select a package when you are ready to order.</p><div class="cart-actions"><a class="btn" href="products.html">Browse Products</a></div></section>';
+    root.innerHTML = '<section class="oa-empty-cart" data-oa-empty-cart><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h5l5 23h20l5-17H15M21 39h1M35 39h1"/></svg><h2>Your cart is empty.</h2><p>Explore the catalog to select research-scale packages, or contact our team for bulk and custom requirements.</p><div class="cart-actions"><a class="btn" href="/products.html">Browse Materials</a><a class="btn secondary" href="/contact.html">Contact / Quote</a></div></section>';
     return;
   }
   const subtotal = cartItems.reduce((total, item) => total + (item.variant.unitAmount || 0) * item.quantity, 0);

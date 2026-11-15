@@ -1,0 +1,12 @@
+{
+  "assets/images/solid-state/latp-300nm-xrd.jpg": {
+    "caption": "Shared LATP XRD reference image. Original sample identity and grade mapping are unconfirmed; this is not evidence of a separate measurement for this particle-size grade. Supplier confirmation is required.",
+    "alt": "Shared LATP XRD reference; sample and grade identity unconfirmed",
+    "status": "SOURCE_MAPPING_UNCONFIRMED"
+  },
+  "assets/images/solid-state/latp-600nm-xrd.jpg": {
+    "caption": "Shared LATP XRD reference image. Original sample identity and grade mapping are unconfirmed; this is not evidence of a separate measurement for this particle-size grade. Supplier confirmation is required.",
+    "alt": "Shared LATP XRD reference; sample and grade identity unconfirmed",
+    "status": "SOURCE_MAPPING_UNCONFIRMED"
+  }
+}

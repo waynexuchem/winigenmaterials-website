@@ -1,3 +1,6 @@
+import {applyWebsiteImages} from '../design/option-a/website-images.mjs';
+import {keepChemicalTokens} from '../design/option-a/chemical-typography.mjs';
+import {formatProductChemistry} from './format-product-chemistry.mjs';
 import { synchronizeProductImages } from './product-image-presentation.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -50,7 +53,7 @@ export function synchronizeRfqIdentity(html, product) {
   return html.replace(/(<a\b[^>]*\bhref=")([^"]+)(")/gi, (match, before, href, after) => {
     if (!/^(?:\.\.\/|\/)?contact\.html\?/.test(href)) return match;
     const updated = href.replace(/([?&](?:amp;)?product_interest=)[^&#]*/,
-      (_, prefix) => prefix + encodeURIComponent(displayIdentity(product)));
+      (value, prefix) => {const raw=value.slice(prefix.length);try{if([displayIdentity(product),product.name].includes(decodeURIComponent(raw.replace(/\+/g,' '))))return value;}catch{}return prefix + encodeURIComponent(displayIdentity(product));});
     return before + updated + after;
   });
 }
@@ -58,6 +61,8 @@ export function synchronizeRfqIdentity(html, product) {
 function synchronizeImageIdentity(html, product) {
   const identity = escapeHtml(displayIdentity(product));
   return html.replace(/<img\b[^>]*>/gi, tag => {
+    // A shared packaging photograph does not give a related product this product's identity.
+    if (tag.includes('data-oa-related-image="true"')) return tag;
     // Explicit media presentation is independent of chemistry/content category.
     // Limit migrations to this product's own primary image, never related images.
     if (product.imagePresentation) {
@@ -74,8 +79,8 @@ function synchronizeImageIdentity(html, product) {
     }
     if(product.qualityDocumentation?.specificationBasis==='approved-tds-release' && product.commerceStatus==='rfq' && tag.includes('data-structure-fallback')) tag=tag.replace(/src="[^"]*"/,`src="${product.image}"`).replace(/\sdata-structure-fallback/,'');
     const src = tag.match(/\bsrc="([^"]+)"/)?.[1];
-    if (!src || '/' + src.replace(/^(?:\.\.\/|\/)+/, '') !== product.image) return tag;
-    const alt = product.imagePresentation && product.imageAlt ? escapeHtml(product.imageAlt) : `${identity}${product.qualityDocumentation?.specificationBasis === 'approved-tds-release' && product.commerceStatus === 'rfq' ? ' identity illustration' : product.image.includes('/chemical-structures/') ? ' chemical structure' : ' product image'}`;
+    if (!src || ![product.image,product.websiteImage].includes('/' + src.replace(/^(?:\.\.\/|\/)+/, ''))) return tag;
+    const alt = product.websiteImageAlt ? escapeHtml(product.websiteImageAlt) : product.imageAlt ? escapeHtml(product.imageAlt) : `${identity}${product.qualityDocumentation?.specificationBasis === 'approved-tds-release' && product.commerceStatus === 'rfq' ? ' identity illustration' : product.imageKind==='scientific'||product.image.includes('/chemical-structures/') ? ' chemical structure' : ' product image'}`;
     return /\balt="[^"]*"/.test(tag) ? tag.replace(/\balt="[^"]*"/, `alt="${alt}"`) : tag.replace(/\s*\/?>$/, ` alt="${alt}">`);
   });
 }
@@ -86,6 +91,14 @@ export function synchronizeCatalogCardIdentities(html, products) {
     const href = article.match(/class="product-detail-link"[^>]*href="([^"]+)"/i)?.[1];
     const product = bySlug.get(href?.split('/').pop().replace(/\.html(?:[?#].*)?$/, ''));
     if (!product) return article;
+    if(article.includes('oa-product-card')) {
+      const display=escapeHtml(displayIdentity(product));
+      article=article.replace(/(<a class="oa-card-image"[^>]*)(>)/,(_m,tag,end)=>tag.includes('aria-label=')?tag+end:tag+` aria-label="View details for ${display}"`+end);
+      article=article.replace(/(<a class="product-detail-link"[^>]*)(>)/,(_m,tag,end)=>tag.includes('aria-label=')?tag+end:tag+` aria-label="${escapeHtml(accessibilityIdentity(product))}"`+end);
+      const cas=property(product,'CAS Number');
+      if(cas&&!article.includes('class="product-card__cas"'))article=article.replace('</h3>',`</h3><p class="product-card__cas"><span>${product.activeMaterialIdentity?'Active-material CAS':'CAS'}:</span> ${escapeHtml(cas)}</p>`);
+      return synchronizeRfqIdentity(article,product);
+    }
     const { shorthand, name, cas } = cardIdentity(product);
     article = synchronizeRfqIdentity(synchronizeImageIdentity(article, product), product);
     if (product.imagePresentation === 'electrolyte-solution') {
@@ -117,7 +130,10 @@ export function synchronizeProductPresentation(html, products, pagePath = '') {
   if (product) {
     html = synchronizeRfqIdentity(synchronizeImageIdentity(html, product), product);
     const {shorthand, name, cas} = cardIdentity(product);
-    const heading = `<span class="product-identity__identifier">${notation(shorthand || name)}</span>${shorthand ? ` <span class="product-identity__name">${escapeHtml(name)}</span>` : ''}`;
+    const nominal=product.activeMaterialIdentity&&name.match(/—\s*(\d+(?:\.\d+)?\s*wt%)\s*$/)?.[1];
+    const headingIdentifier=nominal?`${shorthand} — ${nominal}`:shorthand||name;
+    const headingName=nominal?name.replace(/\s*—\s*\d+(?:\.\d+)?\s*wt%\s*$/,''):name;
+    const heading = `<span class="product-identity__identifier">${notation(headingIdentifier)}</span>${shorthand ? ` <span class="product-identity__name">${escapeHtml(headingName)}</span>` : ''}`;
     html = html.replace(/<h1\b([^>]*)>[\s\S]*?<\/h1>(?:\s*<p class="product-identity__cas">[\s\S]*?<\/p>)?/, (_, attributes) => {
       attributes = attributes.replace(/\sdata-product-identity="true"/, '');
       return `<h1${attributes} data-product-identity="true">${heading}</h1><p class="product-identity__cas">${product.activeMaterialIdentity ? 'Active-material CAS' : 'CAS'}: ${escapeHtml(cas)}</p>`;
@@ -155,7 +171,7 @@ export function synchronizeProductPresentation(html, products, pagePath = '') {
         const p = selected.find(p => node.url?.endsWith(p.url) || node.sku === p.sku) || (product && !node.url ? product : null);
         if (p) {
           set(node, 'alternateName', identityAliases(p));
-          set(node, 'name', displayIdentity(p));
+          set(node, 'name', p.qualityDocumentation?.specificationBasis==='approved-tds-release'?p.name:displayIdentity(p));
           if (node.molecularFormula) set(node, 'molecularFormula', property(p, 'Formula'));
           if (Array.isArray(node.additionalProperty)) {
             const props = node.additionalProperty.filter(x => x.name !== 'Alternate Abbreviation').map(x => ['Abbreviation','Formula','CAS Number'].includes(x.name) ? {...x, value: property(p, x.name)} : x);
@@ -177,7 +193,12 @@ export function synchronizeProductPresentation(html, products, pagePath = '') {
         match => `The ${match.includes('<sub>') ? 'LiPF<sub>6</sub>' : 'LiPF6'} product page lists ${limit} water as a target specification.`);
     }
   }
-  return synchronizeProductImages(html, products);
+  html=synchronizeProductImages(html, products);
+  if(html.includes('class="option-a"')){
+    if(product)html=applyWebsiteImages(html,product);
+    return keepChemicalTokens(formatProductChemistry(html));
+  }
+  return html;
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

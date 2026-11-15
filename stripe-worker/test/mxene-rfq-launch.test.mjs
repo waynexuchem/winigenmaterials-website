@@ -21,7 +21,7 @@ test('all 69 MXene packages use exact approved prices, canonical SKUs, Offers an
   assert.equal(p.commerceStatus,'active_checkout');assert.equal(p.schemaOfferEligible,true);assert.equal(cp.packages.length,3);assert.equal(offers.length,3);
   assert.equal(ss.find(n=>n['@type']==='Product')['@id'],'https://www.winigenmaterials.com'+p.url+'#product');
   assert.equal((html.match(/<h1\b/g)||[]).length,1);assert.equal((html.match(/data-ecommerce-panel="true"/g)||[]).length,1);
-  assert.match(html,/Request Bulk Quote/);assert.match(html,/data-add-to-cart/);assert.doesNotMatch(html,/Available by RFQ|MXene Powder · Request Quote|id="request-quote"/);
+  assert.match(html,/Request Bulk Quote|Ask a Question \/ Request a Quote/);assert.match(html,/data-add-to-cart/);assert.doesNotMatch(html,/Available by RFQ|MXene Powder · Request Quote|id="request-quote"/);
   if(p.mxene.compositionNote){assert.match(html,/Technical Discussion<\/a>/);assert.equal((html.match(/measurement method and processing history/g)||[]).length,1);assert.match(html,/Representative conductivity/);}
   const mass=p.mxene.singleFewLayer&&p.mxene.ascii!=='Ti3C2Tx'?[.5,1,2]:[1,2,5];
   for(const [i,v] of cp.packages.entries()){
@@ -41,7 +41,7 @@ test('MXene increments preserve exact experiment prices while unrelated products
 });
 test('family and master contain 24 direct cards and correct 1 g comparisons; search and sitemap unchanged',async()=>{
  const family=await read('products/mxene-materials.html'),master=await read('products.html'),sitemap=await read('sitemap.xml');
- assert.match(family,/Online Ordering — 24 Products/);assert.doesNotMatch(family,/Additional MXene Powders — Request Quote|Compare RFQ/);
+ assert.match(family,/data-oa-results role="status">24 materials/);assert.doesNotMatch(family,/Additional MXene Powders — Request Quote|Compare RFQ/);
  assert.equal((family.match(/data-listing-add/g)||[]).length,24);
  const list=schemas(family).find(s=>s['@type']==='ItemList');assert.equal(list.itemListElement.length,24);assert.ok(list.itemListElement.filter(e=>!e.item['@id'].includes('accordion')).every(e=>e.item['@id'].endsWith('#product')));
  for(const p of all){

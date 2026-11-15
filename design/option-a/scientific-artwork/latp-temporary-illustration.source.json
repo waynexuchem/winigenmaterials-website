@@ -1,0 +1,27 @@
+{
+  "source": "assets/images/solid-state/latp-300nm-powder-photo.jpg",
+  "sourceSHA256": "fe80f539fa9d60742594c372d0bf2a934ce045e266366f216486bf7979754608",
+  "crop": [
+    0,
+    0,
+    1013,
+    1710
+  ],
+  "sourceDimensions": [
+    1013,
+    1800
+  ],
+  "deliveredDimensions": [
+    1013,
+    1710
+  ],
+  "cropSHA256": "41b00a1bc1619f52f3a17396ca863155bd4ea35609aead7bcb0c016a693ba2f2",
+  "pixelSHA256": "26910625fa46a30c71278fbcf0fdb164077bcc3366151a84e6a1705b905f3d38",
+  "imageTreatment": "Bottom rectangular crop only, no resampling, pixel reconstruction or scientific changes",
+  "status": "OWNER-APPROVED TEMPORARY WEBSITE ILLUSTRATION; not authenticated photography; not used by Merchant",
+  "metadata": "AI digital-source type retained explicitly; original unchanged; no C2PA marker present in source",
+  "website": "Three powder grades share one explicitly representative visual; slurry retains its distinct factual panel.",
+  "path": "assets/images/product-images/website/materials/latp-representative-packaging-cropped.png",
+  "sha256": "41b00a1bc1619f52f3a17396ca863155bd4ea35609aead7bcb0c016a693ba2f2",
+  "authority": "Wayne Checkpoint 2C: Just use the truncated image"
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="53" viewBox="0 0 64 53" role="img" aria-label="potassium-hexafluorophosphate-kpf-6 molecular structure"><title>potassium-hexafluorophosphate-kpf-6 — verified molecular structure</title>
+<!-- END OF HEADER -->
+<path class='bond-0 atom-0 atom-1' d='M 13.1,31.3 L 15.8,29.7' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 15.8,29.7 L 18.5,28.1' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 23.5,32.3 L 23.5,35.2' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 23.5,35.2 L 23.5,38.1' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 28.7,28.3 L 31.3,29.8' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 31.3,29.8 L 33.9,31.3' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 23.5,20.2 L 23.5,17.3' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 23.5,17.3 L 23.5,14.4' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-1 atom-5' d='M 29.8,21.6 L 31.9,20.4' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-1 atom-5' d='M 31.9,20.4 L 33.9,19.2' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-1 atom-6' d='M 18.5,22.3 L 15.8,20.8' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-1 atom-6' d='M 15.8,20.8 L 13.1,19.2' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<text x='5.0' y='39.2' class='atom-0' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='20.5' y='30.2' class='atom-1' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#7A5128' >P</text>
+<text x='27.4' y='26.2' class='atom-1' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#7A5128' >-</text>
+<text x='20.5' y='48.1' class='atom-2' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='35.9' y='39.2' class='atom-3' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='20.5' y='12.4' class='atom-4' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='35.9' y='21.3' class='atom-5' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='5.0' y='21.3' class='atom-6' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='47.8' y='30.2' class='atom-7' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#000000' >K</text>
+<text x='54.7' y='26.2' class='atom-7' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#000000' >+</text>
+</svg>

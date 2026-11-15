@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="47" viewBox="0 0 88 47" role="img" aria-label="lithium-nitrate-lino3 molecular structure"><title>lithium-nitrate-lino3 — verified molecular structure</title>
+<!-- END OF HEADER -->
+<path class='bond-0 atom-0 atom-1' d='M 71.7,23.9 L 67.8,23.9' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 67.8,23.9 L 63.9,23.9' style='fill:none;fill-rule:evenodd;stroke:#1E4984;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 71.7,20.7 L 67.8,20.7' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 67.8,20.7 L 63.9,20.7' style='fill:none;fill-rule:evenodd;stroke:#1E4984;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 56.0,17.2 L 55.0,15.5' style='fill:none;fill-rule:evenodd;stroke:#1E4984;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 55.0,15.5 L 54.1,13.8' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 54.9,29.3 L 53.9,31.0' style='fill:none;fill-rule:evenodd;stroke:#1E4984;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 53.9,31.0 L 52.9,32.7' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<text x='73.7' y='27.3' class='atom-0' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='55.9' y='27.3' class='atom-1' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#1E4984' >N</text>
+<text x='47.0' y='11.8' class='atom-2' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='53.9' y='7.8' class='atom-2' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >-</text>
+<text x='47.0' y='42.7' class='atom-3' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='53.9' y='38.7' class='atom-3' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >-</text>
+<text x='7.3' y='27.3' class='atom-4' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >L</text>
+<text x='13.9' y='27.3' class='atom-4' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >i</text>
+<text x='16.5' y='23.3' class='atom-4' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >+</text>
+<text x='61.8' y='16.8' style='font-size:7px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#1E4984' >+</text>
+</svg>

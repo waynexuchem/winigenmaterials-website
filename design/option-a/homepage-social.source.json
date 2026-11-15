@@ -1,0 +1,22 @@
+{
+  "status": "Wayne-approved final A3; local integration pending website release approval",
+  "asset": "assets/images/social/winigen-materials-home-option-a-a3-20261113.png",
+  "url": "https://www.winigenmaterials.com/assets/images/social/winigen-materials-home-option-a-a3-20261113.png",
+  "width": 1200,
+  "height": 630,
+  "type": "image/png",
+  "alt": "Winigen Materials — Advanced Battery Materials: LiFSI chemical structure, representative MXene SEM and electrolyte bottles. From R&D to Pilot Scale.",
+  "sha256": "97e1d06e5c4ad2cff8e107dbb0f0bdae9b6fcf480c669fa74ee32e6c79a4e821",
+  "provenance": {
+    "startingPoint": "Approved A3, 2026-11-13",
+    "startingPointSHA256": "773640f3571612003b5581a47778f768e982b35318a5a0de4468145647e4386e",
+    "finalAdjustment": "10 px white padding outside the unchanged molecular image; image pixels, visual scale, aspect ratio and composition positions preserved.",
+    "scientificSourceAssets": [
+      "assets/images/winigen-logo.png",
+      "assets/images/product-images/merchant/lithium-bis-fluorosulfonyl-imide-lifsi-clean-v2.png",
+      "assets/images/product-images/merchant-materials/ti3c2tx-mxene-multilayer-powder-clean.png",
+      "assets/images/product-packaging/1m-lipf6-ec-emc-3-7-1-vc-electrolyte-packaging.jpg"
+    ],
+    "previousAssetRetained": "assets/images/social/winigen-materials-home.png"
+  }
+}

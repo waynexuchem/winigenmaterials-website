@@ -1,0 +1,149 @@
+/* One catalog and product presentation system; scientific image bytes are untouched. */
+.option-a .oa-header-row{gap:16px}.option-a .oa-nav{gap:13px}
+body.option-a .oa-header-search .oa-search{height:44px;padding:3px;align-items:center;border-radius:7px}
+body.option-a .oa-header-search input{height:36px!important;min-height:0!important;padding:6px 9px!important;font-size:12px!important;border:0!important;margin:0!important;border-radius:4px!important;line-height:1.4!important}
+body.option-a .oa-header-search button{height:36px!important;min-height:0!important;padding:6px 10px!important;font-size:12px!important;line-height:1.4!important;margin:0!important;border-radius:4px!important}
+.option-a .oa-shared-catalog{display:grid;grid-template-columns:190px minmax(0,1fr);gap:28px}
+.option-a .oa-shared-catalog>*{min-width:0}
+.option-a .oa-unified-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px;align-items:stretch}
+.option-a .oa-product-card{border-radius:10px}
+.option-a .oa-product-card .oa-card-image{height:160px;position:relative}
+.option-a .oa-card-image>img{max-height:130px}
+.option-a .oa-card-body{padding:16px;gap:7px}
+.option-a .product-card__identifier{font-size:22px;line-height:1.35}
+.option-a .product-card__chemical-name{font-size:14px;line-height:1.5;font-weight:550}
+.option-a .oa-card-body dl{font-size:12px}
+.option-a .oa-card-body dl>div{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:5px 0;gap:8px}
+.option-a .oa-card-body dd{line-height:1.6}
+.option-a .oa-card-commercial{padding:8px 0;margin-bottom:4px}
+.option-a .oa-card-commercial strong{font-size:19px}
+.option-a .oa-quick-order{border:0;padding:0}
+.option-a .oa-quick-order-fields{gap:8px}
+.option-a .oa-quick-order-fields [data-oa-card-total]{grid-column:1/-1}
+.option-a .oa-quick-order-fields [role=status]:empty{display:none}
+.option-a .oa-card-actions{margin-top:8px}
+.option-a .oa-card-actions a{min-height:44px}
+.option-a .oa-frame-brand{display:flex;justify-content:flex-end;align-items:center;gap:7px;font-size:10px;color:var(--muted);padding:8px;background:white}
+.option-a .oa-frame-brand img{width:26px!important;height:26px!important;object-fit:contain;flex:none}
+.option-a .oa-card-image .oa-frame-brand{position:absolute;bottom:0;right:0;padding:3px 8px}
+.option-a .oa-catalog-pills{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;padding:0;gap:7px}
+.option-a .oa-catalog-pills a{font-size:12px;padding:8px 10px;min-height:40px}
+.option-a .oa-scroll-hint{display:none}
+.option-a .oa-family-selector>summary{display:none}
+.option-a .oa-coating-subgroup{grid-column:1/-1;font-size:18px;margin:20px 0 0}
+.option-a .oa-featured-stage{min-height:0}
+.option-a .oa-mailing-panel{background:#f1f6fb;border:1px solid var(--border);padding:24px;border-radius:10px;margin-top:28px}
+.option-a .oa-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.option-a .oa-related-card{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;padding:18px;border:1px solid var(--border);border-radius:10px;background:#f6f9fc}
+.option-a .oa-related-card img{width:84px;height:84px;object-fit:contain}
+.option-a .oa-related-card h3{font-size:16px;line-height:1.45;margin:0 0 6px}
+.option-a .oa-related-card p{font-size:12px;margin:0 0 6px;line-height:1.6}
+.option-a .oa-related-card a{font-size:13px}
+.option-a .oa-scientific-frame{border:1px solid var(--border);background:white;padding:16px;border-radius:10px;margin:18px 0}
+.option-a .oa-scientific-frame>img{width:100%;min-height:0!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+.option-a .oa-technical-support{border-left:3px solid var(--gold);background:#f1f6fb;padding:22px;border-radius:8px;margin:20px 0}
+.option-a .oa-technical-support h3{font-size:20px;margin:0 0 8px}
+.option-a .oa-key-panel{margin-top:18px;border:1px solid var(--border);border-radius:10px;background:white;padding:20px}
+.option-a .oa-key-panel h2{font-size:20px!important}
+.option-a .oa-key-panel dl>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;border-bottom:1px solid var(--border);padding:8px 0}
+.option-a .oa-key-panel dt,.option-a .oa-key-panel dd{font-size:13px;margin:0}
+.option-a .oa-product-code{font-size:12px;color:var(--muted);margin-top:14px}
+.option-a .oa-empty-cart{padding:34px;background:#f1f6fb;border:1px solid var(--border);border-radius:12px}
+.option-a .oa-empty-cart svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:1.5}
+@media(min-width:1900px){.option-a .oa-master-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:1190px){.option-a .oa-unified-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:900px){.option-a .oa-shared-catalog{grid-template-columns:minmax(0,1fr)}.option-a .oa-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+.option-a .oa-unified-grid,.option-a .oa-related-grid{grid-template-columns:minmax(0,1fr)!important}
+.option-a .oa-family-selector>summary{display:block;font-size:13px;font-weight:700;cursor:pointer;min-height:40px;padding:8px 0}
+.option-a .oa-family-selector:not([open]) .oa-catalog-pills{display:none}
+.option-a .oa-catalog-pills{grid-template-columns:repeat(3,minmax(0,1fr))}
+.option-a .oa-catalog-pills a{font-size:11px;padding:7px;white-space:normal}
+.option-a .oa-catalog-strip{padding:6px 0}
+}
+.option-a .oa-product-detail .structure-panel{height:auto!important;min-height:0;align-self:start}
+.option-a .oa-key-panel{width:100%;text-align:left}
+.option-a .oa-card-image{display:flex;flex-direction:column;justify-content:center;gap:4px}
+.option-a .oa-card-image .oa-frame-brand{position:static;padding:0;width:100%;min-height:22px;font-size:9px}
+.option-a .oa-card-image:has(.oa-frame-brand)>img{max-height:104px}
+.option-a .oa-card-image .oa-frame-brand img{width:18px!important;height:18px!important}
+
+.option-a .oa-page-intro{padding-bottom:20px}
+.option-a [data-oa-unified-category]{padding-top:24px;padding-bottom:40px}
+.option-a .oa-card-purchase{margin-top:4px}
+.option-a .oa-card-body ul{padding-left:16px;font-size:12px;margin:2px 0}
+.option-a .oa-card-body .oa-card-fact-list li{padding:5px 0;border-bottom:1px solid #edf0f5}
+
+.option-a .oa-coating-group{grid-column:1/-1;min-width:0}
+.option-a .oa-coating-subgroup{margin-bottom:16px}
+
+.option-a .oa-key-panel dt,.option-a .oa-key-panel dd{min-width:0;overflow-wrap:anywhere}
+.option-a .oa-related-card>div{min-width:0;overflow-wrap:anywhere}
+
+.option-a .oa-related-card .oa-frame-brand{padding:4px 0;font-size:8px;gap:3px;justify-content:center;flex-wrap:wrap}
+.option-a .oa-related-card .oa-frame-brand img{width:18px!important;height:18px!important}
+
+.option-a .oa-related-factual{display:flex;align-items:center;justify-content:center;min-height:84px;padding:6px;background:#eaf0f7;border:1px solid var(--border);border-radius:6px;font-size:11px;text-align:center}
+/* Product-image rules must never enlarge a presentation-margin logo. */
+.option-a .oa-product-detail .structure-panel .oa-frame-brand{width:100%;align-self:stretch}
+.option-a .oa-product-detail .structure-panel .oa-frame-brand img{width:26px!important;height:26px!important;max-height:26px!important;min-height:0}
+
+.option-a .oa-related-card a{display:inline-flex;align-items:center;min-height:44px}
+
+/* Legacy figure grids may set a minimum image height; margin logos are UI, not scientific figures. */
+.option-a .oa-frame-brand img{min-height:0!important;min-width:0!important;max-height:26px!important;max-width:26px!important}
+
+/* Checkpoint 2E.1: a unified Materials control and balanced three-area header. */
+.option-a .oa-primary-nav{display:flex;align-items:center;justify-content:center;gap:clamp(14px,1.35vw,26px);flex:1}
+.option-a .oa-material-menu>summary{display:inline-flex;align-items:center;justify-content:center;gap:5px;width:auto;min-height:44px;padding:0;font-size:13px;font-weight:750;color:var(--navy);white-space:nowrap}
+.option-a .oa-material-menu>summary svg{width:15px;height:15px;flex:none}
+.option-a .oa-material-menu>summary[aria-current]{color:var(--blue)}
+.option-a .oa-material-menu{position:relative}
+.option-a .oa-family-dropdown .oa-all-materials{border-bottom:1px solid var(--border);margin-bottom:5px}
+.option-a .oa-header-search input{width:100%;min-width:0}
+@media(min-width:1181px){
+.option-a .oa-header-row{width:min(1640px,calc(100% - 64px));gap:20px;flex-wrap:nowrap}
+.option-a .oa-nav{display:flex;flex:1;min-width:0;width:auto;gap:20px;padding:0}
+.option-a .oa-header-search{width:clamp(190px,15vw,240px);min-width:190px;flex:none}
+.option-a .oa-header-actions{gap:16px;flex:none}
+.option-a .oa-header-actions>.oa-button{display:inline-flex}
+}
+@media(max-width:1180px){
+.option-a .oa-menu-toggle{display:flex}
+.option-a .oa-nav{display:none;width:100%;order:3;padding-top:14px}
+.option-a .oa-nav.is-open{display:grid;grid-template-columns:minmax(0,1fr)}
+.option-a .oa-primary-nav{display:flex;flex-direction:column;align-items:stretch;gap:2px}
+.option-a .oa-material-menu{width:100%;display:block;position:static}
+.option-a .oa-material-menu>summary{width:100%;justify-content:space-between;padding:10px 5px;font-size:15px}
+.option-a .oa-family-dropdown{position:static;width:100%;box-shadow:none;margin:6px 0}
+.option-a .oa-header-actions>.oa-button{display:none}
+.option-a .oa-header-search{width:100%;margin-top:10px}
+.option-a .oa-nav .oa-mobile-quote{display:block}
+}
+/* Active materials use real illustrative assets, not text fitted into image boxes. */
+.option-a .oa-card-body .oa-typical-facts>div{grid-template-columns:minmax(0,1fr)}
+.option-a .oa-typical-facts dt{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.option-a .oa-typical-facts dd{margin:0;min-width:0;overflow-wrap:break-word}
+.option-a .oa-card-body h3{font-weight:650;overflow-wrap:break-word}
+.option-a .oa-card-image:has(img[src*="/illustrations/active-materials/"]){height:210px;background:#f2f4f6;padding:8px}
+.option-a .oa-card-image>img[src*="/illustrations/active-materials/"]{max-height:172px;width:100%;height:172px;object-fit:contain}
+.option-a .oa-card-image .oa-frame-brand{flex-wrap:wrap;line-height:1.5;justify-content:center}
+.option-a .oa-active-illustration>img{width:100%;height:auto!important;max-height:380px!important;object-fit:contain}
+.option-a .oa-product-detail .product-identity__name{display:block;font-size:18px!important;line-height:1.55!important;font-weight:500!important;word-break:normal!important;overflow-wrap:normal!important;hyphens:manual;margin-top:8px}
+.option-a .oa-product-detail .product-identity__identifier{font-size:clamp(25px,2.4vw,36px);line-height:1.35}
+.option-a .oa-visual-card{text-decoration:none;color:var(--navy)}
+.option-a .oa-hero-visual .oa-frame-brand{font-size:8px;padding:3px;gap:4px;justify-content:center;flex-wrap:wrap}
+.option-a .oa-hero-visual .oa-frame-brand img{width:18px!important;height:18px!important;min-height:0!important;max-height:18px!important}
+.option-a .oa-hero-visual .oa-visual-card>img{object-fit:contain;min-height:0;aspect-ratio:1;max-height:260px}
+@media(max-width:700px){
+.option-a .oa-product-detail .product-identity__name{font-size:14px!important;line-height:1.6!important}
+.option-a .oa-product-detail .product-identity__identifier{font-size:25px}
+.option-a .oa-active-illustration>img{max-height:260px!important}
+}
+
+.option-a .oa-card-body .product-card__chemical-name{font-weight:500!important}
+.option-a .oa-card-body dd{font-weight:400}
+.option-a .oa-primary-nav>a{font-size:13px;white-space:nowrap}
+/* The concise chemical identifier is the primary title, not the old twelve-pixel kicker. */
+.option-a .oa-product-detail .ecommerce-panel__product .product-identity__identifier{font-size:clamp(25px,2.4vw,36px)!important;line-height:1.35!important;letter-spacing:normal;text-transform:none;color:var(--navy)}
+@media(max-width:700px){.option-a .oa-product-detail .ecommerce-panel__product .product-identity__identifier{font-size:25px!important}}

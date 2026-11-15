@@ -1,0 +1,5 @@
+{
+  "dataSha256": "925a67c6afa49815f02d773e3023420e41afc44aaea8c9be7f24a3b12eaba7e7",
+  "basis": "Exact original chart-cache numeric strings, independently checked against 12 unmodified supplier CSV records. Internal source, never public.",
+  "layouts": "Only canvas/aspect/label composition differs. Identical linear scales, all points and original trace distinctions; NFPP ratio \u00d7100 is the existing percent display, not a new normalization."
+}

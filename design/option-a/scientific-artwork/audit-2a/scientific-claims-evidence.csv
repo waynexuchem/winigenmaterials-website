@@ -1,0 +1,20 @@
+physical_pdf_page,source_claim_or_issue,review_disposition
+5,HF accordion route; two precursor sizes; reported conductivity 10–100 S/cm,Existing canonical value remains unchanged; exact specimen Grade A/B unlabelled
+6,LiF/HCl / MILD clay-like route; reported conductivity differs from HF accordion,Routes remain distinct; no controlled cross-grade performance comparison
+7,Colloidal single-layer / preparation alternatives,Do not infer exact route for a powder lot
+8,English duplicate of page 7,No independent experiment / resolution gain
+9,Powder/film forms,Film micrograph not unqualified powder-grade proof
+10,10000–20000 S/cm high-conductivity claim,No current corresponding grade; measurement conditions absent; educational candidate only
+13,Independent SEM and TEM attributed to multilayer / single-layer forms,"Representative only; prior approved mapping, not lot verification"
+14,Very small SEM / XRD objects with Chinese labels,No quantitative new data derived
+20,Mo2Ti2C3Tx film/dispersion,No sold matching powder identity; candidate only
+23,VNbCTx film/dispersion,No sold matching powder identity; candidate only
+24,Ti2VC2Tx forms,No sold matching powder identity; candidate only
+25,Ti2NbC2Tx heading vs TiVCTx body/table,Conflicting source; HOLD
+26,TiVNbMoAlC3 heading vs TiVCrMoC3Tx table,Conflicting source; HOLD
+27,Text/table and Al-containing photo labels differ,Conflicting source; HOLD
+28,Mo4VAlC4 heading vs TiVCTx body/table,Conflicting source; HOLD
+29,MBene heading vs VNbCTx body and TiVCTx table,Conflicting source; HOLD
+30,MAX 211/312 packaging,Not new MXene listings
+31,MAX 413/double metal packaging,Not new MXene listings
+32,High entropy MAX / MAB packaging,Not new MXene listings

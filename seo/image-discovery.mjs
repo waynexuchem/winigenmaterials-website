@@ -131,7 +131,8 @@ export function collectPageImages({ html, pageUrl, excludedPaths = new Set() }) 
   const candidates = [];
   for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
     const attributes = attributesOf(match[0]);
-    if (attributes.src) candidates.push(attributes.src);
+    // Website vector restyling retains the approved canonical raster in image discovery.
+    if (attributes.src) candidates.push(attributes.src.startsWith('/assets/images/product-images/website/structures-2f/') && attributes['data-image-sitemap-original'] ? attributes['data-image-sitemap-original'] : attributes.src);
   }
   for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
     const attributes = attributesOf(match[0]);

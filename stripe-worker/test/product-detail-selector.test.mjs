@@ -1,3 +1,4 @@
+import {blockAt} from '../../design/option-a/html-blocks.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
@@ -23,7 +24,7 @@ function relevantProductDetailStructure(html) {
   return {
     contextAndNavigation: html.match(/<div class="product-detail-context">[\s\S]*?<\/nav>/i)?.[0] || '',
     aboutCopy: html.match(/<div class="product-detail-information"><p class="detail-kicker">About this product<\/p>\s*<p>[\s\S]*?<\/p>/i)?.[0] || '',
-    purchasePanel: html.match(/<section class="ecommerce-panel"[\s\S]*?<\/section>(?=\s*<div class="detail-actions")/i)?.[0] || '',
+    purchasePanel: html.includes('<section class="ecommerce-panel"') ? blockAt(html,html.indexOf('<section class="ecommerce-panel"'),'section').html : '',
     relatedResources: html.match(/<section class="section seo-related-resources"[\s\S]*?<\/section>/i)?.[0] || '',
     hasTds: /data-product-tds-section="true"/i.test(html)
   };
@@ -109,7 +110,7 @@ test('product detail generation is idempotent across two consecutive passes', as
       assert.ok(structure.aboutCopy, `${slug}: compact about copy generated`);
       assert.ok(structure.purchasePanel, `${slug}: purchase panel generated`);
       if (structure.hasTds) {
-        assert.match(structure.relatedResources, /<h2>Related Technical Guides<\/h2>/, `${slug}: related-resources heading preserved`);
+        assert.match(structure.relatedResources, /<h2>Related guides<\/h2>/, `${slug}: related-resources heading uses the approved concise label`);
       }
     }
     assert.deepEqual(secondPass, firstPass);

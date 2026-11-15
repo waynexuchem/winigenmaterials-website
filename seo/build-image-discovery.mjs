@@ -16,7 +16,7 @@ async function listHtml(siteRoot, directory = siteRoot) {
   const files = [];
   for (const entry of entries) {
     const fullPath = resolve(directory, entry.name);
-    if (entry.isDirectory() && directory === siteRoot && ['knowledge', 'products'].includes(entry.name)) {
+    if (entry.isDirectory() && directory === siteRoot && ['knowledge', 'products', 'policies'].includes(entry.name)) {
       files.push(...await listHtml(siteRoot, fullPath));
     } else if (entry.isFile() && extname(entry.name) === '.html') {
       files.push(relative(siteRoot, fullPath));

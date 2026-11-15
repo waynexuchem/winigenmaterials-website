@@ -52,3 +52,5 @@ stripe-worker/wrangler.production.jsonc
 !scripts/asset-fingerprint.mjs
 
 !scripts/build-chemical-image-integration.mjs
+
+!scripts/approved-tds-presentation.mjs

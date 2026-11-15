@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="53" height="42" viewBox="0 0 53 42" role="img" aria-label="ethylene-sulfite-es molecular structure"><title>ethylene-sulfite-es — verified molecular structure</title>
+<!-- END OF HEADER -->
+<path class='bond-0 atom-0 atom-1' d='M 39.5,21.1 L 36.6,21.1' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 36.6,21.1 L 33.7,21.1' style='fill:none;fill-rule:evenodd;stroke:#7F6023;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 39.5,18.3 L 36.6,18.3' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 36.6,18.3 L 33.7,18.3' style='fill:none;fill-rule:evenodd;stroke:#7F6023;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 25.5,15.0 L 25.1,14.4' style='fill:none;fill-rule:evenodd;stroke:#7F6023;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 25.1,14.4 L 24.7,13.8' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 15.2,8.8 L 10.3,10.4' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 10.3,10.4 L 5.3,12.0' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-3 atom-4' d='M 5.3,12.0 L 5.3,27.4' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-4 atom-5' d='M 5.3,27.4 L 10.3,29.0' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-4 atom-5' d='M 10.3,29.0 L 15.2,30.6' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-5 atom-1' d='M 23.4,27.4 L 23.8,26.8' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-5 atom-1' d='M 23.8,26.8 L 24.2,26.2' style='fill:none;fill-rule:evenodd;stroke:#7F6023;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 5.6,12.0 L 5.3,12.0 L 5.3,12.8' style='fill:none;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 5.3,26.6 L 5.3,27.4 L 5.6,27.4' style='fill:none;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<text x='41.3' y='24.7' class='atom-0' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='25.9' y='24.7' class='atom-1' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#7F6023' >S</text>
+<text x='16.9' y='12.3' class='atom-2' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='16.9' y='37.1' class='atom-5' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+</svg>

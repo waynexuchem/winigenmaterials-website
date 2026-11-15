@@ -1,0 +1,662 @@
+{
+  "approval": "Wayne approved the 21 branding-copy revisions on 2026-11-13, subject to final integrity verification. Scientific content is unchanged. Existing public filenames remain stable for compatibility.",
+  "documents": [
+    {
+      "path": "/assets/documents/tds/Winigen_DEC_Representative_TDS_RevB.pdf",
+      "originalSHA256": "6ddad3a8678912a9672e3bbe2ac9a8616a0e000c4d5672e3f1c5a686b96da751",
+      "approvedReviewSHA256": "c31c18d62bba4f26c838cec16e06f218be7f17fe093d1b595eb53d5c54877d59",
+      "sha256": "66128b3d38c648e3676d68c1d7505ebcfa184d508efd01e00ead483b9e92d280",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_DEC_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_DEC_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "8770f996c0f432942500daee78e72d8dbb19bf6f2052e4dea2bdec8443b66e4a",
+          "sha256": "66128b3d38c648e3676d68c1d7505ebcfa184d508efd01e00ead483b9e92d280",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_DMC_Representative_TDS_RevB.pdf",
+      "originalSHA256": "e4837043b7fb874d89d95a8052d4fb643b665dc22e481b8dee0a092af5ffe54c",
+      "approvedReviewSHA256": "7e0c59a885a326dc2ef556d3a5c523819b98a2830554118cf71abe7bac512d8b",
+      "sha256": "ef5f310bfd76714e006b4bd7a42746672d7120f171587b697043b69ef52ee1ee",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_DMC_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_DMC_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "4c3171c6bcb083cbced95fc58dea6c2d04e8a1e7da7dff4d32a56180f0ca9d8e",
+          "sha256": "90999b492c6b52657af083b1e9d08613588f8f2ee1f2ed6d216f364b3ced263b",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true,
+      "waterUnitRevision": {
+        "revision": "WU-20261114",
+        "previousSHA256": "90999b492c6b52657af083b1e9d08613588f8f2ee1f2ed6d216f364b3ced263b"
+      }
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_EC_Representative_TDS_RevB.pdf",
+      "originalSHA256": "44cc78a76e9839e17a9790fb954da01d7f03a83c53b05b4c99302d908a28c792",
+      "approvedReviewSHA256": "ad9269dd69d2b7daaaedf69943ed5347069e2a44d680ce9ab58c6ce33a5cc8ce",
+      "sha256": "931429557949b1e11e07d077516e97492c865dc48bd5e15fe906bb35c15066a5",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_EC_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_EC_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "8189284ee2bb15b355587423b30c397944e4b6780c7884101f3d1e3036aa9692",
+          "sha256": "931429557949b1e11e07d077516e97492c865dc48bd5e15fe906bb35c15066a5",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_EMC_Representative_TDS_RevB.pdf",
+      "originalSHA256": "ea4b059cfb152b7f909d37915a34f53cf0a4200e76b4d1516f3f84886b39fe00",
+      "approvedReviewSHA256": "3561625f3619ac0b2444e54883d9baf24b67410abe6bf3cf23821a0ca5bdea70",
+      "sha256": "4c8b092a8ae393267f6be2f5dac0979e9041bbafa5f3d21e7d31c21fb39134bc",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_EMC_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_EMC_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "6bcfb949ecd8fc49a30dcecc336eabdf18b0c4e0739dcb673eb634c53aecdf15",
+          "sha256": "4c8b092a8ae393267f6be2f5dac0979e9041bbafa5f3d21e7d31c21fb39134bc",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_EP_Representative_TDS_RevB.pdf",
+      "originalSHA256": "f4581483fd446d07ea6a3e8e91aada7f2b73d8064225768629f4ba383e240269",
+      "approvedReviewSHA256": "d711ab443d6e1dbe4758c99c6a074904d386cb480c6300779a6c166103d054a7",
+      "sha256": "d013ee39f4a6b3f1302181e3c6699cad75413d779383b3bcd307a10fb75e0ef7",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_EP_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_EP_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "e31fc5d263f71a660092ebe24811a151cf69c0c06a0667d4b12e7a5402451884",
+          "sha256": "d013ee39f4a6b3f1302181e3c6699cad75413d779383b3bcd307a10fb75e0ef7",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_GSB03_Technical_Data_Sheet.pdf",
+      "originalSHA256": "a1b2c417839d52075a4de9391c9b3ebef5aedb95c23c2fb6ce655884308d701f",
+      "approvedReviewSHA256": "69803a8b9152ddc0faa365a56b94665d1ac8923e207eca2c68378931798bf770",
+      "sha256": "49ddd049fa434b9b74e4d388578ae6538f921ee02279a0d72347901054bfd492",
+      "pages": 2,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": true,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_GSB03_Technical_Data_Sheet.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_GSB03_Technical_Data_Sheet/1.png",
+        "pdf-production-renders/Winigen_GSB03_Technical_Data_Sheet/2.png"
+      ]
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_GSB04_Technical_Data_Sheet.pdf",
+      "originalSHA256": "3fd580324742b51bde5b8827947c250d32021e1150b6c7340745f3d5ed916259",
+      "approvedReviewSHA256": "8e0182d8329d4971a7df4b814a0b74bfdf1fac6b8a126ebde5dbfcea9a0fed1d",
+      "sha256": "43fb6471372684d89fd9151d4ddc169712d3a71004219d056c50a7ef211e01cb",
+      "pages": 2,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": true,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_GSB04_Technical_Data_Sheet.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_GSB04_Technical_Data_Sheet/1.png",
+        "pdf-production-renders/Winigen_GSB04_Technical_Data_Sheet/2.png"
+      ]
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_GSH03_Technical_Data_Sheet.pdf",
+      "originalSHA256": "6b86dbcd4a8bc5fe17773fa679c6218cd524fc88a40f211f23d26f6630371788",
+      "approvedReviewSHA256": "20ab24db884267fff31ccdd933dfafbfd08262d4e84f2c4a82a81b0b0c6ede16",
+      "sha256": "b53ec0947b097936be20137e4e347a8359fe677ceb15cb019e0eb66c31e01e22",
+      "pages": 2,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": true,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_GSH03_Technical_Data_Sheet.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_GSH03_Technical_Data_Sheet/1.png",
+        "pdf-production-renders/Winigen_GSH03_Technical_Data_Sheet/2.png"
+      ]
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_GSH04_Technical_Data_Sheet.pdf",
+      "originalSHA256": "add489c5fa2a3820bdb3f6b5a7901a9546b3e8813823e3a472ef306f71d77502",
+      "approvedReviewSHA256": "9ee37af4e24f1bb59dbec6a5eafca955762eb7c7dcd6bb64729bed15e36344c6",
+      "sha256": "7f0e6930a480a0e3432a0daad14d414f59e234268f1163d15a81d8d4e0c884bb",
+      "pages": 2,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": true,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_GSH04_Technical_Data_Sheet.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_GSH04_Technical_Data_Sheet/1.png",
+        "pdf-production-renders/Winigen_GSH04_Technical_Data_Sheet/2.png"
+      ]
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiBF4_Representative_TDS_RevB.pdf",
+      "originalSHA256": "68d2d56189941fdc1a96472232e4a7801bcbc0e7b155625537b6148de7e8a8ed",
+      "approvedReviewSHA256": "d1a81655876f20aef566a0b45086dba627fae5ea6d9b42cf1166647514c8bc3b",
+      "sha256": "02a3f2c3162512fec631872a98133fb517e88ec18933c3bbb992b11742d98e19",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_LiBF4_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_LiBF4_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "49d321a02013357ab8ca8b39da697377b3a3c75828b3be0a93297f4d120660ac",
+          "sha256": "02a3f2c3162512fec631872a98133fb517e88ec18933c3bbb992b11742d98e19",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Lithium electrolyte salt supplied for nonaqueous electrolyte formulation and electrochemical research. The source document provides",
+              "after": "Lithium electrolyte salt supplied for nonaqueous electrolyte formulation and electrochemical research. This sheet provides"
+            },
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiDFOB_Representative_TDS_RevB.pdf",
+      "originalSHA256": "7fe6494bfbdc91ccb44e8405cd7e82b31e6d3cbf38650dfcdc5bc7ddc678b23b",
+      "approvedReviewSHA256": "1ccfa33f60b20eaf78169b9602519ab73db1c0b32b08527980bea093b3711c12",
+      "sha256": "3ab6d278b4db5921746a90113a620f915cf5ff20fecc670f939398e4e55debef",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_LiDFOB_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_LiDFOB_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "82b43ae4a52a0d4a2624fee03c8511920f63749e20b0f11dada60be4dd60bf97",
+          "sha256": "f488dc5c7f99e1c2515a390aa3a6ce0a9a52f22788f54172f057c8560d0fb194",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true,
+      "waterUnitRevision": {
+        "revision": "WU-20261114",
+        "previousSHA256": "f488dc5c7f99e1c2515a390aa3a6ce0a9a52f22788f54172f057c8560d0fb194"
+      }
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiFSI_Representative_TDS_RevB.pdf",
+      "originalSHA256": "a28dbacb3e14b65f2c89b3adbb8dcb2b0dd55457857b31edb2f8573f74321dee",
+      "approvedReviewSHA256": "88e3734f8e6427b49ef869c7a1cb2abcfc8a53d5d63c57c498a04d2f6d8fb383",
+      "sha256": "8429d7e9701749f3b5adb23784e7fd4d19d16c8c1af7ffbb3c1fc55154f9acac",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_LiFSI_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_LiFSI_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "ef2c8e54ea86e9a362380c0d1e1ac248c3308a2092827e649173fafddb9352a3",
+          "sha256": "8429d7e9701749f3b5adb23784e7fd4d19d16c8c1af7ffbb3c1fc55154f9acac",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiPF6_Representative_TDS_RevB.pdf",
+      "originalSHA256": "1282e4c8fa7cd823b9d7557f5dd992734a91d7d68125a5e0e62a9923fc89e996",
+      "approvedReviewSHA256": "6162dd911b8c06c3d33d07e10d746f62fafef7165f770603ee01e7fbd23621bd",
+      "sha256": "9c258a0e9c5d311a09ab697d53d2aa907e6a4f5c623a28247503f47bf86f3137",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_LiPF6_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_LiPF6_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "9e7d5f78f5d4ae5f88803a04d023c773c7ececc2222b7493b9be2638dcb60052",
+          "sha256": "9c258a0e9c5d311a09ab697d53d2aa907e6a4f5c623a28247503f47bf86f3137",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiPO2F2_Representative_TDS_RevB.pdf",
+      "originalSHA256": "a48a62fc35e1208d40fc81fef9cd4550c2407cc9eeeb2caeddb2943e56abb482",
+      "approvedReviewSHA256": "293818acd793ad2134915af63da5fbd5f313b285ce3d7e799ba3ea607d6a5848",
+      "sha256": "98fd012534c18902fa2bfb08910a5fcad486d28fa244662f8c8294ea054fcbd7",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_LiPO2F2_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_LiPO2F2_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "0ae9607d43256b6312eab0a0d0993327efff8549cb348af2a037c7672eed1988",
+          "sha256": "7bb4c048d362a95bb7fc99b39a37f749053e2e1c3c1eeab77393131e4a982712",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true,
+      "waterUnitRevision": {
+        "revision": "WU-20261114",
+        "previousSHA256": "7bb4c048d362a95bb7fc99b39a37f749053e2e1c3c1eeab77393131e4a982712"
+      }
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiTFSI_Representative_TDS_RevB.pdf",
+      "originalSHA256": "50d58e212a6a29492da2dbbfcc0c45b847038651ac1c8ea51eb6b07ae7a31907",
+      "approvedReviewSHA256": "1acd4527745b05ec32124075121c85966e30272e87182aecef8c43d1df3fcd14",
+      "sha256": "f6bc73c1968c2ee9784e6f5ab6ac2c2f9f0539412438133e8fe8d35268ebc118",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_LiTFSI_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_LiTFSI_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "b8b0445c2e89464f2c8f53f55e7210e3211327a1b3e40c3bfad20d93793494f2",
+          "sha256": "f6bc73c1968c2ee9784e6f5ab6ac2c2f9f0539412438133e8fe8d35268ebc118",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_MB_Battery_Grade_TDS.pdf",
+      "originalSHA256": "69f685f750729f9e20654fba73971b3151e5cdb8844d39524d0fe7c3d4ddbe93",
+      "approvedReviewSHA256": "437900b68f781c03efb589b1acd65a7d3e31dd866f90f78562f6e6a04ed8b91e",
+      "sha256": "cc819f99a78595149f3112b1c04c5e8a4f0a2a3c9fd4c03743b875cc66ec685b",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": true,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_MB_Battery_Grade_TDS.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_MB_Battery_Grade_TDS/1.png"
+      ]
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_PC_Representative_TDS_RevB.pdf",
+      "originalSHA256": "a310f344cd092c9936f7ed9afb114091838db906ebbfb4cabe0710c28ac2d84d",
+      "approvedReviewSHA256": "6b68c4b9159ede92f848dc5213fe2a8591fad2dbf073dbc71202d86af37b3a4a",
+      "sha256": "36b677663d57d73ef303f097137a09fdce78d71c27bd1a7bd9d6fba37e1e8652",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_PC_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_PC_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "9cca2c0e52f5b85f0edf12dfc71c168447f89a68d0c560b92be25cb3f820e050",
+          "sha256": "36b677663d57d73ef303f097137a09fdce78d71c27bd1a7bd9d6fba37e1e8652",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_PP_Representative_TDS_RevB.pdf",
+      "originalSHA256": "eb616e9882222084c95daf96ef772e94f92060496378148305b158820fab5d82",
+      "approvedReviewSHA256": "649b7bf06ed8cd25118805213d0eacf9aefe1fe9c811dd077db5ee0234e623d8",
+      "sha256": "5b3807d51630db9aebf5d71aa23e096db75c8dfe43e26b076e20504a1c03d5c7",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_PP_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_PP_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "12e3eb86c2d4ee6c7768e4bc26cd46c8b5bc79f4ee6f5dd62835ed395f225306",
+          "sha256": "5b3807d51630db9aebf5d71aa23e096db75c8dfe43e26b076e20504a1c03d5c7",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are from external quality documentation. Lot-specific Certificate of Analysis available upon request.",
+              "after": "Published product specifications and representative COA information are provided for reference. The applicable lot-specific COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf",
+      "originalSHA256": "9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66",
+      "approvedReviewSHA256": "b005e7aeef40970123448949e29d359bcb77efba122347988c50c7d46a49805a",
+      "sha256": "9fd74a9ef8f84826bab3eefb63a56ea63a56c8cc3c9159f5036818d5b9d726c2",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_TFEC_Representative_TDS.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_TFEC_Representative_TDS/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "a1ce62843650f4067bb047a6c7f7b5291995beaff30f470ae44d600ddc3f48f5",
+          "sha256": "be34c0c256963ebd21fa05587de208cde3c3ff45b58b6252e6e9ee39758ef7af",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are derived",
+              "after": "Published product specifications and representative COA"
+            },
+            {
+              "page": 1,
+              "before": "from external quality documentation. Lot-specific Certificate of",
+              "after": "information are provided for reference. The applicable lot-specific"
+            },
+            {
+              "page": 1,
+              "before": "Analysis available upon request.",
+              "after": "COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true,
+      "waterUnitRevision": {
+        "revision": "WU-20261114",
+        "previousSHA256": "be34c0c256963ebd21fa05587de208cde3c3ff45b58b6252e6e9ee39758ef7af"
+      }
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_TFEC_Representative_TDS_RevB.pdf",
+      "originalSHA256": "9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66",
+      "approvedReviewSHA256": "b005e7aeef40970123448949e29d359bcb77efba122347988c50c7d46a49805a",
+      "sha256": "9fd74a9ef8f84826bab3eefb63a56ea63a56c8cc3c9159f5036818d5b9d726c2",
+      "pages": 1,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": false,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_TFEC_Representative_TDS_RevB.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_TFEC_Representative_TDS_RevB/1.png"
+      ],
+      "copyRefinements": [
+        {
+          "id": "A3-neutral-documentation-20261113",
+          "beforeSHA256": "a1ce62843650f4067bb047a6c7f7b5291995beaff30f470ae44d600ddc3f48f5",
+          "sha256": "be34c0c256963ebd21fa05587de208cde3c3ff45b58b6252e6e9ee39758ef7af",
+          "edits": [
+            {
+              "page": 1,
+              "before": "Specification limits and representative COA results are derived",
+              "after": "Published product specifications and representative COA"
+            },
+            {
+              "page": 1,
+              "before": "from external quality documentation. Lot-specific Certificate of",
+              "after": "information are provided for reference. The applicable lot-specific"
+            },
+            {
+              "page": 1,
+              "before": "Analysis available upon request.",
+              "after": "COA governs the delivered material."
+            }
+          ],
+          "numericalAndOperatorSequencesUnchanged": true,
+          "scientificImagesUnchanged": true,
+          "unchangedDrawingOperationsAndUneditedPixelsIdentical": true
+        }
+      ],
+      "approvedDrawingOperationsUnchangedExceptAuthorizedCopy": true,
+      "waterUnitRevision": {
+        "revision": "WU-20261114",
+        "previousSHA256": "be34c0c256963ebd21fa05587de208cde3c3ff45b58b6252e6e9ee39758ef7af"
+      }
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_Ti3C2Tx_Accordion_Multilayer_Powder_TDS.pdf",
+      "originalSHA256": "784a1f1991540e1ba1c542db5dce7c0e4129fd82bb0a2fe6ad20845a7cf18c8f",
+      "approvedReviewSHA256": "421b0f096f0ce26c969ce12d65d6007710cfdd7040cd941a6a5d44e09258d34d",
+      "sha256": "826302c9ca1cd2e98f07de9a310a84a87d1989340cbc50e6ac127b8782dadc7d",
+      "pages": 3,
+      "numericalAndOperatorSequencesUnchanged": true,
+      "scientificImagesUnchanged": true,
+      "approvedContentStreamsUnchanged": true,
+      "originalArchivedNonpublic": "outputs/option-a-release-preparation/nonpublic-originals/tds/Winigen_Ti3C2Tx_Accordion_Multilayer_Powder_TDS.pdf",
+      "renders": [
+        "pdf-production-renders/Winigen_Ti3C2Tx_Accordion_Multilayer_Powder_TDS/1.png",
+        "pdf-production-renders/Winigen_Ti3C2Tx_Accordion_Multilayer_Powder_TDS/2.png",
+        "pdf-production-renders/Winigen_Ti3C2Tx_Accordion_Multilayer_Powder_TDS/3.png"
+      ]
+    }
+  ],
+  "previews": [
+    {
+      "code": "GSB03",
+      "pdf": "/assets/documents/tds/Winigen_GSB03_Technical_Data_Sheet.pdf",
+      "pdfSHA256": "49ddd049fa434b9b74e4d388578ae6538f921ee02279a0d72347901054bfd492",
+      "image": "/assets/images/documents/tds/Winigen_GSB03_Technical_Data_Sheet-first-page.png",
+      "sha256": "917e2e933369940e18e354786db6bd7a6a3806d28e72f9041d3edc18605e04d7",
+      "width": 720,
+      "height": 932,
+      "method": "Faithful first-page PDF render; no data, graphics, text or scientific features edited."
+    },
+    {
+      "code": "GSB04",
+      "pdf": "/assets/documents/tds/Winigen_GSB04_Technical_Data_Sheet.pdf",
+      "pdfSHA256": "43fb6471372684d89fd9151d4ddc169712d3a71004219d056c50a7ef211e01cb",
+      "image": "/assets/images/documents/tds/Winigen_GSB04_Technical_Data_Sheet-first-page.png",
+      "sha256": "b1222b92784e38e09442ea2e3ea2fc3547b9673c80a214d735d6be989f9e3866",
+      "width": 720,
+      "height": 932,
+      "method": "Faithful first-page PDF render; no data, graphics, text or scientific features edited."
+    },
+    {
+      "code": "GSH03",
+      "pdf": "/assets/documents/tds/Winigen_GSH03_Technical_Data_Sheet.pdf",
+      "pdfSHA256": "b53ec0947b097936be20137e4e347a8359fe677ceb15cb019e0eb66c31e01e22",
+      "image": "/assets/images/documents/tds/Winigen_GSH03_Technical_Data_Sheet-first-page.png",
+      "sha256": "664d4e5ea2b78dd5bef8dcdf3ed89de2ff1c07acd9bd6445c9a3e3d374382a4f",
+      "width": 720,
+      "height": 932,
+      "method": "Faithful first-page PDF render; no data, graphics, text or scientific features edited."
+    },
+    {
+      "code": "GSH04",
+      "pdf": "/assets/documents/tds/Winigen_GSH04_Technical_Data_Sheet.pdf",
+      "pdfSHA256": "7f0e6930a480a0e3432a0daad14d414f59e234268f1163d15a81d8d4e0c884bb",
+      "image": "/assets/images/documents/tds/Winigen_GSH04_Technical_Data_Sheet-first-page.png",
+      "sha256": "1c10045c70d3237933da2db6907bbf7931c8d70f7583f8287a52a07ce6de3d86",
+      "width": 720,
+      "height": 932,
+      "method": "Faithful first-page PDF render; no data, graphics, text or scientific features edited."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "latp-d-50-0-3-um",
+    "image": "/assets/images/product-images/website/scientific-1cb/latp-d-50-0-3-um-information.png",
+    "kind": "factual-information-panel",
+    "alt": "LATP powder, D50 0.30 µm — factual product information; not a photograph or microscopy image",
+    "approval": "Checkpoint 1C-B website only",
+    "sourceFacts": {
+      "D50 particle size": "0.30 ± 0.05 µm",
+      "Water": "≤ 500 ppm"
+    },
+    "sha256": "f4b79847ec1f3b056ba7d9b78ba82fa6d6a5f3a9736510fc5775261844e94334",
+    "dimensions": [
+      1500,
+      1200
+    ]
+  },
+  {
+    "slug": "latp-d-50-0-4-um",
+    "image": "/assets/images/product-images/website/scientific-1cb/latp-d-50-0-4-um-information.png",
+    "kind": "factual-information-panel",
+    "alt": "LATP powder, D50 0.40 µm — factual product information; not a photograph or microscopy image",
+    "approval": "Checkpoint 1C-B website only",
+    "sourceFacts": {
+      "D50 particle size": "0.40 ± 0.10 µm",
+      "Water": "≤ 500 ppm"
+    },
+    "sha256": "b4c8c27062eaebaa3cdf709820de623f263a26985221f0bc9f39aa38201a6a42",
+    "dimensions": [
+      1500,
+      1200
+    ]
+  },
+  {
+    "slug": "latp-d-50-0-65-um",
+    "image": "/assets/images/product-images/website/scientific-1cb/latp-d-50-0-65-um-information.png",
+    "kind": "factual-information-panel",
+    "alt": "LATP powder, D50 0.65 µm — factual product information; not a photograph or microscopy image",
+    "approval": "Checkpoint 1C-B website only",
+    "sourceFacts": {
+      "D50 particle size": "0.65 ± 0.15 µm",
+      "Water": "≤ 500 ppm"
+    },
+    "sha256": "1d3551cb0affabf30351da39f14224043e51b1316ceaf9758d0e8b4779fb7067",
+    "dimensions": [
+      1500,
+      1200
+    ]
+  },
+  {
+    "slug": "latp-slurry",
+    "image": "/assets/images/product-images/website/scientific-1cb/latp-slurry-information.png",
+    "kind": "factual-information-panel",
+    "alt": "LATP slurry — factual product information; not a photograph or microscopy image",
+    "approval": "Checkpoint 1C-B website only",
+    "sourceFacts": {
+      "D50 options": "0.15 µm, 0.30 µm, or 0.65 µm",
+      "Carrier solvent": "Water-based or oil-based carrier"
+    },
+    "sha256": "e254ea510947a7a591f4cb976a93c51341bf42d0e89b3bdff2891b87278996c1",
+    "dimensions": [
+      1500,
+      1200
+    ]
+  }
+]

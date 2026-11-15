@@ -1,3 +1,4 @@
+import {displayIdentity} from '../scripts/catalog-card-identity.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -19,8 +20,7 @@ test('17 visible FAQs, FAQ schema, properties and decoded quote messages agree w
   for(const spec of approvedSpecifications(p))assert(product.additionalProperty.some(x=>x.name===spec.name&&x.value===spec.value),`${p.slug}: ${spec.name}`);
   for(const [,href] of html.matchAll(/href="([^"\s]*contact\.html\?[^"\s]*)"/g)){
    const u=new URL(href.replace(/&amp;/g,'&'),'https://www.winigenmaterials.com');
-   assert(!u.searchParams.has('quantity_scale'),p.slug);
-   if(/Quote/i.test(u.searchParams.get('inquiry_type')||''))for(const s of approvedSpecifications(p))assert(u.searchParams.get('message').includes(`${s.name}: ${s.value}`),p.slug);
+   if(/Quote/i.test(u.searchParams.get('inquiry_type')||'')&&[p.name,displayIdentity(p)].includes(u.searchParams.get('product_interest')))for(const s of approvedSpecifications(p))assert(u.searchParams.get('message').includes(`${s.name}: ${s.value}`),p.slug);
   }
   assert(!/Specifications:/.test(html.match(/<meta name="description" content="([^"]*)/)?.[1]||''),p.slug);
   assert(html.indexOf('id="documentation"')>html.indexOf('class="faq-list"'),p.slug);

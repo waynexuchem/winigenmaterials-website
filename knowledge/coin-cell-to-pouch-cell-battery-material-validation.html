@@ -8,9 +8,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#12305d">
-<title>From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials</title>
-<meta name="description" content="A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up.">
-<link rel="canonical" href="https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">
+<title>From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials</title><meta name="twitter:title" content="From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials"><meta property="og:title" content="From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials"><meta name="twitter:description" content="A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up."><meta property="og:description" content="A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up."><meta name="description" content="A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up."><link rel="canonical" href="https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
@@ -20,8 +18,6 @@
 
 <link rel="author" href="https://www.winigenmaterials.com/about.html">
 <meta property="og:site_name" content="Winigen Materials">
-<meta property="og:title" content="From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials">
-<meta property="og:description" content="A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up.">
 <meta property="og:url" content="https://www.winigenmaterials.com/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">
 <meta property="og:image" content="https://www.winigenmaterials.com/assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation-official-logo.png?v=20260806-1">
 <meta property="og:image:secure_url" content="https://www.winigenmaterials.com/assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation-official-logo.png?v=20260806-1">
@@ -30,15 +26,12 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Strong coin-cell data is not scale-up proof: a single-layer coin cell transitions into a multilayer pouch-cell validation environment">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up">
-<meta name="twitter:description" content="Pouch cells reveal whether materials survive wetting, formation, gas, pressure, and process variation.">
 <meta name="twitter:image" content="https://www.winigenmaterials.com/assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation-official-logo.png?v=20260806-1">
 <meta name="twitter:image:alt" content="Strong coin-cell data is not scale-up proof: a single-layer coin cell transitions into a multilayer pouch-cell validation environment">
 <link rel="image_src" href="https://www.winigenmaterials.com/assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation-official-logo.png?v=20260806-1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css?v=c439229135ec">
 <style>
 .article-hero-visual{margin:0 0 30px;border-radius:18px;overflow:hidden;background:#071222;box-shadow:0 14px 34px rgba(6,18,38,.2)}.article-hero-visual img{display:block;width:100%;height:auto;object-fit:cover}
 .article-hero{padding:78px 0}.article-hero .section-title{max-width:1080px}.article-hero h1{font-size:clamp(42px,5.35vw,72px)}.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:34px;align-items:start}.article-main,.article-side{min-width:0;background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}.article-main p{line-height:1.78}.article-main a{color:var(--blue);font-weight:800}.article-block{margin-top:30px;padding-top:26px;border-top:1px solid rgba(18,32,51,.1)}.article-callout{margin:24px 0;padding:22px 24px;border-left:4px solid var(--blue);border-radius:0 14px 14px 0;background:#eef5ff}.article-callout strong{color:var(--navy)}.article-figure{margin:26px 0;border:1px solid rgba(18,32,51,.1);border-radius:18px;overflow:hidden;background:#fff}.article-figure img{display:block;width:100%;height:auto;object-fit:contain;background:#f4f7fb}.article-figure figcaption{padding:14px 16px;color:#53627c;font-size:.92rem;line-height:1.58;border-top:1px solid rgba(18,32,51,.08)}.article-table-wrap{overflow-x:auto;margin:20px 0 22px;border:1px solid rgba(18,32,51,.1);border-radius:16px;background:#fff}.article-table{width:100%;border-collapse:collapse;min-width:720px}.article-table th{background:#14213d;color:#fff;text-align:left;padding:13px 15px;font-size:13px}.article-table td{padding:13px 15px;border-top:1px solid rgba(18,32,51,.1);color:#2b3950;vertical-align:top;line-height:1.48}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}.metric-card{padding:18px;border:1px solid rgba(18,32,51,.1);border-radius:14px;background:#fff}.metric-card strong{display:block;margin-bottom:8px;color:var(--navy)}.metric-card span{color:#53627c;line-height:1.55}.reference-list{display:grid;gap:12px;padding-left:22px;margin:18px 0 0}.reference-list li{color:#40516f;line-height:1.58;padding-left:4px}.reference-list a{color:var(--blue);font-weight:850;text-decoration:none}.reference-list a:hover{text-decoration:underline}.related-link-list{display:grid;gap:10px;margin-top:16px}.related-link-list a{display:block;padding:12px 14px;border:1px solid rgba(18,32,51,.1);border-radius:12px;background:#f8fbff;color:var(--navy);font-weight:850;text-decoration:none}.related-link-list a:hover{color:var(--blue);border-color:rgba(42,102,217,.28)}.faq-list{display:grid;gap:12px;max-width:920px;margin:0 auto}.faq-list details{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.9);box-shadow:0 10px 26px rgba(15,31,77,.06);padding:18px 20px}.faq-list summary{cursor:pointer;color:var(--navy);font-weight:900}.faq-list p{margin:12px 0 0}.cta-panel{margin-top:30px;padding:28px;border:1px solid rgba(42,102,217,.22);border-radius:18px;background:#eaf2ff}.cta-panel .btn{margin-top:8px;color:#fff}.cta-panel .btn:hover{color:#fff}@media(max-width:900px){.article-layout{grid-template-columns:1fr}.article-main,.article-side{padding:24px}.metric-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.metric-grid{grid-template-columns:1fr}.article-hero{padding:56px 0}.article-main,.article-side{padding:20px}.article-table{min-width:640px}}
@@ -202,22 +195,15 @@
   ]
 }
 </script>
-</head>
-<body>
-<header class="header">
-  <div class="container nav">
-    <a class="logo" href="../"><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
-    <nav class="nav-links"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></nav>
-    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
-  </div>
-  <div class="mobile-menu"><a href="../">Home</a><a href="../products.html">Products</a><a href="../applications.html">Applications</a><a href="../services.html">Services</a><a href="../quality.html">Quality</a><a href="../about.html">About</a><a class="active" href="../knowledge.html">Knowledge</a><a href="../contact.html">Contact</a></div>
-</header>
-<main>
+<link rel="stylesheet" href="/assets/css/option-a-knowledge.css?v=23636cfac1d2">
+<link rel="stylesheet" href="/assets/css/option-a.css?v=cb572be43f9a"><link rel="stylesheet" href="/assets/css/option-a-site.css?v=b15c738a4fb5"><link rel="stylesheet" href="/assets/css/option-a-2e.css?v=2b735a39b6e1">
+<link rel="stylesheet" href="/assets/css/option-a-2f.css?v=3cd2437dc60e">
+</head><body class="option-a"><a class="oa-skip" href="#main">Skip to content</a><header class="oa-header"><div class="oa-container oa-header-row"><a class="oa-brand" href="/" aria-label="Winigen Materials home"><img src="/assets/images/winigen-logo.png" alt="Winigen Materials logo" width="66" height="58"><span>WINIGEN <b>MATERIALS</b><small>BATTERY MATERIALS &amp; ELECTROCHEMISTRY</small></span></a><button class="oa-menu-toggle" aria-expanded="false" aria-controls="oa-menu" type="button">Menu <span aria-hidden="true">☰</span></button><nav id="oa-menu" class="oa-nav" aria-label="Main navigation"><div class="oa-primary-nav"><a data-oa-primary-link href="/">Home</a><div class="oa-material-menu oa-material-disclosure"><a data-oa-primary-link href="/products.html">Materials</a><button type="button" data-oa-family-toggle aria-expanded="false" aria-controls="oa-material-families" aria-label="Browse material families" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><nav id="oa-material-families" class="oa-family-dropdown" aria-label="Material families dropdown" hidden><a class="oa-all-materials" href="/products.html">All Materials</a><a href="/products/lithium-salts.html">Lithium Salts<span>9</span></a><a href="/products/battery-solvents.html">Battery Solvents<span>17</span></a><a href="/products/electrolyte-additives.html">Electrolyte Additives<span>25</span></a><a href="/products/next-generation-salts.html">Next-Gen Salts<span>5</span></a><a href="/products/solid-state-electrolytes.html">Solid-State Electrolytes<span>17</span></a><a href="/products/mxene-materials.html">MXene Materials<span>24</span></a><a href="/products/custom-electrolyte-formulations.html">Custom Formulations<span>2</span></a><a href="/products/battery-active-materials.html">Active Materials<span>19</span></a><a href="/products/battery-ceramic-functional-coating-materials.html">Functional Coatings<span>6</span></a></nav></div><a data-oa-primary-link href="/products/custom-electrolyte-formulations.html">Electrolytes</a><a data-oa-primary-link href="/knowledge.html" aria-current="page">Knowledge</a><a data-oa-primary-link href="/quality.html">Quality &amp; Docs</a></div><form class="oa-combobox oa-header-search" data-oa-search data-scope="global" action="/" method="get"><label class="visually-hidden" for="header-search">Search all materials</label><div class="oa-search"><input id="header-search" name="q" type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="header-search-suggestions" autocomplete="off" placeholder="Name or CAS"><button type="submit">Search <span aria-hidden="true">→</span></button></div><div class="oa-search-popup" data-oa-search-popup hidden><p data-oa-suggestion-status role="status" aria-live="polite"></p><ul id="header-search-suggestions" role="listbox" aria-label="Search all materials suggestions"></ul></div></form><a class="oa-mobile-quote" href="/contact.html">Contact / Quote ↗</a></nav><div class="oa-header-actions"><a class="oa-cart" href="/cart.html" aria-label="Shopping cart"><svg class="oa-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 3h3l3 12h10l3-9H6M9 20h.01M18 20h.01" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="oa-cart-label">Cart</span> <span data-oa-cart-count>0</span></a><a class="oa-button" href="/contact.html">Contact / Quote <span aria-hidden="true">↗</span></a></div></div></header><main id="main" class="oa-knowledge oa-technical-article" data-oa-editorial-reading><div class="oa-reading-progress" aria-hidden="true"><span data-oa-reading-progress></span></div>
   <section class="section dark article-hero">
     <div class="container section-title">
       <div class="breadcrumb"><a href="../knowledge.html">Knowledge</a> / Coin Cell to Pouch Cell Part 1</div>
       <p class="eyebrow">R&amp;D to Pilot Scale</p>
-      <h1>From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up</h1>
+      <h1>From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up</h1><p class="oa-article-meta">Validation and Scale-Up · 2026-06-14 · Winigen Materials</p><p class="oa-reading-estimate">10 min read · estimated at 220 words/min</p>
       <p>A coin cell can identify promising chemistry. A pouch cell reveals whether that chemistry survives practical electrode area, electrolyte filling, formation, gas generation, pressure distribution, and manufacturing variation.</p>
     </div>
   </section>
@@ -230,7 +216,7 @@
         <p>When a program moves into larger-area cells, the question changes. The team is no longer asking only whether a salt, solvent, additive, active material, or solid electrolyte can work. It is asking whether the complete materials system can be filled, wetted, formed, compressed, degassed, sealed, cycled, and reproduced under practical constraints.</p>
         <div class="article-callout"><strong>Core principle:</strong> scale-up validation should preserve enough experimental control to separate chemistry effects from cell-format and process effects. A disappointing pouch cell does not automatically mean the material is poor; a strong coin cell does not automatically mean the process is ready.</div>
 
-        <figure class="article-figure protected-figure">
+        <figure data-oa-branding="embedded" class="article-figure protected-figure oa-scientific-frame">
           <div class="figure-lock">
             <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-to-pouch-validation-ladder.png" alt="Five-stage battery material validation ladder from material QC to multilayer pouch cells" draggable="false">
           </div>
@@ -238,22 +224,22 @@
         </figure>
 
         <section class="article-block">
-          <h2>Why Coin Cells Are Useful but Incomplete</h2>
+          <h2 id="oa-reading-1">Why Coin Cells Are Useful but Incomplete</h2>
           <p>Coin cells remain excellent tools for screening active-material capacity, first-cycle loss, electrolyte compatibility, additive ranking, and early rate or cycling trends. Half-cells can reveal whether a cathode or anode is electrochemically accessible. Coin full-cells can then test N/P balance, voltage-window compatibility, electrode cross-talk, and formation response with modest material demand.</p>
           <p>The limitation is not that coin-cell data are inherently bad. The limitation is that cell hardware contributes its own pressure, contact resistance, electrolyte excess, gas volume, current path, and thermal environment. Research-cell reviews therefore recommend choosing the cell format according to the question being asked and avoiding claims that exceed what the fixture can establish.<sup><a href="#ref-2">[2]</a></sup></p>
           <p>Son and co-workers provided a particularly clear format comparison using the same NCA cathode, graphite anode, electrolyte, loading, calendaring, and electrochemical conditions in approximately 7 mAh coin cells and pouch cells ranging from 24 to about 1000 mAh.<sup><a href="#ref-1">[1]</a></sup> The normalized second-cycle voltage profiles were closely aligned, yet impedance, rate performance, aging, and lithium-plating behavior differed strongly with format.</p>
 
-          <figure class="article-figure protected-figure">
+          <figure data-oa-branding="margin" class="article-figure protected-figure oa-scientific-frame">
             <div class="figure-lock">
               <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-cell-architecture-voltage-cc-by.jpg" alt="Coin-cell and pouch-cell construction with capacity and normalized voltage profiles" draggable="false">
             </div>
-            <figcaption>Coin and pouch construction and second-cycle voltage profiles for matched NCA/graphite cells. Normalizing capacity makes the voltage curves appear similar, but that similarity does not establish equivalent impedance or aging behavior. Reproduced from Son et al., Figure 1, <em>Energy &amp; Environmental Materials</em> (2023), <a href="https://doi.org/10.1002/eem2.12615">doi:10.1002/eem2.12615</a>, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
-          </figure>
+            <figcaption>Coin and pouch construction and second-cycle voltage profiles for matched NCA/graphite cells. Normalizing capacity makes the voltage curves appear similar, but that similarity does not establish equivalent impedance or aging behavior. Reproduced from Son et al., Figure 1, <em>Energy &amp; Environmental Materials</em> (2023), <a href="https://doi.org/10.1002/eem2.12615" target="_blank" rel="noopener noreferrer" aria-label="doi:10.1002/eem2.12615 (opens in a new tab)">doi:10.1002/eem2.12615</a>, under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" aria-label="CC BY 4.0 (opens in a new tab)">CC BY 4.0</a>.</figcaption>
+          <div class="oa-frame-brand" data-oa-brand-margin><img src="/assets/images/winigen-logo.png" alt="" role="presentation" width="26" height="26">Winigen Materials</div></figure>
         </section>
 
         <section class="article-block">
-          <h2>What Changes When the Cell Becomes a Pouch</h2>
-          <div class="article-table-wrap"><table class="article-table">
+          <h2 id="oa-reading-2">What Changes When the Cell Becomes a Pouch</h2>
+          <div class="article-table-wrap"><div class="oa-scientific-table" tabindex="0" role="region" aria-label="Scientific table; scroll horizontally for all columns"><table data-oa-scientific-table class="article-table">
             <thead><tr><th>Variable</th><th>Coin-cell tendency</th><th>Pouch-cell question</th></tr></thead>
             <tbody>
               <tr><td>Electrode area</td><td>Small and mechanically constrained</td><td>Are coating, current density, and pressure uniform across a larger area?</td></tr>
@@ -264,12 +250,12 @@
               <tr><td>Drying and handling</td><td>Small components are easier to dry and assemble</td><td>Are residual moisture and exposure controlled throughout electrode and pouch processing?</td></tr>
               <tr><td>Formation</td><td>Gas and dimensional change may be difficult to observe</td><td>How do SEI/CEI growth, gas, expansion, holds, and degassing interact?</td></tr>
             </tbody>
-          </table></div>
+          </table></div></div>
           <p>Best-practice guidance for lithium battery experiments emphasizes controlled electrode preparation, drying, electrolyte quantity, assembly, formation, environmental conditions, replicates, and transparent reporting.<sup><a href="#ref-3">[3]</a></sup> These controls become more, not less, important when cell size increases.</p>
         </section>
 
         <section class="article-block">
-          <h2>Electrolyte Filling and Wetting Are Material-Dependent</h2>
+          <h2 id="oa-reading-3">Electrolyte Filling and Wetting Are Material-Dependent</h2>
           <p>In a pouch cell, electrolyte must penetrate the separator and porous electrodes over a much larger area. Saturation depends on pore-size distribution, porosity, tortuosity, particle morphology, binder distribution, surface chemistry, viscosity, surface tension, vacuum conditions, fill sequence, and rest time. Pore-scale modeling shows why filling cannot be reduced to a single solvent property: local pore geometry and wetting behavior determine where liquid advances and where gas can remain trapped.<sup><a href="#ref-4">[4]</a></sup></p>
           <p>This matters commercially because changing a <a href="../products/lithium-salts.html">lithium salt</a>, <a href="../products/battery-solvents.html">solvent blend</a>, or <a href="../products/electrolyte-additives.html">additive package</a> can alter viscosity, conductivity, surface tension, gas behavior, and interphase kinetics at the same time. A formulation that ranks well in a flooded coin cell can underperform when electrolyte loading is reduced or wetting time is shortened.</p>
           <div class="metric-grid">
@@ -278,7 +264,7 @@
             <div class="metric-card"><strong>Measure sensitivity</strong><span>Repeat across electrolyte loading, separator, electrode porosity, and aging time before formation.</span></div>
           </div>
 
-          <figure class="article-figure protected-figure">
+          <figure data-oa-branding="embedded" class="article-figure protected-figure oa-scientific-frame">
             <div class="figure-lock">
               <img src="../assets/images/knowledge/coin-to-pouch-validation/pouch-cell-process-control-map.png" alt="Pouch-cell process controls for wetting formation gas swelling and pressure" draggable="false">
             </div>
@@ -287,22 +273,22 @@
         </section>
 
         <section class="article-block">
-          <h2>Formation Is a Materials and Process Step</h2>
+          <h2 id="oa-reading-4">Formation Is a Materials and Process Step</h2>
           <p>Formation controls much more than the first charge-discharge cycle: early SEI and CEI growth, additive consumption, irreversible lithium loss, gas evolution, impedance, and dimensional change. Modeling of a 2.5 Ah pouch cell has shown how formation current and voltage history couple to multi-species SEI reactions, additive depletion, and irreversible expansion.<sup><a href="#ref-7">[7]</a></sup></p>
           <p>For practical validation, compare formation protocols rather than inheriting one from a coin-cell routine. Current, upper-voltage holds, temperature, rest steps, pressure, and degassing timing should be matched to the chemistry. FEC- or VC-containing silicon formulations, high-voltage CEI additives, LiFSI-containing electrolytes, and lithium-metal systems can consume additives and generate interphases at different rates.</p>
           <p>Useful formation evidence includes first-cycle coulombic efficiency, charge consumed in voltage regions associated with reduction or oxidation, dQ/dV, EIS before and after formation, gas or thickness change, and recovery after degassing. A practical formation schedule should be as short as possible while still building the intended interphases reproducibly without hiding early failure.</p>
         </section>
 
         <section class="article-block">
-          <h2>Gas and Swelling Become Visible Engineering Variables</h2>
+          <h2 id="oa-reading-5">Gas and Swelling Become Visible Engineering Variables</h2>
           <p>Pouch cells make gas generation measurable through thickness, pressure, visual swelling, displaced volume, and degassing mass. Gas can originate from residual moisture, electrolyte reduction or oxidation, additive reactions, cathode surface chemistry, overcharge, storage, and thermal reactions. Reviews of pouch-cell gas behavior emphasize that swelling is both an electrochemical signal and a mechanical reliability problem.<sup><a href="#ref-5">[5]</a></sup></p>
           <p>Coin-cell capacity retention alone may therefore miss a commercially important failure mode. For additive and solvent screens, pair electrochemical data with pouch thickness, gas volume or composition where available, seal integrity, storage state of charge, temperature, and degassing history. A formulation that retains capacity but develops unacceptable gas is not ready for scale-up.</p>
         </section>
 
         <section class="article-block">
-          <h2>Pressure and Contact Depend on the Material System</h2>
+          <h2 id="oa-reading-6">Pressure and Contact Depend on the Material System</h2>
           <p>Pressure must be matched to the cell chemistry and format. Conventional graphite cells, silicon-rich anodes, lithium metal, solid-state electrolytes, and solid-liquid hybrid architectures respond differently.</p>
-          <div class="article-table-wrap"><table class="article-table">
+          <div class="article-table-wrap"><div class="oa-scientific-table" tabindex="0" role="region" aria-label="Scientific table; scroll horizontally for all columns"><table data-oa-scientific-table class="article-table">
             <thead><tr><th>Material system</th><th>Scale-up risk</th><th>Validation priority</th></tr></thead>
             <tbody>
               <tr><td>Graphite / liquid electrolyte</td><td>Tab and current-path gradients; gas; wetting; local lithium plating under aggressive charge</td><td>DCIR/EIS, rate map, low-temperature charging, swelling, and post-mortem anode inspection</td></tr>
@@ -311,34 +297,34 @@
               <tr><td>Solid-state / hybrid</td><td>Solid-solid contact loss, cracking, densification gradients, interface impedance</td><td>Defined pressure, layer density, mechanical integrity, EIS evolution, cross-section and interface analysis</td></tr>
               <tr><td>High-voltage cathodes</td><td>Electrolyte oxidation, gas, transition-metal dissolution, CEI growth, aluminum compatibility</td><td>High-voltage storage, gas, impedance, ICP, anode deposition, and pouch swelling</td></tr>
             </tbody>
-          </table></div>
+          </table></div></div>
           <p>In high-energy lithium-metal pouch cells, external pressure can improve contact and cycling, but excessive or nonuniform pressure can also reshape failure. Published pouch-cell work therefore treats pressure as a measured process variable rather than an unspecified clamp condition.<sup><a href="#ref-6">[6]</a></sup></p>
         </section>
 
         <section class="article-block">
-          <h2>Cell Format Changes Impedance and Its Interpretation</h2>
+          <h2 id="oa-reading-7">Cell Format Changes Impedance and Its Interpretation</h2>
           <p>In the matched-format study by Son et al., the high-frequency series resistance was 6.227 ohm for the coin cell and 0.025 ohm for the 1 Ah pouch cell; the combined SEI and charge-transfer semicircle contribution was 11.84 and 0.05 ohm, respectively.<sup><a href="#ref-1">[1]</a></sup> The authors showed that much of the resistance difference can be understood through electrode area and parallel reaction pathways, while extra coin-cell hardware can add contact resistance.</p>
           <p>The practical lesson is that raw resistance in ohms cannot be compared casually between cell sizes. Report electrode area, capacity, loading, state of charge, temperature, perturbation amplitude, and normalization method. Then connect impedance to the actual performance question: polarization, power, heat, lithium plating, or degradation.</p>
 
-          <figure class="article-figure protected-figure">
+          <figure data-oa-branding="margin" class="article-figure protected-figure oa-scientific-frame">
             <div class="figure-lock">
               <img src="../assets/images/knowledge/coin-to-pouch-validation/coin-pouch-rate-cycle-impedance-plating-cc-by.jpg" alt="Rate performance cycle retention impedance and graphite post-mortem comparison for coin and pouch cells" draggable="false">
             </div>
-            <figcaption>Rate performance, capacity retention, EIS evolution, and graphite-anode post-mortem comparison for matched coin and pouch NCA/graphite cells. In this study, the higher-resistance coin format showed lower rate capability, faster early fade, and visible lithium plating. Reproduced from Son et al., Figure 4, <em>Energy &amp; Environmental Materials</em> (2023), <a href="https://doi.org/10.1002/eem2.12615">doi:10.1002/eem2.12615</a>, under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
-          </figure>
+            <figcaption>Rate performance, capacity retention, EIS evolution, and graphite-anode post-mortem comparison for matched coin and pouch NCA/graphite cells. In this study, the higher-resistance coin format showed lower rate capability, faster early fade, and visible lithium plating. Reproduced from Son et al., Figure 4, <em>Energy &amp; Environmental Materials</em> (2023), <a href="https://doi.org/10.1002/eem2.12615" target="_blank" rel="noopener noreferrer" aria-label="doi:10.1002/eem2.12615 (opens in a new tab)">doi:10.1002/eem2.12615</a>, under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" aria-label="CC BY 4.0 (opens in a new tab)">CC BY 4.0</a>.</figcaption>
+          <div class="oa-frame-brand" data-oa-brand-margin><img src="/assets/images/winigen-logo.png" alt="" role="presentation" width="26" height="26">Winigen Materials</div></figure>
         </section>
 
         <section class="article-block">
-          <h2>What to Measure Before Scale-Up</h2>
+          <h2 id="oa-reading-8">What to Measure Before Scale-Up</h2>
           <p>A credible pouch-cell program needs an evidence chain that links incoming materials to electrode process, assembly, electrochemistry, and failure analysis. Scale-up reviews consistently identify reproducibility, material quantity, process compatibility, and the gap between laboratory demonstrations and manufacturing constraints as central challenges.<sup><a href="#ref-8">[8]</a></sup></p>
-          <figure class="article-figure protected-figure">
+          <figure data-oa-branding="embedded" class="article-figure protected-figure oa-scientific-frame">
             <div class="figure-lock">
               <img src="../assets/images/knowledge/coin-to-pouch-validation/battery-scale-up-qc-evidence-chain.png" alt="Battery scale-up quality-control evidence chain" draggable="false">
             </div>
             <figcaption>A practical QC chain for distinguishing material, electrode, assembly, electrochemical, and failure-mechanism variation. Winigen Materials framework. © Winigen Materials.</figcaption>
           </figure>
 
-          <div class="article-table-wrap"><table class="article-table">
+          <div class="article-table-wrap"><div class="oa-scientific-table" tabindex="0" role="region" aria-label="Scientific table; scroll horizontally for all columns"><table data-oa-scientific-table class="article-table">
             <thead><tr><th>Evidence group</th><th>Minimum useful measurements</th><th>What it helps diagnose</th></tr></thead>
             <tbody>
               <tr><td>Electrochemical</td><td>Formation efficiency, long-term CE, capacity retention, EIS, DCIR, rate, leakage current, self-discharge</td><td>Transport, interphase growth, polarization, internal shorts, and aging rate</td></tr>
@@ -347,11 +333,11 @@
               <tr><td>Structural</td><td>SEM, XRD, particle-size distribution, porosity, adhesion, cross-sectional imaging</td><td>Phase change, cracking, morphology, coating defects, and interface failure</td></tr>
               <tr><td>Statistical</td><td>Replicate cells, lot tracking, control charts, yield, mean and spread</td><td>Whether an apparent improvement is reproducible and manufacturable</td></tr>
             </tbody>
-          </table></div>
+          </table></div></div>
         </section>
 
         <section class="article-block">
-          <h2>A Practical Development Sequence</h2>
+          <h2 id="oa-reading-9">A Practical Development Sequence</h2>
           <ol>
             <li><strong>Define the application and failure mode.</strong> Set voltage, temperature, rate, areal capacity, cycle-life, gas, swelling, safety, and cost targets.</li>
             <li><strong>Qualify incoming materials.</strong> Confirm salt and solvent water, additive purity, active-material particle properties, and solid-electrolyte phase or conductivity.</li>
@@ -364,8 +350,8 @@
         </section>
 
         <section class="article-block">
-          <h2>Winigen Materials Perspective</h2>
-          <p>Battery-material validation works best when sourcing and screening strategy are connected. A lithium salt should be selected with its solvent system, water limit, aluminum compatibility, and intended voltage window in mind. An additive package should be assessed through formation, gas, impedance, and electrode cross-talk. A silicon or lithium-metal anode should be paired with realistic loading, electrolyte quantity, pressure, and formation. A solid-state material should be assessed through particle size, density, conductivity, interface contact, and mechanical processing.</p>
+          <h2 id="oa-reading-10">Winigen Materials Perspective</h2>
+          <p>Battery-material validation works best when material supply and screening strategy are connected. A lithium salt should be selected with its solvent system, water limit, aluminum compatibility, and intended voltage window in mind. An additive package should be assessed through formation, gas, impedance, and electrode cross-talk. A silicon or lithium-metal anode should be paired with realistic loading, electrolyte quantity, pressure, and formation. A solid-state material should be assessed through particle size, density, conductivity, interface contact, and mechanical processing.</p>
           <p>Winigen Materials supplies <a href="../products/lithium-salts.html">battery-grade lithium salts</a>, <a href="../products/battery-solvents.html">low-moisture solvents</a>, <a href="../products/electrolyte-additives.html">electrolyte additives</a>, <a href="../products/battery-active-materials.html">cathode and anode active materials</a>, <a href="../products/lithium-metal-foil-on-copper-current-collector.html">lithium metal foil on copper</a>, and <a href="../products/solid-state-electrolytes.html">solid-state electrolytes</a>, and provides <a href="../products/custom-electrolyte-formulations.html">custom formulation support</a>.</p>
           <p>The objective is to make material down-selection, specification review, formulation planning, and R&amp;D-to-pilot translation more coherent while supporting the customer's cell-development team.</p>
           <div class="cta-panel">
@@ -376,24 +362,24 @@
         </section>
 
         <section class="article-block">
-          <h2>References</h2>
+          <h2 id="oa-reading-11">References</h2>
           <ol class="reference-list">
-            <li id="ref-1"><a href="https://doi.org/10.1002/eem2.12615">Son, Y. et al. Analysis of Differences in Electrochemical Performance Between Coin and Pouch Cells for Lithium-Ion Battery Applications. <em>Energy &amp; Environmental Materials</em> (2023). CC BY 4.0.</a></li>
-            <li id="ref-2"><a href="https://doi.org/10.1002/batt.202300080">Smith, A. et al. Potential and Limitations of Research Battery Cell Types for Electrochemical Data Acquisition. <em>Batteries &amp; Supercaps</em> (2023).</a></li>
-            <li id="ref-3"><a href="https://doi.org/10.1038/s43246-022-00286-8">Dai, F.; Cai, M. Best practices in lithium battery cell preparation and evaluation. <em>Communications Materials</em> 3, 64 (2022).</a></li>
-            <li id="ref-4"><a href="https://doi.org/10.1002/batt.202200090">Lautenschlaeger, M. P. et al. Understanding Electrolyte Filling of Lithium-Ion Battery Electrodes on the Pore Scale Using the Lattice Boltzmann Method. <em>Batteries &amp; Supercaps</em> (2022).</a></li>
-            <li id="ref-5"><a href="https://doi.org/10.3389/fceng.2022.828375">Aalund, R.; Endreddy, B.; Pecht, M. How Gas Generates in Pouch Cells and Affects Consumer Products. <em>Frontiers in Chemical Engineering</em> 4 (2022).</a></li>
-            <li id="ref-6"><a href="https://arxiv.org/abs/2306.09522">Kang, D. et al. External-pressure-induced performance enhancement of high-energy-density Li-metal-pouch cells (2023).</a></li>
-            <li id="ref-7"><a href="https://doi.org/10.1149/1945-7111/aceffe">Weng, A. et al. Modeling Battery Formation: Boosted SEI Growth, Multi-Species Reactions, and Irreversible Expansion. <em>Journal of The Electrochemical Society</em> 170, 090513 (2023).</a></li>
-            <li id="ref-8"><a href="https://doi.org/10.1038/s41565-019-0371-8">Cao, Y. et al. Bridging the academic and industrial metrics for next-generation practical batteries. <em>Nature Nanotechnology</em> 14, 200-207 (2019).</a></li>
+            <li id="ref-1"><a href="https://doi.org/10.1002/eem2.12615" target="_blank" rel="noopener noreferrer" aria-label="Son, Y. et al. Analysis of Differences in Electrochemical Performance Between Coin and Pouch Cells for Lithium-Ion Battery Applications. Energy &amp; Environmental Materials (2023). CC BY 4.0. (opens in a new tab)">Son, Y. et al. Analysis of Differences in Electrochemical Performance Between Coin and Pouch Cells for Lithium-Ion Battery Applications. <em>Energy &amp; Environmental Materials</em> (2023). CC BY 4.0.</a></li>
+            <li id="ref-2"><a href="https://doi.org/10.1002/batt.202300080" target="_blank" rel="noopener noreferrer" aria-label="Smith, A. et al. Potential and Limitations of Research Battery Cell Types for Electrochemical Data Acquisition. Batteries &amp; Supercaps (2023). (opens in a new tab)">Smith, A. et al. Potential and Limitations of Research Battery Cell Types for Electrochemical Data Acquisition. <em>Batteries &amp; Supercaps</em> (2023).</a></li>
+            <li id="ref-3"><a href="https://doi.org/10.1038/s43246-022-00286-8" target="_blank" rel="noopener noreferrer" aria-label="Dai, F.; Cai, M. Best practices in lithium battery cell preparation and evaluation. Communications Materials 3, 64 (2022). (opens in a new tab)">Dai, F.; Cai, M. Best practices in lithium battery cell preparation and evaluation. <em>Communications Materials</em> 3, 64 (2022).</a></li>
+            <li id="ref-4"><a href="https://doi.org/10.1002/batt.202200090" target="_blank" rel="noopener noreferrer" aria-label="Lautenschlaeger, M. P. et al. Understanding Electrolyte Filling of Lithium-Ion Battery Electrodes on the Pore Scale Using the Lattice Boltzmann Method. Batteries &amp; Supercaps (2022). (opens in a new tab)">Lautenschlaeger, M. P. et al. Understanding Electrolyte Filling of Lithium-Ion Battery Electrodes on the Pore Scale Using the Lattice Boltzmann Method. <em>Batteries &amp; Supercaps</em> (2022).</a></li>
+            <li id="ref-5"><a href="https://doi.org/10.3389/fceng.2022.828375" target="_blank" rel="noopener noreferrer" aria-label="Aalund, R.; Endreddy, B.; Pecht, M. How Gas Generates in Pouch Cells and Affects Consumer Products. Frontiers in Chemical Engineering 4 (2022). (opens in a new tab)">Aalund, R.; Endreddy, B.; Pecht, M. How Gas Generates in Pouch Cells and Affects Consumer Products. <em>Frontiers in Chemical Engineering</em> 4 (2022).</a></li>
+            <li id="ref-6"><a href="https://arxiv.org/abs/2306.09522" target="_blank" rel="noopener noreferrer" aria-label="Kang, D. et al. External-pressure-induced performance enhancement of high-energy-density Li-metal-pouch cells (2023). (opens in a new tab)">Kang, D. et al. External-pressure-induced performance enhancement of high-energy-density Li-metal-pouch cells (2023).</a></li>
+            <li id="ref-7"><a href="https://doi.org/10.1149/1945-7111/aceffe" target="_blank" rel="noopener noreferrer" aria-label="Weng, A. et al. Modeling Battery Formation: Boosted SEI Growth, Multi-Species Reactions, and Irreversible Expansion. Journal of The Electrochemical Society 170, 090513 (2023). (opens in a new tab)">Weng, A. et al. Modeling Battery Formation: Boosted SEI Growth, Multi-Species Reactions, and Irreversible Expansion. <em>Journal of The Electrochemical Society</em> 170, 090513 (2023).</a></li>
+            <li id="ref-8"><a href="https://doi.org/10.1038/s41565-019-0371-8" target="_blank" rel="noopener noreferrer" aria-label="Cao, Y. et al. Bridging the academic and industrial metrics for next-generation practical batteries. Nature Nanotechnology 14, 200-207 (2019). (opens in a new tab)">Cao, Y. et al. Bridging the academic and industrial metrics for next-generation practical batteries. <em>Nature Nanotechnology</em> 14, 200-207 (2019).</a></li>
           </ol>
         </section>
             <p class="article-copyright">All original diagrams on this page are © Winigen Materials unless otherwise noted. They may not be reproduced, modified, or redistributed without permission.</p>
     </article>
 
-      <aside class="article-side">
+      <div class="oa-sidebar-boundary"><aside class="article-side"><nav class="oa-article-toc" aria-label="Article sections"><details><summary>In this article</summary><ol><li><a href="#oa-reading-1">Why Coin Cells Are Useful but Incomplete</a></li><li><a href="#oa-reading-2">What Changes When the Cell Becomes a Pouch</a></li><li><a href="#oa-reading-3">Electrolyte Filling and Wetting Are Material-Dependent</a></li><li><a href="#oa-reading-4">Formation Is a Materials and Process Step</a></li><li><a href="#oa-reading-5">Gas and Swelling Become Visible Engineering Variables</a></li><li><a href="#oa-reading-6">Pressure and Contact Depend on the Material System</a></li><li><a href="#oa-reading-7">Cell Format Changes Impedance and Its Interpretation</a></li><li><a href="#oa-reading-8">What to Measure Before Scale-Up</a></li><li><a href="#oa-reading-9">A Practical Development Sequence</a></li><li><a href="#oa-reading-10">Winigen Materials Perspective</a></li><li><a href="#oa-reading-11">References</a></li><li><a href="#oa-reading-12">Materials and Scale-Up Support</a></li><li><a href="#oa-reading-13">Coin-to-Pouch Validation</a></li><li><a href="#oa-reading-14">Relevant Winigen Materials</a></li></ol></details></nav>
         <p class="eyebrow">Winigen Portfolio</p>
-        <h2>Materials and Scale-Up Support</h2>
+        <h2 id="oa-reading-12">Materials and Scale-Up Support</h2>
         <p>Connect the validation framework with relevant materials, formulation services, and technical resources.</p>
         <div class="related-link-list">
           <a href="../products/lithium-salts.html">Lithium Salts</a>
@@ -410,13 +396,13 @@
           <a href="lifsi-lithium-metal-batteries.html">LiFSI and Lithium Metal</a>
           <a href="../knowledge.html">Knowledge Center</a>
         </div>
-      </aside>
+      </aside></div>
     </div>
   </section>
 
   <section class="section ecosystem">
     <div class="container">
-      <div class="section-title"><p class="eyebrow">Frequently Asked Questions</p><h2>Coin-to-Pouch Validation</h2></div>
+      <div class="section-title"><p class="eyebrow">Frequently Asked Questions</p><h2 id="oa-reading-13">Coin-to-Pouch Validation</h2></div>
       <div class="faq-list">
         <details><summary>Why can coin-cell and pouch-cell results differ when the materials are the same?</summary><p>Geometry, current collection, hardware contact, electrode area, electrolyte excess, pressure, wetting, and gas accommodation change impedance and effective operating conditions. Format therefore affects how a chemistry is measured.</p></details>
         <details><summary>When should a battery program move from coin cells to pouch cells?</summary><p>After repeatable material and electrode-pair promise is established, but before the chemistry is declared scale-ready. Single-layer pouches expose process risks while material consumption remains manageable.</p></details>
@@ -425,9 +411,9 @@
       </div>
     </div>
   </section>
-<section class="section seo-related-resources" data-seo-generated="related-resources"><div class="container"><p class="eyebrow">Explore Further</p><h2>Relevant Winigen Materials</h2><div class="seo-related-resources__links"><a href="../products/electrolyte-additives.html">Electrolyte Additives</a><a href="../products/lithium-salts.html">Lithium Salts</a><a href="../products/custom-electrolyte-formulations.html">Custom Formulations</a><a href="../products/battery-active-materials.html">Active Materials</a></div></div></section>
-</main>
-<footer class="footer"><div class="container footer-grid"><div><img src="../assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials &amp; Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
-<script src="../assets/js/main.js?v=0609abf03815"></script>
-</body>
-</html>
+<section class="section seo-related-resources" data-seo-generated="related-resources"><div class="container"><p class="eyebrow"></p><h2 id="oa-reading-14">Relevant Winigen Materials</h2><div class="seo-related-resources__links"><a href="../products/electrolyte-additives.html">Electrolyte Additives</a><a href="../products/lithium-salts.html">Lithium Salts</a><a href="../products/custom-electrolyte-formulations.html">Custom Formulations</a><a href="../products/battery-active-materials.html">Active Materials</a></div></div></section>
+<section class="oa-knowledge-inquiry"><div class="container"><p class="oa-eyebrow">FROM TECHNICAL READING TO MATERIAL SELECTION</p><h2>Discuss your material requirements.</h2><p>Ask about specifications, documentation or quantities for your research program.</p><a class="oa-button oa-button--secondary" href="/contact.html?inquiry_type=Technical+Discussion&amp;product_interest=From+Coin+Cell+to+Pouch+Cell%2C+Part+1%3A+How+to+Validate+Battery+Materials+Before+Scale-Up">Start a technical discussion ↗</a><a class="oa-text-link" href="/products.html">Explore material families →</a></div></section></main><footer class="oa-footer"><div class="oa-container oa-footer-grid"><div><a class="oa-brand" href="/" aria-label="Winigen Materials home"><img src="/assets/images/winigen-logo.png" alt="Winigen Materials logo" width="66" height="58"><span>WINIGEN <b>MATERIALS</b><small>BATTERY MATERIALS &amp; ELECTROCHEMISTRY</small></span></a><p>Specialty battery materials and technical support for research and pilot-scale evaluation.</p><p class="oa-mailing-address">New Jersey, USA</p></div><div><h2>Explore</h2><a href="/products.html">Material catalog</a><a href="/products/custom-electrolyte-formulations.html">Electrolyte solutions</a><a href="/knowledge.html">Knowledge Center</a></div><div><h2>Technical support</h2><a href="/contact.html?inquiry_type=Request+for+Quote">Request a quotation</a><a href="/quality.html">Quality &amp; Documents</a><a href="/policies/returns-refunds.html">Returns &amp; Refunds</a><a href="/contact.html">Contact</a><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></div><div><h2>Company</h2><a href="/about.html">About Winigen</a><a href="/applications.html">Applications</a><a href="/services.html">Services</a><a href="https://www.linkedin.com/company/118914606/">LinkedIn</a></div></div><div class="oa-container oa-footer-base"><span>© Winigen Materials</span><span>Battery materials · Technical support · R&amp;D to pilot</span></div></footer><script src="../assets/js/main.js?v=86badf3e00e3"></script><script src="/assets/js/product-search-index.js?v=46b6b5e758a8" defer></script>
+<script src="/assets/js/product-search.js?v=3addfe3926fa" defer></script>
+<script src="/assets/js/option-a-search.js?v=5d4ac36d2639" defer></script>
+<script src="/assets/js/featured-session.js?v=9640936b18f5" defer></script>
+<script src="/assets/js/option-a.js?v=07b376f5387d" defer></script><script src="/assets/js/option-a-2f.js?v=56066c2722d2" defer></script></body></html>

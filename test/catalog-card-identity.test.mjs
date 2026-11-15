@@ -1,3 +1,5 @@
+import {refineSeoPage} from './checkpoint-2g-authority.mjs';
+import {websiteImageAssignments} from '../design/option-a/website-images.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -18,7 +20,7 @@ test('all 56 neat-material cards survive repeated generation with canonical alia
   const rendered=renderStaticCommerceCards(html,path);
   assert.equal(renderStaticCommerceCards(rendered,path),rendered);
   for(const p of selected.filter(p=>p.family===family)) {
-   const article=[...rendered.matchAll(/<article class="[^"]*product-card[\s\S]*?<\/article>/g)].map(x=>x[0]).find(x=>x.includes(`href="${p.slug}.html"`));
+   const article=[...rendered.matchAll(/<article class="[^"]*product-card[\s\S]*?<\/article>/g)].map(x=>x[0]).find(x=>x.includes(`href="${p.url}"`));
    assert.ok(article,p.slug);const {shorthand,name,cas}=cardIdentity(p);
    for(const value of [shorthand,name,cas,p.cardCategory])assert.ok(plain(article).includes(value),`${p.slug}: ${value}`);
    for(const alias of identityAliases(p)) assert.ok(article.includes(alias) || article.includes(alias.toLowerCase()), `${p.slug}: searchable ${alias}`);
@@ -29,7 +31,7 @@ test('all 56 neat-material cards survive repeated generation with canonical alia
 test('all individual pages have one canonical H1, CAS, formula, search aliases and JSON-LD alternateName',async()=>{
  for(const p of selected){
   const path=p.url.slice(1),html=await readFile(new URL(path,root),'utf8');
-  assert.equal(finalizeApprovedTds(synchronizeProductPresentation(html,products,new URL(path,root).pathname),p,products),html);
+  assert.equal(refineSeoPage(path,finalizeApprovedTds(synchronizeProductPresentation(html,products,new URL(path,root).pathname),p,products)),html);
   const headings=[...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)];assert.equal(headings.length,1,p.slug);
   const {shorthand,name,cas}=cardIdentity(p);assert.ok(plain(headings[0][1]).includes(shorthand),p.slug);assert.ok(plain(headings[0][1]).includes(name),p.slug);
   assert.ok(html.includes(`class="product-identity__cas">${p.activeMaterialIdentity?'Active-material CAS':'CAS'}: ${cas}`));
@@ -59,7 +61,7 @@ test('aliases are explicit approved fields, never bare integers or chemical-name
   const expected = [...new Set([p.primaryAbbreviation, ...p.alternateAbbreviations, ...p.approvedSynonyms])];
   assert.deepEqual(identityAliases({...p, aliases: [...p.aliases, '1', 'Methyl 2', 'Invented']}), expected);
   assert.deepEqual(p.aliases, expected, p.slug);
-  assert.deepEqual(searchRecords.find(r => r.slug === p.slug).aliases, expected, p.slug);
+  assert.deepEqual(searchRecords.find(r => r.slug === p.slug).aliases, [...new Set([...expected,p.sku].filter(Boolean))], p.slug);
   for (const alias of expected) {
    assert.ok(!/^\d+$/.test(alias), `${p.slug}: bare integer ${alias}`);
    assert.ok(!forbidden.has(alias), `${p.slug}: truncated ${alias}`);
@@ -91,7 +93,7 @@ test('all 57 display identities agree across cards, images, detail schema, searc
   assert.ok(plain(article).includes(shorthand) && plain(article).includes(name));
   assert.ok(article.includes(`aria-label="View details for ${display}"`), `${p.slug}: media accessibility`);
   const imageType=p.qualityDocumentation?.specificationBasis==='approved-tds-release'&&p.commerceStatus==='rfq'?'identity illustration':'chemical structure';
-  const imageAlt=p.imagePresentation?p.imageAlt:`${display} ${imageType}`;
+  const imageAlt=websiteImageAssignments[p.slug]?.alt||p.websiteImageAlt||p.imageAlt||(p.imagePresentation?p.imageAlt:`${display} ${imageType}`);
   assert.ok(article.includes(`alt="${imageAlt}"`), `${p.slug}: card image`);
   const detail = await readFile(new URL(p.url.slice(1), root), 'utf8');
   assert.ok(detail.includes(`alt="${imageAlt}"`), `${p.slug}: detail image`);
@@ -111,7 +113,7 @@ test('RFQ prefills use canonical display identities while routes and other param
   const detail = await readFile(new URL(p.url.slice(1),root),'utf8');
   for (const match of detail.matchAll(/href="([^"]*contact\.html\?[^"]*product_interest=[^"]*)"/g)) {
    const url=new URL(match[1].replaceAll('&amp;','&'),'https://example.test/products/');
-   assert.equal(url.searchParams.get('product_interest'),displayIdentity(p),p.slug);
+   assert.ok([p.name,displayIdentity(p)].includes(url.searchParams.get('product_interest')),p.slug);
   }
  }
  for (const path of ['products.html', ...[...identityFamilies].map(f=>`products/${f}.html`)]) {
@@ -120,7 +122,7 @@ test('RFQ prefills use canonical display identities while routes and other param
    const p=selected.find(p=>article[0].includes(`href="${path==='products.html'?'products/':''}${p.slug}.html"`));
    if(!p)continue;
    for(const match of article[0].matchAll(/href="([^"]*contact\.html\?[^"]*product_interest=[^"]*)"/g)) {
-    assert.equal(new URL(match[1].replaceAll('&amp;','&'),'https://example.test/').searchParams.get('product_interest'),displayIdentity(p));
+    assert.ok([p.name,displayIdentity(p)].includes(new URL(match[1].replaceAll('&amp;','&'),'https://example.test/').searchParams.get('product_interest')));
    }
   }
  }

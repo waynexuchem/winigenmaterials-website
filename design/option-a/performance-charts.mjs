@@ -1,0 +1,29 @@
+// Internal source data never enters the public manifest. Both layouts project every
+// original pair onto the same linear scales; only canvas size and label layout differ.
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const root=new URL('../../',import.meta.url);
+const read=p=>readFileSync(new URL(p,root),'utf8');
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export const chartData=JSON.parse(read('design/option-a/performance-chart-data.source.json'));
+export function chartConfig(id){return id==='hc-nfpp'?{x:[0,1460],y:[82,101],xticks:[0,200,400,600,800,1000,1200,1400],yticks:[84,87,90,93,96,99],xlabel:'Cycle number',ylabel:'Capacity retention (%)',yScale:100}:{x:[0,1010],y:[2.96,4.48],xticks:[0,200,400,600,800,1000],yticks:[3,3.2,3.4,3.6,3.8,4,4.2,4.4],xlabel:'Discharge capacity (mAh)',ylabel:'Cell voltage (V)',yScale:1};}
+export function renderWebChart(chart,mobile=false){
+ const cfg=chartConfig(chart.id),W=mobile?300:900,H=mobile?330:470;
+ const box={left:mobile?49:74,top:mobile?65:63,right:W-(mobile?20:25),bottom:H-(mobile?62:64)};
+ const x=v=>box.left+(Number(v)-cfg.x[0])/(cfg.x[1]-cfg.x[0])*(box.right-box.left);
+ const y=v=>box.bottom-(Number(v)*cfg.yScale-cfg.y[0])/(cfg.y[1]-cfg.y[0])*(box.bottom-box.top);
+ const nfpp=chart.id==='hc-nfpp',colors=nfpp?['#8d7132','#8d7132','#2a66d9','#2a66d9']:['#2a66d9','#2a66d9','#8d7132','#8d7132','#137f89','#137f89','#14213d','#14213d'];
+ const title=nfpp?'Hard Carbon / NFPP Sodium-Ion Cycling at 45 °C':'LNMO-Based Cells: Discharge Profiles at 25 °C and −20 °C';
+ let s=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="title description"><title id="title">${title}</title><desc id="description">Every original chart-cache pair, linear axes, no smoothing. ${nfpp?'Ordinary Na-ion electrolyte and Winigen Na-ion electrolyte, two cells each; 45 °C, 0.5C charge / 1C discharge.':'1004, 1005 and 1008: −20 °C; 1009: 25 °C. 0.2C discharge; voltage versus absolute discharge capacity.'}</desc><rect width="100%" height="100%" fill="white"/><defs><clipPath id="plot"><rect x="${box.left}" y="${box.top}" width="${box.right-box.left}" height="${box.bottom-box.top}"/></clipPath></defs><g font-family="Arial, sans-serif" font-size="${mobile?14:16}" fill="#14213d">`;
+ for(const tick of cfg.yticks){const pos=y(tick/cfg.yScale);s+=`<path d="M${box.left},${pos}H${box.right}" stroke="#e4eaf2"/><text x="${box.left-8}" y="${pos+4}" text-anchor="end">${nfpp?tick:tick.toFixed(1)}</text>`;}
+ for(const tick of mobile&&nfpp?[0,400,800,1200]:cfg.xticks)s+=`<text x="${x(tick)}" y="${box.bottom+20}" text-anchor="middle">${tick}</text>`;
+ s+=`<path d="M${box.left},${box.top}V${box.bottom}H${box.right}" fill="none" stroke="#9aaec3"/><text x="${(box.left+box.right)/2}" y="${H-24}" text-anchor="middle" font-size="${mobile?13:16}">${escape(cfg.xlabel)}</text><text transform="translate(${mobile?14:22},${(box.top+box.bottom)/2}) rotate(-90)" text-anchor="middle" font-size="${mobile?13:16}">${escape(cfg.ylabel)}</text>`;
+ const legend=nfpp?chart.series:chart.series.filter((_,i)=>i%2===0);
+ legend.forEach((series,i)=>{const col=mobile?i%2:i,row=mobile?Math.floor(i/2):0,lx=(mobile?8:38)+col*(mobile?148:217),ly=mobile?13+row*25:19,idx=nfpp?i:i*2;const name=nfpp?(series.sourceCode==='4V'?'Ordinary Na-ion':'Winigen Na-ion'):`${series.sourceCode} · ${series.sourceCode==='1009'?'25':'−20'} °C`;s+=`<path d="M${lx},${ly-4}h16" stroke="${colors[idx]}" stroke-width="2" ${series.trace===2?'stroke-dasharray="6 4"':''}/><text x="${lx+20}" y="${ly}" font-size="${mobile?11:14}">${escape(name)}${nfpp?`<tspan x="${lx+20}" dy="13">electrolyte · Cell ${series.trace}</tspan>`:''}</text>`;});
+ if(!nfpp)s+=`<text x="${box.left}" y="${mobile?60:45}" font-size="${mobile?12:13}">Solid: trace 1 · dashed: trace 2</text>`;
+ s+='<g clip-path="url(#plot)">';
+ chart.series.forEach((series,i)=>{const points=series.points.map(([a,b])=>`${x(a).toFixed(6)},${y(b).toFixed(6)}`).join(' ');s+=`<polyline data-source-code="${escape(series.sourceCode)}" data-trace="${series.trace}" data-point-count="${series.points.length}" points="${points}" fill="none" stroke="${colors[i]}" stroke-width="${mobile?1.5:2}" ${series.trace===2?'stroke-dasharray="6 4"':''}/>`;});
+ return s+`</g><text x="${W-8}" y="${H-5}" font-size="${mobile?9:11}" text-anchor="end" fill="#59677d">Winigen Materials · Electrochemical performance</text></g></svg>\n`;
+}
+export function chartSummary(id){const chart=chartData.charts.find(c=>c.id===id);if(!chart)throw Error('Unknown scientific chart');if(id==='hc-nfpp')return chart.series.map(s=>{const value=s.points.find(([x])=>Number(x)===250);if(!value)throw Error('Missing common cycle 250');return [s.sourceCode,String(s.trace),'250',(Number(value[1])*100).toFixed(2)];});return ['1004','1005','1008','1009'].map(code=>[code,...chart.series.filter(s=>s.sourceCode===code).map(s=>{const point=s.points.at(-1);if(Number(point[1])!==3)throw Error('Endpoint is not 3.0 V');return Number(point[0]).toFixed(1);})]);}
+export function buildPerformanceCharts(){const figures=JSON.parse(read('design/option-a/performance-policy.source.json')).figures.filter(f=>f.publicCandidate);const records=[];for(const f of figures){const data=chartData.charts.find(c=>c.id===f.id);for(const [key,mobile]of[['webAsset',false],['mobileAsset',true]]){const path=f[key].slice(1),svg=renderWebChart(data,mobile);mkdirSync(new URL('assets/images/electrolyte-performance/',root),{recursive:true});writeFileSync(new URL(path,root),svg);records.push({asset:f[key],sha256:createHash('sha256').update(svg).digest('hex'),layout:mobile?'mobile':'desktop',series:data.series.length,sourcePoints:data.series.reduce((n,s)=>n+s.points.length,0)});}}return records;}

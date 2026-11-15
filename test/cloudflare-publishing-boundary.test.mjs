@@ -21,7 +21,6 @@ async function writeFixtureFile(root, path, content = path) {
 test('manifest accepts only recognized production website artifact locations', () => {
   for (const path of [
     'index.html',
-    'knowledge/articles.registry.json',
     'private-orders/confirmation.html',
     'private-orders/wq20260922-01.html',
     'private-orders/wq20260923-01.html',
@@ -40,6 +39,8 @@ test('manifest accepts only recognized production website artifact locations', (
   }
 
   for (const path of [
+    'knowledge/articles.registry.json',
+    'assets/js/knowledge-search-data.development.js',
     '../secret.txt',
     '/absolute/path.html',
     '.env',

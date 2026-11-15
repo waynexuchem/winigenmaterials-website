@@ -1,0 +1,20 @@
+// Local deterministic finishing boundary; never installs, deploys or contacts production.
+import {buildPolicies} from './performance-policy.mjs';
+import {buildSeoIntegrity} from './build-2g.mjs';
+import {buildCatalog} from './build-catalog.mjs';
+import {buildPublicShell} from './site-shell.mjs';
+import {buildKnowledge} from './build-knowledge.mjs';
+import {buildRefinement} from './refine-2f.mjs';
+import {buildImageDiscovery} from '../../seo/build-image-discovery.mjs';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../../',import.meta.url));
+buildPolicies();
+await buildCatalog();
+await buildKnowledge();
+await buildPublicShell();
+execFileSync(process.execPath,['scripts/sync-static-asset-versions.mjs'],{cwd:root,stdio:'inherit'});
+await buildRefinement();
+await buildImageDiscovery({siteRoot:root,scope:'all'});
+await buildSeoIntegrity();
+console.log('Finished Option A catalog, Knowledge pilots, public fingerprints and image discovery.');

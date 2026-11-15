@@ -92,16 +92,19 @@
     ? '<span class="knowledge-draft-badge">Draft</span>'
     : '';
 
+  const editorial = root.hasAttribute('data-oa-editorial');
+  const readingTimes = new Map([...root.querySelectorAll('[data-reading-minutes][data-article-slug]')].map(el=>[el.dataset.articleSlug,Number(el.dataset.readingMinutes)]));
+  const readingLabel = article => editorial && readingTimes.has(article.slug) ? `<p class="oa-reading-estimate">${readingTimes.get(article.slug)} min read · estimated</p>` : '';
   const cardTemplate = (article, featured = false) => {
     const cardClass = featured ? 'knowledge-card featured-card' : 'knowledge-card';
     const loading = featured ? '' : ' loading="lazy"';
     return `<article class="${cardClass}" data-article-slug="${escapeHtml(article.slug)}">
-      <img src="${escapeHtml(article.image.src)}" alt="${escapeHtml(article.image.alt)}"${loading} decoding="async">
+      <a class="knowledge-image-link" href="${escapeHtml(article.url)}" aria-label="Read ${escapeHtml(article.title)}"><img src="${escapeHtml(article.image.src)}" alt="${escapeHtml(article.image.alt)}"${loading} decoding="async"></a>
       <div class="knowledge-card-body">
         <p class="knowledge-card-category">${escapeHtml(article.cardCategory)}${draftBadge(article)}</p>
         <h2><a href="${escapeHtml(article.url)}">${escapeHtml(article.title)}</a></h2>
         <p>${escapeHtml(article.description)}</p>
-        <div class="related-link-list"><a href="${escapeHtml(article.url)}">Read article</a></div>
+        ${readingLabel(article)}<div class="related-link-list"><a href="${escapeHtml(article.url)}">Read article</a></div>
       </div>
     </article>`;
   };
@@ -112,7 +115,7 @@
     const featured = ordered
       .filter((article) => article.featured)
       .sort((a, b) => (a.featuredRank ?? 999) - (b.featuredRank ?? 999) || a.title.localeCompare(b.title))
-      .slice(0, 3);
+      .slice(0, editorial ? 1 : 3);
     if (featuredLibrary) featuredLibrary.innerHTML = featured.map((article) => cardTemplate(article, true)).join('');
   };
 
@@ -165,12 +168,12 @@
 
   const resultTemplate = (article, score) => {
     const tags = article.tags.slice(0, 4).map((tag) => `<span>${tag}</span>`).join('');
-    return `<article class="search-result-card">
-      <div class="search-result-meta"><span>${article.stage}</span><span>${article.category}</span>${draftBadge(article)}</div>
+    return `<article class="search-result-card">${editorial ? `<a class="knowledge-image-link" href="${escapeHtml(article.url)}" aria-label="Read ${escapeHtml(article.title)}"><img class="oa-result-thumbnail" src="${escapeHtml(article.image.src)}" alt="${escapeHtml(article.image.alt)}" loading="lazy"></a>` : ''}
+      <div class="oa-knowledge-result-copy"><div class="search-result-meta"><span>${article.stage}</span><span>${article.category}</span>${draftBadge(article)}</div>
       <h3><a href="${article.url}">${article.title}</a></h3>
       <p>${article.description}</p>
       <div class="search-result-tags">${tags}</div>
-      <a class="search-result-link" href="${article.url}">Read article</a>
+      <a class="search-result-link" href="${article.url}">Read article</a></div>
     </article>`;
   };
 

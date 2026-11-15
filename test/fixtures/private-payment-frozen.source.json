@@ -1,0 +1,42 @@
+{
+  "scope": "Exact verified static production baseline 34cd091. All payment HTML, scripts and Worker source are frozen; no confirmation presentation exception. Separate production payment services remain untouched.",
+  "baseline": "34cd0919e5e8662e66ce8bfab0b7a906dbdc25d3",
+  "files": {
+    "assets/css/private-order.css": "2c2b222f530394105f44f93e1e4d4d25f072894570ae55ce990327ef57d05702",
+    "assets/js/private-order-checkout.js": "bdf90e8802780795eea29dbe369db817fb3b2454dcf351a7e9c912d35477cef2",
+    "private-orders/wq20260922-01.html": "1c05c3c33ead4bef067b575962f4604143af3b0fd316cdde68928332d7352dc6",
+    "private-orders/wq20260923-01.html": "3382932bbb75ec2138e32828e700fd08f5e0ff7ac24481585ae076dd1d5745ad",
+    "private-orders/wq20261021-01.html": "2fad345e3161b5a91fdd544b69146268438548eee055c2bf1114c26b5fb6dfc8",
+    "stripe-worker/src/catalog.js": "0bc61378f3cb3a5bb771a30b94bce3de78df74f513f97d2b94928930a0cf9ad6",
+    "stripe-worker/src/contact/email.js": "75463db1e22fa2ea8da6394b16b306b3e75ff099c7634cb70347954ed88ba6a8",
+    "stripe-worker/src/contact/index.js": "e513135e9c65c276fcb70d9acb6c58e4d94fbec0c00ee00c076362ad715fed68",
+    "stripe-worker/src/contact/metrics.js": "fd1d71041a2d8c4d3824b7ff94990cd81cf423f5559ecc7f2f8f95069fb60f91",
+    "stripe-worker/src/contact/validation.js": "9bd20755f3a47dc013efe863c57c32ca7bdabfd3cc1dc00cc4fcdaf54c960599",
+    "stripe-worker/src/email/notifications.js": "47649a8123ff44c5fbe4a110ef25169429442027671e94af6722784caf27f19e",
+    "stripe-worker/src/email/provider.js": "c754862b419c1663f3ffeb10facf3dc79228225141f83c7596de279b4c2446fd",
+    "stripe-worker/src/email/providers/resend.js": "829225a03eb308942778799c372907b5be68d912aed08f515b97564cbb97054e",
+    "stripe-worker/src/email/templates.js": "7f1ddd012e73c144f077d8f67360b8895ded1b2340a810212cd2a00f6035c1ca",
+    "stripe-worker/src/index.js": "fc9cce2f533e378f46b2f3e9d90d2ed27c5be69dcccddb847be509e1f743cbeb",
+    "stripe-worker/src/maintenance/storage.js": "bf06bbbcdf724720eb4f1f1598b70186307cde0129f223ce9b47928fa5e3b44d",
+    "stripe-worker/src/private-checkout-lifecycle.js": "b2ba9e02dd712192db80a6db171fb02d71c4c589b7518e481ed9c59a63caa4b6",
+    "stripe-worker/src/private-order-validation.js": "df864be5c2a9d2ace7c8e65cccc3748bca23950ff25bbe5f2c7513c583288399",
+    "stripe-worker/src/private-orders.js": "2646b62274020ba1e0743c5fca716fc866828d700263b1faea390fa9762b4d75",
+    "stripe-worker/src/shipping-countries.js": "b70e36577a7790c93fe4213bb85eacbac4ca5cc73d2b66bb7bc25d697e829120",
+    "stripe-worker/src/shipping.js": "769644c58e9fd4a3413059ab8fd4094b68c970cd46d384b382c88174ff149f19",
+    "private-orders/confirmation.html": "f2bc3d1bab82d77f81129da57f1530b145df53220af9b1d04f33ab5d6aa6006b"
+  },
+  "excludedPatterns": [
+    "assets/css/private-payment.css",
+    "design/private-payments/**",
+    "private-orders/pay-*.html",
+    "private-orders/wq20261103-02.html"
+  ],
+  "confirmation": {
+    "sha256": "f2bc3d1bab82d77f81129da57f1530b145df53220af9b1d04f33ab5d6aa6006b",
+    "mainSHA256": "5bdfcd86ed238dc70166cf336a9b33796c039d5dd013dc5e109462731d2ade3d",
+    "privateScripts": [
+      "<script src=\"../assets/js/commerce-config.js?v=c5bb78604580\"></script>",
+      "<script src=\"../assets/js/private-order-checkout.js?v=bdf90e880278\"></script>"
+    ]
+  }
+}

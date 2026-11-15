@@ -31,7 +31,9 @@ for(const [sku,tiers] of Object.entries(expected))test(`${sku}: Battery grade re
  for(const path of ['products.html',semantic.families.find(f=>f.slug===p.family).url.slice(1)]){
   const card=[...read(path).matchAll(/<article[^>]*class="[^"]*product-card[^"]*"[\s\S]*?<\/article>/g)].find(m=>m[0].includes(p.slug+'.html'))?.[0];
   assert(card?.includes('Battery grade'),path);assert(!card.includes('Research material'));
-  for(const field of p.catalogCardSpecifications)assert(card.includes(p.additionalProperty.find(x=>x.name===field).value.replaceAll('<','&lt;')),`${path}: ${field} retained`);
+  // Compact cards compare grade, purity and moisture; every full specification remains on the detail page.
+  for(const row of p.additionalProperty.filter(x=>['Grade','Assay','Purity','Water','Moisture',...(p.activeMaterialIdentity?['Active material concentration']:[])].includes(x.name)))assert(card.includes(row.value.replaceAll('<','&lt;')),`${path}: primary ${row.name} retained`);
+  for(const field of p.catalogCardSpecifications)assert(page.includes(p.additionalProperty.find(x=>x.name===field).value.replaceAll('<','&lt;')),`${path}: full ${field} retained on detail page`);
  }
  const feedItems=[...read('feeds/google-merchant.xml').matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m=>m[1]).filter(x=>x.includes(`<g:item_group_id>${sku}</g:item_group_id>`));
  assert.equal(feedItems.length,tiers.length);for(const item of feedItems)assert(item.includes('Battery grade.'));

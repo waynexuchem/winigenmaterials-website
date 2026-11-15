@@ -24,7 +24,7 @@ test('new canonical records, required search aliases and category registration',
   assert(search.search(index.records,p.primaryAbbreviation,section).records.some(x=>x.slug===p.slug));
   for(const path of ['products.html',catalog.families.find(f=>f.slug===p.family).url.slice(1)]){
    const cards=[...read(path).matchAll(/<article[^>]*class="[^"]*product-card[^"]*"[\s\S]*?<\/article>/g)].map(x=>x[0]).filter(x=>x.includes(p.slug+'.html'));
-   assert.equal(cards.length,1,path+' '+p.slug);assert(/Online ordering/.test(cards[0]));assert(!/Available by RFQ/.test(cards[0]));assert(!/<sub>20<\/sub>/.test(cards[0]));
+   assert.equal(cards.length,1,path+' '+p.slug);assert(/data-oa-card-purchase/.test(cards[0]));assert(!/>Online ordering</.test(cards[0]));assert(!/Available by RFQ/.test(cards[0]));assert(!/<sub>20<\/sub>/.test(cards[0]));
   }
  }
  const neat=products.find(p=>p.approvedComparisonPage);

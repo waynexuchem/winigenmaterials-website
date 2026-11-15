@@ -1,3 +1,4 @@
+import {publicCopy} from '../design/option-a/public-copy.mjs';
 import { identityAliases, displayIdentity } from './catalog-card-identity.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
@@ -21,8 +22,14 @@ const property = (product, name) => product.additionalProperty?.find(item => ite
 const records = source.products.map(product => ({
   slug: product.slug,
   name: displayIdentity(product),
-  aliases: identityAliases(product),
+  fullName: product.name,
+  url: product.url,
+  commerceStatus: product.commerceStatus,
+  productType: property(product, 'Product type'),
+  aliases: [...new Set([...identityAliases(product),product.sku].filter(Boolean))],
+  productCode: product.sku || '',
   cas: property(product, 'CAS Number'),
+  ...(product.activeMaterialIdentity ? { casLabel: 'Active-material CAS' } : {}),
   formula: property(product, 'Formula'),
   section: sectionByFamily[product.family] || product.family,
   category: product.category,
@@ -36,5 +43,5 @@ const records = source.products.map(product => ({
 }));
 
 const output = `/* Generated from catalog/products.source.json. Do not edit directly. */\nwindow.WINIGEN_PRODUCT_SEARCH_INDEX = ${JSON.stringify({ version: source.version, records }, null, 2)};\n`;
-await writeFile(outputPath, output);
+await writeFile(outputPath, publicCopy(output));
 console.log(`Generated product search index for ${records.length} canonical products.`);

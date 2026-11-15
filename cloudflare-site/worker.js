@@ -1,3 +1,4 @@
+import { productRedirects } from './product-redirects.js';
 const PRODUCTION_HOSTS = new Set(['winigenmaterials.com', 'www.winigenmaterials.com']);
 const APEX_HOST = 'winigenmaterials.com';
 const WWW_HOST = 'www.winigenmaterials.com';
@@ -62,6 +63,14 @@ export default {
       url.port = '';
       const redirectResponse = Response.redirect(url.toString(), 308);
       return applyResponseHeaders(redirectResponse, new URL(request.url));
+    }
+
+    // Exact, verified public product moves; retain attribution/query parameters.
+    const movedProduct = productRedirects[url.pathname];
+    if (movedProduct && (request.method === 'GET' || request.method === 'HEAD')) {
+      const destination = new URL(url);
+      destination.pathname = movedProduct;
+      return applyResponseHeaders(Response.redirect(destination.toString(), 308), url);
     }
 
     // Exact contact routes only; checkout/static paths retain their existing behavior.

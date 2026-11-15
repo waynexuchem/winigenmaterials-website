@@ -1,6 +1,6 @@
-import { fingerprint } from './asset-fingerprint.mjs';
-import { readFile, readdir, writeFile } from 'node:fs/promises';
-import { dirname, extname, relative, resolve } from 'node:path';
+import { fingerprint, fingerprintHtmlAssets } from './asset-fingerprint.mjs';
+import { readFile, writeFile } from 'node:fs/promises';
+import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
@@ -10,7 +10,6 @@ const mxeneOnly = process.argv.includes('--mxene-only');
 // Scoped releases can refresh only changed assets without unrelated token churn.
 const selectedAssetsArg = process.argv.find(arg => arg.startsWith('--assets='));
 const selectedAssets = selectedAssetsArg ? new Set(selectedAssetsArg.slice('--assets='.length).split(',')) : null;
-const publicDirectories = [siteRoot, resolve(siteRoot, 'products'), resolve(siteRoot, 'knowledge')];
 const ecommerceBundleAssets = [
   'assets/css/ecommerce.css',
   'assets/js/ecommerce-catalog.js',
@@ -22,13 +21,13 @@ const ecommerceBundleAssets = [
 
 
 async function htmlFiles() {
-  const files = [];
-  for (const directory of publicDirectories) {
-    for (const entry of await readdir(directory, { withFileTypes: true })) {
-      if (entry.isFile() && extname(entry.name) === '.html') files.push(resolve(directory, entry.name));
-    }
-  }
-  return files;
+  // Customer-specific private pages are frozen; confirmation alone follows approved presentation updates.
+  const manifest=await readFile(resolve(siteRoot,'cloudflare-site/public-assets.txt'),'utf8');
+  return manifest.split(/\r?\n/).filter(path=>path.endsWith('.html')).map(path=>{
+    const full=resolve(siteRoot,path);
+    if(!full.startsWith(siteRoot+'/')||path.includes('..'))throw new Error('Invalid public HTML manifest path: '+path);
+    return full;
+  });
 }
 
 const bundleContents = await Promise.all(ecommerceBundleAssets.map(path => readFile(resolve(siteRoot, path))));
@@ -50,26 +49,13 @@ if (synchronizedMainScript !== mainScript) {
   if (!checkOnly) await writeFile(mainScriptPath, synchronizedMainScript);
 }
 
-const assetHashes = new Map();
-async function assetVersion(assetPath) {
-  if (!assetHashes.has(assetPath)) {
-    assetHashes.set(assetPath, fingerprint(await readFile(resolve(siteRoot, assetPath))));
-  }
-  return assetHashes.get(assetPath);
-}
-
 for (const filePath of await htmlFiles()) {
   const pagePath = relative(siteRoot, filePath);
+  if (pagePath.startsWith('private-orders/')) continue;
   if (mxeneOnly && !['products.html', 'cart.html', 'checkout-success.html', 'checkout-cancel.html'].includes(pagePath) && !/^products\/[a-z0-9-]*mxene[a-z0-9-]*\.html$/.test(pagePath)) continue;
   const original = await readFile(filePath, 'utf8');
   let updated = original;
-  const matches = [...original.matchAll(/((?:\.\.\/)*assets\/(?:css|js)\/[^"'?#]+\.(?:css|js))(?:\?v=[^"']*)?/g)];
-  for (const match of matches) {
-    const publicPath = match[1].replace(/^(?:\.\.\/)+/, '');
-    if (selectedAssets && !selectedAssets.has(publicPath)) continue;
-    const version = await assetVersion(publicPath);
-    updated = updated.replace(match[0], `${match[1]}?v=${version}`);
-  }
+  updated=fingerprintHtmlAssets(original,siteRoot,pagePath,selectedAssets);
   if (updated !== original) {
     pendingChanges.push(relative(siteRoot, filePath));
     if (!checkOnly) {
@@ -83,4 +69,4 @@ if (checkOnly && pendingChanges.length > 0) {
   throw new Error(`Static asset versions are stale in: ${pendingChanges.join(', ')}`);
 }
 
-console.log(`${checkOnly ? 'Validated' : 'Synchronized'} static asset fingerprints across public HTML (${assetHashes.size} assets).`);
+console.log(`${checkOnly ? 'Validated' : 'Synchronized'} static asset fingerprints across public HTML (${pendingChanges.length} changed files).`);

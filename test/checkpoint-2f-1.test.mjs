@@ -1,0 +1,30 @@
+import {historicalSnapshot} from './helpers/historical-fixtures.mjs';
+import {assertPrivateWipPreserved} from './final-content-authority.mjs';
+import {expected2gSnapshot,refineSeoPage} from './checkpoint-2g-authority.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {createHash} from 'node:crypto';import {refineCorrections} from '../design/option-a/refine-2f-1.mjs';
+const root=new URL('../',import.meta.url),read=p=>readFileSync(new URL(p,root),'utf8'),bytes=p=>readFileSync(new URL(p,root)),old=p=>expected2gSnapshot(p,historicalSnapshot(['show','274d62a:'+p],{cwd:root,maxBuffer:40e6}));const hash=b=>createHash('sha256').update(b).digest('hex');
+test('2F.1 preserves every cart calculation, action, gate and payment implementation byte-for-byte',()=>{
+ for(const p of ['assets/js/main.js','assets/js/cart.js','assets/js/ecommerce-catalog.js','assets/js/ecommerce-product-page.js','assets/js/commerce-config.js','assets/js/contact.js','assets/js/checkout-state.js','assets/js/commerce-session-routing.js','stripe-worker/src/index.js','stripe-worker/src/catalog.js','cloudflare-site/worker.js','cloudflare-site/wrangler.jsonc','catalog/products.source.json','ecommerce/catalog.source.json','ecommerce/approved-pricing.source.json','feeds/google-merchant.xml','sitemap.xml'])assert.deepEqual(bytes(p),old(p),p);
+ const script=read('assets/js/option-a-cart-presentation.js');assert.doesNotMatch(script,/localStorage|sessionStorage|fetch\(|\.unitAmount|\.quantity\s*[+*=]|WinigenCart\.(?:add|remove|update|writeCart)|location\.(?:href|assign)/);assert.match(script,/MutationObserver/);assert.match(script,/setAttribute\('role', 'table'\)/);
+});
+test('2F.1 thumbnails use only the 98 canonical purchasable products and approved existing assets',()=>{
+ const source=JSON.parse(read('catalog/products.source.json')),html=read('cart.html'),data=JSON.parse(html.match(/id="oa-cart-visuals">([\s\S]*?)<\/script>/)[1]),manifest=read('cloudflare-site/public-assets.txt').trim().split('\n');assert.equal(Object.keys(data).length,98);assert.deepEqual(Object.keys(data),source.products.filter(p=>p.commerceStatus==='active_checkout').map(p=>p.slug));for(const [slug,item] of Object.entries(data)){assert.deepEqual(Object.keys(item),['url','image','alt']);assert.equal(item.url,source.products.find(p=>p.slug===slug).url);assert.ok(item.image.startsWith('/assets/images/'));assert.ok(manifest.includes(decodeURI(item.image.slice(1))),slug);assert.ok(bytes(decodeURI(item.image.slice(1))).length);assert.ok(item.alt);}
+ for(const p of ['assets/css/option-a-corrections.css','assets/js/option-a-cart-presentation.js'])assert.equal(manifest.filter(x=>x===p).length,1);
+ assert.match(html,/data-oa-cart-refined/);assert.match(html,/noindex, nofollow/);
+});
+test('2F.1 all 56 scientific graphs, source images and all public PDFs remain frozen',()=>{
+ const records=JSON.parse(read('design/option-a/scientific-artwork/chemistry/structures-2f.lock.json'));assert.deepEqual(bytes('design/option-a/scientific-artwork/chemistry/structures-2f.lock.json'),old('design/option-a/scientific-artwork/chemistry/structures-2f.lock.json'));assert.equal(records.length,56);
+ for(const r of records){assert.equal(hash(bytes(r.asset)),r.sha256);const h=read('products/'+r.slug+'.html');const img=[...h.matchAll(/<img\b[^>]*>/g)].map(x=>x[0]).find(x=>x.includes('src="/'+r.asset+'"'));assert.ok(img,r.slug);assert.doesNotMatch(img,/loading="lazy"/,r.slug);}
+ const paths=historicalSnapshot(['ls-tree','-r','--name-only','274d62a','assets/documents','assets/images'],{cwd:root,encoding:'utf8'}).trim().split('\n');for(const p of paths)assert.deepEqual(bytes(p),old(p),p);
+});
+test('2F.1 metadata, schema, documents and private payment pages preserve their original identities',()=>{
+ const pages=read('cloudflare-site/public-assets.txt').trim().split('\n').filter(p=>p.endsWith('.html')&&p!=='policies/returns-refunds.html');const schema=s=>[...s.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g)].map(m=>m[0]);for(const p of pages){if(p.startsWith('private-orders/')){assertPrivateWipPreserved(p);continue;}const b=old(p).toString(),a=read(p);assert.deepEqual(schema(a),schema(b),p);for(const re of [/<title>[\s\S]*?<\/title>/,/<link rel="canonical"[^>]*>/,/<meta name="robots"[^>]*>/,/<meta name="description"[^>]*>/])assert.equal(a.match(re)?.[0],b.match(re)?.[0],p);assert.deepEqual([...a.matchAll(/href="([^"]+\.pdf)"/g)].map(m=>m[1]),[...b.matchAll(/href="([^"]+\.pdf)"/g)].map(m=>m[1]),p);if(p.startsWith('private-orders/')){const token=s=>s.toString().replace(/(\/assets\/js\/option-a\.js\?v=)[a-f0-9]+/g,'$1CACHE');assert.equal(token(bytes(p)),token(old(p)),p);}}
+});
+test('2F.1 legacy semantic identifiers have restrained roles and correction output is idempotent',()=>{
+ const h='<head><link href="/assets/css/style.css"></head><main class="oa-legacy"><p class="eyebrow">Our focus</p><div class="eyebrow">01</div><label>Quantity</label></main></body>';
+ const a=refineCorrections('about.html',h);assert.match(a,/class="eyebrow oa-section-identifier">Our focus/);assert.match(a,/class="eyebrow oa-step-identifier">01/);assert.match(a,/<label>Quantity<\/label>/);assert.equal(refineCorrections('about.html',a),a);assert.equal(refineCorrections('private-orders/example.html',h),h);const cart=refineCorrections('cart.html',read('cart.html'));assert.equal(refineCorrections('cart.html',cart),cart);
+});
+test('2F.1 retains 72 TDS files including four byte-identical compatibility pairs',()=>{
+ const manifest=read('cloudflare-site/public-assets.txt').trim().split('\n').filter(p=>p.startsWith('assets/documents/tds/')&&p.endsWith('.pdf'));assert.equal(manifest.length,72);
+ for(const [a,b] of [['Winigen_DFEA_TDS.pdf','Winigen_DFEA_Representative_TDS_RevB.pdf'],['Winigen_HTCN_TDS.pdf','Winigen_HTCN_Representative_TDS.pdf'],['Winigen_MMDS_TDS.pdf','Winigen_MMDS_Representative_TDS.pdf'],['Winigen_TFEC_Representative_TDS.pdf','Winigen_TFEC_Representative_TDS_RevB.pdf']])assert.deepEqual(bytes('assets/documents/tds/'+a),bytes('assets/documents/tds/'+b));
+});

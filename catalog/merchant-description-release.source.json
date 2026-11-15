@@ -1,0 +1,421 @@
+{
+  "approval": "Wayne approved these 83 description-only corrections. Live feed and commerce baseline verified read-only before integration.",
+  "productionBaselineSHA256": "528cdf3c5c3a9badc6133592384964a480494b2b071d22d71d841a139e95697a",
+  "descriptionChanges": [
+    {
+      "id": "WM-LS-LIPF6-200G",
+      "beforeXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LIPF6-500G",
+      "beforeXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LIPF6-1KG",
+      "beforeXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LIPF6-2KG",
+      "beforeXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LIPF6-5KG",
+      "beforeXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LIPF6-10KG",
+      "beforeXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.95 wt%, water \u226410 ppm, and free acid \u226490 ppm. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-200G",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-500G",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-1KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-2KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-5KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-10KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.9 wt%, water \u2264150 \u00b5g/g, and acidity as HF \u2264100 ppm. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-200G",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LIODFB-500G",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LIODFB-1KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-2KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-5KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-10KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-LS-LITFSI-200G",
+      "beforeXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LITFSI-500G",
+      "beforeXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LITFSI-1KG",
+      "beforeXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LITFSI-2KG",
+      "beforeXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LITFSI-5KG",
+      "beforeXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LITFSI-10KG",
+      "beforeXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include purity \u226599.9 wt%, water \u2264200 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-LS-LIFSI-200G",
+      "beforeXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LIFSI-500G",
+      "beforeXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LIFSI-1KG",
+      "beforeXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LIFSI-2KG",
+      "beforeXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LIFSI-5KG",
+      "beforeXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LIFSI-10KG",
+      "beforeXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium bis(fluorosulfonyl)imide (LiFSI), CAS 171611-11-3, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.8 wt%, water \u226450 ppm, and acidity as HF \u226450 ppm. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-LS-LIBF4-200G",
+      "beforeXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LIBF4-500G",
+      "beforeXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LIBF4-1KG",
+      "beforeXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LIBF4-2KG",
+      "beforeXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LIBF4-5KG",
+      "beforeXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LIBF4-10KG",
+      "beforeXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Supplier specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials. Published product specifications include assay \u226599.7 wt%, water \u2264100 ppm, and acidity \u2264100 ppm. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-EC-500G",
+      "beforeXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g.",
+      "afterXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-EC-1KG",
+      "beforeXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-EC-2KG",
+      "beforeXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-EC-5KG",
+      "beforeXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-EC-10KG",
+      "beforeXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-500G",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 500 g.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-DMC-1KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-2KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-5KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-10KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.995 wt%, water \u226415 \u00b5g/g, and Hazen color \u226410. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-DEC-500G",
+      "beforeXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g.",
+      "afterXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-DEC-1KG",
+      "beforeXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-DEC-2KG",
+      "beforeXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-DEC-5KG",
+      "beforeXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-DEC-10KG",
+      "beforeXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226430 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-EMC-500G",
+      "beforeXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g.",
+      "afterXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-EMC-1KG",
+      "beforeXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-EMC-2KG",
+      "beforeXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-EMC-5KG",
+      "beforeXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-EMC-10KG",
+      "beforeXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-PC-500G",
+      "beforeXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g.",
+      "afterXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-PC-1KG",
+      "beforeXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-PC-2KG",
+      "beforeXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-PC-5KG",
+      "beforeXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-PC-10KG",
+      "beforeXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay \u226599.99 wt%, water \u226415 ppm, and Hazen color \u226410. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-TFEC-200G",
+      "beforeXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 200 g.",
+      "afterXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Published product documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-SOL-TFEC-500G",
+      "beforeXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 500 g.",
+      "afterXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Published product documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-TFEC-1KG",
+      "beforeXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Published product documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-TFEC-2KG",
+      "beforeXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Published product documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-TFEC-5KG",
+      "beforeXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Published product documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-TFEC-10KG",
+      "beforeXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Current supplier quality documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research. Published product documentation establishes controlled assay and moisture specifications. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-EP-500G",
+      "beforeXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 500 g.",
+      "afterXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-EP-1KG",
+      "beforeXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 1 kg.",
+      "afterXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-EP-2KG",
+      "beforeXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 2 kg.",
+      "afterXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-EP-5KG",
+      "beforeXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 5 kg.",
+      "afterXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-EP-10KG",
+      "beforeXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 10 kg.",
+      "afterXML": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-PP-500G",
+      "beforeXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 500 g.",
+      "afterXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-PP-1KG",
+      "beforeXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 1 kg.",
+      "afterXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-PP-2KG",
+      "beforeXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 2 kg.",
+      "afterXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-PP-5KG",
+      "beforeXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 5 kg.",
+      "afterXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-PP-10KG",
+      "beforeXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Supplier specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 10 kg.",
+      "afterXML": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies. Published product specifications include assay \u226599.95 wt%, water \u2264200 ppm, and acidity as HF \u226420 ppm. Battery research grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-ADD-ES-200G",
+      "beforeXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in supplier materials. Battery research grade. Package size: 200 g.",
+      "afterXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in technical documentation. Battery research grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-ADD-ES-500G",
+      "beforeXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in supplier materials. Battery research grade. Package size: 500 g.",
+      "afterXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in technical documentation. Battery research grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-ADD-ES-1KG",
+      "beforeXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in supplier materials. Battery research grade. Package size: 1 kg.",
+      "afterXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in technical documentation. Battery research grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-ADD-ES-2KG",
+      "beforeXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in supplier materials. Battery research grade. Package size: 2 kg.",
+      "afterXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in technical documentation. Battery research grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-ADD-ES-5KG",
+      "beforeXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in supplier materials. Battery research grade. Package size: 5 kg.",
+      "afterXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in technical documentation. Battery research grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-ADD-ES-10KG",
+      "beforeXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in supplier materials. Battery research grade. Package size: 10 kg.",
+      "afterXML": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research. It is also known as glycol sulfite and has previously been abbreviated ESI in technical documentation. Battery research grade. Package size: 10 kg."
+    }
+  ]
+}

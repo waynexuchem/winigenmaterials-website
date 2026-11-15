@@ -1,3 +1,6 @@
+import {readFileSync} from 'node:fs';
+import {fingerprint} from './asset-fingerprint.mjs';
+const presentationVersion=fingerprint(readFileSync(new URL('../assets/css/product-images.css',import.meta.url)));
 // Keep visible website branding separate from the clean canonical/Google image.
 const ORIGIN = 'https://www.winigenmaterials.com';
 const localPath = value => {
@@ -33,6 +36,8 @@ export function synchronizeProductImages(markup, products) {
     const source = tag.match(/\bsrc=["']([^"']+)["']/i)?.[1];
     const product = byPath.get(localPath(source));
     if (!product) return tag;
+    // Option A card media has its own canonical image renderer and responsive attributes.
+    if(tag.includes('data-oa-visual="canonical"'))return tag;
     used = true;
     let image = tag.replace(/\bsrc=["'][^"']*["']/i, `src="${escape(product.websiteImage || product.image)}"`)
       .replace(/\s(?:data-product-image|data-website-branded|width|height)=["'][^"']*["']/gi, '');
@@ -45,9 +50,9 @@ export function synchronizeProductImages(markup, products) {
     const product=byPath.get(localPath(source));
     return product?.imageCaption ? prefix+`<p class="product-image-caption">${escape(product.imageCaption)}</p>` : prefix;
   });
-  if (used) next = next.replace(/product-images\.css\?v=[^"\s]+/g, 'product-images.css?v=checkpoint-b-final-v1');
+  if (used) next = next.replace(/product-images\.css\?v=[^"\s]+/g, 'product-images.css?v='+presentationVersion);
   if (used && !next.includes('/assets/css/product-images.css')) {
-    next = next.replace('</head>', '<link rel="stylesheet" href="/assets/css/product-images.css?v=checkpoint-b-final-v1">\n</head>');
+    next = next.replace('</head>', `<link rel="stylesheet" href="/assets/css/product-images.css?v=${presentationVersion}">\n</head>`);
   }
   return next;
 }

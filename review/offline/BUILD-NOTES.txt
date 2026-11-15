@@ -1,0 +1,32 @@
+OFFLINE REVIEW TOOLING — NOT A PRODUCTION ENTRY POINT
+
+This builder freezes public HTML and browser data at Checkpoint 2E.1 (f0fa509),
+then applies the current hash-verified representative active-material images.
+It reads the committed public asset allowlist, never recursively publishes
+the checkout, and excludes private-order routes and transaction modules.
+Unrelated private-payment WIP must not be read into this package.
+
+Build locally with Python 3: python3 review/offline/build.py
+Focused checks: python3 -m unittest discover -s review/offline -p 'test_*.py'
+These are authoring instructions only; recipients need no Python or commands.
+Outputs are identifiable and ignored under outputs/checkpoint-2e-2.
+
+START-HERE.html is the only intended recipient entry point. Classic local
+scripts carry page/search data and lazily loaded, hash-named media bundles.
+No file-fetch API, module import, server or installer is required at runtime.
+Original approved asset bytes are reconstructed in memory as Blob URLs.
+Page-sensitive presentation uses a virtual canonical location; navigation
+uses local hash routes. Public page links also have local redirect stubs.
+
+Cart and featured-selection storage live in memory for the review tab.
+No production storage, API, analytics or challenge service is used.
+The original contact module and Checkout creator are not shipped.
+CSP independently prohibits network connections and form actions.
+Public PDFs have a local viewer with a download alternative.
+
+Compatibility is a separate acceptance gate. DOM simulations and localhost
+checks do not certify file:// behavior, Safari, Edge or Windows.
+At Checkpoint 2E.2 automated file:// access was blocked and browser tooling
+stalled. Extracted-file testing is handed to Wayne; Windows remains untested.
+Do not describe this package as browser-certified before actual checks.
+No browser security settings should be disabled to open this review.

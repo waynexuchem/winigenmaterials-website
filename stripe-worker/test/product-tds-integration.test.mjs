@@ -1,3 +1,4 @@
+import {approvedDocumentHash} from '../../design/option-a/release-preparation.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -10,27 +11,29 @@ const catalog = JSON.parse(await readFile(resolve(siteRoot, 'catalog/products.so
 
 const documents = [
   { slug: 'diethyl-carbonate-dec', code: 'DEC', hash: '6ddad3a8678912a9672e3bbe2ac9a8616a0e000c4d5672e3f1c5a686b96da751', specs: { Assay: '≥99.99 wt%', Water: '≤30 ppm', 'Hazen color': '≤10', 'Total alcohols, methanol + ethanol': '≤50 ppm', Chloride: '≤1 ppm', Sulfate: '≤5 ppm' } },
-  { slug: '2-2-difluoroethyl-acetate-dfea', code: 'DFEA', filename: 'Winigen_DFEA_TDS.pdf', hash: '41f46d94f9175cb82da5a579fad372a20eaa4d78af87b1e1f510cbdf9e3b204b', specs: { Purity: '≥99.0 wt%', 'Acidity, as HF': '≤50 ppm', Water: '≤200 ppm', 'Refractive index, n20/D': '1.3520–1.3560' } },
-  { slug: 'dimethyl-carbonate-dmc', code: 'DMC', hash: 'e4837043b7fb874d89d95a8052d4fb643b665dc22e481b8dee0a092af5ffe54c', specs: { Assay: '≥99.995 wt%', Water: '≤15 µg/g', 'Hazen color': '≤10', 'Total alcohols': '≤50 ppm', Chloride: '≤1 µg/g', Sulfate: '≤5 ppm' } },
+  { slug: '2-2-difluoroethyl-acetate-dfea', code: 'DFEA', filename: 'Winigen_DFEA_TDS.pdf', hash: '41f46d94f9175cb82da5a579fad372a20eaa4d78af87b1e1f510cbdf9e3b204b', specs: { Purity: '≥99.0 wt%', 'Acidity, as HF': '≤50 ppm', Water: '≤200 ppm' } },
+  { slug: 'dimethyl-carbonate-dmc', code: 'DMC', hash: 'e4837043b7fb874d89d95a8052d4fb643b665dc22e481b8dee0a092af5ffe54c', specs: { Assay: '≥99.995 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Total alcohols': '≤50 ppm', Chloride: '≤1 µg/g', Sulfate: '≤5 ppm' } },
   { slug: 'ethylene-carbonate-ec', code: 'EC', hash: '44cc78a76e9839e17a9790fb954da01d7f03a83c53b05b4c99302d908a28c792', specs: { Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Ethylene glycol + diethylene glycol': '≤50 ppm', 'Color after 60 °C / 6 h': '≤20 Hazen', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
   { slug: 'ethyl-methyl-carbonate-emc', code: 'EMC', hash: 'ea4b059cfb152b7f909d37915a34f53cf0a4200e76b4d1516f3f84886b39fe00', specs: { Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Total alcohols, methanol + ethanol': '≤50 ppm', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
   { slug: 'ethyl-propionate-ep', code: 'EP', hash: 'f4581483fd446d07ea6a3e8e91aada7f2b73d8064225768629f4ba383e240269', specs: { Assay: '≥99.95 wt%', Water: '≤200 ppm', 'Hazen color': '≤10', 'Methanol + ethanol + propanol': '≤50 ppm', 'Acidity, as HF': '≤20 ppm', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
   { slug: 'lithium-tetrafluoroborate-libf-4', code: 'LiBF4', hash: '68d2d56189941fdc1a96472232e4a7801bcbc0e7b155625537b6148de7e8a8ed', specs: { Assay: '≥99.7 wt%', Water: '≤100 ppm', 'Hazen color': '≤20', Acidity: '≤100 ppm', Chloride: '≤5 ppm', Sulfate: '≤10 ppm' } },
-  { slug: 'lithium-difluoro-oxalate-borate-liodfb', code: 'LiDFOB', hash: '7fe6494bfbdc91ccb44e8405cd7e82b31e6d3cbf38650dfcdc5bc7ddc678b23b', specs: { Classification: 'Lithium electrolyte additive', Appearance: 'Colorless transparent liquid; no visible impurities.', Assay: '≥99.99 wt%', Water: '≤15 µg/g', 'Hazen color': '≤10', 'Color after 60 °C / 6 h': '≤20 Hazen', 'Diethylene glycol + ethylene glycol': '≤50 ppm', Chloride: '≤1 µg/g', Sulfate: '≤2 ppm' } },
+  { slug: 'lithium-difluoro-oxalate-borate-liodfb', code: 'LiDFOB', hash: '7fe6494bfbdc91ccb44e8405cd7e82b31e6d3cbf38650dfcdc5bc7ddc678b23b', specs: { Classification: 'Lithium electrolyte additive', Appearance: 'Colorless transparent liquid; no visible impurities.', Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Color after 60 °C / 6 h': '≤20 Hazen', 'Diethylene glycol + ethylene glycol': '≤50 ppm', Chloride: '≤1 µg/g', Sulfate: '≤2 ppm' } },
   { slug: 'lithium-bis-fluorosulfonyl-imide-lifsi', code: 'LiFSI', hash: 'a28dbacb3e14b65f2c89b3adbb8dcb2b0dd55457857b31edb2f8573f74321dee', specs: { Assay: '≥99.8 wt%', Water: '≤50 ppm', 'Hazen color': '≤30', 'Acidity, as HF': '≤50 ppm', Chloride: '≤5 ppm', Sulfate: '≤10 ppm' } },
   { slug: 'lithium-hexafluorophosphate-lipf6', code: 'LiPF6', hash: '1282e4c8fa7cd823b9d7557f5dd992734a91d7d68125a5e0e62a9923fc89e996', specs: { Assay: '≥99.95 wt%', Water: '≤10 ppm', 'Insoluble matter': '≤200 ppm', 'Free acid': '≤90 ppm', Chloride: '≤2 ppm', Sulfate: '≤5 ppm' } },
-  { slug: 'lithium-difluorophosphate-lipo-2-f-2', code: 'LiPO2F2', hash: 'a48a62fc35e1208d40fc81fef9cd4550c2407cc9eeeb2caeddb2943e56abb482', specs: { Classification: 'Lithium electrolyte additive', Assay: '≥99.9 wt%', Water: '≤150 µg/g', 'Acidity, as HF': '≤100 ppm', Chloride: '≤5 µg/g', Sulfate: '≤10 ppm' } },
+  { slug: 'lithium-difluorophosphate-lipo-2-f-2', code: 'LiPO2F2', hash: 'a48a62fc35e1208d40fc81fef9cd4550c2407cc9eeeb2caeddb2943e56abb482', specs: { Classification: 'Lithium electrolyte additive', Assay: '≥99.9 wt%', Water: '≤150 ppm', 'Acidity, as HF': '≤100 ppm', Chloride: '≤5 µg/g', Sulfate: '≤10 ppm' } },
   { slug: 'lithium-bis-trifluoromethane-sulphonyl-imide-litfsi', code: 'LiTFSI', hash: '50d58e212a6a29492da2dbbfcc0c45b847038651ac1c8ea51eb6b07ae7a31907', specs: { Purity: '≥99.9 wt%', Water: '≤200 ppm', 'Acidity, as HF': '≤50 ppm', Fluoride: '≤20 ppm', Chloride: '≤5 ppm', Sulfate: '≤10 ppm', 'Insoluble matter': '≤100 ppm' } },
   { slug: 'methyl-butyrate-mb-battery-grade', code: 'MB', filename: 'Winigen_MB_Battery_Grade_TDS.pdf', hash: '69f685f750729f9e20654fba73971b3151e5cdb8844d39524d0fe7c3d4ddbe93', specs: { Purity: '≥99.8%', Water: '<20 ppm', Acid: '<30 ppm', Grade: 'Battery Grade', Formula: 'C5H10O2' } },
   { slug: 'propylene-carbonate-pc', code: 'PC', hash: 'a310f344cd092c9936f7ed9afb114091838db906ebbfb4cabe0710c28ac2d84d', specs: { Assay: '≥99.99 wt%', Water: '≤15 ppm', 'Hazen color': '≤10', 'Propylene glycol + dipropylene glycol': '≤20 ppm', Chloride: '≤1 ppm', Sulfate: '≤2 ppm' } },
   { slug: 'propyl-propionate-pp', code: 'PP', hash: 'eb616e9882222084c95daf96ef772e94f92060496378148305b158820fab5d82', specs: { Assay: '≥99.95 wt%', Water: '≤200 ppm', 'Hazen color': '≤10', 'Methanol + ethanol + propanol': '≤50 ppm', 'Acidity, as HF': '≤20 ppm', Chloride: '≤1 ppm', Sulfate: '≤5 ppm' } },
-  { slug: 'bis-2-2-2-trifluoroethyl-carbonate-tfec', code: 'TFEC', filename: 'Winigen_TFEC_Representative_TDS.pdf', hash: '9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66', specs: { 'Assay (GC)': '≥99 wt%', Water: '≤20 µg/g', Appearance: 'Colorless liquid' } }
+  { slug: 'bis-2-2-2-trifluoroethyl-carbonate-tfec', code: 'TFEC', filename: 'Winigen_TFEC_Representative_TDS.pdf', hash: '9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66', specs: { 'Assay (GC)': '≥99 wt%', Water: '≤20 ppm', Appearance: 'Colorless liquid' } }
 ];
+
+for(const d of documents)d.hash=approvedDocumentHash(`/assets/documents/tds/${d.filename||`Winigen_${d.code}_Representative_TDS_RevB.pdf`}`,d.hash);
 
 const representativeResults = ['8.7 ppm', '7.2 µg/g', '7.3 ppm', '9.6 ppm', '99.998 wt%', '15.4 ppm', '99.993 wt%', '99.92 wt%', '16.2 ppm', '99.964 wt%', '6.8 ppm', '99.9698 wt%', '49.8 µg/g', '99.928 wt%', '99.997 wt%', '5.3 ppm', '12.1 ppm', '98.1% representative purity', '99.97 wt%', '16 µg/g'];
 const tdsFilename = document => document.filename || `Winigen_${document.code}_Representative_TDS_RevB.pdf`;
 
-test('all 16 public TDS integrations are preserved byte-for-byte and retired Sulfolane stays private', async () => {
+test('all 16 public TDS integrations match approved release hashes and retired Sulfolane stays private', async () => {
   const publicFiles = await readdir(resolve(siteRoot, 'assets/documents/tds'));
   const expectedFilenames = documents.map(tdsFilename);
   assert.equal(new Set(expectedFilenames).size, documents.length);
@@ -89,8 +92,8 @@ test('each public TDS product matches the MXene-style image action and retains l
       assert.match(html, /data-product-quick-tds="true"/);
       continue;
     }
-    assert.equal(html.split('Technical Data Sheet (PDF)').length - 1, 2, `${document.slug}: descriptive TDS actions`);
-    assert.match(html, /<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i, `${document.slug}: TDS action is separated below the product image`);
+    assert.equal((html.match(/>(?:View )?Technical Data Sheet \(PDF\)<\/a>/g) || []).length, 2, `${document.slug}: descriptive TDS actions`);
+    assert.match(html, /<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div>(?:<div class="oa-frame-brand"[\s\S]*?<\/div>)?<div class="oa-key-panel"[\s\S]*?<\/div><\/aside>/i, `${document.slug}: TDS action is separated below the product image`);
     assert.match(html, /<section class="section product-technical-section" id="documentation" data-product-tds-section="true">/);
     assert.match(html, /Request Current Lot COA \/ SDS/);
     if (document.slug === 'methyl-butyrate-mb-battery-grade') {
@@ -110,15 +113,17 @@ test('DFEA uses the approved water limit without inventing color; TFEC retains i
   const dfea = catalog.products.find(item => item.slug === '2-2-difluoroethyl-acetate-dfea');
   assert.equal(dfea.additionalProperty.find(item => item.name==='Water')?.value, '≤200 ppm');
   assert.equal(dfea.additionalProperty.some(item => /color/i.test(item.name)), false);
+  assert.equal(dfea.additionalProperty.some(item => /refractive index/i.test(item.name)), false, 'unverified DFEA range must not become a specification');
   const dfeaHtml = await readFile(resolve(siteRoot, 'products/2-2-difluoroethyl-acetate-dfea.html'), 'utf8');
   assert.match(dfeaHtml, /<dt>Water<\/dt><dd>≤200 ppm<\/dd>/);
+  assert.doesNotMatch(dfeaHtml, /1\.3520[–-]1\.3560/);
 
   const tfec = catalog.products.find(item => item.slug === 'bis-2-2-2-trifluoroethyl-carbonate-tfec');
   assert.equal(tfec.additionalProperty.find(item => item.name === 'Assay (GC)')?.value, '≥99 wt%');
-  assert.equal(tfec.additionalProperty.find(item => item.name === 'Water')?.value, '≤20 µg/g');
+  assert.equal(tfec.additionalProperty.find(item => item.name === 'Water')?.value, '≤20 ppm');
   const tfecHtml = await readFile(resolve(siteRoot, 'products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html'), 'utf8');
   assert.match(tfecHtml, /<dt>Assay \(GC\)<\/dt><dd>≥99 wt%<\/dd>/);
-  assert.match(tfecHtml, /<dt>Water<\/dt><dd>≤20 µg\/g<\/dd>/);
+  assert.match(tfecHtml, /<dt>Water<\/dt><dd>≤20 ppm<\/dd>/);
   assert.doesNotMatch(tfecHtml, /(?:&gt;|>)98%|98\.1|(?:&lt;|<)\s*100\s*ppm/i);
 });
 

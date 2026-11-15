@@ -46,8 +46,8 @@ for(const product of selected){
 }
 test('VC values are specification limits, not representative analytical results',async()=>{
  const html=await read('products/vinylene-carbonate-vc.html');
- assert.match(html,/≥99\.98 wt%/);assert.match(html,/≤30 µg\/g/);assert.match(html,/≤10 ppm/);
- assert.doesNotMatch(html,/99\.994|7\.9 µg\/g|3\.0 ppm/);
+ assert.match(html,/≥99\.98 wt%/);assert.match(html,/≤30 ppm/);assert.match(html,/≤10 ppm/);
+ assert.doesNotMatch(html,/99\.994|7\.9 (?:µg\/g|ppm)|3\.0 ppm/);
 });
 test('the publication builder copies all nine approved PDFs unchanged',async()=>{
  const directory=await mkdtemp(resolve(tmpdir(),'winigen-additive-pdf-bundle-'));

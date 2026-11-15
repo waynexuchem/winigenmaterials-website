@@ -1,0 +1,672 @@
+{
+  "revision": "WU-20261114",
+  "date": "2026-11-14",
+  "scope": "Water-only mass-concentration unit presentation; 1 µg/g = 1 ppm (w/w). No limit or representative value changes.",
+  "method": "Original authoring projects were not available in the canonical repository. Regenerate from the frozen, previously public Winigen-controlled PDF masters by substituting only the water-unit text operands. All other drawing operations, images and numbers are checked.",
+  "PDFs": [
+    {
+      "path": "/assets/documents/tds/Winigen_DMC_Representative_TDS_RevB.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_DMC_Representative_TDS_RevB.pdf",
+      "beforeSHA256": "90999b492c6b52657af083b1e9d08613588f8f2ee1f2ed6d216f364b3ced263b",
+      "sha256": "ef5f310bfd76714e006b4bd7a42746672d7120f171587b697043b69ef52ee1ee",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 395,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 764,
+          "beforeHex": "39392e3939352077742520617373617920207c2020372e322001672f67207761746572",
+          "afterHex": "39392e3939352077742520617373617920207c2020372e322070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_DTD_Representative_TDS.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_DTD_Representative_TDS.pdf",
+      "beforeSHA256": "14805bb0725d1540a6c939643fcb581607445238240b2710aafaa53cbe85ae37",
+      "sha256": "87367d34ba5a86358238c72c539ac3c93c78acfaf0df008f571efb8457e701d6",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 437,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 803,
+          "beforeHex": "33382e312001672f67207761746572",
+          "afterHex": "33382e312070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_FEC_Representative_TDS.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_FEC_Representative_TDS.pdf",
+      "beforeSHA256": "22976eb978fedee3f14270f000fe202a7ebc65dc4e09a86a4dc12eaf517c6fa8",
+      "sha256": "5376b3abfffdb1d74c6e56f7876cc16805eac2e957940140d3c9c7aa10997418",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 430,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 742,
+          "beforeHex": "31362e392001672f67207761746572",
+          "afterHex": "31362e392070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiDFOB_Representative_TDS_RevB.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_LiDFOB_Representative_TDS_RevB.pdf",
+      "beforeSHA256": "f488dc5c7f99e1c2515a390aa3a6ce0a9a52f22788f54172f057c8560d0fb194",
+      "sha256": "3ab6d278b4db5921746a90113a620f915cf5ff20fecc670f939398e4e55debef",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 405,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 888,
+          "beforeHex": "39392e3939332077742520617373617920207c2020382e372002672f67207761746572",
+          "afterHex": "39392e3939332077742520617373617920207c2020382e372070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_LiPO2F2_Representative_TDS_RevB.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_LiPO2F2_Representative_TDS_RevB.pdf",
+      "beforeSHA256": "7bb4c048d362a95bb7fc99b39a37f749053e2e1c3c1eeab77393131e4a982712",
+      "sha256": "98fd012534c18902fa2bfb08910a5fcad486d28fa244662f8c8294ea054fcbd7",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 410,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 777,
+          "beforeHex": "39392e393639382077742520617373617920207c202034392e382001672f67207761746572",
+          "afterHex": "39392e393639382077742520617373617920207c202034392e382070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_PST_Representative_TDS.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_PST_Representative_TDS.pdf",
+      "beforeSHA256": "ea60e495b71f5212e710d77631b39ea704b27ccf77e280b46ca2aef729d30d0a",
+      "sha256": "b2038a30f186e95d7fd6cab7a8fbf0952910a98d309e6b9e6b080e1e78d1d657",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 423,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 623,
+          "beforeHex": "31322e382001672f67207761746572",
+          "afterHex": "31322e382070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_TFEC_Representative_TDS.pdf",
+      "beforeSHA256": "be34c0c256963ebd21fa05587de208cde3c3ff45b58b6252e6e9ee39758ef7af",
+      "sha256": "9fd74a9ef8f84826bab3eefb63a56ea63a56c8cc3c9159f5036818d5b9d726c2",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 379,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 470,
+          "beforeHex": "31362001672f67207761746572",
+          "afterHex": "31362070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_TFEC_Representative_TDS_RevB.pdf",
+      "classification": "C — backward-compatible Winigen-controlled alias",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_TFEC_Representative_TDS.pdf",
+      "beforeSHA256": "be34c0c256963ebd21fa05587de208cde3c3ff45b58b6252e6e9ee39758ef7af",
+      "sha256": "9fd74a9ef8f84826bab3eefb63a56ea63a56c8cc3c9159f5036818d5b9d726c2",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 379,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 470,
+          "beforeHex": "31362001672f67207761746572",
+          "afterHex": "31362070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    },
+    {
+      "path": "/assets/documents/tds/Winigen_VC_Representative_TDS.pdf",
+      "classification": "A — Winigen-controlled current TDS",
+      "sourceMaster": "design/option-a/tds-unit-masters/Winigen_VC_Representative_TDS.pdf",
+      "beforeSHA256": "cf2b1963217d853dcf8c6b792ae73935fe95ef49d6d719afa28efb3ed1c894c3",
+      "sha256": "28214f10e26c4c9dbde820c5115c46b1e50648cd88b846b6fb6fe106b7b0f8b6",
+      "edits": [
+        {
+          "page": 1,
+          "operation": 434,
+          "beforeHex": "04672f67",
+          "afterHex": "70706d"
+        },
+        {
+          "page": 1,
+          "operation": 802,
+          "beforeHex": "372e392001672f67207761746572",
+          "afterHex": "372e392070706d207761746572"
+        }
+      ],
+      "numericOperatorsAndImagesUnchanged": true
+    }
+  ],
+  "fields": [
+    {
+      "keys": [
+        "products",
+        1,
+        "description"
+      ],
+      "before": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm.",
+      "after": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm.",
+      "slug": "lithium-difluorophosphate-lipo-2-f-2"
+    },
+    {
+      "keys": [
+        "products",
+        1,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "7bb4c048d362a95bb7fc99b39a37f749053e2e1c3c1eeab77393131e4a982712",
+      "after": "98fd012534c18902fa2bfb08910a5fcad486d28fa244662f8c8294ea054fcbd7",
+      "slug": "lithium-difluorophosphate-lipo-2-f-2"
+    },
+    {
+      "keys": [
+        "products",
+        1,
+        "additionalProperty",
+        7,
+        "value"
+      ],
+      "before": "≤150 µg/g",
+      "after": "≤150 ppm",
+      "slug": "lithium-difluorophosphate-lipo-2-f-2"
+    },
+    {
+      "keys": [
+        "products",
+        3,
+        "description"
+      ],
+      "before": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10.",
+      "after": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10.",
+      "slug": "lithium-difluoro-oxalate-borate-liodfb"
+    },
+    {
+      "keys": [
+        "products",
+        3,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "f488dc5c7f99e1c2515a390aa3a6ce0a9a52f22788f54172f057c8560d0fb194",
+      "after": "3ab6d278b4db5921746a90113a620f915cf5ff20fecc670f939398e4e55debef",
+      "slug": "lithium-difluoro-oxalate-borate-liodfb"
+    },
+    {
+      "keys": [
+        "products",
+        3,
+        "additionalProperty",
+        8,
+        "value"
+      ],
+      "before": "≤15 µg/g",
+      "after": "≤15 ppm",
+      "slug": "lithium-difluoro-oxalate-borate-liodfb"
+    },
+    {
+      "keys": [
+        "products",
+        8,
+        "description"
+      ],
+      "before": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10.",
+      "after": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.995 wt%, water ≤15 ppm, and Hazen color ≤10.",
+      "slug": "dimethyl-carbonate-dmc"
+    },
+    {
+      "keys": [
+        "products",
+        8,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "90999b492c6b52657af083b1e9d08613588f8f2ee1f2ed6d216f364b3ced263b",
+      "after": "ef5f310bfd76714e006b4bd7a42746672d7120f171587b697043b69ef52ee1ee",
+      "slug": "dimethyl-carbonate-dmc"
+    },
+    {
+      "keys": [
+        "products",
+        8,
+        "additionalProperty",
+        6,
+        "value"
+      ],
+      "before": "≤15 µg/g",
+      "after": "≤15 ppm",
+      "slug": "dimethyl-carbonate-dmc"
+    },
+    {
+      "keys": [
+        "products",
+        17,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "be34c0c256963ebd21fa05587de208cde3c3ff45b58b6252e6e9ee39758ef7af",
+      "after": "9fd74a9ef8f84826bab3eefb63a56ea63a56c8cc3c9159f5036818d5b9d726c2",
+      "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec"
+    },
+    {
+      "keys": [
+        "products",
+        17,
+        "additionalProperty",
+        5,
+        "value"
+      ],
+      "before": "≤20 µg/g",
+      "after": "≤20 ppm",
+      "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec"
+    },
+    {
+      "keys": [
+        "products",
+        18,
+        "description"
+      ],
+      "before": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
+      "after": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
+      "slug": "vinylene-carbonate-vc"
+    },
+    {
+      "keys": [
+        "products",
+        18,
+        "additionalProperty",
+        7,
+        "value"
+      ],
+      "before": "≤30 µg/g",
+      "after": "≤30 ppm",
+      "slug": "vinylene-carbonate-vc"
+    },
+    {
+      "keys": [
+        "products",
+        18,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "cf2b1963217d853dcf8c6b792ae73935fe95ef49d6d719afa28efb3ed1c894c3",
+      "after": "28214f10e26c4c9dbde820c5115c46b1e50648cd88b846b6fb6fe106b7b0f8b6",
+      "slug": "vinylene-carbonate-vc"
+    },
+    {
+      "keys": [
+        "products",
+        21,
+        "description"
+      ],
+      "before": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g.",
+      "after": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g.",
+      "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd"
+    },
+    {
+      "keys": [
+        "products",
+        21,
+        "additionalProperty",
+        7,
+        "value"
+      ],
+      "before": "≤100 µg/g",
+      "after": "≤100 ppm",
+      "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd"
+    },
+    {
+      "keys": [
+        "products",
+        21,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "14805bb0725d1540a6c939643fcb581607445238240b2710aafaa53cbe85ae37",
+      "after": "87367d34ba5a86358238c72c539ac3c93c78acfaf0df008f571efb8457e701d6",
+      "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd"
+    },
+    {
+      "keys": [
+        "products",
+        22,
+        "description"
+      ],
+      "before": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm.",
+      "after": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm.",
+      "slug": "prop-1-ene-1-3-sultone-pst"
+    },
+    {
+      "keys": [
+        "products",
+        22,
+        "additionalProperty",
+        7,
+        "value"
+      ],
+      "before": "≤50 µg/g",
+      "after": "≤50 ppm",
+      "slug": "prop-1-ene-1-3-sultone-pst"
+    },
+    {
+      "keys": [
+        "products",
+        22,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "ea60e495b71f5212e710d77631b39ea704b27ccf77e280b46ca2aef729d30d0a",
+      "after": "b2038a30f186e95d7fd6cab7a8fbf0952910a98d309e6b9e6b080e1e78d1d657",
+      "slug": "prop-1-ene-1-3-sultone-pst"
+    },
+    {
+      "keys": [
+        "products",
+        23,
+        "description"
+      ],
+      "before": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
+      "after": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 ppm; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
+      "slug": "4-fluoro-1-3-dioxolan-2-one-fec"
+    },
+    {
+      "keys": [
+        "products",
+        23,
+        "additionalProperty",
+        7,
+        "value"
+      ],
+      "before": "≤30 µg/g",
+      "after": "≤30 ppm",
+      "slug": "4-fluoro-1-3-dioxolan-2-one-fec"
+    },
+    {
+      "keys": [
+        "products",
+        23,
+        "qualityDocumentation",
+        "tds",
+        "sha256"
+      ],
+      "before": "22976eb978fedee3f14270f000fe202a7ebc65dc4e09a86a4dc12eaf517c6fa8",
+      "after": "5376b3abfffdb1d74c6e56f7876cc16805eac2e957940140d3c9c7aa10997418",
+      "slug": "4-fluoro-1-3-dioxolan-2-one-fec"
+    }
+  ],
+  "MerchantDescriptions": [
+    {
+      "id": "WM-LS-LIPO2F2-200G",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-500G",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-1KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-2KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-5KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LIPO2F2-10KG",
+      "beforeXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-200G",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery grade. Package size: 200 g.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. Battery grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-LS-LIODFB-500G",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery grade. Package size: 500 g.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. Battery grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-LS-LIODFB-1KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery grade. Package size: 1 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. Battery grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-2KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery grade. Package size: 2 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. Battery grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-5KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery grade. Package size: 5 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. Battery grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-LS-LIODFB-10KG",
+      "beforeXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery grade. Package size: 10 kg.",
+      "afterXML": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Published product specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10. Battery grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-500G",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery material grade. Package size: 500 g.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 ppm, and Hazen color ≤10. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-SOL-DMC-1KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 ppm, and Hazen color ≤10. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-2KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 ppm, and Hazen color ≤10. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-5KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 ppm, and Hazen color ≤10. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-SOL-DMC-10KG",
+      "beforeXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Published product specifications include assay ≥99.995 wt%, water ≤15 ppm, and Hazen color ≤10. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-ADD-VC-200G",
+      "beforeXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 200 g.",
+      "afterXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-ADD-VC-500G",
+      "beforeXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 500 g.",
+      "afterXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-ADD-VC-1KG",
+      "beforeXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-ADD-VC-2KG",
+      "beforeXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-ADD-VC-5KG",
+      "beforeXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-ADD-VC-10KG",
+      "beforeXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-ADD-DTD-200G",
+      "beforeXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 200 g.",
+      "afterXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-ADD-DTD-500G",
+      "beforeXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 500 g.",
+      "afterXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-ADD-DTD-1KG",
+      "beforeXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 1 kg.",
+      "afterXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-ADD-DTD-2KG",
+      "beforeXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 2 kg.",
+      "afterXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-ADD-DTD-5KG",
+      "beforeXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 5 kg.",
+      "afterXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-ADD-DTD-10KG",
+      "beforeXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 10 kg.",
+      "afterXML": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-ADD-PST-200G",
+      "beforeXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 200 g.",
+      "afterXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 200 g."
+    },
+    {
+      "id": "WM-ADD-PST-500G",
+      "beforeXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 500 g.",
+      "afterXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-ADD-PST-1KG",
+      "beforeXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 1 kg.",
+      "afterXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-ADD-PST-2KG",
+      "beforeXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 2 kg.",
+      "afterXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-ADD-PST-5KG",
+      "beforeXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 5 kg.",
+      "afterXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-ADD-PST-10KG",
+      "beforeXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 10 kg.",
+      "afterXML": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm. Battery material grade. Package size: 10 kg."
+    },
+    {
+      "id": "WM-ADD-FEC-500G",
+      "beforeXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 500 g.",
+      "afterXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 ppm; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 500 g."
+    },
+    {
+      "id": "WM-ADD-FEC-1KG",
+      "beforeXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 1 kg.",
+      "afterXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 ppm; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 1 kg."
+    },
+    {
+      "id": "WM-ADD-FEC-2KG",
+      "beforeXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 2 kg.",
+      "afterXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 ppm; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 2 kg."
+    },
+    {
+      "id": "WM-ADD-FEC-5KG",
+      "beforeXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 5 kg.",
+      "afterXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 ppm; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 5 kg."
+    },
+    {
+      "id": "WM-ADD-FEC-10KG",
+      "beforeXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 10 kg.",
+      "afterXML": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 ppm; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g. Battery material grade. Package size: 10 kg."
+    }
+  ]
+}

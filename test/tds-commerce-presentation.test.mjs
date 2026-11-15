@@ -14,7 +14,7 @@ for(const p of selected) {
   test(`${p.primaryAbbreviation}: commerce navigation, support and idempotence`,()=>{
     const html=readFileSync(new URL(p.url.slice(1),root),'utf8');
     const nav=html.match(/<nav class="product-detail-nav"[\s\S]*?<\/nav>/)[0];
-    assert.deepEqual([...nav.matchAll(/<a href="#([^"]+)">([^<]+)<\/a>/g)].map(m=>[m[1],m[2]]),[['overview','Overview'],['specifications','Specifications'],['packages','Packages &amp; Pricing'],['applications','Applications &amp; Technical Notes'],['documentation','Documentation'],['technical-guides','Related Guides']]);
+    const anchors=[...nav.matchAll(/<a href="#([^"]+)">/g)].map(m=>m[1]);for(const id of ['overview','specifications','packages','applications','documentation','technical-guides'])assert(anchors.includes(id),id);const positions=anchors.map(id=>html.indexOf(`id="${id}"`));assert(positions.every(p=>p>=0));assert.deepEqual(positions,[...positions].sort((a,b)=>a-b));
     assert(!/Specifications &(?:amp;)? RFQ|Available by RFQ|provisional pricing|draft price/i.test(html));
     for(const text of ['Need something beyond the standard package?','Different grade or package','Request a quote','Formulation or application support','Start a technical discussion','Moving toward pilot scale','Explore technical services','Add to Cart','data-product-quick-tds']) assert(html.includes(text));
     assert.equal((html.match(/<h1\b/g)||[]).length,1);

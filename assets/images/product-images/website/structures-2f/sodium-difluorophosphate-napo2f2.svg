@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="71" height="47" viewBox="0 0 71 47" role="img" aria-label="sodium-difluorophosphate-napo2f2 molecular structure"><title>sodium-difluorophosphate-napo2f2 — verified molecular structure</title>
+<!-- END OF HEADER -->
+<path class='bond-0 atom-0 atom-1' d='M 13.3,26.9 L 16.0,25.3' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 16.0,25.3 L 18.7,23.8' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 14.9,29.7 L 17.6,28.1' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 17.6,28.1 L 20.3,26.5' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 29.5,19.4 L 32.2,17.8' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 32.2,17.8 L 35.0,16.2' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 28.6,29.3 L 29.6,31.0' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 29.6,31.0 L 30.5,32.7' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 21.6,17.2 L 20.7,15.5' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 20.7,15.5 L 19.7,13.8' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<text x='6.1' y='36.2' class='atom-0' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='21.5' y='27.3' class='atom-1' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#7A5128' >P</text>
+<text x='37.0' y='18.3' class='atom-2' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='43.9' y='14.3' class='atom-2' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >-</text>
+<text x='30.4' y='42.7' class='atom-3' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='12.6' y='11.8' class='atom-4' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='48.8' y='27.3' class='atom-5' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >N</text>
+<text x='55.7' y='27.3' class='atom-5' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >a</text>
+<text x='61.1' y='23.3' class='atom-5' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >+</text>
+</svg>

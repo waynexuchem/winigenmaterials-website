@@ -1,0 +1,42 @@
+{
+  "stripe-worker/src/email/templates.js": {
+    "sha256": "7f1ddd012e73c144f077d8f67360b8895ded1b2340a810212cd2a00f6035c1ca",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "assets/js/private-order-checkout.js": {
+    "sha256": "bdf90e8802780795eea29dbe369db817fb3b2454dcf351a7e9c912d35477cef2",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "private-orders/wq20261021-01.html": {
+    "sha256": "2fad345e3161b5a91fdd544b69146268438548eee055c2bf1114c26b5fb6dfc8",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "stripe-worker/src/index.js": {
+    "sha256": "fc9cce2f533e378f46b2f3e9d90d2ed27c5be69dcccddb847be509e1f743cbeb",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "private-orders/confirmation.html": {
+    "sha256": "f2bc3d1bab82d77f81129da57f1530b145df53220af9b1d04f33ab5d6aa6006b",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "stripe-worker/src/private-order-validation.js": {
+    "sha256": "df864be5c2a9d2ace7c8e65cccc3748bca23950ff25bbe5f2c7513c583288399",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "stripe-worker/src/private-checkout-lifecycle.js": {
+    "sha256": "b2ba9e02dd712192db80a6db171fb02d71c4c589b7518e481ed9c59a63caa4b6",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "stripe-worker/src/private-orders.js": {
+    "sha256": "2646b62274020ba1e0743c5fca716fc866828d700263b1faea390fa9762b4d75",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "private-orders/wq20260923-01.html": {
+    "sha256": "3382932bbb75ec2138e32828e700fd08f5e0ff7ac24481585ae076dd1d5745ad",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  },
+  "private-orders/wq20260922-01.html": {
+    "sha256": "1c05c3c33ead4bef067b575962f4604143af3b0fd316cdde68928332d7352dc6",
+    "scope": "Verified static production Git baseline 34cd091; exact bytes frozen for the conservative release."
+  }
+}

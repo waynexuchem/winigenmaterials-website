@@ -121,7 +121,7 @@ for (const family of semantic.families) {
 }
 const productCard = (html, slug) => [...html.matchAll(/<article class="[^"]*\bproduct-card\b[^"]*"[\s\S]*?<\/article>/gi)]
   .map(match => match[0])
-  .find(article => new RegExp(`href="(?:products/)?${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\.html"`).test(article));
+  .find(article => new RegExp(`href="(?:/?products/)?${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\.html"`).test(article));
 
 const expectedGovernance = {
   pricingSourceScope: 'The approved pricing CSV governs only products and package schedules explicitly represented in it.',

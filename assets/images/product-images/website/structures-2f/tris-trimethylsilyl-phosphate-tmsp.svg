@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="81" height="89" viewBox="0 0 81 89" role="img" aria-label="tris-trimethylsilyl-phosphate-tmsp molecular structure"><title>tris-trimethylsilyl-phosphate-tmsp — verified molecular structure</title>
+<!-- END OF HEADER -->
+<path class='bond-0 atom-0 atom-1' d='M 75.9,20.8 L 63.8,20.8' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 60.6,16.1 L 60.6,5.6' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 51.3,20.8 L 45.3,20.8' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 60.6,27.6 L 60.6,30.0' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 60.6,30.0 L 60.6,32.4' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-4 atom-5' d='M 55.8,40.0 L 53.5,41.3' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-4 atom-5' d='M 53.5,41.3 L 51.2,42.6' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-5 atom-6' d='M 47.8,40.6 L 47.8,37.7' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-5 atom-6' d='M 47.8,37.7 L 47.8,34.8' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-5 atom-6' d='M 45.0,40.6 L 45.0,37.7' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-5 atom-6' d='M 45.0,37.7 L 45.0,34.8' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-6 atom-5 atom-7' d='M 41.6,42.6 L 39.3,41.3' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-6 atom-5 atom-7' d='M 39.3,41.3 L 37.0,40.0' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-7 atom-7 atom-8' d='M 27.5,40.0 L 24.2,41.9' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-7 atom-7 atom-8' d='M 24.2,41.9 L 20.9,43.8' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-8 atom-8 atom-9' d='M 15.3,40.6 L 10.5,32.1' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-9 atom-8 atom-10' d='M 8.4,51.0 L 4.9,53.0' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-10 atom-8 atom-11' d='M 20.9,50.2 L 25.7,58.6' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-11 atom-5 atom-12' d='M 46.4,52.2 L 46.4,54.5' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-11 atom-5 atom-12' d='M 46.4,54.5 L 46.4,56.9' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-12 atom-12 atom-13' d='M 51.2,64.5 L 53.5,65.8' style='fill:none;fill-rule:evenodd;stroke:#A5262B;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-12 atom-12 atom-13' d='M 53.5,65.8 L 55.8,67.1' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-13 atom-13 atom-14' d='M 56.7,76.7 L 52.9,83.1' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-14 atom-13 atom-15' d='M 68.3,74.3 L 73.8,77.5' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-15 atom-13 atom-16' d='M 63.3,65.1 L 68.2,56.6' style='fill:none;fill-rule:evenodd;stroke:#192633;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<text x='53.1' y='25.8' class='atom-1' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#192633' >S</text>
+<text x='60.0' y='25.8' class='atom-1' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#192633' >i</text>
+<text x='57.6' y='42.2' class='atom-4' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='43.4' y='50.4' class='atom-5' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#7A5128' >P</text>
+<text x='43.4' y='33.0' class='atom-6' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='29.3' y='42.2' class='atom-7' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='10.2' y='50.4' class='atom-8' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#192633' >S</text>
+<text x='17.1' y='50.4' class='atom-8' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#192633' >i</text>
+<text x='43.4' y='66.7' class='atom-12' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#A5262B' >O</text>
+<text x='57.6' y='74.9' class='atom-13' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#192633' >S</text>
+<text x='64.5' y='74.9' class='atom-13' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#192633' >i</text>
+</svg>

@@ -15,7 +15,7 @@
 
   const shell = document.querySelector('.mxene-sticky-shell, .product-sticky-shell');
   if (!shell) return;
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.oa-header, .header');
   const links = [...shell.querySelectorAll('nav a[href^="#"]')];
   const targets = links.map(link => document.querySelector(link.hash));
   const scroller = shell.querySelector('nav .container');
@@ -50,7 +50,7 @@
     targets.filter(Boolean).forEach(target => observer.observe(target));
     schedule();
   }
-  new ResizeObserver(measure).observe(header);
+  if (header) new ResizeObserver(measure).observe(header);
   new ResizeObserver(measure).observe(shell);
   window.addEventListener('scroll', schedule, {passive:true});
   links.forEach(link => link.addEventListener('click', event => {

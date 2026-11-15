@@ -6,7 +6,8 @@
     "prepare:cloudflare": "node scripts/prepare-cloudflare-site.mjs",
     "test:cloudflare": "node --test test/cloudflare-hosting.test.mjs test/cloudflare-publishing-boundary.test.mjs test/csp-reconciliation.test.mjs",
     "deploy:cloudflare": "wrangler deploy --config cloudflare-site/wrangler.jsonc",
-    "preview:cloudflare": "wrangler versions upload --config cloudflare-site/wrangler.jsonc"
+    "preview:cloudflare": "wrangler versions upload --config cloudflare-site/wrangler.jsonc",
+    "build:option-a": "node design/option-a/build-site.mjs"
   },
   "devDependencies": {
     "wrangler": "4.120.1"

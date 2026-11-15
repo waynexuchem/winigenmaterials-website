@@ -1,0 +1,280 @@
+{
+  "lithium-difluorobis-oxalato-phosphate-lidodfp": {
+    "image": "/assets/images/product-images/website/scientific-1cb/lithium-difluorobis-oxalato-phosphate-lidodfp-website.png",
+    "kind": "chemical-structure",
+    "alt": "Lithium difluorobis(oxalato)phosphate (LiDFBOP) — verified molecular structure",
+    "approval": "Checkpoint 1C-B website only"
+  },
+  "triallyl-phosphate-tap": {
+    "image": "/assets/images/product-images/website/scientific-1cb/triallyl-phosphate-tap-website.png",
+    "kind": "chemical-structure",
+    "alt": "Triallyl phosphate (TAP) — verified molecular structure",
+    "approval": "Checkpoint 1C-B website only"
+  },
+  "tetravinylsilane-tvsi": {
+    "image": "/assets/images/product-images/website/scientific-1cb/tetravinylsilane-tvsi-website.png",
+    "kind": "chemical-structure",
+    "alt": "Tetravinylsilane (TVSi) — verified molecular structure",
+    "approval": "Checkpoint 1C-B website only"
+  },
+  "tris-trimethylsilyl-phosphate-tmsp": {
+    "image": "/assets/images/product-images/website/scientific-1cb/tris-trimethylsilyl-phosphate-tmsp-website.png",
+    "kind": "chemical-structure",
+    "alt": "Tris(trimethylsilyl) phosphate (TMSP) — verified molecular structure",
+    "approval": "Checkpoint 1C-B website only"
+  },
+  "latp-d-50-0-3-um": {
+    "image": "/assets/images/product-images/website/materials/latp-representative-packaging-cropped.png",
+    "width": 1013,
+    "height": 1710,
+    "kind": "representative-illustration",
+    "alt": "Representative LATP powder and packaging illustration; not grade-specific",
+    "caption": "Representative LATP powder and packaging illustration; not grade-specific.",
+    "replaces": [
+      "/assets/images/product-images/website/scientific-1cb/latp-d-50-0-3-um-information.png"
+    ],
+    "approval": "Wayne Checkpoint 2C: use the truncated image temporarily; website only",
+    "branding": "margin"
+  },
+  "latp-d-50-0-4-um": {
+    "image": "/assets/images/product-images/website/materials/latp-representative-packaging-cropped.png",
+    "width": 1013,
+    "height": 1710,
+    "kind": "representative-illustration",
+    "alt": "Representative LATP powder and packaging illustration; not grade-specific",
+    "caption": "Representative LATP powder and packaging illustration; not grade-specific.",
+    "replaces": [
+      "/assets/images/product-images/website/scientific-1cb/latp-d-50-0-4-um-information.png"
+    ],
+    "approval": "Wayne Checkpoint 2C: use the truncated image temporarily; website only",
+    "branding": "margin"
+  },
+  "latp-d-50-0-65-um": {
+    "image": "/assets/images/product-images/website/materials/latp-representative-packaging-cropped.png",
+    "width": 1013,
+    "height": 1710,
+    "kind": "representative-illustration",
+    "alt": "Representative LATP powder and packaging illustration; not grade-specific",
+    "caption": "Representative LATP powder and packaging illustration; not grade-specific.",
+    "replaces": [
+      "/assets/images/product-images/website/scientific-1cb/latp-d-50-0-65-um-information.png"
+    ],
+    "approval": "Wayne Checkpoint 2C: use the truncated image temporarily; website only",
+    "branding": "margin"
+  },
+  "latp-slurry": {
+    "image": "/assets/images/product-images/website/scientific-1cb/latp-slurry-information.png",
+    "kind": "factual-information-panel",
+    "alt": "LATP slurry — factual product information; not a photograph or microscopy image",
+    "approval": "Checkpoint 1C-B website only"
+  },
+  "lithium-iron-phosphate-lfp-energy-grade": {
+    "image": "/assets/images/illustrations/active-materials/lithium-iron-phosphate-lfp-energy-grade-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium iron phosphate (LFP) - energy grade — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "LFP · energy grade",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-iron-phosphate-lfp-power-grade": {
+    "image": "/assets/images/illustrations/active-materials/lithium-iron-phosphate-lfp-power-grade-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium iron phosphate (LFP) - power grade — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "LFP · power grade",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-nickel-cobalt-aluminum-oxide-nca622": {
+    "image": "/assets/images/illustrations/active-materials/lithium-nickel-cobalt-aluminum-oxide-nca622-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium nickel cobalt aluminum oxide (NCA622) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "NCA622",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-nickel-cobalt-aluminum-oxide-nca811": {
+    "image": "/assets/images/illustrations/active-materials/lithium-nickel-cobalt-aluminum-oxide-nca811-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium nickel cobalt aluminum oxide (NCA811) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "NCA811",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-cobalt-oxide-lco": {
+    "image": "/assets/images/illustrations/active-materials/lithium-cobalt-oxide-lco-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium cobalt oxide (LCO) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "LCO",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-nickel-manganese-cobalt-oxide-nmc622": {
+    "image": "/assets/images/illustrations/active-materials/lithium-nickel-manganese-cobalt-oxide-nmc622-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium nickel manganese cobalt oxide (NMC622) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "NMC622",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-nickel-manganese-cobalt-oxide-nmc811": {
+    "image": "/assets/images/illustrations/active-materials/lithium-nickel-manganese-cobalt-oxide-nmc811-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium nickel manganese cobalt oxide (NMC811) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "NMC811",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-manganese-iron-phosphate-lmfp-energy-grade": {
+    "image": "/assets/images/illustrations/active-materials/lithium-manganese-iron-phosphate-lmfp-energy-grade-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium manganese iron phosphate (LMFP) - energy grade — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "LMFP · energy grade",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-manganese-iron-phosphate-lmfp-power-grade": {
+    "image": "/assets/images/illustrations/active-materials/lithium-manganese-iron-phosphate-lmfp-power-grade-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium manganese iron phosphate (LMFP) - power grade — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "LMFP · power grade",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-manganese-oxide-lmo": {
+    "image": "/assets/images/illustrations/active-materials/lithium-manganese-oxide-lmo-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium manganese oxide (LMO) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "LMO",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-nickel-manganese-oxide-lnmo": {
+    "image": "/assets/images/illustrations/active-materials/lithium-nickel-manganese-oxide-lnmo-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium nickel manganese oxide (LNMO) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "LNMO",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "graphite-anode-material-standard-grade": {
+    "image": "/assets/images/illustrations/active-materials/graphite-anode-material-standard-grade-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Graphite anode material - standard grade — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "Graphite · standard grade",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "graphite-anode-material-high-power-grade": {
+    "image": "/assets/images/illustrations/active-materials/graphite-anode-material-high-power-grade-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Graphite anode material - high-power grade — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "Graphite · high-power grade",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "graphite-anode-material-ultra-high-power-grade": {
+    "image": "/assets/images/illustrations/active-materials/graphite-anode-material-ultra-high-power-grade-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Graphite anode material - ultra-high-power grade — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "Graphite · ultra-high-power grade",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-titanate-lto": {
+    "image": "/assets/images/illustrations/active-materials/lithium-titanate-lto-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium titanate (LTO) — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot. Uncoated LTO shown; coating and grade are confirmed by RFQ.",
+    "branding": "margin",
+    "shortName": "LTO",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "lithium-metal-foil-on-copper-current-collector": {
+    "image": "/assets/images/illustrations/active-materials/lithium-metal-foil-on-copper-current-collector-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Lithium metal foil on copper current collector — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "Lithium-on-copper foil",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "hard-carbon-anode-material": {
+    "image": "/assets/images/illustrations/active-materials/hard-carbon-anode-material-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Hard carbon anode material — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "Hard carbon",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "silicon-anode-powder": {
+    "image": "/assets/images/illustrations/active-materials/silicon-anode-powder-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "Silicon anode powder — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot.",
+    "branding": "margin",
+    "shortName": "Silicon",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  },
+  "siox-silicon-carbon-composite-anode-material": {
+    "image": "/assets/images/illustrations/active-materials/siox-silicon-carbon-composite-anode-material-representative.webp",
+    "kind": "generated-representative-illustration",
+    "width": 1200,
+    "height": 1200,
+    "alt": "SiOx / silicon-carbon composite anode material — representative bulk-material illustration, not lot-specific",
+    "caption": "Representative illustration; not a photograph of a supplied lot. Appearance varies with the selected composite grade.",
+    "branding": "margin",
+    "shortName": "SiOx / silicon-carbon",
+    "approval": "Checkpoint 2E.1 local visual-review candidate; website only, not Merchant"
+  }
+}

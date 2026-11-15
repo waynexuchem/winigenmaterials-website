@@ -1,3 +1,4 @@
+import {blockAt} from '../../design/option-a/html-blocks.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
@@ -47,13 +48,14 @@ test('top-level coating surfaces emphasize two anchors and one mesoporous family
     read('products.html'),
     read('products/battery-ceramic-functional-coating-materials.html')
   ]);
-  const section = catalogHtml.match(/<section id="functional-coatings"[\s\S]*?<\/section>/i)?.[0] || '';
+  const section = blockAt(catalogHtml, catalogHtml.indexOf('<section id="functional-coatings"'), 'section').html;
   for (const expected of ['wbm-p07-boehmite-powder.html', 'wal-p05-alumina-coating-powder.html', 'mesoporous-alumina-materials.html', 'Discuss a Ceramic Coating Requirement']) {
     assert.match(section, new RegExp(expected));
     assert.match(familyHtml, new RegExp(expected));
   }
   for (const subordinate of ['wal-m07-mesoporous-alumina.html', 'wal-m300-mesoporous-alumina.html', 'wal-m400-mesoporous-alumina.html']) {
-    assert.doesNotMatch(section, new RegExp(subordinate));
+    const subgroup=section.match(/data-oa-coating-tier="SUBORDINATE">[\s\S]*?(?=<div class="oa-coating-group"|$)/)?.[0]||'';
+    assert.match(subgroup, new RegExp(subordinate));
   }
   const familyList = schemas(familyHtml).flatMap(schema => collectType(schema, 'ItemList'));
   assert.equal(familyList.length, 1);

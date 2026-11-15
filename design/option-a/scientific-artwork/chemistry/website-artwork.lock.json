@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+    "inchiKey": "KRYVNYFSKKOTLE-UHFFFAOYSA-N",
+    "formulaComputed": "C4F2LiO8P",
+    "websiteImage": "/assets/images/product-images/website/scientific-1cb/lithium-difluorobis-oxalato-phosphate-lidodfp-website.png",
+    "sha256": "d9a0f4940f28f1c021bb227f7676141e0a0c4d93e97481d8d4137d4ae5ce8e09",
+    "definitionSHA256": "a6965222519050f797e5a13d2cabc7b0566086ed7222d6e7daab7e1cc4fe307e",
+    "rdkit": "2025.09.3",
+    "approval": "Checkpoint 1C-B: reviewed graph-preserving layout; website only",
+    "sourceReferences": [
+      "https://www.tcichemicals.com/US/en/p/L0369",
+      "https://www.chemscene.com/product/678966-16-0.html",
+      "https://www.aaronchem.com/678966-16-0"
+    ]
+  },
+  {
+    "slug": "tetravinylsilane-tvsi",
+    "inchiKey": "UFHILTCGAOPTOV-UHFFFAOYSA-N",
+    "formulaComputed": "C8H12Si",
+    "websiteImage": "/assets/images/product-images/website/scientific-1cb/tetravinylsilane-tvsi-website.png",
+    "sha256": "db7280721cb77bda1b461e82890ce81279bef06791aa045bc405f6f59e26386d",
+    "definitionSHA256": "cb51257d6011fe1623fca88583c399f0fc90548bcac253ee6aa36cce971a8977",
+    "rdkit": "2025.09.3",
+    "approval": "Checkpoint 1C-B: reviewed graph-preserving layout; website only",
+    "sourceReferences": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1112-55-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/SDF?record_type=2d"
+    }
+  },
+  {
+    "slug": "triallyl-phosphate-tap",
+    "inchiKey": "XHGIFBQQEGRTPB-UHFFFAOYSA-N",
+    "formulaComputed": "C9H15O4P",
+    "websiteImage": "/assets/images/product-images/website/scientific-1cb/triallyl-phosphate-tap-website.png",
+    "sha256": "568b2453ab9deccb36e13e80849b677ff25b21b17cb18210e84252d0e7a24c02",
+    "definitionSHA256": "fe82bc108ad3ca067b8d9c1f97a7b25f2864b21712bb690e9389f2bdc528612f",
+    "rdkit": "2025.09.3",
+    "approval": "Checkpoint 1C-B: reviewed graph-preserving layout; website only",
+    "sourceReferences": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1623-19-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/SDF?record_type=2d"
+    }
+  },
+  {
+    "slug": "tris-trimethylsilyl-phosphate-tmsp",
+    "inchiKey": "QJMMCGKXBZVAEI-UHFFFAOYSA-N",
+    "formulaComputed": "C9H27O4PSi3",
+    "websiteImage": "/assets/images/product-images/website/scientific-1cb/tris-trimethylsilyl-phosphate-tmsp-website.png",
+    "sha256": "3b944613560c153f9cdefbf6e3c9859d7b1dfbea3c87ce8873fb14c48d3b033e",
+    "definitionSHA256": "32141fc248e3b951eca8d7885ecad5653d24988922bad8cbe266655fc96b36e2",
+    "rdkit": "2025.09.3",
+    "approval": "Checkpoint 1C-B: reviewed graph-preserving layout; website only",
+    "sourceReferences": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/SDF?record_type=2d"
+    }
+  }
+]

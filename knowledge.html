@@ -31,130 +31,6 @@
 <meta name="twitter:image:alt" content="Knowledge Center - Winigen Materials Knowledge Center">
 <link rel="image_src" href="https://www.winigenmaterials.com/assets/images/knowledge/social/knowledge.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=c439229135ec">
-<style>
-.knowledge-intro { max-width:900px; margin:0 auto; }
-.topic-browser { background:#f4f7fb; padding-top:54px; padding-bottom:60px; }
-.topic-browser-header { max-width:760px; margin:0 auto 34px; text-align:center; }
-.topic-browser-header h2,
-.article-index-header h2 { margin-bottom:12px; }
-.topic-browser-header p,
-.article-index-header p { color:#56647d; line-height:1.65; }
-.framework-section { background:#edf3fa; padding-top:64px; padding-bottom:72px; scroll-margin-top:96px; }
-.framework-roadmap { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; align-items:stretch; margin-top:28px; }
-.framework-step { position:relative; display:flex; flex-direction:column; min-height:208px; padding:20px 18px; background:#fff; border:1px solid rgba(15,31,77,.12); border-radius:8px; box-shadow:0 8px 22px rgba(15,31,77,.05); transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
-.framework-step:hover { transform:translateY(-3px); box-shadow:0 18px 38px rgba(15,31,77,.11); border-color:rgba(42,102,217,.32); }
-.framework-stage-trigger { display:block; width:100%; padding:0; border:0; background:none; color:inherit; font:inherit; text-align:left; cursor:pointer; }
-.framework-stage-trigger:focus-visible { outline:3px solid rgba(42,102,217,.32); outline-offset:5px; border-radius:4px; }
-.framework-number { color:#2867d8; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.74rem; margin-bottom:12px; }
-.framework-step h3 { color:var(--navy); font-size:1.12rem; line-height:1.15; letter-spacing:0; margin-bottom:10px; }
-.framework-step p { color:#53627a; font-size:.86rem; line-height:1.48; margin:0; }
-.framework-links { display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:auto; padding-top:14px; border-top:1px solid rgba(15,31,77,.09); }
-.framework-links a { color:#31527f; font-size:.78rem; font-weight:800; line-height:1.35; text-decoration:underline; text-underline-offset:3px; }
-.framework-links a:hover { color:#2867d8; }
-.knowledge-search { margin-top:0; padding:28px; background:#fff; border:1px solid rgba(42,102,217,.22); border-radius:8px; box-shadow:0 12px 32px rgba(42,102,217,.08); scroll-margin-top:112px; }
-.knowledge-search-header { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:end; margin-bottom:18px; }
-.knowledge-search-header h3 { margin-bottom:8px; font-size:1.45rem; letter-spacing:0; }
-.knowledge-search-header p { margin:0; color:#56647d; max-width:720px; }
-.knowledge-search-count { color:#526078; font-size:.92rem; font-weight:800; text-align:right; }
-.knowledge-search-count[hidden] { display:none; }
-.knowledge-search-box { position:relative; }
-.knowledge-search-icon { position:absolute; top:50%; left:18px; width:21px; height:21px; color:#53627a; pointer-events:none; transform:translateY(-50%); }
-.knowledge-search-box input { width:100%; margin:0; padding:18px 22px 18px 54px; border:2px solid rgba(42,102,217,.42); border-radius:8px; background:#fff; color:var(--navy); font-size:1.05rem; font-weight:750; box-shadow:0 10px 24px rgba(42,102,217,.08), inset 0 1px 0 rgba(255,255,255,.7); }
-.knowledge-search-box input:focus { outline:4px solid rgba(42,102,217,.18); border-color:#2867d8; background:#fff; }
-.knowledge-search-helper { margin:9px 2px 0; color:#65728a; font-size:.86rem; line-height:1.45; }
-.stage-filter-row { display:flex; gap:9px; flex-wrap:wrap; margin-top:16px; }
-.stage-filter { display:inline-flex; align-items:center; gap:7px; border:1px solid rgba(15,31,77,.13); border-radius:999px; background:#fff; color:var(--navy); padding:8px 12px; font:inherit; font-size:.86rem; font-weight:850; cursor:pointer; transition:background .2s ease,color .2s ease,border-color .2s ease,opacity .2s ease; }
-.stage-filter:hover,
-.stage-filter.active { background:#2867d8; border-color:#2867d8; color:#fff; }
-.stage-filter.has-matches:not(.active) { border-color:rgba(42,102,217,.5); background:#edf4ff; color:#2867d8; }
-.stage-filter.no-matches { opacity:.48; }
-.stage-filter-count { display:inline-flex; align-items:center; justify-content:center; min-width:22px; height:22px; padding:0 7px; border-radius:999px; background:rgba(15,31,77,.08); color:inherit; font-size:.76rem; line-height:1; }
-.stage-filter.active .stage-filter-count { background:rgba(255,255,255,.2); }
-.more-topics { margin-top:14px; }
-.more-topics summary { display:flex; align-items:center; gap:9px; width:fit-content; color:#40516d; font-size:.86rem; font-weight:850; cursor:pointer; list-style:none; }
-.more-topics summary::-webkit-details-marker { display:none; }
-.more-topics summary::after { content:""; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform .2s ease; }
-.more-topics[open] summary::after { transform:rotate(225deg) translate(-2px,-2px); }
-.more-topics summary:hover { color:#2867d8; }
-.more-topics .knowledge-pill-row { margin-top:12px; justify-content:flex-start; }
-.search-results { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:24px; }
-.search-result-card { display:flex; flex-direction:column; padding:22px; border:1px solid rgba(15,31,77,.1); border-radius:8px; background:#fbfdff; min-height:250px; }
-.search-result-meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:13px; }
-.search-result-meta span { display:inline-flex; padding:6px 9px; border-radius:999px; background:#edf4ff; color:#2867d8; font-size:.78rem; font-weight:900; }
-.search-result-card h3 { margin-bottom:10px; font-size:1.2rem; line-height:1.18; letter-spacing:0; }
-.search-result-card h3 a { color:var(--navy); text-decoration:none; }
-.search-result-card h3 a:hover { color:#2867d8; }
-.search-result-card p { font-size:.94rem; line-height:1.55; margin-bottom:15px; }
-.search-result-tags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px; }
-.search-result-tags span { padding:5px 8px; border-radius:999px; background:#fff; border:1px solid rgba(15,31,77,.1); color:#526078; font-size:.76rem; font-weight:800; }
-.search-result-link { width:fit-content; margin-top:auto; color:#2867d8; font-weight:900; text-decoration:none; }
-.search-empty { margin-top:20px; padding:18px; border:1px solid rgba(15,31,77,.1); border-radius:8px; background:#f8fbff; color:#526078; font-weight:750; }
-.search-clear { display:block; margin-top:10px; padding:0; border:0; background:none; color:#2867d8; font:inherit; font-weight:900; text-decoration:underline; cursor:pointer; }
-.topic-cluster-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; align-items:start; }
-.topic-cluster { background:#fff; border:1px solid rgba(15,31,77,.12); border-radius:8px; box-shadow:0 10px 28px rgba(15,31,77,.06); overflow:hidden; }
-.topic-cluster summary { position:relative; display:grid; grid-template-columns:42px 1fr 28px; gap:14px; align-items:center; min-height:106px; padding:20px; cursor:pointer; list-style:none; }
-.topic-cluster summary::-webkit-details-marker { display:none; }
-.topic-cluster summary:focus-visible { outline:3px solid rgba(48,112,229,.35); outline-offset:-3px; }
-.topic-number { display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:#e9f1ff; color:#2867d8; font-weight:900; }
-.topic-summary-text { min-width:0; }
-.topic-name { display:block; color:var(--navy); font-size:1.14rem; font-weight:900; line-height:1.2; }
-.topic-count { display:block; margin-top:5px; color:#65728a; font-size:.88rem; font-weight:700; }
-.topic-toggle { color:#2867d8; font-size:1.35rem; font-weight:800; text-align:center; transition:transform .2s ease; }
-.topic-cluster[open] .topic-toggle { transform:rotate(45deg); }
-.topic-cluster-links { display:grid; gap:0; padding:0 20px 18px 76px; }
-.topic-cluster-links a { padding:9px 0; border-top:1px solid rgba(15,31,77,.09); color:#33445f; font-size:.94rem; font-weight:750; line-height:1.35; text-decoration:none; }
-.topic-cluster-links a:hover { color:#2867d8; }
-.specific-topics { margin-top:22px; padding-top:0; text-align:left; }
-.specific-topics h3 { margin-bottom:12px; font-size:.9rem; color:#526078; text-transform:uppercase; letter-spacing:.08em; }
-.knowledge-pill-row { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
-.specific-topics .knowledge-pill-row { justify-content:flex-start; }
-.knowledge-pill { display:inline-flex; align-items:center; justify-content:center; background:#fff; color:var(--navy); border:1px solid rgba(15,31,77,.14); border-radius:999px; padding:9px 15px; font:inherit; font-size:.88rem; font-weight:800; cursor:pointer; transition:border-color .2s ease,color .2s ease,background .2s ease,transform .2s ease; }
-.knowledge-pill:hover,
-.knowledge-pill.active { background:#edf4ff; border-color:#2867d8; color:#2867d8; transform:translateY(-1px); }
-.article-index-header { max-width:780px; margin:0 auto; text-align:center; }
-.featured-section { padding-top:64px; padding-bottom:42px; }
-.featured-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; margin-top:34px; align-items:stretch; }
-.knowledge-card.featured-card h2 { min-height:161px; font-size:23px; }
-.library-section { padding-top:52px; }
-.knowledge-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; margin-top:40px; align-items:stretch; }
-.knowledge-card { overflow:hidden; background:#fff; border-radius:24px; box-shadow:0 12px 34px rgba(15,31,77,.08); border:1px solid rgba(15,31,77,.08); transition:transform .25s ease,box-shadow .25s ease; display:flex; flex-direction:column; height:100%; }
-.knowledge-card:hover { transform:translateY(-4px); box-shadow:0 20px 48px rgba(15,31,77,.12); }
-.knowledge-card img { width:100%; height:190px; object-fit:cover; display:block; flex:0 0 auto; }
-.knowledge-card-body { padding:28px; display:flex; flex-direction:column; flex:1; }
-.knowledge-card-category { margin:0 0 12px; color:#2867d8; font-size:.76rem; font-weight:900; letter-spacing:.08em; line-height:1.2; text-transform:uppercase; }
-.knowledge-draft-badge { display:inline-flex; margin-left:8px; padding:3px 7px; border:1px solid rgba(181,105,17,.25); border-radius:999px; background:#fff4d9; color:#9b5b0b; font-size:.68rem; font-weight:900; letter-spacing:.04em; vertical-align:middle; }
-.knowledge-card h2 { min-height:174px; display:flex; align-items:flex-start; margin-bottom:16px; font-size:25px; line-height:1.16; letter-spacing:0; }
-.knowledge-card h2 a { color:inherit; text-decoration:none; }
-.knowledge-card h2 a:hover { color:var(--blue); }
-.knowledge-card p:not(.knowledge-card-category) { display:-webkit-box; overflow:hidden; color:#4f5b72; line-height:1.68; margin-bottom:22px; -webkit-box-orient:vertical; -webkit-line-clamp:4; }
-.related-link-list { display:grid; gap:10px; margin-top:auto; }
-.related-link-list a { display:inline-flex; width:fit-content; padding:11px 14px; border:1px solid rgba(18,32,51,.1); border-radius:12px; background:#f8fbff; color:var(--navy); font-weight:850; text-decoration:none; }
-@media(max-width:1100px) {
-  .framework-roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .topic-cluster-grid,
-  .knowledge-grid,
-  .featured-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-}
-@media(max-width:720px) {
-  .framework-roadmap { display:flex; overflow-x:auto; gap:14px; margin-right:-15px; padding:0 15px 12px 0; scroll-snap-type:x mandatory; }
-  .framework-step { flex:0 0 min(82vw,310px); min-height:208px; scroll-snap-align:start; }
-  .topic-cluster-grid,
-  .knowledge-grid,
-  .featured-grid { grid-template-columns:1fr; }
-  .topic-cluster summary { min-height:92px; padding:17px; }
-  .topic-cluster-links { padding:0 17px 16px 73px; }
-  .knowledge-search { padding:22px; }
-  .stage-filter-row { flex-wrap:nowrap; overflow-x:auto; margin-right:-22px; padding:0 22px 8px 0; }
-  .stage-filter { flex:0 0 auto; }
-  .knowledge-search-header,
-  .search-results { grid-template-columns:1fr; }
-  .knowledge-search-count { text-align:left; }
-  .knowledge-card h2 { min-height:auto; }
-  .knowledge-card.featured-card h2 { min-height:auto; }
-  .related-link-list { margin-top:18px; }
-}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -216,25 +92,18 @@
   }
 }
 </script>
-</head>
-<body>
-<header class="header">
-  <div class="container nav">
-    <a class="logo" href="/"><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"></a>
-    <nav class="nav-links"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a class="active" href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></nav>
-    <button class="mobile-toggle" aria-label="Open menu">&#9776;</button>
-  </div>
-  <div class="mobile-menu"><a href="/">Home</a><a href="products.html">Products</a><a href="applications.html">Applications</a><a href="services.html">Services</a><a href="quality.html">Quality</a><a href="about.html">About</a><a class="active" href="knowledge.html">Knowledge</a><a href="contact.html">Contact</a></div>
-</header>
-<main>
+<link rel="stylesheet" href="/assets/css/option-a-knowledge.css?v=23636cfac1d2">
+<link rel="stylesheet" href="/assets/css/option-a.css?v=cb572be43f9a"><link rel="stylesheet" href="/assets/css/option-a-site.css?v=b15c738a4fb5"><link rel="stylesheet" href="/assets/css/option-a-2e.css?v=2b735a39b6e1">
+<link rel="stylesheet" href="/assets/css/option-a-2f.css?v=3cd2437dc60e">
+</head><body class="option-a"><a class="oa-skip" href="#main">Skip to content</a><header class="oa-header"><div class="oa-container oa-header-row"><a class="oa-brand" href="/" aria-label="Winigen Materials home"><img src="/assets/images/winigen-logo.png" alt="Winigen Materials logo" width="66" height="58"><span>WINIGEN <b>MATERIALS</b><small>BATTERY MATERIALS &amp; ELECTROCHEMISTRY</small></span></a><button class="oa-menu-toggle" aria-expanded="false" aria-controls="oa-menu" type="button">Menu <span aria-hidden="true">☰</span></button><nav id="oa-menu" class="oa-nav" aria-label="Main navigation"><div class="oa-primary-nav"><a data-oa-primary-link href="/">Home</a><div class="oa-material-menu oa-material-disclosure"><a data-oa-primary-link href="/products.html">Materials</a><button type="button" data-oa-family-toggle aria-expanded="false" aria-controls="oa-material-families" aria-label="Browse material families" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><nav id="oa-material-families" class="oa-family-dropdown" aria-label="Material families dropdown" hidden><a class="oa-all-materials" href="/products.html">All Materials</a><a href="/products/lithium-salts.html">Lithium Salts<span>9</span></a><a href="/products/battery-solvents.html">Battery Solvents<span>17</span></a><a href="/products/electrolyte-additives.html">Electrolyte Additives<span>25</span></a><a href="/products/next-generation-salts.html">Next-Gen Salts<span>5</span></a><a href="/products/solid-state-electrolytes.html">Solid-State Electrolytes<span>17</span></a><a href="/products/mxene-materials.html">MXene Materials<span>24</span></a><a href="/products/custom-electrolyte-formulations.html">Custom Formulations<span>2</span></a><a href="/products/battery-active-materials.html">Active Materials<span>19</span></a><a href="/products/battery-ceramic-functional-coating-materials.html">Functional Coatings<span>6</span></a></nav></div><a data-oa-primary-link href="/products/custom-electrolyte-formulations.html">Electrolytes</a><a data-oa-primary-link href="/knowledge.html" aria-current="page">Knowledge</a><a data-oa-primary-link href="/quality.html">Quality &amp; Docs</a></div><form class="oa-combobox oa-header-search" data-oa-search data-scope="global" action="/" method="get"><label class="visually-hidden" for="header-search">Search all materials</label><div class="oa-search"><input id="header-search" name="q" type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="header-search-suggestions" autocomplete="off" placeholder="Name or CAS"><button type="submit">Search <span aria-hidden="true">→</span></button></div><div class="oa-search-popup" data-oa-search-popup hidden><p data-oa-suggestion-status role="status" aria-live="polite"></p><ul id="header-search-suggestions" role="listbox" aria-label="Search all materials suggestions"></ul></div></form><a class="oa-mobile-quote" href="/contact.html">Contact / Quote ↗</a></nav><div class="oa-header-actions"><a class="oa-cart" href="/cart.html" aria-label="Shopping cart"><svg class="oa-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 3h3l3 12h10l3-9H6M9 20h.01M18 20h.01" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="oa-cart-label">Cart</span> <span data-oa-cart-count>0</span></a><a class="oa-button" href="/contact.html">Contact / Quote <span aria-hidden="true">↗</span></a></div></div></header><main id="main" class="oa-knowledge oa-knowledge-hub oa-knowledge-layout" data-knowledge-search data-oa-editorial="true"><div class="oa-knowledge-content">
 <section class="section dark"><div class="container section-title knowledge-intro"><h1>Battery Materials Knowledge Center</h1><p>Technical guides on battery materials, electrolytes, interfaces, solid-state systems, cell development, and commercialization.</p></div></section>
 <section class="section topic-browser" aria-labelledby="knowledge-search-title">
   <div class="container">
-    <div class="knowledge-search" data-knowledge-search aria-labelledby="knowledge-search-title">
+    <div class="knowledge-search" aria-labelledby="knowledge-search-title">
       <div class="knowledge-search-header">
         <div>
-          <h3 id="knowledge-search-title">Search Battery Topics</h3>
-          <p>Search by material, chemistry, failure mode, cell format, or application.</p>
+          <h2 id="knowledge-search-title" class="visually-hidden">Search articles</h2>
+
         </div>
         <div class="knowledge-search-count" data-search-count hidden></div>
       </div>
@@ -242,16 +111,8 @@
         <svg class="knowledge-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
         <input type="search" data-search-input placeholder="Search battery topics..." aria-label="Search knowledge articles">
       </div>
-      <p class="knowledge-search-helper">Try LiFSI, silicon, fast charge, halide, formation, or coin cell.</p>
-      <div class="stage-filter-row" aria-label="Filter knowledge articles by primary topic">
-        <button class="stage-filter active" type="button" data-stage-filter="All" aria-pressed="true">All</button>
-        <button class="stage-filter" type="button" data-topic-filter="electrolyte" aria-pressed="false">Electrolytes</button>
-        <button class="stage-filter" type="button" data-topic-filter="solid-state" aria-pressed="false">Solid-State</button>
-        <button class="stage-filter" type="button" data-topic-filter="silicon" aria-pressed="false">Silicon</button>
-        <button class="stage-filter" type="button" data-topic-filter="sodium" aria-pressed="false">Sodium-Ion</button>
-        <button class="stage-filter" type="button" data-stage-filter="Cell Development" aria-pressed="false">Cell Development</button>
-        <button class="stage-filter" type="button" data-stage-filter="Commercialization" aria-pressed="false">Commercialization</button>
-      </div>
+
+
       <details class="more-topics">
         <summary>More Topics</summary>
         <div class="knowledge-pill-row" aria-label="Additional article topics">
@@ -267,240 +128,232 @@
     </div>
   </div>
 </section>
-<section class="section featured-section" aria-labelledby="featured-articles-title">
+<div class="oa-inline-topics"><details open><summary>Explore Topics: <span data-oa-topic-current>All Articles</span></summary><nav aria-label="Knowledge topics"><div class="stage-filter-row" aria-label="Filter knowledge articles by primary topic">
+        <button class="stage-filter active" type="button" data-stage-filter="All" aria-pressed="true">All Articles</button>
+        <button class="stage-filter" type="button" data-topic-filter="electrolyte" aria-pressed="false">Electrolytes</button>
+        <button class="stage-filter" type="button" data-topic-filter="solid-state" aria-pressed="false">Solid-State</button>
+        <button class="stage-filter" type="button" data-topic-filter="silicon" aria-pressed="false">Silicon</button>
+        <button class="stage-filter" type="button" data-topic-filter="sodium" aria-pressed="false">Sodium-Ion</button>
+        <button class="stage-filter" type="button" data-stage-filter="Cell Development" aria-pressed="false">Cell Development</button>
+        <button class="stage-filter" type="button" data-stage-filter="Commercialization" aria-pressed="false">Commercialization</button>
+      </div></nav></details></div><section class="section featured-section" aria-labelledby="featured-articles-title">
   <div class="container">
-    <div class="article-index-header"><p class="eyebrow">Start Here</p><h2 id="featured-articles-title">Featured Articles</h2><p>Three practical guides spanning electrolyte design, silicon materials, and solid-state electrolyte evaluation.</p></div>
+    <div class="article-index-header"><p class="eyebrow">Start Here</p><h2 id="featured-articles-title">Featured guide</h2></div>
     <div class="featured-grid" data-featured-articles>
       <!-- GENERATED:FEATURED-ARTICLES:START -->
-      <article class="knowledge-card featured-card" data-article-slug="low-temperature-electrolytes">
-      <img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced-official-logo.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway" decoding="async">
+      <article data-reading-minutes="23" class="knowledge-card featured-card" data-article-slug="low-temperature-electrolytes">
+      <a class="knowledge-image-link" href="knowledge/low-temperature-electrolytes.html" aria-label="Read Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway"><img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced-official-logo.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/low-temperature-electrolytes.html">Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability</a></h2>
       <p>A technical systems framework for ultra-low-temperature cell energy, power, and rechargeability below −20°C, including operation below −60°C.</p>
-      <div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
+      <p class="oa-reading-estimate">23 min read · estimated</p><div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
       </div>
     </article>
-      <article class="knowledge-card featured-card" data-article-slug="fast-formation-lithium-rich-cathodes">
-      <img src="assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects-official-logo.png?v=20260809-1" alt="The first charge writes the cathode&#39;s future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes" decoding="async">
-      <div class="knowledge-card-body">
-      <p class="knowledge-card-category">Cell Development</p>
-      <h2><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure</a></h2>
-      <p>A technical review of formation rate, reaction heterogeneity, residual lithium, plateau access, structural evolution, and later cycling in lithium-rich cathodes.</p>
-      <div class="related-link-list"><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Read article</a></div>
-      </div>
-    </article>
-      <article class="knowledge-card featured-card" data-article-slug="compare-solid-state-electrolyte-powders">
-      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Solid-state electrolyte powder particle-size distribution" decoding="async">
-      <div class="knowledge-card-body">
-      <p class="knowledge-card-category">Solid-State</p>
-      <h2><a href="knowledge/compare-solid-state-electrolyte-powders.html">How to Compare Solid-State Electrolyte Powders: Conductivity, Particle Size, Density, and Interface Testing</a></h2>
-      <p>How to compare solid-state electrolyte powders using conductivity, particle-size distribution, pellet density, moisture, XRD, SEM, and interfaces.</p>
-      <div class="related-link-list"><a href="knowledge/compare-solid-state-electrolyte-powders.html">Read article</a></div>
-      </div>
-    </article>
+
+
       <!-- GENERATED:FEATURED-ARTICLES:END -->
     </div>
   </div>
 </section>
 <section class="section library-section"><div class="container"><div class="article-index-header"><p class="eyebrow">Complete Library</p><h2>All Technical Articles</h2><p>Browse the full collection of Winigen Materials guides across chemistry, materials, interfaces, testing, and scale-up.</p></div><div class="knowledge-grid" data-article-library>
       <!-- GENERATED:ARTICLE-LIBRARY:START -->
-      <article class="knowledge-card" data-article-slug="coin-cell-to-pouch-cell-battery-material-validation">
-      <img src="assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation-official-logo.png?v=20260806-1" alt="Strong coin-cell data is not scale-up proof: coin-to-pouch validation" loading="lazy" decoding="async">
+      <article data-reading-minutes="10" class="knowledge-card" data-article-slug="coin-cell-to-pouch-cell-battery-material-validation">
+      <a class="knowledge-image-link" href="knowledge/coin-cell-to-pouch-cell-battery-material-validation.html" aria-label="Read Strong coin-cell data is not scale-up proof: coin-to-pouch validation"><img src="assets/images/knowledge/social/coin-cell-to-pouch-cell-battery-material-validation-official-logo.png?v=20260806-1" alt="Strong coin-cell data is not scale-up proof: coin-to-pouch validation" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Cell Development</p>
       <h2><a href="knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up</a></h2>
       <p>How to validate battery materials across coin cells, full cells, pouch cells, formation, wetting, gas generation, swelling, pressure, and scale-up evidence.</p>
-      <div class="related-link-list"><a href="knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">Read article</a></div>
+      <p class="oa-reading-estimate">10 min read · estimated</p><div class="related-link-list"><a href="knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation">
-      <img src="assets/images/knowledge/social/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation-official-logo.png?v=20260806-5" alt="Coin-cell winner, pouch-cell loser: wetting, formation, gas, pressure, and lean-electrolyte conditions can reorder material performance" loading="lazy" decoding="async">
+    <article data-reading-minutes="13" class="knowledge-card" data-article-slug="coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation">
+      <a class="knowledge-image-link" href="knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html" aria-label="Read Coin-cell winner, pouch-cell loser: wetting, formation, gas, pressure, and lean-electrolyte conditions can reorder material performance"><img src="assets/images/knowledge/social/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation-official-logo.png?v=20260806-5" alt="Coin-cell winner, pouch-cell loser: wetting, formation, gas, pressure, and lean-electrolyte conditions can reorder material performance" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Cell Development</p>
       <h2><a href="knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">From Coin Cell to Pouch Cell, Part 2: Why Wetting, Gas, and Formation Change Battery Material Rankings</a></h2>
       <p>Why coin-cell rankings can change in pouch cells through electrolyte starvation, local ionic pathways, E/C ratio, wetting, formation gas, pressure, impedance components, and high-loading electrode effects.</p>
-      <div class="related-link-list"><a href="knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">Read article</a></div>
+      <p class="oa-reading-estimate">13 min read · estimated</p><div class="related-link-list"><a href="knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="fast-formation-lithium-rich-cathodes">
-      <img src="assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects-official-logo.png?v=20260809-1" alt="The first charge writes the cathode&#39;s future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes" loading="lazy" decoding="async">
+    <article data-reading-minutes="11" class="knowledge-card" data-article-slug="fast-formation-lithium-rich-cathodes">
+      <a class="knowledge-image-link" href="knowledge/fast-formation-lithium-rich-cathodes.html" aria-label="Read The first charge writes the cathode&amp;#39;s future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes"><img src="assets/images/knowledge/campaign/fast-formation-lithium-rich-cathodes-hero-v6-sparkling-defects-official-logo.png?v=20260809-1" alt="The first charge writes the cathode&#39;s future: faster and slower first charging produce different lithium extraction depths in lithium-rich cathodes" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Cell Development</p>
       <h2><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure</a></h2>
       <p>A technical review of formation rate, reaction heterogeneity, residual lithium, plateau access, structural evolution, and later cycling in lithium-rich cathodes.</p>
-      <div class="related-link-list"><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Read article</a></div>
+      <p class="oa-reading-estimate">11 min read · estimated</p><div class="related-link-list"><a href="knowledge/fast-formation-lithium-rich-cathodes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="np-ratio-lithium-ion-battery-design">
-      <img src="assets/images/knowledge/campaign/np-ratio-effective-margin-hero-v3-diffuse-access-official-logo.png?v=20260809-1" alt="The ratio is fixed, but the margin is not: operating conditions reduce kinetically accessible anode receiving capacity" loading="lazy" decoding="async">
+    <article data-reading-minutes="16" class="knowledge-card" data-article-slug="np-ratio-lithium-ion-battery-design">
+      <a class="knowledge-image-link" href="knowledge/np-ratio-lithium-ion-battery-design.html" aria-label="Read The ratio is fixed, but the margin is not: operating conditions reduce kinetically accessible anode receiving capacity"><img src="assets/images/knowledge/campaign/np-ratio-effective-margin-hero-v3-diffuse-access-official-logo.png?v=20260809-1" alt="The ratio is fixed, but the margin is not: operating conditions reduce kinetically accessible anode receiving capacity" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Silicon</p>
       <h2><a href="knowledge/np-ratio-lithium-ion-battery-design.html">N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density</a></h2>
       <p>How to calculate and validate N/P ratio across graphite and silicon anodes, lithium-plating margin, fast-charge conditions, energy-density tradeoffs, and pouch-cell geometry.</p>
-      <div class="related-link-list"><a href="knowledge/np-ratio-lithium-ion-battery-design.html">Read article</a></div>
+      <p class="oa-reading-estimate">16 min read · estimated</p><div class="related-link-list"><a href="knowledge/np-ratio-lithium-ion-battery-design.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="beyond-np-ratio-spatial-reaction-uniformity">
-      <img src="assets/images/knowledge/campaign/beyond-np-spatial-reaction-uniformity-hero-v2-precise-subtitle-official-logo.png?v=20260809-1" alt="Balanced on paper, uneven in reality: a localized lithium-plating hotspot in a spatially nonuniform pouch-cell reaction field" loading="lazy" decoding="async">
+    <article data-reading-minutes="19" class="knowledge-card" data-article-slug="beyond-np-ratio-spatial-reaction-uniformity">
+      <a class="knowledge-image-link" href="knowledge/beyond-np-ratio-spatial-reaction-uniformity.html" aria-label="Read Balanced on paper, uneven in reality: a localized lithium-plating hotspot in a spatially nonuniform pouch-cell reaction field"><img src="assets/images/knowledge/campaign/beyond-np-spatial-reaction-uniformity-hero-v2-precise-subtitle-official-logo.png?v=20260809-1" alt="Balanced on paper, uneven in reality: a localized lithium-plating hotspot in a spatially nonuniform pouch-cell reaction field" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Silicon</p>
       <h2><a href="knowledge/beyond-np-ratio-spatial-reaction-uniformity.html">Beyond N/P Ratio: Electrode Balancing Is Fundamentally a Problem of Spatial Reaction Uniformity</a></h2>
       <p>A spatial framework that connects nominal N/P ratio with local charge- and rate-based lithium-acceptance margins, reaction heterogeneity, manufacturing, silicon expansion, aging, and fast charging.</p>
-      <div class="related-link-list"><a href="knowledge/beyond-np-ratio-spatial-reaction-uniformity.html">Read article</a></div>
+      <p class="oa-reading-estimate">19 min read · estimated</p><div class="related-link-list"><a href="knowledge/beyond-np-ratio-spatial-reaction-uniformity.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="electrolyte-additives-sei-cei">
-      <img src="assets/images/lab-equipment.jpg" alt="Electrolyte additive screening for silicon anodes and high-voltage cathodes" loading="lazy" decoding="async">
+    <article data-reading-minutes="12" class="knowledge-card" data-article-slug="electrolyte-additives-sei-cei">
+      <a class="knowledge-image-link" href="knowledge/electrolyte-additives-sei-cei.html" aria-label="Read Electrolyte additive screening for silicon anodes and high-voltage cathodes"><img src="assets/images/lab-equipment.jpg" alt="Electrolyte additive screening for silicon anodes and high-voltage cathodes" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Silicon</p>
       <h2><a href="knowledge/electrolyte-additives-sei-cei.html">Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes</a></h2>
       <p>A failure-mode approach to additive screening across silicon SEI, high-voltage CEI, gas, impedance, cross-talk, and post-mortem evidence.</p>
-      <div class="related-link-list"><a href="knowledge/electrolyte-additives-sei-cei.html">Read article</a></div>
+      <p class="oa-reading-estimate">12 min read · estimated</p><div class="related-link-list"><a href="knowledge/electrolyte-additives-sei-cei.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="lifsi-lithium-metal-batteries">
-      <img src="assets/images/electrolyte-design.jpg" alt="LiFSI electrolyte formulation and battery development" loading="lazy" decoding="async">
+    <article data-reading-minutes="5" class="knowledge-card" data-article-slug="lifsi-lithium-metal-batteries">
+      <a class="knowledge-image-link" href="knowledge/lifsi-lithium-metal-batteries.html" aria-label="Read LiFSI electrolyte formulation and battery development"><img src="assets/images/electrolyte-design.jpg" alt="LiFSI electrolyte formulation and battery development" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/lifsi-lithium-metal-batteries.html">LiFSI for Lithium-Metal Batteries, Fast Charge, and Low-Temperature Electrolytes</a></h2>
       <p>Why LiFSI is used in lithium-metal, fast-charge, low-temperature, and high-concentration electrolyte systems.</p>
-      <div class="related-link-list"><a href="knowledge/lifsi-lithium-metal-batteries.html">Read article</a></div>
+      <p class="oa-reading-estimate">5 min read · estimated</p><div class="related-link-list"><a href="knowledge/lifsi-lithium-metal-batteries.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="lipf6-vs-lifsi-vs-litfsi">
-      <img src="assets/images/raw-chemicals.jpg" alt="Lithium salts for electrolyte formulation" loading="lazy" decoding="async">
+    <article data-reading-minutes="4" class="knowledge-card" data-article-slug="lipf6-vs-lifsi-vs-litfsi">
+      <a class="knowledge-image-link" href="knowledge/lipf6-vs-lifsi-vs-litfsi.html" aria-label="Read Lithium salts for electrolyte formulation"><img src="assets/images/raw-chemicals.jpg" alt="Lithium salts for electrolyte formulation" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">LiPF6 vs LiFSI vs LiTFSI: How to Choose Lithium Electrolyte Salts for Battery Development</a></h2>
       <p>Compare LiPF6, LiFSI, and LiTFSI by conductivity, interphase behavior, moisture sensitivity, aluminum corrosion, and application fit.</p>
-      <div class="related-link-list"><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Read article</a></div>
+      <p class="oa-reading-estimate">4 min read · estimated</p><div class="related-link-list"><a href="knowledge/lipf6-vs-lifsi-vs-litfsi.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="low-temperature-electrolytes">
-      <img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced-official-logo.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway" loading="lazy" decoding="async">
+    <article data-reading-minutes="23" class="knowledge-card" data-article-slug="low-temperature-electrolytes">
+      <a class="knowledge-image-link" href="knowledge/low-temperature-electrolytes.html" aria-label="Read Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway"><img src="assets/images/knowledge/campaign/ultra-low-temperature-cell-hero-v7-balanced-official-logo.png" alt="Cold-limited lithium transport through electrolyte, interface, and graphite in a pouch-cell cutaway" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Electrolytes</p>
       <h2><a href="knowledge/low-temperature-electrolytes.html">Ultra-Low-Temperature Lithium-Ion Cell Design: Electrolyte Kinetics, Electrode Architecture, and Rechargeability</a></h2>
       <p>A technical systems framework for ultra-low-temperature cell energy, power, and rechargeability below −20°C, including operation below −60°C.</p>
-      <div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
+      <p class="oa-reading-estimate">23 min read · estimated</p><div class="related-link-list"><a href="knowledge/low-temperature-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="sodium-ion-electrolyte-materials">
-      <img src="assets/images/Sodium-Ion High-Rate Cycling.png" alt="Sodium-ion electrolyte high-rate cycling data" loading="lazy" decoding="async">
+    <article data-reading-minutes="5" class="knowledge-card" data-article-slug="sodium-ion-electrolyte-materials">
+      <a class="knowledge-image-link" href="knowledge/sodium-ion-electrolyte-materials.html" aria-label="Read Sodium-ion electrolyte high-rate cycling data"><img src="assets/images/Sodium-Ion High-Rate Cycling.png" alt="Sodium-ion electrolyte high-rate cycling data" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Sodium-Ion</p>
       <h2><a href="knowledge/sodium-ion-electrolyte-materials.html">Sodium-Ion Battery Electrolyte Materials: Sodium Salts, Solvents, Additives, and Water Control</a></h2>
       <p>How sodium salts, solvents, additives, and water control affect sodium-ion electrolyte performance.</p>
-      <div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-materials.html">Read article</a></div>
+      <p class="oa-reading-estimate">5 min read · estimated</p><div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-materials.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="sodium-ion-electrolyte-design-high-rate-wide-temperature-safety">
-      <img src="assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-electrolyte-design-map.png" alt="Sodium-ion electrolyte design map for rate temperature lifetime gas and safety" loading="lazy" decoding="async">
+    <article data-reading-minutes="5" class="knowledge-card" data-article-slug="sodium-ion-electrolyte-design-high-rate-wide-temperature-safety">
+      <a class="knowledge-image-link" href="knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html" aria-label="Read Sodium-ion electrolyte design map for rate temperature lifetime gas and safety"><img src="assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-electrolyte-design-map.png" alt="Sodium-ion electrolyte design map for rate temperature lifetime gas and safety" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Sodium-Ion</p>
       <h2><a href="knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html">Sodium-Ion Electrolyte Design for High Rate, Wide Temperature, Long Life, and Safety</a></h2>
       <p>A coupled sodium-ion electrolyte framework for rate, temperature, cycle life, gas control, and complete-cell safety.</p>
-      <div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html">Read article</a></div>
+      <p class="oa-reading-estimate">5 min read · estimated</p><div class="related-link-list"><a href="knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="solid-state-electrolyte-materials">
-      <img src="assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powders films and discs" loading="lazy" decoding="async">
+    <article data-reading-minutes="8" class="knowledge-card" data-article-slug="solid-state-electrolyte-materials">
+      <a class="knowledge-image-link" href="knowledge/solid-state-electrolyte-materials.html" aria-label="Read Solid-state electrolyte powders films and discs"><img src="assets/images/solid-state-discs.jpg" alt="Solid-state electrolyte powders films and discs" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-state-electrolyte-materials.html">Solid-State Electrolyte Materials: Sulfide, Oxide, Halide, and Polymer Electrolyte Screening</a></h2>
       <p>Compare solid-state electrolyte material families by conductivity, particle size, moisture sensitivity, morphology, and interface compatibility.</p>
-      <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-materials.html">Read article</a></div>
+      <p class="oa-reading-estimate">8 min read · estimated</p><div class="related-link-list"><a href="knowledge/solid-state-electrolyte-materials.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="solid-state-electrolyte-screening-rd-to-pilot-line">
-      <img src="assets/images/solid-state/li6ps5cl-d50-2um-dls.jpg" alt="Solid-state electrolyte particle-size screening data" loading="lazy" decoding="async">
+    <article data-reading-minutes="7" class="knowledge-card" data-article-slug="solid-state-electrolyte-screening-rd-to-pilot-line">
+      <a class="knowledge-image-link" href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html" aria-label="Read Solid-state electrolyte particle-size screening data"><img src="assets/images/solid-state/li6ps5cl-d50-2um-dls.jpg" alt="Solid-state electrolyte particle-size screening data" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">From R&amp;D to Pilot Line: How to Screen Solid-State Electrolyte Materials</a></h2>
       <p>A staged screening workflow from powder specifications to pellet conductivity, composite compatibility, interface testing, and pilot validation.</p>
-      <div class="related-link-list"><a href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">Read article</a></div>
+      <p class="oa-reading-estimate">7 min read · estimated</p><div class="related-link-list"><a href="knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="sulfide-vs-oxide-vs-halide-solid-electrolytes">
-      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-sem.jpg" alt="Sulfide solid electrolyte SEM morphology" loading="lazy" decoding="async">
+    <article data-reading-minutes="8" class="knowledge-card" data-article-slug="sulfide-vs-oxide-vs-halide-solid-electrolytes">
+      <a class="knowledge-image-link" href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html" aria-label="Read Sulfide solid electrolyte SEM morphology"><img src="assets/images/solid-state/li55ps45cl15-d50-2um-sem.jpg" alt="Sulfide solid electrolyte SEM morphology" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Sulfide vs Oxide vs Halide Solid Electrolytes: Conductivity, Stability, and Processing Tradeoffs</a></h2>
       <p>Compare sulfide, oxide, and halide solid electrolytes for conductivity, stability, processing, high-voltage compatibility, and interface behavior.</p>
-      <div class="related-link-list"><a href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Read article</a></div>
+      <p class="oa-reading-estimate">8 min read · estimated</p><div class="related-link-list"><a href="knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="compare-solid-state-electrolyte-powders">
-      <img src="assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Solid-state electrolyte powder particle-size distribution" loading="lazy" decoding="async">
+    <article data-reading-minutes="9" class="knowledge-card" data-article-slug="compare-solid-state-electrolyte-powders">
+      <a class="knowledge-image-link" href="knowledge/compare-solid-state-electrolyte-powders.html" aria-label="Read Solid-state electrolyte powder particle-size distribution"><img src="assets/images/solid-state/li55ps45cl15-d50-2um-dls.jpg" alt="Solid-state electrolyte powder particle-size distribution" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/compare-solid-state-electrolyte-powders.html">How to Compare Solid-State Electrolyte Powders: Conductivity, Particle Size, Density, and Interface Testing</a></h2>
       <p>How to compare solid-state electrolyte powders using conductivity, particle-size distribution, pellet density, moisture, XRD, SEM, and interfaces.</p>
-      <div class="related-link-list"><a href="knowledge/compare-solid-state-electrolyte-powders.html">Read article</a></div>
+      <p class="oa-reading-estimate">9 min read · estimated</p><div class="related-link-list"><a href="knowledge/compare-solid-state-electrolyte-powders.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="mechanics-solid-state-electrolyte-lithium-dendrites">
-      <img src="assets/images/knowledge/mechanics-llzto-vickers-deflection.jpg" alt="Lithium dendrite deflection in LLZTO garnet electrolyte" loading="lazy" decoding="async">
+    <article data-reading-minutes="8" class="knowledge-card" data-article-slug="mechanics-solid-state-electrolyte-lithium-dendrites">
+      <a class="knowledge-image-link" href="knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html" aria-label="Read Lithium dendrite deflection in LLZTO garnet electrolyte"><img src="assets/images/knowledge/mechanics-llzto-vickers-deflection.jpg" alt="Lithium dendrite deflection in LLZTO garnet electrolyte" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html">Why Mechanics Matter in Solid-State Electrolyte Screening</a></h2>
       <p>Why solid-state electrolyte screening must consider fracture, grain boundaries, lithium penetration, pressure, and mechanical integrity.</p>
-      <div class="related-link-list"><a href="knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html">Read article</a></div>
+      <p class="oa-reading-estimate">8 min read · estimated</p><div class="related-link-list"><a href="knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="solid-liquid-hybrid-vs-all-solid-state-batteries">
-      <img src="assets/images/knowledge/ev-battery-topics/liquid-vs-all-solid-state-cell-architecture-en.jpg" alt="Liquid electrolyte and all-solid-state cell architecture comparison" loading="lazy" decoding="async">
+    <article data-reading-minutes="6" class="knowledge-card" data-article-slug="solid-liquid-hybrid-vs-all-solid-state-batteries">
+      <a class="knowledge-image-link" href="knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html" aria-label="Read Liquid electrolyte and all-solid-state cell architecture comparison"><img src="assets/images/knowledge/ev-battery-topics/liquid-vs-all-solid-state-cell-architecture-en.jpg" alt="Liquid electrolyte and all-solid-state cell architecture comparison" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html">Solid-Liquid Hybrid vs All-Solid-State Batteries: Architecture, Performance, and Safety</a></h2>
       <p>Compare hybrid and all-solid-state architectures by transport, wetting, pressure, durability, thermal behavior, and manufacturing questions.</p>
-      <div class="related-link-list"><a href="knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html">Read article</a></div>
+      <p class="oa-reading-estimate">6 min read · estimated</p><div class="related-link-list"><a href="knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="solid-state-sodium-batteries-halide-composite-electrolytes">
-      <img src="assets/images/knowledge/ev-battery-topics/solid-state-sodium-battery-targets-en.jpg" alt="Solid-state sodium battery electrolyte and cell targets" loading="lazy" decoding="async">
+    <article data-reading-minutes="3" class="knowledge-card" data-article-slug="solid-state-sodium-batteries-halide-composite-electrolytes">
+      <a class="knowledge-image-link" href="knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html" aria-label="Read Solid-state sodium battery electrolyte and cell targets"><img src="assets/images/knowledge/ev-battery-topics/solid-state-sodium-battery-targets-en.jpg" alt="Solid-state sodium battery electrolyte and cell targets" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Sodium-Ion</p>
       <h2><a href="knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html">Solid-State Sodium Batteries</a></h2>
       <p>Review sodium solid electrolytes, halide and composite concepts, flexible films, interface stability, and practical screening priorities.</p>
-      <div class="related-link-list"><a href="knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html">Read article</a></div>
+      <p class="oa-reading-estimate">3 min read · estimated</p><div class="related-link-list"><a href="knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="solid-state-lithium-sulfur-batteries-materials-challenges">
-      <img src="assets/images/knowledge/ev-battery-topics/solid-state-lithium-sulfur-performance-table-reconstructed-en.jpg" alt="Solid-state lithium-sulfur battery performance targets and tradeoffs" loading="lazy" decoding="async">
+    <article data-reading-minutes="3" class="knowledge-card" data-article-slug="solid-state-lithium-sulfur-batteries-materials-challenges">
+      <a class="knowledge-image-link" href="knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html" aria-label="Read Solid-state lithium-sulfur battery performance targets and tradeoffs"><img src="assets/images/knowledge/ev-battery-topics/solid-state-lithium-sulfur-performance-table-reconstructed-en.jpg" alt="Solid-state lithium-sulfur battery performance targets and tradeoffs" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html">Solid-State Lithium-Sulfur Batteries</a></h2>
       <p>Explore sulfur loading, composite cathodes, lithium metal, solid-electrolyte selection, pressure, interface stability, and practical cell metrics.</p>
-      <div class="related-link-list"><a href="knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html">Read article</a></div>
+      <p class="oa-reading-estimate">3 min read · estimated</p><div class="related-link-list"><a href="knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="fast-charge-all-weather-ev-battery-electrolytes">
-      <img src="assets/images/knowledge/ev-battery-topics/fast-charge-classification-and-module-targets-en.jpg" alt="Fast-charge and all-weather EV battery design targets" loading="lazy" decoding="async">
+    <article data-reading-minutes="3" class="knowledge-card" data-article-slug="fast-charge-all-weather-ev-battery-electrolytes">
+      <a class="knowledge-image-link" href="knowledge/fast-charge-all-weather-ev-battery-electrolytes.html" aria-label="Read Fast-charge and all-weather EV battery design targets"><img src="assets/images/knowledge/ev-battery-topics/fast-charge-classification-and-module-targets-en.jpg" alt="Fast-charge and all-weather EV battery design targets" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Materials</p>
       <h2><a href="knowledge/fast-charge-all-weather-ev-battery-electrolytes.html">Fast Charge and All-Weather EV Batteries</a></h2>
       <p>How electrolyte kinetics, lithium plating, thermal management, internal heating, and charging protocols interact in fast-charge and cold-weather EV batteries.</p>
-      <div class="related-link-list"><a href="knowledge/fast-charge-all-weather-ev-battery-electrolytes.html">Read article</a></div>
+      <p class="oa-reading-estimate">3 min read · estimated</p><div class="related-link-list"><a href="knowledge/fast-charge-all-weather-ev-battery-electrolytes.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="battery-materials-optimization-chemistry-cell-performance">
-      <img src="assets/images/knowledge/battery-materials-optimization/materials-process-interface-validation-chain.png" alt="Battery materials optimization chain from material properties to cell validation" loading="lazy" decoding="async">
+    <article data-reading-minutes="15" class="knowledge-card" data-article-slug="battery-materials-optimization-chemistry-cell-performance">
+      <a class="knowledge-image-link" href="knowledge/battery-materials-optimization-chemistry-cell-performance.html" aria-label="Read Battery materials optimization chain from material properties to cell validation"><img src="assets/images/knowledge/battery-materials-optimization/materials-process-interface-validation-chain.png" alt="Battery materials optimization chain from material properties to cell validation" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Commercialization</p>
       <h2><a href="knowledge/battery-materials-optimization-chemistry-cell-performance.html">Battery Materials Optimization: From Chemistry Choice to Validated Cell Performance</a></h2>
       <p>Why chemistry choice must be connected with material grade, electrode processing, electrolyte formulation, degradation modes, and validation evidence.</p>
-      <div class="related-link-list"><a href="knowledge/battery-materials-optimization-chemistry-cell-performance.html">Read article</a></div>
+      <p class="oa-reading-estimate">15 min read · estimated</p><div class="related-link-list"><a href="knowledge/battery-materials-optimization-chemistry-cell-performance.html">Read article</a></div>
       </div>
     </article>
-    <article class="knowledge-card" data-article-slug="automotive-battery-materials-roadmap">
-      <img src="assets/images/knowledge/ev-battery-topics/automotive-battery-material-roadmap-en.jpg" alt="Automotive battery materials roadmap" loading="lazy" decoding="async">
+    <article data-reading-minutes="5" class="knowledge-card" data-article-slug="automotive-battery-materials-roadmap">
+      <a class="knowledge-image-link" href="knowledge/automotive-battery-materials-roadmap.html" aria-label="Read Automotive battery materials roadmap"><img src="assets/images/knowledge/ev-battery-topics/automotive-battery-material-roadmap-en.jpg" alt="Automotive battery materials roadmap" loading="lazy" decoding="async"></a>
       <div class="knowledge-card-body">
       <p class="knowledge-card-category">Solid-State</p>
       <h2><a href="knowledge/automotive-battery-materials-roadmap.html">Automotive Battery Materials and Solid-State Commercialization Roadmap</a></h2>
       <p>Follow the transition from liquid lithium-ion cells to hybrid and commercial solid-state batteries, including interfaces, mechanics, manufacturing, cost, and validation.</p>
-      <div class="related-link-list"><a href="knowledge/automotive-battery-materials-roadmap.html">Read article</a></div>
+      <p class="oa-reading-estimate">5 min read · estimated</p><div class="related-link-list"><a href="knowledge/automotive-battery-materials-roadmap.html">Read article</a></div>
       </div>
     </article>
       <!-- GENERATED:ARTICLE-LIBRARY:END -->
@@ -521,19 +374,10 @@
     </div>
   </div>
 </section>
-</main>
-<footer class="footer"><div class="container footer-grid"><div><img src="assets/images/winigen-logo.png" alt="Winigen Materials logo"><h3>Winigen Materials</h3><p>Battery Materials & Electrochemical Components</p></div><div><h4>Location</h4><p>New Jersey, USA</p></div><div><h4>Contact</h4><p><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></p><p><a href="https://www.linkedin.com/company/118914606/">LinkedIn company page</a></p></div></div></footer>
-<script>
-(function () {
-  var host = window.location.hostname;
-  var isLocalDevelopment = host === 'localhost' || host === '127.0.0.1' || host === '::1' || host === '0.0.0.0' || host.endsWith('.localhost');
-  var dataSource = isLocalDevelopment
-    ? 'assets/js/knowledge-search-data.development.js?v=94c6b3aef1d6'
-    : 'assets/js/knowledge-search-data.js?v=f92dd2aadd2a';
-  document.write('<script src="' + dataSource + '?v=20260825-1"><\/script>');
-})();
-</script>
-<script src="assets/js/knowledge-search.js?v=012ec5390942"></script>
-<script src="assets/js/main.js?v=0609abf03815"></script>
-</body>
-</html>
+</div><section class="oa-container oa-stage-discussion" data-oa-stage-discussion><h2>From Technical Reading to Material Selection</h2><p>Discuss the material, documentation and evaluation requirements for your cell system.</p><a class="oa-button" href="/contact.html?inquiry_type=Technical%20Discussion&amp;product_interest=Battery%20material%20selection">Start a Technical Discussion →</a></section><aside class="oa-topic-sidebar" data-oa-knowledge-topics><div data-oa-reading-paths><h2>Start here</h2><ul><li><a href="/knowledge/lipf6-vs-lifsi-vs-litfsi.html">Choose an electrolyte salt</a></li><li><a href="/knowledge/coin-cell-to-pouch-cell-battery-material-validation.html">From material to full-cell validation</a></li><li><a href="/knowledge/compare-solid-state-electrolyte-powders.html">Compare solid-state powders</a></li></ul><h2>Curated guides</h2><ul><li><a href="/knowledge/electrolyte-additives-sei-cei.html">Additives and interfaces</a></li><li><a href="/knowledge/np-ratio-lithium-ion-battery-design.html">Electrode balancing</a></li><li><a href="/knowledge/sodium-ion-electrolyte-materials.html">Sodium-ion materials</a></li></ul><h2>Explore materials</h2><ul><li><a href="/products.html">Material catalog</a></li><li><a href="/products/custom-electrolyte-formulations.html">Electrolyte capabilities</a></li><li><a href="/quality.html">Technical documents</a></li></ul></div></aside></main><footer class="oa-footer"><div class="oa-container oa-footer-grid"><div><a class="oa-brand" href="/" aria-label="Winigen Materials home"><img src="/assets/images/winigen-logo.png" alt="Winigen Materials logo" width="66" height="58"><span>WINIGEN <b>MATERIALS</b><small>BATTERY MATERIALS &amp; ELECTROCHEMISTRY</small></span></a><p>Specialty battery materials and technical support for research and pilot-scale evaluation.</p><p class="oa-mailing-address">New Jersey, USA</p></div><div><h2>Explore</h2><a href="/products.html">Material catalog</a><a href="/products/custom-electrolyte-formulations.html">Electrolyte solutions</a><a href="/knowledge.html" aria-current="page">Knowledge Center</a></div><div><h2>Technical support</h2><a href="/contact.html?inquiry_type=Request+for+Quote">Request a quotation</a><a href="/quality.html">Quality &amp; Documents</a><a href="/policies/returns-refunds.html">Returns &amp; Refunds</a><a href="/contact.html">Contact</a><a href="mailto:contact@winigenmaterials.com">contact@winigenmaterials.com</a></div><div><h2>Company</h2><a href="/about.html">About Winigen</a><a href="/applications.html">Applications</a><a href="/services.html">Services</a><a href="https://www.linkedin.com/company/118914606/">LinkedIn</a></div></div><div class="oa-container oa-footer-base"><span>© Winigen Materials</span><span>Battery materials · Technical support · R&amp;D to pilot</span></div></footer><script src="assets/js/main.js?v=86badf3e00e3"></script>
+<script src="/assets/js/knowledge-search-data.js?v=f92dd2aadd2a" defer></script>
+<script src="/assets/js/knowledge-search.js?v=1fea4125ac78" defer></script><script src="/assets/js/product-search-index.js?v=46b6b5e758a8" defer></script>
+<script src="/assets/js/product-search.js?v=3addfe3926fa" defer></script>
+<script src="/assets/js/option-a-search.js?v=5d4ac36d2639" defer></script>
+<script src="/assets/js/featured-session.js?v=9640936b18f5" defer></script>
+<script src="/assets/js/option-a.js?v=07b376f5387d" defer></script><script src="/assets/js/option-a-2f.js?v=56066c2722d2" defer></script></body></html>

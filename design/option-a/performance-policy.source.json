@@ -1,0 +1,77 @@
+{
+  "publicationRights": {
+    "status": "AUTHORIZED",
+    "authority": "Wayne's explicit instruction on 2026-11-12",
+    "scope": "Winigen technical analysis and website presentation of supplied experimental data; no standard-product identity is established"
+  },
+  "figures": [
+    {
+      "id": "hc-nfpp",
+      "asset": "/assets/images/electrolyte-performance/winigen-hc-nfpp-45c-cycling.png",
+      "title": "Hard Carbon / NFPP Sodium-Ion Cycling at 45 °C",
+      "alt": "Ordinary and Winigen Na-ion electrolytes, two cells each: hard-carbon anode / NFPP cathode; capacity retention versus cycle number at 45 °C, 0.5C charge / 1C discharge.",
+      "system": "Hard-carbon anode / NFPP cathode; sodium-ion cells.",
+      "comparison": "Ordinary Na-ion electrolyte and Winigen Na-ion electrolyte, two cells per group.",
+      "conditions": "45 °C; 0.5C charge / 1C discharge.",
+      "measurement": "Cycle number versus capacity retention (%), using the source-provided fractional retention multiplied by 100. The source does not identify the reference capacity used for normalization; the traces are not independently re-normalized.",
+      "limitations": "Editable chart-cache data, not instrument raw records; no smoothing or extrapolation. Different trace end cycles must not be compared as equal-duration performance. No specific standard Winigen product is established as the tested electrolyte.",
+      "observations": "At cycle 250, Ordinary Na-ion electrolyte cells retain 88.66% and 88.07%; Winigen Na-ion electrolyte cells retain 98.74% and 98.71%.",
+      "publicCandidate": true,
+      "summary": "Hard-carbon anode / NFPP cathode; Ordinary and Winigen Na-ion electrolytes, two cells each, at 45 °C and 0.5C charge / 1C discharge.",
+      "webAsset": "/assets/images/electrolyte-performance/winigen-hc-nfpp-45c-cycling-web.svg",
+      "mobileAsset": "/assets/images/electrolyte-performance/winigen-hc-nfpp-45c-cycling-mobile.svg",
+      "introSystem": "Hard-carbon anode / NFPP cathode · sodium-ion cells",
+      "introConditions": "45 °C · 0.5C charge / 1C discharge",
+      "compactLimitation": "Capacity retention (%) versus cycle number · two cells per electrolyte.",
+      "publicMeasurement": "Capacity retention (%) versus cycle number; original fractional retention records are displayed as percentages without re-normalizing the traces."
+    },
+    {
+      "id": "lnmo-cold",
+      "asset": "/assets/images/electrolyte-performance/winigen-lnmo-minus20c-discharge.png",
+      "title": "LNMO-Based Cells: Discharge Profiles at 25 °C and −20 °C",
+      "alt": "LNMO-based cells: groups 1004, 1005 and 1008 at minus 20 °C; group 1009 at 25 °C. Two traces per group, 0.2C discharge; voltage versus absolute discharge capacity.",
+      "system": "LNMO high-voltage cathode-based cells; anode and cell format are not identified.",
+      "comparison": "1004, 1005 and 1008: −20 °C discharge; 1009: 25 °C discharge. Two traces per group.",
+      "conditions": "0.2C discharge. Groups 1004, 1005 and 1008 at −20 °C; group 1009 at 25 °C. Observed endpoints: 3.0 V.",
+      "measurement": "Cell voltage (V) versus absolute discharge capacity (mAh). No normalization to active-material mass, electrode area or reference cell is applied.",
+      "limitations": "Eight exact paired chart-cache traces. Different absolute capacities alone do not establish electrolyte superiority without matched cell design and protocol. This discharge dataset is distinct from the unresolved 25 °C cycling cache. No tested formulation is linked to a standard Winigen product.",
+      "observations": "At 3.0 V, group 1009 (25 °C) reaches 973.7 and 959.0 mAh; group 1004 (−20 °C) reaches 905.4 and 919.8 mAh.",
+      "publicCandidate": true,
+      "summary": "LNMO-based cells, two traces per group: 1004 / 1005 / 1008 at −20 °C and 1009 at 25 °C; 0.2C discharge; absolute capacity (mAh) versus cell voltage (V).",
+      "webAsset": "/assets/images/electrolyte-performance/winigen-lnmo-minus20c-discharge-web.svg",
+      "mobileAsset": "/assets/images/electrolyte-performance/winigen-lnmo-minus20c-discharge-mobile.svg",
+      "introSystem": "LNMO-based cells · 0.2C discharge",
+      "introConditions": "1004, 1005 and 1008: −20 °C · 1009: 25 °C",
+      "compactLimitation": "Cell voltage (V) versus absolute discharge capacity (mAh) · two traces per group.",
+      "publicSystem": "LNMO-based cells."
+    },
+    {
+      "id": "gf-temperature",
+      "asset": null,
+      "title": "Temperature response: cell-system linkage unconfirmed",
+      "alt": "KL5017 versus KL5018 temperature-table records, three samples per group: discharge retention relative to each sample's own room-temperature capacity, from minus 40 through plus 55 degrees Celsius, shown as means with sample standard deviations. Anode/cathode pairing, charging and discharge rates and voltage window are unconfirmed.",
+      "system": "Anode/cathode pairing for the temperature-table records is unconfirmed. Companion slides discuss a silicon-oxide cell program, but do not establish that the table uses the same cells or cathode.",
+      "comparison": "KL5017 versus KL5018, three table samples per group. The formulation labels are retained without disclosing or inferring recipes.",
+      "conditions": "Discharge observations at −40, −30, −20, −10, 0, room temperature and +55 °C. The exact room temperature, charge/discharge rates, voltage limits and conditioning protocol are not supplied.",
+      "measurement": "Discharge retention (%) = each sample's displayed capacity / that sample's room-temperature capacity × 100; group mean ± sample standard deviation, n=3. Absolute capacity units are not stated in the table and are not invented. Temperature observations are categorical; room temperature has no assigned numeric value. Separate unconnected markers are used; spacing does not imply temperature intervals.",
+      "limitations": "Manually transcribed table, not instrument raw records. For KL5017 sample 249 at −10 °C, displayed capacities give 23.49 / 26.56 × 100 = 88.44%, while the source reports 85.8%; the figure explicitly uses the recalculation and preserves this conflict. No connecting lines or numeric interpolation through the unknown room-temperature category; error bars are descriptive sample SD, not confidence intervals or a significance claim. No standard Winigen product association is established.",
+      "observations": "At −40 °C, recalculated mean retention is 70.42 ± 1.94% for KL5018 and 64.07 ± 3.86% for KL5017 (mean ± sample SD, n=3 each). This is descriptive small-sample evidence, not a statistical-significance claim.",
+      "publicCandidate": false,
+      "internalReviewAsset": "winigen-gf-temperature-retention.png"
+    }
+  ],
+  "scientificIdentityConfirmation": {
+    "authority": "Wayne, explicit Checkpoint Option A design refinement instructions",
+    "nfpp": {
+      "4V": "Ordinary Na-ion electrolyte",
+      "8V": "Winigen Na-ion electrolyte"
+    },
+    "lnmoDischargeCelsius": {
+      "1004": -20,
+      "1005": -20,
+      "1008": -20,
+      "1009": 25
+    },
+    "note": "Source codes and original numerical records are retained unchanged internally. No standard catalog SKU or LNMO formulation identity is inferred."
+  }
+}

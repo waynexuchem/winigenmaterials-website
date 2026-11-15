@@ -141,7 +141,7 @@ test('generated MB page, Product offers, TDS, search, catalog, sitemap, and Merc
   assert.match(html, /"name": "Grade",\s*"value": "Battery Grade"/);
   assert.match(html, /Battery-grade MB is a specialized low-moisture electrolyte solvent with limited commercial availability compared with general laboratory grades\./);
   assert.match(html, /Need ≥2\.5 kg, recurring supply, alternate packaging, or project pricing\? <a[^>]+>Request a quote\.<\/a>/);
-  assert.match(html, /alt="Methyl Butyrate \(MB\) chemical structure"/);
+  assert.match(html, /alt="Chemical structure of methyl butyrate \(methyl butanoate\), CAS 623-42-7"/);
   assert.match(html, /Winigen_MB_Battery_Grade_TDS\.pdf/);
   assert.doesNotMatch(html, /Winigen_MB_Representative_TDS\.pdf/);
   assert.match(html, /"@type":\s*"Product"/);
@@ -157,7 +157,7 @@ test('generated MB page, Product offers, TDS, search, catalog, sitemap, and Merc
     assert.ok(cardHeading, 'MB card has an identity heading');
     assert.match(cardHeading, /<span\b[^>]*class="product-card__identifier"[^>]*>MB<\/span>/);
     assert.match(cardHeading, /<span\b[^>]*class="product-card__chemical-name"[^>]*>Methyl Butyrate<\/span>/);
-    assert.match(card, /<strong>Grade:<\/strong> Battery Grade<\/li><li><strong>Purity:<\/strong> ≥99\.8%<\/li><li><strong>Water:<\/strong> &lt;20 ppm/);
+    assert.match(card, /<dt>Grade<\/dt><dd>Battery grade<\/dd><\/div><div><dt>Purity<\/dt><dd>≥99\.8%<\/dd><\/div><div><dt>Water<\/dt><dd>&lt;20 ppm<\/dd>/);
     assert.doesNotMatch(card, /<strong>Alternate name:<\/strong>/);
     const order = [
       'ethyl-propionate-ep',

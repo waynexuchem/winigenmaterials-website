@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "products": [
+    "lithium-bis-fluorosulfonyl-imide-lifsi",
+    "lithium-hexafluorophosphate-lipf6",
+    "1m-lipf6-ec-emc-3-7-1-vc-electrolyte",
+    "dimethyl-carbonate-dmc",
+    "vinylene-carbonate-vc",
+    "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+    "ti3c2tx-mxene-multilayer-powder",
+    "latp-d-50-0-3-um",
+    "gsh04",
+    "wbm-p07-boehmite-powder",
+    "lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt",
+    "sodium-hexafluorophosphate-napf-6"
+  ],
+  "selectionBasis": "Canonical identities, approved existing website visuals and published specifications; active materials await approved imagery.",
+  "notes": "LATP remains an owner-approved representative illustration, not verified grade-specific photography. Bottles are representative packaging, not lot-specific."
+}

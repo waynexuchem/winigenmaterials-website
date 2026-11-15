@@ -30,7 +30,7 @@ const shell = (p,body,reference=detailReference) => {
   styles=styles.replace(/\.family-(?:layout|card|list)[^{]*\{[^}]*\}/g,'');
   const links=[...reference.matchAll(/<link\b[^>]*>/g)].map(m=>m[0]).filter(x=>!x.includes('canonical') && !x.includes('ecommerce.css') && !x.includes('mxene.css')).join('\n');
   const commerceStyle=reference.match(/<link[^>]+href="[^"]*ecommerce\.css[^"]*"[^>]*>/)[0];
-  const header=reference.match(/<header class="header">[\s\S]*?<\/header>/)[0];
+  const header=reference.match(/<header class="(?:header|oa-header)">[\s\S]*?<\/header>/)[0];
   const footer=reference.match(/<footer\b[\s\S]*?<\/footer>/)[0];
   const script=reference.match(/<script src="[^\"]*assets\/js\/main\.js[^\"]*"><\/script>/)[0].replace(/main\.js(?:\?v=[^"\s]*)?/, `main.js?v=${mainJsVersion}`);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(p.name)} | Winigen Materials</title><meta name="description" content="${esc(p.description)}"><meta name="robots" content="index,follow,max-image-preview:large">${links}${styles}${commerceStyle}<link rel="stylesheet" href="../assets/css/mxene.css?v=${mxeneCssVersion}"></head><body>${header}<main>${body}</main>${footer}${script}<script src="../assets/js/mxene-presentation.js" defer></script></body></html>\n`;

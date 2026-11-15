@@ -45,7 +45,7 @@ test('generated sitemap is well formed and carries the Google image namespace', 
   const xml = await readFile(resolve(siteRoot, 'sitemap.xml'), 'utf8');
   const entries = parseAndValidateSitemapXml(xml);
   assert.match(xml, new RegExp(`xmlns:image="${IMAGE_NAMESPACE.replace(/[./]/g, '\\$&')}"`));
-  assert.equal(entries.length, 170); // Three additional canonical RFQ products.
+  assert.equal(entries.length, 171); // Existing 170 canonical pages plus the approved returns policy.
   assert.ok(entries.some(entry => entry.images.length));
 });
 

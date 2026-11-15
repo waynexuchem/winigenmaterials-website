@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="53" viewBox="0 0 70 53" role="img" aria-label="sodium-hexafluorophosphate-napf-6 molecular structure"><title>sodium-hexafluorophosphate-napf-6 — verified molecular structure</title>
+<!-- END OF HEADER -->
+<path class='bond-0 atom-0 atom-1' d='M 13.6,31.2 L 16.3,29.7' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 16.3,29.7 L 18.9,28.1' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 24.0,32.3 L 24.0,35.1' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 24.0,35.1 L 24.0,38.0' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 29.2,28.3 L 31.8,29.7' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 31.8,29.7 L 34.4,31.2' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 24.0,20.2 L 24.0,17.3' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 24.0,17.3 L 24.0,14.5' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-1 atom-5' d='M 30.3,21.6 L 32.3,20.4' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-1 atom-5' d='M 32.3,20.4 L 34.4,19.2' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-1 atom-6' d='M 18.9,22.3 L 16.3,20.8' style='fill:none;fill-rule:evenodd;stroke:#7A5128;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-1 atom-6' d='M 16.3,20.8 L 13.6,19.2' style='fill:none;fill-rule:evenodd;stroke:#286349;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<text x='5.6' y='39.1' class='atom-0' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='21.0' y='30.2' class='atom-1' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#7A5128' >P</text>
+<text x='27.9' y='26.2' class='atom-1' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#7A5128' >-</text>
+<text x='21.0' y='48.0' class='atom-2' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='36.4' y='39.1' class='atom-3' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='21.0' y='12.4' class='atom-4' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='36.4' y='21.3' class='atom-5' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='5.6' y='21.3' class='atom-6' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#286349' >F</text>
+<text x='48.2' y='30.2' class='atom-7' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >N</text>
+<text x='55.1' y='30.2' class='atom-7' style='font-size:10px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >a</text>
+<text x='60.4' y='26.2' class='atom-7' style='font-size:6px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:Arial,Helvetica,sans-serif;text-anchor:start;fill:#663D7C' >+</text>
+</svg>

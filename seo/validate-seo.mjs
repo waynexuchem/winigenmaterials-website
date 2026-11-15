@@ -1,3 +1,4 @@
+import {blockAt} from '../design/option-a/html-blocks.mjs';
 import { access, readFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { dirname, extname, relative, resolve } from 'node:path';
@@ -12,7 +13,8 @@ import {
   parseAndValidateSitemapXml,
   robotsDirectives
 } from './image-discovery.mjs';
-import { isApprovedPublicTdsPath } from './tds-path-policy.mjs';
+import {websiteImageAssignments} from '../design/option-a/website-images.mjs';
+import { isApprovedPublicTdsPath, descriptiveTdsLinkCount } from './tds-path-policy.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDirectory, '..');
@@ -124,7 +126,7 @@ async function listHtml(directory) {
   for (const entry of entries) {
     const full = resolve(directory, entry.name);
     if (entry.isDirectory()) {
-      if (directory === siteRoot && ['products', 'knowledge'].includes(entry.name)) files.push(...await listHtml(full));
+      if (directory === siteRoot && ['products', 'knowledge', 'policies'].includes(entry.name)) files.push(...await listHtml(full));
     } else if (entry.isFile() && extname(entry.name) === '.html') files.push(relative(siteRoot, full));
   }
   return files;
@@ -255,7 +257,8 @@ for (const product of productSource.products) {
     if (products.length !== 1) errors.push(`${pagePath}: direct-purchase page expected one Product entity, found ${products.length}.`);
     const productEntity = products[0];
     const expectedOffers = activeVariants(product);
-    const expectedImage = product.image ? new URL(product.image, siteUrl).href : '';
+    const approvedWebsiteImage=websiteImageAssignments[product.slug]?.image;
+    const expectedImage = approvedWebsiteImage ? new URL(approvedWebsiteImage,siteUrl).href : product.image ? new URL(product.image, siteUrl).href : '';
     const productImages = Array.isArray(productEntity?.image)
       ? productEntity.image
       : [productEntity?.image].filter(Boolean);
@@ -311,7 +314,7 @@ for (const product of productSource.products) {
       let documentBytes;
       try { documentBytes = await readFile(documentPath); }
       catch { errors.push(`${pagePath}: TDS file does not exist: ${tds.path}.`); }
-      if (!isApprovedPublicTdsPath(tds.path)) {
+      if (!isApprovedPublicTdsPath(tds.path, product)) {
         errors.push(`${pagePath}: TDS path does not use the approved public naming convention: ${tds.path}.`);
       }
       if (!/^[a-f0-9]{64}$/.test(tds.sha256 || '')) {
@@ -322,30 +325,32 @@ for (const product of productSource.products) {
       const expectedHref = `..${tds.path}`;
       const tdsLinkCount = (productHtml.match(new RegExp(`href="${expectedHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`, 'g')) || []).length;
       if (tdsLinkCount !== 2) errors.push(`${pagePath}: expected two TDS links, found ${tdsLinkCount}.`);
-      if ((productHtml.match(/Technical Data Sheet \(PDF\)/g) || []).length !== 2) errors.push(`${pagePath}: expected two descriptive TDS actions.`);
-      if (!/<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div><\/aside>/i.test(productHtml)) errors.push(`${pagePath}: MXene-style TDS action is not separated below the product image.`);
+      if (descriptiveTdsLinkCount(productHtml, tds.representativeOnly) !== 2) errors.push(`${pagePath}: expected two descriptive TDS actions.`);
+      if (!/<aside class="structure-panel product-tds-media"[^>]*><div class="product-visual-frame">[\s\S]*?<img[^>]*>[\s\S]*?<\/div><div class="product-tds-action"><a class="btn secondary product-quick-tds" data-product-quick-tds="true"[^>]*>Technical Data Sheet \(PDF\)<\/a><\/div>(?:<div class="oa-frame-brand"[\s\S]*?<\/div>)?<div class="oa-key-panel"[\s\S]*?<\/div><\/aside>/i.test(productHtml)) errors.push(`${pagePath}: MXene-style TDS action is not separated below the product image.`);
       if (!/data-product-tds-section="true"/i.test(productHtml)) errors.push(`${pagePath}: lower quality/documentation section is missing.`);
       const finalizedAdditive = product.qualityDocumentation?.specificationBasis === 'finalized-tds';
-      if (!(finalizedAdditive ? /Request Current Lot COA<\/a>/i : /Request Current Lot COA \/ SDS/i).test(productHtml)) errors.push(`${pagePath}: lot-specific COA/SDS action is missing.`);
-      if (finalizedAdditive) {
+      const approvedTdsRelease = product.qualityDocumentation?.specificationBasis === 'approved-tds-release';
+      if (!tds.representativeOnly && !(finalizedAdditive ? /Request Current Lot COA<\/a>/i : /Request Current Lot COA \/ SDS/i).test(productHtml)) errors.push(`${pagePath}: lot-specific COA/SDS action is missing.`);
+      if (finalizedAdditive || approvedTdsRelease) {
         if (!/Technical specifications and representative quality-control data are available in the TDS\./.test(productHtml) || !/Lot-specific Certificate of Analysis and SDS are available upon request\./.test(productHtml)) errors.push(`${pagePath}: finalized additive documentation language is incomplete.`);
       } else if (tds.includesRepresentativeResults === false) {
-        if (!/without publishing representative-lot analytical results/i.test(productHtml) || !/lot-specific COA governs material supplied/i.test(productHtml)) {
+        if (!/without publishing representative-lot analytical results/i.test(productHtml) || !/lot-specific (?:COA|Certificate of Analysis) governs material supplied/i.test(productHtml)) {
           errors.push(`${pagePath}: specification-only TDS and lot-specific COA distinction is incomplete.`);
         }
-      } else if (!/representative results are lot-specific/i.test(productHtml) || !/lot-specific COA governs material supplied/i.test(productHtml)) {
+      } else if (!/representative results are lot-specific/i.test(productHtml) || !/lot-specific (?:COA|Certificate of Analysis) governs material supplied/i.test(productHtml)) {
         errors.push(`${pagePath}: TDS and lot-specific COA distinction is incomplete.`);
       }
       if (!/href="\.\.\/quality\.html"/i.test(productHtml)) errors.push(`${pagePath}: general quality documentation link is missing.`);
       const requestedKeys = product.qualityDocumentation?.keySpecifications || [];
       const propertiesByName = new Map((product.additionalProperty || []).map(item => [item.name?.toLowerCase(), item]));
-      if (!requestedKeys.length || requestedKeys.length > (finalizedAdditive ? 10 : 6)) errors.push(`${pagePath}: TDS key-specification selection must contain 1–6 fields.`);
+      if (!tds.representativeOnly && (!requestedKeys.length || requestedKeys.length > ((finalizedAdditive || approvedTdsRelease) ? 10 : 6))) errors.push(`${pagePath}: TDS key-specification selection exceeds the allowed range or is empty.`);
       for (const key of requestedKeys) {
         if (!propertiesByName.has(String(key).toLowerCase())) errors.push(`${pagePath}: selected key specification is absent from canonical product data: ${key}.`);
       }
       const schemaProperties = products[0]?.additionalProperty || [];
       for (const specification of (product.additionalProperty || []).filter(item => !/^(?:availability|commercial availability)$/i.test(item.name))) {
-        if (!schemaProperties.some(item => item.name === specification.name && item.value === specification.value)) {
+        const expectedName=product.activeMaterialIdentity&&['CAS Number','Formula'].includes(specification.name)?'Active-material '+specification.name:specification.name;
+        if (!schemaProperties.some(item => item.name === expectedName && item.value === specification.value)) {
           errors.push(`${pagePath}: Product schema contradicts or omits ${specification.name}: ${specification.value}.`);
         }
       }
@@ -368,7 +373,8 @@ for (const product of productSource.products) {
         if (!tds && (!productHtml.includes(specification.name) || !productHtml.includes(specification.value))) {
           errors.push(`${pagePath}: visible acceptance specification is missing ${specification.name}: ${specification.value}.`);
         }
-        if (!schemaProperties.some(item => item.name === specification.name && item.value === specification.value)) {
+        const expectedName=product.activeMaterialIdentity&&['CAS Number','Formula'].includes(specification.name)?'Active-material '+specification.name:specification.name;
+        if (!schemaProperties.some(item => item.name === expectedName && item.value === specification.value)) {
           errors.push(`${pagePath}: Product schema contradicts or omits ${specification.name}: ${specification.value}.`);
         }
       }
@@ -447,7 +453,7 @@ for (const product of productSource.products.filter(entry => entry.commerceStatu
     ? 'Shipping review required'
     : 'Online ordering';
   if (!article) errors.push(`products.html: missing card for ${product.slug}.`);
-  else if (!article.includes(expectedCommerceLabel) || !/>Add to Cart</i.test(article) || !/data-static-commerce="true"/i.test(article)) {
+  else if ((expectedCommerceLabel === 'Shipping review required' && !article.includes(expectedCommerceLabel)) || !/data-oa-card-purchase/.test(article) || !/>Add to Cart</i.test(article) || !/data-static-commerce="true"/i.test(article)) {
     errors.push(`products.html: ${product.slug} lacks static direct-commerce content.`);
   }
 }
@@ -456,9 +462,11 @@ for (const product of productSource.products.filter(entry => entry.commerceStatu
   const intentionallyDeemphasized = ['SECONDARY', 'SUBORDINATE'].includes(product.catalogPresentation);
   if (!article) {
     if (!intentionallyDeemphasized) errors.push(`products.html: missing RFQ card for ${product.slug}.`);
-  } else if (intentionallyDeemphasized) {
-    errors.push(`products.html: ${product.slug} remains an equally prominent top-level product card.`);
   } else {
+    if (intentionallyDeemphasized) {
+      const group=productsHtml.match(new RegExp('<div class="oa-coating-group" data-oa-coating-tier="'+product.catalogPresentation+'">([\\s\\S]*?)(?=<div class="oa-coating-group"|</section>)'))?.[1]||'';
+      if(!group.includes(product.slug+'.html'))errors.push(`products.html: ${product.slug} must remain in its subordinate coating group.`);
+    }
     if (!(product.mxene ? /product-card__mode[^>]*>Request Quote</i : /Available by RFQ/i).test(article) || !/Request Quote/i.test(article)) errors.push(`products.html: ${product.slug} lacks explicit RFQ status or CTA.`);
     if (/data-static-commerce="true"|Online ordering|Add to Cart/i.test(article)) errors.push(`products.html: ${product.slug} exposes contradictory direct-commerce content.`);
   }
@@ -480,13 +488,15 @@ for (const product of coatingProducts) {
   if (expectedCoatingCategories.get(product.sku) !== product.category) errors.push(`${product.slug}: functional-coating category mismatch.`);
   if (ecommerceBySlug.has(product.slug)) errors.push(`${product.slug}: functional-coating RFQ product leaked into ecommerce catalog.`);
 }
-const coatingSection = productsHtml.match(/<section id="functional-coatings"[\s\S]*?<\/section>/i)?.[0] || '';
+const coatingSection = blockAt(productsHtml, productsHtml.indexOf('<section id="functional-coatings"'), 'section').html;
 for (const required of ['wbm-p07-boehmite-powder.html', 'wal-p05-alumina-coating-powder.html', 'mesoporous-alumina-materials.html', 'Discuss a Ceramic Coating Requirement']) {
   if (!coatingSection.includes(required)) errors.push(`products.html: functional-coatings hierarchy is missing ${required}.`);
 }
 for (const subordinate of ['wal-m07-mesoporous-alumina.html', 'wal-m300-mesoporous-alumina.html', 'wal-m400-mesoporous-alumina.html']) {
-  if (coatingSection.includes(subordinate)) errors.push(`products.html: subordinate grade remains in the top-level coating grid: ${subordinate}.`);
+  const nested = coatingSection.match(/<div class="oa-coating-group" data-oa-coating-tier="SUBORDINATE">[\s\S]*?(?=<div class="oa-coating-group"|$)/)?.[0] || '';
+  if (!nested.includes(subordinate)) errors.push(`products.html: subordinate coating grade must remain in the mesoporous subgroup: ${subordinate}.`);
 }
+
 
 const homeSchemas = schemasByPath.get('index.html') || [];
 const homeOrganizations = homeSchemas.flatMap(schema => collectType(schema, 'Organization'))

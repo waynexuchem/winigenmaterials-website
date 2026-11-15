@@ -1,3 +1,4 @@
+import {publicCopy} from '../design/option-a/public-copy.mjs';
 import { cleanProductImage } from './product-image-presentation.mjs';
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
@@ -149,7 +150,7 @@ function merchantDescription(product, packageLabel) {
   const parts = [product.description?.trim()];
   if (grade && !product.description?.toLowerCase().includes(grade.toLowerCase())) parts.push(`${grade}.`);
   parts.push(`Package size: ${packageLabel}.`);
-  return parts.filter(Boolean).join(' ');
+  return publicCopy(parts.filter(Boolean).join(' '));
 }
 
 function renderVariantOption(label) {

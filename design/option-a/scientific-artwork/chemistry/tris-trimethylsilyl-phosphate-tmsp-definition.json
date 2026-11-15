@@ -1,0 +1,89 @@
+{
+  "slug": "tris-trimethylsilyl-phosphate-tmsp",
+  "name": "Tris(trimethylsilyl) phosphate (TMSP)",
+  "cas": "10497-05-9",
+  "smiles": "C[Si](C)(C)OP(=O)(O[Si](C)(C)C)O[Si](C)(C)C",
+  "inchiKey": "QJMMCGKXBZVAEI-UHFFFAOYSA-N",
+  "formula": "C9H27O4PSi3",
+  "coordinates": {
+    "5": [
+      0.0,
+      0.0
+    ],
+    "6": [
+      0.0,
+      1.65
+    ],
+    "4": [
+      1.34233937586588,
+      0.7749999999999999
+    ],
+    "1": [
+      1.34233937586588,
+      2.325
+    ],
+    "0": [
+      2.79233937586588,
+      2.325
+    ],
+    "2": [
+      1.34233937586588,
+      3.7750000000000004
+    ],
+    "3": [
+      -0.10766062413412003,
+      2.325
+    ],
+    "7": [
+      -1.34233937586588,
+      0.7749999999999999
+    ],
+    "8": [
+      -2.68467875173176,
+      -3.3306690738754696e-16
+    ],
+    "9": [
+      -3.4096787517317595,
+      1.2557368354874359
+    ],
+    "10": [
+      -3.9404155872191957,
+      -0.7250000000000004
+    ],
+    "11": [
+      -1.9596787517317598,
+      -1.2557368354874363
+    ],
+    "12": [
+      -2.847303808017596e-16,
+      -1.55
+    ],
+    "13": [
+      1.3423393758658793,
+      -2.3250000000000006
+    ],
+    "14": [
+      0.6173393758658786,
+      -3.5807368354874365
+    ],
+    "15": [
+      2.598076211353315,
+      -3.050000000000001
+    ],
+    "16": [
+      2.067339375865879,
+      -1.0692631645125643
+    ]
+  },
+  "sourceURLs": {
+    "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/cids/JSON",
+    "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+    "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/synonyms/JSON",
+    "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/SDF?record_type=2d"
+  },
+  "tool": "RDKit 2025.09.3",
+  "operations": "2D coordinates only; graph, bond orders, charges and fragments unchanged",
+  "status": "APPROVED_WEBSITE_LAYOUT_CHECKPOINT_1CB",
+  "svgSHA256": "6518d32a03e65be2109de78e5c17bf3dc8d31ea9bc1d088a0d09ae7f561a553d",
+  "identityReview": "Committed approved graph retained; RDKit sanitization and MOL round-trip; primary chemical references rechecked; no connectivity changes"
+}

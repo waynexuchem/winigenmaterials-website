@@ -1,0 +1,782 @@
+{
+  "index.html": {
+    "title": "Winigen Materials | Battery Materials & Electrolyte Components",
+    "description": "Winigen Materials supplies battery-grade electrolyte salts, solvents, additives, solid-state electrolytes, and active materials for energy-storage R&D, with selected research packages available online.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/automotive-battery-materials-roadmap.html": {
+    "title": "Automotive Battery Materials Roadmap: From Liquid Electrolytes to Commercial Solid-State Batteries | Winigen Materials",
+    "description": "Explore the automotive battery materials roadmap from liquid lithium-ion and hybrid cells to commercial solid-state batteries, including interfaces, manufacturing, active materials, sodium-ion, and lithium-sulfur.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/battery-materials-optimization-chemistry-cell-performance.html": {
+    "title": "Battery Materials Optimization: From Chemistry Choice to Validated Cell Performance | Winigen Materials",
+    "description": "A technical framework for battery materials optimization, connecting chemistry choice with electrode processing, electrolyte formulation, interphase control, degradation modes, and pouch-cell validation.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/beyond-np-ratio-spatial-reaction-uniformity.html": {
+    "title": "Beyond N/P Ratio: Electrode Balancing Is Fundamentally a Problem of Spatial Reaction Uniformity | Winigen Materials",
+    "description": "Why N/P ratio is necessary but insufficient: lithium plating, fast-charge limits, silicon aging, and manufacturing variation depend on local lithium-acceptance margin and spatial reaction uniformity.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/cell-architecture.html": {
+    "title": "Cell Architecture Knowledge | Winigen Materials",
+    "description": "Cell architecture knowledge guides covering liquid, hybrid, and all-solid-state batteries, sulfide, oxide, and halide electrolytes, lithium-sulfur systems, solid-state sodium, and dendrite mechanics.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/coin-cell-to-pouch-cell-battery-material-validation.html": {
+    "title": "From Coin Cell to Pouch Cell, Part 1: How to Validate Battery Materials Before Scale-Up | Winigen Materials",
+    "description": "A practical guide to validating battery salts, solvents, additives, silicon anodes, lithium metal, and solid-state materials through wetting, formation, pressure, gas, swelling, impedance, and QC before pouch-cell scale-up.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/coin-cell-to-pouch-cell-part-2-electrolyte-wetting-gas-formation.html": {
+    "title": "From Coin Cell to Pouch Cell, Part 2: Why Wetting, Gas, and Formation Change Battery Material Rankings | Winigen Materials",
+    "description": "Why battery materials that perform well in coin cells may rank differently in pouch cells due to electrolyte wetting, E/C ratio, formation, gas generation, swelling, pressure, and impedance.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/commercialization.html": {
+    "title": "Battery Commercialization Knowledge | Winigen Materials",
+    "description": "Battery commercialization knowledge guides covering automotive battery roadmaps, solid-state commercialization, pilot validation, manufacturing readiness, scale-up risks, and market-facing battery material strategy.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/compare-solid-state-electrolyte-powders.html": {
+    "title": "How to Compare Solid-State Electrolyte Powders: Conductivity, Particle Size, Density, and Interface Testing | Winigen Materials",
+    "description": "Learn how to compare solid-state electrolyte powders using ionic conductivity, electronic conductivity, particle-size distribution, pellet density, moisture content, XRD, SEM, and lithium-metal interface testing.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/electrolyte-additives-sei-cei.html": {
+    "title": "Electrolyte Additive Screening for Silicon Anodes and High-Voltage Cathodes | Winigen Materials",
+    "description": "Screen FEC, VC, LiPO2F2, nitrile, sulfur, and phosphorus additives by SEI and CEI chemistry, gas, impedance, transition-metal cross-talk, temperature, and full-cell failure mode.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/fast-charge-all-weather-ev-battery-electrolytes.html": {
+    "title": "Fast Charge and All-Weather EV Batteries: Why Electrolytes and Thermal Strategy Must Be Designed Together | Winigen Materials",
+    "description": "Understand how electrolyte transport, lithium plating, low-temperature kinetics, internal heating, thermal management, and charging protocols interact in fast-charge EV batteries.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/fast-formation-lithium-rich-cathodes.html": {
+    "title": "Fast Formation for Lithium-Rich Cathodes: Why the First Charge Can Program Cathode Structure | Winigen Materials",
+    "description": "A technical review of fast formation in lithium-rich layered oxide cathodes, covering first-charge rate, reaction heterogeneity, residual lithium, plateau access, structural evolution, and cycle life.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/lifsi-lithium-metal-batteries.html": {
+    "title": "LiFSI for Lithium-Metal Batteries, Fast Charge, and Low-Temperature Electrolytes | Winigen Materials",
+    "description": "Learn why LiFSI is used in lithium-metal, fast-charge, low-temperature, and high-concentration battery electrolytes, including interphase formation, current-collector compatibility, and formulation strategy.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/lipf6-vs-lifsi-vs-litfsi.html": {
+    "title": "LiPF6 vs LiFSI vs LiTFSI: How to Choose Lithium Electrolyte Salts for Battery Development | Winigen Materials",
+    "description": "Compare LiPF6, LiFSI, and LiTFSI for lithium-ion, lithium-metal, fast-charge, low-temperature, polymer, and specialty electrolyte development.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/low-temperature-electrolytes.html": {
+    "title": "Why Batteries Lose Performance at Low Temperature | Winigen Materials",
+    "description": "A technical framework for matching electrolyte solvation and transport with graphite kinetics, electrode loading, cell hardware and resistance, charging limits, and thermal strategy below −20°C, including operation below −60°C.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/mechanics-solid-state-electrolyte-lithium-dendrites.html": {
+    "title": "Why Mechanics Matter in Solid-State Electrolyte Screening | Winigen Materials",
+    "description": "A Nature study on lithium dendrite penetration in LLZTO shows why solid-state electrolyte screening must consider fracture, grain boundaries, defects, conductivity, density, and lithium-metal interfaces.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/np-ratio-lithium-ion-battery-design.html": {
+    "title": "N/P Ratio in Lithium-Ion Batteries: Balancing Lithium Plating Risk, Fast Charge, and Energy Density | Winigen Materials",
+    "description": "Learn how lithium-ion battery N/P ratio controls lithium plating risk, fast-charge capability, cycle life, and energy density, with calculations and graphite, silicon, LFP, and NMC design guidance.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/sodium-ion-electrolyte-design-high-rate-wide-temperature-safety.html": {
+    "title": "Sodium-Ion Electrolyte Design for High Rate, Wide Temperature, Long Life, and Safety | Winigen Materials",
+    "description": "Learn how sodium-ion electrolyte salts, solvents, additives, water control, interphases, and cell testing must be coordinated for high rate, wide temperature, long life, gas suppression, and safety.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/sodium-ion-electrolyte-materials.html": {
+    "title": "Sodium-Ion Battery Electrolytes: Salts, Solvents & Interfaces | Winigen Materials",
+    "description": "Learn how sodium salts such as NaPF6, NaTFSI, and NaODFB, along with solvents, additives, and water control, affect sodium-ion battery electrolyte performance.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/solid-liquid-hybrid-vs-all-solid-state-batteries.html": {
+    "title": "Solid-Liquid Hybrid vs All-Solid-State Batteries: Architecture, Performance, Safety, and Materials | Winigen Materials",
+    "description": "Compare solid-liquid hybrid and all-solid-state batteries by electrolyte architecture, ion transport, durability, safety, interfaces, processing, and material selection.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/solid-state-electrolyte-materials.html": {
+    "title": "Solid-State Electrolyte Materials: Sulfide, Oxide, Halide, and Polymer Electrolyte Screening | Winigen Materials",
+    "description": "Compare sulfide, oxide, halide, polymer, and hybrid solid-state electrolyte materials for battery development, including ionic conductivity, particle size, moisture sensitivity, and interface compatibility.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/solid-state-electrolyte-screening-rd-to-pilot-line.html": {
+    "title": "From R&D to Pilot Line: How to Screen Solid-State Electrolyte Materials for Practical Cell Development | Winigen Materials",
+    "description": "A practical solid-state electrolyte screening framework for moving from powder specifications and pellet conductivity to composite electrodes, lithium-metal interfaces, and pilot-scale cell development.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/solid-state-lithium-sulfur-batteries-materials-challenges.html": {
+    "title": "Solid-State Lithium-Sulfur Batteries: High-Energy Promise and Materials Challenges | Winigen Materials",
+    "description": "Learn how sulfur loading, lithium metal, solid electrolytes, pressure, lean electrolyte design, and interfaces determine practical solid-state lithium-sulfur battery performance.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/solid-state-sodium-batteries-halide-composite-electrolytes.html": {
+    "title": "Solid-State Sodium Batteries: Why Halide and Composite Electrolytes Are Getting Attention | Winigen Materials",
+    "description": "Review solid-state sodium battery opportunities, sodium solid electrolytes, halide and composite electrolyte concepts, interface challenges, and practical screening priorities.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "knowledge/sulfide-vs-oxide-vs-halide-solid-electrolytes.html": {
+    "title": "Sulfide vs Oxide vs Halide Solid Electrolytes: Conductivity, Stability, and Processing Tradeoffs | Winigen Materials",
+    "description": "Compare sulfide, oxide, and halide solid-state electrolytes for battery development, including ionic conductivity, moisture sensitivity, high-voltage compatibility, processing route, particle size, and interface behavior.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "products/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.html": {
+    "title": "TTE — 1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether | Winigen Materials",
+    "description": "1,1,2,2-Tetrafluoroethyl 2,2,3,3-tetrafluoropropyl ether (TTE) is a fluorinated ether solvent for diluent selection and electrolyte blend compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-2-bis-2-cyanoethoxy-ethane-dene.html": {
+    "title": "1,2-Bis(2-cyanoethoxy)ethane (DENE) | Winigen Materials",
+    "description": "1,2-Bis(2-cyanoethoxy)ethane (DENE), CAS 3386-87-6, Additive, available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-2-dimethoxyethane-dme.html": {
+    "title": "1,2-Dimethoxyethane (DME) | Battery Solvents | Winigen Materials",
+    "description": "1,2-Dimethoxyethane (DME) is an ether solvent for salt solubility, coordination, and electrolyte transport research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html": {
+    "title": "1,3,2-Dioxathiolane 2,2-dioxide (DTD) | Winigen Materials",
+    "description": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-3-6-hexanetricarbonitrile-htcn.html": {
+    "title": "1,3,6-Hexanetricarbonitrile (HTCN) | Winigen Materials",
+    "description": "1,3,6-Hexanetricarbonitrile (HTCN) is a nitrile electrolyte additive for nitrile-containing formulations and compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-3-dioxolane-dol.html": {
+    "title": "1,3-Dioxolane (DOL) | Battery Solvents | Winigen Materials",
+    "description": "1,3-Dioxolane (DOL), CAS 646-06-0, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-3-propanediol-cyclic-sulfate-ts.html": {
+    "title": "1,3-Propanediol cyclic sulfate (TS) | Winigen Materials",
+    "description": "1,3-Propanediol cyclic sulfate (TS), CAS 1073-05-8, Additive, available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-3-propanesultone-ps.html": {
+    "title": "1,3-Propanesultone (PS) | Electrolyte Additives | Winigen Materials",
+    "description": "1,3-Propanesultone (PS), CAS 1120-71-4, is an electrolyte additive for battery-electrolyte formulation and research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-4-butane-sultone-bs.html": {
+    "title": "1,4-Butane sultone (BS) | Electrolyte Additives | Winigen Materials",
+    "description": "1,4-Butane sultone (BS), CAS 1633-83-6, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.html": {
+    "title": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS) | Winigen Materials",
+    "description": "1,5,2,4-Dioxadithiane-2,2,4,4-tetraoxide (MMDS) is a sulfur-containing electrolyte additive for additive concentration and cell-material compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/1m-lipf6-ec-emc-3-7-1-vc-electrolyte.html": {
+    "title": "1 M LiPF6 in EC:EMC (3:7) + 1% VC Electrolyte | Winigen Materials",
+    "description": "Ready-to-use standard lithium-ion battery electrolyte formulated with 1.0 M LiPF6 in EC:EMC (3:7 by volume) and 1% VC for lithium-ion R&D, baseline and reference testing, additive screening, and coin-cell and pouch-cell development.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/2-2-difluoroethyl-acetate-dfea.html": {
+    "title": "2,2-Difluoroethyl acetate (DFEA) | Winigen Materials",
+    "description": "2,2-Difluoroethyl acetate (DFEA) is a fluorinated ester solvent for solvent-blend screening and interfacial compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/4-fluoro-1-3-dioxolan-2-one-fec.html": {
+    "title": "4-Fluoro-1,3-dioxolan-2-one (FEC) | Winigen Materials",
+    "description": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/adiponitrile-adn.html": {
+    "title": "Adiponitrile (ADN) | Electrolyte Additives | Winigen Materials",
+    "description": "Adiponitrile (ADN) is a nitrile solvent and electrolyte additive for nitrile-containing electrolyte blends and compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/battery-solvents.html": {
+    "title": "Battery Electrolyte Solvents | Low-Moisture Materials | Winigen Materials",
+    "description": "Browse battery-grade carbonate, ether, nitrile, ester, fluorinated, and specialty electrolyte solvents with research-package online ordering and bulk RFQ support.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "products/biphenyl-bp.html": {
+    "title": "Biphenyl (BP) | Electrolyte Additives | Winigen Materials",
+    "description": "Biphenyl (BP) is an aromatic electrolyte additive for additive screening and electrochemical compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/bis-2-2-2-trifluoroethyl-carbonate-tfec.html": {
+    "title": "Bis(2,2,2-trifluoroethyl) carbonate (TFEC) | Winigen Materials",
+    "description": "Bis(2,2,2-trifluoroethyl) Carbonate (TFEC) is a fluorinated carbonate solvent/additive supplied for battery-electrolyte formulation, materials evaluation, and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/cyclohexylbenzene-chb.html": {
+    "title": "Cyclohexylbenzene (CHB) | Electrolyte Additives | Winigen Materials",
+    "description": "Cyclohexylbenzene (CHB), CAS 827-52-1, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/diethyl-carbonate-dec.html": {
+    "title": "Diethyl carbonate (DEC) | Battery Solvents | Winigen Materials",
+    "description": "Diethyl carbonate (DEC), CAS 105-58-8, is a battery-grade carbonate solvent available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/dimethyl-carbonate-dmc.html": {
+    "title": "Dimethyl carbonate (DMC) | Battery Solvents | Winigen Materials",
+    "description": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/electrolyte-additives.html": {
+    "title": "Battery Electrolyte Additives | FEC, VC, DTD, PST & More | Winigen Materials",
+    "description": "Browse battery electrolyte additives including FEC, VC, VEC, DTD, PST, and silyl additives for SEI/CEI control, with research-package online ordering and bulk RFQ support.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "products/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.html": {
+    "title": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) | Winigen Materials",
+    "description": "Ethoxy(pentafluoro)cyclotriphosphazene (PFPN) is a fluorinated phosphazene electrolyte additive for high-voltage and safety-oriented electrolyte formulation research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ethyl-acetate-ea.html": {
+    "title": "Ethyl acetate (EA) | Battery Solvents | Winigen Materials",
+    "description": "Ethyl acetate (EA), CAS 141-78-6, Solvent, available from Winigen Materials. View specifications, research packages and technical support.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ethyl-methyl-carbonate-emc.html": {
+    "title": "Ethyl methyl carbonate (EMC) | Battery Solvents | Winigen Materials",
+    "description": "Ethyl methyl carbonate (EMC), CAS 623-53-0, is a battery-grade carbonate solvent available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ethyl-propionate-ep.html": {
+    "title": "Ethyl propionate (EP) | Battery Solvents | Winigen Materials",
+    "description": "Ethyl propionate (EP), CAS 105-37-3, is an ester co-solvent available from Winigen Materials for electrolyte formulation and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ethylene-carbonate-ec.html": {
+    "title": "Ethylene carbonate (EC) | Battery Solvents | Winigen Materials",
+    "description": "Ethylene carbonate (EC), CAS 96-49-1, is a battery-grade carbonate solvent available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ethylene-sulfite-es.html": {
+    "title": "Ethylene sulfite (ES) | Electrolyte Additives | Winigen Materials",
+    "description": "Ethylene sulfite (ES), CAS 3741-38-6, is available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/fluorobenzene-fb.html": {
+    "title": "Fluorobenzene (FB) | Electrolyte Additives | Winigen Materials",
+    "description": "Fluorobenzene (FB), CAS 462-06-6, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/graphite-anode-material-high-power-grade.html": {
+    "title": "Graphite anode material - high-power grade | Winigen Materials",
+    "description": "High-power graphite is used for fast-charge, high-rate, and power-oriented lithium-ion anode screening. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/graphite-anode-material-standard-grade.html": {
+    "title": "Graphite anode material - standard grade | Winigen Materials",
+    "description": "Standard graphite is used for lithium-ion anode formulation, baseline electrode development, and electrolyte compatibility screening.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/graphite-anode-material-ultra-high-power-grade.html": {
+    "title": "Graphite anode material - ultra-high-power grade | Winigen Materials",
+    "description": "Ultra-high-power graphite supports aggressive rate-capability and fast-charge screening where kinetics are more important than maximum volumetric energy density.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsb01.html": {
+    "title": "Li5.5PS4.5ClxBr1.5-x, D50 >10 µm | Winigen Materials",
+    "description": "Li5.5PS4.5ClxBr1.5-x, D50 >10 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsb02.html": {
+    "title": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 ± 1.5 µm | Winigen Materials",
+    "description": "Li5.5PS4.5ClxBr1.5-x, D50 4.5 ± 1.5 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsb03.html": {
+    "title": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm | Winigen Materials",
+    "description": "Li5.5PS4.5ClxBr1.5-x, D50 2.19 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsb04.html": {
+    "title": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm | Winigen Materials",
+    "description": "Li5.5PS4.5ClxBr1.5-x, D50 0.74 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsh01.html": {
+    "title": "Li5.5PS4.5Cl1.5, D50 >10 µm | Winigen Materials",
+    "description": "Li5.5PS4.5Cl1.5, D50 >10 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsh02.html": {
+    "title": "Li5.5PS4.5Cl1.5, D50 4.5 ± 1.5 µm | Winigen Materials",
+    "description": "Li5.5PS4.5Cl1.5, D50 4.5 ± 1.5 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsh03.html": {
+    "title": "Li5.5PS4.5Cl1.5, D50 2.06 µm | Winigen Materials",
+    "description": "Li5.5PS4.5Cl1.5, D50 2.06 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsh04.html": {
+    "title": "Li5.5PS4.5Cl1.5, D50 0.80 µm | Winigen Materials",
+    "description": "Li5.5PS4.5Cl1.5, D50 0.80 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsl01.html": {
+    "title": "Li6PS5Cl, D50 >10 µm | Solid-State Electrolytes | Winigen Materials",
+    "description": "Li6PS5Cl, D50 >10 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsl02.html": {
+    "title": "Li6PS5Cl, D50 4.5 ± 1.5 µm | Winigen Materials",
+    "description": "Li6PS5Cl, D50 4.5 ± 1.5 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsl03.html": {
+    "title": "Li6PS5Cl, D50 2.123 µm | Solid-State Electrolytes | Winigen Materials",
+    "description": "Li6PS5Cl, D50 2.123 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/gsl04.html": {
+    "title": "Li6PS5Cl, D50 0.734 µm | Solid-State Electrolytes | Winigen Materials",
+    "description": "Li6PS5Cl, D50 0.734 µm is a sulfide solid electrolyte powder for cold-press conductivity screening, composite cathode studies, and solid-state battery research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/hard-carbon-anode-material.html": {
+    "title": "Hard carbon anode material | Active Materials | Winigen Materials",
+    "description": "Hard carbon is the leading sodium-ion anode platform and is used for Na-ion full-cell development, electrolyte screening, and formation optimization.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/hexamethyldisilazane-hmds.html": {
+    "title": "Hexamethyldisilazane (HMDS) | Winigen Materials",
+    "description": "Hexamethyldisilazane (HMDS), CAS 999-97-3, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/latp-d-50-0-3-um.html": {
+    "title": "LATP powder, D50 0.30 µm | Winigen Materials",
+    "description": "LATP oxide solid electrolyte powder for cathode blending and lithium-ion battery safety, rate, and cycle-performance screening.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/latp-d-50-0-4-um.html": {
+    "title": "LATP powder, D50 0.40 µm | Winigen Materials",
+    "description": "LATP oxide solid electrolyte powder for separator, current-collector, and electrode coating studies.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/latp-d-50-0-65-um.html": {
+    "title": "LATP powder, D50 0.65 µm | Winigen Materials",
+    "description": "LATP oxide solid electrolyte powder with broader particle size for coating and solid-electrolyte screening workflows.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/latp-slurry.html": {
+    "title": "LATP slurry | Solid-State Electrolytes | Winigen Materials",
+    "description": "Configurable LATP oxide-electrolyte slurry available by RFQ with selectable D50 particle size and water-based or oil-based carrier for coating development.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-bis-fluorosulfonyl-imide-lifsi.html": {
+    "title": "LiFSI Battery-Grade Lithium Salt | Winigen Materials",
+    "description": "Battery-grade LiFSI for lithium-ion and lithium-metal electrolyte research. View specifications, package sizes, and technical support.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-bis-oxalato-borate-libob.html": {
+    "title": "Battery-Grade LiBOB | Lithium bis(oxalato)borate | Winigen Materials",
+    "description": "Lithium bis(oxalato)borate (LiBOB) is a borate-based lithium electrolyte salt for salt-blend evaluation and electrode-electrolyte compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.html": {
+    "title": "LiTFSI — Lithium bis(trifluoromethanesulfonyl)imide | Winigen Materials",
+    "description": "Lithium bis-(trifluoromethane-sulphonyl)imide (LiTFSI), CAS 90076-65-6, is a battery-grade lithium electrolyte salt available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-cobalt-oxide-lco.html": {
+    "title": "Lithium cobalt oxide (LCO) | Active Materials | Winigen Materials",
+    "description": "LCO is used for consumer-electronics cathode studies, high-voltage electrolyte screening, and benchmark layered oxide formulations.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-difluoro-oxalate-borate-liodfb.html": {
+    "title": "Lithium difluoro oxalate borate (LiODFB) | Winigen Materials",
+    "description": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-difluorobis-oxalato-phosphate-lidfop-emc-20wt.html": {
+    "title": "Lithium difluorobis(oxalato)phosphate (LiDFOP) in EMC — 20 wt% | Winigen Materials",
+    "description": "LiDFOP in EMC — 20 wt% is an electrolyte additive solution for formulation research. Active-material CAS: 678966-16-0; active-material formula: C4F2LiO8P.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-difluorobis-oxalato-phosphate-lidodfp.html": {
+    "title": "Lithium difluorobis(oxalato)phosphate (LiDFBOP) | Winigen Materials",
+    "description": "Lithium difluorobis(oxalato)phosphate (LiDFBOP), CAS 678966-16-0, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-difluorophosphate-lipo-2-f-2.html": {
+    "title": "Battery-Grade LiPO2F2 | Lithium difluorophosphate | Winigen Materials",
+    "description": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-hexafluorophosphate-lipf6.html": {
+    "title": "Battery-Grade LiPF6 | Lithium hexafluorophosphate | Winigen Materials",
+    "description": "Lithium hexafluorophosphate (LiPF6), CAS 21324-40-3, is a battery-grade lithium electrolyte salt available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-iron-phosphate-lfp-energy-grade.html": {
+    "title": "Lithium iron phosphate (LFP) - energy grade | Winigen Materials",
+    "description": "Energy-grade LFP is used for safer, lower-cost lithium-ion cells, storage batteries, and cathode formulation screening where cycle life and thermal stability matter.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-iron-phosphate-lfp-power-grade.html": {
+    "title": "Lithium iron phosphate (LFP) - power grade | Winigen Materials",
+    "description": "Power-grade LFP is selected for higher-rate cathode studies, fast-charge screening, and applications where power capability is prioritized over maximum tap density.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-manganese-iron-phosphate-lmfp-energy-grade.html": {
+    "title": "Lithium manganese iron phosphate (LMFP) - energy grade | Winigen Materials",
+    "description": "Energy-grade LMFP is evaluated as a higher-voltage phosphate cathode material for improved energy density while retaining LFP-like safety advantages.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-manganese-iron-phosphate-lmfp-power-grade.html": {
+    "title": "Lithium manganese iron phosphate (LMFP) - power grade | Winigen Materials",
+    "description": "Power-grade LMFP supports cathode studies targeting a balance of phosphate safety, elevated voltage, and improved rate performance.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-manganese-oxide-lmo.html": {
+    "title": "Lithium manganese oxide (LMO) | Active Materials | Winigen Materials",
+    "description": "LMO is used for spinel cathode screening, cost-sensitive lithium-ion studies, rate-performance evaluation, and LMO/NMC blend development.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-metal-foil-on-copper-current-collector.html": {
+    "title": "Lithium metal foil on copper current collector | Winigen Materials",
+    "description": "Lithium metal foil on copper current collector, specified as 50 µm lithium on 10 µm copper, for lithium-metal pouch-cell, anode-free, and interface-screening studies.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-nickel-cobalt-aluminum-oxide-nca622.html": {
+    "title": "Lithium nickel cobalt aluminum oxide (NCA622) | Winigen Materials",
+    "description": "NCA622 is used in high-energy cathode screening where nickel-rich layered oxide behavior, surface coating, and electrolyte compatibility need evaluation.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-nickel-cobalt-aluminum-oxide-nca811.html": {
+    "title": "Lithium nickel cobalt aluminum oxide (NCA811) | Winigen Materials",
+    "description": "NCA811 is evaluated for high-energy cathode systems where electrolyte oxidation, gas generation, and thermal stability must be carefully controlled.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-nickel-manganese-cobalt-oxide-nmc622.html": {
+    "title": "Lithium nickel manganese cobalt oxide (NMC622) | Winigen Materials",
+    "description": "NMC622 provides a balanced high-energy cathode platform for electrolyte screening, surface-coating studies, and Li-ion cell development.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-nickel-manganese-cobalt-oxide-nmc811.html": {
+    "title": "Lithium nickel manganese cobalt oxide (NMC811) | Winigen Materials",
+    "description": "NMC811 is used for high-energy cell research where electrolyte stability, CEI formation, gas generation, and thermal behavior are key screening concerns.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-nickel-manganese-oxide-lnmo.html": {
+    "title": "Lithium nickel manganese oxide (LNMO) | Winigen Materials",
+    "description": "LNMO is a high-voltage spinel cathode material for advanced lithium-ion cell screening, high-voltage electrolyte compatibility studies, and manganese-rich cathode development.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-nitrate-lino3.html": {
+    "title": "Battery-Grade LiNO3 | Lithium nitrate | Winigen Materials",
+    "description": "Lithium nitrate (LiNO3), CAS 7790-69-4, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-salts.html": {
+    "title": "Battery-Grade Lithium Salts | LiPF6, LiFSI & LiTFSI | Winigen Materials",
+    "description": "Browse battery-grade LiPF6, LiFSI, LiTFSI, LiBF4, LiBOB, LiDFOB, and related lithium electrolyte salts with research-scale online ordering and bulk RFQ support.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "products/lithium-tetrafluoroborate-libf-4.html": {
+    "title": "Battery-Grade LiBF4 | Lithium tetrafluoroborate | Winigen Materials",
+    "description": "Lithium tetrafluoroborate (LiBF4), CAS 14283-07-9, is a battery-grade lithium electrolyte salt available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/lithium-titanate-lto.html": {
+    "title": "Lithium titanate (LTO) | Active Materials | Winigen Materials",
+    "description": "LTO is selected for high-power, long-cycle-life, and safer anode systems where higher anode potential is acceptable. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/llzto-powder.html": {
+    "title": "LLZTO powder | Solid-State Electrolytes | Winigen Materials",
+    "description": "LLZTO garnet-type oxide solid electrolyte powder. View specifications, research packages and technical support.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/mesoporous-alumina-materials.html": {
+    "title": "Mesoporous Alumina Materials | WAL-M07, M300 & M400 | Winigen Materials",
+    "description": "Compare WAL-M07, WAL-M300, and WAL-M400 Mesoporous Alumina Materials using existing canonical particle-size, BET, pore-volume, purity, and technical descriptors.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "products/methyl-2-2-2-trifluoroethyl-carbonate-femc.html": {
+    "title": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC) | Winigen Materials",
+    "description": "Methyl 2,2,2-trifluoroethyl carbonate (FEMC) is a fluorinated carbonate solvent for fluorinated solvent blends and electrode-electrolyte compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/methyl-butyrate-mb-battery-grade.html": {
+    "title": "Methyl Butyrate (MB), Battery Grade | Winigen Materials",
+    "description": "Battery-grade methyl butyrate (MB), CAS 623-42-7, for advanced electrolyte R&D. ≥99.8% purity, <20 ppm water, <30 ppm acid.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/mo2ctx-mxene-multilayer-powder.html": {
+    "title": "Mo2CTx MXene Multilayer Powder | Mo2C MXene | Winigen Materials",
+    "description": "Research-grade Mo₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/mo2ctx-mxene-single-few-layer-powder.html": {
+    "title": "Mo2CTx MXene Single-/Few-Layer Powder | Mo2C MXene | Winigen Materials",
+    "description": "Research-grade Mo₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/mo2tic2tx-mxene-multilayer-powder.html": {
+    "title": "Mo2TiC2Tx MXene Multilayer Powder | Mo2TiC2 MXene | Winigen Materials",
+    "description": "Mo2TiC2Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/mo2tic2tx-mxene-single-few-layer-powder.html": {
+    "title": "Mo2TiC2Tx MXene Single-/Few-Layer Powder | Mo2TiC2 MXene | Winigen Materials",
+    "description": "Mo2TiC2Tx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/mxene-materials.html": {
+    "title": "MXene Materials & Powders | Ti3C2Tx, V2CTx, Nb2CTx & More | Winigen Materials",
+    "description": "Explore Winigen Materials MXene powders including Ti3C2Tx, Nb2CTx, V2CTx, Mo2CTx, Ti2CTx, Ti3CNTx, TiVCTx, TiNbCTx, Mo2TiC2Tx and 43-series MXenes in multilayer and single-/few-layer forms.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "products/nb2ctx-mxene-multilayer-powder.html": {
+    "title": "Nb2CTx MXene Multilayer Powder | Nb2C MXene | Winigen Materials",
+    "description": "Research-grade Nb₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/nb2ctx-mxene-single-few-layer-powder.html": {
+    "title": "Nb2CTx MXene Single-/Few-Layer Powder | Nb2C MXene | Winigen Materials",
+    "description": "Research-grade Nb₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/nb4c3tx-mxene-multilayer-powder.html": {
+    "title": "Nb4C3Tx MXene Multilayer Powder | Nb4C3 MXene | Winigen Materials",
+    "description": "Nb4C3Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/nb4c3tx-mxene-single-few-layer-powder.html": {
+    "title": "Nb4C3Tx MXene Single-/Few-Layer Powder | Nb4C3 MXene | Winigen Materials",
+    "description": "Nb4C3Tx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/potassium-hexafluorophosphate-kpf-6.html": {
+    "title": "Potassium hexafluorophosphate (KPF6) | Winigen Materials",
+    "description": "Potassium hexafluorophosphate (KPF6), CAS 17084-13-8, Next-Gen Salt, available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/prop-1-ene-1-3-sultone-pst.html": {
+    "title": "Prop-1-ene-1,3-sultone (PST) | Winigen Materials",
+    "description": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/propyl-acetate-pa.html": {
+    "title": "Propyl acetate (PA) | Battery Solvents | Winigen Materials",
+    "description": "Propyl acetate (PA), CAS 109-60-4, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/propyl-propionate-pp.html": {
+    "title": "Propyl propionate (PP) | Battery Solvents | Winigen Materials",
+    "description": "Propyl propionate (PP), CAS 106-36-5, is an ester co-solvent available from Winigen Materials for battery-electrolyte formulation and transport studies.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/propylene-carbonate-pc.html": {
+    "title": "Propylene carbonate (PC) | Battery Solvents | Winigen Materials",
+    "description": "Propylene carbonate (PC), CAS 108-32-7, is a battery-grade carbonate solvent available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/silicon-anode-powder.html": {
+    "title": "Silicon anode powder | Active Materials | Winigen Materials",
+    "description": "Silicon powder is used for high-capacity anode development, silicon-carbon composites, binder screening, and electrolyte/additive optimization.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/siox-silicon-carbon-composite-anode-material.html": {
+    "title": "SiOx / silicon-carbon composite anode material | Winigen Materials",
+    "description": "SiOx and Si-C composites are used for higher-capacity lithium-ion anodes with more manageable expansion than pure silicon powders. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/sodium-bis-fluorosulfonyl-imide-nafsi.html": {
+    "title": "Sodium bis(fluorosulfonyl)imide (NaFSI) | Winigen Materials",
+    "description": "Sodium bis(fluorosulfonyl)imide (NaFSI) is a sulfonimide sodium electrolyte salt for sodium-ion electrolyte blends and transport research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/sodium-difluoro-oxalate-borate-naodfb.html": {
+    "title": "Sodium difluoro(oxalato)borate (NaDFOB) | Winigen Materials",
+    "description": "Sodium difluoro(oxalato)borate (NaDFOB) is a borate-based sodium electrolyte salt for sodium-ion salt blends and electrode-electrolyte compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/sodium-difluorophosphate-napo2f2.html": {
+    "title": "Sodium difluorophosphate (NaPO2F2) | Winigen Materials",
+    "description": "Sodium difluorophosphate (NaPO2F2) is a fluorophosphate sodium electrolyte additive for sodium-ion formulation and additive screening research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/sodium-hexafluorophosphate-napf-6.html": {
+    "title": "Sodium hexafluorophosphate (NaPF6) | Winigen Materials",
+    "description": "Sodium hexafluorophosphate (NaPF6) is a sodium electrolyte salt for sodium-ion electrolyte formulation and salt-solvent compatibility research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/solid-state-electrolytes.html": {
+    "title": "Solid-State Electrolytes | LATP, LLZTO & Li6PS5Cl Materials | Winigen Materials",
+    "description": "Browse oxide and sulfide solid-state electrolyte materials including LATP, LLZTO, Li6PS5Cl, and argyrodite grades for battery R&D.",
+    "basis": "Existing page description; retain scientific subject and title."
+  },
+  "products/succinonitrile-sn.html": {
+    "title": "Succinonitrile (SN) | Electrolyte Additives | Winigen Materials",
+    "description": "Succinonitrile (SN), CAS 110-61-2, is an electrolyte additive for battery-electrolyte formulation and research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ta4c3tx-mxene-multilayer-powder.html": {
+    "title": "Ta4C3Tx MXene Multilayer Powder | Ta4C3 MXene | Winigen Materials",
+    "description": "Ta4C3Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ta4c3tx-mxene-single-few-layer-powder.html": {
+    "title": "Ta4C3Tx MXene Single-/Few-Layer Powder | Ta4C3 MXene | Winigen Materials",
+    "description": "Ta4C3Tx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tetravinylsilane-tvsi.html": {
+    "title": "Tetravinylsilane (TVSi) | Electrolyte Additives | Winigen Materials",
+    "description": "Tetravinylsilane (TVSi), CAS 1112-55-6, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ti2ctx-mxene-multilayer-powder.html": {
+    "title": "Ti2CTx MXene Multilayer Powder | Ti2C MXene | Winigen Materials",
+    "description": "Ti2CTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ti2ctx-mxene-single-few-layer-powder.html": {
+    "title": "Ti2CTx MXene Single-/Few-Layer Powder | Ti2C MXene | Winigen Materials",
+    "description": "Ti2CTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ti3c2tx-mxene-accordion-multilayer-powder.html": {
+    "title": "Ti₃C₂Tₓ MXene — Accordion-Structured Multilayer Powder (HF-Etched) | Winigen Materials",
+    "description": "HF-etched Ti3C2Tx MXene with accordion-like stacked lamellae. View specifications, research packages and technical support.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ti3c2tx-mxene-multilayer-powder.html": {
+    "title": "Ti3C2Tx MXene Multilayer Powder | Ti3C2 MXene | Winigen Materials",
+    "description": "Research-grade Ti₃C₂Tₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ti3c2tx-mxene-single-few-layer-powder.html": {
+    "title": "Ti3C2Tx MXene Single-/Few-Layer Powder | Ti3C2 MXene | Winigen Materials",
+    "description": "Research-grade Ti₃C₂Tₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ti3cntx-mxene-multilayer-powder.html": {
+    "title": "Ti3CNTx MXene Multilayer Powder | Ti3CN MXene | Winigen Materials",
+    "description": "Ti3CNTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/ti3cntx-mxene-single-few-layer-powder.html": {
+    "title": "Ti3CNTx MXene Single-/Few-Layer Powder | Ti3CN MXene | Winigen Materials",
+    "description": "Ti3CNTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tinbctx-mxene-multilayer-powder.html": {
+    "title": "TiNbCTx MXene Multilayer Powder | TiNbC MXene | Winigen Materials",
+    "description": "TiNbCTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tinbctx-mxene-single-few-layer-powder.html": {
+    "title": "TiNbCTx MXene Single-/Few-Layer Powder | TiNbC MXene | Winigen Materials",
+    "description": "TiNbCTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tivctx-mxene-multilayer-powder.html": {
+    "title": "TiVCTx MXene Multilayer Powder | TiVC MXene | Winigen Materials",
+    "description": "TiVCTx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tivctx-mxene-single-few-layer-powder.html": {
+    "title": "TiVCTx MXene Single-/Few-Layer Powder | TiVC MXene | Winigen Materials",
+    "description": "TiVCTx MXene single-/few-layer powder (≤5 layers). Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/triallyl-phosphate-tap.html": {
+    "title": "Triallyl phosphate (TAP) | Electrolyte Additives | Winigen Materials",
+    "description": "Triallyl phosphate (TAP), CAS 1623-19-4, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/trimethylsilyl-phosphite-ttpi.html": {
+    "title": "Tris(trimethylsilyl) phosphite (TTPi) | Winigen Materials",
+    "description": "Tris(trimethylsilyl) phosphite (TTPi), CAS 1795-31-9, Additive, available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/triphenyl-phosphite-tppi.html": {
+    "title": "Triphenyl phosphite (TPPI) | Electrolyte Additives | Winigen Materials",
+    "description": "Triphenyl phosphite (TPPI), CAS 101-02-0, available from Winigen Materials for battery and electrochemical research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tris-2-2-2-trifluoroethyl-phosphate-tfep.html": {
+    "title": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) | Winigen Materials",
+    "description": "Tris(2,2,2-trifluoroethyl) phosphate (TFEP) is a fluorinated phosphate solvent and cosolvent for reduced-flammability and thermal-safety electrolyte blends research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tris-trimethylsilyl-borate-tmsb.html": {
+    "title": "Tris(trimethylsilyl)borate (TMSB) | Winigen Materials",
+    "description": "Tris(trimethylsilyl)borate (TMSB), CAS 4325-85-3, Additive, available from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/tris-trimethylsilyl-phosphate-tmsp.html": {
+    "title": "Tris(trimethylsilyl) phosphate (TMSP) | Winigen Materials",
+    "description": "Tris(trimethylsilyl) phosphate (TMSP), CAS 10497-05-9, is an electrolyte additive for battery-electrolyte formulation and research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/v2ctx-mxene-multilayer-powder.html": {
+    "title": "V2CTx MXene Multilayer Powder | V2C MXene | Winigen Materials",
+    "description": "Research-grade V₂CTₓ MXene multilayer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/v2ctx-mxene-single-few-layer-powder.html": {
+    "title": "V2CTx MXene Single-/Few-Layer Powder | V2C MXene | Winigen Materials",
+    "description": "Research-grade V₂CTₓ MXene single-/few-layer powder for electrochemical, electrocatalysis, conductive-composite and interface research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/v4c3tx-mxene-multilayer-powder.html": {
+    "title": "V4C3Tx MXene Multilayer Powder | V4C3 MXene | Winigen Materials",
+    "description": "V4C3Tx MXene multilayer powder with 2–20 µm nominal flake size. Order from Winigen Materials.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/vinyl-ethylene-carbonate-vec.html": {
+    "title": "Vinyl ethylene carbonate (VEC) | Winigen Materials",
+    "description": "Vinyl ethylene carbonate (VEC) is a carbonate electrolyte additive for additive screening and electrolyte formulation research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/vinylene-carbonate-vc.html": {
+    "title": "Vinylene Carbonate (VC) | Electrolyte Additives | Winigen Materials",
+    "description": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/wal-a07-alumina-cathode-additive.html": {
+    "title": "WAL-A07 Fine Alumina Powder for Cathode Additive Evaluation | Winigen Materials",
+    "description": "WAL-A07 high-purity fine alumina powder for evaluating low-level cathode incorporation and composite-electrode interfaces. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/wal-m07-mesoporous-alumina.html": {
+    "title": "WAL-M07 Fine Mesoporous Alumina | Winigen Materials",
+    "description": "WAL-M07 fine mesoporous alumina with 20-50 m2/g BET and 0.5-1.0 µm D50 for ceramic additive and coating studies. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/wal-m300-mesoporous-alumina.html": {
+    "title": "WAL-M300 Mesoporous Alumina | Functional Coatings | Winigen Materials",
+    "description": "WAL-M300 high-purity mesoporous alumina with 150-300 m2/g BET and 3-5 µm D50 for high-surface-area material studies. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/wal-m400-mesoporous-alumina.html": {
+    "title": "WAL-M400 Mesoporous Alumina | Functional Coatings | Winigen Materials",
+    "description": "WAL-M400 high-purity mesoporous alumina with 250-400 m2/g BET and 4-6 µm D50 for high-surface-area material studies. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/wal-p05-alumina-coating-powder.html": {
+    "title": "WAL-P05 Fine Alumina Coating Powder | Winigen Materials",
+    "description": "WAL-P05 high-purity fine alumina powder for separator and electrode coating, ceramic slurry preparation, and filler evaluation. Available by RFQ for research and pilot-scale requirements.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "products/wbm-p07-boehmite-powder.html": {
+    "title": "WBM-P07 Fine Boehmite Powder | Functional Coatings | Winigen Materials",
+    "description": "WBM-P07 fine boehmite powder for ceramic coating slurry preparation, separator coating, and electrode coating formulation development.",
+    "basis": "Canonical material identity and existing description; no new specifications."
+  },
+  "services.html": {
+    "title": "Custom Electrolyte Formulation & Battery Material Services | Winigen Materials",
+    "description": "Custom electrolyte formulation, battery-material sourcing, additive and salt screening, solid-state electrolyte evaluation, and R&D-to-pilot technical support.",
+    "basis": "Existing page description; retain scientific subject and title."
+  }
+}

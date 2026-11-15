@@ -24,10 +24,11 @@ test('MXene launch has exactly eight products, twenty-four intended packages, an
  const master=await read('products.html');
  const section=master.match(/<section id="mxene-materials"[\s\S]*?<\/section>/)[0];
  assert.equal((section.match(/data-listing-add/g)||[]).length,24);
- assert.equal((section.match(/class="product-card"/g)||[]).length,24);
+ assert.equal((section.match(/data-oa-product /g)||[]).length,24);
+ assert.match(master,/class="option-a"/);
  assert.equal((section.match(/product-card__mode[^>]*>Request Quote</g)||[]).length,0);
- assert.doesNotMatch(section,/class="container"|product-card--family/);
- assert.match(master,/class="tab" href="#mxene-materials"/);
+ assert.doesNotMatch(section,/product-card--family/); // Option A deliberately uses a bounded container.
+ assert.match(master,/href="#mxene-materials" data-oa-family-key="mxene-materials"/);
  const context={};vm.runInNewContext(await read('assets/js/product-search.js'),context);
  const records=products.map(p=>({...p,section:'mxene-materials'}));
  assert.equal(context.WinigenProductSearch.searchView(records,'MXene').sectionCounts['mxene-materials'],8);
@@ -76,11 +77,11 @@ test('MXene pages have matched offers and prices, safe terminology, related link
  const offers=schemas.filter(s=>s['@type']==='Offer');assert.equal(offers.length,3);assert.ok(offers.every(o=>o.availability==='https://schema.org/InStock'));
  for(const v of c.packages){const key=`${c.skuBase}-${v.id}`;assert.equal(Number(offers.find(o=>o.sku===key).price),v.unitAmount/100);assert.ok(html.includes(new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(v.unitAmount/100)));assert.ok(html.includes(`data-package-key="${key}"`));}
  const related = html.match(/id="related-products"[\s\S]*?<\/section>/)?.[0] || '';
- assert.equal(products.filter(x=>x!==p && related.includes(`${x.slug}.html`)).length,3);
+ const canonical=JSON.parse(await read('catalog/products.source.json')).products;const matches=canonical.filter(x=>x.slug!==p.slug&&related.includes(`${x.slug}.html`));assert.equal(matches.length,3);assert.ok(matches.every(x=>x.family==='mxene-materials'));assert.ok(matches.some(x=>x.mxene.ascii===p.mxene.ascii));
  assert.match(html,/id="characterization"/);
  assert.doesNotMatch(html,/mxene-grid|mxene-card|mxene-reading|mxene-specs|Related Guides/);
  assert.equal((html.match(/id="documentation"/g)||[]).length,1);
- if (p.mxene.characterizationImages.length) assert.match(html,/Representative characterization; not lot-specific\./);
+ if (p.mxene.characterizationImages.length) assert.match(html,/Representative (?:SEM|TEM|XRD)[^<]*(?:<[^>]+>[^<]*)*Not lot-specific\./);
   else assert.match(html,/Representative microscopy\/XRD is available on request/);
  assert.equal(sitemap.split(`<loc>https://www.winigenmaterials.com${p.url}</loc>`).length-1,1);
  if(p.mxene.tds){const pdf=await readFile(resolve(root,p.mxene.tds.slice(1)));assert.equal(pdf.subarray(0,5).toString(),'%PDF-');assert.ok(html.includes(p.mxene.tds));}
@@ -113,7 +114,7 @@ test('MXene release candidate uses shared navigation, final titles, cautious doc
   assert.doesNotMatch(html,/Lot-specific COA is provided with shipment|Request grade-specific size/);
   if(m.ascii==='Ti3C2Tx') assert.ok(!p.additionalProperty.some(x=>/size/i.test(x.name)));
   assert.match(m.tds,/_TDS.pdf$/); assert.doesNotMatch(m.tds,/Rev[A-D]/);
-  assert.doesNotMatch(html.replace(/Representative supplier (?:SEM|TEM|XRD); not lot-specific\./g,''),/View characterization image|full-resolution|supplier|vendor|source-language|source documentation/i);
+  assert.doesNotMatch(html.replace(/<p class="oa-source-detail">[\s\S]*?<\/p>/g,'').replace(/Representative supplier (?:SEM|TEM|XRD); not lot-specific\./g,''),/View characterization image|full-resolution|supplier|vendor|source-language|source documentation/i);
   assert.match(html,/mxene-sticky-shell/); assert.match(html,/mxene-quick-tds/);
   for(const img of m.characterizationImages)assert.match(img.file,/-web.png$/);
  }
@@ -128,8 +129,8 @@ test('MXene release candidate uses shared navigation, final titles, cautious doc
  const {reconcileMxeneCatalogOrder,sectionOrder}=await import('../../scripts/mxene-catalog-order.mjs');
  const master=await read('products.html');
  assert.equal(reconcileMxeneCatalogOrder(master),master);
- const tabs=master.match(/<nav class="catalog-filter-bar"[\s\S]*?<\/nav>/)[0];
- assert.deepEqual([...tabs.matchAll(/href="#([^"]+)"/g)].map(m=>m[1]),sectionOrder);
- assert.match(tabs,/<a class="tab tab--rfq-start" href="#formulations">/);
- assert.match(tabs,/<a class="tab" href="#mxene-materials">/);
+ const tabs=master.match(/<nav aria-label="Material families"[\s\S]*?<\/nav>/)[0];
+ assert.deepEqual([...tabs.matchAll(/href="#([^"]+)"/g)].map(m=>m[1]),['salts','solvents','additives','next-gen','solid-state','mxene-materials','formulations','active-materials','functional-coatings']);
+ assert.match(tabs,/href="#formulations" data-oa-family-key="custom-formulations"/);
+ assert.match(tabs,/href="#mxene-materials" data-oa-family-key="mxene-materials"/);
  });

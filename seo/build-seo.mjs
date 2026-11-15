@@ -1,3 +1,4 @@
+import {blockAt,replaceRange} from '../design/option-a/html-blocks.mjs';
 import { synchronizeCatalogCardIdentities, synchronizeProductPresentation, displayIdentity, identityAliases } from '../scripts/catalog-card-identity.mjs';
 import { finalizeApprovedTds } from '../scripts/approved-tds-presentation.mjs';
 import { isFinalizedAdditive, synchronizeAdditiveTds, documentationCopy as additiveDocumentationCopy } from '../scripts/sync-additive-tds.mjs';
@@ -232,13 +233,13 @@ export function lowerQualityDocumentation(product, documentationHref) {
   if (!tds) return '';
   const tdsHref = tds.path.startsWith('/') ? `..${tds.path}` : tds.path;
   if (product.qualityDocumentation.specificationBasis === 'approved-tds-release') {
-    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>${additiveDocumentationCopy}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a></div></section></div></section><!-- product-tds-section:end -->`;
+    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>${additiveDocumentationCopy}</p></div><div class="product-documentation__actions"><a href="../quality.html">Quality documentation</a><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a></div></section></div></section><!-- product-tds-section:end -->`;
   }
   if (isFinalizedAdditive(product)) {
-    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>${additiveDocumentationCopy}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section></div></section><!-- product-tds-section:end -->`;
+    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Technical and lot documentation</h3><p>${additiveDocumentationCopy}</p></div><div class="product-documentation__actions"><a href="../quality.html">Quality documentation</a><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA</a></div></section></div></section><!-- product-tds-section:end -->`;
   }
   if (tds.representativeOnly) {
-    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Representative TDS</h3><p>Specification limits and representative lot results are provided for technical reference. Representative results are lot-specific; the applicable lot-specific Certificate of Analysis governs material supplied.</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Representative TDS (PDF)</a></div></section></div></section><!-- product-tds-section:end -->`;
+    return `<!-- product-tds-section:start --><section class="section product-technical-section" data-product-tds-section="true"><div class="container"><section class="product-documentation" id="documentation" aria-labelledby="product-documentation-title"><div><p class="detail-kicker">Documentation</p><h3 id="product-documentation-title">Representative TDS</h3><p>Specification limits and representative lot results are provided for technical reference. Representative results are lot-specific; the applicable lot-specific Certificate of Analysis governs material supplied.</p></div><div class="product-documentation__actions"><a href="../quality.html">Quality documentation</a><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">Representative TDS (PDF)</a></div></section></div></section><!-- product-tds-section:end -->`;
   }
   const representativeCoa = product.qualityDocumentation?.representativeCoa;
   const representativeCoaAction = representativeCoa
@@ -247,7 +248,7 @@ export function lowerQualityDocumentation(product, documentationHref) {
   const documentationCopy = tds.includesRepresentativeResults === false
     ? 'The TDS summarizes current supplier-confirmed specification limits without publishing representative-lot analytical results. The applicable lot-specific COA governs material supplied.'
     : 'Technical specifications are summarized from current supplier quality documentation. The TDS also includes representative COA results where available. Representative results are lot-specific; the applicable lot-specific COA governs material supplied.';
-  return `<!-- product-tds-section:start --><section class="section product-technical-section" id="documentation" data-product-tds-section="true"><div class="container"><section class="product-documentation" aria-labelledby="quality-documentation-title"><div><p class="detail-kicker">Quality Documentation</p><h2 id="quality-documentation-title">Technical and lot documentation</h2><p>${documentationCopy}</p></div><div class="product-documentation__actions"><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a>${representativeCoaAction}<a href="../quality.html">Quality documentation</a></div></section></div></section><!-- product-tds-section:end -->`;
+  return `<!-- product-tds-section:start --><section class="section product-technical-section" id="documentation" data-product-tds-section="true"><div class="container"><section class="product-documentation" aria-labelledby="quality-documentation-title"><div><p class="detail-kicker">Quality Documentation</p><h2 id="quality-documentation-title">Technical and lot documentation</h2><p>${documentationCopy}</p></div><div class="product-documentation__actions"><a href="../quality.html">Quality documentation</a><a class="btn secondary" href="${escapeHtml(tdsHref)}" target="_blank" rel="noopener">View Technical Data Sheet (PDF)</a><a href="${documentationHref}">Request Current Lot COA / SDS</a>${representativeCoaAction}<a href="../quality.html">Quality documentation</a></div></section></div></section><!-- product-tds-section:end -->`;
 }
 
 function synchronizeQualityDocumentationCopy(html, product) {
@@ -314,7 +315,9 @@ function renderProductDetailExperience(html, product) {
 
   const breadcrumb = html.match(/<div class="breadcrumb">[\s\S]*?<\/div>/i)?.[0] || '<div class="breadcrumb"><a href="../products.html">Products</a></div>';
   const context = `<div class="product-detail-context"><div class="container">${breadcrumb}</div></div>`;
-  let next = html
+  let prepared=html;
+  for(const match of [...prepared.matchAll(/<div class="product-detail-summary"[^>]*data-product-detail-ux="true"[^>]*>/g)].reverse())prepared=replaceRange(prepared,blockAt(prepared,match.index,'div'),'');
+  let next = prepared
     .replace(/<div class="mxene-sticky-shell">([\s\S]*?<\/nav>)<\/div>/gi, '$1')
     .replace(/<div class="product-sticky-shell">([\s\S]*?<\/nav>)<\/div>/gi, '$1')
     .replace(/<div class="product-tds-action">[\s\S]*?<\/div>/gi, '')
@@ -323,7 +326,6 @@ function renderProductDetailExperience(html, product) {
     .replace(/class="structure-panel product-tds-media"/gi, 'class="structure-panel"')
     .replace(/<!-- product-tds-section:start -->[\s\S]*?<!-- product-tds-section:end -->/gi, '')
     .replace(/<nav class="product-detail-nav"[^>]*data-product-detail-nav="true"[\s\S]*?<\/nav>/gi, '')
-    .replace(/<div class="product-detail-summary"[^>]*data-product-detail-ux="true"[\s\S]*?<\/section><\/div>/gi, '')
     .replace(/<section class="section product-support-routing"[^>]*data-product-support-routing="true"[\s\S]*?<\/section>/gi, '')
     .replace(/<dl class="detail-facts">[\s\S]*?<\/dl>/i, '')
     .replace(/<h3>Typical Specification<\/h3>\s*<ul class="spec-list">[\s\S]*?<\/ul>/i, '')
@@ -615,7 +617,10 @@ function removeOrphanedCommercePanelBodies(html) {
 
 function renderStaticProductCommerce(html, product) {
   if (product.commerceStatus !== 'active_checkout' || !activeVariants(product).length) return html;
-  let next = removeOrphanedCommercePanelBodies(removeCommercePanels(html));
+  let source=html;
+  const identityStart=source.indexOf('<div class="oa-detail-identity">');
+  if(identityStart>=0)source=replaceRange(source,blockAt(source,identityStart,'div'),'');
+  let next = removeOrphanedCommercePanelBodies(removeCommercePanels(source));
   if (product.mxene?.compositionNote) next = next.replace(/<section class="ecommerce-rfq-panel"[^>]*>[\s\S]*?<\/section>/i, '<div class="detail-actions"></div>');
   next = next.replace(/(<dt>Availability<\/dt><dd>)[\s\S]*?(<\/dd>)/i, `$1${commerceModeLabel(product)}$2`);
   next = next.replace(/(<section class="section dark product-detail-hero">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>\s*)<p>[\s\S]*?<\/p>/i,
@@ -627,7 +632,7 @@ function renderStaticProductCommerce(html, product) {
     .replace(/Final specifications, documentation, and available quantity can be confirmed during RFQ\./gi, 'Final specifications, documentation, and fulfillment eligibility are confirmed during order review or through a bulk RFQ.')
     .replace(/This material is available by RFQ for programs where/gi, 'Selected research packages are available for online ordering, while bulk and custom requirements are handled by quotation for programs where');
   const commercialFaq = {
-    'lithium-bis-fluorosulfonyl-imide-lifsi': '<details><summary>Can I order battery-grade LiFSI online?</summary><p>Yes. Selected LiFSI research packages are available for online ordering in 100 g, 500 g, and 1 kg sizes. Larger quantities and custom supply requirements are handled by quotation.</p></details>',
+    'lithium-bis-fluorosulfonyl-imide-lifsi': '<details><summary>Can I order battery-grade LiFSI online?</summary><p>Yes. Selected LiFSI research packages are available for online ordering in ' + escapeHtml(ecommerceBySlug.get(product.slug).packages.filter(pkg => pkg.approvalStatus === 'ACTIVE').map(pkg => pkg.label).join(', ')) + ' sizes. Larger quantities and custom supply requirements are handled by quotation.</p></details>',
     'latp-d-50-0-3-um': '<details><summary>Can I order LATP powder in research quantities?</summary><p>Yes. This LATP D50 0.30 µm grade is available in selected research-scale package sizes, with larger quantities and custom requirements available by quotation.</p></details>'
   }[product.slug];
   if (commercialFaq && !next.includes(commercialFaq.match(/<summary>(.*?)<\/summary>/)?.[1] || '')) {
@@ -638,7 +643,10 @@ function renderStaticProductCommerce(html, product) {
 
 function renderStaticRfqState(html, product) {
   if (product.commerceStatus !== 'rfq') return html;
-  let next = removeOrphanedCommercePanelBodies(removeCommercePanels(html));
+  let source=html;
+  const identityStart=source.indexOf('<div class="oa-detail-identity">');
+  if(identityStart>=0)source=replaceRange(source,blockAt(source,identityStart,'div'),'');
+  let next = removeOrphanedCommercePanelBodies(removeCommercePanels(source));
   next = next
     .replace(/<div class="detail-actions" hidden data-ecommerce-fallback-actions="true">/gi, '<div class="detail-actions">')
     .replace(/(<dt>Availability<\/dt>\s*<dd>)[\s\S]*?(<\/dd>)/gi, '$1Available by RFQ$2')

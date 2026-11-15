@@ -1,0 +1,19 @@
+/* Scientific fields are contained, never cropped or artificially sharpened. */
+.option-a .characterization-media,
+.option-a .characterization-grid,
+.option-a .mxene-characterization-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.option-a .characterization-media figure,
+.option-a .characterization-grid figure,
+.option-a .mxene-characterization-grid figure { min-width: 0; margin: 0; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: white; }
+.option-a .oa-scientific-enlarge { display: block; text-decoration: none; }
+.option-a .oa-scientific-enlarge img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; }
+.option-a .oa-scientific-enlarge span { display: block; padding: 12px 0 4px; font-size: 14px; }
+.option-a figcaption { font-size: 14px; line-height: 1.75; overflow-wrap: anywhere; }
+.option-a .oa-source-detail { font-size: 13px; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 12px; }
+.option-a .oa-scientific-enlarge:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+@media(max-width: 900px) {
+ .option-a .characterization-media,.option-a .characterization-grid,.option-a .mxene-characterization-grid { grid-template-columns: minmax(0,1fr); }
+}
+/* A table beside a nested two-image grid made each scientific field too small.
+   Give the table its own row and the figures the full available catalog width. */
+.option-a .characterization-grid:has(> .characterization-media) { grid-template-columns: minmax(0,1fr); }

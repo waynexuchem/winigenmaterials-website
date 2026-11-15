@@ -1,0 +1,57 @@
+{
+  "slug": "tetravinylsilane-tvsi",
+  "name": "Tetravinylsilane (TVSi)",
+  "cas": "1112-55-6",
+  "smiles": "C=C[Si](C=C)(C=C)C=C",
+  "inchiKey": "UFHILTCGAOPTOV-UHFFFAOYSA-N",
+  "formula": "C8H12Si",
+  "coordinates": {
+    "2": [
+      0.0,
+      0.0
+    ],
+    "1": [
+      1.1667261889578033,
+      1.1667261889578033
+    ],
+    "0": [
+      0.7526157167937699,
+      2.7122075110203125
+    ],
+    "3": [
+      -1.1667261889578033,
+      1.1667261889578033
+    ],
+    "4": [
+      -2.7122075110203125,
+      0.75261571679377
+    ],
+    "5": [
+      -1.1667261889578036,
+      -1.1667261889578031
+    ],
+    "6": [
+      -0.752615716793771,
+      -2.7122075110203125
+    ],
+    "7": [
+      1.1667261889578031,
+      -1.1667261889578036
+    ],
+    "8": [
+      2.7122075110203125,
+      -0.7526157167937712
+    ]
+  },
+  "sourceURLs": {
+    "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1112-55-6/cids/JSON",
+    "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+    "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/synonyms/JSON",
+    "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/SDF?record_type=2d"
+  },
+  "tool": "RDKit 2025.09.3",
+  "operations": "2D coordinates only; graph, bond orders, charges and fragments unchanged",
+  "status": "APPROVED_WEBSITE_LAYOUT_CHECKPOINT_1CB",
+  "svgSHA256": "917a3b7cdadc21e2858523822962039024f5de2c4a801099257c073112cc8f1c",
+  "identityReview": "Committed approved graph retained; RDKit sanitization and MOL round-trip; primary chemical references rechecked; no connectivity changes"
+}

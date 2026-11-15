@@ -1,0 +1,779 @@
+{
+  "version": 1,
+  "purpose": "Original illustrative website presentation only; never scientific characterization or Merchant product photography.",
+  "review": "Bulk visible color/form checked; lot, coating and grade appearance are not established by the illustration.",
+  "branding": "Approved Winigen logo in shared HTML margin, outside material field.",
+  "products": [
+    {
+      "slug": "lithium-iron-phosphate-lfp-energy-grade",
+      "name": "Lithium iron phosphate (LFP) - energy grade",
+      "references": [
+        "https://mtixtl.com/products/lib-lfpo",
+        "https://www.matlabs.in/products/lithium-iron-phosphate-lifepo4-cathode-material"
+      ],
+      "appearance": "grey-black fine powder, representative commercially carbon-coated LFP",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product 'Lithium iron phosphate (LFP) - energy grade'. Subject: a modest mound of fine grey-black carbon-coated commercial battery cathode powder in a shallow clean white porcelain laboratory sample dish. Bulk macroscopic view only, soft powder texture, NOT visible microscopic spherical grains or crystals. Material occupies 65% of image width, ample clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Subtle natural shadows, neutral color, no colored glow. No text, no labels, no logos, no instruments, no packaging, no scale bars, no scientific measurements, no claims, no decorative objects. This will be explicitly captioned representative illustration and branded by existing HTML outside the image; do not embed branding. Do not imply photographed Winigen lot or distinguish this grade from the power grade through invented material appearance. Research basis: commercial LFP grey-to-black fine powder; do not copy supplier composition or photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-iron-phosphate-lfp-energy-grade-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "314a6491de0a4c6018f6256e302a34be92bdd19ce4f0b1023299a0c5850c364e",
+      "nativeSHA256": "335360f25161d881bca6dfe2836f0b9ebf38e005407a201e3f3bf6ca36884b68",
+      "bytes": 94580,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "dea6e6d1362ff9cd9bfe81e98ba9931d76d15b086eb2ae4564dc505a6cc46e9f",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "LFP / LMFP",
+        "style": "Neutral medium-gray ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "dea6e6d1362ff9cd9bfe81e98ba9931d76d15b086eb2ae4564dc505a6cc46e9f",
+        "editedNativeSHA256": "ad8ece154b62e7b99e6de3d08e78f5c3460e0d873ac48a1766f1becd6afb61dd",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "LFP / LMFP",
+        "container": "Neutral medium-gray ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "lithium-iron-phosphate-lfp-power-grade",
+      "name": "Lithium iron phosphate (LFP) - power grade",
+      "references": [
+        "https://mtixtl.com/products/lib-lfpo",
+        "https://www.matlabs.in/products/lithium-iron-phosphate-lifepo4-cathode-material"
+      ],
+      "appearance": "grey-black fine powder, representative commercially carbon-coated LFP",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium iron phosphate (LFP) - power grade\". Subject: grey-black fine powder, representative commercially carbon-coated LFP. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-iron-phosphate-lfp-power-grade-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "20ebd46c56ec9facbce9cbdba308b20e3f01abe31dd7b5da19123932324309dc",
+      "nativeSHA256": "a066fac3900d9e72f6321e5e2ac94aa46246bba985df457ae9b3c7cb2ea04594",
+      "bytes": 83552,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "df5600c962f1080208bfe7b2633e739bfbad333d5cba8c883362059d331aee02",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "LFP / LMFP",
+        "style": "Neutral medium-gray ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "df5600c962f1080208bfe7b2633e739bfbad333d5cba8c883362059d331aee02",
+        "editedNativeSHA256": "afb9f89b2f60ee61e4d73be788d45a0f8f00cddd662056c483acdf1bcb921fe2",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "LFP / LMFP",
+        "container": "Neutral medium-gray ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "lithium-nickel-cobalt-aluminum-oxide-nca622",
+      "name": "Lithium nickel cobalt aluminum oxide (NCA622)",
+      "references": [
+        "https://www.msesupplies.com/collections/lithium-ion-battery-supplies-equipment-materials/products/mse-pro-lithium-nickel-cobalt-aluminum-oxide-nca-cathode-powder-500g-lini-sub-0-8-sub-co-sub-0-15-sub-al-sub-0-05-sub-o-sub-2-sub",
+        "https://www.aotbattery.com/product/Lithium-Nickel-Cobalt-Aluminum-Oxide-NCA-Powder-for-Lithium-ion-Battery.html"
+      ],
+      "appearance": "black to dark grey fine cathode powder",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Canonical grade labels retained; no compositional ratio inferred from the grade code.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium nickel cobalt aluminum oxide (NCA622)\". Subject: black to dark grey fine cathode powder. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-nickel-cobalt-aluminum-oxide-nca622-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "31a4d7ac05f71b8702d5c159253a70d75e4698eaff74ad2360c87bcd1e8e6088",
+      "nativeSHA256": "b825a35aea1de63ff896bdcec215b4e1f2d77e764b2fd983a5017c4ebc97ac24",
+      "bytes": 95682,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Layered / spinel metal oxides",
+        "container": "Existing light neutral ceramic, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "lithium-nickel-cobalt-aluminum-oxide-nca811",
+      "name": "Lithium nickel cobalt aluminum oxide (NCA811)",
+      "references": [
+        "https://www.msesupplies.com/collections/lithium-ion-battery-supplies-equipment-materials/products/mse-pro-lithium-nickel-cobalt-aluminum-oxide-nca-cathode-powder-500g-lini-sub-0-8-sub-co-sub-0-15-sub-al-sub-0-05-sub-o-sub-2-sub",
+        "https://www.aotbattery.com/product/Lithium-Nickel-Cobalt-Aluminum-Oxide-NCA-Powder-for-Lithium-ion-Battery.html"
+      ],
+      "appearance": "black to dark grey fine cathode powder",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Canonical grade labels retained; no compositional ratio inferred from the grade code.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium nickel cobalt aluminum oxide (NCA811)\". Subject: black to dark grey fine cathode powder. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-nickel-cobalt-aluminum-oxide-nca811-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "4bb90c35965cef0bda8fbbfee1cef16eaf1018d3a396389befde4dc00c47a243",
+      "nativeSHA256": "fcaf6a341c99d79b4549b3b5beb7691bc23c79e0da71c616c871affca4942a96",
+      "bytes": 90524,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Layered / spinel metal oxides",
+        "container": "Existing light neutral ceramic, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "lithium-cobalt-oxide-lco",
+      "name": "Lithium cobalt oxide (LCO)",
+      "references": [
+        "https://beyond-battery.com/en-us/products/licoo2-lithium-cobalt-oxide-powder-200g",
+        "https://neicorporation.com/specs/NEI_CBP-20_LCO_powder_Spec_Sheet.pdf"
+      ],
+      "appearance": "grey-black fine oxide powder",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium cobalt oxide (LCO)\". Subject: grey-black fine oxide powder. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-cobalt-oxide-lco-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "5a51580d88e4dc7b03c611c3e0c5376333fca9343cdc8639f439bf081574abaf",
+      "nativeSHA256": "c3d69fa829ecca90686f47e12be11b24c3639d04ba3456f9fe04c8fae52f05a5",
+      "bytes": 95400,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Layered / spinel metal oxides",
+        "container": "Existing light neutral ceramic, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "lithium-nickel-manganese-cobalt-oxide-nmc622",
+      "name": "Lithium nickel manganese cobalt oxide (NMC622)",
+      "references": [
+        "https://www.eataray.com/battery/nmc-622-single-crystal-item-11.html",
+        "https://www.gelon-lib.com/sale-33507339-lithium-nickel-manganese-cobalt-oxide-linimncoo2-nmc-lithium-ion-battery-raw-material.html"
+      ],
+      "appearance": "dark grey to ash-black fine cathode powder",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium nickel manganese cobalt oxide (NMC622)\". Subject: dark grey to ash-black fine cathode powder. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-nickel-manganese-cobalt-oxide-nmc622-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "044d8d1d2ade26264a015740709a36c1b1fb6ac06d24b6b932e8d193e31b3e80",
+      "nativeSHA256": "b9583b25cb8bbedd1482b6d8a66cf020bb361f0fde4bedce3127585379b3bb03",
+      "bytes": 117334,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Layered / spinel metal oxides",
+        "container": "Existing light neutral ceramic, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "lithium-nickel-manganese-cobalt-oxide-nmc811",
+      "name": "Lithium nickel manganese cobalt oxide (NMC811)",
+      "references": [
+        "https://www.eataray.com/battery/nmc-622-single-crystal-item-11.html",
+        "https://www.gelon-lib.com/sale-33507339-lithium-nickel-manganese-cobalt-oxide-linimncoo2-nmc-lithium-ion-battery-raw-material.html"
+      ],
+      "appearance": "dark grey to ash-black fine cathode powder",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium nickel manganese cobalt oxide (NMC811)\". Subject: dark grey to ash-black fine cathode powder. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-nickel-manganese-cobalt-oxide-nmc811-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "61bee630eee43ad6645bc74b99027b2f27f9209f6c6bc2bd1187a0aedf4416cb",
+      "nativeSHA256": "3edc207fe7e1b5f686d500180b156039e62b39dc9a98ef31eab8bc92c09e7875",
+      "bytes": 100946,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Layered / spinel metal oxides",
+        "container": "Existing light neutral ceramic, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "lithium-manganese-iron-phosphate-lmfp-energy-grade",
+      "name": "Lithium manganese iron phosphate (LMFP) - energy grade",
+      "references": [
+        "https://mtixtl.com/en-internon/products/limn0-6fe0-4po4-lithium-manganese-iron-phosphate-powder-for-li-ion-battery-cathode-150-g-bottle-lib-lmfpo",
+        "https://www.msesupplies.com/collections/battery-consumables/products/mse-pro-lithium-manganese-iron-phosphate-limn-sub-0-7-sub-fe-sub-0-3-sub-po-sub-4-sub-lmfp-cathode-powder-500g"
+      ],
+      "appearance": "grey-black to black fine powder, representative commercially carbon-coated LMFP",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium manganese iron phosphate (LMFP) - energy grade\". Subject: grey-black to black fine powder, representative commercially carbon-coated LMFP. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-manganese-iron-phosphate-lmfp-energy-grade-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "4bb989573e5f73e4576587927121f29db805eeaf37fa03e117f2924cdc9864a4",
+      "nativeSHA256": "500b3be4bacafb69c9efabcc3b122df1dff6f83bc76c32b6a761a3acac30d030",
+      "bytes": 75480,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "ea0acfb39746d63314b12782170c2e24669bf8e79d708672494eb4c5615a5917",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "LFP / LMFP",
+        "style": "Neutral medium-gray ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "ea0acfb39746d63314b12782170c2e24669bf8e79d708672494eb4c5615a5917",
+        "editedNativeSHA256": "f9785b72275f8e61b4a82dee23c2e953d40986c82d8ea3ca035eb993f413558d",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "LFP / LMFP",
+        "container": "Neutral medium-gray ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "lithium-manganese-iron-phosphate-lmfp-power-grade",
+      "name": "Lithium manganese iron phosphate (LMFP) - power grade",
+      "references": [
+        "https://mtixtl.com/en-internon/products/limn0-6fe0-4po4-lithium-manganese-iron-phosphate-powder-for-li-ion-battery-cathode-150-g-bottle-lib-lmfpo",
+        "https://www.msesupplies.com/collections/battery-consumables/products/mse-pro-lithium-manganese-iron-phosphate-limn-sub-0-7-sub-fe-sub-0-3-sub-po-sub-4-sub-lmfp-cathode-powder-500g"
+      ],
+      "appearance": "grey-black to black fine powder, representative commercially carbon-coated LMFP",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium manganese iron phosphate (LMFP) - power grade\". Subject: grey-black to black fine powder, representative commercially carbon-coated LMFP. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-manganese-iron-phosphate-lmfp-power-grade-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "2a176be132afb85f4438334c9cd92deaaf7d977d26de21f577ada166b942f5b4",
+      "nativeSHA256": "a7bbd10ec6a7a55beb7bc8aeea6ff0b69381f835a090644cbe4bed56813cee09",
+      "bytes": 82764,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "285fad83c0f72162c6338a2943556499f3411f953bbd7244995cf435dccb56d4",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "LFP / LMFP",
+        "style": "Neutral medium-gray ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "285fad83c0f72162c6338a2943556499f3411f953bbd7244995cf435dccb56d4",
+        "editedNativeSHA256": "94ce643912d7c17cf6542497e17ef5f60bb49b68762675ef36e87d18c2666248",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "LFP / LMFP",
+        "container": "Neutral medium-gray ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "lithium-manganese-oxide-lmo",
+      "name": "Lithium manganese oxide (LMO)",
+      "references": [
+        "https://www.aotbattery.com/product/Lithium-Manganese-Oxide-LiMn2O4-LMO-Powder.html",
+        "https://www.americanelements.com/lithium-manganese-oxide-powder-12057-17-9"
+      ],
+      "appearance": "very dark grey to black fine oxide powder",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium manganese oxide (LMO)\". Subject: very dark grey to black fine oxide powder. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-manganese-oxide-lmo-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "c6c14a7f08980fd771f5750a5c6870c24f61cc4d82e1fc96c582a887d0c8d687",
+      "nativeSHA256": "17e913ee56f636d25a4d172b62b085b986b21e5102767f23cd85b9b9809a4788",
+      "bytes": 91078,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Layered / spinel metal oxides",
+        "container": "Existing light neutral ceramic, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "lithium-nickel-manganese-oxide-lnmo",
+      "name": "Lithium nickel manganese oxide (LNMO)",
+      "references": [
+        "https://shinko-chem.co.jp/wp-content/uploads/20240111_LMNO-en.pdf",
+        "https://www.targray.com/li-ion-battery/cathode-materials/lnmo"
+      ],
+      "appearance": "black fine oxide powder; not a microscopy view",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium nickel manganese oxide (LNMO)\". Subject: black fine oxide powder; not a microscopy view. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-nickel-manganese-oxide-lnmo-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "227390c54689740cd796171daa6fe86dd11cbf16b549aa2bd06f6abc7b1aa779",
+      "nativeSHA256": "bcca2c2eab84cf2e633df7c1efc5221c372bb4abc08cfed65ebab71fe871c466",
+      "bytes": 85524,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Layered / spinel metal oxides",
+        "container": "Existing light neutral ceramic, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "graphite-anode-material-standard-grade",
+      "name": "Graphite anode material - standard grade",
+      "references": [
+        "https://mtixtl.com/collections/anode",
+        "https://commonminerals.esci.umn.edu/minerals-g-m/graphite"
+      ],
+      "appearance": "dark charcoal-grey to black fine powder with only a subtle subdued graphite sheen",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Graphite anode material - standard grade\". Subject: dark charcoal-grey to black fine powder with only a subtle subdued graphite sheen. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/graphite-anode-material-standard-grade-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "26d9c4cc06392b3b68b5eeaeecf717e2f9bfa0c088fe2a938788d75cdb88df24",
+      "nativeSHA256": "66d71d892da4aefad727014c4c9cede99da9ba6ee050bdab97f3f8b9e726b9a6",
+      "bytes": 116202,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "189465571833382278fbf0b5f15aa35642260dcc1010086c2f1a76994c6eba4d",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "Graphite / hard carbon",
+        "style": "Warm off-white, lightly matte ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "189465571833382278fbf0b5f15aa35642260dcc1010086c2f1a76994c6eba4d",
+        "editedNativeSHA256": "995744578a855b6598e1a296c18d53b604b408a2b9872f9473fae04874c39c2b",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "Graphite / hard carbon",
+        "container": "Warm off-white, lightly matte ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "graphite-anode-material-high-power-grade",
+      "name": "Graphite anode material - high-power grade",
+      "references": [
+        "https://mtixtl.com/collections/anode",
+        "https://commonminerals.esci.umn.edu/minerals-g-m/graphite"
+      ],
+      "appearance": "dark charcoal-grey to black fine powder with only a subtle subdued graphite sheen",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Graphite anode material - high-power grade\". Subject: dark charcoal-grey to black fine powder with only a subtle subdued graphite sheen. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/graphite-anode-material-high-power-grade-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "084c4013d190a5c38aa4137be513086854cc055a6b988c12d59dbcc748d33e0f",
+      "nativeSHA256": "263538aed38b365e0b7abeb669bd10354b86524b166993673ac0706b964d62da",
+      "bytes": 103292,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "4547307cc6b662f9c234e2337c7a26b05709b6c30c2abec762fc55d83b134dca",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "Graphite / hard carbon",
+        "style": "Warm off-white, lightly matte ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "4547307cc6b662f9c234e2337c7a26b05709b6c30c2abec762fc55d83b134dca",
+        "editedNativeSHA256": "87f756c480ef40f8bac31d47d78b5af28f849abbe9965a8be49d52b09247d141",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "Graphite / hard carbon",
+        "container": "Warm off-white, lightly matte ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "graphite-anode-material-ultra-high-power-grade",
+      "name": "Graphite anode material - ultra-high-power grade",
+      "references": [
+        "https://mtixtl.com/collections/anode",
+        "https://commonminerals.esci.umn.edu/minerals-g-m/graphite"
+      ],
+      "appearance": "dark charcoal-grey to black fine powder with only a subtle subdued graphite sheen",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Graphite anode material - ultra-high-power grade\". Subject: dark charcoal-grey to black fine powder with only a subtle subdued graphite sheen. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/graphite-anode-material-ultra-high-power-grade-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "7887fb1d1dee7fab1f85208a840fcdd8871314e3af65e315cb1a656eb54cd051",
+      "nativeSHA256": "111be1aeaedb670bc4a2eba5bf6ac71f52f1892bd50e671ea69869b57f57dec8",
+      "bytes": 116412,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "ca9291fe41ca6691f15074d9ce8394b1c57f9b4b06989b29805cf757e6006837",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "Graphite / hard carbon",
+        "style": "Warm off-white, lightly matte ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "ca9291fe41ca6691f15074d9ce8394b1c57f9b4b06989b29805cf757e6006837",
+        "editedNativeSHA256": "df6a5584cebdbfe6897dcbe5c0bbd1037ce9df82ebed33e555481b781b693a10",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "Graphite / hard carbon",
+        "container": "Warm off-white, lightly matte ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "lithium-titanate-lto",
+      "name": "Lithium titanate (LTO)",
+      "references": [
+        "https://www.aotbattery.com/product/Lithium-Titanate-Oxide-LTO-powder.html",
+        "https://www.samaterials.com/lithium-titanate-lto-nanopowder.html",
+        "https://mtixtl.com/products/li4ti5o12-titanate-powder-for-li-ion-battery-anode-150g-bag-lib-lto"
+      ],
+      "appearance": "off-white fine powder, representing uncoated LTO, not a claim about the eventual supplied coating",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Carbon-coated LTO can be black; supplied coating must be confirmed by RFQ. Image illustrates uncoated material.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium titanate (LTO)\". Subject: off-white fine powder, representing uncoated LTO, not a claim about the eventual supplied coating. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-titanate-lto-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "68271fe71fff8bf2d2b4db6a03ba069b8f1ded228882a36e77847dbe1824f0fa",
+      "nativeSHA256": "e4d7d69c849b5105e4e824abeb50203265dc495e2b17680c75ce6577ff39212a",
+      "bytes": 70072,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "27452056e45606499ce884450da7eaada3cab111bdc23e287bd31c0c6d151653",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "Silicon / SiOx / LTO",
+        "style": "Contrasting muted warm greige ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "27452056e45606499ce884450da7eaada3cab111bdc23e287bd31c0c6d151653",
+        "editedNativeSHA256": "880f20b76196239a59cfb3bceec7d9d0f64ea25150452f602fe0bf7b211bea5d",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "Silicon / SiOx / LTO",
+        "container": "Contrasting muted warm greige ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "lithium-metal-foil-on-copper-current-collector",
+      "name": "Lithium metal foil on copper current collector",
+      "references": [
+        "https://www.albemarle.com/cn/en/product/laminated-lithium-foils",
+        "https://www.cam-energy.com/shop/lithium-on-copper-foil-1964"
+      ],
+      "appearance": "one flat silver-grey metallic lithium-faced foil sheet laminated on a thin copper current collector; a small offset copper edge is visible, no thick slab or powder",
+      "form": "foil on copper",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Lithium metal foil on copper current collector\". Subject: one flat silver-grey metallic lithium-faced foil sheet laminated on a thin copper current collector; a small offset copper edge is visible, no thick slab or powder. Display a simple flat foil sheet, slight natural edge lift, silver lithium face on top and a narrow visible copper backing edge. No dish, no powder. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/lithium-metal-foil-on-copper-current-collector-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "39736f8f49fb8b500105456a89159d32b36e36ecdb18d9b298c5228164379deb",
+      "nativeSHA256": "fb480d80ffbd8a37d3083e5d7e47ba9ac11e24d086c221cd3f6a3e0b083ee1c0",
+      "bytes": 42920,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "presentationClass": {
+        "family": "Lithium-on-copper foil",
+        "container": "Existing metallic foil presentation, unchanged",
+        "changedIn2E2": false
+      }
+    },
+    {
+      "slug": "hard-carbon-anode-material",
+      "name": "Hard carbon anode material",
+      "references": [
+        "https://mtixtl.com/products/hard-carbon-powder-for-lithium-ion-battery-anode-200g-sib-bhc400",
+        "https://www.acemenergy.com/products/hard-carbon-powder-for-lithium-battery-anode-material.html"
+      ],
+      "appearance": "matte black fine carbon powder, no shiny large flakes",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Hard carbon anode material\". Subject: matte black fine carbon powder, no shiny large flakes. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/hard-carbon-anode-material-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "944b8df7af36682645e5b25e57af583ced0b1c4d7f3dabc6733fdfe3c3cc7fa4",
+      "nativeSHA256": "221c81ddfa2a182e919b14359c8e0bb9ba831dce081a054c50f7f758c1c874db",
+      "bytes": 80514,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "86bcf94516295c7f352cc528a9a0d2484281f4802171b4050caa921179d6e816",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "Graphite / hard carbon",
+        "style": "Warm off-white, lightly matte ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "86bcf94516295c7f352cc528a9a0d2484281f4802171b4050caa921179d6e816",
+        "editedNativeSHA256": "89e5dcfe6ec12773217f24f456ce289a1d263d90cf422e354e9c3b617b99ecb4",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "Graphite / hard carbon",
+        "container": "Warm off-white, lightly matte ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "silicon-anode-powder",
+      "name": "Silicon anode powder",
+      "references": [
+        "https://www.ossila.com/products/silicon-powder",
+        "https://www.aps.anl.gov/files/APS-Uploads/DET/Detector-Pool/Beamline-Components/NIST_Standard_Reference/640c_MSDS.pdf"
+      ],
+      "appearance": "dark grey fine silicon powder with a restrained subdued sheen, no large crystals",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Lot, coating and lighting can change visible shade; not lot-specific.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"Silicon anode powder\". Subject: dark grey fine silicon powder with a restrained subdued sheen, no large crystals. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/silicon-anode-powder-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "2c855ff5c69676247a5b35893ba65431421e95e4134c8c5ed326d8df2a1575bb",
+      "nativeSHA256": "dcc86697a20096cad307256bddc677e10f8c516690ddd766aa9731fff2b1b6c0",
+      "bytes": 103338,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "f70305d538fc6d41902297f8308cd49b3ecb2bc7877e2774c54a4b7a183e0edd",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "Silicon / SiOx / LTO",
+        "style": "Contrasting muted warm greige ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "f70305d538fc6d41902297f8308cd49b3ecb2bc7877e2774c54a4b7a183e0edd",
+        "editedNativeSHA256": "15052e010a90891993c62581e162bd3f51c1527ea38143879264e94015c7a8c0",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "Silicon / SiOx / LTO",
+        "container": "Contrasting muted warm greige ceramic",
+        "changedIn2E2": true
+      }
+    },
+    {
+      "slug": "siox-silicon-carbon-composite-anode-material",
+      "name": "SiOx / silicon-carbon composite anode material",
+      "references": [
+        "https://mtixtl.com/products/lib-sc450b",
+        "https://www.pcc-thorion.eu/products/silicon-carbon-composites/"
+      ],
+      "appearance": "dark grey-black fine silicon-containing carbon-composite powder; not white silica or silicon carbide",
+      "form": "loose fine powder",
+      "gradeDistinction": "Not established macroscopically; illustration is not a grade or lot measurement.",
+      "uncertainty": "Canonical record covers SiOx / Si-C options; exact composition and color remain grade-dependent.",
+      "prompt": "Use case: product-mockup. Generate one original square 1200px-class raster studio product illustration for the canonical Winigen product \"SiOx / silicon-carbon composite anode material\". Subject: dark grey-black fine silicon-containing carbon-composite powder; not white silica or silicon carbide. A modest broad mound of the material in a shallow clean white porcelain laboratory sample dish. Fine bulk powder texture, not individual microscopic particles, no enlarged spheres or crystals. Material occupies 65% of image width with clear margins. Camera 35 degrees above tabletop, neutral light grey-white background, soft daylight from upper left, restrained realistic industrial catalog photography. Soft natural shadows, neutral color. No text, labels, logos, instruments, packaging, scale bars, scientific measurements, claims, decorations or glowing particles. Existing HTML supplies Winigen logo and representative illustration qualification outside the data/image. Do not imply a photograph of a supplied Winigen lot. Similar grades should look macroscopically similar; do not invent grade-specific morphology, particle sizes or composition ratios. Research informs bulk color/form only; never copy supplier photos.",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "asset": "assets/images/illustrations/active-materials/siox-silicon-carbon-composite-anode-material-representative.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "819859149a4cb9349ebb103142426b0eb81944dd807bc579c7c978c40211f1b2",
+      "nativeSHA256": "8c9d6c5861dce4d8b6399ee95857063289f4ee8c37681150473d4d0260ab3977",
+      "bytes": 90744,
+      "generationMethod": "Built-in image generation; original macroscopic illustration, not measurement data",
+      "branding": "Existing HTML presentation margin; approved Winigen logo, no logo over material",
+      "presentation": "Representative illustration — not a photograph of a supplied lot",
+      "existingImage": "No approved photograph; factual text fallback",
+      "scientificReview": "Pass for representative bulk appearance; not evidence of supplied grade/lot or microscopic morphology",
+      "previousSHA256": "53ab831437fa1320d05e89ff5f11de6026260a160ff260a01960f3c081ef5dbf",
+      "presentationRefinement": {
+        "checkpoint": "2E.2",
+        "class": "Silicon / SiOx / LTO",
+        "style": "Contrasting muted warm greige ceramic",
+        "method": "Built-in precise-object image edit of dish color/finish; web resize and encoding only. Bulk material appearance retained; not a pixel-identical powder reconstruction.",
+        "sourceSHA256": "53ab831437fa1320d05e89ff5f11de6026260a160ff260a01960f3c081ef5dbf",
+        "editedNativeSHA256": "f7866e986aca0085e92b99b52ef0cf0fb5e6a4c656c69da495b0b5ac1dc69b53",
+        "editedNativeDimensions": [
+          1254,
+          1254
+        ]
+      },
+      "presentationClass": {
+        "family": "Silicon / SiOx / LTO",
+        "container": "Contrasting muted warm greige ceramic",
+        "changedIn2E2": true
+      }
+    }
+  ]
+}

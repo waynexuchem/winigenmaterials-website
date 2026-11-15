@@ -1,0 +1,4 @@
+// Owner-approved browsing order; taxonomy and commercial identities stay canonical.
+export const familyOrder=['lithium-salts','battery-solvents','electrolyte-additives','next-generation-salts','solid-state-electrolytes','mxene-materials','custom-formulations','active-materials','functional-coatings'];
+export const familyAnchors={'lithium-salts':'salts','battery-solvents':'solvents','electrolyte-additives':'additives','next-generation-salts':'next-gen','solid-state-electrolytes':'solid-state','mxene-materials':'mxene-materials','custom-formulations':'formulations','active-materials':'active-materials','functional-coatings':'functional-coatings'};
+export const orderedFamilies=catalog=>familyOrder.map(slug=>{const f=catalog.families.find(f=>f.slug===slug);if(!f)throw Error('Missing canonical family '+slug);return f;});

@@ -1,0 +1,13 @@
+path,already_option_a,current_option_a,changed,status
+products.html,True,True,False,Accepted route retained byte-identically
+products/lithium-salts.html,True,True,False,Accepted route retained byte-identically
+products/battery-solvents.html,True,True,False,Accepted route retained byte-identically
+products/electrolyte-additives.html,True,True,False,Accepted route retained byte-identically
+products/next-generation-salts.html,True,True,False,Accepted route retained byte-identically
+products/solid-state-electrolytes.html,True,True,False,Accepted route retained byte-identically
+products/custom-electrolyte-formulations.html,True,True,False,Accepted route retained byte-identically
+products/battery-active-materials.html,True,True,False,Accepted route retained byte-identically
+products/battery-ceramic-functional-coating-materials.html,True,True,False,Accepted route retained byte-identically
+products/mxene-materials.html,True,True,False,Accepted route retained byte-identically
+products/alumina-functional-coating-materials.html,False,True,True,Completed existing subordinate RFQ route
+products/mesoporous-alumina-materials.html,False,True,True,Completed existing subordinate RFQ route

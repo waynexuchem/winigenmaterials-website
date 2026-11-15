@@ -1,0 +1,2274 @@
+[
+  {
+    "slug": "lithium-hexafluorophosphate-lipf6",
+    "cas": "21324-40-3",
+    "formula": "F6LiP",
+    "inchiKey": "AXPLOJNSKRXQPA-UHFFFAOYSA-N",
+    "canonicalSmiles": "F[P-](F)(F)(F)(F)F.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-40-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688915/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688915/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688915/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-hexafluorophosphate-lipf6.svg",
+    "sha256": "a3fb9c5094abba9f4edc24a609a3f3a0da7fcde1694f670531dbc34b4f9d971e",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      59.0,
+      53.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-difluorophosphate-lipo-2-f-2",
+    "cas": "24389-25-1",
+    "formula": "F2LiO2P",
+    "inchiKey": "IGILRSKEFZLPKG-UHFFFAOYSA-M",
+    "canonicalSmiles": "O=P([O-])(F)F.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23697195/SDF?record_type=2d",
+      "casAnnotation": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/23697195/JSON?heading=CAS"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-difluorophosphate-lipo-2-f-2.svg",
+    "sha256": "3b773f20efe6a440fa3780abda7a6f57aed31bf4a91ed416bf00e26a12aad092",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      62.0,
+      47.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-bis-oxalato-borate-libob",
+    "cas": "244761-29-3",
+    "formula": "C4BLiO8",
+    "inchiKey": "NVQAYVUCVASGDK-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=C1O[B-]2(OC1=O)OC(=O)C(=O)O2.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [
+      5,
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/244761-29-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23677815/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23677815/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23677815/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-bis-oxalato-borate-libob.svg",
+    "sha256": "5338f904356001b4e5f40b7010d4857a7a0d8611046207f36c8a16c851cb1888",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "medium",
+    "artboardArea": [
+      99.0,
+      65.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-difluoro-oxalate-borate-liodfb",
+    "cas": "409071-16-5",
+    "formula": "C2BF2LiO4",
+    "inchiKey": "MEDDCIKGDMDORY-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=C1O[B-](F)(F)OC1=O.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/409071-16-5/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/91810277/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/91810277/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/91810277/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-difluoro-oxalate-borate-liodfb.svg",
+    "sha256": "6eedd39d22a6ae7e0c3da3eab87d86a83af0c578f57a181367118eb7ceef3478",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      68.0,
+      65.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-bis-trifluoromethane-sulphonyl-imide-litfsi",
+    "cas": "90076-65-6",
+    "formula": "C2F6LiNO4S2",
+    "inchiKey": "QSZMZKBZAYQGRS-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S(=O)([N-]S(=O)(=O)C(F)(F)F)C(F)(F)F.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3816071/SDF?record_type=2d",
+      "casAnnotation": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/3816071/JSON?heading=CAS"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-bis-trifluoromethane-sulphonyl-imide-litfsi.svg",
+    "sha256": "652f4bd5a553dff72ca24998d8aa8fa0a51bad74a58bd6a011964cca323c695a",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "large-branched",
+    "artboardArea": [
+      113.0,
+      49.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.06,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-bis-fluorosulfonyl-imide-lifsi",
+    "cas": "171611-11-3",
+    "formula": "F2LiNO4S2",
+    "inchiKey": "VDVLPSWVDYJFRW-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S(=O)(F)[N-]S(=O)(=O)F.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/171611-11-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/86277430/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/86277430/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/86277430/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-bis-fluorosulfonyl-imide-lifsi.svg",
+    "sha256": "bb0f69db30a4176b6915e69698b25cede3318ee451622d7ff3bff3865359f662",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      102.0,
+      47.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-tetrafluoroborate-libf-4",
+    "cas": "14283-07-9",
+    "formula": "BF4Li",
+    "inchiKey": "UFXJWFBILHTTET-UHFFFAOYSA-N",
+    "canonicalSmiles": "F[B-](F)(F)F.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/14283-07-9/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4298216/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4298216/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4298216/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-tetrafluoroborate-libf-4.svg",
+    "sha256": "1a63cf507720108b82fb7b6a5cd75e031b3c75a4f0e380c26dd029fd9eea6076",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      70.0,
+      53.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "ethylene-carbonate-ec",
+    "cas": "96-49-1",
+    "formula": "C3H4O3",
+    "inchiKey": "KMTRUDSVKNLOMY-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=C1OCCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/96-49-1/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7303/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7303/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7303/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/ethylene-carbonate-ec.svg",
+    "sha256": "977b9124c3f45cae8a57d0fb3f19986d85ec384d208e9a6072cc78d9a400e16e",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      53.0,
+      42.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "dimethyl-carbonate-dmc",
+    "cas": "616-38-6",
+    "formula": "C3H6O3",
+    "inchiKey": "IEJIGPNLZYLLBP-UHFFFAOYSA-N",
+    "canonicalSmiles": "COC(=O)OC",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/616-38-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12021/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12021/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12021/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/dimethyl-carbonate-dmc.svg",
+    "sha256": "07f777b7ab376a101c1e5c0b15cde0cbe57416b63b057880e1bca6f4bc5edf12",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      58.0,
+      44.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "diethyl-carbonate-dec",
+    "cas": "105-58-8",
+    "formula": "C5H10O3",
+    "inchiKey": "OIFBSDVPJOWBCH-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCOC(=O)OCC",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-58-8/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7766/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7766/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7766/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/diethyl-carbonate-dec.svg",
+    "sha256": "465234ae3da30ceba7d7874a89f9f314b921e7b7eaa7ba4ac7800ef1e66d8951",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      89.0,
+      52.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "ethyl-methyl-carbonate-emc",
+    "cas": "623-53-0",
+    "formula": "C4H8O3",
+    "inchiKey": "JBTWLSYIZRCDFO-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCOC(=O)OC",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/623-53-0/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/522046/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/522046/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/522046/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/ethyl-methyl-carbonate-emc.svg",
+    "sha256": "aec1b5dc7234202486ee60cdb24aed9f1bc3790b8ffa7cb4b47abb0e60e7e750",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      77.0,
+      43.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "propylene-carbonate-pc",
+    "cas": "108-32-7",
+    "formula": "C4H6O3",
+    "inchiKey": "RUOJZAUFBMNUDX-UHFFFAOYSA-N",
+    "canonicalSmiles": "CC1COC(=O)O1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [
+      [
+        1,
+        "?"
+      ]
+    ],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/108-32-7/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7924/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7924/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7924/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/propylene-carbonate-pc.svg",
+    "sha256": "49a406689bc7001ec3323a02c6cd163e0681148393e4ffb4d3a766e76b07dd81",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      72.0,
+      40.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "ethyl-acetate-ea",
+    "cas": "141-78-6",
+    "formula": "C4H8O2",
+    "inchiKey": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCOC(C)=O",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/141-78-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8857/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8857/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8857/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/ethyl-acetate-ea.svg",
+    "sha256": "7d6b4f471eda9e821052ac38d85c3f423c9075834f2f00fe0131f17aaa730425",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      66.0,
+      36.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "2-2-difluoroethyl-acetate-dfea",
+    "cas": "1550-44-3",
+    "formula": "C4H6F2O2",
+    "inchiKey": "PFJLHSIZFYNAHH-UHFFFAOYSA-N",
+    "canonicalSmiles": "CC(=O)OCC(F)F",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1550-44-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137074/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137074/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137074/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/2-2-difluoroethyl-acetate-dfea.svg",
+    "sha256": "1ec53809a68c909abd0d2210662cadcd5004bb69edb0aac98b02a807566e5440",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      85.0,
+      48.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-2-dimethoxyethane-dme",
+    "cas": "110-71-4",
+    "formula": "C4H10O2",
+    "inchiKey": "XTHFKEDIFFGKHM-UHFFFAOYSA-N",
+    "canonicalSmiles": "COCCOC",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-71-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8071/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8071/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8071/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-2-dimethoxyethane-dme.svg",
+    "sha256": "f7aac99562d947c801b8e1721ec8e5acf1d3c8f2ed5e48115a8f8951db75a05a",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      84.0,
+      22.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte",
+    "cas": "16627-68-2",
+    "formula": "C5H4F8O",
+    "inchiKey": "HCBRSIIGBBDDCD-UHFFFAOYSA-N",
+    "canonicalSmiles": "FC(F)C(F)(F)COC(F)(F)C(F)F",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16627-68-2/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2776662/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2776662/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2776662/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-1-2-2-tetrafluoroethyl-2-2-3-3-tetrafluoropropylether-tte.svg",
+    "sha256": "716f268ec171dc6b59439483dd69c6ddc56d3f699a0df81532f64b545fc069c1",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "medium",
+    "artboardArea": [
+      123.0,
+      53.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "methyl-2-2-2-trifluoroethyl-carbonate-femc",
+    "cas": "156783-95-8",
+    "formula": "C4H5F3O3",
+    "inchiKey": "GBPVMEKUJUKTBA-UHFFFAOYSA-N",
+    "canonicalSmiles": "COC(=O)OCC(F)(F)F",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/156783-95-8/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/17761042/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/17761042/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/17761042/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/methyl-2-2-2-trifluoroethyl-carbonate-femc.svg",
+    "sha256": "48bd8adb1f1fc96cd889385f83633e2ad9e0584b3f564768cca4e94fc0b8692c",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      92.0,
+      55.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "bis-2-2-2-trifluoroethyl-carbonate-tfec",
+    "cas": "1513-87-7",
+    "formula": "C5H4F6O3",
+    "inchiKey": "WLLOZRDOFANZMZ-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=C(OCC(F)(F)F)OCC(F)(F)F",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1513-87-7/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11447463/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11447463/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11447463/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/bis-2-2-2-trifluoroethyl-carbonate-tfec.svg",
+    "sha256": "99d13be85e443ae490cc29c42ed014b010402140765f0875fea5a5e8dc5e269f",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "medium",
+    "artboardArea": [
+      131.0,
+      73.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "vinylene-carbonate-vc",
+    "cas": "872-36-6",
+    "formula": "C3H2O3",
+    "inchiKey": "VAYTZRYEBVHVLE-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=c1occo1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/872-36-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13385/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13385/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13385/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/vinylene-carbonate-vc.svg",
+    "sha256": "07308f2801870c3019833d0262b0b08e1ad14f4c1911dc11dbb8e09c09651e0f",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      53.0,
+      42.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "vinyl-ethylene-carbonate-vec",
+    "cas": "4427-96-7",
+    "formula": "C5H6O3",
+    "inchiKey": "BJWMSGRKJIOCNR-UHFFFAOYSA-N",
+    "canonicalSmiles": "C=CC1COC(=O)O1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [
+      [
+        2,
+        "?"
+      ]
+    ],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4427-96-7/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735038/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735038/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735038/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/vinyl-ethylene-carbonate-vec.svg",
+    "sha256": "b352bb5f80d8da657c10293eec5c14c5fe538cebadddec5e3bdd7e5b88d567a5",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      79.0,
+      42.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-3-propanediol-cyclic-sulfate-ts",
+    "cas": "1073-05-8",
+    "formula": "C3H6O4S",
+    "inchiKey": "OQYOVYWFXHQYOP-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S1(=O)OCCCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1073-05-8/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/70623/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/70623/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/70623/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-3-propanediol-cyclic-sulfate-ts.svg",
+    "sha256": "8de375f4873c74a42b3b875271d82d98ee5d7096e3c9da0a951c6e5cb3eabde7",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      57.0,
+      44.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
+    "cas": "1072-53-3",
+    "formula": "C2H4O4S",
+    "inchiKey": "ZPFAVCIQZKRBGF-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S1(=O)OCCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1072-53-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14075/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14075/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14075/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-3-2-dioxathiolane-2-2-dioxide-dtd.svg",
+    "sha256": "ea88c4ebb5fb4a118cddc1664c4047d938f12c206a77767438acd78a4fbb8d9a",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      48.0,
+      42.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "prop-1-ene-1-3-sultone-pst",
+    "cas": "21806-61-1",
+    "formula": "C3H4O3S",
+    "inchiKey": "KLLQVNFCMHPYGL-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S1(=O)C=CCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21806-61-1/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10898703/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10898703/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10898703/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/prop-1-ene-1-3-sultone-pst.svg",
+    "sha256": "74026dc2a36659320ecf92bd282e4c5e34e197a57acfa3512161441fb762a4e6",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      48.0,
+      39.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
+    "cas": "114435-02-8",
+    "formula": "C3H3FO3",
+    "inchiKey": "SBLRHMKNNHXPHG-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=C1OCC(F)O1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [
+      [
+        4,
+        "?"
+      ]
+    ],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/114435-02-8/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2769656/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2769656/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2769656/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/4-fluoro-1-3-dioxolan-2-one-fec.svg",
+    "sha256": "b4955a1b72f9f13e8db41b9be776235124904478db24f13b05765a5c76b91bb0",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      76.0,
+      40.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "succinonitrile-sn",
+    "cas": "110-61-2",
+    "formula": "C4H4N2",
+    "inchiKey": "IAHFWCOBPZCAEA-UHFFFAOYSA-N",
+    "canonicalSmiles": "N#CCCC#N",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/110-61-2/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8062/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8062/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8062/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/succinonitrile-sn.svg",
+    "sha256": "7e9e6808e822086a91d66d4273026784a0675045c37bbc2b82dfb5ac8e20a9a9",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      97.0,
+      15.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "adiponitrile-adn",
+    "cas": "111-69-3",
+    "formula": "C6H8N2",
+    "inchiKey": "BTGRAWJCKBQKAO-UHFFFAOYSA-N",
+    "canonicalSmiles": "N#CCCCCC#N",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/111-69-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8128/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8128/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/8128/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/adiponitrile-adn.svg",
+    "sha256": "e8dc2a3b6fd59bfd1e5133f815530040c578e77b0ae1b660fa5dd70434d734cc",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      129.0,
+      20.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-2-bis-2-cyanoethoxy-ethane-dene",
+    "cas": "3386-87-6",
+    "formula": "C8H12N2O2",
+    "inchiKey": "VTHRQKSLPFJQHN-UHFFFAOYSA-N",
+    "canonicalSmiles": "N#CCCOCCOCCC#N",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3386-87-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/76921/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/76921/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/76921/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-2-bis-2-cyanoethoxy-ethane-dene.svg",
+    "sha256": "62cbfa5af57e4538d58108e89ae7238145f48182cb3f807e8157d4f9e66c02d6",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      195.0,
+      25.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-3-6-hexanetricarbonitrile-htcn",
+    "cas": "1772-25-4",
+    "formula": "C9H11N3",
+    "inchiKey": "LNLFLMCWDHZINJ-UHFFFAOYSA-N",
+    "canonicalSmiles": "N#CCCCC(C#N)CCC#N",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [
+      [
+        5,
+        "?"
+      ]
+    ],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1772-25-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15678/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15678/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15678/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-3-6-hexanetricarbonitrile-htcn.svg",
+    "sha256": "90f2da57a16f241cc34b9068ce06b4f18f8faea4e3dd0fb7311473ec948cfcdb",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      122.0,
+      98.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds",
+    "cas": "99591-74-9",
+    "formula": "C2H4O6S2",
+    "inchiKey": "GWAOOGWHPITOEY-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S1(=O)CS(=O)(=O)OCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/99591-74-9/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11600810/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11600810/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11600810/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-5-2-4-dioxadithiane-2-2-4-4-tetraoxide-mmds.svg",
+    "sha256": "c77dd0c24e7d95967b19d6cb990a561169b03c32775d0d4809c87857e6b18436",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      80.0,
+      54.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "tris-trimethylsilyl-borate-tmsb",
+    "cas": "4325-85-3",
+    "formula": "C9H27BO3Si3",
+    "inchiKey": "YZYKZHPNRDIPFA-UHFFFAOYSA-N",
+    "canonicalSmiles": "C[Si](C)(C)OB(O[Si](C)(C)C)O[Si](C)(C)C",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/4325-85-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/78020/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/78020/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/78020/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/tris-trimethylsilyl-borate-tmsb.svg",
+    "sha256": "6190d082a9ec45d3c405edcc86c8c3aa30259b727d8011bbb6d0be996556af78",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "large-branched",
+    "artboardArea": [
+      81.0,
+      88.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.06,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "tris-trimethylsilyl-phosphate-tmsp",
+    "cas": "10497-05-9",
+    "formula": "C9H27O4PSi3",
+    "inchiKey": "QJMMCGKXBZVAEI-UHFFFAOYSA-N",
+    "canonicalSmiles": "C[Si](C)(C)OP(=O)(O[Si](C)(C)C)O[Si](C)(C)C",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10497-05-9/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25317/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/tris-trimethylsilyl-phosphate-tmsp.svg",
+    "sha256": "f46e3bdc8ab162c414a38b8e016171d76c26f29489bb69a2ac0204105e026a51",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "large-branched",
+    "artboardArea": [
+      81.0,
+      89.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.06,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-3-propanesultone-ps",
+    "cas": "1120-71-4",
+    "formula": "C3H6O3S",
+    "inchiKey": "FSSPGSAQUIYDCN-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S1(=O)CCCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1120-71-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14264/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14264/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/14264/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-3-propanesultone-ps.svg",
+    "sha256": "d72f538ee21ec191ba6a5e224ae4e6d9442b80fbd03b346afe7327ea4f0d3509",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      48.0,
+      39.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "trimethylsilyl-phosphite-ttpi",
+    "cas": "1795-31-9",
+    "formula": "C9H27O3PSi3",
+    "inchiKey": "VMZOBROUFBEGAR-UHFFFAOYSA-N",
+    "canonicalSmiles": "C[Si](C)(C)OP(O[Si](C)(C)C)O[Si](C)(C)C",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1795-31-9/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137213/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137213/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137213/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/trimethylsilyl-phosphite-ttpi.svg",
+    "sha256": "e301f1c9c2a84ddec33df28afa6e586e0679e108d10a23f0d2407a27a5f6e9fe",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "large-branched",
+    "artboardArea": [
+      88.0,
+      81.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.06,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "sodium-hexafluorophosphate-napf-6",
+    "cas": "21324-39-0",
+    "formula": "F6NaP",
+    "inchiKey": "KMADQUOCJBLXRP-UHFFFAOYSA-N",
+    "canonicalSmiles": "F[P-](F)(F)(F)(F)F.[Na+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/21324-39-0/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5147921/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5147921/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5147921/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/sodium-hexafluorophosphate-napf-6.svg",
+    "sha256": "8631111ecd2c710f69043fa548691cbb6f48097d1996989f7c24ec8be334e260",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      70.0,
+      53.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "sodium-difluoro-oxalate-borate-naodfb",
+    "cas": "1016545-84-8",
+    "formula": "C2BF2NaO4",
+    "inchiKey": "HRRQLROHUSYBRX-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=C1O[B-](F)(F)OC1=O.[Na+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1016545-84-8/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155293661/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155293661/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155293661/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/sodium-difluoro-oxalate-borate-naodfb.svg",
+    "sha256": "d381dae9060a4486f0b78cb3382a877370c832e24f057f184431c62d3dfaed95",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      68.0,
+      65.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "potassium-hexafluorophosphate-kpf-6",
+    "cas": "17084-13-8",
+    "formula": "F6KP",
+    "inchiKey": "YZDGRYDIGCWVND-UHFFFAOYSA-N",
+    "canonicalSmiles": "F[P-](F)(F)(F)(F)F.[K+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/17084-13-8/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688904/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688904/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23688904/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/potassium-hexafluorophosphate-kpf-6.svg",
+    "sha256": "99a81133b3fe43a68b1a0ea4ec8137144ca684e2eb03ffc13e95d15282483ab8",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      64.0,
+      53.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "ethyl-propionate-ep",
+    "cas": "105-37-3",
+    "formula": "C5H10O2",
+    "inchiKey": "FKRCODPIKNYEAC-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCOC(=O)CC",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/105-37-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7749/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7749/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7749/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/ethyl-propionate-ep.svg",
+    "sha256": "cf08b0a4eafb6cd62b2aa26e7dec3ee72bfc40a7a0c016e533a1482777fecde1",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      85.0,
+      37.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "methyl-butyrate-mb-battery-grade",
+    "cas": "623-42-7",
+    "formula": "C5H10O2",
+    "inchiKey": "UUIQMZJEGPQKFD-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCCC(=O)OC",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/623-42-7/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12180/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12180/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12180/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/methyl-butyrate-mb-battery-grade.svg",
+    "sha256": "042f0446e881531a173836fbcc3bab50be5f2c96e3d4f47a996bd2dd28d4071b",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      77.0,
+      43.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "propyl-propionate-pp",
+    "cas": "106-36-5",
+    "formula": "C6H12O2",
+    "inchiKey": "MCSINKKTEDDPNK-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCCOC(=O)CC",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/106-36-5/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7803/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7803/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7803/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/propyl-propionate-pp.svg",
+    "sha256": "ea3edfd2e2d6e11c6b18958847b253b0d7a3a1c74d444a7c85be8ba4d32e39b1",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      101.0,
+      38.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "triphenyl-phosphite-tppi",
+    "cas": "101-02-0",
+    "formula": "C18H15O3P",
+    "inchiKey": "HVLLSGMXQDNUAL-UHFFFAOYSA-N",
+    "canonicalSmiles": "c1ccc(OP(Oc2ccccc2)Oc2ccccc2)cc1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6,
+      6,
+      6
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/101-02-0/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7540/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7540/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7540/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/triphenyl-phosphite-tppi.svg",
+    "sha256": "b395fb061e5c107ccc3f10fd895e995d102f9f42fec4631a5b8d69db749858c2",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "large-branched",
+    "artboardArea": [
+      118.0,
+      110.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.06,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "biphenyl-bp",
+    "cas": "92-52-4",
+    "formula": "C12H10",
+    "inchiKey": "ZUOUZKKEUPVFJK-UHFFFAOYSA-N",
+    "canonicalSmiles": "c1ccc(-c2ccccc2)cc1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6,
+      6
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/92-52-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7095/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7095/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7095/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/biphenyl-bp.svg",
+    "sha256": "8e165285790b287ab8d9a8a39d158815be10b8ec5e4c9104ccceb3fb43947f2a",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      97.0,
+      33.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "propyl-acetate-pa",
+    "cas": "109-60-4",
+    "formula": "C5H10O2",
+    "inchiKey": "YKYONYBAUNKHLG-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCCOC(C)=O",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/109-60-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7997/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7997/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/7997/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/propyl-acetate-pa.svg",
+    "sha256": "2c757ea8abad15b1c9266ef493621a08334c9b5b13988416c4f1044f17f9b58f",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      83.0,
+      38.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "ethylene-sulfite-es",
+    "cas": "3741-38-6",
+    "formula": "C2H4O3S",
+    "inchiKey": "WDXYVJKNSMILOQ-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S1OCCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/3741-38-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/77342/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/77342/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/77342/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/ethylene-sulfite-es.svg",
+    "sha256": "747a81cb089f64e600ffb31223244283055b726f9a6d74bf2a57b808affa835a",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      53.0,
+      42.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "hexamethyldisilazane-hmds",
+    "cas": "999-97-3",
+    "formula": "C6H19NSi2",
+    "inchiKey": "FFUAGWLWBBFQJT-UHFFFAOYSA-N",
+    "canonicalSmiles": "C[Si](C)(C)N[Si](C)(C)C",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/999-97-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13838/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13838/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13838/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/hexamethyldisilazane-hmds.svg",
+    "sha256": "14a861a1254da72f98b338893ed85bbfea4dfcc23429e184d60e0f10f3697818",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      67.0,
+      41.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "fluorobenzene-fb",
+    "cas": "462-06-6",
+    "formula": "C6H5F",
+    "inchiKey": "PYLWMHQQBFSUBP-UHFFFAOYSA-N",
+    "canonicalSmiles": "Fc1ccccc1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/462-06-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10008/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10008/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10008/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/fluorobenzene-fb.svg",
+    "sha256": "f0f585e38ed308a92c4706c69ce36afaa0dc362f9a97a35862484766094473d3",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      62.0,
+      33.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "sodium-bis-fluorosulfonyl-imide-nafsi",
+    "cas": "100669-96-3",
+    "formula": "F2NNaO4S2",
+    "inchiKey": "VCCATSJUUVERFU-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S(=O)(F)[N-]S(=O)(=O)F.[Na+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/100669-96-3/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/102310776/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/102310776/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/102310776/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/sodium-bis-fluorosulfonyl-imide-nafsi.svg",
+    "sha256": "18c7a9b0e3b388972d794d2a3ac98863520749fdb233e1bb38bf101ada40dc60",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      82.0,
+      61.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "cyclohexylbenzene-chb",
+    "cas": "827-52-1",
+    "formula": "C12H16",
+    "inchiKey": "IGARGHRYKHJQSM-UHFFFAOYSA-N",
+    "canonicalSmiles": "c1ccc(C2CCCCC2)cc1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6,
+      6
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/827-52-1/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13229/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13229/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13229/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/cyclohexylbenzene-chb.svg",
+    "sha256": "ee067ecc0928969645cec5b847d6793e74e8fe3a32eddb6adc26b363a94a6131",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      97.0,
+      33.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-4-butane-sultone-bs",
+    "cas": "1633-83-6",
+    "formula": "C4H8O3S",
+    "inchiKey": "MHYFEEDKONKGEB-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=S1(=O)CCCCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1633-83-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15411/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15411/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15411/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-4-butane-sultone-bs.svg",
+    "sha256": "db08cefe36f8d16e8c73330882f2a70e472cb18d6e4228d26369e875011ebad0",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      57.0,
+      39.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "1-3-dioxolane-dol",
+    "cas": "646-06-0",
+    "formula": "C3H6O2",
+    "inchiKey": "WNXJIVFYUVYPPR-UHFFFAOYSA-N",
+    "canonicalSmiles": "C1COCO1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/646-06-0/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12586/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12586/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/12586/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/1-3-dioxolane-dol.svg",
+    "sha256": "afcfa84202597dbb3f69c2e8cc6b0e31eb4a26004cef80c383b93f07f4c6beb1",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      33.0,
+      38.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "triallyl-phosphate-tap",
+    "cas": "1623-19-4",
+    "formula": "C9H15O4P",
+    "inchiKey": "XHGIFBQQEGRTPB-UHFFFAOYSA-N",
+    "canonicalSmiles": "C=CCOP(=O)(OCC=C)OCC=C",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1623-19-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15390/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/triallyl-phosphate-tap.svg",
+    "sha256": "43354c723af0ceeb91cb4da258a2aeedec516fd5de01a5400cf6b2ad6f9888c8",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "medium",
+    "artboardArea": [
+      102.0,
+      116.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-nitrate-lino3",
+    "cas": "7790-69-4",
+    "formula": "LiNO3",
+    "inchiKey": "IIPYXGDZVMZOAP-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=[N+]([O-])[O-].[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/7790-69-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10129889/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10129889/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10129889/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/lithium-nitrate-lino3.svg",
+    "sha256": "37ef68426d7538fdfed3769da7f46ad242f7e706494bb912b544ff8a7d5a9829",
+    "layoutNote": "Nitrate N=O remains horizontal; graph N+ annotation placed explicitly above bond to prevent label clipping",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      88.0,
+      47.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "tetravinylsilane-tvsi",
+    "cas": "1112-55-6",
+    "formula": "C8H12Si",
+    "inchiKey": "UFHILTCGAOPTOV-UHFFFAOYSA-N",
+    "canonicalSmiles": "C=C[Si](C=C)(C=C)C=C",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1112-55-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/66188/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/tetravinylsilane-tvsi.svg",
+    "sha256": "d44ba2215f15dde78cdf7d709d8b4a4bb18a3c01ad42463aa388bc567d91379e",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "small-organic",
+    "artboardArea": [
+      65.0,
+      65.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "ethoxy-pentafluoro-cyclotriphosphazene-pfpn",
+    "cas": "33027-66-6",
+    "formula": "C2H5F5N3OP3",
+    "inchiKey": "CBTAIOOTRCAMBD-UHFFFAOYSA-N",
+    "canonicalSmiles": "CCOP1(F)=NP(F)(F)=NP(F)(F)=N1",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [
+      6
+    ],
+    "stereocenters": [
+      [
+        3,
+        "?"
+      ]
+    ],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/33027-66-6/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23419249/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23419249/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23419249/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/ethoxy-pentafluoro-cyclotriphosphazene-pfpn.svg",
+    "sha256": "62358811e4f40d639b6f63c4645d6fc7620aaa1662b7cfe8b33bca0b1a295a72",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "medium",
+    "artboardArea": [
+      106.0,
+      80.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.1,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "tris-2-2-2-trifluoroethyl-phosphate-tfep",
+    "cas": "358-63-4",
+    "formula": "C6H6F9O4P",
+    "inchiKey": "ZMQDTYVODWKHNT-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=P(OCC(F)(F)F)(OCC(F)(F)F)OCC(F)(F)F",
+    "fragmentCharges": [
+      0
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": {
+      "resolve": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/358-63-4/cids/JSON",
+      "properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/303454/property/MolecularFormula,InChIKey,InChI,Charge,IUPACName/JSON",
+      "synonyms": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/303454/synonyms/JSON",
+      "sdf": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/303454/SDF?record_type=2d"
+    },
+    "asset": "assets/images/product-images/website/structures-2f/tris-2-2-2-trifluoroethyl-phosphate-tfep.svg",
+    "sha256": "8b7c02b8e739768dc74eaabaa3176b42e05ba8dc6efd59f3dc95039f4bdc6d44",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "large-branched",
+    "artboardArea": [
+      128.0,
+      111.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.06,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "sodium-difluorophosphate-napo2f2",
+    "cas": "15587-24-3",
+    "formula": "F2NaO2P",
+    "inchiKey": "KBVUALKOHTZCGR-UHFFFAOYSA-M",
+    "canonicalSmiles": "O=P([O-])(F)F.[Na+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": [
+      "https://www.sigmaaldrich.com/US/en/product/aldrich/939773",
+      "https://pubchem.ncbi.nlm.nih.gov/compound/23694905"
+    ],
+    "asset": "assets/images/product-images/website/structures-2f/sodium-difluorophosphate-napo2f2.svg",
+    "sha256": "bcc69bee10ff39bc3d263dd0dca12ae54bd821819bd5aa8da53817dbeed1ba0c",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "compact-inorganic",
+    "artboardArea": [
+      71.0,
+      47.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 18.7128,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.08,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  },
+  {
+    "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+    "cas": "678966-16-0",
+    "formula": "C4F2LiO8P",
+    "inchiKey": "KRYVNYFSKKOTLE-UHFFFAOYSA-N",
+    "canonicalSmiles": "O=C1O[P-]2(F)(F)(OC1=O)OC(=O)C(=O)O2.[Li+]",
+    "fragmentCharges": [
+      -1,
+      1
+    ],
+    "rings": [
+      5,
+      5
+    ],
+    "stereocenters": [],
+    "source": "docs/merchant-images/chemical-integration/approved-chemical-provenance.json",
+    "sourceSHA256": "1f39e0340e3c6cfc104c3eba2435b8584caea503c7ebde9eea764f80cf2cc637",
+    "sourceURLs": [
+      "https://www.tcichemicals.com/US/en/p/L0369",
+      "https://www.chemscene.com/product/678966-16-0.html",
+      "https://www.aaronchem.com/678966-16-0"
+    ],
+    "asset": "assets/images/product-images/website/structures-2f/lithium-difluorobis-oxalato-phosphate-lidodfp.svg",
+    "sha256": "1d231589461fa5057f418637239a7b841314c917d1ccc726d893211197b2f69d",
+    "layoutNote": "Deterministic RDKit coordinates or existing approved coordinate definition",
+    "complexityClass": "large-branched",
+    "artboardArea": [
+      98.0,
+      62.0
+    ],
+    "visualRefinement": "Geometry-aware bounds; compact inorganic bonds 15% longer than de76a44; validated graph unchanged",
+    "preset": {
+      "referenceBondLength": 16.272,
+      "referenceLineWidth": 0.6,
+      "referenceAtomLabelSize": 10,
+      "drawingPadding": 0.06,
+      "font": "Arial/Helvetica sans-serif",
+      "palette": "Winigen override, not an official ACS color requirement"
+    },
+    "rdkit": "2025.09.3",
+    "validation": "Sanitized graph, CAS, formula, InChIKey, ionic fragments; retained approved coordinate overrides where available"
+  }
+]

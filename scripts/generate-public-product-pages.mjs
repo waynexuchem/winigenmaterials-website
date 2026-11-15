@@ -1,3 +1,5 @@
+import {renderFamilyPage} from '../design/option-a/build-pilot.mjs';
+import {sharedCategoryContent} from '../design/option-a/catalog-template.mjs';
 import { synchronizeProductPresentation, identityAliases, displayIdentity } from './catalog-card-identity.mjs';
 import { synchronizeAdditiveTds } from './sync-additive-tds.mjs';
 import { access, readFile, writeFile as writeRawFile } from 'node:fs/promises';
@@ -279,7 +281,11 @@ for (const product of process.argv.includes('--catalog-only') ? [] : catalog.pro
   }
 }
 
-{
+if ((await readFile(resolve(root,'products.html'),'utf8')).includes('data-oa-unified-category')) {
+  // The shared Option A renderer owns all family grids and canonical ordering.
+  for(const family of catalog.families){const path=resolve(root,family.url.slice(1));const html=await readFile(path,'utf8');await writeFile(path,await renderFamilyPage(family.url.slice(1),html,{isCategory:true,content:sharedCategoryContent(html,family.slug)}));}
+  const path=resolve(root,'products.html'),html=await readFile(path,'utf8');await writeFile(path,await renderFamilyPage('products.html',html,{isCategory:true,content:sharedCategoryContent(html)}));
+} else {
   const productsPath = resolve(root, 'products.html');
   let productsHtml = synchronizeChemicalStructures(removeMisclassifiedCards(removeStaleCards(normalizeRfqStatus(await readFile(productsPath, 'utf8')))));
   // Reconcile existing cards by section before inserting missing cards. A canonical

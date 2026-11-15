@@ -56,6 +56,7 @@
     return {
       ...record,
       normalizedName: normalize(record.name),
+      normalizedFullName: normalize(record.fullName || record.name),
       baseName: baseName(record.name),
       normalizedAliases: aliases,
       normalizedFormula: compact(record.formula),
@@ -72,8 +73,8 @@
     const numericQuery = /^[\d\s-]+$/.test(String(query).trim());
     const tiers = [
       { test: record => numericQuery && compactCas.length >= 4 && record.compactCas === compactCas },
-      { test: record => record.normalizedName === normalized || record.baseName === normalized },
-      { test: record => record.normalizedAliases.includes(normalized), uniqueOnly: true },
+      { test: record => record.normalizedName === normalized || record.normalizedFullName === normalized || record.baseName === normalized },
+      { test: record => record.normalizedAliases.some(alias=>alias===normalized||compact(alias)===compactQuery), uniqueOnly: true },
       { test: record => compactQuery.length > 1 && record.normalizedFormula === compactQuery, uniqueOnly: true }
     ];
     for (let index = 0; index < tiers.length; index += 1) {
@@ -96,7 +97,7 @@
     const normalized = normalize(query);
     const tokens = normalized.split(' ').filter(token => token.length > 1);
     if (!tokens.length) return 0;
-    const name = record.normalizedName;
+    const name = `${record.normalizedName} ${record.normalizedFullName || ''}`;
     const aliases = record.normalizedAliases.join(' ');
     const formula = record.normalizedFormula;
     const metadata = record.normalizedMetadata;
@@ -120,6 +121,15 @@
     const prepared = records.map(record => record.normalizedName ? record : prepareRecord(record));
     const applyScope = matches => section ? matches.filter(record => record.section === section) : matches;
     if (!String(query || '').trim()) return { records: applyScope(prepared), matchType: 'all' };
+    // A verified alias identifies a standalone material before component-name broad matches.
+    // Keep full canonical-name and CAS searches in their existing exact-match tiers.
+    const alias = normalize(query);
+    const standalone = prepared.filter(record => record.section !== 'formulations' && record.normalizedAliases.includes(alias));
+    const fullNameMatch = prepared.some(record => record.normalizedFullName === alias);
+    if (standalone.length === 1 && !fullNameMatch) {
+      const related = prepared.filter(record => record !== standalone[0] && record.normalizedAliases.includes(alias));
+      return { records: applyScope(standalone.concat(related)), matchType: 'exact-3' };
+    }
     const exact = exactMatches(prepared, query);
     if (exact) return { records: applyScope(exact.matches), matchType: `exact-${exact.tier}` };
     const ranked = prepared

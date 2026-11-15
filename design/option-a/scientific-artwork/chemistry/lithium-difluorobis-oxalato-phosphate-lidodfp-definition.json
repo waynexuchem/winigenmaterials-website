@@ -1,0 +1,84 @@
+{
+  "slug": "lithium-difluorobis-oxalato-phosphate-lidodfp",
+  "name": "Lithium difluorobis(oxalato)phosphate (LiDFBOP)",
+  "cas": "678966-16-0",
+  "smiles": "O=C1O[P-]2(F)(F)(OC1=O)OC(=O)C(=O)O2.[Li+]",
+  "inchiKey": "KRYVNYFSKKOTLE-UHFFFAOYSA-N",
+  "formula": "C4F2LiO8P",
+  "coordinates": {
+    "3": [
+      0.0,
+      0.0
+    ],
+    "2": [
+      -0.9673762078750735,
+      1.3314791228132148
+    ],
+    "1": [
+      -2.532623792124926,
+      0.8228993532094625
+    ],
+    "7": [
+      -2.532623792124926,
+      -0.8228993532094622
+    ],
+    "6": [
+      -0.9673762078750738,
+      -1.331479122813215
+    ],
+    "0": [
+      -3.503444185374863,
+      1.5282416559604304
+    ],
+    "8": [
+      -3.503444185374863,
+      -1.52824165596043
+    ],
+    "9": [
+      0.9673762078750735,
+      1.3314791228132148
+    ],
+    "10": [
+      2.532623792124926,
+      0.8228993532094625
+    ],
+    "12": [
+      2.532623792124926,
+      -0.8228993532094622
+    ],
+    "14": [
+      0.9673762078750738,
+      -1.331479122813215
+    ],
+    "11": [
+      3.503444185374863,
+      1.5282416559604304
+    ],
+    "13": [
+      3.503444185374863,
+      -1.52824165596043
+    ],
+    "4": [
+      0.0,
+      1.85
+    ],
+    "5": [
+      0.0,
+      -1.85
+    ],
+    "15": [
+      3.6,
+      2.7
+    ]
+  },
+  "sourceURLs": [
+    "https://www.tcichemicals.com/US/en/p/L0369",
+    "https://www.chemscene.com/product/678966-16-0.html",
+    "https://www.aaronchem.com/678966-16-0"
+  ],
+  "tool": "RDKit 2025.09.3",
+  "operations": "2D coordinates only; graph, bond orders, charges and fragments unchanged",
+  "status": "APPROVED_WEBSITE_LAYOUT_CHECKPOINT_1CB",
+  "svgSHA256": "475702bee7785ca863cdc40bb4dc23a977e042d144bf68e5f18fa562b17dba31",
+  "identityReview": "Committed approved graph retained; RDKit sanitization and MOL round-trip; primary chemical references rechecked; no connectivity changes"
+}

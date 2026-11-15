@@ -1,0 +1,14 @@
+[
+  {
+    "id": "hc-nfpp",
+    "asset": "/assets/images/electrolyte-performance/winigen-hc-nfpp-45c-cycling.png",
+    "sha256": "a6c2114beeb6fb9dcaf9f4ae45eb8bab15a6cec4a5859278e99f2188a87a5678",
+    "basis": "Authorized supplied chart-cache/table data; added scientific limitation annotations; point sequence and calculations unchanged"
+  },
+  {
+    "id": "lnmo-cold",
+    "asset": "/assets/images/electrolyte-performance/winigen-lnmo-minus20c-discharge.png",
+    "sha256": "9731468378744fac3d804055119922192d8c319192434c191f2a5570cfb83068",
+    "basis": "Authorized supplied chart-cache/table data; added scientific limitation annotations; point sequence and calculations unchanged"
+  }
+]

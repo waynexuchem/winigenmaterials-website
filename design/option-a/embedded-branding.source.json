@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "policy": "Existing visible Winigen attribution is already branding. Do not add another presentation logo. Hash changes require re-review.",
+  "assets": {
+    "assets/images/knowledge/additives-high-voltage-cross-talk.png": {
+      "sha256": "8d89f4567d11bb0d23431a08d2bbd95bc64382cae4f3f116572049238fd4edc7",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/additives-screening-evidence-chain.png": {
+      "sha256": "aa8a2bb8cebf3d67b22f132b3b710254236759f795f98579e424b5f328299a65",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/additives-silicon-sei-fec-vc.png": {
+      "sha256": "048452e2e2f562af0b51cbd6fe932cae9e62e8de834df1324cdf894ad4f60fc0",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/battery-materials-optimization/application-optimization-matrix.png": {
+      "sha256": "73ec5350b044caaadda5a1407540dce0874182b64c3042dddb2280aa45711fb3",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/battery-materials-optimization/degradation-mechanism-mode-observable.png": {
+      "sha256": "3ba5cf41602fcd3eb7361d94c5343bfe3865e8fa7f96c808928794868d1a79bb",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/battery-materials-optimization/fast-charge-bottleneck-map.png": {
+      "sha256": "6d84d5f381cba922a3429e2035179c841d339a444107fb7e90c39419e6d31ae0",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/battery-materials-optimization/high-energy-bottleneck-chain.png": {
+      "sha256": "9cddf4c735acd7ea5ac5da03872052a1aebc0fc0a6a544c8a5680d543dee66ba",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/battery-materials-optimization/materials-process-interface-validation-chain.png": {
+      "sha256": "52cd8be711556588d028360055b71c5b4972e8d363165cf690d074af77dcb4f2",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-part-2/coin-pouch-ranking-reversal.png": {
+      "sha256": "7f40b1217b6e2407b5c31d384915f19b83cef6e867556ed3f5def46f8dbb9a04",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-part-2/electrolyte-wetting-translation-map.png": {
+      "sha256": "281c4ed654c2260af5758379ca08de4d47981ec1a7c57541005c7388dd1f215e",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-part-2/formation-gas-swelling-causal-chain.png": {
+      "sha256": "836e48bf5ea443eea93f645daf67badbf2bfbb08752464365429649b1ede0c5e",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-part-2/gas-measurement-framework.png": {
+      "sha256": "03b2d0c00b0d444433e1963e233b71a10f8341bb5d34801665c561a97a96bfe1",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-part-2/lean-electrolyte-and-trapped-gas.png": {
+      "sha256": "631a018e64cbe4b5bd6db3869017089e5335ffe132554939ba061a668359ecc2",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-validation/battery-scale-up-qc-evidence-chain.png": {
+      "sha256": "180c3e4e364c950b13745f824c26ac5424ec5361b0f66091dfc902eef567491b",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-validation/coin-to-pouch-validation-ladder.png": {
+      "sha256": "0db756e36444f693cfb0d01c49f32b17d055f7d847692b080e96195292491bdf",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/coin-to-pouch-validation/pouch-cell-process-control-map.png": {
+      "sha256": "3cc1069ee03ee2b5dbbd27921ce48fa0cea9b3c29bf5cff424271e264d44057d",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/all-solid-state-battery-indicator-forecast-en.jpg": {
+      "sha256": "7ded521075f31cd7763094a9075feec3ec553d3f2f0e5cdeaa3db8528ff71e9e",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/automotive-battery-material-roadmap-en.jpg": {
+      "sha256": "692444cf219731cc54a370ba4a737f68a3c09ffe76439b072608882ce580e3e4",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/battery-energy-density-trajectory-en.jpg": {
+      "sha256": "7c1473009ecb8f46aaf7e5414f2dbf737830f6417bcf716296ca88ee805651ee",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/fast-charge-classification-and-module-targets-en.jpg": {
+      "sha256": "626682c0343d0629199e096ba445af88fb7e218e137487ca10ff228533b38925",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/hybrid-battery-power-durability-safety-en.jpg": {
+      "sha256": "270c3e3fb5ee1734e7933a14a93dd44613095583358b510057571c020aef354a",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/liquid-vs-all-solid-state-cell-architecture-en.jpg": {
+      "sha256": "5b66fe3e77602a0bdd2cc223530c9db08b8535cec6de308e92c1f17b8d73e2d9",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/rapid-internal-heating-system-en.jpg": {
+      "sha256": "e12a178bbfddf0057bbb25bb9804c33f0b60628e8fb81b413611e074d46ea551",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/solid-state-lithium-sulfur-performance-table-reconstructed-en.jpg": {
+      "sha256": "f68c812ca4cad4557b65ec8f0ce5a804260dfee9a446ff10422554cb84939674",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/solid-state-sodium-battery-targets-en.jpg": {
+      "sha256": "85f0cfa8e2f2a361d64398b44515b10dbf37959f7bbada70ef591d7ef88d284a",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/sulfide-all-solid-state-cell-architecture-en.jpg": {
+      "sha256": "b3f806c42bebb59828d21f269994922b27e08de42d97e408cc6e1bdeed4af590",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/ev-battery-topics/thermal-runaway-t1-t2-t3-concept-en.jpg": {
+      "sha256": "18ade433dfedd1818328711e2770d70285b27e060bd80dc01242d6f8e7d158e7",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/fast-formation-lithium-rich-cathodes/electrochemical-replot.png": {
+      "sha256": "7ec31c7f6901a4b9ef23d26044a930954123408c26c65cd56d0b5f074139ebf3",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/fast-formation-lithium-rich-cathodes/formation-pathway-schematic.png": {
+      "sha256": "ac6ca4775f29d458a9a3cd2afa7b987bdef9ad3dec4caaf13a1390030612dd29",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/fast-formation-lithium-rich-cathodes/redox-residual-li-inventory.png": {
+      "sha256": "b2f066bca646633d4d7c8862a9e86cbb28271967c26aad26c6042eb2ca47d3cb",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/fast-formation-lithium-rich-cathodes/structural-strain-replot.png": {
+      "sha256": "8ac4632c92b3dfb56f2a257124e8f46626c7fde405bff6828aee6de1afb84bf4",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/np-ratio/coin-vs-pouch-np-ratio.png": {
+      "sha256": "ae2c10c2ccfd1bb244795f2dea280d4053071a1b4ff01adde2a098cfc9b1df8b",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/np-ratio/nominal-vs-effective-np-ratio.png": {
+      "sha256": "f2757a2165a40263f219e9c516594229a34e89ed5c8d7f1ef20e563c39d34b0f",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/np-ratio/np-ratio-calculation-example.png": {
+      "sha256": "570e96e8ff5c5c8ca982c766a435ae58e9f5b47cd2b1f8ee1d7d4b2f8957c200",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/np-ratio/np-ratio-full-cell-design.png": {
+      "sha256": "a8474d16ce21f6cebc0ce6c0141d687e5dece1dcd8429ea753004f77b14e3482",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/np-ratio/np-ratio-receiving-capacity.png": {
+      "sha256": "f9cf889f6034f453ef0f1897ae10b00f7f9e28485b3355ba37145210d07d7734",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/np-ratio/np-ratio-tradeoff-window.png": {
+      "sha256": "48b4a669fe58102493207ab447b07d162a71c202b3a4b456cea51aaa00edba85",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/np-ratio/voltage-capacity-matching.png": {
+      "sha256": "1c1941c94305db6149657272da012165deb87f054f08def3e04c4a365d6e5995",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-electrolyte-design-map.png": {
+      "sha256": "7019f4c61010bdb6037dd2dd1cc0964fb2b1c14bdadf7fd364547ac6557bf204",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-gas-safety-framework.png": {
+      "sha256": "4422f33cd644a2e0a1978e0fbc2136c509259b08fafc98b3d8c4afd767e4b6f8",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-transport-pathway.png": {
+      "sha256": "5fe55f219c57ecc164faebd755424572b014d3f8935427cec2354d683e6e3923",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/sodium-ion-electrolyte-design/sodium-ion-wide-temperature-strategy.png": {
+      "sha256": "fa4dc92ae6dc84c00ac785fb347bd18506f9f15dafc4507c50f0ad4eeb37af81",
+      "evidence": "Existing visible Winigen Materials footer/copyright; manually inspected in Checkpoint 2E native-footer contact sheets. Original pixels retained."
+    },
+    "assets/images/knowledge/low-temperature/solvation-desolvation-sei-pathway.svg": {
+      "sha256": "aee777f4bd6a6c9e493b43edfa28e16919e3d7d419c1413a66f86c45d00d445d",
+      "evidence": "Winigen Materials appears in existing visible SVG text; original vector bytes retained."
+    },
+    "assets/images/knowledge/low-temperature/ultra-cold-system-map.svg": {
+      "sha256": "d6e118c62fd05c3260a5305d2fcd5b05f0b26d3edde687aeda241b40c598e11f",
+      "evidence": "Winigen Materials appears in existing visible SVG text; original vector bytes retained."
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import {validateKnowledgePublication,internalKnowledgePaths} from '../design/option-a/knowledge-publication.mjs';
 import { copyFile, lstat, mkdir, readFile, readdir, realpath, rm } from 'node:fs/promises';
 import { COPYFILE_EXCL } from 'node:constants';
 import { dirname, extname, join, posix, relative, resolve, sep } from 'node:path';
@@ -32,6 +33,8 @@ const publicRootFiles = new Set([
   'private-orders/wq20260922-01.html',
   'private-orders/wq20260923-01.html',
   'private-orders/wq20261021-01.html',
+  'private-orders/wq20261103-02.html',
+  'policies/returns-refunds.html',
   'products.html',
   'quality.html',
   'robots.txt',
@@ -61,6 +64,7 @@ function hasExtension(path, extensions) {
 }
 
 export function validatePublicAssetPath(path) {
+  if(internalKnowledgePaths.includes(path))throw new Error(`Internal Knowledge data cannot be published: ${path}`);
   if (!path || path.trim() !== path || path.includes('\\') || path.startsWith('/') || path.split('/').includes('..')) {
     throw new Error(`Unsafe public asset path: ${path}`);
   }
@@ -325,6 +329,7 @@ export async function prepareCloudflareSite({
   const manifest = parsePublicAssetManifest(await readFile(manifestPath, 'utf8'));
   const realSiteRoot = await realpath(resolvedSiteRoot);
   await validatePublicAssetClosure({ siteRoot: resolvedSiteRoot, manifest });
+  await validateKnowledgePublication({siteRoot:resolvedSiteRoot,manifest,collectReferences:collectLocalPublicAssetReferences});
   await rm(resolvedOutputRoot, { recursive: true, force: true });
   await mkdir(resolvedOutputRoot, { recursive: true });
 

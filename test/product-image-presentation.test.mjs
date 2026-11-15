@@ -1,3 +1,5 @@
+import {websiteReplacementSlugs} from './option-a-approved-changes.mjs';
+import {websiteImageAssignments} from '../design/option-a/website-images.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -38,7 +40,10 @@ test('all canonical image assignments are explicit; no website derivatives in fe
     }
     const page=await read(p.url.slice(1));
     for (const script of page.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
-      assert.ok(!script[1].includes('/product-images/website/'),slug);
+      if(websiteReplacementSlugs.includes(slug)){
+        const images=Array.from(script[1].matchAll(/https:\/\/www\.winigenmaterials\.com\/assets\/images\/product-images\/website\/[^"\s]+/g),m=>m[0]);
+        assert.ok(images.every(image=>image==='https://www.winigenmaterials.com'+websiteImageAssignments[slug].image),slug);
+      }else assert.ok(!script[1].includes('/product-images/website/'),slug);
     }
   }
 });

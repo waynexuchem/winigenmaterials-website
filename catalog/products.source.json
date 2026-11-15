@@ -98,7 +98,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_LiPF6_Representative_TDS_RevB.pdf",
-          "sha256": "1282e4c8fa7cd823b9d7557f5dd992734a91d7d68125a5e0e62a9923fc89e996"
+          "sha256": "9c258a0e9c5d311a09ab697d53d2aa907e6a4f5c623a28247503f47bf86f3137"
         },
         "keySpecifications": [
           "CAS Number",
@@ -179,7 +179,7 @@
       "slug": "lithium-difluorophosphate-lipo-2-f-2",
       "url": "/products/lithium-difluorophosphate-lipo-2-f-2.html",
       "name": "Lithium difluorophosphate (LiPO2F2)",
-      "description": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.9 wt%, water ≤150 µg/g, and acidity as HF ≤100 ppm.",
+      "description": "Lithium difluorophosphate (LiPO2F2), CAS 24389-25-1, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.9 wt%, water ≤150 ppm, and acidity as HF ≤100 ppm.",
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIPO2F2",
@@ -191,7 +191,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_LiPO2F2_Representative_TDS_RevB.pdf",
-          "sha256": "a48a62fc35e1208d40fc81fef9cd4550c2407cc9eeeb2caeddb2943e56abb482"
+          "sha256": "98fd012534c18902fa2bfb08910a5fcad486d28fa244662f8c8294ea054fcbd7"
         },
         "keySpecifications": [
           "CAS Number",
@@ -240,7 +240,7 @@
         },
         {
           "name": "Water",
-          "value": "≤150 µg/g"
+          "value": "≤150 ppm"
         },
         {
           "name": "Acidity, as HF",
@@ -375,7 +375,7 @@
       "slug": "lithium-difluoro-oxalate-borate-liodfb",
       "url": "/products/lithium-difluoro-oxalate-borate-liodfb.html",
       "name": "Lithium difluoro oxalate borate (LiODFB)",
-      "description": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 µg/g, and Hazen color ≤10.",
+      "description": "Lithium difluoro oxalate borate (LiDFOB / LiODFB), CAS 409071-16-5, is a lithium electrolyte additive available from Winigen Materials. Supplier specifications include assay ≥99.99 wt%, water ≤15 ppm, and Hazen color ≤10.",
       "family": "lithium-salts",
       "category": "Lithium Salts",
       "sku": "WM-LS-LIODFB",
@@ -387,7 +387,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_LiDFOB_Representative_TDS_RevB.pdf",
-          "sha256": "7fe6494bfbdc91ccb44e8405cd7e82b31e6d3cbf38650dfcdc5bc7ddc678b23b"
+          "sha256": "3ab6d278b4db5921746a90113a620f915cf5ff20fecc670f939398e4e55debef"
         },
         "keySpecifications": [
           "CAS Number",
@@ -446,7 +446,7 @@
         },
         {
           "name": "Water",
-          "value": "≤15 µg/g"
+          "value": "≤15 ppm"
         },
         {
           "name": "Hazen color",
@@ -498,7 +498,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_LiTFSI_Representative_TDS_RevB.pdf",
-          "sha256": "50d58e212a6a29492da2dbbfcc0c45b847038651ac1c8ea51eb6b07ae7a31907"
+          "sha256": "f6bc73c1968c2ee9784e6f5ab6ac2c2f9f0539412438133e8fe8d35268ebc118"
         },
         "keySpecifications": [
           "CAS Number",
@@ -597,7 +597,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_LiFSI_Representative_TDS_RevB.pdf",
-          "sha256": "a28dbacb3e14b65f2c89b3adbb8dcb2b0dd55457857b31edb2f8573f74321dee"
+          "sha256": "8429d7e9701749f3b5adb23784e7fd4d19d16c8c1af7ffbb3c1fc55154f9acac"
         },
         "keySpecifications": [
           "CAS Number",
@@ -688,7 +688,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_LiBF4_Representative_TDS_RevB.pdf",
-          "sha256": "68d2d56189941fdc1a96472232e4a7801bcbc0e7b155625537b6148de7e8a8ed"
+          "sha256": "02a3f2c3162512fec631872a98133fb517e88ec18933c3bbb992b11742d98e19"
         },
         "keySpecifications": [
           "CAS Number",
@@ -727,7 +727,7 @@
         },
         {
           "name": "Availability",
-          "value": "RFQ"
+          "value": "Online ordering; bulk quantities by quotation"
         },
         {
           "name": "Grade",
@@ -751,7 +751,7 @@
         },
         {
           "name": "Trace metals",
-          "value": "Individual ICP-OES limits ≤10 ppm"
+          "value": "Na, Ca, K, Pb, Fe, Cu, Zn, Mg, Cr, Ni, Mn, Ba, Cd, Al: ≤10 ppm each; method not specified in the TDS"
         },
         {
           "name": "Chloride",
@@ -789,7 +789,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_EC_Representative_TDS_RevB.pdf",
-          "sha256": "44cc78a76e9839e17a9790fb954da01d7f03a83c53b05b4c99302d908a28c792"
+          "sha256": "931429557949b1e11e07d077516e97492c865dc48bd5e15fe906bb35c15066a5"
         },
         "keySpecifications": [
           "CAS Number",
@@ -858,7 +858,7 @@
         },
         {
           "name": "Physical",
-          "value": "Colorless transparent liquid above 35°C; crystalline solid at room temperature."
+          "value": "Colorless transparent liquid; no visible impurities. Observation temperature not stated in the TDS."
         }
       ],
       "primaryAbbreviation": "EC",
@@ -877,7 +877,7 @@
       "slug": "dimethyl-carbonate-dmc",
       "url": "/products/dimethyl-carbonate-dmc.html",
       "name": "Dimethyl carbonate (DMC)",
-      "description": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.995 wt%, water ≤15 µg/g, and Hazen color ≤10.",
+      "description": "Dimethyl carbonate (DMC), CAS 616-38-6, is a battery-grade carbonate solvent available from Winigen Materials. Supplier specifications include assay ≥99.995 wt%, water ≤15 ppm, and Hazen color ≤10.",
       "family": "battery-solvents",
       "category": "Battery Solvents",
       "sku": "WM-SOL-DMC",
@@ -888,7 +888,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_DMC_Representative_TDS_RevB.pdf",
-          "sha256": "e4837043b7fb874d89d95a8052d4fb643b665dc22e481b8dee0a092af5ffe54c"
+          "sha256": "ef5f310bfd76714e006b4bd7a42746672d7120f171587b697043b69ef52ee1ee"
         },
         "keySpecifications": [
           "CAS Number",
@@ -933,7 +933,7 @@
         },
         {
           "name": "Water",
-          "value": "≤15 µg/g"
+          "value": "≤15 ppm"
         },
         {
           "name": "Hazen color",
@@ -983,7 +983,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_DEC_Representative_TDS_RevB.pdf",
-          "sha256": "6ddad3a8678912a9672e3bbe2ac9a8616a0e000c4d5672e3f1c5a686b96da751"
+          "sha256": "66128b3d38c648e3676d68c1d7505ebcfa184d508efd01e00ead483b9e92d280"
         },
         "keySpecifications": [
           "CAS Number",
@@ -1078,7 +1078,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_EMC_Representative_TDS_RevB.pdf",
-          "sha256": "ea4b059cfb152b7f909d37915a34f53cf0a4200e76b4d1516f3f84886b39fe00"
+          "sha256": "4c8b092a8ae393267f6be2f5dac0979e9041bbafa5f3d21e7d31c21fb39134bc"
         },
         "keySpecifications": [
           "CAS Number",
@@ -1173,7 +1173,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_PC_Representative_TDS_RevB.pdf",
-          "sha256": "a310f344cd092c9936f7ed9afb114091838db906ebbfb4cabe0710c28ac2d84d"
+          "sha256": "36b677663d57d73ef303f097137a09fdce78d71c27bd1a7bd9d6fba37e1e8652"
         },
         "keySpecifications": [
           "CAS Number",
@@ -1363,10 +1363,6 @@
         {
           "name": "Grade",
           "value": "Battery material grade"
-        },
-        {
-          "name": "Refractive index, n20/D",
-          "value": "1.3520–1.3560"
         },
         {
           "name": "Purity",
@@ -1684,7 +1680,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_TFEC_Representative_TDS.pdf",
-          "sha256": "9ccad8d3e4341c4f7ddbb56cceb2d8e2525ccf742eac98521294cb2840952c66"
+          "sha256": "9fd74a9ef8f84826bab3eefb63a56ea63a56c8cc3c9159f5036818d5b9d726c2"
         },
         "keySpecifications": [
           "CAS Number",
@@ -1725,7 +1721,7 @@
         },
         {
           "name": "Water",
-          "value": "≤20 µg/g"
+          "value": "≤20 ppm"
         },
         {
           "name": "Grade",
@@ -1752,7 +1748,7 @@
       "slug": "vinylene-carbonate-vc",
       "url": "/products/vinylene-carbonate-vc.html",
       "name": "Vinylene Carbonate (VC)",
-      "description": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
+      "description": "Vinylene Carbonate (VC), CAS 872-36-6, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay excluding BHT: ≥99.98 wt%; Water: ≤30 ppm; Acidity, as HF: ≤10 ppm; BHT: 40–110 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-VC",
@@ -1798,7 +1794,7 @@
         },
         {
           "name": "Water",
-          "value": "≤30 µg/g"
+          "value": "≤30 ppm"
         },
         {
           "name": "Acidity, as HF",
@@ -1844,7 +1840,7 @@
           "path": "/assets/documents/tds/Winigen_VC_Representative_TDS.pdf",
           "title": "Technical Data Sheet (PDF)",
           "includesRepresentativeResults": true,
-          "sha256": "cf2b1963217d853dcf8c6b792ae73935fe95ef49d6d719afa28efb3ed1c894c3"
+          "sha256": "28214f10e26c4c9dbde820c5115c46b1e50648cd88b846b6fb6fe106b7b0f8b6"
         }
       },
       "approvedSynonyms": [],
@@ -2013,7 +2009,7 @@
       "slug": "1-3-2-dioxathiolane-2-2-dioxide-dtd",
       "url": "/products/1-3-2-dioxathiolane-2-2-dioxide-dtd.html",
       "name": "1,3,2-Dioxathiolane 2,2-dioxide (DTD)",
-      "description": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 µg/g; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g.",
+      "description": "1,3,2-Dioxathiolane 2,2-dioxide (DTD), CAS 1072-53-3, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material or powder, no mechanical impurities; Assay: ≥99.5 wt%; Water: ≤100 ppm; Acidity, as HF: ≤100 ppm; Color: ≤30 Hazen; Ethylene sulfite: ≤500 ppm; Ethylene glycol: ≤300 ppm; Chloride: ≤5 µg/g.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-DTD",
@@ -2059,7 +2055,7 @@
         },
         {
           "name": "Water",
-          "value": "≤100 µg/g"
+          "value": "≤100 ppm"
         },
         {
           "name": "Acidity, as HF",
@@ -2105,7 +2101,7 @@
           "path": "/assets/documents/tds/Winigen_DTD_Representative_TDS.pdf",
           "title": "Technical Data Sheet (PDF)",
           "includesRepresentativeResults": true,
-          "sha256": "14805bb0725d1540a6c939643fcb581607445238240b2710aafaa53cbe85ae37"
+          "sha256": "87367d34ba5a86358238c72c539ac3c93c78acfaf0df008f571efb8457e701d6"
         }
       },
       "approvedSynonyms": [],
@@ -2124,7 +2120,7 @@
       "slug": "prop-1-ene-1-3-sultone-pst",
       "url": "/products/prop-1-ene-1-3-sultone-pst.html",
       "name": "Prop-1-ene-1,3-sultone (PST)",
-      "description": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 µg/g; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm.",
+      "description": "Prop-1-ene-1,3-sultone (PST), CAS 21806-61-1, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: White crystalline material, no impurities; Assay: ≥99.5 wt%; Water: ≤50 ppm; Chloride: ≤5 µg/g; Sulfate: ≤20 ppm.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-PST",
@@ -2170,7 +2166,7 @@
         },
         {
           "name": "Water",
-          "value": "≤50 µg/g"
+          "value": "≤50 ppm"
         },
         {
           "name": "Chloride",
@@ -2201,7 +2197,7 @@
           "path": "/assets/documents/tds/Winigen_PST_Representative_TDS.pdf",
           "title": "Technical Data Sheet (PDF)",
           "includesRepresentativeResults": true,
-          "sha256": "ea60e495b71f5212e710d77631b39ea704b27ccf77e280b46ca2aef729d30d0a"
+          "sha256": "b2038a30f186e95d7fd6cab7a8fbf0952910a98d309e6b9e6b080e1e78d1d657"
         }
       },
       "approvedSynonyms": [],
@@ -2220,7 +2216,7 @@
       "slug": "4-fluoro-1-3-dioxolan-2-one-fec",
       "url": "/products/4-fluoro-1-3-dioxolan-2-one-fec.html",
       "name": "4-Fluoro-1,3-dioxolan-2-one (FEC)",
-      "description": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 µg/g; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
+      "description": "4-Fluoro-1,3-dioxolan-2-one (FEC), CAS 114435-02-8, is an electrolyte additive for battery-electrolyte formulation and research. Specifications: Appearance: Colorless transparent liquid, no impurities; Assay: ≥99.95 wt%; Water: ≤30 ppm; Acidity, as HF: ≤15 ppm; Color: ≤10 Hazen; Sulfate: ≤5 ppm; Chloride: ≤1 µg/g.",
       "family": "electrolyte-additives",
       "category": "Electrolyte Additives",
       "sku": "WM-ADD-FEC",
@@ -2267,7 +2263,7 @@
         },
         {
           "name": "Water",
-          "value": "≤30 µg/g"
+          "value": "≤30 ppm"
         },
         {
           "name": "Acidity, as HF",
@@ -2308,7 +2304,7 @@
           "path": "/assets/documents/tds/Winigen_FEC_Representative_TDS.pdf",
           "title": "Technical Data Sheet (PDF)",
           "includesRepresentativeResults": true,
-          "sha256": "22976eb978fedee3f14270f000fe202a7ebc65dc4e09a86a4dc12eaf517c6fa8"
+          "sha256": "5376b3abfffdb1d74c6e56f7876cc16805eac2e957940140d3c9c7aa10997418"
         }
       },
       "approvedSynonyms": [
@@ -5455,7 +5451,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_EP_Representative_TDS_RevB.pdf",
-          "sha256": "f4581483fd446d07ea6a3e8e91aada7f2b73d8064225768629f4ba383e240269"
+          "sha256": "d013ee39f4a6b3f1302181e3c6699cad75413d779383b3bcd307a10fb75e0ef7"
         },
         "keySpecifications": [
           "CAS Number",
@@ -5559,7 +5555,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_MB_Battery_Grade_TDS.pdf",
-          "sha256": "69f685f750729f9e20654fba73971b3151e5cdb8844d39524d0fe7c3d4ddbe93",
+          "sha256": "cc819f99a78595149f3112b1c04c5e8a4f0a2a3c9fd4c03743b875cc66ec685b",
           "includesRepresentativeResults": false
         },
         "keySpecifications": [
@@ -5661,7 +5657,7 @@
       "qualityDocumentation": {
         "tds": {
           "path": "/assets/documents/tds/Winigen_PP_Representative_TDS_RevB.pdf",
-          "sha256": "eb616e9882222084c95daf96ef772e94f92060496378148305b158820fab5d82"
+          "sha256": "5b3807d51630db9aebf5d71aa23e096db75c8dfe43e26b076e20504a1c03d5c7"
         },
         "keySpecifications": [
           "CAS Number",

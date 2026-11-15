@@ -1,9 +1,9 @@
+import {publicSupplementaryLinks} from '../design/option-a/ux-review.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile,mkdtemp,writeFile} from 'node:fs/promises';
+import {readFile,mkdtemp,writeFile,mkdir,rm} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
-import {tmpdir} from 'node:os';
 import {lowerQualityDocumentation} from '../seo/build-seo.mjs';
 import {prepareCloudflareSite} from '../scripts/prepare-cloudflare-site.mjs';
 const root=resolve(import.meta.dirname,'..');
@@ -27,16 +27,18 @@ for(const p of selected)test(p.primaryAbbreviation+': documentation matches shar
  assert(!html.includes('Winigen_DFEA_Representative_TDS_RevB.pdf'));
  const query=new URLSearchParams({inquiry_type:'Documentation / COA / SDS Request',product_interest:p.name});
  const href='../contact.html?'+query.toString().replace(/&/g,'&amp;');
- const block=lowerQualityDocumentation(p,href);
+ const block=publicSupplementaryLinks(lowerQualityDocumentation(p,href),p.url.slice(1));
  assert(html.includes(block));
  assert.equal(html.replace(/<!-- product-tds-section:start -->[\s\S]*?<!-- product-tds-section:end -->/,()=>block),html);
 });
-test('scoped static bundle includes the four exact PDFs',async()=>{
- const directory=await mkdtemp(resolve(tmpdir(),'solvent-tds-manifest-'));
+test('scoped static bundle includes the four exact PDFs',async t=>{
+ await mkdir(resolve(root,'outputs'),{recursive:true});
+ const directory=await mkdtemp(resolve(root,'outputs/solvent-tds-manifest-'));
+ t.after(()=>rm(directory,{recursive:true,force:true}));
  const manifestPath=resolve(directory,'manifest.txt');
  const paths=selected.map(p=>p.qualityDocumentation.tds.path.slice(1)).sort();
  await writeFile(manifestPath,paths.join('\n')+'\n');
- const result=await prepareCloudflareSite({siteRoot:root,outputRoot:resolve(root,'dist-solvent-tds-check'),manifestPath});
+ const result=await prepareCloudflareSite({siteRoot:root,outputRoot:resolve(directory,'bundle'),manifestPath});
  assert.equal(result.assetCount,4);
  for(const p of selected)assert.deepEqual(await readFile(resolve(root,'.'+p.qualityDocumentation.tds.path)),await readFile(resolve(result.outputRoot,'.'+p.qualityDocumentation.tds.path)));
 });
