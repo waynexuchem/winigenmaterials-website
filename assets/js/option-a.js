@@ -11,6 +11,26 @@
   menu?.addEventListener('click', event => {if(event.target.closest('a'))closeMenu();});
   const updateCart=()=>document.querySelectorAll('[data-oa-cart-count]').forEach(el=>{el.textContent=String(window.WinigenCart?.itemCount()||0);});
   window.addEventListener('winigen:ecommerce-ready',updateCart);window.addEventListener('winigen:cart-change',updateCart);updateCart();
+  const cartMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)'),cartAnimations=new WeakMap();
+  const headerCarts=()=>document.querySelectorAll('.oa-header .oa-cart');
+  window.addEventListener('winigen:cart-added',()=>{
+    headerCarts().forEach(cart=>{
+      cartAnimations.get(cart)?.cancel();
+      const icon=cart.querySelector('.oa-cart-icon');
+      if(cartMotion?.matches!==false||!icon?.getClientRects().length||!icon.animate)return;
+      // Restart feedback only for successful additions, independently of cart state updates.
+      cartAnimations.set(cart,icon.animate([
+        {transform:'scale(1)',filter:'drop-shadow(0 0 0 rgba(42,102,217,0))',offset:0,easing:'ease-out'},
+        {transform:'scale(1.35)',filter:'drop-shadow(0 0 1.5px rgba(42,102,217,.35))',offset:.14,easing:'ease-in-out'},
+        {transform:'scale(.97)',filter:'drop-shadow(0 0 .5px rgba(42,102,217,.1))',offset:.36,easing:'ease-in-out'},
+        {transform:'scale(1.06)',filter:'drop-shadow(0 0 0 rgba(42,102,217,0))',offset:.56,easing:'ease-in-out'},
+        {transform:'scale(1)',filter:'drop-shadow(0 0 0 rgba(42,102,217,0))',offset:1}
+      ],{duration:1650}));
+    });
+  });
+  cartMotion?.addEventListener?.('change',()=>{
+    if(cartMotion.matches)headerCarts().forEach(cart=>cartAnimations.get(cart)?.cancel());
+  });
   const familyMenu=document.querySelector('.oa-family-menu');
   const familyToggle=document.querySelector('[data-oa-family-toggle]'),familyDropdown=document.querySelector('#oa-material-families');
   const setFamily=open=>{if(familyToggle){familyToggle.setAttribute('aria-expanded',String(open));familyDropdown.hidden=!open;}};

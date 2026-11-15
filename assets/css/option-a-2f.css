@@ -419,7 +419,8 @@ body.option-a .oa-performance-table :is(th,td){overflow-wrap:normal;word-break:n
 body.option-a .oa-performance-table th:first-child{min-width:8rem}
 
 /* Final refinement: shared scientific rows, compact navigation and reading-first hierarchy. */
-body.option-a .oa-cart-icon{display:none;width:22px;height:22px;flex:none}
+body.option-a .oa-header .oa-cart{display:inline-flex;align-items:center;gap:5px}
+body.option-a .oa-cart-icon{display:block;width:19px;height:19px;flex:none;transform-origin:right center}
 body.option-a .oa-product-card dl>div{align-items:start}
 body.option-a .oa-product-card .oa-typical-facts>div{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
 body.option-a .oa-product-card dl dt{color:#64748b;font-weight:400;text-align:left}
