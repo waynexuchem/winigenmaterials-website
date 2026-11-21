@@ -11,26 +11,185 @@
   menu?.addEventListener('click', event => {if(event.target.closest('a'))closeMenu();});
   const updateCart=()=>document.querySelectorAll('[data-oa-cart-count]').forEach(el=>{el.textContent=String(window.WinigenCart?.itemCount()||0);});
   window.addEventListener('winigen:ecommerce-ready',updateCart);window.addEventListener('winigen:cart-change',updateCart);updateCart();
-  const cartMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)'),cartAnimations=new WeakMap();
-  const headerCarts=()=>document.querySelectorAll('.oa-header .oa-cart');
-  window.addEventListener('winigen:cart-added',()=>{
-    headerCarts().forEach(cart=>{
-      cartAnimations.get(cart)?.cancel();
-      const icon=cart.querySelector('.oa-cart-icon');
-      if(cartMotion?.matches!==false||!icon?.getClientRects().length||!icon.animate)return;
-      // Restart feedback only for successful additions, independently of cart state updates.
-      cartAnimations.set(cart,icon.animate([
-        {transform:'scale(1)',filter:'drop-shadow(0 0 0 rgba(42,102,217,0))',offset:0,easing:'ease-out'},
-        {transform:'scale(1.35)',filter:'drop-shadow(0 0 1.5px rgba(42,102,217,.35))',offset:.14,easing:'ease-in-out'},
-        {transform:'scale(.97)',filter:'drop-shadow(0 0 .5px rgba(42,102,217,.1))',offset:.36,easing:'ease-in-out'},
-        {transform:'scale(1.06)',filter:'drop-shadow(0 0 0 rgba(42,102,217,0))',offset:.56,easing:'ease-in-out'},
-        {transform:'scale(1)',filter:'drop-shadow(0 0 0 rgba(42,102,217,0))',offset:1}
-      ],{duration:1650}));
+  // Presentation only: the cart has already persisted and announced a successful addition.
+  const cartMotion = typeof matchMedia === 'function'
+    ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: true };
+  let cartFlight = null;
+  let cartArrival = null;
+  let cartMotionVersion = 0;
+  const stopCartMotion = () => {
+    cartMotionVersion++;
+    if (cartFlight) {
+      const flight = cartFlight;
+      cartFlight = null;
+      flight.animation.cancel();
+      flight.layer.remove();
+    }
+    if (cartArrival) {
+      cartArrival.cancel();
+      cartArrival = null;
+    }
+  };
+  const cartRect = (element, top = 0) => {
+    if (!element?.isConnected || !element.getClientRects().length) return null;
+    const style = getComputedStyle(element);
+    if (style.visibility !== 'visible' || Number(style.opacity) === 0) return null;
+    const r = element.getBoundingClientRect();
+    const left = Math.max(0, r.left), right = Math.min(innerWidth, r.right);
+    const upper = Math.max(top, r.top), bottom = Math.min(innerHeight, r.bottom);
+    return right - left >= 8 && bottom - upper >= 8
+      ? { x: (left + right) / 2, y: (upper + bottom) / 2 } : null;
+  };
+  const arriveAtCart = control => {
+    if (cartMotion.matches || !control.isConnected) return;
+    const icon = control.querySelector('.oa-cart-icon') || control;
+    if (!cartRect(icon) || typeof icon.animate !== 'function') return;
+    const animation = icon.animate([
+      { transform: 'scale(1)', filter: 'drop-shadow(0 0 0 rgba(42,102,217,0))' },
+      { transform: 'scale(1.1)', filter: 'drop-shadow(0 0 3px rgba(42,102,217,.24))', offset: .45 },
+      { transform: 'scale(1)', filter: 'drop-shadow(0 0 0 rgba(42,102,217,0))' }
+    ], { duration: 150, easing: 'ease-in-out' });
+    cartArrival = animation;
+    animation.finished.then(() => {
+      if (cartArrival === animation) cartArrival = null;
+    }, () => {});
+  };
+  const materialThumbnail = thumbnail => {
+    thumbnail.innerHTML = '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 4 27 10.5v11L16 28 5 21.5v-11Z M5 10.5 16 17l11-6.5 M16 17v11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+  };
+  const flyToCart = event => {
+    stopCartMotion();
+    const version = cartMotionVersion;
+    // Wait for all success listeners to expose their notification before measuring it.
+    Promise.resolve().then(() => {
+      if (version === cartMotionVersion) beginCartFlight(event);
     });
-  });
-  cartMotion?.addEventListener?.('change',()=>{
-    if(cartMotion.matches)headerCarts().forEach(cart=>cartAnimations.get(cart)?.cancel());
-  });
+  };
+  const beginCartFlight = event => {
+    if (cartMotion.matches || !document.body.classList.contains('option-a')) return;
+    const details = event.detail;
+    const product = window.WINIGEN_ECOMMERCE_CATALOG?.products.find(p =>
+      p.variants.some(v => v.key === details?.variantKey));
+    if (!product || !Number.isInteger(details.quantity) || details.quantity < 1) return;
+    const control = [...document.querySelectorAll('.oa-header .oa-cart')].find(el => cartRect(el));
+    if (!control) return; // The existing toast remains the nonvisual/hidden-cart confirmation.
+    const target = control.querySelector('.oa-cart-icon') || control;
+    const end = cartRect(target) || cartRect(control);
+    const exposed = document.elementFromPoint(end.x, end.y);
+    if (!control.contains(exposed)) return;
+    const sourceButton = details.sourceButton;
+    const headerBottom = document.querySelector('.oa-header')?.getBoundingClientRect().bottom || 0;
+    const buttonPosition = cartRect(sourceButton, headerBottom);
+    if (!buttonPosition || document.querySelector('.oa-menu-toggle[aria-expanded="true"]') ||
+        typeof target.animate !== 'function' || (window.visualViewport?.scale || 1) !== 1) {
+      arriveAtCart(control);
+      return;
+    }
+    const card = sourceButton.closest('[data-oa-product], .product-card, [data-oa-card-context], [data-oa-hero-product]');
+    const scope = card || (location.pathname.endsWith('/' + product.slug + '.html') ? document.querySelector('main') : null);
+    const images = [...(scope?.querySelectorAll('img') || [])].filter(img =>
+      !/logo/i.test(img.alt) && img.complete && img.naturalWidth > 0);
+    const image = images.find(img => cartRect(img, headerBottom)) || images[0];
+    const start = (image && cartRect(image, headerBottom)) || buttonPosition;
+    const compact = innerWidth < 768;
+    const size = compact ? 48 : 56;
+    const distance = Math.hypot(end.x - start.x, end.y - start.y);
+    if (distance < 40) { arriveAtCart(control); return; }
+    // Include the toast's short entrance translation and a visual clearance margin.
+    // Test every composited segment, not just the sampled points, against its bounds.
+    const obstacles = [...document.querySelectorAll('.cart-add-toast.is-visible')]
+      .filter(el => el.isConnected && el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden')
+      .map(el => el.getBoundingClientRect());
+    const intersects = (a, b, rect, padding) => {
+      let enter = 0, leave = 1;
+      for (const [origin, delta, low, high] of [
+        [a.x, b.x - a.x, rect.left - padding, rect.right + padding],
+        [a.y, b.y - a.y, rect.top - padding, rect.bottom + padding]
+      ]) {
+        if (Math.abs(delta) < .001) { if (origin < low || origin > high) return false; }
+        else {
+          const first = (low - origin) / delta, second = (high - origin) / delta;
+          enter = Math.max(enter, Math.min(first, second));
+          leave = Math.min(leave, Math.max(first, second));
+          if (enter > leave) return false;
+        }
+      }
+      return true;
+    };
+    const clearance = 12;
+    const originalBend = { x: (start.x + end.x) / 2,
+      y: Math.max(size / 2 + 4, Math.min(start.y, end.y) - Math.min(compact ? 48 : 96, distance * .18)) };
+    const bends = [originalBend];
+    // Candidate detours follow the measured notification edges at any viewport width.
+    for (const rect of obstacles) {
+      const gap = size / 2 + clearance;
+      for (const x of [rect.left - gap, rect.right + gap,
+        rect.left - gap - rect.width, rect.right + gap + rect.width]) {
+        bends.push({ x, y: originalBend.y }, { x, y: start.y });
+      }
+    }
+    const pointsFor = bend => Array.from({ length: 17 }, (_, index) => {
+      const t = index / 16, scale = 1 - .8 * t, margin = size * scale / 2 + 3;
+      return { t, scale,
+        x: Math.max(margin, Math.min(innerWidth - margin,
+          (1 - t) ** 2 * start.x + 2 * (1 - t) * t * bend.x + t ** 2 * end.x)),
+        y: Math.max(margin, Math.min(innerHeight - margin,
+          (1 - t) ** 2 * start.y + 2 * (1 - t) * t * bend.y + t ** 2 * end.y)) };
+    });
+    const points = bends.map(pointsFor).find(path => !obstacles.some(rect =>
+      path.some((point, index) => index > 0 && intersects(path[index - 1], point, rect,
+        size * path[index - 1].scale / 2 + clearance))));
+    if (!points) { arriveAtCart(control); return; }
+    const keyframes = points.map(({ t, scale, x, y }) => ({
+      transform: `translate3d(${x - size / 2}px,${y - size / 2}px,0) scale(${scale})`,
+      opacity: t < .65 ? 1 : 1 - (t - .65) / .35 * .7, offset: t
+    }));
+    const layer = document.createElement('div');
+    layer.className = 'oa-cart-flight';
+    layer.setAttribute('aria-hidden', 'true');
+    const thumbnail = document.createElement('span');
+    thumbnail.className = 'oa-cart-flight__thumbnail';
+    thumbnail.style.width = thumbnail.style.height = size + 'px';
+    if (image) {
+      const copy = document.createElement('img');
+      copy.alt = '';
+      copy.draggable = false;
+      copy.src = image.currentSrc || image.src;
+      copy.addEventListener('error', () => materialThumbnail(thumbnail), { once: true });
+      thumbnail.appendChild(copy);
+    } else materialThumbnail(thumbnail);
+    layer.appendChild(thumbnail);
+    const sourceBounds = sourceButton.getBoundingClientRect();
+    const targetBounds = target.getBoundingClientRect();
+    document.body.appendChild(layer);
+    try {
+      const animation = thumbnail.animate(keyframes, { duration: compact ? 450 : 500,
+        easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'forwards' });
+      const flight = { animation, layer, sourceButton, target, sourceBounds, targetBounds };
+      cartFlight = flight;
+      animation.finished.then(() => {
+        if (cartFlight !== flight) return;
+        layer.remove();
+        cartFlight = null;
+        arriveAtCart(control);
+      }, () => { layer.remove(); if (cartFlight === flight) cartFlight = null; });
+    } catch { layer.remove(); arriveAtCart(control); }
+  };
+  const cancelMovedCartFlight = () => {
+    if (!cartFlight) return;
+    const { sourceButton, target, sourceBounds, targetBounds } = cartFlight;
+    if (!sourceButton.isConnected || !target.isConnected) { stopCartMotion(); return; }
+    const sourceNow = sourceButton.getBoundingClientRect(), targetNow = target.getBoundingClientRect();
+    if (Math.abs(sourceNow.left - sourceBounds.left) > 1 || Math.abs(sourceNow.top - sourceBounds.top) > 1 ||
+        Math.abs(targetNow.left - targetBounds.left) > 1 || Math.abs(targetNow.top - targetBounds.top) > 1) stopCartMotion();
+  };
+  window.addEventListener('winigen:cart-added', flyToCart);
+  window.addEventListener('pagehide', stopCartMotion);
+  window.addEventListener('resize', stopCartMotion, { passive: true });
+  window.addEventListener('scroll', cancelMovedCartFlight, { passive: true, capture: true });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stopCartMotion(); });
+  cartMotion.addEventListener?.('change', stopCartMotion);
+
   const familyMenu=document.querySelector('.oa-family-menu');
   const familyToggle=document.querySelector('[data-oa-family-toggle]'),familyDropdown=document.querySelector('#oa-material-families');
   const setFamily=open=>{if(familyToggle){familyToggle.setAttribute('aria-expanded',String(open));familyDropdown.hidden=!open;}};

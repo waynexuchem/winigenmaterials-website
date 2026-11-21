@@ -575,3 +575,11 @@ body.option-a .oa-aligned-card .oa-card-body dl dd{text-align:right!important;ma
 body.option-a .oa-aligned-card .oa-card-body dl>div.oa-spec-stack{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:var(--oa-fact-label-height,auto) minmax(0,1fr);align-content:start;row-gap:.2rem!important}
 body.option-a .oa-aligned-card .oa-spec-stack dt{min-height:var(--oa-fact-label-height,auto)}
 body.option-a .oa-aligned-card .oa-spec-stack dd{grid-column:1}
+
+/* Successful additions use one decorative flight; existing notices and counts remain authoritative. */
+body.option-a .nav-cart--pulse{animation:none!important}
+.oa-cart-flight{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1400;contain:strict}
+.oa-cart-flight__thumbnail{position:absolute;left:0;top:0;display:grid;place-items:center;box-sizing:border-box;padding:4px;background:#fff;border:1px solid rgba(184,150,74,.3);border-radius:9px;box-shadow:0 3px 10px rgba(20,33,61,.12);color:#2a66d9;transform-origin:center;will-change:transform,opacity;pointer-events:none}
+.oa-cart-flight__thumbnail img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.oa-cart-flight__thumbnail svg{width:30px;height:30px;max-width:100%;max-height:100%;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.oa-cart-flight{display:none}}
